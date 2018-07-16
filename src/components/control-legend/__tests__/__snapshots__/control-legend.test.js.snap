@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlLegend basic renders 1`] = `
+<div>
+  <legend
+    className="inline-block txt-s txt-bold mb6"
+    htmlFor="legend-id"
+  >
+    basic legend
+     
+  </legend>
+</div>
+`;
+
+exports[`ControlLegend basic with aside renders 1`] = `
+<div>
+  <legend
+    className="inline-block txt-s txt-bold mb6"
+    htmlFor="legend-id"
+  >
+    basic legend
+     
+  </legend>
+  <span
+    className="inline-block ml12"
+  >
+    <span>
+      Aside text
+    </span>
+  </span>
+</div>
+`;
+
+exports[`ControlLegend basic with optional renders 1`] = `
+<div>
+  <legend
+    className="inline-block color-red"
+    htmlFor="legend-id"
+  >
+    basic legend
+     
+    <span
+      className="txt-normal"
+    >
+      (optional)
+    </span>
+  </legend>
+  <span
+    className="inline-block ml12"
+  >
+    This is an aside
+  </span>
+</div>
+`;

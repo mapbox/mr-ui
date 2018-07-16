@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlRange all options renders 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper="bg-red-light"
+  validationError="oh no!"
+>
+  <ControlLabel
+    aside={
+      <span>
+        Aside text
+      </span>
+    }
+    id="testinput"
+    optional={true}
+    text="All options"
+    themeLabel="txt-s txt-bold color-white"
+  />
+  <div
+    className="range range--s range--red"
+  >
+    <input
+      aria-invalid={true}
+      aria-required={false}
+      autoFocus={true}
+      data-test="testinput-input"
+      id="testinput"
+      max={1000}
+      min={100}
+      name="testinput"
+      onChange={[Function]}
+      step={100}
+      type="range"
+      value={200}
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlRange basic onChange gets called with input id and value 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="testinput"
+    optional={false}
+    text="Basic"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="range "
+  >
+    <input
+      aria-required={true}
+      data-test="testinput-input"
+      id="testinput"
+      name="testinput"
+      onChange={[Function]}
+      type="range"
+      value=""
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlRange basic renders 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="testinput"
+    optional={false}
+    text="Basic"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="range "
+  >
+    <input
+      aria-required={true}
+      data-test="testinput-input"
+      id="testinput"
+      name="testinput"
+      onChange={[Function]}
+      type="range"
+      value=""
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlRange disabled renders 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="testinput"
+    optional={false}
+    text="Disabled"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="range "
+  >
+    <input
+      aria-required={true}
+      data-test="testinput-input"
+      disabled={true}
+      id="testinput"
+      name="testinput"
+      onChange={[Function]}
+      type="range"
+      value=""
+    />
+  </div>
+</ControlWrapper>
+`;

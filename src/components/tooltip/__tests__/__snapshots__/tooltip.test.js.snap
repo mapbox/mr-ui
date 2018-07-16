@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip all props renders 1`] = `
+<PopoverTrigger
+  content={[Function]}
+  disabled={true}
+  display="inline"
+  popoverProps={
+    Object {
+      "accessibleTitle": null,
+      "alignment": "left",
+      "backgroundColor": "red",
+      "contentElementAttributes": Object {
+        "id": "tooltip-2",
+        "role": "tooltip",
+      },
+      "hasPointer": true,
+      "hideWhenAnchorIsOffscreen": true,
+      "placement": "top",
+      "themePopover": "py6 px12 round txt-s txt-bold",
+    }
+  }
+  receiveFocus={false}
+  renderHiddenContent={true}
+  respondsToClick={true}
+  respondsToFocus={true}
+  respondsToHover={true}
+  trapFocus={false}
+  triggerProps={Object {}}
+>
+  <span>
+    test tooltip
+  </span>
+</PopoverTrigger>
+`;
+
+exports[`Tooltip basic renders 1`] = `
+<PopoverTrigger
+  content="basic"
+  disabled={false}
+  display="inline-block"
+  popoverProps={
+    Object {
+      "accessibleTitle": null,
+      "alignment": "center",
+      "backgroundColor": "#fff",
+      "contentElementAttributes": Object {
+        "id": "tooltip-1",
+        "role": "tooltip",
+      },
+      "hasPointer": true,
+      "hideWhenAnchorIsOffscreen": true,
+      "placement": "top",
+      "themePopover": "round py6 px12 shadow-darken25 txt-s z1",
+    }
+  }
+  receiveFocus={false}
+  renderHiddenContent={true}
+  respondsToClick={false}
+  respondsToFocus={true}
+  respondsToHover={true}
+  trapFocus={false}
+  triggerProps={Object {}}
+>
+  <span>
+    test tooltip
+  </span>
+</PopoverTrigger>
+`;

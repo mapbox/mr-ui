@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChevronousText additional icon classes renders 1`] = `
+<span>
+  Explore
+   
+  <span
+    className="txt-nowrap"
+  >
+    Mapbox
+    <Icon
+      inline={true}
+      name="chevron-right"
+      themeIcon="color-blue"
+    />
+  </span>
+</span>
+`;
+
+exports[`ChevronousText basic renders 1`] = `
+<span>
+  Explore
+   
+  <span
+    className="txt-nowrap"
+  >
+    Mapbox
+    <Icon
+      inline={true}
+      name="chevron-right"
+    />
+  </span>
+</span>
+`;

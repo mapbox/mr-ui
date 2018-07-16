@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton all props used, JSX content renders 1`] = `
+<Tooltip
+  alignment="right"
+  backgroundColor="yellow"
+  content={
+    <span
+      className="txt-bold"
+    >
+      tada
+    </span>
+  }
+  disabled={false}
+  display="inline-flex"
+  placement="right"
+  respondsToClick={true}
+  testId="tooltip-test-id"
+  themeTooltip="color-gray round px12 py12 shadow-darken25"
+/>
+`;
+
+exports[`IconButton all props used, JSX content renders 2`] = `
+<button
+  className="btn px12 py12 bg-gray"
+  data-test="button-test-id"
+  onClick={[MockFunction]}
+  type="button"
+>
+  <Icon
+    inline={false}
+    name="bike"
+    themeIcon="color-gray-dark"
+  />
+</button>
+`;
+
+exports[`IconButton basic renders 1`] = `
+<Tooltip
+  alignment="center"
+  backgroundColor="#fff"
+  content="close"
+  disabled={false}
+  placement="top"
+  respondsToClick={false}
+  themeTooltip="round py6 px12 shadow-darken25 txt-s z1"
+/>
+`;
+
+exports[`IconButton basic renders 2`] = `
+<button
+  className="btn btn--xs px0"
+  onClick={[MockFunction]}
+  type="button"
+>
+  <Icon
+    inline={false}
+    name="close"
+  />
+</button>
+`;

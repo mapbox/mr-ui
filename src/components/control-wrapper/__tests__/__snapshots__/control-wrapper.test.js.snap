@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlWrapper JSX error renders 1`] = `
+<div
+  className="relative "
+>
+  <span>
+    fake input
+  </span>
+  <div
+    role="alert"
+  >
+    <div
+      className="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+      data-test="control-wrapper-error"
+      id="control-wrapper-error"
+    >
+      <div>
+        <div
+          className="txt-bold mb3"
+        >
+          Something went wrong!
+        </div>
+        <div>
+          You made a huge mistake
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlWrapper basic renders 1`] = `
+<div
+  className="relative "
+>
+  <span>
+    fake input
+  </span>
+  <div
+    role="alert"
+  />
+</div>
+`;
+
+exports[`ControlWrapper basic with error renders 1`] = `
+<div
+  className="relative "
+>
+  <span>
+    fake input
+  </span>
+  <div
+    role="alert"
+  >
+    <div
+      className="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+      data-test="control-wrapper-error"
+      id="control-wrapper-error"
+    >
+      There was an error.
+    </div>
+  </div>
+</div>
+`;

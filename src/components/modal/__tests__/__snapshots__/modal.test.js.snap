@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal No fixed width, display only renders 1`] = `
+<Displaced
+  dialogStyle={
+    Object {
+      "boxShadow": "none",
+    }
+  }
+  focusDialog={true}
+  getApplicationNode={[Function]}
+  mounted={true}
+  onExit={[MockFunction]}
+  titleText="Auto modal title"
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
+  underlayColor=""
+  underlayProps={
+    Object {
+      "data-popover-ignore-clicks": true,
+    }
+  }
+  underlayStyle={
+    Object {
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    className="relative wmax-full  bg-white px36 py36 round"
+  >
+    <div>
+      No fixed width on the modal container
+    </div>
+    <div
+      className="absolute top right"
+    >
+      <IconButton
+        icon="close"
+        onClick={[MockFunction]}
+        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
+        tooltipProps={
+          Object {
+            "content": "Close",
+          }
+        }
+      />
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Modal all options renders 1`] = `
+<Displaced
+  dialogStyle={
+    Object {
+      "boxShadow": "none",
+    }
+  }
+  getApplicationNode={[Function]}
+  initialFocus="#foo"
+  mounted={true}
+  onExit={[MockFunction]}
+  titleText="All options"
+  underlayClass="bg-pink px24 py24"
+  underlayColor=""
+  underlayProps={
+    Object {
+      "data-foo": "foo",
+    }
+  }
+  underlayStyle={
+    Object {
+      "margin": "pink",
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    className="relative wmax-full w360 bg-gray-light round py60 px60"
+  >
+    <div>
+      <div
+        className="mb12"
+      >
+        I am a message
+      </div>
+      <button
+        className="btn"
+        id="foo"
+      >
+        press me
+      </button>
+    </div>
+    <div
+      className="absolute top right"
+    >
+      <IconButton
+        icon="close"
+        onClick={[MockFunction]}
+        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
+        tooltipProps={
+          Object {
+            "content": "Close",
+          }
+        }
+      />
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Modal basic default renders 1`] = `
+<Displaced
+  dialogStyle={
+    Object {
+      "boxShadow": "none",
+    }
+  }
+  focusDialog={true}
+  getApplicationNode={[Function]}
+  mounted={true}
+  onExit={[MockFunction]}
+  titleText="Large modal title"
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
+  underlayColor=""
+  underlayProps={
+    Object {
+      "data-popover-ignore-clicks": true,
+    }
+  }
+  underlayStyle={
+    Object {
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    className="relative wmax-full w600 bg-white px36 py36 round"
+  >
+    <div>
+      Large modal body
+    </div>
+    <div
+      className="absolute top right"
+    >
+      <IconButton
+        icon="close"
+        onClick={[MockFunction]}
+        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
+        tooltipProps={
+          Object {
+            "content": "Close",
+          }
+        }
+      />
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Modal basic small renders 1`] = `
+<Displaced
+  dialogStyle={
+    Object {
+      "boxShadow": "none",
+    }
+  }
+  focusDialog={true}
+  getApplicationNode={[Function]}
+  mounted={true}
+  onExit={[MockFunction]}
+  titleText="Small modal title"
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
+  underlayColor=""
+  underlayProps={
+    Object {
+      "data-popover-ignore-clicks": true,
+    }
+  }
+  underlayStyle={
+    Object {
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    className="relative wmax-full w360 bg-white px36 py36 round"
+  >
+    <div>
+      Small modal body
+    </div>
+    <div
+      className="absolute top right"
+    >
+      <IconButton
+        icon="close"
+        onClick={[MockFunction]}
+        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
+        tooltipProps={
+          Object {
+            "content": "Close",
+          }
+        }
+      />
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Modal no onExit renders 1`] = `
+<Displaced
+  dialogStyle={
+    Object {
+      "boxShadow": "none",
+    }
+  }
+  focusDialog={true}
+  getApplicationNode={[Function]}
+  mounted={true}
+  titleText="No onExit passed as prop"
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
+  underlayColor=""
+  underlayProps={
+    Object {
+      "data-popover-ignore-clicks": true,
+    }
+  }
+  underlayStyle={
+    Object {
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    className="relative wmax-full w360 bg-white px36 py36 round"
+  >
+    <div>
+      You can't close me
+    </div>
+  </div>
+</Displaced>
+`;

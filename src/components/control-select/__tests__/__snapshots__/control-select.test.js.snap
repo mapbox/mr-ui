@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlSelect Supported values renders 1`] = `
+<ControlWrapper
+  id="value"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="value"
+    optional={false}
+    text="Basic"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="select-container "
+  >
+    <select
+      aria-required={true}
+      className="select "
+      data-test="value-select"
+      disabled={false}
+      id="value"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        Empty string
+      </option>
+      <option
+        key="foo"
+        value="foo"
+      >
+        String
+      </option>
+      <option
+        key="123"
+        value={123}
+      >
+        Number
+      </option>
+    </select>
+    <div
+      className="select-arrow"
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlSelect all options renders 1`] = `
+<ControlWrapper
+  id="allOptions"
+  themeControlWrapper="bg-red-light"
+  validationError="oh no!"
+>
+  <ControlLabel
+    aside={
+      <span>
+        Aside text
+      </span>
+    }
+    id="allOptions"
+    optional={true}
+    text="All options"
+    themeLabel="color-white"
+  />
+  <div
+    className="select-container color-white"
+  >
+    <select
+      aria-invalid={true}
+      aria-required={false}
+      autoFocus={true}
+      className="select select--red"
+      data-test="allOptions-select"
+      disabled={false}
+      id="allOptions"
+      onChange={[Function]}
+      value="Option value 2"
+    >
+      <option
+        key="Option value 1"
+        value="Option value 1"
+      >
+        Option 1
+      </option>
+      <option
+        key="Option value 2"
+        value="Option value 2"
+      >
+        Option 2
+      </option>
+      <option
+        disabled={true}
+        key="Option value 3"
+        value="Option value 3"
+      >
+        Option 3
+      </option>
+    </select>
+    <div
+      className="select-arrow"
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlSelect basic onChange gets called with input id and value 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="testinput"
+    optional={false}
+    text="Basic"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="select-container "
+  >
+    <select
+      aria-required={true}
+      className="select "
+      data-test="testinput-select"
+      disabled={false}
+      id="testinput"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        key="Option value 1"
+        value="Option value 1"
+      >
+        Option 1
+      </option>
+      <option
+        key="Option value 2"
+        value="Option value 2"
+      >
+        Option 2
+      </option>
+    </select>
+    <div
+      className="select-arrow"
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlSelect basic renders 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="testinput"
+    optional={false}
+    text="Basic"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="select-container "
+  >
+    <select
+      aria-required={true}
+      className="select "
+      data-test="testinput-select"
+      disabled={false}
+      id="testinput"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        key="Option value 1"
+        value="Option value 1"
+      >
+        Option 1
+      </option>
+      <option
+        key="Option value 2"
+        value="Option value 2"
+      >
+        Option 2
+      </option>
+    </select>
+    <div
+      className="select-arrow"
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlSelect disabled renders 1`] = `
+<ControlWrapper
+  id="disabled"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="disabled"
+    optional={false}
+    text="Disabled"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="select-container "
+  >
+    <select
+      aria-required={true}
+      className="select "
+      data-test="disabled-select"
+      disabled={true}
+      id="disabled"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        key="Option value 1"
+        value="Option value 1"
+      >
+        Option 1
+      </option>
+      <option
+        key="Option value 2"
+        value="Option value 2"
+      >
+        Option 2
+      </option>
+    </select>
+    <div
+      className="select-arrow"
+    />
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlSelect grouped dropdown options renders 1`] = `
+<ControlWrapper
+  id="grouped"
+  themeControlWrapper=""
+>
+  <ControlLabel
+    id="grouped"
+    optional={false}
+    text="Grouped dropdown options"
+    themeLabel="txt-s txt-bold mb6"
+  />
+  <div
+    className="select-container "
+  >
+    <select
+      aria-required={true}
+      className="select "
+      data-test="grouped-select"
+      disabled={false}
+      id="grouped"
+      onChange={[Function]}
+      value=""
+    >
+      <optgroup
+        key="Group One"
+        label="Group One"
+      >
+        <option
+          key="foo"
+          value="foo"
+        >
+          Foo
+        </option>
+        <option
+          key="bar"
+          value="bar"
+        >
+          Bar
+        </option>
+      </optgroup>
+      <optgroup
+        key="Group two"
+        label="Group two"
+      >
+        <option
+          key="baz"
+          value="baz"
+        >
+          Baz
+        </option>
+        <option
+          key="qux"
+          value="qux"
+        >
+          Qux
+        </option>
+      </optgroup>
+    </select>
+    <div
+      className="select-arrow"
+    />
+  </div>
+</ControlWrapper>
+`;

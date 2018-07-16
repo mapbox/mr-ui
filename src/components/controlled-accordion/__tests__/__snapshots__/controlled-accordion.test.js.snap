@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion all options renders 1`] = `
+<div>
+  <AccordionItem
+    active={true}
+    body="First body"
+    header={[Function]}
+    id="one"
+    key="one"
+    onToggle={[Function]}
+    themeItem="bg-red-faint border-b border--red-dark"
+    themeItemBody="py6 px6 txt-l bg-red-light"
+    themeItemHeader="bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+  <AccordionItem
+    active={false}
+    body="Second body"
+    header={[Function]}
+    id="two"
+    key="two"
+    onToggle={[Function]}
+    themeItem="bg-red-faint border-b border--red-dark"
+    themeItemBody="py6 px6 txt-l bg-red-light"
+    themeItemHeader="bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+  <AccordionItem
+    active={false}
+    body="Third body"
+    header={[Function]}
+    id="third"
+    key="third"
+    onToggle={[Function]}
+    themeItem="bg-red-faint border-b border--red-dark"
+    themeItemBody="py6 px6 txt-l bg-red-light"
+    themeItemHeader="bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+</div>
+`;
+
+exports[`Accordion basic renders 1`] = `
+<div>
+  <AccordionItem
+    active={false}
+    body="First body"
+    header={[Function]}
+    id="one"
+    key="one"
+    onToggle={[Function]}
+    themeItemHeader="txt-s txt-bold txt-truncate link link--gray py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+  <AccordionItem
+    active={false}
+    body="Second body"
+    header={[Function]}
+    id="two"
+    key="two"
+    onToggle={[Function]}
+    themeItemHeader="txt-s txt-bold txt-truncate link link--gray py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+  <AccordionItem
+    active={false}
+    body="Third body"
+    header={[Function]}
+    id="three"
+    key="three"
+    onToggle={[Function]}
+    themeItemHeader="txt-s txt-bold txt-truncate link link--gray py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+</div>
+`;
+
+exports[`Accordion disabled renders 1`] = `
+<div>
+  <AccordionItem
+    active={false}
+    body="First body"
+    header={[Function]}
+    id="one"
+    key="one"
+    onToggle={[Function]}
+    themeItemHeader="txt-s txt-bold txt-truncate link link--gray py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+  <AccordionItem
+    active={false}
+    body="Second body"
+    header={[Function]}
+    id="two"
+    key="two"
+    onToggle={[Function]}
+    themeItemHeader="txt-s txt-bold txt-truncate link link--gray py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+  <AccordionItem
+    active={false}
+    body="Third body"
+    disabled={true}
+    header={[Function]}
+    id="three"
+    key="three"
+    onToggle={[Function]}
+    themeItemHeader="txt-s txt-bold txt-truncate link link--gray py6"
+    themeItemHeaderDisabled="color-gray-light"
+  />
+</div>
+`;

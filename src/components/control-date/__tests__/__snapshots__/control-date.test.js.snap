@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlDate All datepicker options renders 1`] = `
+<ControlWrapper
+  id="disabledDate"
+  themeControlWrapper=""
+>
+  <div>
+    <ControlLabel
+      aside="A note on the date format"
+      id="disabledDate"
+      text="Disabled"
+      themeLabel="txt-s txt-bold mb6"
+    />
+    <div
+      className="react-control-date flex-parent"
+    >
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="border--0"
+          className="input someFunSelector"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          id="disabledDate"
+          maxDate={"2017-08-27T15:05:04.000Z"}
+          minDate={"2017-08-12T15:05:04.000Z"}
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="Select a radical date"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={null}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          disabled={false}
+          max="2017-08-27"
+          min="2017-08-12"
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="Select a radical date"
+          type="date"
+          value=""
+        />
+      </div>
+      <span
+        className="px12"
+      >
+        to
+      </span>
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="border--0"
+          className="input someFunSelector"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          maxDate={"2017-08-27T15:05:04.000Z"}
+          minDate={"2017-08-12T15:05:04.000Z"}
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="Select a radical end date"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={null}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          disabled={false}
+          max="2017-08-27"
+          min="2017-08-12"
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="Select a radical end date"
+          type="date"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlDate Restricted Date range renders 1`] = `
+<ControlWrapper
+  id="disabledDate"
+  themeControlWrapper=""
+>
+  <div>
+    <ControlLabel
+      id="disabledDate"
+      text="Disabled"
+      themeLabel="txt-s txt-bold mb6"
+    />
+    <div
+      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+    >
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="shadow-darken10 border--0 none block-mm"
+          className="input w180 none block-mm"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={true}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          id="disabledDate"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="M/D/YYYY"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={null}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          disabled={true}
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="M/D/YYYY"
+          type="date"
+          value=""
+        />
+      </div>
+      <span
+        className="px12"
+      >
+        to
+      </span>
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="shadow-darken10 border--0 none block-mm"
+          className="input w180 none block-mm"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={true}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="M/D/YYYY"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={null}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          disabled={true}
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="M/D/YYYY"
+          type="date"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlDate disabled datepicker renders 1`] = `
+<ControlWrapper
+  id="disabledDate"
+  themeControlWrapper=""
+>
+  <div>
+    <ControlLabel
+      id="disabledDate"
+      text="Disabled"
+      themeLabel="txt-s txt-bold mb6"
+    />
+    <div
+      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+    >
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="shadow-darken10 border--0 none block-mm"
+          className="input w180 none block-mm"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={true}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          id="disabledDate"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="M/D/YYYY"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={null}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          disabled={true}
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="M/D/YYYY"
+          type="date"
+          value=""
+        />
+      </div>
+      <span
+        className="px12"
+      >
+        to
+      </span>
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="shadow-darken10 border--0 none block-mm"
+          className="input w180 none block-mm"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={true}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="M/D/YYYY"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={null}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          disabled={true}
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="M/D/YYYY"
+          type="date"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlDate double datepicker renders 1`] = `
+<ControlWrapper
+  id="singleDate"
+  themeControlWrapper=""
+>
+  <div>
+    <ControlLabel
+      id="singleDate"
+      text="Single Datepicker"
+      themeLabel="txt-s txt-bold mb6"
+    />
+    <div
+      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+    >
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="shadow-darken10 border--0 none block-mm"
+          className="input w180 none block-mm"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          id="singleDate"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="M/D/YYYY"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={"2017-08-15T15:05:04.000Z"}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={"2017-08-15T15:05:04.000Z"}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="M/D/YYYY"
+          type="date"
+          value="2017-08-15"
+        />
+      </div>
+    </div>
+  </div>
+</ControlWrapper>
+`;
+
+exports[`ControlDate single datepicker renders 1`] = `
+<ControlWrapper
+  id="singleDate"
+  themeControlWrapper=""
+>
+  <div>
+    <ControlLabel
+      id="singleDate"
+      text="Single Datepicker"
+      themeLabel="txt-s txt-bold mb6"
+    />
+    <div
+      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+    >
+      <div
+        className="flex-parent"
+      >
+        <DatePicker
+          allowSameDay={false}
+          calendarClassName="shadow-darken10 border--0 none block-mm"
+          className="input w180 none block-mm"
+          dateFormat="M/D/YYYY"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={true}
+          dropdownMode="scroll"
+          endDate={null}
+          id="singleDate"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onChangeRaw={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          placeholderText="M/D/YYYY"
+          popperModifiers={
+            Object {
+              "preventOverflow": Object {
+                "boundariesElement": "viewport",
+                "enabled": true,
+                "escapeWithReference": true,
+              },
+            }
+          }
+          selected={"2017-08-15T15:05:04.000Z"}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          startDate={"2017-08-15T15:05:04.000Z"}
+          timeIntervals={30}
+          utcOffset={0}
+          withPortal={false}
+        />
+        <input
+          className="input input-s w180 block none-mm"
+          onChange={[Function]}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          placeholder="M/D/YYYY"
+          type="date"
+          value="2017-08-15"
+        />
+      </div>
+    </div>
+  </div>
+</ControlWrapper>
+`;

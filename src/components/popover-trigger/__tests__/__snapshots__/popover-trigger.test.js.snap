@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopoverTrigger default props renders 1`] = `
+<div
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
+>
+  <button
+    className="btn"
+  >
+    Trigger
+  </button>
+</div>
+`;
+
+exports[`PopoverTrigger responds to all interactions renders 1`] = `
+<div
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
+>
+  <button
+    className="btn"
+  >
+    Trigger
+  </button>
+</div>
+`;

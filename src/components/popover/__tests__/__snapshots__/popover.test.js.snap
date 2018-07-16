@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover all props renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={false}
+  containWithinViewport={false}
+  getAnchorElement={[Function]}
+  getContainingElement={[Function]}
+  hasPointer={false}
+  hideWhenAnchorIsOffscreen={true}
+  mounted={true}
+  onElement={[Function]}
+  placement="left"
+  pointerColor="red"
+>
+  <div
+    aria-label="Title that is accessible"
+    className="px12 py12"
+    data-popover-id={2}
+    data-test={true}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "red",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover basic renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={true}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#fff"
+>
+  <div
+    className="round py6 px12 shadow-darken25"
+    data-popover-id={1}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#fff",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Force push the current branch to documentation (remote hey-pages)
+
+branch=`git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,'`
+
+git push origin $branch:hey-pages --force

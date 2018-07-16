@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyButton all props changes state on click 1`] = `
+<div
+  className="inline-block"
+  data-clipboard-text="more copiable text"
+>
+  <button
+    className="btn px12 py12 btn--red"
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="check"
+    />
+    <Popover
+      accessibleTitle={null}
+      alignment="center"
+      allowPlacementAxisChange={true}
+      backgroundColor="#fff"
+      clickOutsideCloses={true}
+      containWithinViewport={true}
+      escapeCloses={true}
+      getAnchorElement={[Function]}
+      hasPointer={true}
+      hideWhenAnchorIsOffscreen={true}
+      placement="top"
+      receiveFocus={true}
+      themePopover="round py6 px12 shadow-darken25"
+      trapFocus={false}
+    >
+      <span
+        className="block txt-s"
+      >
+        Copied!
+      </span>
+    </Popover>
+  </button>
+</div>
+`;
+
+exports[`CopyButton all props changes state on click 2`] = `
+<div
+  className="inline-block"
+  data-clipboard-text="more copiable text"
+>
+  <button
+    className="btn px12 py12 btn--red"
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="check"
+    />
+    <Popover
+      accessibleTitle={null}
+      alignment="center"
+      allowPlacementAxisChange={true}
+      backgroundColor="#fff"
+      clickOutsideCloses={true}
+      containWithinViewport={true}
+      escapeCloses={true}
+      getAnchorElement={[Function]}
+      hasPointer={true}
+      hideWhenAnchorIsOffscreen={true}
+      placement="top"
+      receiveFocus={true}
+      themePopover="round py6 px12 shadow-darken25"
+      trapFocus={false}
+    >
+      <span
+        className="block txt-s"
+      >
+        Copied!
+      </span>
+    </Popover>
+  </button>
+</div>
+`;
+
+exports[`CopyButton all props renders 1`] = `
+<div
+  className="inline-block"
+  data-clipboard-text="more copiable text"
+>
+  <IconButton
+    data-test="copy-button"
+    icon="clipboard"
+    onClick={[Function]}
+    themeButton="px12 py12 btn--red"
+    themeIcon="color-yellow"
+    tooltipProps={
+      Object {
+        "content": "Copy",
+        "placement": "bottom",
+        "themeTooltip": "color-gray shadow-darken50",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`CopyButton basic changes state on click 1`] = `
+<div
+  className="inline-block"
+  data-clipboard-text="the text you copy"
+>
+  <button
+    className="btn btn--xs py3 px3 round"
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="check"
+    />
+    <Popover
+      accessibleTitle={null}
+      alignment="center"
+      allowPlacementAxisChange={true}
+      backgroundColor="#fff"
+      clickOutsideCloses={true}
+      containWithinViewport={true}
+      escapeCloses={true}
+      getAnchorElement={[Function]}
+      hasPointer={true}
+      hideWhenAnchorIsOffscreen={true}
+      placement="top"
+      receiveFocus={true}
+      themePopover="round py6 px12 shadow-darken25"
+      trapFocus={false}
+    >
+      <span
+        className="block txt-s"
+      >
+        Copied!
+      </span>
+    </Popover>
+  </button>
+</div>
+`;
+
+exports[`CopyButton basic changes state on click 2`] = `
+<div
+  className="inline-block"
+  data-clipboard-text="the text you copy"
+>
+  <IconButton
+    icon="clipboard"
+    onClick={[Function]}
+    themeButton="btn--xs py3 px3 round"
+    tooltipProps={
+      Object {
+        "content": "Copy",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`CopyButton basic renders 1`] = `
+<div
+  className="inline-block"
+  data-clipboard-text="the text you copy"
+>
+  <IconButton
+    icon="clipboard"
+    onClick={[Function]}
+    themeButton="btn--xs py3 px3 round"
+    tooltipProps={
+      Object {
+        "content": "Copy",
+      }
+    }
+  />
+</div>
+`;

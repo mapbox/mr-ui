@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlToggleGroup all options renders 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper="bg-red-light px12 py12"
+  validationError="oh no!"
+>
+  <fieldset>
+    <ControlLegend
+      aside={
+        <span>
+          Aside text
+        </span>
+      }
+      id="testinput"
+      optional={true}
+      text="All options"
+      themeLegend="color-white"
+    />
+    <div
+      aria-invalid={true}
+      aria-required={false}
+      className="toggle-group round-full bg-red border border--2 border--red"
+      data-test="testinput-input"
+      id="testinput"
+      role="radiogroup"
+    >
+      <label
+        className="toggle-container w-full"
+        key="Toggle value 1"
+      >
+        <input
+          autoFocus={true}
+          checked={true}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 1"
+        />
+        <div
+          className="toggle--white toggle--active-red toggle"
+        >
+          <span>
+            Toggle 1
+          </span>
+        </div>
+      </label>
+      <label
+        className="toggle-container w-full"
+        key="Toggle value 2"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 2"
+        />
+        <div
+          className="toggle--white toggle--active-red toggle"
+        >
+          <span>
+            Toggle 2
+          </span>
+        </div>
+      </label>
+      <label
+        className="toggle-container w-full"
+        key="Toggle value 3"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 3"
+        />
+        <div
+          className="toggle--white toggle--active-red toggle"
+        >
+          <span>
+            Toggle 3
+          </span>
+        </div>
+      </label>
+    </div>
+  </fieldset>
+</ControlWrapper>
+`;
+
+exports[`ControlToggleGroup basic onChange gets called with input id and value 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <fieldset>
+    <ControlLegend
+      id="testinput"
+      optional={false}
+      text="Basic"
+      themeLegend="txt-s txt-bold mb6"
+    />
+    <div
+      aria-required={true}
+      className="toggle-group round-full border border--2 border--blue bg-blue"
+      data-test="testinput-input"
+      id="testinput"
+      role="radiogroup"
+    >
+      <label
+        className="toggle-container "
+        key="Toggle value 1"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 1"
+        />
+        <div
+          className="txt-s py3 toggle--white toggle--active-blue toggle"
+        >
+          Toggle 1
+        </div>
+      </label>
+      <label
+        className="toggle-container "
+        key="Toggle value 2"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 2"
+        />
+        <div
+          className="txt-s py3 toggle--white toggle--active-blue toggle"
+        >
+          Toggle 2
+        </div>
+      </label>
+    </div>
+  </fieldset>
+</ControlWrapper>
+`;
+
+exports[`ControlToggleGroup basic renders 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <fieldset>
+    <ControlLegend
+      id="testinput"
+      optional={false}
+      text="Basic"
+      themeLegend="txt-s txt-bold mb6"
+    />
+    <div
+      aria-required={true}
+      className="toggle-group round-full border border--2 border--blue bg-blue"
+      data-test="testinput-input"
+      id="testinput"
+      role="radiogroup"
+    >
+      <label
+        className="toggle-container "
+        key="Toggle value 1"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 1"
+        />
+        <div
+          className="txt-s py3 toggle--white toggle--active-blue toggle"
+        >
+          Toggle 1
+        </div>
+      </label>
+      <label
+        className="toggle-container "
+        key="Toggle value 2"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 2"
+        />
+        <div
+          className="txt-s py3 toggle--white toggle--active-blue toggle"
+        >
+          Toggle 2
+        </div>
+      </label>
+    </div>
+  </fieldset>
+</ControlWrapper>
+`;
+
+exports[`ControlToggleGroup disabled renders 1`] = `
+<ControlWrapper
+  id="testinput"
+  themeControlWrapper=""
+>
+  <fieldset>
+    <ControlLegend
+      id="testinput"
+      optional={false}
+      text="Disabled"
+      themeLegend="txt-s txt-bold mb6"
+    />
+    <div
+      aria-required={true}
+      className="toggle-group round-full border border--2 border--blue bg-blue"
+      data-test="testinput-input"
+      id="testinput"
+      role="radiogroup"
+    >
+      <label
+        className="toggle-container "
+        key="Toggle value 1"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 1"
+        />
+        <div
+          className="txt-s py3 toggle--white toggle--active-blue toggle"
+        >
+          Toggle 1
+        </div>
+      </label>
+      <label
+        className="toggle-container "
+        key="Toggle value 2"
+      >
+        <input
+          autoFocus={false}
+          checked={false}
+          disabled={true}
+          name="testinput"
+          onChange={[Function]}
+          type="radio"
+          value="Toggle value 2"
+        />
+        <div
+          className="txt-s py3 toggle--white toggle--active-blue toggle"
+        >
+          Toggle 2
+        </div>
+      </label>
+    </div>
+  </fieldset>
+</ControlWrapper>
+`;
