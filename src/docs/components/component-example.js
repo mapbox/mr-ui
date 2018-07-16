@@ -13,7 +13,7 @@ export default class ComponentExample extends React.Component {
   renderCode() {
     if (!this.state.showCode) return null;
     return (
-      <pre className="mt6">
+      <pre className="mt6 language-js">
         <code dangerouslySetInnerHTML={{ __html: this.props.code }} />
       </pre>
     );

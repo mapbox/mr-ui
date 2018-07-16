@@ -12,7 +12,7 @@ const prettier = require('prettier');
 const fs = require('fs');
 const pascalCase = require('pascal-case');
 const reactDocgen = require('react-docgen');
-const mapboxHighlighter = require('@mapbox/mapbox-highlighter');
+const Prism = require('prismjs');
 const jsxtremeMarkdown = require('@mapbox/jsxtreme-markdown');
 
 const PACKAGES_DIRECTORY_URL = `https://github.com/mapbox/mr-ui/blob/master/packages`;
@@ -31,9 +31,16 @@ function processExampleFile(filename) {
       .replace(`from '../src/`, `from '@mapbox/mr-ui/`)
       .replace(/\/\*[\s\S]*?\*\/[\s]*/, '')
       .trim();
+
+    const highlightedCode = Prism.highlight(
+      code,
+      Prism.languages.javascript,
+      'javascript'
+    );
+
     return `{
       exampleModule: require('${filename}'),
-      code: \`${mapboxHighlighter.highlight(code, 'js')}\`,
+      code: \`${highlightedCode}\`,
       description: ${jsxtremeMarkdown.toJsx(descriptionMatch[1].trim())}
     }`;
   });
