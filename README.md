@@ -35,7 +35,7 @@ See [the utils documentation](./src/components/utils/README.md).
 
 Here are some commands you'll probably want to use:
 
-```
+```bash
 # Start the test-cases app.
 npm start
 
@@ -51,6 +51,8 @@ npm test
 
 ### Publishing
 
-```
-npm run build-and-publish
-```
+The `build` command creates a `pkg/` directory that contains the code we want to publish, organized the way we want it. So `pkg/` is the directory that we publish. `pkg/package.json` is a clone of `package.json` but with `private: true` removed.
+
+- Update all version numbers and create a Git tag.
+- Build the `pkg/` directory: `npm run build`.
+- `cd` into the `pkg/` directory and `npm run publish` from there.
