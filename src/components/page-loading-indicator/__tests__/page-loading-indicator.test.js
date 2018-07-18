@@ -45,7 +45,7 @@ describe('pageLoadingIndictor.end', () => {
         expect(el.className).not.toMatch(
           /[\b]?page-loading-indicator-leave[\b]?/
         );
-        return delay(299);
+        return delay(400);
       })
       .then(() => {
         expect(el.className).toMatch(/[\b]?page-loading-indicator[\b]?/);
@@ -64,7 +64,7 @@ describe('pageLoadingIndictor.end', () => {
     return delay(10)
       .then(() => {
         expect(el.parentElement).toBeTruthy();
-        return delay(299);
+        return delay(400);
       })
       .then(() => {
         expect(el.parentElement).toBeTruthy();
