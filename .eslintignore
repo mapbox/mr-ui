@@ -1,8 +1,0 @@
-*.log
-coverage
-.DS_Store
-_batfish*
-src/docs/data
-pkg
-src/test-cases-app/component-index.js
-dist
