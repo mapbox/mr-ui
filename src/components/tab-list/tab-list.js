@@ -117,7 +117,7 @@ export default class TabList extends React.PureComponent {
             className={renderedItemClasses}
             disabled={item.disabled}
             data-test={item.id}
-            onClick={this.onChange}
+            onClick={() => this.onChange(item.id)}
           >
             {item.label}
           </button>
