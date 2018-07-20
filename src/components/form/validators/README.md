@@ -157,7 +157,7 @@ Standard validator function signature.
 
 You must provide either a partial or full error message to show the user.
 Typically, you can use a partial message.
-It will be plugged into the sentence ``Please enter a/an ${partialMessage}``.
+It will be plugged into the sentence `Please enter a/an ${partialMessage}`.
 Provide a full  message if you need special language or face one of the situations where a computer might pick the wrong indefinite article, e.g. "Please enter an username".
 
 ```

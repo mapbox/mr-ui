@@ -10,10 +10,10 @@ module.exports = {
     eslintConfig: {
       rules: {
         'prefer-const': 'off',
-        '@mapbox/stickler/react/no-deprecated': 'off',
-        '@mapbox/stickler/react/no-string-refs': 'off',
-        '@mapbox/stickler/react/no-access-state-in-setstate': 'off',
-        '@mapbox/stickler/react/jsx-boolean-value': 'off'
+        'react/no-deprecated': 'off',
+        'react/no-string-refs': 'off',
+        'react/no-access-state-in-setstate': 'off',
+        'react/jsx-boolean-value': 'off'
       }
     },
 
@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         files: ['*.js', 'scripts/**'],
-        node: true,
+        node: 6,
         flow: false,
         react: false,
         sourceType: 'cjs'
