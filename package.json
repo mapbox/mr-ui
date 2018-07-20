@@ -1,14 +1,15 @@
 {
+  "private": true,
   "name": "@mapbox/mr-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
   "scripts": {
     "build-component-index": "rtk-index ./src/components ./src/test-cases-app/component-index.js",
     "prestart": "npm run build-component-index",
-    "start": "budo ./src/test-cases-app/test-cases-app.js --dir ./src/test-cases-app --live --debug --pushstate -- -t babelify",
-    "start-docs": "scripts/build-docs-data.js && batfish --config batfish-docs.config.js start",
-    "build-docs": "scripts/build-docs-data.js && batfish --config batfish-docs.config.js build",
+    "start": "scripts/build-module-indexes.js && budo ./src/test-cases-app/test-cases-app.js --dir ./src/test-cases-app --live --debug --pushstate -- -t babelify",
+    "start-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && batfish --config batfish-docs.config.js start",
+    "build-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && batfish --config batfish-docs.config.js build",
     "serve-static-docs": "batfish --config batfish-docs.config.js serve-static",
     "deploy-docs": "npm run build-docs && bin/deploy-docs",
     "test-jest": "jest",
@@ -17,7 +18,7 @@
     "pretest": "npm run lint",
     "test": "jest",
     "precommit": "lint-staged",
-    "build": "scripts/build-package.js"
+    "build": "scripts/build-module-indexes.js && scripts/build-package.js"
   },
   "repository": {
     "type": "git",
