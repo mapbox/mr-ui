@@ -80,7 +80,6 @@ _styles ->
   foo: 'bar'
 }
 */
-
 ```
 
 #### setStyles
@@ -96,7 +95,6 @@ _styles ->
   foo: 'bar'
 }
 */
-
 ```
 
 ### Example usage
@@ -135,5 +133,4 @@ class Example extends React.Component {
   </div>
 </div>
 */
-
 ```
