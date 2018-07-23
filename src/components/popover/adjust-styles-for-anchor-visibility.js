@@ -76,7 +76,7 @@ export default function adjustStylesForAnchorVisibility(
     Math.round(context.anchorVerticalCenter - options.pointerBase / 2) - 2;
   const offsetFromScrollableParentBottomEdge =
     Math.round(context.anchorVerticalCenter + options.pointerBase / 2) + 2;
-  const onLeftOrRide =
+  const onLeftOrRight =
     placement === PLACEMENT_LEFT || placement === PLACEMENT_RIGHT;
 
   if (
@@ -84,9 +84,9 @@ export default function adjustStylesForAnchorVisibility(
       scrollableParentTop > context.anchorAbsoluteTop) ||
     (placement === PLACEMENT_BOTTOM &&
       scrollableParentBottom < context.anchorAbsoluteTop) ||
-    (!onLeftOrRide && scrollableParentBottom < context.anchorAbsoluteTop) ||
-    (!onLeftOrRide && scrollableParentTop > context.anchorAbsoluteBottom) ||
-    (onLeftOrRide &&
+    (!onLeftOrRight && scrollableParentBottom < context.anchorAbsoluteTop) ||
+    (!onLeftOrRight && scrollableParentTop > context.anchorAbsoluteBottom) ||
+    (onLeftOrRight &&
       // Offset the allowed top/bottom to prevent the pointer triangle from appearing
       // beyond the border curves
       (scrollableParentTop + options.pointerBase / 2 + 1 >
