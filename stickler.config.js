@@ -1,11 +1,10 @@
 'use strict';
 
 module.exports = {
-  ignore: ['_batfish*/**', 'pkg/**'],
   jsLint: {
     react: true,
     browser: true,
-    sourceType: 'esm',
+    moduleType: 'esm',
     flow: true,
     eslintConfig: {
       rules: {
@@ -27,7 +26,7 @@ module.exports = {
         node: 6,
         flow: false,
         react: false,
-        sourceType: 'cjs'
+        moduleType: 'cjs'
       }
     ]
   }
