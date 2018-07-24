@@ -1,5 +1,7 @@
 # @mapbox/mr-ui
 
+![mr-ui logo](https://github.com/mapbox/mr-ui/raw/master/logo/mr-ui.gif)
+
 [![Build Status](https://travis-ci.com/mapbox/mr-ui.svg?token=FB2dZNVWaGo68KZnwz9M&branch=master)](https://travis-ci.com/mapbox/mr-ui)
 
 Pronounced "Mister UI". **M**apbox **R**eact **UI** components.
