@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.com/mapbox/mr-ui.svg?token=FB2dZNVWaGo68KZnwz9M&branch=master)](https://travis-ci.com/mapbox/mr-ui)
 
-Pronounced "Mister UI". **M**apbox **R**eact **UI** components.
+Pronounced `'mis-tər yü-'ī`. **M**apbox **R**eact **UI** components.
 
 UI components for Mapbox projects.
 
