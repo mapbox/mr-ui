@@ -16,8 +16,18 @@ export default class Sidebar extends React.Component {
       );
     });
     return (
-      <div className="pt24 txt-s">
-        <ul>{componentLinks}</ul>
+      <div>
+        <a
+          className="link"
+          href="https://github.com/mapbox/mr-ui"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h1 className="txt-bold txt-h3 txt-mono">Mr UI</h1>
+        </a>
+        <div className="pt12 txt-s">
+          <ul>{componentLinks}</ul>
+        </div>
       </div>
     );
   }

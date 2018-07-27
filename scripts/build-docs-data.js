@@ -10,12 +10,13 @@ const del = require('del');
 const pify = require('pify');
 const prettier = require('prettier');
 const fs = require('fs');
-const pascalCase = require('pascal-case');
 const reactDocgen = require('react-docgen');
-const Prism = require('prismjs');
 const jsxtremeMarkdown = require('@mapbox/jsxtreme-markdown');
+const Prism = require('prismjs');
+const loadLanguages = require('prismjs/components/');
 
-const PACKAGES_DIRECTORY_URL = `https://github.com/mapbox/mr-ui/blob/master/packages`;
+loadLanguages(['jsx']);
+
 const dataDir = path.resolve(__dirname, '../src/docs/data');
 const srcDir = path.resolve(__dirname, '../src/components');
 const dataFilename = path.resolve(dataDir, 'components.js');
@@ -32,11 +33,7 @@ function processExampleFile(filename) {
       .replace(/\/\*[\s\S]*?\*\/[\s]*/, '')
       .trim();
 
-    const highlightedCode = Prism.highlight(
-      code,
-      Prism.languages.javascript,
-      'javascript'
-    );
+    const highlightedCode = Prism.highlight(code, Prism.languages.jsx, 'jsx');
 
     return `{
       exampleModule: require('${filename}'),
@@ -57,14 +54,14 @@ function processProps(props) {
   let objectBody = '';
   Object.keys(props).forEach(prop => {
     const propData = props[prop];
+    const renderedDescription =
+      jsxtremeMarkdown.toJsx(propData.description || ' ').trim() || '<div />';
     objectBody += `${prop}: {
       type: ${JSON.stringify(propData.type)},
       required: ${propData.required},
       defaultValue: ${propData.defaultValue &&
         JSON.stringify(propData.defaultValue.value)},
-      description: ${jsxtremeMarkdown
-        .toJsx(propData.description || ' ')
-        .trim() || '<div />'}
+      description: ${renderedDescription}
     },`;
   });
   return `{${objectBody}}`;
@@ -73,7 +70,6 @@ function processProps(props) {
 function processComponent(hyphenName) {
   const componentDir = path.join(srcDir, hyphenName);
   const srcFilename = path.join(componentDir, `${hyphenName}.js`);
-  const componentName = pascalCase(hyphenName);
 
   return Promise.all([
     pify(fs.readFile)(srcFilename, 'utf8'),
@@ -81,8 +77,9 @@ function processComponent(hyphenName) {
   ]).then(([code, examples]) => {
     const parsedData = reactDocgen.parse(code);
     return `{
-      name: '${componentName}',
-      sourceCode: '${PACKAGES_DIRECTORY_URL}/${hyphenName}/',
+      name: '${parsedData.displayName}',
+      description: ${jsxtremeMarkdown.toJsx(parsedData.description).trim() ||
+        'null'},
       props: ${processProps(parsedData.props)},
       examples: [${examples.join(',')}]
     }`;

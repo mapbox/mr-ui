@@ -76,35 +76,21 @@ const defaultTheme = `
 // Theme cache, used to prevent the creation of multiple <style> elements with the same content.
 const injectedThemes = [];
 
-/**
- * @param {string} code - Raw (unhighlighted) code. When the user clicks a copy button, this is
- *   what they'll get. If no `highlightedCode` is provided, `code` is displayed.
- * @param {string} [highlightedCode] - The HTML output of running code through a syntax highlighter.
- *   If this is not provided, `code` is displayed, instead.
- *   The default theme CSS assumes the highlighter is [`highlight.js`](https://github.com/isagalaev/highlight.js).
- *   If you are using another highlighter, provide your own theme.
- * @param {Array<Array<number>>} [copyRanges] - Specific line ranges that should be independently
- *   copiable. Each range is a two-value array, consisting of the starting and ending line.
- *   If this is not provided, the entire snippet is copiable.
- * @param {number} [maxHeight] - A maximum height for the snippet. If the code exceeds this height,
- *   the snippet will scroll internally.
- * @param {Function} [onCopy] - A callback that is invoked when the snippet (or a chunk of the snippet)
- *   is copied. If `copyRanges` are provided, the callback is passed the index (0-based) of the
- *   chunk that was copied.
- * @param {string} [highlightThemeCss] - CSS that styles the highlighted code.
- *   The default theme is a [`highlight.js` theme](https://highlightjs.readthedocs.io/en/latest/style-guide.html#defining-a-theme)
- *   theme. It is the dark theme used on mapbox.com's installation flow.
- * @param {number} [characterWidth=7.225] - The width of a character in the theme's monospace font, used for
- *   indentation. If you use a font or font-size different than the default theme, you may need to change this value.
- */
 export default class CodeSnippet extends React.PureComponent {
   static propTypes = {
+    /** Raw (unhighlighted) code. When the user clicks a copy button, this is what they'll get. If no `highlightedCode` is provided, `code` is displayed. */
     code: PropTypes.string.isRequired,
+    /** The HTML output of running code through a syntax highlighter. If this is not provided, `code` is displayed, instead. The default theme CSS assumes the highlighter is [`highlight.js`](https://github.com/isagalaev/highlight.js). If you are using another highlighter, provide your own theme. */
     highlightedCode: PropTypes.string,
+    /** Specific line ranges that should be independently copiable. Each range is a two-value array, consisting of the starting and ending line. If this is not provided, the entire snippet is copiable. */
     copyRanges: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    /** A maximum height for the snippet. If the code exceeds this height, the snippet will scroll internally. */
     maxHeight: PropTypes.number,
+    /** A callback that is invoked when the snippet (or a chunk of the snippet) is copied. If `copyRanges` are provided, the callback is passed the index (0-based) of the chunk that was copied. */
     onCopy: PropTypes.func,
+    /** CSS that styles the highlighted code. The default theme is a [`highlight.js` theme](https://highlightjs.readthedocs.io/en/latest/style-guide.html#defining-a-theme) theme. It is the dark theme used on mapbox.com's installation flow. */
     highlightThemeCss: PropTypes.string,
+    /** The width of a character in the theme's monospace font, used for indentation. If you use a font or font-size different than the default theme, you may need to change this value. */
     characterWidth: PropTypes.number
   };
 
