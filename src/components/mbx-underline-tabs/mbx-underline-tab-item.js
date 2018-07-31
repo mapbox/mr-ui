@@ -13,6 +13,10 @@ class MbxUnderlineTabItem extends React.PureComponent {
     super(props);
 
     this.handleClick = event => {
+      if (props.disabled || props.active) {
+        event.preventDefault();
+        return;
+      }
       props.onClick(props.id, event);
     };
   }
@@ -48,11 +52,10 @@ class MbxUnderlineTabItem extends React.PureComponent {
 
     const itemClasses = classnames(`block relative`, {
       'mb-neg1 mt-neg1': props.overlapBorder,
-      [`color-${props.inactiveColor} color-${
-        props.hoverColor
-      }-on-hover`]: !props.active,
+      [`color-${props.inactiveColor} color-${props.hoverColor}-on-hover`]:
+        !props.active && !props.disabled,
       [`color-${props.activeColor} cursor-default`]: props.active,
-      'color-gray-light': props.disabled
+      'color-gray-light cursor-default': props.disabled
     });
 
     const label = props.label || capitalize(props.id);
@@ -99,12 +102,13 @@ MbxUnderlineTabItem.propTypes = {
   active: PropTypes.bool,
   onClick: PropTypes.func,
   href: PropTypes.string,
-  disabled: PropTypes.string
+  disabled: PropTypes.bool
 };
 
 MbxUnderlineTabItem.defaultProps = {
   size: SIZE_MEDIUM,
-  active: false
+  active: false,
+  disabled: false
 };
 
 export default MbxUnderlineTabItem;

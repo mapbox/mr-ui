@@ -60,7 +60,8 @@ MbxUnderlineTabs.propTypes = {
    * Each item is an object with the following properties:
    * - `id` (required): A string ID.
    * - `label`: Text or React element. If `label` is not provided, `id` will
-   *   be used, with its first letter capitalized.
+   *   be used, with its first letter capitalized. (You should provide your
+   *   own `label` unless your `id`s are single words.)
    * - `href`: A URL. If `href` is provided, the items will be `<a>`s.
    *   If not, the items will be `<button>`s.
    * -`disabled`: Boolean.
@@ -70,7 +71,7 @@ MbxUnderlineTabs.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.node,
       href: PropTypes.string,
-      disabled: PropTypes.string
+      disabled: PropTypes.bool
     })
   ).isRequired,
   /**

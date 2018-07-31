@@ -127,11 +127,11 @@ testCases.defaults = {
   }
 };
 
-testCases.noOverlap = {
-  description: 'no overlap',
+testCases.overlap = {
+  description: 'overlap',
   component: MbxUnderlineTabs,
   props: {
-    overlapBorder: false,
+    overlapBorder: true,
     items: [
       {
         id: 'A',
@@ -251,6 +251,27 @@ testCases.customized = {
     inactiveColor: 'purple',
     hoverColor: 'pink',
     bold: false
+  }
+};
+
+testCases.idLabelsAndDisabledItem = {
+  description: 'ID labels and a disabled item',
+  component: MbxUnderlineTabs,
+  props: {
+    items: [
+      {
+        id: 'ant'
+      },
+      {
+        id: 'bug',
+        disabled: true
+      },
+      {
+        id: 'cat'
+      }
+    ],
+    active: 'cat',
+    onChange: safeSpy()
   }
 };
 
