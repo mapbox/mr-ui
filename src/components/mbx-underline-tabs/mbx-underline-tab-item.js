@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import {
+  SIZE_SMALL,
+  SIZE_MEDIUM,
+  SIZE_LARGE
+} from './mbx-underline-tabs-constants';
+import capitalize from '../utils/capitalize';
 
-const SIZE_SMALL = 'small';
-const SIZE_MEDIUM = 'medium';
-const SIZE_LARGE = 'large';
-
-class MbxUnderlineTabItem extends React.Component {
+class MbxUnderlineTabItem extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.onButtonClick = () => {
-      props.onClick(props.id);
+    this.handleClick = event => {
+      props.onClick(props.id, event);
     };
   }
 
@@ -47,37 +49,39 @@ class MbxUnderlineTabItem extends React.Component {
     const itemClasses = classnames(`block relative`, {
       'mb-neg1 mt-neg1': props.overlapBorder,
       [`color-${props.inactiveColor} color-${
-        props.activeColor
+        props.hoverColor
       }-on-hover`]: !props.active,
-      [`color-${props.activeColor}`]: props.active,
+      [`color-${props.activeColor} cursor-default`]: props.active,
       'color-gray-light': props.disabled
     });
 
+    const label = props.label || capitalize(props.id);
     const content = (
       <div
         className="block relative flex-parent flex-parent--center-cross"
         style={{ height: this.getHeight(props.size) }}
       >
-        {props.label}
+        {label}
         {this.renderBorder()}
       </div>
     );
 
+    const universalProps = {
+      onClick: this.handleClick,
+      className: itemClasses,
+      'data-test': props.id
+    };
+
     if (props.href) {
       return (
-        <a href={props.href} className={itemClasses} data-test={props.id}>
+        <a href={props.href} {...universalProps}>
           {content}
         </a>
       );
     }
 
     return (
-      <button
-        type="button"
-        onClick={this.onButtonClick}
-        className={itemClasses}
-        data-test={props.id}
-      >
+      <button type="button" {...universalProps}>
         {content}
       </button>
     );
@@ -85,16 +89,17 @@ class MbxUnderlineTabItem extends React.Component {
 }
 
 MbxUnderlineTabItem.propTypes = {
-  label: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,
+  inactiveColor: PropTypes.string.isRequired,
+  activeColor: PropTypes.string.isRequired,
+  hoverColor: PropTypes.string.isRequired,
+  overlapBorder: PropTypes.bool.isRequired,
+  label: PropTypes.node,
   size: PropTypes.oneOf([SIZE_SMALL, SIZE_MEDIUM, SIZE_LARGE]),
   active: PropTypes.bool,
   onClick: PropTypes.func,
   href: PropTypes.string,
-  disabled: PropTypes.string,
-  inactiveColor: PropTypes.string.isRequired,
-  activeColor: PropTypes.string.isRequired,
-  overlapBorder: PropTypes.bool.isRequired
+  disabled: PropTypes.string
 };
 
 MbxUnderlineTabItem.defaultProps = {

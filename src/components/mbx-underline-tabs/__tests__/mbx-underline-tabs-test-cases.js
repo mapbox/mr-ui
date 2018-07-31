@@ -40,6 +40,7 @@ class ButtonsDemo extends React.Component {
             active={this.state.active}
             onChange={this.changeActive}
             size={this.props.size}
+            overlapBorder={true}
           />
         </div>
       </div>
@@ -54,6 +55,53 @@ ButtonsDemo.propTypes = {
 testCases.interactive = {
   description: 'interactive',
   element: <ButtonsDemo />
+};
+
+testCases.manyItems = {
+  description: 'many items',
+  component: MbxUnderlineTabs,
+  props: {
+    items: [
+      {
+        id: 'A',
+        label: 'Porcupine'
+      },
+      {
+        id: 'B',
+        label: 'Walrus'
+      },
+      {
+        id: 'C',
+        label: 'Eggplant'
+      },
+      {
+        id: 'D',
+        label: 'Gorilla'
+      },
+      {
+        id: 'E',
+        label: 'Spoon'
+      },
+      {
+        id: 'F',
+        label: 'Horseman'
+      },
+      {
+        id: 'G',
+        label: 'Cloud'
+      },
+      {
+        id: 'H',
+        label: 'Sun'
+      },
+      {
+        id: 'I',
+        label: 'Sand'
+      }
+    ],
+    active: 'C',
+    onChange: safeSpy()
+  }
 };
 
 testCases.defaults = {
@@ -151,8 +199,35 @@ testCases.large = {
   }
 };
 
-testCases.dim = {
-  description: 'dim',
+testCases.largeLinks = {
+  description: 'large links',
+  component: MbxUnderlineTabs,
+  props: {
+    items: [
+      {
+        id: 'A',
+        label: 'Hash',
+        href: '#'
+      },
+      {
+        id: 'B',
+        label: 'Browns',
+        href: '#'
+      },
+      {
+        id: 'C',
+        label: 'Breakfast',
+        href: '#'
+      }
+    ],
+    active: 'A',
+    onChange: safeSpy(),
+    size: 'large'
+  }
+};
+
+testCases.customized = {
+  description: 'customized',
   component: MbxUnderlineTabs,
   props: {
     items: [
@@ -172,8 +247,10 @@ testCases.dim = {
     active: 'A',
     onChange: safeSpy(),
     size: 'small',
-    activeColor: 'gray-dark',
-    inactiveColor: 'gray'
+    activeColor: 'pink',
+    inactiveColor: 'purple',
+    hoverColor: 'pink',
+    bold: false
   }
 };
 
