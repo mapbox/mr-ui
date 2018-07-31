@@ -25,6 +25,7 @@ class MbxUnderlineTabs extends React.PureComponent {
             size={props.size}
             inactiveColor={props.inactiveColor}
             activeColor={props.activeColor}
+            overlapBorder={props.overlapBorder}
             {...item}
           />
         </div>
@@ -34,7 +35,7 @@ class MbxUnderlineTabs extends React.PureComponent {
 
   render() {
     const { props } = this;
-    const containerClasses = classnames('flex-parent', {
+    const containerClasses = classnames('flex-parent txt-nowrap unselectable', {
       'txt-s': props.size === SIZE_MEDIUM,
       'txt-xs': props.size === SIZE_SMALL
     });
@@ -48,19 +49,22 @@ MbxUnderlineTabs.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.node.isRequired,
-      id: PropTypes.string,
-      onClick: PropTypes.func,
+      id: PropTypes.string.isRequired,
       href: PropTypes.string,
       disabled: PropTypes.string
     })
   ).isRequired,
   onChange: PropTypes.func,
   inactiveColor: PropTypes.string,
-  activeColor: PropTypes.string
+  activeColor: PropTypes.string,
+  overlapBorder: PropTypes.bool
 };
 
 MbxUnderlineTabs.defaultProps = {
-  size: SIZE_MEDIUM
+  size: SIZE_MEDIUM,
+  inactiveColor: 'gray-dark',
+  activeColor: 'blue',
+  overlapBorder: true
 };
 
 export default MbxUnderlineTabs;

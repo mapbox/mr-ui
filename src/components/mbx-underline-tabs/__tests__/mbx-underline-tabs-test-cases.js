@@ -56,6 +56,53 @@ testCases.interactive = {
   element: <ButtonsDemo />
 };
 
+testCases.defaults = {
+  description: 'defaults',
+  component: MbxUnderlineTabs,
+  props: {
+    items: [
+      {
+        id: 'A',
+        label: 'Letter A'
+      },
+      {
+        id: 'B',
+        label: 'Letter B'
+      },
+      {
+        id: 'C',
+        label: 'Letter C'
+      }
+    ],
+    active: 'B',
+    onChange: safeSpy()
+  }
+};
+
+testCases.noOverlap = {
+  description: 'no overlap',
+  component: MbxUnderlineTabs,
+  props: {
+    overlapBorder: false,
+    items: [
+      {
+        id: 'A',
+        label: 'Letter A'
+      },
+      {
+        id: 'B',
+        label: 'Letter B'
+      },
+      {
+        id: 'C',
+        label: 'Letter C'
+      }
+    ],
+    active: 'B',
+    onChange: safeSpy()
+  }
+};
+
 testCases.small = {
   description: 'small',
   component: MbxUnderlineTabs,

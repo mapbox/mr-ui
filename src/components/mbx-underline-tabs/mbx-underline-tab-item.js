@@ -15,16 +15,18 @@ class MbxUnderlineTabItem extends React.Component {
     };
   }
 
-  // Each return height is 2px more than the perceived height, to account
-  // for the negative margins on top and bottom.
+  // If we're overlapping a bottom border, each height must be 2px
+  // more than the perceived height to account for the negative
+  // margins on top and bottom.
   getHeight() {
+    const offset = this.props.overlapBorder ? 2 : 0;
     switch (this.props.size) {
       case SIZE_SMALL:
-        return 38;
+        return 36 + offset;
       case SIZE_LARGE:
-        return 50;
+        return 48 + offset;
       default:
-        return 44;
+        return 42 + offset;
     }
   }
 
@@ -42,23 +44,20 @@ class MbxUnderlineTabItem extends React.Component {
   render() {
     const { props } = this;
 
-    const itemClasses = classnames(
-      `mb-neg1 mt-neg1 block align-c color-gray-dark txt-nowrap unselectable relative flex-parent flex-parent--center-cross`,
-      {
-        [`color-${props.inactiveColor} color-${
-          props.activeColor
-        }-on-hover`]: !props.active,
-        [`color-${props.activeColor}`]: props.active,
-        'color-gray-light': props.disabled
-      }
-    );
-
-    const itemStyle = {
-      height: this.getHeight(props.size)
-    };
+    const itemClasses = classnames(`block relative`, {
+      'mb-neg1 mt-neg1': props.overlapBorder,
+      [`color-${props.inactiveColor} color-${
+        props.activeColor
+      }-on-hover`]: !props.active,
+      [`color-${props.activeColor}`]: props.active,
+      'color-gray-light': props.disabled
+    });
 
     const content = (
-      <div>
+      <div
+        className="block relative flex-parent flex-parent--center-cross"
+        style={{ height: this.getHeight(props.size) }}
+      >
         {props.label}
         {this.renderBorder()}
       </div>
@@ -66,12 +65,7 @@ class MbxUnderlineTabItem extends React.Component {
 
     if (props.href) {
       return (
-        <a
-          href={props.href}
-          className={itemClasses}
-          data-test={props.id}
-          style={itemStyle}
-        >
+        <a href={props.href} className={itemClasses} data-test={props.id}>
           {content}
         </a>
       );
@@ -83,7 +77,6 @@ class MbxUnderlineTabItem extends React.Component {
         onClick={this.onButtonClick}
         className={itemClasses}
         data-test={props.id}
-        style={itemStyle}
       >
         {content}
       </button>
@@ -99,15 +92,14 @@ MbxUnderlineTabItem.propTypes = {
   onClick: PropTypes.func,
   href: PropTypes.string,
   disabled: PropTypes.string,
-  inactiveColor: PropTypes.string,
-  activeColor: PropTypes.string
+  inactiveColor: PropTypes.string.isRequired,
+  activeColor: PropTypes.string.isRequired,
+  overlapBorder: PropTypes.bool.isRequired
 };
 
 MbxUnderlineTabItem.defaultProps = {
   size: SIZE_MEDIUM,
-  active: false,
-  inactiveColor: 'gray-dark',
-  activeColor: 'blue'
+  active: false
 };
 
 export default MbxUnderlineTabItem;
