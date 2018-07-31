@@ -28,6 +28,35 @@ describe('PopoverTrigger', () => {
     });
   });
 
+  describe(testCases.focusHoverNotClick.description, () => {
+    beforeEach(() => {
+      testCase = testCases.focusHoverNotClick;
+      wrapper = shallow(testCase.element);
+    });
+
+    test('when focus triggers the popover, click closes it', () => {
+      expect(wrapper.find('Popover').length).toBe(0);
+      wrapper.props().onFocus();
+      wrapper.update();
+      expect(wrapper.find('Popover').length).toBe(1);
+      wrapper.props().onClick();
+      wrapper.update();
+      expect(wrapper.find('Popover').length).toBe(0);
+    });
+
+    test('when hover triggers the popover, click does not close it', () => {
+      expect(wrapper.find('Popover').length).toBe(0);
+      // onTriggerMouseEnter is triggered by a regular DOM event listener,
+      // so we're calling it directly.
+      wrapper.instance().onTriggerMouseEnter();
+      wrapper.update();
+      expect(wrapper.find('Popover').length).toBe(1);
+      wrapper.props().onClick();
+      wrapper.update();
+      expect(wrapper.find('Popover').length).toBe(1);
+    });
+  });
+
   describe(testCases.callbacks.description, () => {
     beforeEach(() => {
       testCase = testCases.callbacks;

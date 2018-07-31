@@ -32,6 +32,20 @@ testCases.respondsToAllInteractions = {
   )
 };
 
+testCases.focusHoverNotClick = {
+  description: 'responds to focus and hover but not click',
+  element: (
+    <PopoverTrigger
+      content={getPopoverContent}
+      respondsToHover={true}
+      respondsToFocus={true}
+      respondsToClick={false}
+    >
+      <button className="btn">Trigger</button>
+    </PopoverTrigger>
+  )
+};
+
 testCases.callbacks = {
   description: 'callbacks when the popover opens and closes',
   component: PopoverTrigger,
