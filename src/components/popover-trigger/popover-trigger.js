@@ -125,10 +125,19 @@ export default class PopoverTrigger extends React.Component {
     );
   };
 
-  // A trigger interaction always takes precedence over hover or focus interactions.
-  // If the popover is already open by hover or focus, a click will change its
-  // priorities, so it stays open even if you mouseleave or blur
   onAnyClick = event => {
+    // If the trigger responds to focus but not click and you *first*
+    // focus *then* click, that click closes the popover instead of
+    // leaving it open even when the mouse moves away.
+    if (
+      !this.props.respondsToClick &&
+      this.state.visible &&
+      this.state.activeTriggerType === TRIGGER_FOCUS
+    ) {
+      this.hide();
+      return;
+    }
+
     if (
       !this.hoverIsBlocked &&
       (this.props.disabled || !this.props.respondsToClick)
@@ -136,6 +145,9 @@ export default class PopoverTrigger extends React.Component {
       return;
     }
 
+    // A trigger click always takes precedence over hover or focus interactions.
+    // If the popover is already open by hover or focus, a click will change its
+    // priorities, so it stays open even if you mouseleave or blur
     if (
       this.state.visible &&
       this.state.activeTriggerType === TRIGGER_CLICK &&
