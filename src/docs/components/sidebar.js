@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from '../../components/icon';
 import components from '../data/components'; // eslint-disable-line
 
 export default class Sidebar extends React.Component {
@@ -17,13 +18,17 @@ export default class Sidebar extends React.Component {
     });
     return (
       <div>
+        <h1 className="txt-bold txt-h3 txt-mono">Mr UI</h1>
         <a
-          className="link"
+          className="flex-parent flex-parent--center-cross txt-s link"
           href="https://github.com/mapbox/mr-ui"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h1 className="txt-bold txt-h3 txt-mono">Mr UI</h1>
+          <span className="flex-child mr6">
+            <Icon name="github" />
+          </span>
+          <span className="flex-child">View on GitHub</span>
         </a>
         <div className="pt12 txt-s">
           <ul>{componentLinks}</ul>
