@@ -107,6 +107,15 @@ describe(testCases.idLabelsAndDisabledItem.description, () => {
   test('renders as expected', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  test('clicking a disabled item does not trigger change and cancels the event', () => {
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+    wrapper.find({ 'data-test': 'bug' }).prop('onClick')(mockEvent);
+    expect(testCase.props.onChange).toHaveBeenCalledTimes(0);
+    expect(mockEvent.preventDefault).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe(testCases.largeLinksIcons.description, () => {

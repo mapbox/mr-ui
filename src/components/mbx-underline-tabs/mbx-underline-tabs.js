@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import MbxUnderlineTabItem from './mbx-underline-tab-item';
-import {
-  SIZE_SMALL,
-  SIZE_MEDIUM,
-  SIZE_LARGE
-} from './mbx-underline-tabs-constants';
+import { SIZE_SMALL, SIZE_MEDIUM } from './mbx-underline-tabs-constants';
 
 /**
  * For navigation between pages or sections.
@@ -20,7 +16,6 @@ class MbxUnderlineTabs extends React.Component {
 
     const small = props.size === SIZE_SMALL;
     const medium = props.size === SIZE_MEDIUM;
-    const large = props.size === SIZE_LARGE;
 
     const containerClasses = classnames('flex-parent txt-nowrap unselectable', {
       'txt-bold': props.bold,
@@ -32,8 +27,7 @@ class MbxUnderlineTabs extends React.Component {
       const first = index === 0;
       const layoutClasses = classnames('flex-child', {
         ml12: !first && small,
-        'ml24 ml36-mxl': !first && medium,
-        ml24: !first && large
+        'ml24 ml36-mxl': !first && !small
       });
       return (
         <li key={item.id} className={layoutClasses}>
@@ -64,7 +58,7 @@ MbxUnderlineTabs.propTypes = {
    *   own `label` unless your `id`s are single words.)
    * - `href`: A URL. If `href` is provided, the items will be `<a>`s.
    *   If not, the items will be `<button>`s.
-   * -`disabled`: Boolean.
+   * - `disabled`: Boolean.
    */
   items: PropTypes.arrayOf(
     PropTypes.shape({

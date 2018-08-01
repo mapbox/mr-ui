@@ -16,6 +16,11 @@ const items = [
   {
     label: 'Dinner',
     id: 'dr'
+  },
+  {
+    label: 'Link here',
+    id: 'link',
+    href: '#mbx-underline-tabs-a'
   }
 ];
 
@@ -30,7 +35,7 @@ export default class Example extends React.Component {
 
   render() {
     return (
-      <div className="border-b border--gray-light">
+      <div id="mbx-underline-tabs-a" className="border-b border--gray-light">
         <MbxUnderlineTabs
           items={items}
           active={this.state.active}

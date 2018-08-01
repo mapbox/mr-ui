@@ -298,7 +298,7 @@ exports[`large links with icons renders as expected 1`] = `
     </a>
   </li>
   <li
-    className="flex-child ml24"
+    className="flex-child ml24 ml36-mxl"
     key="B"
   >
     <a
@@ -324,7 +324,7 @@ exports[`large links with icons renders as expected 1`] = `
     </a>
   </li>
   <li
-    className="flex-child ml24"
+    className="flex-child ml24 ml36-mxl"
     key="C"
   >
     <a
@@ -383,7 +383,7 @@ exports[`large renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24"
+    className="flex-child ml24 ml36-mxl"
     key="B"
   >
     <button
@@ -409,7 +409,7 @@ exports[`large renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24"
+    className="flex-child ml24 ml36-mxl"
     key="C"
   >
     <button
