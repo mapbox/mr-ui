@@ -11,29 +11,59 @@ export default class ComponentExample extends React.Component {
   };
 
   renderCode() {
-    if (!this.state.showCode) return null;
+    if (!this.state.showCode) {
+      return null;
+    }
     return (
-      <pre className="mt6 language-js">
+      <pre className="my0 round-tl pre language-jsx">
         <code dangerouslySetInnerHTML={{ __html: this.props.code }} />
       </pre>
     );
   }
 
   render() {
-    const { props } = this;
+    const { props, state } = this;
     return (
       <div>
-        <div className="mb6 prose">{props.description}</div>
-        <div className="border round border--gray-light border--dash">
-          {React.createElement(props.exampleModule.default)}
+        <div className="flex-parent flex-parent--end-cross">
+          <div className="flex-child flex-child--grow pb6">
+            {props.description}
+          </div>
+          <div className="flex-child flex-child--no-shrink w120">
+            <div className="flex-parent flex-parent--end-main">
+              <div className="flex-child">
+                <ToggleCodeButton
+                  onClick={this.toggleCode}
+                  codeIsVisible={state.showCode}
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mt6">
-          <button className="btn btn--s" onClick={this.toggleCode}>
-            Toggle code
-          </button>
-          {this.renderCode()}
+        {this.renderCode()}
+        <div className="border border--gray-light px24 py24">
+          {React.createElement(props.exampleModule.default)}
         </div>
       </div>
     );
   }
+}
+
+function ToggleCodeButton(props) {
+  const text = props.codeIsVisible ? 'Hide code' : 'Show code';
+  return (
+    <button
+      className="block btn btn--s btn--gray unround-b round-t"
+      onClick={props.onClick}
+    >
+      <span className="flex-parent flex-parent--center-cross">
+        <span className="flex-child">
+          <svg className="icon">
+            <use xlinkHref="#icon-code" />
+          </svg>
+        </span>
+        <span className="ml6 flex-child">{text}</span>
+      </span>
+    </button>
+  );
 }

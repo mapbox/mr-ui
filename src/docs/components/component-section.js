@@ -6,40 +6,23 @@ export default class ComponentSection extends React.Component {
     const { data } = this.props;
     if (!data) return null;
 
-    const propEls = Object.keys(data.props).map(prop => {
-      const propData = data.props[prop];
-      const required = !propData.required ? null : (
-        <span className="txt-bold">Required</span>
-      );
-      let defaultValue = null;
-      if (propData.defaultValue !== undefined) {
-        const defaultDisplay = !/\n/.test(propData.defaultValue) ? (
-          <div className="txt-code inline">{propData.defaultValue}</div>
-        ) : (
-          <div className="pre">{propData.defaultValue}</div>
-        );
-        defaultValue = <div className="inline">Default: {defaultDisplay}</div>;
-      }
-      const description = !propData.description ? null : (
-        <div className="ml24 prose">{propData.description}</div>
-      );
-      return (
-        <div key={prop} className="my12">
-          <span className="txt-bold mr12">{prop}</span>
-          <span className="txt-code mr12">{propData.type.name}</span>
-          {required}
-          {defaultValue}
-          {description}
-        </div>
-      );
+    const propRows = sortedProps(data.props).map(propData => {
+      return <PropRow key={propData.name} {...propData} />;
     });
 
     return (
       <div className="mt24 mb12">
-        <h3 className="txt-h4 txt-bold border-b border--gray-light pb6">
-          Props
-        </h3>
-        {propEls}
+        <h3 className="txt-h4 txt-bold mb12">Props</h3>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>{propRows}</tbody>
+        </table>
       </div>
     );
   }
@@ -58,9 +41,7 @@ export default class ComponentSection extends React.Component {
 
     return (
       <div className="mt24 mb12">
-        <h3 className="txt-h4 txt-bold border-b border--gray-light pb6">
-          Examples
-        </h3>
+        <h3 className="txt-h4 txt-bold pb6">Examples</h3>
         {exampleEls}
       </div>
     );
@@ -75,24 +56,85 @@ export default class ComponentSection extends React.Component {
 
     const slug = data.name.toLowerCase();
 
+    // Top padding gives us the whitespace we want with hash links.
     return (
-      <section className="mb60 mt12">
-        <h2 id={slug} className="txt-h3 txt-code">
-          <a href={`#${slug}`} className="color-blue-on-hover">
-            {data.name}
-          </a>
-        </h2>
-        <div className="mt6 mb12 txt-s color-gray">
-          <span className="ml24">
-            <a href={data.sourceCode} className="link">
-              See source code
+      <section id={slug} className="pt24">
+        <div>
+          <div className="inline-block">
+            <a href={`#${slug}`} className="color-blue-on-hover">
+              <h2 className="txt-fancy txt-h3">{data.name}</h2>
             </a>
-          </span>
+          </div>
         </div>
+        <div className="mt6 mb12 txt-s color-gray" />
         {description}
-        {data.props && this.renderProps()}
         {this.renderAllExamples()}
+        {data.props && this.renderProps()}
       </section>
     );
   }
+}
+
+function sortedProps(propsData) {
+  return Object.keys(propsData)
+    .reduce((memo, key) => {
+      memo.push(Object.assign({ name: key }, propsData[key]));
+      return memo;
+    }, [])
+    .sort((a, b) => {
+      if (a.required && !b.required) return -1;
+      if (!a.required && b.required) return 1;
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+}
+
+function PropRow(props) {
+  const required = !props.required ? null : (
+    <span className="txt-xs txt-mono ml6 bg-purple-faint color-purple px6 py3 round">
+      REQUIRED
+    </span>
+  );
+
+  return (
+    <tr>
+      <td className="txt-mono txt-bold">
+        {props.name} {required}
+      </td>
+      <td className="txt-mono mx12">{props.type.name}</td>
+      <td>
+        <div className="prose">{props.description}</div>
+        <LabeledDefaultValue value={props.defaultValue} />
+      </td>
+    </tr>
+  );
+}
+
+function LabeledDefaultValue(props) {
+  if (!props.value) {
+    return null;
+  }
+
+  return (
+    <div className="mt12 flex-parent txt-s">
+      <div className="flex-child flex-child--no-shrink color-gray">
+        Default value:
+      </div>
+      <div className="ml6 flex-child flex-child--grow">
+        <DefaultValueDisplay value={props.value} />
+      </div>
+    </div>
+  );
+}
+
+function DefaultValueDisplay(props) {
+  if (/\n/.test(props.value)) {
+    return (
+      <pre className="pre">
+        <code>{props.value}</code>
+      </pre>
+    );
+  }
+  return <div className="inline-block txt-code">{props.value}</div>;
 }
