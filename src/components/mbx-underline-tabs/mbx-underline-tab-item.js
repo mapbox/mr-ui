@@ -46,7 +46,7 @@ class MbxUnderlineTabItem extends React.PureComponent {
     const borderClasses = classnames('absolute bottom left right border-b', {
       'border-b--2': props.size !== SIZE_SMALL
     });
-    return <div className={borderClasses} />;
+    return <span className={borderClasses} />;
   }
 
   render() {
@@ -62,13 +62,13 @@ class MbxUnderlineTabItem extends React.PureComponent {
 
     const label = props.label || capitalize(props.id);
     const content = (
-      <div
+      <span
         className="block relative flex-parent flex-parent--center-cross"
         style={{ height: this.getHeight(props.size) }}
       >
-        {label}
+        <span className="flex-child">{label}</span>
         {this.renderBorder()}
-      </div>
+      </span>
     );
 
     const universalProps = {

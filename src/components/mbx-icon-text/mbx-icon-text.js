@@ -43,7 +43,7 @@ class MbxIconText extends React.Component {
 
 MbxIconText.propTypes = {
   /**
-   * The text. A string is recommended, but you can put an element in here if you think it's right.
+   * The text. A string is recommended, but you can put an element in here if you think it's right. If you do, it should be inline-level, using `<span>`s instead of `<div>`s.
    */
   children: PropTypes.node.isRequired,
   /**
