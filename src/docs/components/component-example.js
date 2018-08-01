@@ -26,7 +26,7 @@ export default class ComponentExample extends React.Component {
     return (
       <div>
         <div className="flex-parent flex-parent--end-cross">
-          <div className="flex-child flex-child--grow pb6">
+          <div className="flex-child flex-child--grow pb6 prose">
             {props.description}
           </div>
           <div className="flex-child flex-child--no-shrink w120">
