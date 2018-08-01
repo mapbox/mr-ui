@@ -11,8 +11,8 @@ import {
 /**
  * For navigation between pages or sections.
  *
- * Items will be `<button>`s or `<a>`s, depending on whether they have
- * `href` props or not.
+ * Items will be `<button>`s or `<a>`s, depending on whether they
+ * have `href` props or not.
  */
 class MbxUnderlineTabs extends React.Component {
   render() {

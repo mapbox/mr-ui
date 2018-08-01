@@ -33,7 +33,7 @@ export default class ComponentSection extends React.Component {
 
     const exampleEls = data.examples.map((example, i) => {
       return (
-        <div key={i} className="my12">
+        <div key={i} className="my24">
           <ComponentExample {...example} />
         </div>
       );
@@ -99,7 +99,7 @@ function PropRow(props) {
 
   return (
     <tr>
-      <td className="txt-mono txt-bold">
+      <td className="txt-mono txt-bold txt-nowrap">
         {props.name} {required}
       </td>
       <td className="txt-mono mx12">{props.type.name}</td>
