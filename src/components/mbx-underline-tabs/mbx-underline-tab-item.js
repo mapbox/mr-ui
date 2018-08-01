@@ -11,14 +11,16 @@ import capitalize from '../utils/capitalize';
 class MbxUnderlineTabItem extends React.PureComponent {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    this.handleClick = event => {
-      if (props.disabled || props.active) {
-        event.preventDefault();
-        return;
-      }
-      props.onClick(props.id, event);
-    };
+  handleClick(event) {
+    const { props } = this;
+    if (props.disabled || props.active) {
+      event.preventDefault();
+      return;
+    }
+    props.onClick(props.id, event);
   }
 
   // If we're overlapping a bottom border, each height must be 2px

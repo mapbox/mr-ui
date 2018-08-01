@@ -11,7 +11,7 @@ import {
 /**
  * For navigation between pages or sections.
  *
- * Items can be `<a>`s or `<button>`s, depending on whether they have
+ * Items will be `<button>`s or `<a>`s, depending on whether they have
  * `href` props or not.
  */
 class MbxUnderlineTabs extends React.Component {
@@ -75,7 +75,8 @@ MbxUnderlineTabs.propTypes = {
     })
   ).isRequired,
   /**
-   * The ID of the active item. Value must correspond with an `id` property in the `items` array.
+   * The ID of the active item. Value must correspond with an `id` property
+   * in the `items` array.
    */
   active: PropTypes.string.isRequired,
   /**
@@ -84,13 +85,14 @@ MbxUnderlineTabs.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * Three sizes: "small", "medium", or "large"
+   * Three sizes: "small", "medium", or "large".
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    * If `true`, the element will extend down one pixel so the underline beneath
    * the active item overlaps the bottom border of a container.
-   * **You must provide your own bottom border.**
+   * **You must provide your own bottom border,** by setting it on a container
+   * element.
    */
   overlapBorder: PropTypes.bool,
   /** The Assembly color of inactive items. */

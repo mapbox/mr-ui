@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MbxIconText from '../../mbx-icon-text';
 import MbxUnderlineTabs from '../mbx-underline-tabs';
 import safeSpy from '../../../test-utils/safe-spy';
 
 const testCases = {};
 
-class ButtonsDemo extends React.Component {
+class InteractiveDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,13 +49,13 @@ class ButtonsDemo extends React.Component {
   }
 }
 
-ButtonsDemo.propTypes = {
+InteractiveDemo.propTypes = {
   size: PropTypes.string
 };
 
 testCases.interactive = {
   description: 'interactive',
-  element: <ButtonsDemo />
+  element: <InteractiveDemo />
 };
 
 testCases.manyItems = {
@@ -199,24 +200,24 @@ testCases.large = {
   }
 };
 
-testCases.largeLinks = {
-  description: 'large links',
+testCases.largeLinksIcons = {
+  description: 'large links with icons',
   component: MbxUnderlineTabs,
   props: {
     items: [
       {
         id: 'A',
-        label: 'Hash',
+        label: <MbxIconText iconBefore="floppy">Disk</MbxIconText>,
         href: '#'
       },
       {
         id: 'B',
-        label: 'Browns',
+        label: <MbxIconText iconBefore="alert">Alert</MbxIconText>,
         href: '#'
       },
       {
         id: 'C',
-        label: 'Breakfast',
+        label: <MbxIconText iconBefore="book">Book</MbxIconText>,
         href: '#'
       }
     ],
