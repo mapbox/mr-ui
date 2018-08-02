@@ -34,11 +34,14 @@ function processExampleFile(filename) {
       .trim();
 
     const highlightedCode = Prism.highlight(code, Prism.languages.jsx, 'jsx');
+    const renderedDescription = encodeJsx(
+      jsxtremeMarkdown.toJsx(descriptionMatch[1].trim())
+    );
 
     return `{
       exampleModule: require('${filename}'),
-      code: \`${highlightedCode}\`,
-      description: ${jsxtremeMarkdown.toJsx(descriptionMatch[1].trim())}
+      code: \`${encodeJsx(highlightedCode)}\`,
+      description: ${renderedDescription}
     }`;
   });
 }
@@ -54,8 +57,9 @@ function processProps(props) {
   let objectBody = '';
   Object.keys(props).forEach(prop => {
     const propData = props[prop];
-    const renderedDescription =
-      jsxtremeMarkdown.toJsx(propData.description || ' ').trim() || '<div />';
+    const renderedDescription = encodeJsx(
+      jsxtremeMarkdown.toJsx(propData.description || ' ').trim() || '<div />'
+    );
     objectBody += `${prop}: {
       type: ${JSON.stringify(propData.type)},
       required: ${propData.required},
@@ -111,3 +115,8 @@ function generateDocsData() {
 }
 
 generateDocsData();
+
+// Prepare JSX to be written directly to the script without messing things up.
+function encodeJsx(x) {
+  return x.replace(/`/g, '&#96;').replace(/\$/, '&#36;');
+}

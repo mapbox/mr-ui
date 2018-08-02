@@ -2,8 +2,9 @@
 
 ## HEAD
 
-- Add *MbxIconText** component.
-- Add *MbxUnderlineTabs** component.
+- Add **MbxButton** component.
+- Add **MbxIconText** component.
+- Add **MbxUnderlineTabs** component.
 - **PopoverTrigger**
   - If the trigger responds to focus but not click, and you focus the trigger *first* and *then* click, that click *closes* the popover instead of leaving it open even after you move the mouse away.
 

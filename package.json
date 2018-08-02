@@ -62,7 +62,7 @@
     "@mapbox/batfish": "^1.9.2",
     "@mapbox/eslint-config-mapbox": "^1.2.1",
     "@mapbox/jsxtreme-markdown": "^0.9.3",
-    "@mapbox/react-test-kitchen": "^0.1.2",
+    "@mapbox/react-test-kitchen": "^0.3.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
