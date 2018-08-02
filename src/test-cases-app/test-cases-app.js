@@ -5,7 +5,9 @@ import componentIndex from './component-index'; // eslint-disable-line
 
 class TestCasesApp extends React.Component {
   render() {
-    return <ReactTestKitchen componentIndex={componentIndex} />;
+    return (
+      <ReactTestKitchen projectTitle="Mr. UI" componentIndex={componentIndex} />
+    );
   }
 }
 
