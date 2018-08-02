@@ -4,14 +4,6 @@ import PropTypes from 'prop-types';
 import xtend from 'xtend';
 import omit from '../utils/omit';
 
-const SIZE_SMALL = 'small';
-const SIZE_MEDIUM = 'medium';
-const SIZE_LARGE = 'large';
-const WIDTH_SMALL = 'small';
-const WIDTH_MEDIUM = 'medium';
-const WIDTH_LARGE = 'large';
-const WIDTH_FULL = 'full';
-
 // This list must be kept in sync with the propTypes.
 // It's used to identify additional props that should be passed directly
 // to the element.
@@ -26,6 +18,7 @@ const propNames = [
   'outline',
   'size',
   'transformClasses',
+  'variant',
   'width'
 ];
 
@@ -38,18 +31,23 @@ const propNames = [
  *
  * If you'd like to put an icon before or after the text of your button,
  * use [MbxIconText](#mbxicontext) for the content.
+ *
+ * Any props you provide other than those documented here are passed through
+ * directly to the element itself. This can be useful if you want to disable
+ * the button, assign an ID for testing, add an ARIA attribute, toss in some
+ * custom style properties, etc.
  */
 class MbxButton extends React.Component {
   render() {
-    const { props } = this;
+    const props = applyVariant(this.props);
 
-    const sizeSmall = props.size === SIZE_SMALL;
-    const sizeMedium = props.size === SIZE_MEDIUM;
-    const sizeLarge = props.size === SIZE_LARGE;
-    const widthFull = props.width === WIDTH_FULL;
-    const widthSmall = props.width === WIDTH_SMALL;
-    const widthMedium = props.width === WIDTH_MEDIUM;
-    const widthLarge = props.width === WIDTH_LARGE;
+    const sizeSmall = props.size === 'small';
+    const sizeMedium = props.size === 'medium';
+    const sizeLarge = props.size === 'large';
+    const widthFull = props.width === 'full';
+    const widthSmall = props.width === 'small';
+    const widthMedium = props.width === 'medium';
+    const widthLarge = props.width === 'large';
 
     const classes = classnames('btn', {
       [`btn--${props.color}`]: props.color,
@@ -91,6 +89,68 @@ class MbxButton extends React.Component {
   }
 }
 
+const defaults = {
+  color: 'blue',
+  corners: false,
+  outline: false,
+  size: 'large',
+  width: 'medium'
+};
+function applyVariant(props) {
+  switch (props.variant) {
+    case 'primary':
+      return xtend(defaults, props);
+    case 'secondary':
+      return xtend(
+        defaults,
+        {
+          outline: true
+        },
+        props
+      );
+    case 'discouraging':
+      return xtend(
+        defaults,
+        {
+          color: 'gray',
+          outline: true
+        },
+        props
+      );
+    case 'destructive':
+      return xtend(
+        defaults,
+        {
+          color: 'red'
+        },
+        props
+      );
+    case 'appPrimary':
+      return xtend(
+        defaults,
+        {
+          color: 'gray',
+          size: 'small',
+          width: 'small',
+          corners: true
+        },
+        props
+      );
+    case 'appSecondary':
+      return xtend(
+        defaults,
+        {
+          color: 'gray',
+          size: 'small',
+          width: 'small',
+          corners: true,
+          outline: true
+        },
+        props
+      );
+  }
+}
+
 MbxButton.propTypes = {
   /**
    * The button's content. A string is recommended, but you can put an element
@@ -99,6 +159,30 @@ MbxButton.propTypes = {
    * inline-level.)
    */
   children: PropTypes.node.isRequired,
+  /**
+   * A keyword identifying the standard button styling variant to use.
+   *
+   * *The variant is a starting point*: all of the other styling props can be
+   * used to override details.
+   *
+   * The following variants are available:
+   *
+   * - `"primary"`: For primary actions.
+   * - `"secondary"`: For secondary actions.
+   * - `"discouraging"`: For downplayed actions, the ones people shouldn't
+   *   usually want to perform, like cancelling instead of confirming.
+   * - `"destructive"`: For destructive actions, like deleting something.
+   * - `"appPrimary"`: For primary actions in dense apps.
+   * - `"appSecondary"`: For secondary actions in dense apps.
+   */
+  variant: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'discouraging',
+    'destructive',
+    'appPrimary',
+    'appSecondary'
+  ]),
   /**
    * A callback that receives the click event.
    *
@@ -115,13 +199,17 @@ MbxButton.propTypes = {
    * The size of the button: `"small"`, `"medium"`, or `"large"`.
    *
    * This accounts for height, outline thickness, text size, and other details.
+   *
+   * This will override whichever defaults are set by your `variant` of choice.
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    * The width of the button: `"small"`, `"medium"`, `"large"`, or `"full"`.
    *
-   * This is distinguished from `size` because buttons
-   * of the same general size can vary by width.
+   * This is distinguished from `size` because buttons of the same general size
+   * can vary by width.
+   *
+   * This will override whichever defaults are set by your `variant` of choice.
    */
   width: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
   /**
@@ -139,6 +227,8 @@ MbxButton.propTypes = {
   corners: PropTypes.bool,
   /**
    * If `true`, the element will be `block` displayed instead of `inline-block`.
+   *
+   * This is sometimes necessary to get your pixel-perfect layout.
    */
   block: PropTypes.bool,
   /**
@@ -156,13 +246,9 @@ MbxButton.propTypes = {
 };
 
 MbxButton.defaultProps = {
+  variant: 'primary',
   block: false,
-  color: 'blue',
-  corners: false,
-  outline: false,
-  size: 'large',
-  transformClasses: x => x,
-  width: 'medium'
+  transformClasses: x => x
 };
 
 export default MbxButton;
