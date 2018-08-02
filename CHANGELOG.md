@@ -2,6 +2,7 @@
 
 ## HEAD
 
+- Add **Heading** component.
 - Add **Button** component.
 - Add **IconText** component.
 - Add **UnderlineTabs** component.

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Minor 1`] = `
+<div
+  className="txt-fancy txt-h5 txt-h4-mm"
+>
+  Minor
+</div>
+`;
+
+exports[`Primary 1`] = `
+<div
+  className="txt-fancy txt-h2 txt-h1-mm"
+>
+  Primary
+</div>
+`;
+
+exports[`Secondary 1`] = `
+<div
+  className="txt-fancy txt-h3 txt-h2-mm"
+>
+  Secondary
+</div>
+`;
+
+exports[`Tertiary 1`] = `
+<div
+  className="txt-fancy txt-h4 txt-h3-mm"
+>
+  Tertiary
+</div>
+`;
