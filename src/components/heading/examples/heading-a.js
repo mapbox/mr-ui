@@ -5,23 +5,23 @@ All the heading variants.
 element are independent of the styling performed by this component.)
 */
 import React from 'react';
-import MbxHeading from '../mbx-heading';
+import Heading from '../heading';
 
 export default class Example extends React.Component {
   render() {
     return (
       <div>
         <h2 className="mb12">
-          <MbxHeading variant="primary">Primary</MbxHeading>
+          <Heading variant="primary">Primary</Heading>
         </h2>
         <h3 className="mb12">
-          <MbxHeading variant="secondary">Secondary</MbxHeading>
+          <Heading variant="secondary">Secondary</Heading>
         </h3>
         <h2 className="mb12">
-          <MbxHeading variant="tertiary">Tertiary</MbxHeading>
+          <Heading variant="tertiary">Tertiary</Heading>
         </h2>
         <h6>
-          <MbxHeading variant="minor">Minor</MbxHeading>
+          <Heading variant="minor">Minor</Heading>
         </h6>
       </div>
     );

@@ -1,10 +1,10 @@
-import MbxHeading from '../mbx-heading';
+import Heading from '../heading';
 
 const testCases = {};
 
 testCases.primary = {
   description: 'Primary',
-  component: MbxHeading,
+  component: Heading,
   props: {
     children: 'Primary',
     variant: 'primary'
@@ -13,7 +13,7 @@ testCases.primary = {
 
 testCases.secondary = {
   description: 'Secondary',
-  component: MbxHeading,
+  component: Heading,
   props: {
     children: 'Secondary',
     variant: 'secondary'
@@ -22,7 +22,7 @@ testCases.secondary = {
 
 testCases.tertiary = {
   description: 'Tertiary',
-  component: MbxHeading,
+  component: Heading,
   props: {
     children: 'Tertiary',
     variant: 'tertiary'
@@ -31,7 +31,7 @@ testCases.tertiary = {
 
 testCases.minor = {
   description: 'Minor',
-  component: MbxHeading,
+  component: Heading,
   props: {
     children: 'Minor',
     variant: 'minor'

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
  * This component only *styles*: it does not apply an `<h*>` element. You
  * should wrap it in the `<h*>` element appropriate to the context.
  */
-class MbxHeading extends React.Component {
+class Heading extends React.Component {
   render() {
     const { props } = this;
 
@@ -23,7 +23,7 @@ class MbxHeading extends React.Component {
   }
 }
 
-MbxHeading.propTypes = {
+Heading.propTypes = {
   /**
    * The content of the heading, usually just text.
    */
@@ -36,4 +36,4 @@ MbxHeading.propTypes = {
     .isRequired
 };
 
-export default MbxHeading;
+export default Heading;

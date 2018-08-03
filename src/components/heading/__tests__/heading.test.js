@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { testCases } from './mbx-heading-test-cases';
+import { testCases } from './heading-test-cases';
 
 test(testCases.primary.description, () => {
   const wrapper = shallow(
