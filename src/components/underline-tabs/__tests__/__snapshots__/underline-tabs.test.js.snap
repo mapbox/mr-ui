@@ -1,0 +1,617 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ID labels and a disabled item renders as expected 1`] = `
+<ul
+  className="flex-parent txt-nowrap unselectable txt-bold txt-s"
+>
+  <li
+    className="flex-child"
+    key="ant"
+  >
+    <button
+      className="block relative color-gray color-blue-on-hover"
+      data-test="ant"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 42,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Ant
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="bug"
+  >
+    <button
+      className="block relative color-gray-light cursor-default"
+      data-test="bug"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 42,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Bug
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="cat"
+  >
+    <button
+      className="block relative color-gray-dark cursor-default"
+      data-test="cat"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 42,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Cat
+        </span>
+        <span
+          className="absolute bottom left right border-b border-b--2"
+        />
+      </span>
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`customized renders as expected 1`] = `
+<ul
+  className="flex-parent txt-nowrap unselectable txt-xs"
+>
+  <li
+    className="flex-child"
+    key="A"
+  >
+    <button
+      className="block relative color-pink cursor-default"
+      data-test="A"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 36,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter A
+        </span>
+        <span
+          className="absolute bottom left right border-b"
+        />
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml12"
+    key="B"
+  >
+    <button
+      className="block relative color-purple color-pink-on-hover"
+      data-test="B"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 36,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter B
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml12"
+    key="C"
+  >
+    <button
+      className="block relative color-purple color-pink-on-hover"
+      data-test="C"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 36,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter C
+        </span>
+      </span>
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`defaults renders as expected 1`] = `
+<ul
+  className="flex-parent txt-nowrap unselectable txt-bold txt-s"
+>
+  <li
+    className="flex-child"
+    key="A"
+  >
+    <button
+      className="block relative color-gray color-blue-on-hover"
+      data-test="A"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 42,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter A
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="B"
+  >
+    <button
+      className="block relative color-gray-dark cursor-default"
+      data-test="B"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 42,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter B
+        </span>
+        <span
+          className="absolute bottom left right border-b border-b--2"
+        />
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="C"
+  >
+    <button
+      className="block relative color-gray color-blue-on-hover"
+      data-test="C"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 42,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter C
+        </span>
+      </span>
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`large links with icons renders as expected 1`] = `
+<ul
+  className="flex-parent txt-nowrap unselectable txt-bold"
+>
+  <li
+    className="flex-child"
+    key="A"
+  >
+    <a
+      className="block relative color-gray-dark cursor-default"
+      data-test="A"
+      href="#"
+      onClick={[Function]}
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          IconText
+        </span>
+        <span
+          className="absolute bottom left right border-b border-b--2"
+        />
+      </span>
+    </a>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="B"
+  >
+    <a
+      className="block relative color-gray color-blue-on-hover"
+      data-test="B"
+      href="#"
+      onClick={[Function]}
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          IconText
+        </span>
+      </span>
+    </a>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="C"
+  >
+    <a
+      className="block relative color-gray color-blue-on-hover"
+      data-test="C"
+      href="#"
+      onClick={[Function]}
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          IconText
+        </span>
+      </span>
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`large renders as expected 1`] = `
+<ul
+  className="flex-parent txt-nowrap unselectable txt-bold"
+>
+  <li
+    className="flex-child"
+    key="A"
+  >
+    <button
+      className="block relative color-gray color-blue-on-hover"
+      data-test="A"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter A
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="B"
+  >
+    <button
+      className="block relative color-gray color-blue-on-hover"
+      data-test="B"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter B
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="C"
+  >
+    <button
+      className="block relative color-gray-dark cursor-default"
+      data-test="C"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter C
+        </span>
+        <span
+          className="absolute bottom left right border-b border-b--2"
+        />
+      </span>
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`overlap renders as expected 1`] = `
+<ul
+  className="flex-parent txt-nowrap unselectable txt-bold txt-s"
+>
+  <li
+    className="flex-child"
+    key="A"
+  >
+    <button
+      className="block relative mb-neg1 mt-neg1 color-gray color-blue-on-hover"
+      data-test="A"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 44,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter A
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="B"
+  >
+    <button
+      className="block relative mb-neg1 mt-neg1 color-gray-dark cursor-default"
+      data-test="B"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 44,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter B
+        </span>
+        <span
+          className="absolute bottom left right border-b border-b--2"
+        />
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml24 ml36-mxl"
+    key="C"
+  >
+    <button
+      className="block relative mb-neg1 mt-neg1 color-gray color-blue-on-hover"
+      data-test="C"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 44,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter C
+        </span>
+      </span>
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`small renders as expected 1`] = `
+<ul
+  className="flex-parent txt-nowrap unselectable txt-bold txt-xs"
+>
+  <li
+    className="flex-child"
+    key="A"
+  >
+    <button
+      className="block relative color-gray color-blue-on-hover"
+      data-test="A"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 36,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter A
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml12"
+    key="B"
+  >
+    <button
+      className="block relative color-gray-dark cursor-default"
+      data-test="B"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 36,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter B
+        </span>
+        <span
+          className="absolute bottom left right border-b"
+        />
+      </span>
+    </button>
+  </li>
+  <li
+    className="flex-child ml12"
+    key="C"
+  >
+    <button
+      className="block relative color-gray color-blue-on-hover"
+      data-test="C"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="block relative flex-parent flex-parent--center-cross"
+        style={
+          Object {
+            "height": 36,
+          }
+        }
+      >
+        <span
+          className="flex-child"
+        >
+          Letter C
+        </span>
+      </span>
+    </button>
+  </li>
+</ul>
+`;
