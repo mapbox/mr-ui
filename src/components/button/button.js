@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import xtend from 'xtend';
 import omit from '../utils/omit';
+import applyTheme from '../utils/apply-theme';
 
 // This list must be kept in sync with the propTypes.
 // It's used to identify additional props that should be passed directly
@@ -17,7 +18,7 @@ const propNames = [
   'onClick',
   'outline',
   'size',
-  'transformClasses',
+  'theme',
   'variant',
   'width'
 ];
@@ -49,7 +50,7 @@ class Button extends React.Component {
     const widthMedium = props.width === 'medium';
     const widthLarge = props.width === 'large';
 
-    const classes = classnames('btn', {
+    const buttonClasses = classnames('btn', {
       [`btn--${props.color}`]: props.color,
       'btn--stroke': props.outline,
       'btn--stroke--2': props.outline && !sizeSmall,
@@ -70,7 +71,7 @@ class Button extends React.Component {
 
     const universalProps = xtend(
       {
-        className: props.transformClasses(classes),
+        className: applyTheme(buttonClasses, props.theme),
         onClick: props.onClick,
         children: props.children
       },
@@ -96,6 +97,7 @@ const defaults = {
   size: 'large',
   width: 'medium'
 };
+
 function applyVariant(props) {
   switch (props.variant) {
     case 'primary':
@@ -232,11 +234,10 @@ Button.propTypes = {
    */
   block: PropTypes.bool,
   /**
-   * A callback for transforming the class list. Receives the standard class
-   * list (based on your other props) as an argument; it must return
-   * the transformed class list.
+   * Modify the button element's class list.
+   * See the [`theme*` props documentation](#themeprops).
    */
-  transformClasses: PropTypes.func,
+  theme: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   /**
    * An alternate component to render in the style of a button. If the value is
    * a string, it must refer to a DOM element, like `"div"`. Otherwise, it
@@ -247,8 +248,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   variant: 'primary',
-  block: false,
-  transformClasses: x => x
+  block: false
 };
 
 export default Button;

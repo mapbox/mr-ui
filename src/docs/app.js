@@ -2,6 +2,7 @@ import React from 'react';
 import components from './data/components'; // eslint-disable-line
 import ComponentSection from './components/component-section';
 import Sidebar from './components/sidebar';
+import ThemeProps from './components/theme-props';
 
 export default class App extends React.Component {
   render() {
@@ -21,7 +22,12 @@ export default class App extends React.Component {
         <div className="fixed top left bottom w300 py24 px24 scroll-styled scroll-auto">
           <Sidebar />
         </div>
-        <div className="ml300 px24">{componentEls}</div>
+        <div className="ml300 px24">
+          {componentEls}
+          <div className="my60">
+            <ThemeProps />
+          </div>
+        </div>
       </div>
     );
   }

@@ -88,16 +88,14 @@ testCases.fullWidthPurple = {
 
 testCases.weird = {
   description:
-    'Div styled like a medium destructive button with some extended props and transformed classes',
+    'Div styled like a medium destructive button with some extended props and custom classes',
   component: Button,
   props: {
     children: 'Save',
     size: 'medium',
     variant: 'destructive',
     onClick: safeSpy(),
-    transformClasses: classes => {
-      return classes + ' shadow-darken75 unselectable cursor-pointer';
-    },
+    theme: 'shadow-darken75 unselectable cursor-pointer',
     component: 'div',
     role: 'button',
     'data-test': 'foo'
