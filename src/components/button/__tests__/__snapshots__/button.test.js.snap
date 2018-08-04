@@ -50,7 +50,7 @@ exports[`Discouraging renders as expected 1`] = `
 </button>
 `;
 
-exports[`Div styled like a medium destructive button with some extended props and transformed classes renders as expected 1`] = `
+exports[`Div styled like a medium destructive button with some extended props and custom classes renders as expected 1`] = `
 <div
   className="btn btn--red round-full py6 px24 txt-s shadow-darken75 unselectable cursor-pointer"
   data-test="foo"

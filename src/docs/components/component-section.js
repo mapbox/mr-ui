@@ -6,7 +6,11 @@ export default class ComponentSection extends React.Component {
     const { data } = this.props;
     if (!data) return null;
 
-    const propRows = sortedProps(data.props).map(propData => {
+    const allProps = sortedProps(data.props);
+    const nonThemeProps = allProps.filter(p => !isThemeProp(p));
+    const themeProps = allProps.filter(isThemeProp);
+
+    const propRows = nonThemeProps.map(propData => {
       return <PropRow key={propData.name} {...propData} />;
     });
 
@@ -23,6 +27,7 @@ export default class ComponentSection extends React.Component {
           </thead>
           <tbody>{propRows}</tbody>
         </table>
+        <ThemeProps themePropsData={themeProps} />
       </div>
     );
   }
@@ -90,6 +95,10 @@ function sortedProps(propsData) {
     });
 }
 
+function isThemeProp(prop) {
+  return /^theme/.test(prop.name);
+}
+
 function PropRow(props) {
   const required = !props.required ? null : (
     <span className="txt-xs txt-mono ml6 bg-purple-faint color-purple px6 py3 round">
@@ -97,10 +106,16 @@ function PropRow(props) {
     </span>
   );
 
+  const renderedName = isThemeProp(props.name) ? (
+    <span className="color-gray">{props.name}</span>
+  ) : (
+    props.name
+  );
+
   return (
     <tr>
       <td className="txt-mono txt-bold txt-nowrap">
-        {props.name} {required}
+        {renderedName} {required}
       </td>
       <td className="txt-mono mx12">{props.type.name}</td>
       <td>
@@ -137,4 +152,30 @@ function DefaultValueDisplay(props) {
     );
   }
   return <div className="inline-block txt-code">{props.value}</div>;
+}
+
+function ThemeProps(props) {
+  if (props.themePropsData.length === 0) {
+    return null;
+  }
+
+  const renderedThemeProps = props.themePropsData.map(propData => {
+    return (
+      <span className="inline-block mr6 mb6 txt-code">{propData.name}</span>
+    );
+  });
+
+  return (
+    <div className="mt24">
+      <div className="mb6">
+        <span className="txt-bold mr6">Theme props:</span>
+        {renderedThemeProps}
+      </div>
+      <div>
+        <a href="#themeprops" className="link">
+          Learn more about theme props
+        </a>
+      </div>
+    </div>
+  );
 }
