@@ -20,6 +20,13 @@ describe(testCases.primary.description, () => {
     wrapper.find('button').prop('onClick')();
     expect(testCase.props.onClick).toHaveBeenCalled();
   });
+
+  test('updates when a prop changes', () => {
+    wrapper.setProps({ color: 'pink' });
+    wrapper.update();
+
+    expect(wrapper.find('button').prop('className')).toMatch('btn--pink');
+  });
 });
 
 describe(testCases.secondary.description, () => {

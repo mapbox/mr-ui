@@ -3,6 +3,7 @@
 exports[`AppPrimary renders as expected 1`] = `
 <button
   className="btn btn--gray round h24 px6 py3 txt-xs"
+  disabled={false}
   onClick={[MockFunction]}
   type="button"
 >
@@ -13,6 +14,7 @@ exports[`AppPrimary renders as expected 1`] = `
 exports[`AppSecondary renders as expected 1`] = `
 <button
   className="btn btn--gray btn--stroke round h24 px6 py3 txt-xs"
+  disabled={false}
   onClick={[MockFunction]}
   type="button"
 >
@@ -23,6 +25,7 @@ exports[`AppSecondary renders as expected 1`] = `
 exports[`Destructive renders as expected 1`] = `
 <button
   className="btn btn--red round-full py12 px24 txt-s"
+  disabled={false}
   onClick={[MockFunction]}
   type="button"
 >
@@ -43,6 +46,7 @@ exports[`Disabled renders as expected 1`] = `
 exports[`Discouraging renders as expected 1`] = `
 <button
   className="btn btn--gray btn--stroke btn--stroke--2 round-full py12 px24 txt-s"
+  disabled={false}
   onClick={[MockFunction]}
   type="button"
 >
@@ -50,10 +54,11 @@ exports[`Discouraging renders as expected 1`] = `
 </button>
 `;
 
-exports[`Div styled like a medium destructive button with some extended props and transformed classes renders as expected 1`] = `
+exports[`Div styled like a medium destructive button with some elementAttributes renders as expected 1`] = `
 <div
-  className="btn btn--red round-full py6 px24 txt-s shadow-darken75 unselectable cursor-pointer"
+  className="btn btn--red round-full py6 px24 txt-s"
   data-test="foo"
+  disabled={false}
   onClick={[MockFunction]}
   role="button"
 >
@@ -64,6 +69,7 @@ exports[`Div styled like a medium destructive button with some extended props an
 exports[`Full width, alternate color renders as expected 1`] = `
 <button
   className="btn btn--purple round-full py12 w-full block txt-s"
+  disabled={false}
   type="button"
 >
   Here we are
@@ -88,6 +94,7 @@ exports[`Link with outline and icon text, extra padding renders as expected 1`] 
 exports[`Primary renders as expected 1`] = `
 <button
   className="btn btn--blue round-full py12 px24 txt-s"
+  disabled={false}
   onClick={[MockFunction]}
   type="button"
 >
@@ -98,6 +105,7 @@ exports[`Primary renders as expected 1`] = `
 exports[`Secondary renders as expected 1`] = `
 <button
   className="btn btn--blue btn--stroke btn--stroke--2 round-full py12 px24 txt-s"
+  disabled={false}
   onClick={[MockFunction]}
   type="button"
 >

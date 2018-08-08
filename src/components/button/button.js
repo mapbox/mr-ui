@@ -2,25 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import xtend from 'xtend';
-import omit from '../utils/omit';
-
-// This list must be kept in sync with the propTypes.
-// It's used to identify additional props that should be passed directly
-// to the element.
-const propNames = [
-  'block',
-  'children',
-  'color',
-  'component',
-  'corners',
-  'href',
-  'onClick',
-  'outline',
-  'size',
-  'transformClasses',
-  'variant',
-  'width'
-];
 
 /**
  * A good-looking button!
@@ -31,11 +12,6 @@ const propNames = [
  *
  * If you'd like to put an icon before or after the text of your button,
  * use [IconText](#mbxicontext) for the content.
- *
- * Any props you provide other than those documented here are passed through
- * directly to the element itself. This can be useful if you want to disable
- * the button, assign an ID for testing, add an ARIA attribute, toss in some
- * custom style properties, etc.
  */
 class Button extends React.Component {
   render() {
@@ -70,22 +46,25 @@ class Button extends React.Component {
 
     const universalProps = xtend(
       {
-        className: props.transformClasses(classes),
+        className: classes,
         onClick: props.onClick,
         children: props.children
       },
-      omit(props, propNames)
+      props.passthroughProps
     );
 
+    // "disabled" is not a valid attributes for anchors.
+    const buttonProps = xtend(universalProps, { disabled: props.disabled });
+
     if (props.component) {
-      return React.createElement(props.component, universalProps);
+      return React.createElement(props.component, buttonProps);
     }
 
     if (props.href) {
       return <a href={props.href} {...universalProps} />;
     }
 
-    return <button type="button" {...universalProps} />;
+    return <button type="button" {...buttonProps} />;
   }
 }
 
@@ -232,23 +211,30 @@ Button.propTypes = {
    */
   block: PropTypes.bool,
   /**
-   * A callback for transforming the class list. Receives the standard class
-   * list (based on your other props) as an argument; it must return
-   * the transformed class list.
+   * Is it disbaled?
    */
-  transformClasses: PropTypes.func,
+  disabled: PropTypes.bool,
   /**
    * An alternate component to render in the style of a button. If the value is
    * a string, it must refer to a DOM element, like `"div"`. Otherwise, it
    * can be a React component.
    */
-  component: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+  component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  /**
+   * An object of props that you want to pass through to the element that
+   * Button renders.  This can be useful if you want to disable
+   * the button, assign an ID for testing, add an ARIA attribute, toss in some
+   * custom style properties, etc.
+   */
+  passthroughProps: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number])
+  )
 };
 
 Button.defaultProps = {
   variant: 'primary',
   block: false,
-  transformClasses: x => x
+  disabled: false
 };
 
 export default Button;
