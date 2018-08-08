@@ -34,7 +34,7 @@ export default class Tooltip extends React.Component {
     } else {
       return content;
     }
-  };
+  }
 
   renderTrigger() {
     const { children, testId } = this.props;
@@ -58,20 +58,22 @@ export default class Tooltip extends React.Component {
     if (children.type && children.type.name === 'Button') {
       return React.cloneElement(children, { passthroughProps: triggerProps });
     }
-    throw new Error('Tooltip requires a child that is a function, a regular DOM node, or a Button. If your trigger is a different custom component, pass a function as the child.');
+    throw new Error(
+      'Tooltip requires a child that is a function, a regular DOM node, or a Button. If your trigger is a different custom component, pass a function as the child.'
+    );
   }
 
   render() {
     const { props, state } = this;
 
-    const tooltipContentAttributes = {
+    const popoverPassthroughProps = {
       id: state.tooltipId,
       // Override the "dialog" role set by popover
       role: 'tooltip'
     };
 
     if (props.testId) {
-      tooltipContentAttributes['data-test'] = `${props.testId}-tooltip`;
+      popoverPassthroughProps['data-test'] = `${props.testId}-tooltip`;
     }
 
     const bodyClasses = classnames({
@@ -80,11 +82,7 @@ export default class Tooltip extends React.Component {
       'txt-xs': props.textSize === 'xs'
     });
 
-    const content = (
-      <div className={bodyClasses}>
-        {this.getContent()}
-      </div>
-    );
+    const content = <div className={bodyClasses}>{this.getContent()}</div>;
 
     return (
       <PopoverTrigger
@@ -103,7 +101,7 @@ export default class Tooltip extends React.Component {
           coloring: props.coloring,
           padded: false,
           hideWhenAnchorIsOffscreen: true,
-          passthroughProps: tooltipContentAttributes
+          passthroughProps: popoverPassthroughProps
         }}
       >
         {this.renderTrigger()}

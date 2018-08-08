@@ -4,6 +4,7 @@ exports[`IconButton all props used, JSX content renders 1`] = `
 <Tooltip
   alignment="right"
   backgroundColor="yellow"
+  coloring="light"
   content={
     <span
       className="txt-bold"
@@ -13,9 +14,11 @@ exports[`IconButton all props used, JSX content renders 1`] = `
   }
   disabled={false}
   display="inline-flex"
+  padded={true}
   placement="right"
   respondsToClick={true}
   testId="tooltip-test-id"
+  textSize="s"
   themeTooltip="color-gray round px12 py12 shadow-darken25"
 />
 `;
@@ -38,12 +41,14 @@ exports[`IconButton all props used, JSX content renders 2`] = `
 exports[`IconButton basic renders 1`] = `
 <Tooltip
   alignment="center"
-  backgroundColor="#fff"
+  coloring="light"
   content="close"
   disabled={false}
+  display="inline-block"
+  padded={true}
   placement="top"
   respondsToClick={false}
-  themeTooltip="round py6 px12 shadow-darken25 txt-s z1"
+  textSize="s"
 />
 `;
 

@@ -27,6 +27,12 @@
       "env": {
         "jest": true
       }
+    },
+    {
+      "files": ["**/examples/**.js"],
+      "rules": {
+        "react/prop-types": false
+      }
     }
   ]
 }

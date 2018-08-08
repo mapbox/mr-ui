@@ -17,16 +17,16 @@ exports[`CopyButton all props changes state on click 1`] = `
       accessibleTitle={null}
       alignment="center"
       allowPlacementAxisChange={true}
-      backgroundColor="#fff"
       clickOutsideCloses={true}
+      coloring="light"
       containWithinViewport={true}
       escapeCloses={true}
       getAnchorElement={[Function]}
       hasPointer={true}
       hideWhenAnchorIsOffscreen={true}
+      padded={true}
       placement="top"
       receiveFocus={true}
-      themePopover="round py6 px12 shadow-darken25"
       trapFocus={false}
     >
       <span
@@ -56,16 +56,16 @@ exports[`CopyButton all props changes state on click 2`] = `
       accessibleTitle={null}
       alignment="center"
       allowPlacementAxisChange={true}
-      backgroundColor="#fff"
       clickOutsideCloses={true}
+      coloring="light"
       containWithinViewport={true}
       escapeCloses={true}
       getAnchorElement={[Function]}
       hasPointer={true}
       hideWhenAnchorIsOffscreen={true}
+      padded={true}
       placement="top"
       receiveFocus={true}
-      themePopover="round py6 px12 shadow-darken25"
       trapFocus={false}
     >
       <span
@@ -117,16 +117,16 @@ exports[`CopyButton basic changes state on click 1`] = `
       accessibleTitle={null}
       alignment="center"
       allowPlacementAxisChange={true}
-      backgroundColor="#fff"
       clickOutsideCloses={true}
+      coloring="light"
       containWithinViewport={true}
       escapeCloses={true}
       getAnchorElement={[Function]}
       hasPointer={true}
       hideWhenAnchorIsOffscreen={true}
+      padded={true}
       placement="top"
       receiveFocus={true}
-      themePopover="round py6 px12 shadow-darken25"
       trapFocus={false}
     >
       <span

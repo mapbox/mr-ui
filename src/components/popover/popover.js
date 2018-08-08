@@ -328,7 +328,7 @@ Popover.propTypes = {
    */
   offsetFromAnchor: PropTypes.number,
   /**
-   * Attributes to pass to the `<div>` that will wrap your popover content.
+   * Props to pass directly to the `<div>` that will wrap your popover content.
    */
   passthroughProps: PropTypes.object
 };

@@ -25,11 +25,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-default`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              default
-            </button>
-          )}
+          <button className={buttonClasses}>default</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -39,11 +35,7 @@ function getTooltipList(options = {}) {
           respondsToClick={options.respondsToClick}
           disabled={true}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              disabled
-            </button>
-          )}
+          <button className={buttonClasses}>disabled</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -53,11 +45,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-top`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              top
-            </button>
-          )}
+          <button className={buttonClasses}>top</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -67,11 +55,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-left`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              left
-            </button>
-          )}
+          <button className={buttonClasses}>left</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -81,11 +65,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-right`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              right
-            </button>
-          )}
+          <button className={buttonClasses}>right</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -95,18 +75,20 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-bottom`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              bottom
-            </button>
-          )}
+          <button className={buttonClasses}>bottom</button>
         </Tooltip>
       </div>
     </div>
   );
 }
 
-testCases.DOMElementChild = {
+testCases.topFiller = {
+  description:
+    'Filler, so absolutely positioned cases do not overlap the others',
+  element: <div style={{ marginTop: 80 }} />
+};
+
+testCases.domElementChild = {
   description: 'DOM element child',
   component: Tooltip,
   props: {
@@ -120,10 +102,12 @@ function CustomThing(props) {
 }
 
 testCases.functionChild = {
-  description: 'functionChild',
+  description: 'function child',
   component: Tooltip,
   props: {
-    children: triggerProps => <CustomThing {...triggerProps}>trigger</CustomThing>,
+    children: triggerProps => (
+      <CustomThing {...triggerProps}>trigger</CustomThing>
+    ),
     content: 'function child'
   }
 };
@@ -136,74 +120,79 @@ testCases.buttonChild = {
     content: 'Button child'
   }
 };
-//
-// testCases.allProps = {
-//   description: 'all props',
-//   component: Tooltip,
-//   props: {
-//     children: <span>test tooltip</span>,
-//     content: getTooltipContent,
-//     placement: 'top',
-//     alignment: 'left',
-//     disabled: true,
-//     backgroundColor: 'red',
-//     respondsToClick: true,
-//     themeTooltip: 'py3 px3 txt-bold txt-l',
-//     display: 'inline'
-//   }
-// };
-//
-// testCases.respondsToClick = {
-//   description: 'responds to click',
-//   component: Tooltip,
-//   props: {
-//     children: getTooltipChildren,
-//     content: 'basic',
-//     respondsToClick: true
-//   }
-// };
-//
-// testCases.manyPositions = {
-//   description: 'many positions',
-//   element: (
-//     <div>
-//       {getTooltipList({ inline: true, testId: 'basic' })}
-//
-//       <div className="w120 h240 scroll-auto border border--gray-light">
-//         {getTooltipList({ testId: 'scroll1' })}
-//         {getTooltipList({ testId: 'scroll2' })}
-//         {getTooltipList({ testId: 'scroll3' })}
-//       </div>
-//
-//       <div className="fixed top left border border--gray-light">
-//         {getTooltipList({ testId: 'top-left-vertical' })}
-//       </div>
-//       <div className="fixed top left border border--gray-light ml60">
-//         {getTooltipList({ inline: true, testId: 'top-left-horizontal' })}
-//       </div>
-//
-//       <div className="fixed bottom left border border--gray-light">
-//         {getTooltipList({ testId: 'bottom-left-vertical' })}
-//       </div>
-//       <div className="fixed bottom left border border--gray-light ml60">
-//         {getTooltipList({ inline: true, testId: 'bottom-left-horizontal' })}
-//       </div>
-//
-//       <div className="fixed bottom right border border--gray-light">
-//         {getTooltipList({ testId: 'bottom-right-vertical' })}
-//       </div>
-//       <div className="fixed bottom right border border--gray-light mr60">
-//         {getTooltipList({ inline: true, testId: 'bottom-right-horizontal' })}
-//       </div>
-//
-//       <div className="fixed top right border border--gray-light">
-//         {getTooltipList({ testId: 'top-right-vertical' })}
-//       </div>
-//       <div className="fixed top right border border--gray-light mr60">
-//         {getTooltipList({ inline: true, testId: 'top-right-horizontal' })}
-//       </div>
-//     </div>
-//   )
-// };
+
+testCases.allProps = {
+  description: 'all props',
+  component: Tooltip,
+  props: {
+    children: <div>test tooltip</div>,
+    content: getTooltipContent,
+    placement: 'top',
+    alignment: 'left',
+    coloring: 'dark',
+    respondsToClick: true,
+    themeTooltip: 'py3 px3 txt-bold txt-l',
+    display: 'inline-block'
+  }
+};
+
+testCases.respondsToClick = {
+  description: 'responds to click',
+  component: Tooltip,
+  props: {
+    children: getTooltipChildren,
+    content: 'basic',
+    respondsToClick: true
+  }
+};
+
+testCases.manyPositions = {
+  description: 'many positions',
+  element: (
+    <div>
+      {getTooltipList({ inline: true, testId: 'basic' })}
+
+      <div className="w120 h240 scroll-auto border border--gray-light">
+        {getTooltipList({ testId: 'scroll1' })}
+        {getTooltipList({ testId: 'scroll2' })}
+        {getTooltipList({ testId: 'scroll3' })}
+      </div>
+
+      <div className="fixed top left border border--gray-light">
+        {getTooltipList({ testId: 'top-left-vertical' })}
+      </div>
+      <div className="fixed top left border border--gray-light ml60">
+        {getTooltipList({ inline: true, testId: 'top-left-horizontal' })}
+      </div>
+
+      <div className="fixed bottom left border border--gray-light">
+        {getTooltipList({ testId: 'bottom-left-vertical' })}
+      </div>
+      <div className="fixed bottom left border border--gray-light ml60">
+        {getTooltipList({ inline: true, testId: 'bottom-left-horizontal' })}
+      </div>
+
+      <div className="fixed bottom right border border--gray-light">
+        {getTooltipList({ testId: 'bottom-right-vertical' })}
+      </div>
+      <div className="fixed bottom right border border--gray-light mr60">
+        {getTooltipList({ inline: true, testId: 'bottom-right-horizontal' })}
+      </div>
+
+      <div className="fixed top right border border--gray-light">
+        {getTooltipList({ testId: 'top-right-vertical' })}
+      </div>
+      <div className="fixed top right border border--gray-light mr60">
+        {getTooltipList({ inline: true, testId: 'top-right-horizontal' })}
+      </div>
+    </div>
+  )
+};
+
+testCases.bottomFiller = {
+  description:
+    'Filler, so absolutely positioned cases do not overlap the others',
+  element: <div style={{ marginTop: 80 }} />
+};
 
 export { testCases };
