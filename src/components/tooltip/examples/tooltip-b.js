@@ -1,7 +1,7 @@
 /*
 A dark tooltip with custom placement, which uses a function child
 to render a custom component as  the trigger and a function for its
-`content` prop.
+`content` prop. Also limits itself to a small width.
 */
 import React from 'react';
 import Tooltip from '../tooltip';
@@ -22,6 +22,7 @@ export default class Example extends React.Component {
         placement="bottom"
         alignment="left"
         coloring="dark"
+        maxWidth="small"
       >
         {triggerProps => <CustomTrigger spanProps={triggerProps} />}
       </Tooltip>

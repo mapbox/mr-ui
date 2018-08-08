@@ -19,7 +19,7 @@ exports[`Tooltip DOM element child renders as expected 1`] = `
 <PopoverTrigger
   content={
     <div
-      className="px12 py6 txt-s"
+      className="px12 py6 txt-s wmax240"
     >
       DOM element child
     </div>

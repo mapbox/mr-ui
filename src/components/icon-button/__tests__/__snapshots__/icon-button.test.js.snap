@@ -13,7 +13,8 @@ exports[`IconButton all props used, JSX content renders 1`] = `
     </span>
   }
   disabled={false}
-  display="inline-flex"
+  display="inline-block"
+  maxWidth="medium"
   padded={true}
   placement="right"
   respondsToClick={true}
@@ -45,6 +46,7 @@ exports[`IconButton basic renders 1`] = `
   content="close"
   disabled={false}
   display="inline-block"
+  maxWidth="medium"
   padded={true}
   placement="top"
   respondsToClick={false}

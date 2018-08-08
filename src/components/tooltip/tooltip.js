@@ -79,7 +79,9 @@ export default class Tooltip extends React.Component {
     const bodyClasses = classnames({
       'px12 py6': props.padded,
       'txt-s': props.textSize === 's',
-      'txt-xs': props.textSize === 'xs'
+      'txt-xs': props.textSize === 'xs',
+      wmax120: props.maxWidth === 'small',
+      wmax240: props.maxWidth === 'medium'
     });
 
     const content = <div className={bodyClasses}>{this.getContent()}</div>;
@@ -151,6 +153,10 @@ Tooltip.propTypes = {
    */
   textSize: PropTypes.oneOf(['xs', 's', 'none']),
   /**
+   * `'small'`, `'medium'`, or `'none'` (no `wmax*` class).
+   */
+  maxWidth: PropTypes.oneOf(['small', 'medium', 'none']),
+  /**
    * Set to `false` to remove the default padding on the popover body
    * (and, hopefully, apply your own).
    */
@@ -177,5 +183,6 @@ Tooltip.defaultProps = {
   respondsToClick: false,
   padded: true,
   display: 'inline-block',
-  textSize: 's'
+  textSize: 's',
+  maxWidth: 'medium'
 };

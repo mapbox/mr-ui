@@ -10,7 +10,7 @@ function getTooltipChildren() {
 }
 
 function getTooltipContent() {
-  return <div className="w240 h72">test tooltip</div>;
+  return <div className="h72">test tooltip</div>;
 }
 
 function getTooltipList(options = {}) {

@@ -18,7 +18,7 @@
   - [fix] Works in modals.
 - **Tooltip**
   - 🚨 [breaking change] Remove `backgroundColor` and `themeTooltip` props.
-  - [feature] Add `coloring` and `padded` props.
+  - [feature] Add `coloring`, `padded`, and `maxWidth` props.
   - [feature] Children of Tooltip no longer need to be functions! If you provide a standard DOM element (e.g. `<button>`, `<div>`, `<span>`) or a Button component, things will just work. You can still use a function if your trigger is a custom component.
 
 ## 0.2.1
