@@ -10,6 +10,26 @@ import getWindow from '@mapbox/mr-ui/utils/get-window';
 
 Wraps `window` to make it easy to mock aspects of the browser environment while testing.
 
+## shallowEqualObjects
+
+```js
+import shallowEqualObjects from '@mapbox/mr-ui/utils/shallow-equal-objects';
+
+shallowEqualObjects(
+  a: Object,
+  b: Object,
+  allowedObjectKeys: Array<string>
+): boolean;
+```
+
+Returns `true` if every property of `a` is equal to (with `===`) every property of `b`.
+
+Unlike some other shallow-compare functions, this one will *not* return true if `a === b`. Instead, it *only* evaluates based on the values of the object's properties.
+
+This check is *not* recursive. But `allowObjectKeys` can be used to add *one level* of depth to the check: properties whose keys are in the `allowedObjectKeys` array will themselves be checked with `shallowEqualObjects`, instead of just `===`.
+
+If you try to `shallowEqualObjects` to compare objects with values that are not primitives or functions and do not match an exception in `allowObjectKeys`, an error will be thrown.
+
 ## maybeAddPeriod
 
 ```js
