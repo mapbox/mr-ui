@@ -30,7 +30,7 @@ testCases.allPropsJsxContent = {
       backgroundColor: 'yellow',
       respondsToClick: true,
       themeTooltip: 'color-gray round px12 py12 shadow-darken25',
-      display: 'inline-flex',
+      display: 'inline-block',
       testId: 'tooltip-test-id'
     },
     themeButton: 'px12 py12 bg-gray',
