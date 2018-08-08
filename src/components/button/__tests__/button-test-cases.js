@@ -96,7 +96,7 @@ testCases.weird = {
     variant: 'destructive',
     onClick: safeSpy(),
     component: 'div',
-    elementAttributes: {
+    passthroughProps: {
       role: 'button',
       'data-test': 'foo'
     }
