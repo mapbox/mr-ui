@@ -7,7 +7,9 @@
 - Add **IconText** component.
 - Add **UnderlineTabs** component.
 - **PopoverTrigger**
-  - If the trigger responds to focus but not click, and you focus the trigger *first* and *then* click, that click *closes* the popover instead of leaving it open even after you move the mouse away.
+  - *Fix:* If the trigger responds to focus but not click, and you focus the trigger *first* and *then* click, that click *closes* the popover instead of leaving it open even after you move the mouse away.
+- **CopyButton**
+  - *Fix:* Works in modals.
 
 ## 0.2.1
 
