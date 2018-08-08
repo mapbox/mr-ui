@@ -393,7 +393,7 @@ PopoverTrigger.propTypes = {
    * Accepts a CSS `display` value for the trigger: `'inline-block'` or
    * `'block'`.
    */
-  display: PropTypes.string,
+  display: PropTypes.oneOf(['inline-block', 'block']),
   /**
    * The popover content. This can either be a string, valid JSX, or a function
    * returning either.
