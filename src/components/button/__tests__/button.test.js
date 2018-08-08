@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { shallow } from 'enzyme';
-
 import { testCases } from './button-test-cases';
 
 describe(testCases.primary.description, () => {
