@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { testCases } from './popover-test-cases';
+import { noDisplayCases } from './popover-test-cases';
 
 describe('Popover', () => {
   let testCase;
   let wrapper;
 
-  describe(testCases.basic.description, () => {
+  describe(noDisplayCases.basic.description, () => {
     beforeEach(() => {
-      testCase = testCases.basic;
+      testCase = noDisplayCases.basic;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
@@ -19,9 +19,35 @@ describe('Popover', () => {
     });
   });
 
-  describe(testCases.allProps.description, () => {
+  describe(noDisplayCases.dark.description, () => {
     beforeEach(() => {
-      testCase = testCases.allProps;
+      testCase = noDisplayCases.dark;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('renders', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe(noDisplayCases.warning.description, () => {
+    beforeEach(() => {
+      testCase = noDisplayCases.warning;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('renders', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe(noDisplayCases.allProps.description, () => {
+    beforeEach(() => {
+      testCase = noDisplayCases.allProps;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );

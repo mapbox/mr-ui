@@ -45,7 +45,7 @@
     "classnames": "^2.2.6",
     "clipboard": "^2.0.0",
     "debounce": "^1.1.0",
-    "focus-trap": "^2.3.0",
+    "focus-trap": "^3.0.0",
     "hoverintent": "^2.0.0",
     "os-key": "^1.0.0",
     "prefix": "^1.0.0",
@@ -55,7 +55,7 @@
     "react-submittable": "^2.0.0",
     "select": "^1.1.2",
     "shallow-equal": "^1.0.0",
-    "tabbable": "^1.1.1",
+    "tabbable": "^3.1.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {

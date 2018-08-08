@@ -230,8 +230,33 @@ testCases.trapFocus = {
   )
 };
 
-testCases.basic = {
-  noDisplay: true,
+testCases.dark = {
+  description: 'Dark',
+  element: (
+    <PopoverTrigger
+      popoverProps={{
+        coloring: 'dark'
+      }}
+      content="Dark coloring"
+    />
+  )
+};
+
+testCases.warning = {
+  description: 'Warning',
+  element: (
+    <PopoverTrigger
+      popoverProps={{
+        coloring: 'warning'
+      }}
+      content="Warning coloring"
+    />
+  )
+};
+
+const noDisplayCases = {};
+
+noDisplayCases.basic = {
   description: 'basic',
   component: Popover,
   props: {
@@ -240,16 +265,34 @@ testCases.basic = {
   }
 };
 
-testCases.allProps = {
-  noDisplay: true,
+noDisplayCases.dark = {
+  description: 'dark',
+  component: Popover,
+  props: {
+    getAnchorElement: () => {},
+    children: getPopoverContent(),
+    coloring: 'dark'
+  }
+};
+
+noDisplayCases.warning = {
+  description: 'warning',
+  component: Popover,
+  props: {
+    getAnchorElement: () => {},
+    children: getPopoverContent(),
+    coloring: 'warning'
+  }
+};
+
+noDisplayCases.allProps = {
   description: 'all props',
   component: Popover,
   props: {
     getAnchorElement: () => {},
     children: getPopoverContent(),
     placement: 'left',
-    backgroundColor: 'red',
-    themePopover: 'px12 py12',
+    padding: false,
     hasPointer: false,
     hideWhenAnchorIsOffscreen: true,
     allowPlacementAxisChange: false,
@@ -257,14 +300,13 @@ testCases.allProps = {
     clickOutsideCloses: false,
     escapeCloses: false,
     receiveFocus: false,
-    accessibleTitle: 'Title that is accessible',
     onExit: () => {},
     ignoreClickWithinElement: () => {},
     getContainingElement: () => {},
-    contentElementAttributes: {
+    passthroughProps: {
       'data-test': true
     }
   }
 };
 
-export { testCases };
+export { testCases, noDisplayCases };

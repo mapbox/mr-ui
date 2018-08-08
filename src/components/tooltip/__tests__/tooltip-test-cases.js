@@ -1,5 +1,7 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import Tooltip from '../tooltip';
+import Button from '../../button';
 
 const testCases = {};
 
@@ -104,82 +106,104 @@ function getTooltipList(options = {}) {
   );
 }
 
-testCases.basic = {
-  description: 'basic',
+testCases.DOMElementChild = {
+  description: 'DOM element child',
   component: Tooltip,
   props: {
-    children: getTooltipChildren,
-    content: 'basic'
+    children: <span>trigger</span>,
+    content: 'DOM element child'
   }
 };
 
-testCases.allProps = {
-  description: 'all props',
+function CustomThing(props) {
+  return <div {...props} />;
+}
+
+testCases.functionChild = {
+  description: 'functionChild',
   component: Tooltip,
   props: {
-    children: getTooltipChildren,
-    content: getTooltipContent,
-    placement: 'top',
-    alignment: 'left',
-    disabled: true,
-    backgroundColor: 'red',
-    respondsToClick: true,
-    themeTooltip: 'py6 px12 round txt-s txt-bold',
-    display: 'inline'
+    children: triggerProps => <CustomThing {...triggerProps}>trigger</CustomThing>,
+    content: 'function child'
   }
 };
 
-testCases.respondsToClick = {
-  description: 'responds to click',
+testCases.buttonChild = {
+  description: 'Button child',
   component: Tooltip,
   props: {
-    children: getTooltipChildren,
-    content: 'basic',
-    respondsToClick: true
+    children: <Button>trigger</Button>,
+    content: 'Button child'
   }
 };
-
-testCases.manyPositions = {
-  description: 'many positions',
-  element: (
-    <div>
-      {getTooltipList({ inline: true, testId: 'basic' })}
-
-      <div className="w120 h240 scroll-auto border border--gray-light">
-        {getTooltipList({ testId: 'scroll1' })}
-        {getTooltipList({ testId: 'scroll2' })}
-        {getTooltipList({ testId: 'scroll3' })}
-      </div>
-
-      <div className="fixed top left border border--gray-light">
-        {getTooltipList({ testId: 'top-left-vertical' })}
-      </div>
-      <div className="fixed top left border border--gray-light ml60">
-        {getTooltipList({ inline: true, testId: 'top-left-horizontal' })}
-      </div>
-
-      <div className="fixed bottom left border border--gray-light">
-        {getTooltipList({ testId: 'bottom-left-vertical' })}
-      </div>
-      <div className="fixed bottom left border border--gray-light ml60">
-        {getTooltipList({ inline: true, testId: 'bottom-left-horizontal' })}
-      </div>
-
-      <div className="fixed bottom right border border--gray-light">
-        {getTooltipList({ testId: 'bottom-right-vertical' })}
-      </div>
-      <div className="fixed bottom right border border--gray-light mr60">
-        {getTooltipList({ inline: true, testId: 'bottom-right-horizontal' })}
-      </div>
-
-      <div className="fixed top right border border--gray-light">
-        {getTooltipList({ testId: 'top-right-vertical' })}
-      </div>
-      <div className="fixed top right border border--gray-light mr60">
-        {getTooltipList({ inline: true, testId: 'top-right-horizontal' })}
-      </div>
-    </div>
-  )
-};
+//
+// testCases.allProps = {
+//   description: 'all props',
+//   component: Tooltip,
+//   props: {
+//     children: <span>test tooltip</span>,
+//     content: getTooltipContent,
+//     placement: 'top',
+//     alignment: 'left',
+//     disabled: true,
+//     backgroundColor: 'red',
+//     respondsToClick: true,
+//     themeTooltip: 'py3 px3 txt-bold txt-l',
+//     display: 'inline'
+//   }
+// };
+//
+// testCases.respondsToClick = {
+//   description: 'responds to click',
+//   component: Tooltip,
+//   props: {
+//     children: getTooltipChildren,
+//     content: 'basic',
+//     respondsToClick: true
+//   }
+// };
+//
+// testCases.manyPositions = {
+//   description: 'many positions',
+//   element: (
+//     <div>
+//       {getTooltipList({ inline: true, testId: 'basic' })}
+//
+//       <div className="w120 h240 scroll-auto border border--gray-light">
+//         {getTooltipList({ testId: 'scroll1' })}
+//         {getTooltipList({ testId: 'scroll2' })}
+//         {getTooltipList({ testId: 'scroll3' })}
+//       </div>
+//
+//       <div className="fixed top left border border--gray-light">
+//         {getTooltipList({ testId: 'top-left-vertical' })}
+//       </div>
+//       <div className="fixed top left border border--gray-light ml60">
+//         {getTooltipList({ inline: true, testId: 'top-left-horizontal' })}
+//       </div>
+//
+//       <div className="fixed bottom left border border--gray-light">
+//         {getTooltipList({ testId: 'bottom-left-vertical' })}
+//       </div>
+//       <div className="fixed bottom left border border--gray-light ml60">
+//         {getTooltipList({ inline: true, testId: 'bottom-left-horizontal' })}
+//       </div>
+//
+//       <div className="fixed bottom right border border--gray-light">
+//         {getTooltipList({ testId: 'bottom-right-vertical' })}
+//       </div>
+//       <div className="fixed bottom right border border--gray-light mr60">
+//         {getTooltipList({ inline: true, testId: 'bottom-right-horizontal' })}
+//       </div>
+//
+//       <div className="fixed top right border border--gray-light">
+//         {getTooltipList({ testId: 'top-right-vertical' })}
+//       </div>
+//       <div className="fixed top right border border--gray-light mr60">
+//         {getTooltipList({ inline: true, testId: 'top-right-horizontal' })}
+//       </div>
+//     </div>
+//   )
+// };
 
 export { testCases };
