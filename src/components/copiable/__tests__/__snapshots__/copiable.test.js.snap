@@ -59,16 +59,16 @@ exports[`Copiable basic Copy hint disappears at the right time 1`] = `
     accessibleTitle="⌘+C to copy!"
     alignment="center"
     allowPlacementAxisChange={true}
-    backgroundColor="#fff"
     clickOutsideCloses={true}
+    coloring="light"
     containWithinViewport={true}
     escapeCloses={true}
     getAnchorElement={[Function]}
     hasPointer={true}
     hideWhenAnchorIsOffscreen={true}
+    padded={true}
     placement="top"
     receiveFocus={true}
-    themePopover="round py6 px12 shadow-darken25"
     trapFocus={false}
   >
     <div
@@ -168,16 +168,16 @@ exports[`Copiable basic shows copy hint when clicked 1`] = `
     accessibleTitle="⌘+C to copy!"
     alignment="center"
     allowPlacementAxisChange={true}
-    backgroundColor="#fff"
     clickOutsideCloses={true}
+    coloring="light"
     containWithinViewport={true}
     escapeCloses={true}
     getAnchorElement={[Function]}
     hasPointer={true}
     hideWhenAnchorIsOffscreen={true}
+    padded={true}
     placement="top"
     receiveFocus={true}
-    themePopover="round py6 px12 shadow-darken25"
     trapFocus={false}
   >
     <div

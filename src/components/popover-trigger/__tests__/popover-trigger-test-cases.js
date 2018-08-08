@@ -51,8 +51,12 @@ testCases.callbacks = {
   component: PopoverTrigger,
   props: {
     content: getPopoverContent,
-    onPopoverOpen: safeSpy(),
-    onPopoverClose: safeSpy(),
+    onPopoverOpen: safeSpy(() => {
+      console.log('open');
+    }),
+    onPopoverClose: safeSpy(() => {
+      console.log('close');
+    }),
     respondsToFocus: true,
     respondsToHover: true,
     children: <button className="btn">Trigger</button>

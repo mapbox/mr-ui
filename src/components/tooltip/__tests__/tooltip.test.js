@@ -6,16 +6,42 @@ describe('Tooltip', () => {
   let testCase;
   let wrapper;
 
-  describe(testCases.basic.description, () => {
+  describe(testCases.domElementChild.description, () => {
     beforeEach(() => {
-      testCase = testCases.basic;
+      testCase = testCases.domElementChild;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
     });
 
-    test('renders', () => {
+    test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe(testCases.functionChild.description, () => {
+    beforeEach(() => {
+      testCase = testCases.functionChild;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('trigger renders as expected', () => {
+      expect(wrapper.children()).toMatchSnapshot();
+    });
+  });
+
+  describe(testCases.buttonChild.description, () => {
+    beforeEach(() => {
+      testCase = testCases.buttonChild;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('trigger renders as expected', () => {
+      expect(wrapper.children()).toMatchSnapshot();
     });
   });
 
@@ -27,8 +53,8 @@ describe('Tooltip', () => {
       );
     });
 
-    test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+    test('trigger renders as expected', () => {
+      expect(wrapper.children()).toMatchSnapshot();
     });
   });
 });

@@ -1,57 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tooltip all props renders 1`] = `
-<PopoverTrigger
-  content={[Function]}
-  disabled={true}
-  display="inline"
-  popoverProps={
+exports[`Tooltip Button child trigger renders as expected 1`] = `
+<Button
+  block={false}
+  disabled={false}
+  passthroughProps={
     Object {
-      "accessibleTitle": null,
-      "alignment": "left",
-      "backgroundColor": "red",
-      "contentElementAttributes": Object {
-        "id": "tooltip-2",
-        "role": "tooltip",
-      },
-      "hasPointer": true,
-      "hideWhenAnchorIsOffscreen": true,
-      "placement": "top",
-      "themePopover": "py6 px12 round txt-s txt-bold",
+      "aria-describedby": "tooltip-3",
     }
   }
-  receiveFocus={false}
-  renderHiddenContent={true}
-  respondsToClick={true}
-  respondsToFocus={true}
-  respondsToHover={true}
-  trapFocus={false}
-  triggerProps={Object {}}
+  variant="primary"
 >
-  <span>
-    test tooltip
-  </span>
-</PopoverTrigger>
+  trigger
+</Button>
 `;
 
-exports[`Tooltip basic renders 1`] = `
+exports[`Tooltip DOM element child renders as expected 1`] = `
 <PopoverTrigger
-  content="basic"
+  content={
+    <div
+      className="px12 py6 txt-s"
+    >
+      DOM element child
+    </div>
+  }
   disabled={false}
   display="inline-block"
   popoverProps={
     Object {
-      "accessibleTitle": null,
       "alignment": "center",
-      "backgroundColor": "#fff",
-      "contentElementAttributes": Object {
+      "coloring": "light",
+      "hasPointer": true,
+      "hideWhenAnchorIsOffscreen": true,
+      "padded": false,
+      "passthroughProps": Object {
         "id": "tooltip-1",
         "role": "tooltip",
       },
-      "hasPointer": true,
-      "hideWhenAnchorIsOffscreen": true,
       "placement": "top",
-      "themePopover": "round py6 px12 shadow-darken25 txt-s z1",
     }
   }
   receiveFocus={false}
@@ -60,10 +46,27 @@ exports[`Tooltip basic renders 1`] = `
   respondsToFocus={true}
   respondsToHover={true}
   trapFocus={false}
-  triggerProps={Object {}}
 >
-  <span>
-    test tooltip
+  <span
+    aria-describedby="tooltip-1"
+  >
+    trigger
   </span>
 </PopoverTrigger>
+`;
+
+exports[`Tooltip all props trigger renders as expected 1`] = `
+<div
+  aria-describedby="tooltip-4"
+>
+  test tooltip
+</div>
+`;
+
+exports[`Tooltip function child trigger renders as expected 1`] = `
+<CustomThing
+  aria-describedby="tooltip-2"
+>
+  trigger
+</CustomThing>
 `;

@@ -12,12 +12,11 @@ exports[`Popover all props renders 1`] = `
   mounted={true}
   onElement={[Function]}
   placement="left"
-  pointerColor="red"
+  pointerColor="#fff"
 >
   <div
-    aria-label="Title that is accessible"
-    className="px12 py12"
-    data-popover-id={2}
+    className="color-text shadow-darken25 round px12 py12"
+    data-popover-id={4}
     data-test={true}
     key="body"
     onFocus={[Function]}
@@ -25,7 +24,7 @@ exports[`Popover all props renders 1`] = `
     role="dialog"
     style={
       Object {
-        "backgroundColor": "red",
+        "backgroundColor": "#fff",
       }
     }
     tabIndex={-1}
@@ -53,7 +52,7 @@ exports[`Popover basic renders 1`] = `
   pointerColor="#fff"
 >
   <div
-    className="round py6 px12 shadow-darken25"
+    className="color-text shadow-darken25 round px12 py12"
     data-popover-id={1}
     key="body"
     onFocus={[Function]}
@@ -62,6 +61,78 @@ exports[`Popover basic renders 1`] = `
     style={
       Object {
         "backgroundColor": "#fff",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover dark renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={true}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#273d56"
+>
+  <div
+    className="color-white shadow-darken25 round px12 py12"
+    data-popover-id={2}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#273d56",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover warning renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={true}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#FFF5A0"
+>
+  <div
+    className="color-text shadow-darken25 round px12 py12"
+    data-popover-id={3}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#FFF5A0",
       }
     }
     tabIndex={-1}

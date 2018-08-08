@@ -7,53 +7,22 @@ const TRIGGER_HOVER = 'hover';
 const TRIGGER_FOCUS = 'focus';
 const TRIGGER_CLICK = 'click';
 
+/**
+ * A smart trigger for managing the state of a [Popover](#popover).
+ *
+ * If you want to manage the open-closed state of the Popover yourself,
+ * use [Popover](#popover) directly.
+ *
+ * `respondsToClick`, `respondsToHover`, and `respondsToFocus` props determine
+ * the means of opening and closing the Popover with interactions. If you open
+ * the Popover with a hover or focus, you can also close it by hovering away or
+ * blurring. If, however, you open the Popover with a click, you can only close
+ * it with another click, on the trigger or outside the Popover. If you
+ * open the Popover with a hover and *then* you click, this is equivalent to
+ * opening it with a click directly, so it will only close with another
+ * click (not from just hovering away).
+ */
 export default class PopoverTrigger extends React.Component {
-  static propTypes = {
-    /** The trigger content. This can either be a string or valid JSX. */
-    children: PropTypes.node.isRequired,
-    /** Accepts a CSS `display` value. */
-    display: PropTypes.string,
-    /** The popover content. This can either be a string, valid JSX, or a function returning either. */
-    content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-    /** If `true`, the popover will always be rendered, and will be hidden when inactive.
-     * By default, the popover is added to and removed from the DOM dynamically. This prop is used by Tooltip for accessbility reasons.
-     */
-    renderHiddenContent: PropTypes.bool,
-    /** Whether or not the popover receives focus when it opens. */
-    receiveFocus: PropTypes.bool,
-    /** Whether or not the popover receives *and traps* focus when it opens. */
-    trapFocus: PropTypes.bool,
-    /** Whether or not the trigger responds to clicks. **Warning**: You probably don't want to use `respondsToClick` and `receivesFocus` *and* `respondsToFocus` all together, because they can have clashing interactions. e.g. When the popover that trapped focus closes, it returns focus to the trigger, which then causes the popover to open again. */
-    respondsToClick: PropTypes.bool,
-    /** Whether or not the trigger responds to `mouseenter` and `mouseleave` events. */
-    respondsToHover: PropTypes.bool,
-    /** Whether or not the trigger responds to `focus` and `blur` events. */
-    respondsToFocus: PropTypes.bool,
-    /** If `true`, the trigger will not work. */
-    disabled: PropTypes.bool,
-    /** Extra props to pass to the Popover component. */
-    popoverProps: PropTypes.object,
-    /** Extra props to pass the `<div>` around your trigger content. */
-    triggerProps: PropTypes.object,
-    /** Callback that is invoked when the popover opens. */
-    onPopoverOpen: PropTypes.func,
-    /** Callback that is invoked when the popover closes. */
-    onPopoverClose: PropTypes.func
-  };
-
-  static defaultProps = {
-    display: 'inline-block',
-    disabled: false,
-    renderHiddenContent: false,
-    receiveFocus: true,
-    trapFocus: false,
-    respondsToClick: true,
-    respondsToHover: false,
-    respondsToFocus: false,
-    popoverProps: {},
-    triggerProps: {}
-  };
-
   state = {
     visible: false,
     activeTriggerType: null
@@ -364,9 +333,9 @@ export default class PopoverTrigger extends React.Component {
     if (state.visible) {
       // Only send focus inside if we've clicked to open
       const receiveFocus =
-        props.receiveFocus && state.activeTriggerType !== TRIGGER_CLICK;
+        props.receiveFocus && state.activeTriggerType === TRIGGER_CLICK;
       const trapFocus =
-        props.trapFocus && state.activeTriggerType !== TRIGGER_CLICK;
+        props.trapFocus && state.activeTriggerType === TRIGGER_CLICK;
 
       popover = (
         <Popover
@@ -390,7 +359,7 @@ export default class PopoverTrigger extends React.Component {
       hiddenContent = (
         <div
           className="hide-visually"
-          {...this.props.popoverProps.contentElementAttributes || {}}
+          {...this.props.popoverProps.passthroughProps || {}}
         >
           {this.getPopoverContent()}
         </div>
@@ -401,7 +370,7 @@ export default class PopoverTrigger extends React.Component {
       <div
         ref={this.setTriggerElement}
         style={{ display: props.display }}
-        {...props.triggerProps}
+        {...props.passthroughTriggerProps}
         onClick={this.onAnyClick}
         onFocus={this.onTriggerFocus}
         onBlur={this.onTriggerBlur}
@@ -414,3 +383,93 @@ export default class PopoverTrigger extends React.Component {
     );
   }
 }
+
+PopoverTrigger.propTypes = {
+  /**
+   * The trigger content. This can either be a string or valid JSX.
+   */
+  children: PropTypes.node.isRequired,
+  /**
+   * Accepts a CSS `display` value for the trigger: `'inline-block'` or
+   * `'block'`.
+   */
+  display: PropTypes.oneOf(['inline-block', 'block']),
+  /**
+   * The popover content. This can either be a string, valid JSX, or a function
+   * returning either.
+   */
+  content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  /**
+   * **You will not need to use this.** This prop is used by
+   * [Tooltip](#tooltip) for improved accessbility.
+   *
+   * If `true`, the popover will always be rendered *but it will be visually
+   * hidden when inactive*.
+   *
+   * By default, the popover is added to and removed from the DOM dynamically.
+   */
+  renderHiddenContent: PropTypes.bool,
+  /**
+   * Whether or not the popover receives focus when it opens.
+   *
+   * This will *only* happen if the trigger is opened with a click.
+   */
+  receiveFocus: PropTypes.bool,
+  /**
+   * Whether or not the popover receives *and traps* focus when it opens.
+   *
+   * This will *only* happen if the trigger is opened with a click.
+   */
+  trapFocus: PropTypes.bool,
+  /**
+   * Whether or not the trigger responds to clicks.
+   *
+   * **Warning**: You probably don't want to use `respondsToClick` and
+   * `receivesFocus` *and* `respondsToFocus` all together, because they can
+   * have clashing interactions. For example, when the popover that trapped
+   * focus closes, it returns focus to the trigger, which then causes the
+   * popover to open again.
+   */
+  respondsToClick: PropTypes.bool,
+  /**
+   * Whether or not the trigger responds to `mouseenter` and `mouseleave` events.
+   */
+  respondsToHover: PropTypes.bool,
+  /**
+   * Whether or not the trigger responds to `focus` and `blur` events.
+   */
+  respondsToFocus: PropTypes.bool,
+  /**
+   * Whether or not the trigger is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Props to pass directly to the [Popover](#popover) component. See Popover's
+   * documentation for details.
+   */
+  popoverProps: PropTypes.object,
+  /**
+   * Props to pass directly to the `<div>` that will wrap your trigger content.
+   */
+  passthroughTriggerProps: PropTypes.object,
+  /**
+   * Callback that is invoked when the popover opens.
+   */
+  onPopoverOpen: PropTypes.func,
+  /**
+   * Callback that is invoked when the popover closes.
+   */
+  onPopoverClose: PropTypes.func
+};
+
+PopoverTrigger.defaultProps = {
+  display: 'inline-block',
+  disabled: false,
+  renderHiddenContent: false,
+  receiveFocus: true,
+  trapFocus: false,
+  respondsToClick: true,
+  respondsToHover: false,
+  respondsToFocus: false,
+  popoverProps: {}
+};

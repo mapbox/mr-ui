@@ -1,5 +1,7 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import Tooltip from '../tooltip';
+import Button from '../../button';
 
 const testCases = {};
 
@@ -23,11 +25,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-default`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              default
-            </button>
-          )}
+          <button className={buttonClasses}>default</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -37,11 +35,7 @@ function getTooltipList(options = {}) {
           respondsToClick={options.respondsToClick}
           disabled={true}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              disabled
-            </button>
-          )}
+          <button className={buttonClasses}>disabled</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -51,11 +45,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-top`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              top
-            </button>
-          )}
+          <button className={buttonClasses}>top</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -65,11 +55,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-left`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              left
-            </button>
-          )}
+          <button className={buttonClasses}>left</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -79,11 +65,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-right`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              right
-            </button>
-          )}
+          <button className={buttonClasses}>right</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -93,23 +75,49 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-bottom`}
           respondsToClick={options.respondsToClick}
         >
-          {triggerProps => (
-            <button className={buttonClasses} {...triggerProps}>
-              bottom
-            </button>
-          )}
+          <button className={buttonClasses}>bottom</button>
         </Tooltip>
       </div>
     </div>
   );
 }
 
-testCases.basic = {
-  description: 'basic',
+testCases.topFiller = {
+  description:
+    'Filler, so absolutely positioned cases do not overlap the others',
+  element: <div style={{ marginTop: 80 }} />
+};
+
+testCases.domElementChild = {
+  description: 'DOM element child',
   component: Tooltip,
   props: {
-    children: getTooltipChildren,
-    content: 'basic'
+    children: <span>trigger</span>,
+    content: 'DOM element child'
+  }
+};
+
+function CustomThing(props) {
+  return <div {...props} />;
+}
+
+testCases.functionChild = {
+  description: 'function child',
+  component: Tooltip,
+  props: {
+    children: triggerProps => (
+      <CustomThing {...triggerProps}>trigger</CustomThing>
+    ),
+    content: 'function child'
+  }
+};
+
+testCases.buttonChild = {
+  description: 'Button child',
+  component: Tooltip,
+  props: {
+    children: <Button>trigger</Button>,
+    content: 'Button child'
   }
 };
 
@@ -117,15 +125,14 @@ testCases.allProps = {
   description: 'all props',
   component: Tooltip,
   props: {
-    children: getTooltipChildren,
+    children: <div>test tooltip</div>,
     content: getTooltipContent,
     placement: 'top',
     alignment: 'left',
-    disabled: true,
-    backgroundColor: 'red',
+    coloring: 'dark',
     respondsToClick: true,
-    themeTooltip: 'py6 px12 round txt-s txt-bold',
-    display: 'inline'
+    themeTooltip: 'py3 px3 txt-bold txt-l',
+    display: 'inline-block'
   }
 };
 
@@ -180,6 +187,12 @@ testCases.manyPositions = {
       </div>
     </div>
   )
+};
+
+testCases.bottomFiller = {
+  description:
+    'Filler, so absolutely positioned cases do not overlap the others',
+  element: <div style={{ marginTop: 80 }} />
 };
 
 export { testCases };
