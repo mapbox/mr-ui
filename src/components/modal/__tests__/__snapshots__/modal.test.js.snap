@@ -2,18 +2,12 @@
 
 exports[`Modal No fixed width, display only renders 1`] = `
 <Displaced
-  dialogStyle={
-    Object {
-      "boxShadow": "none",
-    }
-  }
   focusDialog={true}
   getApplicationNode={[Function]}
   mounted={true}
   onExit={[MockFunction]}
   titleText="Auto modal title"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
-  underlayColor=""
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
   underlayProps={
     Object {
       "data-popover-ignore-clicks": true,
@@ -26,10 +20,10 @@ exports[`Modal No fixed width, display only renders 1`] = `
   }
 >
   <div
-    className="relative wmax-full  bg-white px36 py36 round"
+    className="relative wmax-full  bg-white round px36 py36"
   >
     <div>
-      No fixed width on the modal container
+      No fixed width on the modal container. But very tall.
     </div>
     <div
       className="absolute top right"
@@ -51,32 +45,25 @@ exports[`Modal No fixed width, display only renders 1`] = `
 
 exports[`Modal all options renders 1`] = `
 <Displaced
-  dialogStyle={
-    Object {
-      "boxShadow": "none",
-    }
-  }
   getApplicationNode={[Function]}
   initialFocus="#foo"
   mounted={true}
   onExit={[MockFunction]}
   titleText="All options"
-  underlayClass="bg-pink px24 py24"
-  underlayColor=""
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
   underlayProps={
     Object {
-      "data-foo": "foo",
+      "data-popover-ignore-clicks": true,
     }
   }
   underlayStyle={
     Object {
-      "margin": "pink",
       "zIndex": 1,
     }
   }
 >
   <div
-    className="relative wmax-full w360 bg-gray-light round py60 px60"
+    className="relative wmax-full w360 bg-white round"
   >
     <div>
       <div
@@ -111,18 +98,12 @@ exports[`Modal all options renders 1`] = `
 
 exports[`Modal basic default renders 1`] = `
 <Displaced
-  dialogStyle={
-    Object {
-      "boxShadow": "none",
-    }
-  }
   focusDialog={true}
   getApplicationNode={[Function]}
   mounted={true}
   onExit={[MockFunction]}
   titleText="Large modal title"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
-  underlayColor=""
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
   underlayProps={
     Object {
       "data-popover-ignore-clicks": true,
@@ -135,10 +116,35 @@ exports[`Modal basic default renders 1`] = `
   }
 >
   <div
-    className="relative wmax-full w600 bg-white px36 py36 round"
+    className="relative wmax-full w600 bg-white round px36 py36"
   >
     <div>
       Large modal body
+    </div>
+    <div
+      className="mt24"
+    >
+      <ModalActions
+        primaryAction={
+          Object {
+            "callback": [MockFunction],
+            "destructive": true,
+            "text": "Okay",
+          }
+        }
+        secondaryAction={
+          Object {
+            "callback": [MockFunction],
+            "text": "Cancel",
+          }
+        }
+        tertiaryAction={
+          Object {
+            "callback": [MockFunction],
+            "text": "Give up",
+          }
+        }
+      />
     </div>
     <div
       className="absolute top right"
@@ -160,18 +166,12 @@ exports[`Modal basic default renders 1`] = `
 
 exports[`Modal basic small renders 1`] = `
 <Displaced
-  dialogStyle={
-    Object {
-      "boxShadow": "none",
-    }
-  }
   focusDialog={true}
   getApplicationNode={[Function]}
   mounted={true}
   onExit={[MockFunction]}
   titleText="Small modal title"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
-  underlayColor=""
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
   underlayProps={
     Object {
       "data-popover-ignore-clicks": true,
@@ -184,10 +184,22 @@ exports[`Modal basic small renders 1`] = `
   }
 >
   <div
-    className="relative wmax-full w360 bg-white px36 py36 round"
+    className="relative wmax-full w360 bg-white round px36 py36"
   >
     <div>
       Small modal body
+    </div>
+    <div
+      className="mt24"
+    >
+      <ModalActions
+        primaryAction={
+          Object {
+            "callback": [MockFunction],
+            "text": "Okay",
+          }
+        }
+      />
     </div>
     <div
       className="absolute top right"
@@ -209,17 +221,11 @@ exports[`Modal basic small renders 1`] = `
 
 exports[`Modal no onExit renders 1`] = `
 <Displaced
-  dialogStyle={
-    Object {
-      "boxShadow": "none",
-    }
-  }
   focusDialog={true}
   getApplicationNode={[Function]}
   mounted={true}
   titleText="No onExit passed as prop"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm"
-  underlayColor=""
+  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
   underlayProps={
     Object {
       "data-popover-ignore-clicks": true,
@@ -232,7 +238,7 @@ exports[`Modal no onExit renders 1`] = `
   }
 >
   <div
-    className="relative wmax-full w360 bg-white px36 py36 round"
+    className="relative wmax-full w360 bg-white round px36 py36"
   >
     <div>
       You can't close me

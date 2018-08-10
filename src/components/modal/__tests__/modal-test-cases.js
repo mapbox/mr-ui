@@ -16,7 +16,7 @@ class ModalWrapper extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState({ modalOpen: !this.state.modalOpen });
+    this.setState(state => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {
@@ -39,9 +39,13 @@ testCases.basicSmallDisplay = {
   element: (
     <ModalWrapper
       componentProps={{
-        title: 'Small modal title',
+        accessibleTitle: 'Small modal title',
         size: 'small',
-        children: <div>Small modal body</div>
+        children: <div>Small modal body</div>,
+        primaryAction: {
+          text: 'Okay',
+          callback: safeSpy()
+        }
       }}
     />
   )
@@ -52,8 +56,21 @@ testCases.basicLargeDisplay = {
   element: (
     <ModalWrapper
       componentProps={{
-        title: 'Large modal title',
-        children: <div>Large modal body</div>
+        accessibleTitle: 'Large modal title',
+        children: <div>Large modal body</div>,
+        primaryAction: {
+          text: 'Okay',
+          callback: safeSpy(),
+          destructive: true
+        },
+        secondaryAction: {
+          text: 'Cancel',
+          callback: safeSpy()
+        },
+        tertiaryAction: {
+          text: 'Give up',
+          callback: safeSpy()
+        }
       }}
     />
   )
@@ -64,29 +81,33 @@ testCases.basicAutoDisplay = {
   element: (
     <ModalWrapper
       componentProps={{
-        title: 'Auto modal title',
+        accessibleTitle: 'Auto modal title',
         size: 'auto',
-        children: <div>No fixed width on the modal container</div>
+        children: (
+          <div style={{ height: 1200 }}>
+            No fixed width on the modal container
+          </div>
+        )
       }}
     />
   )
 };
 
-testCases.themed = {
-  description: 'themed modal',
+testCases.unpadded = {
+  description: 'unpadded modal',
   element: (
     <ModalWrapper
       componentProps={{
-        title: 'Large modal title',
-        children: <div>Theme modal container and close button</div>,
-        themeModal: 'bg-gray round py60 px60 color-white',
-        themeButtonClose:
-          'btn btn--transparent unround-t unround-br color-white py12 px12',
-        underlayStyle: {
-          transform: 'scale(0.9)',
-          zIndex: 5
-        },
-        themeUnderlay: 'bg-pink px24 py24'
+        accessibleTitle: 'Unpadded',
+        children: (
+          <div className="flex-parent flex-parent--stretch-cross">
+            <div className="flex-child w300 bg-gray-dark px24 py24 round-l color-white">
+              One side
+            </div>
+            <div className="flex-child px24 py24">The other side</div>
+          </div>
+        ),
+        padded: false
       }}
     />
   )
@@ -94,59 +115,69 @@ testCases.themed = {
 
 // Automatable test cases
 
-testCases.basicLarge = {
+const noDisplayCases = {};
+
+noDisplayCases.basicLarge = {
   description: 'basic default',
   component: Modal,
   props: {
-    title: 'Large modal title',
+    accessibleTitle: 'Large modal title',
     onExit: safeSpy(),
-    children: <div>Large modal body</div>
+    children: <div>Large modal body</div>,
+    primaryAction: {
+      text: 'Okay',
+      callback: safeSpy(),
+      destructive: true
+    },
+    secondaryAction: {
+      text: 'Cancel',
+      callback: safeSpy()
+    },
+    tertiaryAction: {
+      text: 'Give up',
+      callback: safeSpy()
+    }
   },
   noDisplay: true
 };
 
-testCases.basicSmall = {
+noDisplayCases.basicSmall = {
   description: 'basic small',
   component: Modal,
   props: {
-    title: 'Small modal title',
+    accessibleTitle: 'Small modal title',
     onExit: safeSpy(),
     size: 'small',
-    children: <div>Small modal body</div>
+    children: <div>Small modal body</div>,
+    primaryAction: {
+      text: 'Okay',
+      callback: safeSpy()
+    }
   },
   noDisplay: true
 };
 
-testCases.basicAuto = {
+noDisplayCases.basicAuto = {
   description: 'No fixed width, display only',
   component: Modal,
   props: {
-    title: 'Auto modal title',
+    accessibleTitle: 'Auto modal title',
     onExit: safeSpy(),
     size: 'auto',
-    children: <div>No fixed width on the modal container</div>
+    children: <div>No fixed width on the modal container. But very tall.</div>
   },
   noDisplay: true
 };
 
-testCases.allOptions = {
+noDisplayCases.allOptions = {
   description: 'all options',
   component: Modal,
   props: {
-    title: 'All options',
+    accessibleTitle: 'All options',
     size: 'small',
     onExit: safeSpy(),
     initialFocus: '#foo',
-    themeModal: 'bg-gray-light round py60 px60',
-    themeButtonClose:
-      'btn btn--transparent unround-t unround-br color-gray py12 px12',
-    underlayProps: {
-      'data-foo': 'foo'
-    },
-    underlayStyle: {
-      margin: 'pink'
-    },
-    themeUnderlay: 'bg-pink px24 py24',
+    padded: false,
     children: (
       <div>
         <div className="mb12">I am a message</div>
@@ -159,15 +190,15 @@ testCases.allOptions = {
   noDisplay: true
 };
 
-testCases.optionalOnExit = {
+noDisplayCases.optionalOnExit = {
   description: 'no onExit',
   component: Modal,
   props: {
-    title: 'No onExit passed as prop',
+    accessibleTitle: 'No onExit passed as prop',
     size: 'small',
     children: <div>You can't close me</div>
   },
   noDisplay: true
 };
 
-export { testCases };
+export { testCases, noDisplayCases };

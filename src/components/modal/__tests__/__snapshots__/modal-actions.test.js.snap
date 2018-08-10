@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`primary and secondary renders as expected 1`] = `
+<div
+  className="flex-parent flex-parent--center-main flex-parent--center-cross flex-parent--row-reverse flex-parent--wrap"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Button
+      block={false}
+      data-test="primary-modal-action"
+      disabled={false}
+      onClick={[MockFunction]}
+      size="medium"
+      variant="primary"
+    >
+      Okay
+    </Button>
+  </div>
+  <div
+    className="flex-child flex-child--no-shrink mr12"
+  >
+    <Button
+      block={false}
+      data-test="secondary-modal-action"
+      disabled={false}
+      onClick={[MockFunction]}
+      size="medium"
+      variant="discouraging"
+    >
+      Cancel
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`primary and tertiary does not render tertiary button, since secondary is not provided 1`] = `
+<div
+  className="flex-parent flex-parent--center-main flex-parent--center-cross flex-parent--row-reverse flex-parent--wrap"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Button
+      block={false}
+      data-test="primary-modal-action"
+      disabled={false}
+      onClick={[MockFunction]}
+      size="medium"
+      variant="primary"
+    >
+      Okay
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`primary only renders as expected 1`] = `
+<div
+  className="flex-parent flex-parent--center-main flex-parent--center-cross flex-parent--row-reverse flex-parent--wrap"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Button
+      block={false}
+      data-test="primary-modal-action"
+      disabled={false}
+      onClick={[MockFunction]}
+      size="medium"
+      variant="primary"
+    >
+      Okay
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`primary, secondary, tertiary renders as expected 1`] = `
+<div
+  className="flex-parent flex-parent--center-main flex-parent--center-cross flex-parent--row-reverse flex-parent--wrap"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Button
+      block={false}
+      data-test="primary-modal-action"
+      disabled={false}
+      onClick={[MockFunction]}
+      size="medium"
+      variant="primary"
+    >
+      Okay
+    </Button>
+  </div>
+  <div
+    className="flex-child flex-child--no-shrink mr12"
+  >
+    <Button
+      block={false}
+      data-test="secondary-modal-action"
+      disabled={false}
+      onClick={[MockFunction]}
+      size="medium"
+      variant="discouraging"
+    >
+      Cancel
+    </Button>
+  </div>
+  <div
+    className="flex-child flex-child--grow flex-child--no-shrink mr12"
+  >
+    <button
+      className="link link--gray txt-bold txt-s"
+      data-test="tertiary-modal-action"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Give up
+    </button>
+  </div>
+</div>
+`;

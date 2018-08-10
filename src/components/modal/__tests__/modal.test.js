@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { testCases } from './modal-test-cases';
+import { noDisplayCases } from './modal-test-cases';
 
 describe('Modal', () => {
   let testCase;
   let wrapper;
 
-  describe(testCases.basicSmall.description, () => {
+  describe(noDisplayCases.basicSmall.description, () => {
     beforeEach(() => {
-      testCase = testCases.basicSmall;
+      testCase = noDisplayCases.basicSmall;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
@@ -26,9 +26,9 @@ describe('Modal', () => {
     });
   });
 
-  describe(testCases.basicLarge.description, () => {
+  describe(noDisplayCases.basicLarge.description, () => {
     beforeEach(() => {
-      testCase = testCases.basicLarge;
+      testCase = noDisplayCases.basicLarge;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
@@ -46,9 +46,9 @@ describe('Modal', () => {
     });
   });
 
-  describe(testCases.basicAuto.description, () => {
+  describe(noDisplayCases.basicAuto.description, () => {
     beforeEach(() => {
-      testCase = testCases.basicAuto;
+      testCase = noDisplayCases.basicAuto;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
@@ -66,9 +66,9 @@ describe('Modal', () => {
     });
   });
 
-  describe(testCases.allOptions.description, () => {
+  describe(noDisplayCases.allOptions.description, () => {
     beforeEach(() => {
-      testCase = testCases.allOptions;
+      testCase = noDisplayCases.allOptions;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
@@ -79,9 +79,9 @@ describe('Modal', () => {
     });
   });
 
-  describe(testCases.optionalOnExit.description, () => {
+  describe(noDisplayCases.optionalOnExit.description, () => {
     beforeEach(() => {
-      testCase = testCases.optionalOnExit;
+      testCase = noDisplayCases.optionalOnExit;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
