@@ -23,7 +23,7 @@
 - **Modal**
   - 🚨 [breaking change] Remove `underlayStyle`, `underlayProps`, `themeUnderlay`, `themeModal`, and `themeButtonClose` props.
   - 🚨 [breaking change] Rename `title` to `accessibleTitle`.
-  - [feature] Add `padded`, `primaryAction`, `secondaryAction`, and `tertiaryAction` props.
+  - [feature] Add `padded`, `alert`, `primaryAction`, `secondaryAction`, and `tertiaryAction` props.
   - [fix] Modals taller than the viewport will now show padding above them: the browser will not longer automatically scroll down to the top of the modal.
   - [fix] Update `react-aria-modal` to get some bug fixes and focus-management improvements.
 
