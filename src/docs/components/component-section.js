@@ -33,7 +33,7 @@ export default class ComponentSection extends React.Component {
 
     const exampleEls = data.examples.map((example, i) => {
       return (
-        <div key={i} className="my24">
+        <div key={i} className="mb12">
           <ComponentExample {...example} />
         </div>
       );
@@ -41,7 +41,7 @@ export default class ComponentSection extends React.Component {
 
     return (
       <div className="mt24 mb12">
-        <h3 className="txt-h4 txt-bold pb6">Examples</h3>
+        <h3 className="txt-h4 txt-bold mb12">Examples</h3>
         {exampleEls}
       </div>
     );

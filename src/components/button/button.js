@@ -11,7 +11,7 @@ import xtend from 'xtend';
  * render a different element altogether.)
  *
  * If you'd like to put an icon before or after the text of your button,
- * use [IconText](#mbxicontext) for the content.
+ * use [IconText](#icontext) for the content.
  */
 class Button extends React.Component {
   render() {
@@ -134,7 +134,7 @@ Button.propTypes = {
   /**
    * The button's content. A string is recommended, but you can put an element
    * in here if you think that's right. If you do, it should be inline-level,
-   * using `<span>`s instead of `<div>`s. ([IconText](#mbxicontext) is
+   * using `<span>`s instead of `<div>`s. ([IconText](#icontext) is
    * inline-level.)
    */
   children: PropTypes.node.isRequired,

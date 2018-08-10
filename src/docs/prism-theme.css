@@ -1,0 +1,109 @@
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #273d56;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    background: #aab7ef;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    background: #aab7ef;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    /* padding: 1em; */
+    margin: .5em 0;
+    overflow: auto;
+    border: 1px solid #dddddd;
+    /* background-color: white; */
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .2em;
+    padding-top: 1px; padding-bottom: 1px;
+    background: #f8f8f8;
+    border: 1px solid #dddddd;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #999988; font-style: italic;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.tag .token.tag,
+.token.selector {
+    color: #7753eb;
+}
+
+.token.string,
+.token.attr-value {
+    color: #ee4e8b;
+}
+.token.punctuation,
+.token.operator {
+    color: #607d9c; /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+    color: #33c377;
+}
+
+.token.atrule,
+.token.keyword,
+.language-autohotkey .token.selector {
+    color: #314ccd;
+}
+
+.token.function,
+.token.deleted,
+.language-autohotkey .token.tag {
+    color: #ba3b3f;
+}
+
+.token.important,
+.token.function,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}

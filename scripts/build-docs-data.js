@@ -24,12 +24,15 @@ const excludeSourceDirs = new Set(['page-loading-indicator', 'utils']);
 
 function processExampleFile(filename) {
   return pify(fs.readFile)(filename, 'utf8').then(code => {
+    // Assumes there is only one block comment, and it is the description.
     const descriptionMatch = /\/\*([\s\S]+?)\*\//.exec(code);
     if (!descriptionMatch) {
       throw new Error(`No description found for example ${filename}`);
     }
     code = code
-      .replace(`from '../src/`, `from '@mapbox/mr-ui/`)
+      // Replace imported component paths with npm package paths.
+      .replace(/from '\.\.\/(\.\.\/)?/g, `from '@mapbox/mr-ui/`)
+      // Remove block comments (especially the description).
       .replace(/\/\*[\s\S]*?\*\/[\s]*/, '')
       .trim();
 
