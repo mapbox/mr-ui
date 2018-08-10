@@ -122,6 +122,31 @@ exports[`Modal basic default renders 1`] = `
       Large modal body
     </div>
     <div
+      className="mt24"
+    >
+      <ModalActions
+        primaryAction={
+          Object {
+            "callback": [MockFunction],
+            "destructive": true,
+            "text": "Okay",
+          }
+        }
+        secondaryAction={
+          Object {
+            "callback": [MockFunction],
+            "text": "Cancel",
+          }
+        }
+        tertiaryAction={
+          Object {
+            "callback": [MockFunction],
+            "text": "Give up",
+          }
+        }
+      />
+    </div>
+    <div
       className="absolute top right"
     >
       <IconButton
@@ -163,6 +188,18 @@ exports[`Modal basic small renders 1`] = `
   >
     <div>
       Small modal body
+    </div>
+    <div
+      className="mt24"
+    >
+      <ModalActions
+        primaryAction={
+          Object {
+            "callback": [MockFunction],
+            "text": "Okay",
+          }
+        }
+      />
     </div>
     <div
       className="absolute top right"

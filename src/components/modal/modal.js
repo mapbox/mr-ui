@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 import AriaModal from 'react-aria-modal';
 import IconButton from '../icon-button';
 import getWindow from '../utils/get-window';
+import ModalActions from './modal-actions';
 
 /**
  * An accessible modal dialog.
+ *
+ * To get a standard button arrangement at the bottom of the modal, use the
+ * `primaryAction`, `secondaryAction`, and `tertiaryAction` props.
  *
  * This modal *traps focus within it*. You should be aware of that, because it
  * can sometimes introduce a hurdle when integrating the modal with other
@@ -46,6 +50,23 @@ export default class Modal extends React.Component {
     this.dialogEl = el;
   }
 
+  renderActions() {
+    const { primaryAction, secondaryAction, tertiaryAction } = this.props;
+    if (!primaryAction) {
+      return null;
+    }
+
+    return (
+      <div className="mt24">
+        <ModalActions
+          primaryAction={primaryAction}
+          secondaryAction={secondaryAction}
+          tertiaryAction={tertiaryAction}
+        />
+      </div>
+    );
+  }
+
   render() {
     const { props } = this;
 
@@ -82,6 +103,7 @@ export default class Modal extends React.Component {
     const dialogBody = (
       <div ref={this.setDialogEl} className={containerClasses}>
         {props.children}
+        {this.renderActions()}
         {closeButton}
       </div>
     );
@@ -93,7 +115,8 @@ export default class Modal extends React.Component {
       underlayClass: 'bg-darken50 px12 py12 px60-mm py60-mm ',
       underlayStyle: {
         zIndex: 1
-      }
+      },
+      alert: props.alert
     };
 
     if (props.onExit) {
@@ -152,7 +175,63 @@ Modal.propTypes = {
   /**
    * If `false`, the modal will not have its default padding.
    */
-  padded: PropTypes.bool
+  padded: PropTypes.bool,
+  /**
+   * If `true`, the modal will have the accessibility props of an alert modal.
+   * (Only affects screen readers.)
+   */
+  alert: PropTypes.bool,
+  /**
+   * The modal's primary action. If this is provided, an encouraging
+   * button will be rendered at the bottom of the modal.
+   *
+   * Provide this and other action props if you want a standard button
+   * arrangement at the bottom of the modal. If you need a more custom
+   * arrangement, leave them out and insert your buttons into the content.
+   *
+   * The value is an object with the following properties:
+   * - `text`: **(required)** The text of the button.
+   * - `callback`: **(required)** Invoked when the button is clicked.
+   * - `destructive`: If `true`, the [Button](#button) will be primed for
+   *   desctruction.
+   */
+  primaryAction: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    callback: PropTypes.func.isRequired,
+    destructive: PropTypes.bool
+  }),
+  /**
+   * The modal's secondary action. If this is provided, a discouraging button
+   * will be rendered at the bottom of the modal. See the description of
+   * `primaryAction`.
+   *
+   * **Can only be used in combination with `primaryAction`.**
+   *
+   * The value is an object with the following properties:
+   * - `text`: **(required)** The text of the button.
+   * - `callback`: **(required)** Invoked when the button is clicked.
+   */
+  secondaryAction: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    callback: PropTypes.func.isRequired
+  }),
+  /**
+   * The modal's tertiary action. **You should rarely if ever need this.**
+   * If this is provided, a *very* discouraging button
+   * will be rendered at the bottom of the modal. See the description of
+   * `primaryAction`.
+   *
+   * **Can only be used in combination with `primaryAction` and
+   * `secondaryAction`.**
+   *
+   * The value is an object with the following properties:
+   * - `text`: **(required)** The text of the button.
+   * - `callback`: **(required)** Invoked when the button is clicked.
+   */
+  tertiaryAction: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    callback: PropTypes.func.isRequired
+  })
 };
 
 Modal.defaultProps = {

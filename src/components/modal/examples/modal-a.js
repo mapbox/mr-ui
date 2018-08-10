@@ -26,7 +26,12 @@ export default class Example extends React.Component {
       return null;
     }
     return (
-      <Modal accessibleTitle="Animals" onExit={this.closeModal}>
+      <Modal
+        accessibleTitle="Animals"
+        onExit={this.closeModal}
+        primaryAction={{ text: 'Okay', callback: this.closeModal }}
+        secondaryAction={{ text: 'Not sure', callback: this.closeModal }}
+      >
         <div className="prose">
           <h4>Animals</h4>
           <ul>

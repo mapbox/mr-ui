@@ -16,7 +16,7 @@ class ModalWrapper extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState({ modalOpen: !this.state.modalOpen });
+    this.setState(state => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {
@@ -41,7 +41,11 @@ testCases.basicSmallDisplay = {
       componentProps={{
         accessibleTitle: 'Small modal title',
         size: 'small',
-        children: <div>Small modal body</div>
+        children: <div>Small modal body</div>,
+        primaryAction: {
+          text: 'Okay',
+          callback: safeSpy()
+        }
       }}
     />
   )
@@ -53,7 +57,20 @@ testCases.basicLargeDisplay = {
     <ModalWrapper
       componentProps={{
         accessibleTitle: 'Large modal title',
-        children: <div>Large modal body</div>
+        children: <div>Large modal body</div>,
+        primaryAction: {
+          text: 'Okay',
+          callback: safeSpy(),
+          destructive: true
+        },
+        secondaryAction: {
+          text: 'Cancel',
+          callback: safeSpy()
+        },
+        tertiaryAction: {
+          text: 'Give up',
+          callback: safeSpy()
+        }
       }}
     />
   )
@@ -106,7 +123,20 @@ noDisplayCases.basicLarge = {
   props: {
     accessibleTitle: 'Large modal title',
     onExit: safeSpy(),
-    children: <div>Large modal body</div>
+    children: <div>Large modal body</div>,
+    primaryAction: {
+      text: 'Okay',
+      callback: safeSpy(),
+      destructive: true
+    },
+    secondaryAction: {
+      text: 'Cancel',
+      callback: safeSpy()
+    },
+    tertiaryAction: {
+      text: 'Give up',
+      callback: safeSpy()
+    }
   },
   noDisplay: true
 };
@@ -118,7 +148,11 @@ noDisplayCases.basicSmall = {
     accessibleTitle: 'Small modal title',
     onExit: safeSpy(),
     size: 'small',
-    children: <div>Small modal body</div>
+    children: <div>Small modal body</div>,
+    primaryAction: {
+      text: 'Okay',
+      callback: safeSpy()
+    }
   },
   noDisplay: true
 };

@@ -1,6 +1,6 @@
 /*
 A small modal, unpadded to allow for custom background coloring, with
-initial focus set on an input.
+initial focus set on an input. Also features its own action special button.
 */
 import React from 'react';
 import Modal from '../modal';
