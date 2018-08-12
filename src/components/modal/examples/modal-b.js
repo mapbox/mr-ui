@@ -30,7 +30,7 @@ export default class Example extends React.Component {
       <Modal
         accessibleTitle="Animals"
         onExit={this.closeModal}
-        padded={false}
+        padding="none"
         size="small"
         initialFocus="#modal-input"
       >

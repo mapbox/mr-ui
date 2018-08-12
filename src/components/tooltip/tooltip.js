@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import Button from '../button';
 import PopoverTrigger from '../popover-trigger';
 
 let tooltipCounter = 0;
@@ -55,7 +56,7 @@ export default class Tooltip extends React.Component {
     if (children.type && typeof children.type === 'string') {
       return React.cloneElement(children, triggerProps);
     }
-    if (children.type && children.type.name === 'Button') {
+    if (children.type && children.type === Button) {
       return React.cloneElement(children, { passthroughProps: triggerProps });
     }
     throw new Error(
@@ -77,7 +78,6 @@ export default class Tooltip extends React.Component {
     }
 
     const bodyClasses = classnames({
-      'px12 py6': props.padded,
       'txt-s': props.textSize === 's',
       'txt-xs': props.textSize === 'xs',
       wmax120: props.maxWidth === 'small',
@@ -91,7 +91,7 @@ export default class Tooltip extends React.Component {
         content={content}
         renderHiddenContent={true}
         disabled={props.disabled}
-        display={props.display}
+        block={props.block}
         respondsToClick={props.respondsToClick}
         respondsToHover={true}
         respondsToFocus={true}
@@ -101,7 +101,7 @@ export default class Tooltip extends React.Component {
           placement: props.placement,
           alignment: props.alignment,
           coloring: props.coloring,
-          padded: false,
+          padding: props.padding,
           hideWhenAnchorIsOffscreen: true,
           passthroughProps: popoverPassthroughProps
         }}
@@ -157,18 +157,22 @@ Tooltip.propTypes = {
    */
   maxWidth: PropTypes.oneOf(['small', 'medium', 'none']),
   /**
-   * Set to `false` to remove the default padding on the popover body
-   * (and, hopefully, apply your own).
+   * `'small'` or `'none'`.
    */
-  padded: PropTypes.bool,
+  padding: PropTypes.oneOf(['small', 'none']),
   /**
    * If `true`, tooltip can be opened with a mouse click.
    */
   respondsToClick: PropTypes.bool,
   /**
-   * The CSS `display` value of the trigger element: '`block'` or '`inline-block'`.
+   * If `true`, the element will be `block` displayed instead of `inline-block`.
+   *
+   * This is sometimes necessary to get your pixel-perfect layout, if you don't
+   * want the extra line-height that wraps inline elements. Typically, you
+   * should only set `block` to `true` if the parent element is controlling
+   * width (in a layout that uses flexbox, absolute positioning, or floats).
    */
-  display: PropTypes.oneOf(['block', 'inline-block']),
+  block: PropTypes.bool,
   /**
    * Added as `data-test` to the tooltip element.
    */
@@ -181,8 +185,8 @@ Tooltip.defaultProps = {
   coloring: 'light',
   disabled: false,
   respondsToClick: false,
-  padded: true,
-  display: 'inline-block',
+  padding: 'small',
+  block: false,
   textSize: 's',
   maxWidth: 'medium'
 };

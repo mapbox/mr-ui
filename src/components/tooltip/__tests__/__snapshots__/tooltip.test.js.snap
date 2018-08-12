@@ -17,22 +17,22 @@ exports[`Tooltip Button child trigger renders as expected 1`] = `
 
 exports[`Tooltip DOM element child renders as expected 1`] = `
 <PopoverTrigger
+  block={false}
   content={
     <div
-      className="px12 py6 txt-s wmax240"
+      className="txt-s wmax240"
     >
       DOM element child
     </div>
   }
   disabled={false}
-  display="inline-block"
   popoverProps={
     Object {
       "alignment": "center",
       "coloring": "light",
       "hasPointer": true,
       "hideWhenAnchorIsOffscreen": true,
-      "padded": false,
+      "padding": "small",
       "passthroughProps": Object {
         "id": "tooltip-1",
         "role": "tooltip",

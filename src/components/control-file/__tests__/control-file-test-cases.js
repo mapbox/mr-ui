@@ -4,6 +4,34 @@ import safeSpy from '../../../test-utils/safe-spy';
 
 const testCases = {};
 
+class Interactive extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { files: null };
+    this.setFiles = this.setFiles.bind(this);
+  }
+
+  setFiles(files) {
+    this.setState({ files });
+  }
+
+  render() {
+    return (
+      <ControlFile
+        id="interactive-file"
+        label="Select a file"
+        onChange={this.setFiles}
+        value={this.state.files}
+      />
+    );
+  }
+}
+
+testCases.interactive = {
+  description: 'Interactive',
+  element: <Interactive />
+};
+
 testCases.basic = {
   description: 'basic',
   component: ControlFile,

@@ -1,171 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Copiable all props renders 1`] = `
+exports[`basic renders as expected 1`] = `
 <div
-  className="relative"
+  className="clearfix bg-darken5 round"
 >
   <div
-    className="color-gray bg-darken5 round-l txt-fancy py6 px6 txt-s"
-  >
-    <span
-      onClick={[Function]}
-    >
-      the text you copy the text you copy the text you copy the text you copy the text you copy 
-    </span>
-  </div>
-  <div
-    className="absolute z2 bottom right mr3 mt3 color-white"
+    className="fr py6 px6"
   >
     <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn round-r bg-gray-dark px0 py0",
-        }
-      }
+      block={true}
+      className="btn btn--xs py3 px3 round"
       text="the text you copy the text you copy the text you copy the text you copy the text you copy "
     />
   </div>
-</div>
-`;
-
-exports[`Copiable basic Copy hint disappears at the right time 1`] = `
-<div
-  className="relative round z0 scroll-styled"
->
   <div
-    className="color-gray bg-darken5 round-l txt-mono py6 px6 pr36 txt-s"
-  >
-    <span
-      onClick={[Function]}
-    >
-      the text you copy the text you copy the text you copy the text you copy the text you copy 
-    </span>
-  </div>
-  <div
-    className="absolute z2 top right mr3 mt3 color-white"
-  >
-    <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn btn--xs py3 px3 round",
-        }
-      }
-      text="the text you copy the text you copy the text you copy the text you copy the text you copy "
-    />
-  </div>
-  <Popover
-    accessibleTitle="⌘+C to copy!"
-    alignment="center"
-    allowPlacementAxisChange={true}
-    clickOutsideCloses={true}
-    coloring="light"
-    containWithinViewport={true}
-    escapeCloses={true}
-    getAnchorElement={[Function]}
-    hasPointer={true}
-    hideWhenAnchorIsOffscreen={true}
-    padded={true}
-    placement="top"
-    receiveFocus={true}
-    trapFocus={false}
+    className="py6 px12 txt-mono txt-s"
+    data-test="copiable-text-el"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    tabIndex="-1"
   >
     <div
-      className="txt-s"
+      className="my3"
     >
-      ⌘+C to copy!
+      the text you copy the text you copy the text you copy the text you copy the text you copy 
     </div>
-  </Popover>
-</div>
-`;
-
-exports[`Copiable basic Copy hint disappears at the right time 2`] = `
-<div
-  className="relative round z0 scroll-styled"
->
-  <div
-    className="color-gray bg-darken5 round-l txt-mono py6 px6 pr36 txt-s"
-  >
-    <span
-      onClick={[Function]}
-    >
-      the text you copy the text you copy the text you copy the text you copy the text you copy 
-    </span>
-  </div>
-  <div
-    className="absolute z2 top right mr3 mt3 color-white"
-  >
-    <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn btn--xs py3 px3 round",
-        }
-      }
-      text="the text you copy the text you copy the text you copy the text you copy the text you copy "
-    />
   </div>
 </div>
 `;
 
-exports[`Copiable basic renders 1`] = `
+exports[`basic shows copy hint when focused 1`] = `
 <div
-  className="relative round z0 scroll-styled"
+  className="clearfix bg-darken5 round"
 >
   <div
-    className="color-gray bg-darken5 round-l txt-mono py6 px6 pr36 txt-s"
-  >
-    <span
-      onClick={[Function]}
-    >
-      the text you copy the text you copy the text you copy the text you copy the text you copy 
-    </span>
-  </div>
-  <div
-    className="absolute z2 top right mr3 mt3 color-white"
+    className="fr py6 px6"
   >
     <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn btn--xs py3 px3 round",
-        }
-      }
+      block={true}
+      className="btn btn--xs py3 px3 round"
       text="the text you copy the text you copy the text you copy the text you copy the text you copy "
     />
   </div>
-</div>
-`;
-
-exports[`Copiable basic shows copy hint when clicked 1`] = `
-<div
-  className="relative round z0 scroll-styled"
->
   <div
-    className="color-gray bg-darken5 round-l txt-mono py6 px6 pr36 txt-s"
+    className="py6 px12 txt-mono txt-s"
+    data-test="copiable-text-el"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    tabIndex="-1"
   >
-    <span
-      onClick={[Function]}
+    <div
+      className="my3"
     >
       the text you copy the text you copy the text you copy the text you copy the text you copy 
-    </span>
-  </div>
-  <div
-    className="absolute z2 top right mr3 mt3 color-white"
-  >
-    <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn btn--xs py3 px3 round",
-        }
-      }
-      text="the text you copy the text you copy the text you copy the text you copy the text you copy "
-    />
+    </div>
   </div>
   <Popover
-    accessibleTitle="⌘+C to copy!"
+    accessibleTitle="Copy the selected text"
     alignment="center"
     allowPlacementAxisChange={true}
     clickOutsideCloses={true}
@@ -175,7 +66,7 @@ exports[`Copiable basic shows copy hint when clicked 1`] = `
     getAnchorElement={[Function]}
     hasPointer={true}
     hideWhenAnchorIsOffscreen={true}
-    padded={true}
+    padding="small"
     placement="top"
     receiveFocus={true}
     trapFocus={false}
@@ -183,7 +74,15 @@ exports[`Copiable basic shows copy hint when clicked 1`] = `
     <div
       className="txt-s"
     >
-      ⌘+C to copy!
+      <span>
+        <span
+          className="txt-kbd"
+        >
+          eh+C
+        </span>
+         
+        to copy
+      </span>
     </div>
   </Popover>
 </div>

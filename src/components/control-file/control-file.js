@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
-import IconButton from '../icon-button';
+import Tooltip from '../tooltip';
 import Icon from '../icon';
 import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
@@ -176,14 +176,16 @@ export default class ControlFile extends React.Component {
           </div>
           {this.state.displayValue && (
             <div className="flex-child">
-              <IconButton
-                icon="trash"
-                tooltipProps={{
-                  content: 'Clear'
-                }}
-                themeButton={`link link--gray relative bg-transparent py0 ${themeControlFileClear}`}
-                onClick={this.onClear}
-              />
+              <Tooltip content="Clear" block={true}>
+                <button
+                  type="button"
+                  className={`block link link--gray relative bg-transparent py0 ${themeControlFileClear}`}
+                  onClick={this.onClear}
+                  data-test="control-file-clear"
+                >
+                  <Icon name="trash" />
+                </button>
+              </Tooltip>
             </div>
           )}
         </div>

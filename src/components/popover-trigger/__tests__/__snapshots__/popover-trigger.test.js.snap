@@ -2,15 +2,11 @@
 
 exports[`PopoverTrigger default props renders 1`] = `
 <div
+  className="inline-block"
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
-  style={
-    Object {
-      "display": "inline-block",
-    }
-  }
 >
   <button
     className="btn"
@@ -22,15 +18,11 @@ exports[`PopoverTrigger default props renders 1`] = `
 
 exports[`PopoverTrigger responds to all interactions renders 1`] = `
 <div
+  className="inline-block"
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
-  style={
-    Object {
-      "display": "inline-block",
-    }
-  }
 >
   <button
     className="btn"

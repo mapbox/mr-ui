@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import createFocusTrap from 'focus-trap';
 import tabbable from 'tabbable';
@@ -186,10 +187,13 @@ export default class Popover extends React.Component {
   render() {
     const { props } = this;
     const colors = getColors(props.coloring);
-    let bodyClasses = `${colors.textClass} shadow-darken25 round`;
-    if (props.padded) {
-      bodyClasses += ' px12 py12';
-    }
+    const bodyClasses = classnames(
+      `${colors.textClass} shadow-darken25 round`,
+      {
+        'px12 py12': props.padding === 'medium',
+        'px12 py6': props.padding === 'small'
+      }
+    );
 
     return (
       <PopoverPositioner
@@ -251,10 +255,9 @@ Popover.propTypes = {
    */
   coloring: PropTypes.oneOf(['light', 'dark', 'warning']),
   /**
-   * Set to `false` to remove the default padding on the popover body
-   * (and, hopefully, apply your own).
+   * `'medium'`, `'small'`, or `'none'`.
    */
-  padded: PropTypes.bool,
+  padding: PropTypes.oneOf(['medium', 'small', 'none']),
   /**
    * Whether or not the popover has a triangle pointer.
    */
@@ -337,7 +340,7 @@ Popover.defaultProps = {
   coloring: 'light',
   placement: 'right',
   alignment: 'top',
-  padded: true,
+  padding: 'medium',
   hasPointer: true,
   hideWhenAnchorIsOffscreen: false,
   allowPlacementAxisChange: true,

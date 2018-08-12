@@ -64,6 +64,7 @@ exports[`TabList basic renders 1`] = `
     className="fl"
   >
     <PopoverTrigger
+      block={false}
       content={
         Array [
           <div
@@ -93,7 +94,6 @@ exports[`TabList basic renders 1`] = `
         ]
       }
       disabled={false}
-      display="inline-block"
       onPopoverClose={[Function]}
       onPopoverOpen={[Function]}
       popoverProps={
@@ -185,6 +185,7 @@ exports[`TabList links renders 1`] = `
     className="fl"
   >
     <PopoverTrigger
+      block={false}
       content={
         Array [
           <div
@@ -212,7 +213,6 @@ exports[`TabList links renders 1`] = `
         ]
       }
       disabled={false}
-      display="inline-block"
       onPopoverClose={[Function]}
       onPopoverOpen={[Function]}
       popoverProps={
@@ -304,6 +304,7 @@ exports[`TabList truncate all renders 1`] = `
     className="fl"
   >
     <PopoverTrigger
+      block={false}
       content={
         Array [
           <div
@@ -353,7 +354,6 @@ exports[`TabList truncate all renders 1`] = `
         ]
       }
       disabled={false}
-      display="inline-block"
       onPopoverClose={[Function]}
       onPopoverOpen={[Function]}
       popoverProps={

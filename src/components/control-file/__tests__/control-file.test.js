@@ -52,10 +52,7 @@ describe('ControlFile', () => {
       const files = [bonJoviFile];
       wrapper.setProps({ value: files });
       wrapper.update();
-      wrapper
-        .find('IconButton')
-        .props()
-        .onClick();
+      wrapper.find({ 'data-test': 'control-file-clear' }).prop('onClick')();
       wrapper.update();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith('', 'testinput-1');

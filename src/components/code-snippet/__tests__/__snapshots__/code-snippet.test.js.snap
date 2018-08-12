@@ -753,12 +753,8 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
     }
   >
     <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn--xs py3 px3 round",
-        }
-      }
+      block={false}
+      className="btn btn--xs py3 px3 round"
       onCopy={[Function]}
       text="import Mapbox
 "
@@ -776,12 +772,8 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
     }
   >
     <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn--xs py3 px3 round",
-        }
-      }
+      block={false}
+      className="btn btn--xs py3 px3 round"
       onCopy={[Function]}
       text="    let url = URL(string: \\"mapbox://styles/mapbox/streets-v9\\")
     let mapView = MGLMapView(frame: view.bounds, styleURL: url)
@@ -1065,12 +1057,8 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
     className="absolute z2 top right mr6 mt6 color-white"
   >
     <CopyButton
-      feedbackTime={800}
-      iconButtonProps={
-        Object {
-          "themeButton": "btn--xs py3 px3 round",
-        }
-      }
+      block={false}
+      className="btn btn--xs py3 px3 round"
       onCopy={[MockFunction]}
       text="dependencies {
   compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar') {

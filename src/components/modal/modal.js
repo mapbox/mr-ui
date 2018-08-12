@@ -2,7 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import AriaModal from 'react-aria-modal';
-import IconButton from '../icon-button';
+import Tooltip from '../tooltip';
+import Icon from '../icon';
 import getWindow from '../utils/get-window';
 import ModalActions from './modal-actions';
 
@@ -37,7 +38,7 @@ export default class Modal extends React.Component {
       if (offsetParent.tagName === 'BODY' || offsetParent.tagName === 'HTML') {
         return;
       }
-      offsetParent.scrollTo(0, 0);
+      offsetParent.scrollTop = 0;
     }, 0);
   }
 
@@ -74,14 +75,16 @@ export default class Modal extends React.Component {
     if (props.onExit) {
       closeButton = (
         <div className="absolute top right">
-          <IconButton
-            icon="close"
-            onClick={props.onExit}
-            tooltipProps={{
-              content: 'Close'
-            }}
-            themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
-          />
+          <Tooltip block={true} content="Close">
+            <button
+              type="button"
+              className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+              onClick={props.onExit}
+              data-test="modal-close"
+            >
+              <Icon name="close" />
+            </button>
+          </Tooltip>
         </div>
       );
     }
@@ -95,9 +98,7 @@ export default class Modal extends React.Component {
 
     const containerClasses = classnames(
       `relative wmax-full ${widthClass} bg-white round`,
-      {
-        'px36 py36': props.padded
-      }
+      { 'px36 py36': props.padding === 'large' }
     );
 
     const dialogBody = (
@@ -173,9 +174,9 @@ Modal.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * If `false`, the modal will not have its default padding.
+   * `'large'` or `'none'`.
    */
-  padded: PropTypes.bool,
+  padding: PropTypes.oneOf(['large', 'none']),
   /**
    * If `true`, the modal will have the accessibility props of an alert modal.
    * (Only affects screen readers.)
@@ -237,5 +238,5 @@ Modal.propTypes = {
 Modal.defaultProps = {
   size: 'large',
   getApplicationNode: () => document.getElementById('app'),
-  padded: true
+  padding: 'large'
 };

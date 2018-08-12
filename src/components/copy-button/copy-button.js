@@ -1,47 +1,22 @@
 import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import xtend from 'xtend';
 import Clipboard from 'clipboard/dist/clipboard.min.js';
-import IconButton from '../icon-button';
 import Icon from '../icon';
 import Popover from '../popover';
-import omit from '../utils/omit';
+import Tooltip from '../tooltip';
 
+const FEEDBACK_TIME = 800;
+
+/**
+ * A button that, when clicked, copies the designated text to the clipboard.
+ *
+ * The static function `CopyButton.isCopySupported` returns a boolean
+ * indicating whether the current browser will support automatic copying.
+ * If it does not, you might want to hide your copy button and make sure
+ * the user is able to manually select and copy the text.
+ */
 export default class CopyButton extends React.PureComponent {
-  // If you add propsTypes, add the corresponding propNames.
-  static propTypes = {
-    /** The text that will be copied when the button is clicked. */
-    text: PropTypes.string.isRequired,
-    /**
-     * Pass in an element containing text to copy instead of the raw text to provide a better fallback,
-     * where the text is selected for you if execcopy is not supported
-     */
-    textEl: PropTypes.object,
-    /** The interval for which `Copied!` is displayed to the user. */
-    feedbackTime: PropTypes.number,
-    /**
-     * Invoked when the button is clicked.
-     * Passed one argument: the `text` prop.
-     */
-    onCopy: PropTypes.func,
-    /** Extra props to pass to the IconButton component. */
-    iconButtonProps: PropTypes.object
-  };
-  static propNames = [
-    'text',
-    'feedbackTime',
-    'onCopy',
-    'iconButtonProps',
-    'textEl'
-  ];
-
-  static defaultProps = {
-    feedbackTime: 800,
-    iconButtonProps: {
-      themeButton: 'btn--xs py3 px3 round'
-    }
-  };
-
   state = {
     showingFeedback: false
   };
@@ -53,7 +28,7 @@ export default class CopyButton extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    if (this.revertTimer) clearTimeout(this.revertTimer);
+    clearTimeout(this.revertTimer);
     if (this.clipboard) {
       this.clipboard.destroy();
     }
@@ -72,7 +47,7 @@ export default class CopyButton extends React.PureComponent {
     this.setState({ showingFeedback: true });
     this.revertTimer = setTimeout(() => {
       this.setState({ showingFeedback: false });
-    }, this.props.feedbackTime);
+    }, FEEDBACK_TIME);
   };
 
   componentWillReceiveProps(nextProps) {
@@ -106,6 +81,27 @@ export default class CopyButton extends React.PureComponent {
     });
   };
 
+  renderFeedbackPopover() {
+    const { state } = this;
+    if (!state.showingFeedback) {
+      return null;
+    }
+
+    return (
+      <Popover
+        // We don't need this one to be as accessible as a regular tooltip
+        getAnchorElement={this.getContainer}
+        placement="top"
+        alignment="center"
+        hideWhenAnchorIsOffscreen={true}
+        accessibleTitle={null}
+        padding="small"
+      >
+        <div className="txt-s">Copied!</div>
+      </Popover>
+    );
+  }
+
   render() {
     const { props, state } = this;
     // don't render the button if you can't use it to copy,
@@ -114,67 +110,76 @@ export default class CopyButton extends React.PureComponent {
       return null;
     }
 
-    let tooltipText = state.showingFeedback ? 'Copied!' : 'Copy';
-    let icon = state.showingFeedback ? 'check' : 'clipboard';
-
-    const extraProps = omit(this.props, CopyButton.propNames);
-    let iconButtonProps = props.iconButtonProps;
-    let tooltipProps = {
-      content: tooltipText
-    };
-
-    if (props.iconButtonProps.tooltipProps) {
-      tooltipProps = xtend(tooltipProps, props.iconButtonProps.tooltipProps);
-    }
-    iconButtonProps.tooltipProps = tooltipProps;
-
-    let button = null;
-    if (state.showingFeedback) {
-      // When the action is complete, we switch from the tooltip-powered IconButton
-      // to a regular old button a regular old Popover. We do this so we can
-      // control the display of the Popover, for it to be there for the full
-      // this.props.feedbackTime.
-      button = (
-        <button
-          type="button"
-          className={`btn ${props.iconButtonProps.themeButton}`}
-          {...extraProps}
-        >
-          <Icon name={icon} />
-          <Popover
-            // We don't need this one to be as accessible as a regular tooltip
-            getAnchorElement={this.getContainer}
-            placement="top"
-            alignment="center"
-            hideWhenAnchorIsOffscreen={true}
-            accessibleTitle={null}
-          >
-            <span className="block txt-s">{tooltipText}</span>
-          </Popover>
-        </button>
-      );
-    } else {
-      button = (
-        <IconButton
-          onClick={this.handleCopyButtonClick}
-          icon={icon}
-          {...iconButtonProps}
-          {...extraProps}
-        />
-      );
-    }
+    const iconName = state.showingFeedback ? 'check' : 'clipboard';
+    const buttonClasses = classnames(props.className, {
+      block: props.block
+    });
 
     // data-clipboard-text and the container ref are used by clipboard.js
     // to copy text if you do not pass in a textEl as a prop.
     // Note that this wont have as nice a failure mode.
     return (
-      <div
-        ref={this.setContainer}
-        className="inline-block"
-        data-clipboard-text={this.props.text}
+      <Tooltip
+        disabled={state.showingFeedback}
+        content="Copy"
+        block={props.block}
       >
-        {button}
-      </div>
+        <button
+          type="button"
+          className={buttonClasses}
+          {...props.passthroughProps}
+          ref={this.setContainer}
+          data-clipboard-text={props.text}
+          onClick={this.handleCopyButtonClick}
+        >
+          <Icon name={iconName} />
+          {this.renderFeedbackPopover()}
+        </button>
+      </Tooltip>
     );
   }
 }
+
+CopyButton.propTypes = {
+  /**
+   * The text that will be copied when the button is clicked.
+   */
+  text: PropTypes.string.isRequired,
+  /**
+   * Pass in an element containing text to copy instead of the raw text
+   * to provide a better fallback, where the text is selected for you if
+   * `execcopy` is not supported.
+   */
+  textEl: PropTypes.object,
+  /**
+   * Invoked when the button is clicked.
+   * Passed one argument: the `text` prop.
+   */
+  onCopy: PropTypes.func,
+  /**
+   * If `true`, the element will be `block` displayed instead of `inline-block`.
+   *
+   * This is sometimes necessary to get your pixel-perfect layout, if you don't
+   * want the extra line-height that wraps inline elements. Typically, you
+   * should only set `block` to `true` if the parent element is controlling
+   * width (in a layout that uses flexbox, absolute positioning, or floats).
+   */
+  block: PropTypes.bool,
+  /**
+   * The `className` prop of the `<button>`.
+   */
+  className: PropTypes.string,
+  /**
+   * An object of props that you want to pass through to the `<button>`.
+   */
+  passthroughProps: PropTypes.object
+};
+
+CopyButton.defaultProps = {
+  className: 'btn btn--xs py3 px3 round',
+  block: false
+};
+
+CopyButton.isCopySupported = () => {
+  return Clipboard.isSupported();
+};

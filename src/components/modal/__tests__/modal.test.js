@@ -20,7 +20,7 @@ describe('Modal', () => {
 
     test('fires onExit', () => {
       // find the button that triggers onExit method
-      wrapper.find('IconButton').simulate('click');
+      wrapper.find({ 'data-test': 'modal-close' }).prop('onClick')();
 
       expect(testCase.props.onExit).toHaveBeenCalledTimes(1);
     });
@@ -40,7 +40,7 @@ describe('Modal', () => {
 
     test('fires onExit', () => {
       // find the button that triggers onExit method
-      wrapper.find('IconButton').simulate('click');
+      wrapper.find({ 'data-test': 'modal-close' }).prop('onClick')();
 
       expect(testCase.props.onExit).toHaveBeenCalledTimes(1);
     });
@@ -60,7 +60,7 @@ describe('Modal', () => {
 
     test('fires onExit', () => {
       // find the button that triggers onExit method
-      wrapper.find('IconButton').simulate('click');
+      wrapper.find({ 'data-test': 'modal-close' }).prop('onClick')();
 
       expect(testCase.props.onExit).toHaveBeenCalledTimes(1);
     });
@@ -91,8 +91,8 @@ describe('Modal', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    test('IconButton is not present', () => {
-      expect(wrapper.find('IconButton').exists()).toBe(false);
+    test('close button is not present', () => {
+      expect(wrapper.find({ 'data-test': 'modal-close' }).exists()).toBe(false);
     });
   });
 });

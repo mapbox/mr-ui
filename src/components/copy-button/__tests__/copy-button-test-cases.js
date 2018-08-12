@@ -5,11 +5,11 @@ import safeSpy from '../../../test-utils/safe-spy';
 
 const testCases = {};
 
-testCases.basic = {
-  description: 'basic',
+testCases.defaults = {
+  description: 'Defaults',
   component: CopyButton,
   props: {
-    text: 'the text you copy'
+    text: 'Copied by the default test case'
   }
 };
 
@@ -19,15 +19,9 @@ testCases.allProps = {
   props: {
     text: 'more copiable text',
     onCopy: safeSpy(),
-    feedbackTime: 1000,
-    iconButtonProps: {
-      tooltipProps: {
-        themeTooltip: 'color-gray shadow-darken50',
-        placement: 'bottom'
-      },
-      themeButton: 'px12 py12 btn--red',
-      'data-test': 'copy-button',
-      themeIcon: 'color-yellow'
+    className: 'px6 py6 btn btn--purple btn--stroke',
+    passthroughProps: {
+      'data-test': 'copy-button'
     }
   }
 };
@@ -46,8 +40,8 @@ class InModal extends React.Component {
       return null;
     }
     return (
-      <Modal title="Copy test" onExit={this.toggleModal}>
-        <CopyButton text="This is the text you're copying" />
+      <Modal accessibleTitle="Copy test" onExit={this.toggleModal}>
+        <CopyButton text="You copied this text from a modal" />
       </Modal>
     );
   }
