@@ -28,23 +28,20 @@ describe('CopyButton', () => {
     });
   });
 
-  describe(testCases.basic.description, () => {
+  describe(testCases.defaults.description, () => {
     beforeEach(() => {
-      testCase = testCases.basic;
+      testCase = testCases.defaults;
       wrapper = shallow(
         React.createElement(testCase.component, testCase.props)
       );
     });
 
-    test('renders', () => {
+    test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
     test('changes state on click', () => {
-      wrapper
-        .find('IconButton')
-        .props()
-        .onClick();
+      wrapper.find('button').prop('onClick')();
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       return delay(820).then(() => {
@@ -62,16 +59,13 @@ describe('CopyButton', () => {
       );
     });
 
-    test('renders', () => {
+    test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
     // Extra classes need to carry over to both states
     test('changes state on click', () => {
-      wrapper
-        .find('IconButton')
-        .props()
-        .onClick();
+      wrapper.find('button').prop('onClick')();
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       return delay(820).then(() => {
@@ -81,10 +75,7 @@ describe('CopyButton', () => {
     });
 
     test('calls onCopy callback', () => {
-      wrapper
-        .find('IconButton')
-        .props()
-        .onClick();
+      wrapper.find('button').prop('onClick')();
       expect(testCase.props.onCopy).toHaveBeenCalledTimes(1);
       expect(testCase.props.onCopy).toHaveBeenCalledWith(testCase.props.text);
     });

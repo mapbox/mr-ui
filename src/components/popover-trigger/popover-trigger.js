@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import hoverintent from 'hoverintent';
 import Popover from '../popover';
 
@@ -52,6 +53,10 @@ export default class PopoverTrigger extends React.Component {
       this.state.activeTriggerType === TRIGGER_HOVER
     ) {
       popoverElement.addEventListener('mouseleave', this.onPopoverMouseLeave);
+    }
+
+    if (!prevProps.disabled && this.props.disabled) {
+      this.hide();
     }
   }
 
@@ -366,10 +371,15 @@ export default class PopoverTrigger extends React.Component {
       );
     }
 
+    const classes = classnames({
+      block: props.block,
+      'inline-block': !props.block
+    });
+
     return (
       <div
         ref={this.setTriggerElement}
-        style={{ display: props.display }}
+        className={classes}
         {...props.passthroughTriggerProps}
         onClick={this.onAnyClick}
         onFocus={this.onTriggerFocus}
@@ -390,10 +400,11 @@ PopoverTrigger.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * Accepts a CSS `display` value for the trigger: `'inline-block'` or
-   * `'block'`.
+   * If `true`, the element will be `block` displayed instead of `inline-block`.
+   *
+   * This is sometimes necessary to get your pixel-perfect layout.
    */
-  display: PropTypes.oneOf(['inline-block', 'block']),
+  block: PropTypes.bool,
   /**
    * The popover content. This can either be a string, valid JSX, or a function
    * returning either.
@@ -463,7 +474,7 @@ PopoverTrigger.propTypes = {
 };
 
 PopoverTrigger.defaultProps = {
-  display: 'inline-block',
+  block: false,
   disabled: false,
   renderHiddenContent: false,
   receiveFocus: true,

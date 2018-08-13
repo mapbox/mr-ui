@@ -1,112 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CopyButton all props changes state on click 1`] = `
-<div
-  className="inline-block"
-  data-clipboard-text="more copiable text"
->
-  <button
-    className="btn px12 py12 btn--red"
-    type="button"
-  >
-    <Icon
-      inline={false}
-      name="check"
-    />
-    <Popover
-      accessibleTitle={null}
-      alignment="center"
-      allowPlacementAxisChange={true}
-      clickOutsideCloses={true}
-      coloring="light"
-      containWithinViewport={true}
-      escapeCloses={true}
-      getAnchorElement={[Function]}
-      hasPointer={true}
-      hideWhenAnchorIsOffscreen={true}
-      padded={true}
-      placement="top"
-      receiveFocus={true}
-      trapFocus={false}
-    >
-      <span
-        className="block txt-s"
-      >
-        Copied!
-      </span>
-    </Popover>
-  </button>
-</div>
-`;
-
-exports[`CopyButton all props changes state on click 2`] = `
-<div
-  className="inline-block"
-  data-clipboard-text="more copiable text"
->
-  <button
-    className="btn px12 py12 btn--red"
-    type="button"
-  >
-    <Icon
-      inline={false}
-      name="check"
-    />
-    <Popover
-      accessibleTitle={null}
-      alignment="center"
-      allowPlacementAxisChange={true}
-      clickOutsideCloses={true}
-      coloring="light"
-      containWithinViewport={true}
-      escapeCloses={true}
-      getAnchorElement={[Function]}
-      hasPointer={true}
-      hideWhenAnchorIsOffscreen={true}
-      padded={true}
-      placement="top"
-      receiveFocus={true}
-      trapFocus={false}
-    >
-      <span
-        className="block txt-s"
-      >
-        Copied!
-      </span>
-    </Popover>
-  </button>
-</div>
-`;
-
-exports[`CopyButton all props renders 1`] = `
-<div
-  className="inline-block"
-  data-clipboard-text="more copiable text"
->
-  <IconButton
-    data-test="copy-button"
-    icon="clipboard"
-    onClick={[Function]}
-    themeButton="px12 py12 btn--red"
-    themeIcon="color-yellow"
-    tooltipProps={
-      Object {
-        "content": "Copy",
-        "placement": "bottom",
-        "themeTooltip": "color-gray shadow-darken50",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`CopyButton basic changes state on click 1`] = `
-<div
-  className="inline-block"
-  data-clipboard-text="the text you copy"
+exports[`CopyButton Defaults changes state on click 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={true}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
 >
   <button
     className="btn btn--xs py3 px3 round"
+    data-clipboard-text="Copied by the default test case"
+    onClick={[Function]}
     type="button"
   >
     <Icon
@@ -124,53 +34,177 @@ exports[`CopyButton basic changes state on click 1`] = `
       getAnchorElement={[Function]}
       hasPointer={true}
       hideWhenAnchorIsOffscreen={true}
-      padded={true}
+      padding="small"
       placement="top"
       receiveFocus={true}
       trapFocus={false}
     >
-      <span
-        className="block txt-s"
+      <div
+        className="txt-s"
       >
         Copied!
-      </span>
+      </div>
     </Popover>
   </button>
-</div>
+</Tooltip>
 `;
 
-exports[`CopyButton basic changes state on click 2`] = `
-<div
-  className="inline-block"
-  data-clipboard-text="the text you copy"
+exports[`CopyButton Defaults changes state on click 2`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
 >
-  <IconButton
-    icon="clipboard"
+  <button
+    className="btn btn--xs py3 px3 round"
+    data-clipboard-text="Copied by the default test case"
     onClick={[Function]}
-    themeButton="btn--xs py3 px3 round"
-    tooltipProps={
-      Object {
-        "content": "Copy",
-      }
-    }
-  />
-</div>
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
 `;
 
-exports[`CopyButton basic renders 1`] = `
-<div
-  className="inline-block"
-  data-clipboard-text="the text you copy"
+exports[`CopyButton Defaults renders as expected 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
 >
-  <IconButton
-    icon="clipboard"
+  <button
+    className="btn btn--xs py3 px3 round"
+    data-clipboard-text="Copied by the default test case"
     onClick={[Function]}
-    themeButton="btn--xs py3 px3 round"
-    tooltipProps={
-      Object {
-        "content": "Copy",
-      }
-    }
-  />
-</div>
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton all props changes state on click 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={true}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    className="px6 py6 btn btn--purple btn--stroke"
+    data-clipboard-text="more copiable text"
+    data-test="copy-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="check"
+    />
+    <Popover
+      accessibleTitle={null}
+      alignment="center"
+      allowPlacementAxisChange={true}
+      clickOutsideCloses={true}
+      coloring="light"
+      containWithinViewport={true}
+      escapeCloses={true}
+      getAnchorElement={[Function]}
+      hasPointer={true}
+      hideWhenAnchorIsOffscreen={true}
+      padding="small"
+      placement="top"
+      receiveFocus={true}
+      trapFocus={false}
+    >
+      <div
+        className="txt-s"
+      >
+        Copied!
+      </div>
+    </Popover>
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton all props changes state on click 2`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    className="px6 py6 btn btn--purple btn--stroke"
+    data-clipboard-text="more copiable text"
+    data-test="copy-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton all props renders as expected 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    className="px6 py6 btn btn--purple btn--stroke"
+    data-clipboard-text="more copiable text"
+    data-test="copy-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      inline={false}
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
 `;

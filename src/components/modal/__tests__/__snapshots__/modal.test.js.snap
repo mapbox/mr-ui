@@ -28,16 +28,30 @@ exports[`Modal No fixed width, display only renders 1`] = `
     <div
       className="absolute top right"
     >
-      <IconButton
-        icon="close"
-        onClick={[MockFunction]}
-        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
-        tooltipProps={
-          Object {
-            "content": "Close",
-          }
-        }
-      />
+      <Tooltip
+        alignment="center"
+        block={true}
+        coloring="light"
+        content="Close"
+        disabled={false}
+        maxWidth="medium"
+        padding="small"
+        placement="top"
+        respondsToClick={false}
+        textSize="s"
+      >
+        <button
+          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+          data-test="modal-close"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <Icon
+            inline={false}
+            name="close"
+          />
+        </button>
+      </Tooltip>
     </div>
   </div>
 </Displaced>
@@ -63,7 +77,7 @@ exports[`Modal all options renders 1`] = `
   }
 >
   <div
-    className="relative wmax-full w360 bg-white round"
+    className="relative wmax-full w360 bg-white round px36 py36"
   >
     <div>
       <div
@@ -81,16 +95,30 @@ exports[`Modal all options renders 1`] = `
     <div
       className="absolute top right"
     >
-      <IconButton
-        icon="close"
-        onClick={[MockFunction]}
-        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
-        tooltipProps={
-          Object {
-            "content": "Close",
-          }
-        }
-      />
+      <Tooltip
+        alignment="center"
+        block={true}
+        coloring="light"
+        content="Close"
+        disabled={false}
+        maxWidth="medium"
+        padding="small"
+        placement="top"
+        respondsToClick={false}
+        textSize="s"
+      >
+        <button
+          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+          data-test="modal-close"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <Icon
+            inline={false}
+            name="close"
+          />
+        </button>
+      </Tooltip>
     </div>
   </div>
 </Displaced>
@@ -149,16 +177,30 @@ exports[`Modal basic default renders 1`] = `
     <div
       className="absolute top right"
     >
-      <IconButton
-        icon="close"
-        onClick={[MockFunction]}
-        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
-        tooltipProps={
-          Object {
-            "content": "Close",
-          }
-        }
-      />
+      <Tooltip
+        alignment="center"
+        block={true}
+        coloring="light"
+        content="Close"
+        disabled={false}
+        maxWidth="medium"
+        padding="small"
+        placement="top"
+        respondsToClick={false}
+        textSize="s"
+      >
+        <button
+          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+          data-test="modal-close"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <Icon
+            inline={false}
+            name="close"
+          />
+        </button>
+      </Tooltip>
     </div>
   </div>
 </Displaced>
@@ -204,16 +246,30 @@ exports[`Modal basic small renders 1`] = `
     <div
       className="absolute top right"
     >
-      <IconButton
-        icon="close"
-        onClick={[MockFunction]}
-        themeButton="btn btn--transparent unround-t unround-br color-gray py12 px12"
-        tooltipProps={
-          Object {
-            "content": "Close",
-          }
-        }
-      />
+      <Tooltip
+        alignment="center"
+        block={true}
+        coloring="light"
+        content="Close"
+        disabled={false}
+        maxWidth="medium"
+        padding="small"
+        placement="top"
+        respondsToClick={false}
+        textSize="s"
+      >
+        <button
+          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+          data-test="modal-close"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <Icon
+            inline={false}
+            name="close"
+          />
+        </button>
+      </Tooltip>
     </div>
   </div>
 </Displaced>

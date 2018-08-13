@@ -125,16 +125,30 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
     <div
       className="flex-child"
     >
-      <IconButton
-        icon="trash"
-        onClick={[Function]}
-        themeButton="link link--gray relative bg-transparent py0 "
-        tooltipProps={
-          Object {
-            "content": "Clear",
-          }
-        }
-      />
+      <Tooltip
+        alignment="center"
+        block={true}
+        coloring="light"
+        content="Clear"
+        disabled={false}
+        maxWidth="medium"
+        padding="small"
+        placement="top"
+        respondsToClick={false}
+        textSize="s"
+      >
+        <button
+          className="block link link--gray relative bg-transparent py0 "
+          data-test="control-file-clear"
+          onClick={[Function]}
+          type="button"
+        >
+          <Icon
+            inline={false}
+            name="trash"
+          />
+        </button>
+      </Tooltip>
     </div>
   </div>
 </ControlWrapper>
@@ -314,16 +328,30 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
     <div
       className="flex-child"
     >
-      <IconButton
-        icon="trash"
-        onClick={[Function]}
-        themeButton="link link--gray relative bg-transparent py0 "
-        tooltipProps={
-          Object {
-            "content": "Clear",
-          }
-        }
-      />
+      <Tooltip
+        alignment="center"
+        block={true}
+        coloring="light"
+        content="Clear"
+        disabled={false}
+        maxWidth="medium"
+        padding="small"
+        placement="top"
+        respondsToClick={false}
+        textSize="s"
+      >
+        <button
+          className="block link link--gray relative bg-transparent py0 "
+          data-test="control-file-clear"
+          onClick={[Function]}
+          type="button"
+        >
+          <Icon
+            inline={false}
+            name="trash"
+          />
+        </button>
+      </Tooltip>
     </div>
   </div>
 </ControlWrapper>

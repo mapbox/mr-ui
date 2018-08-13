@@ -184,6 +184,8 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    * The width of the button: `"small"`, `"medium"`, `"large"`, or `"full"`.
+   * For every option but `"full"` this prop determines horizontal padding.
+   * `"full"` sets the button to fill the width of its container.
    *
    * This is distinguished from `size` because buttons of the same general size
    * can vary by width.
@@ -207,11 +209,14 @@ Button.propTypes = {
   /**
    * If `true`, the element will be `block` displayed instead of `inline-block`.
    *
-   * This is sometimes necessary to get your pixel-perfect layout.
+   * This is sometimes necessary to get your pixel-perfect layout, if you don't
+   * want the extra line-height that wraps inline elements. Typically, you
+   * should only set `block` to `true` if the parent element is controlling
+   * width (in a layout that uses flexbox, absolute positioning, or floats).
    */
   block: PropTypes.bool,
   /**
-   * Is it disbaled?
+   * Is it disabled?
    */
   disabled: PropTypes.bool,
   /**
@@ -222,7 +227,7 @@ Button.propTypes = {
   component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   /**
    * An object of props that you want to pass through to the element that
-   * Button renders.  This can be useful if you want to disable
+   * Button renders. This can be useful if you want to disable
    * the button, assign an ID for testing, add an ARIA attribute, toss in some
    * custom style properties, etc.
    */

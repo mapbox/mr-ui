@@ -107,7 +107,7 @@ testCases.unpadded = {
             <div className="flex-child px24 py24">The other side</div>
           </div>
         ),
-        padded: false
+        padding: 'none'
       }}
     />
   )
