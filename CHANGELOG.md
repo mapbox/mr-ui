@@ -24,6 +24,9 @@
   - [feature] Add `CopyButton.copyIsSupported()` static function.
   - [feature] Improve appearance of copy instructions popover.
   - [fix] Works in modals.
+- **Copiable**
+  - 🚨 [breaking change] Remove `themeWrapper`, `themeCopyButtonContainer`, `themeCopyButton`, `themeText`, and `themeTooltip` props.
+  - [feature] Add `truncate` prop.
 - **Tooltip**
   - 🚨 [breaking change] Remove `backgroundColor` and `themeTooltip` props.
   - 🚨 [breaking change] Replace `display` prop with `block`.

@@ -2,28 +2,34 @@
 
 exports[`basic renders as expected 1`] = `
 <div
-  className="clearfix bg-darken5 round"
+  className="relative clearfix bg-darken5 round"
 >
   <div
-    className="fr py6 px6"
+    className="absolute top right px6 py6"
   >
     <CopyButton
       block={true}
       className="btn btn--xs py3 px3 round"
-      text="the text you copy the text you copy the text you copy the text you copy the text you copy "
+      text="thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy "
     />
   </div>
   <div
-    className="py6 px12 txt-mono txt-s"
+    className="py6 px12"
     data-test="copiable-text-el"
     onBlur={[Function]}
     onFocus={[Function]}
     tabIndex="-1"
   >
     <div
-      className="my3"
+      className="my3 txt-mono txt-s mr24"
+      style={
+        Object {
+          "overflowWrap": "break-word",
+          "wordWrap": "break-word",
+        }
+      }
     >
-      the text you copy the text you copy the text you copy the text you copy the text you copy 
+      thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
     </div>
   </div>
 </div>
@@ -31,28 +37,34 @@ exports[`basic renders as expected 1`] = `
 
 exports[`basic shows copy hint when focused 1`] = `
 <div
-  className="clearfix bg-darken5 round"
+  className="relative clearfix bg-darken5 round"
 >
   <div
-    className="fr py6 px6"
+    className="absolute top right px6 py6"
   >
     <CopyButton
       block={true}
       className="btn btn--xs py3 px3 round"
-      text="the text you copy the text you copy the text you copy the text you copy the text you copy "
+      text="thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy "
     />
   </div>
   <div
-    className="py6 px12 txt-mono txt-s"
+    className="py6 px12"
     data-test="copiable-text-el"
     onBlur={[Function]}
     onFocus={[Function]}
     tabIndex="-1"
   >
     <div
-      className="my3"
+      className="my3 txt-mono txt-s mr24"
+      style={
+        Object {
+          "overflowWrap": "break-word",
+          "wordWrap": "break-word",
+        }
+      }
     >
-      the text you copy the text you copy the text you copy the text you copy the text you copy 
+      thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
     </div>
   </div>
   <Popover

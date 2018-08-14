@@ -9,10 +9,13 @@ export default class Example extends React.Component {
     return (
       <div>
         <div className="mb12">
-          <Copiable value="https://www.mapbox.com/something/special/for/you" />
+          <Copiable value="The length of this copiable text is to illustrate to you how this component's styling works when the text wraps to multiple lines" />
         </div>
         <div>
-          <Copiable value="The length of this copiable text is to illustrate to you how this component's styling works when the text wraps to multiple lines" />
+          <Copiable
+            value="https://www.mapbox.com/something/special/for/you"
+            truncated={true}
+          />
         </div>
       </div>
     );
