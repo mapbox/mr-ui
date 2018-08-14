@@ -292,7 +292,7 @@ noDisplayCases.allProps = {
     getAnchorElement: () => {},
     children: getPopoverContent(),
     placement: 'left',
-    padding: false,
+    padding: 'none',
     hasPointer: false,
     hideWhenAnchorIsOffscreen: true,
     allowPlacementAxisChange: false,
