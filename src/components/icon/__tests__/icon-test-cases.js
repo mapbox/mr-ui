@@ -72,20 +72,4 @@ testCases.inlineLargeDisplay = {
   )
 };
 
-testCases.inlineHeadingDisplay = {
-  description: 'inline txt-h2',
-  element: (
-    <div className="txt-h2">
-      Party because
-      <Icon
-        name="check"
-        themeIcon="mr3 color-green"
-        inline={true}
-        style={{ width: '1em' }}
-      />
-      you did it
-    </div>
-  )
-};
-
 export { testCases };

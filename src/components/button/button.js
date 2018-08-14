@@ -231,9 +231,7 @@ Button.propTypes = {
    * the button, assign an ID for testing, add an ARIA attribute, toss in some
    * custom style properties, etc.
    */
-  passthroughProps: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number])
-  )
+  passthroughProps: PropTypes.object
 };
 
 Button.defaultProps = {
