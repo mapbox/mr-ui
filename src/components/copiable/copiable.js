@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CopyButton from '../copy-button';
 import Popover from '../popover';
 import OSKey from 'os-key';
@@ -75,16 +76,23 @@ export default class Copiable extends React.Component {
     }
   };
 
-  render() {
+  renderCopyButton() {
     const { props } = this;
 
-    const copyBtn = typeof document !== 'undefined' &&
-      CopyButton.isCopySupported() && (
-        <div className="fr py6 px6">
-          <CopyButton text={props.value} textEl={this.textEl} block={true} />
-        </div>
-      );
+    if (typeof window === 'undefined' || !CopyButton.isCopySupported()) {
+      return null;
+    }
 
+    return (
+      <div className="absolute top right px6 py6">
+        <CopyButton text={props.value} textEl={this.textEl} block={true} />
+      </div>
+    );
+  }
+
+  render() {
+    const { props } = this;
+    const copyButton = this.renderCopyButton();
     const copyHintPopover = this.state.copyTooltipActive && (
       <Popover
         getAnchorElement={this.getTextEl}
@@ -98,18 +106,29 @@ export default class Copiable extends React.Component {
       </Popover>
     );
 
+    const textClasses = classnames('my3 txt-mono txt-s mr24', {
+      'txt-truncate': props.truncated
+    });
+    const textStyle = {};
+    if (!props.truncated) {
+      textStyle.wordWrap = 'break-word';
+      textStyle.overflowWrap = 'break-word';
+    }
+
     return (
-      <div className="clearfix bg-darken5 round">
-        {copyBtn}
+      <div className="relative clearfix bg-darken5 round">
+        {copyButton}
         <div
           tabIndex="-1"
           ref={this.setTextEl}
           onFocus={this.handleTextFocus}
           onBlur={this.handleTextBlur}
-          className="py6 px12 txt-mono txt-s"
+          className="py6 px12"
           data-test="copiable-text-el"
         >
-          <div className="my3">{props.value}</div>
+          <div className={textClasses} style={textStyle}>
+            {props.value}
+          </div>
         </div>
         {copyHintPopover}
       </div>
@@ -121,7 +140,27 @@ Copiable.propTypes = {
   /**
    * The text that will be displayed and copied.
    */
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  /**
+   * If `false` (default), the text will be overflow to multiple lines,
+   * and words longer than a single line (e.g. long access tokens or URLs)
+   * will be broken to enforce wrapping.
+   *
+   * If `true`, the Copiable's text will be truncated to a single line
+   * of text. **Only set this to `true` if you know that your target
+   * browsers support the copy button!** Some browsers will not effectively
+   * copy text that is truncated by CSS, so the risk is that some of your
+   * users might have *no way* to view and copy all the text if the copy
+   * button does not work for them.
+   *
+   * Horizontal scrolling is not an option because of things end up getting
+   * pretty gross across browsers.
+   */
+  truncated: PropTypes.bool
+};
+
+Copiable.defaultProps = {
+  truncated: false
 };
 
 function getCopyKeys(ua) {
