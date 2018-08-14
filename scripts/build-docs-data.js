@@ -49,7 +49,7 @@ function processExampleFile(filename) {
 function getExamples(componentDirectory) {
   const examplesDirectory = path.join(componentDirectory, 'examples');
   return globby(path.join(examplesDirectory, '*.js')).then(filenames => {
-    return Promise.all(filenames.map(processExampleFile));
+    return Promise.all(filenames.sort().map(processExampleFile));
   });
 }
 

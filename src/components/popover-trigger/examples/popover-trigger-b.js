@@ -3,6 +3,7 @@ A PopoverTrigger that opens a dark popover and traps focus inside its content.
 */
 import React from 'react';
 import PopoverTrigger from '../popover-trigger';
+import Button from '../../button';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -48,9 +49,7 @@ export default class Example extends React.Component {
             'data-test': 'trigger-container'
           }}
         >
-          <button type="button" className="btn btn--s">
-            Trigger
-          </button>
+          <Button size="medium">Trigger</Button>
         </PopoverTrigger>
       </div>
     );

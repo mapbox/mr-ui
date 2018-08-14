@@ -3,6 +3,7 @@ Standard popover.
 */
 import React from 'react';
 import Popover from '../popover';
+import Button from '../../button';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -49,13 +50,15 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <button
-          ref={this.setAnchor}
+        <Button
           onClick={this.togglePopover}
-          className="btn btn--s"
+          size="medium"
+          passthroughProps={{
+            ref: this.setAnchor
+          }}
         >
           Toggle popover
-        </button>
+        </Button>
         {this.renderPopover()}
       </div>
     );

@@ -3,6 +3,7 @@ A standard PopoverTrigger.
 */
 import React from 'react';
 import PopoverTrigger from '../popover-trigger';
+import Button from '../../button';
 
 export default class Example extends React.Component {
   getPopoverContent = () => {
@@ -13,9 +14,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <PopoverTrigger content={this.getPopoverContent}>
-          <button type="button" className="btn btn--s btn--purple">
-            Trigger
-          </button>
+          <Button size="medium">Trigger</Button>
         </PopoverTrigger>
       </div>
     );
