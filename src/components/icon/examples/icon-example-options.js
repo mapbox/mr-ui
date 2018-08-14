@@ -9,7 +9,6 @@ export default class Example extends React.Component {
     return (
       <Icon
         name="antialias"
-        inlineHeading={true}
         theme={{
           icon: 'icon--l'
         }}
