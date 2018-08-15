@@ -91,7 +91,7 @@ Icon.propTypes = {
    */
   size: PropTypes.number,
   /**
-   * If `true`, the icon will be adjust after mounting so that its height
+   * If `true`, the icon will be adjusted after mounting so that its height
    * matches the line-height of its container. The result of this is that
    * the icon will not displace the text's established line-height and
    * will be vertically centered with the text alongside it.
