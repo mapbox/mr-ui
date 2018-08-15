@@ -16,39 +16,49 @@ testCases.extraProps = {
   component: Icon,
   props: {
     name: 'alert',
-    'data-test': 'alert-icon',
-    themeIcon: 'color-red'
+    passthroughProps: {
+      'data-test': 'alert-icon'
+    }
   }
 };
 
-testCases.specialSizeClasses = {
-  description: 'special size with classes',
+testCases.specialSize = {
+  description: 'special size',
   component: Icon,
   props: {
     name: 'alert',
-    'data-test': 'alert-icon',
-    themeIcon: 'h36 w36'
+    size: 36
   }
 };
 
 testCases.specialSizeStyle = {
-  description: 'special size with styles',
+  description: 'special size applied with a style',
   component: Icon,
   props: {
     name: 'alert',
-    'data-test': 'alert-icon',
-    style: { height: 36, width: 36 }
+    passthroughProps: {
+      'data-test': 'alert-icon',
+      style: { height: 36, width: 36 }
+    }
   }
 };
 
 testCases.inline = {
-  noDisplay: true,
   description: 'inline',
   component: Icon,
   props: {
     name: 'check',
+    inline: true
+  }
+};
+
+testCases.inlineWithSize = {
+  description: 'inline with size',
+  component: Icon,
+  props: {
+    name: 'check',
     inline: true,
-    themeIcon: 'mr3 color-green'
+    size: 45
   }
 };
 
@@ -56,7 +66,21 @@ testCases.inlineSmallDisplay = {
   description: 'inline txt-s',
   element: (
     <div className="txt-s">
-      <Icon name="check" themeIcon="mr3 color-green" inline={true} />
+      <span className="mr3 color-green">
+        <Icon name="check" inline={true} />
+      </span>
+      You did it
+    </div>
+  )
+};
+
+testCases.inlineLargeText = {
+  description: 'inline txt-xl',
+  element: (
+    <div className="txt-xl">
+      <span className="mr3 color-green">
+        <Icon name="check" inline={true} />
+      </span>
       You did it
     </div>
   )
@@ -66,8 +90,21 @@ testCases.inlineLargeDisplay = {
   description: 'inline txt-xl',
   element: (
     <div className="txt-xl">
-      <Icon name="check" themeIcon="mr3 color-green" inline={true} />
+      <span className="mr3 color-green">
+        <Icon name="check" inline={true} size={45} />
+      </span>
       You did it
+    </div>
+  )
+};
+
+testCases.inlineMultiline = {
+  description: 'inline txt-xl',
+  element: (
+    <div>
+      The last thing you want in your kitchen is a{' '}
+      <Icon name="flame" inline={true} /> fire even though there is{' '}
+      <Icon name="water" inline={true} /> water nearby.
     </div>
   )
 };

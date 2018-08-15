@@ -1,29 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import omit from '../utils/omit';
 import getWindow from '../utils/get-window';
+import shallowEqualObjects from '../utils/shallow-equal-objects';
 
-export default class Icon extends React.PureComponent {
-  // If you change propTypes, make sure to change propNames.
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    themeIcon: PropTypes.string,
-    inline: PropTypes.bool
-  };
-  static propNames = ['name', 'themeIcon', 'inline'];
-
-  static defaultProps = {
-    inline: false
-  };
-
+/**
+ * Display an Assembly icon.
+ *
+ * Besides providing a convenient shortcut, this component does the following:
+ *
+ * - Sets some accessibility props.
+ * - Provides an `inline` mode that automatically sizes icons to match their
+ *   surrounding text.
+ */
+export default class Icon extends React.Component {
   componentDidMount() {
+    this.setHeight();
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return !shallowEqualObjects(this.props, nextProps, ['passthroughProps']);
+  }
+
+  componentDidUpdate() {
+    this.setHeight();
+  }
+
+  setHeight() {
     if (this.props.inline && this.iconElement) {
-      // Match height of icon element to line height, ensuring inlined icon
-      // doesn't displace text line height, is vertically centered,
-      // and wraps along with multi-line text.
-      this.iconElement.style.height = getWindow().getComputedStyle(
-        this.iconElement
-      )['line-height'];
+      const lineHeight = getWindow().getComputedStyle(this.iconElement)[
+        'line-height'
+      ];
+      this.iconElement.style.height = lineHeight;
     }
   }
 
@@ -35,19 +42,16 @@ export default class Icon extends React.PureComponent {
     const { props } = this;
 
     let iconClasses = 'events-none icon';
-    if (props.themeIcon !== undefined) iconClasses += ` ${props.themeIcon}`;
-
     if (props.inline) {
       iconClasses += ' inline-block align-t';
     }
 
-    const extraProps = omit(props, Icon.propNames.concat('style'));
-    const svgStyle = props.style || {};
-    if (!svgStyle.width) {
-      svgStyle.width = 18;
+    const svgStyle = props.passthroughProps.style || {};
+    if (!svgStyle.width && props.size) {
+      svgStyle.width = props.size;
     }
-    if (!svgStyle.height) {
-      svgStyle.height = 18;
+    if (!svgStyle.height && props.size) {
+      svgStyle.height = props.size;
     }
 
     const iconContent = (
@@ -56,8 +60,8 @@ export default class Icon extends React.PureComponent {
         role="presentation"
         focusable="false"
         className={iconClasses}
+        {...props.passthroughProps}
         style={svgStyle}
-        {...extraProps}
       >
         <use
           xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -69,3 +73,46 @@ export default class Icon extends React.PureComponent {
     return iconContent;
   }
 }
+
+Icon.propTypes = {
+  /**
+   * The name of the [Assembly icon](https://www.mapbox.com/assembly/icons/) that
+   * you want to display.
+   */
+  name: PropTypes.string.isRequired,
+  /**
+   * The width and height of the icon. All icons fill up a square space,
+   * so this value will be applied to both width and height.
+   *
+   * If `inline: true`, the technical height will be controlled by the
+   * line-height of the container, but the appearance of the icon will still
+   * be in accordance with your `size` value (because it's limited by the
+   * width).
+   */
+  size: PropTypes.number,
+  /**
+   * If `true`, the icon will be adjusted after mounting so that its height
+   * matches the line-height of its container. The result of this is that
+   * the icon will not displace the text's established line-height and
+   * will be vertically centered with the text alongside it.
+   *
+   * This is most useful when you are inserting the icon within multiline text,
+   * so you can't use a flexbox layout to vertically center the icon and text.
+   *
+   * Be aware that there are edge cases that can cause problems with this
+   * setting. For example, it won't work well if you don't have a `line-height`
+   * set to a pixel value, or if there are dynamic adjustments to the
+   * line-height.
+   */
+  inline: PropTypes.bool,
+  /**
+   * Props to pass directly to the `<svg>` element.
+   */
+  passthroughProps: PropTypes.object
+};
+
+Icon.defaultProps = {
+  inline: false,
+  passthroughProps: {},
+  size: 18
+};

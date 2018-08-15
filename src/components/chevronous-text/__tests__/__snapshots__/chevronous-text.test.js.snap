@@ -11,6 +11,8 @@ exports[`ChevronousText additional icon classes renders 1`] = `
     <Icon
       inline={true}
       name="chevron-right"
+      passthroughProps={Object {}}
+      size={18}
       themeIcon="color-blue"
     />
   </span>
@@ -28,6 +30,8 @@ exports[`ChevronousText basic renders 1`] = `
     <Icon
       inline={true}
       name="chevron-right"
+      passthroughProps={Object {}}
+      size={18}
     />
   </span>
 </span>

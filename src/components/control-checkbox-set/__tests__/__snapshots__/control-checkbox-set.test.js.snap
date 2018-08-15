@@ -43,6 +43,8 @@ exports[`ControlCheckbox all options renders 1`] = `
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         <span>
@@ -69,6 +71,8 @@ exports[`ControlCheckbox all options renders 1`] = `
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         <span>
@@ -95,6 +99,8 @@ exports[`ControlCheckbox all options renders 1`] = `
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         <span>
@@ -142,6 +148,8 @@ exports[`ControlCheckbox basic onChange gets called with input id and value 1`] 
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         Option 1
@@ -166,6 +174,8 @@ exports[`ControlCheckbox basic onChange gets called with input id and value 1`] 
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         Option 2
@@ -211,6 +221,8 @@ exports[`ControlCheckbox basic renders 1`] = `
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         Option 1
@@ -235,6 +247,8 @@ exports[`ControlCheckbox basic renders 1`] = `
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         Option 2
@@ -280,6 +294,8 @@ exports[`ControlCheckbox disabled renders 1`] = `
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         Option 1
@@ -305,6 +321,8 @@ exports[`ControlCheckbox disabled renders 1`] = `
           <Icon
             inline={false}
             name="check"
+            passthroughProps={Object {}}
+            size={18}
           />
         </div>
         Option 2

@@ -49,6 +49,8 @@ exports[`Modal No fixed width, display only renders 1`] = `
           <Icon
             inline={false}
             name="close"
+            passthroughProps={Object {}}
+            size={18}
           />
         </button>
       </Tooltip>
@@ -116,6 +118,8 @@ exports[`Modal all options renders 1`] = `
           <Icon
             inline={false}
             name="close"
+            passthroughProps={Object {}}
+            size={18}
           />
         </button>
       </Tooltip>
@@ -198,6 +202,8 @@ exports[`Modal basic default renders 1`] = `
           <Icon
             inline={false}
             name="close"
+            passthroughProps={Object {}}
+            size={18}
           />
         </button>
       </Tooltip>
@@ -267,6 +273,8 @@ exports[`Modal basic small renders 1`] = `
           <Icon
             inline={false}
             name="close"
+            passthroughProps={Object {}}
+            size={18}
           />
         </button>
       </Tooltip>
