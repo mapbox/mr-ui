@@ -38,6 +38,12 @@
   - [feature] Add `padding`, `alert`, `primaryAction`, `secondaryAction`, and `tertiaryAction` props.
   - [fix] Modals taller than the viewport will now show padding above them: the browser will not longer automatically scroll down to the top of the modal.
   - [fix] Update `react-aria-modal` to get some bug fixes and focus-management improvements.
+- **Icon**
+  - 🚨 [breaking change] Remove `themeIcon` prop.
+  - 🚨 [breaking change] Arbitrary props will not be passed through to the `<svg>`. Use `passthroughProps`.
+  - [feature] Add `passthroughProps` prop.
+  - [feature] Add `size` prop.
+  - [fix] If `inline: true`, the corresponding style adjustment will be performed after updates as well as mounting.
 
 ## 0.2.1
 

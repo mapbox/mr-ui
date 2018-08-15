@@ -36,6 +36,8 @@ exports[`ControlFile all options renders 1`] = `
           <Icon
             inline={false}
             name="harddrive"
+            passthroughProps={Object {}}
+            size={18}
             themeIcon="mr6 inline-block align-middle"
           />
           Select an image
@@ -98,6 +100,8 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
           <Icon
             inline={false}
             name="harddrive"
+            passthroughProps={Object {}}
+            size={18}
             themeIcon="mr6 inline-block align-middle"
           />
           bon jovi.mp3
@@ -146,6 +150,8 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
           <Icon
             inline={false}
             name="trash"
+            passthroughProps={Object {}}
+            size={18}
           />
         </button>
       </Tooltip>
@@ -184,6 +190,8 @@ exports[`ControlFile basic renders 1`] = `
           <Icon
             inline={false}
             name="harddrive"
+            passthroughProps={Object {}}
+            size={18}
             themeIcon="mr6 inline-block align-middle"
           />
           Select a file
@@ -242,6 +250,8 @@ exports[`ControlFile disabled renders 1`] = `
           <Icon
             inline={false}
             name="harddrive"
+            passthroughProps={Object {}}
+            size={18}
             themeIcon="mr6 inline-block align-middle"
           />
           Select a file
@@ -300,6 +310,8 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
           <Icon
             inline={false}
             name="harddrive"
+            passthroughProps={Object {}}
+            size={18}
             themeIcon="mr6 inline-block align-middle"
           />
           bon jovi.mp3, aerosmith.mp3
@@ -349,6 +361,8 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
           <Icon
             inline={false}
             name="trash"
+            passthroughProps={Object {}}
+            size={18}
           />
         </button>
       </Tooltip>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon basic renders 1`] = `
+exports[`basic renders as expected 1`] = `
 <svg
   className="events-none icon"
   focusable="false"
@@ -19,9 +19,9 @@ exports[`Icon basic renders 1`] = `
 </svg>
 `;
 
-exports[`Icon extra props renders 1`] = `
+exports[`extra props renders as expected 1`] = `
 <svg
-  className="events-none icon color-red"
+  className="events-none icon"
   data-test="alert-icon"
   focusable="false"
   role="presentation"
@@ -39,9 +39,9 @@ exports[`Icon extra props renders 1`] = `
 </svg>
 `;
 
-exports[`Icon inline renders 1`] = `
+exports[`inline renders as expected 1`] = `
 <svg
-  className="events-none icon mr3 color-green inline-block align-t"
+  className="events-none icon inline-block align-t"
   focusable="false"
   role="presentation"
   style={
@@ -58,16 +58,16 @@ exports[`Icon inline renders 1`] = `
 </svg>
 `;
 
-exports[`Icon special size with classes renders 1`] = `
+exports[`special size applied with a style renders as expected 1`] = `
 <svg
-  className="events-none icon h36 w36"
+  className="events-none icon"
   data-test="alert-icon"
   focusable="false"
   role="presentation"
   style={
     Object {
-      "height": 18,
-      "width": 18,
+      "height": 36,
+      "width": 36,
     }
   }
 >
@@ -78,10 +78,9 @@ exports[`Icon special size with classes renders 1`] = `
 </svg>
 `;
 
-exports[`Icon special size with styles renders 1`] = `
+exports[`special size renders as expected 1`] = `
 <svg
   className="events-none icon"
-  data-test="alert-icon"
   focusable="false"
   role="presentation"
   style={

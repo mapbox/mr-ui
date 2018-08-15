@@ -60,6 +60,8 @@ exports[`ControlText all options renders 1`] = `
         <Icon
           inline={false}
           name="alert"
+          passthroughProps={Object {}}
+          size={18}
           themeIcon="cursor-pointer"
         />
       </span>
@@ -217,6 +219,8 @@ exports[`ControlText error inline option renders 1`] = `
         <Icon
           inline={false}
           name="alert"
+          passthroughProps={Object {}}
+          size={18}
           themeIcon="cursor-pointer"
         />
       </span>
