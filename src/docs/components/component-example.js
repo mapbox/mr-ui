@@ -15,7 +15,7 @@ export default class ComponentExample extends React.Component {
       return null;
     }
     return (
-      <pre className="my0 round-tl pre language-jsx">
+      <pre className="my0 round-tl pre language-jsx unround-tr unround-b">
         <code dangerouslySetInnerHTML={{ __html: this.props.code }} />
       </pre>
     );

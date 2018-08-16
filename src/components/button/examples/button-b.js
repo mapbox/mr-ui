@@ -1,5 +1,5 @@
 /*
-A slightly wider, outlined button with an alternate color, using [IconText](#mbxicontext) to prefix the text with an icon.
+A slightly wider, outlined button with an alternate color, using [IconText](#icontext) to prefix the text with an icon.
 */
 import React from 'react';
 import Button from '../button';
