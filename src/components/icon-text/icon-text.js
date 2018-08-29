@@ -17,7 +17,7 @@ class IconText extends React.Component {
 
   render() {
     const { props } = this;
-    const spacer = props.spacing === 'small' ? '3' : '6';
+    const spacer = props.gap === 'small' ? '3' : '6';
 
     const before = !props.iconBefore ? null : (
       <span className={`flex-child mr${spacer}`}>
@@ -49,9 +49,9 @@ IconText.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * The spacing size: `"small"` or `"large"`.
+   * The size of the gap between the text and the icon: `"small"` or `"large"`.
    */
-  spacing: PropTypes.oneOf(['small', 'large']),
+  gap: PropTypes.oneOf(['small', 'large']),
   /**
    * An icon to place before the text. If the value is a string, it should name an
    * Assembly icon. If you bring your own SVG or want finer-grained control over
@@ -65,7 +65,7 @@ IconText.propTypes = {
 };
 
 IconText.defaultProps = {
-  spacing: 'small'
+  gap: 'small'
 };
 
 export default IconText;

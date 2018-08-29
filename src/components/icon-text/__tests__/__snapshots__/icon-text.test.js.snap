@@ -76,7 +76,7 @@ exports[`icons on both sides, including a non-string one renders as expected 1`]
 </span>
 `;
 
-exports[`large spacing renders as expected 1`] = `
+exports[`large gap renders as expected 1`] = `
 <span
   className="flex-parent flex-parent--center-cross"
 >
