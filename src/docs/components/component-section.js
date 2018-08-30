@@ -1,4 +1,5 @@
 import React from 'react';
+import assign from 'lodash/assign';
 import ComponentExample from './component-example';
 
 export default class ComponentSection extends React.Component {
@@ -78,7 +79,7 @@ export default class ComponentSection extends React.Component {
 function sortedProps(propsData) {
   return Object.keys(propsData)
     .reduce((memo, key) => {
-      memo.push(Object.assign({ name: key }, propsData[key]));
+      memo.push(assign({ name: key }, propsData[key]));
       return memo;
     }, [])
     .sort((a, b) => {
