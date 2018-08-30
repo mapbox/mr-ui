@@ -23,12 +23,12 @@ testCases.iconAfter = {
 };
 
 testCases.largeSpacing = {
-  description: 'large spacing',
+  description: 'large gap',
   component: IconText,
   props: {
     children: 'Done',
     iconBefore: 'check',
-    spacing: 'large'
+    gap: 'large'
   }
 };
 

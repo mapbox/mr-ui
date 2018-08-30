@@ -83,8 +83,8 @@ exports[`Link with outline and icon text, extra padding renders as expected 1`] 
   onClick={[MockFunction]}
 >
   <IconText
+    gap="small"
     iconBefore="bug"
-    spacing="small"
   >
     Go do things
   </IconText>
