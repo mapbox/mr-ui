@@ -25,7 +25,8 @@ export default class Copiable extends React.Component {
 
     this.copyHintText = '';
     this.state = {
-      copyTooltipActive: false
+      copyTooltipActive: false,
+      showCopyButton: false
     };
   }
 
@@ -38,7 +39,18 @@ export default class Copiable extends React.Component {
   };
 
   componentDidMount() {
-    this.copyHintText = (
+    this.setState({
+      showCopyButton:
+        typeof window !== 'undefined' && CopyButton.isCopySupported()
+    });
+  }
+
+  renderCopyHintText() {
+    if (!this.state.showCopyButton) {
+      return null;
+    }
+
+    return (
       <span>
         <span className="txt-kbd">
           {getCopyKeys(getWindow().navigator.userAgent)}
@@ -77,15 +89,15 @@ export default class Copiable extends React.Component {
   };
 
   renderCopyButton() {
-    const { props } = this;
+    const { props, state } = this;
 
-    if (typeof window === 'undefined' || !CopyButton.isCopySupported()) {
+    if (!state.showCopyButton) {
       return null;
     }
 
     return (
       <div className="absolute top right px6 py6">
-        <CopyButton text={props.value} textEl={this.textEl} block={true} />
+        <CopyButton text={props.value} block={true} />
       </div>
     );
   }
@@ -102,7 +114,7 @@ export default class Copiable extends React.Component {
         accessibleTitle="Copy the selected text"
         padding="small"
       >
-        <div className="txt-s">{this.copyHintText}</div>
+        <div className="txt-s">{this.renderCopyHintText()}</div>
       </Popover>
     );
 
