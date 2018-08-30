@@ -1,8 +1,10 @@
 # Changelog
 
-## HEAD
+## 0.3.1
 
-- **Copiable**: Fix layout for server-side rendering.
+- [fix] Fix the release. **Don't use 0.3.0: use 0.3.1.**
+- **Copiable**
+  - [fix] Fix layout for server-side rendering.
 
 ## 0.3.0
 
