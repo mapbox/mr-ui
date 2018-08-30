@@ -1,6 +1,6 @@
 # Changelog
 
-## HEAD
+## 0.3.0
 
 - 🚨 [breaking change] Remove **IconButton** component.
 - [feature] Add **Heading** component.
