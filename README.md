@@ -6,7 +6,7 @@
 
 Pronounced `'mis-tər yü-'ī`. **M**apbox **R**eact **UI** components.
 
-UI components for Mapbox projects.
+UI components for Mapbox projects. See docs at https://mapbox.github.io/mr-ui/.
 
 **This project is for internal Mapbox usage.** The code is open source and we appreciate bug reports; but we will only consider feature requests and pull requests from Mapbox developers.
 
@@ -62,3 +62,4 @@ The `build` command creates a `pkg/` directory that contains the code we want to
 - Update all version numbers and create a Git tag.
 - Build the `pkg/` directory: `npm run build`.
 - `cd` into the `pkg/` directory and `npm run publish` from there.
+- Run `npm run deploy-docs` to update the docs at https://mapbox.github.io/mr-ui/
