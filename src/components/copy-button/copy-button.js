@@ -73,13 +73,13 @@ export default class CopyButton extends React.PureComponent {
     return this.container;
   };
 
-  setClipboard = element => {
+  setClipboard(element) {
     this.clipboard = new Clipboard(element, {
       // Setting the container is necessary for Clipboard to function within
       // focus traps, like in a Modal.
       container: element
     });
-  };
+  }
 
   renderFeedbackPopover() {
     const { state } = this;

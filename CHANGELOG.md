@@ -1,5 +1,9 @@
 # Changelog
 
+## HEAD
+
+- **Copiable**: Fix layout for server-side rendering.
+
 ## 0.3.0
 
 - 🚨 [breaking change] Remove **IconButton** component.
