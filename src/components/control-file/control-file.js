@@ -182,7 +182,6 @@ export default class ControlFile extends React.Component {
                   onClick={this.onClear}
                   data-test="control-file-clear"
                 >
-                  >
                   <Icon name="trash" />
                 </button>
               </Tooltip>
