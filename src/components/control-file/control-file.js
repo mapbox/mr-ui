@@ -5,6 +5,7 @@ import Tooltip from '../tooltip';
 import Icon from '../icon';
 import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
+import IconText from '../icon-text';
 
 const propNames = [
   'value',
@@ -165,11 +166,9 @@ export default class ControlFile extends React.Component {
               onClick={this.onButtonClick}
             >
               <span className="txt-truncate">
-                <Icon
-                  themeIcon="mr6 inline-block align-middle"
-                  name="harddrive"
-                />
-                {this.state.displayValue || initialDisplayValue}
+                <IconText iconBefore="harddrive">
+                  {this.state.displayValue || initialDisplayValue}
+                </IconText>
               </span>
             </button>
             <input {...inputProps} {...extraProps} />
