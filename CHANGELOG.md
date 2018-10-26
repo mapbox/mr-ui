@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+
+- [fix] Put `ControlFile`'s icon and text on the same line.
+
 ## 0.3.1
 
 - [fix] Fix the release. **Don't use 0.3.0: use 0.3.1.**
