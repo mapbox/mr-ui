@@ -59,7 +59,7 @@ npm test
 
 The `build` command creates a `pkg/` directory that contains the code we want to publish, organized the way we want it. So `pkg/` is the directory that we publish. `pkg/package.json` is a clone of `package.json` but with `private: true` removed.
 
-- Update all version numbers and create a Git tag.
+- Increment version numbers in `package.json` and `package.lock.json`, and ensure the changelog has an entry for the latest version. Then, create a new Git tag.
 - Build the `pkg/` directory: `npm run build`.
-- `cd` into the `pkg/` directory and `npm run publish` from there.
-- Run `npm run deploy-docs` to update the docs at https://mapbox.github.io/mr-ui/
+- `cd` into the `pkg/` directory and `mbx npm publish` from there.
+- `cd` back to root and run `npm run deploy-docs` to update the docs at https://mapbox.github.io/mr-ui/
