@@ -3,31 +3,59 @@ import { shallow } from 'enzyme';
 import { testCases } from './chevronous-text-test-cases';
 
 describe('ChevronousText', () => {
-  let testCase;
-  let wrapper;
-
   describe(testCases.basic.description, () => {
-    beforeEach(() => {
-      testCase = testCases.basic;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
-
-    test('renders', () => {
+    const wrapper = shallow(
+      React.createElement(testCases.basic.component, testCases.basic.props)
+    );
+    test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
 
-  describe(testCases.additionalIconClasses.description, () => {
-    beforeEach(() => {
-      testCase = testCases.additionalIconClasses;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
+  describe(testCases.oneLongWord.description, () => {
+    const wrapper = shallow(
+      React.createElement(
+        testCases.oneLongWord.component,
+        testCases.oneLongWord.props
+      )
+    );
+    test('renders as expected', () => {
+      expect(wrapper).toMatchSnapshot();
     });
+  });
 
-    test('renders', () => {
+  describe(testCases.multilineText.description, () => {
+    const wrapper = shallow(
+      React.createElement(
+        testCases.multilineText.component,
+        testCases.multilineText.props
+      )
+    );
+    test('renders as expected', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe(testCases.iconBeforeOneLongWord.description, () => {
+    const wrapper = shallow(
+      React.createElement(
+        testCases.iconBeforeOneLongWord.component,
+        testCases.iconBeforeOneLongWord.props
+      )
+    );
+    test('renders as expected', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe(testCases.iconBeforeMultilineText.description, () => {
+    const wrapper = shallow(
+      React.createElement(
+        testCases.iconBeforeMultilineText.component,
+        testCases.iconBeforeMultilineText.props
+      )
+    );
+    test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
