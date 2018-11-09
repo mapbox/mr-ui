@@ -20,15 +20,19 @@ export default class ChevronousText extends React.PureComponent {
     const iconWord = iconBefore ? splitText.shift() : splitText.pop();
     const textWithoutIconWord = splitText.join(' ');
 
-    return iconBefore ? (
-      <span className="inline-block">
-        <span className="txt-nowrap">
-          <Icon name="chevron-left" inline={true} />
-          {iconWord}
-        </span>{' '}
-        {textWithoutIconWord}
-      </span>
-    ) : (
+    if (iconBefore) {
+      return (
+        <span className="inline-block">
+          <span className="txt-nowrap">
+            <Icon name="chevron-left" inline={true} />
+            {iconWord}
+          </span>{' '}
+          {textWithoutIconWord}
+        </span>
+      );
+    }
+
+    return (
       <span className="inline-block">
         {textWithoutIconWord}{' '}
         <span className="txt-nowrap">
