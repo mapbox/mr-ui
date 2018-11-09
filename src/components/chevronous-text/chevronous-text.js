@@ -2,46 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icon';
 
-const ChevronAfterText = ({ text }) => {
-  const splitText = text.split(' ');
-  const lastWord = splitText.pop();
-  const textWithoutLastWord = splitText.join(' ');
-
-  return (
-    <span>
-      {textWithoutLastWord}{' '}
-      <span className="txt-nowrap">
-        {lastWord}
-        <Icon name="chevron-right" inline={true} />
-      </span>
-    </span>
-  );
-};
-
-ChevronAfterText.propTypes = {
-  text: PropTypes.string.isRequired
-};
-
-const ChevronBeforeText = ({ text }) => {
-  const splitText = text.split(' ');
-  const firstWord = splitText.shift();
-  const textWithoutFirstWord = splitText.join(' ');
-
-  return (
-    <span>
-      <span className="txt-nowrap">
-        <Icon name="chevron-left" inline={true} />
-        {firstWord}
-      </span>{' '}
-      {textWithoutFirstWord}
-    </span>
-  );
-};
-
-ChevronBeforeText.propTypes = {
-  text: PropTypes.string.isRequired
-};
-
 export default class ChevronousText extends React.PureComponent {
   static propTypes = {
     /** When true, the text will follow after a left pointed chevron. */
@@ -56,11 +16,26 @@ export default class ChevronousText extends React.PureComponent {
 
   render() {
     const { iconBefore, text } = this.props;
+    const splitText = text.split(' ');
+    const iconWord = iconBefore ? splitText.shift() : splitText.pop();
+    const textWithoutIconWord = splitText.join(' ');
 
     return iconBefore ? (
-      <ChevronBeforeText text={text} />
+      <span className="inline-block">
+        <span className="txt-nowrap">
+          <Icon name="chevron-left" inline={true} />
+          {iconWord}
+        </span>{' '}
+        {textWithoutIconWord}
+      </span>
     ) : (
-      <ChevronAfterText text={text} />
+      <span className="inline-block">
+        {textWithoutIconWord}{' '}
+        <span className="txt-nowrap">
+          {iconWord}
+          <Icon name="chevron-right" inline={true} />
+        </span>
+      </span>
     );
   }
 }
