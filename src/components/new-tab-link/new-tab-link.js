@@ -12,11 +12,7 @@ export default class NewTabLink extends React.Component {
     /** The content of the new tab link. */
     children: PropTypes.node.isRequired,
     /** The new tab location path. */
-    href: PropTypes.string
-  };
-
-  static defaultProps = {
-    href: ''
+    href: PropTypes.string.isRequired
   };
 
   render() {

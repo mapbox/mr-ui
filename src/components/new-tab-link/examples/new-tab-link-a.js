@@ -6,6 +6,6 @@ import NewTabLink from '../new-tab-link';
 
 export default class Example extends React.Component {
   render() {
-    return <NewTabLink>Hello explorer!</NewTabLink>;
+    return <NewTabLink href="">Hello explorer!</NewTabLink>;
   }
 }

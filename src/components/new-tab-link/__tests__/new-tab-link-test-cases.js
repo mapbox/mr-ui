@@ -6,7 +6,8 @@ testCases.basic = {
   description: 'basic',
   component: NewTabLink,
   props: {
-    children: 'Hello explorer!'
+    children: 'Hello explorer!',
+    href: ''
   }
 };
 
