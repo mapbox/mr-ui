@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GoLink basic go forward link renders as expected 1`] = `
+<a
+  className="inline-block link link--blue txt-m txt-bold"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={false}
+    text="Read Mapbox"
+  />
+</a>
+`;
+
+exports[`GoLink go forward new tab link renders as expected 1`] = `
+<NewTabLink
+  className="inline-block link link--blue txt-m txt-bold"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={false}
+    text="See all of the things"
+  />
+</NewTabLink>
+`;
+
+exports[`GoLink large go forward link renders as expected 1`] = `
+<a
+  className="inline-block link link--blue txt-l txt-bold"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={false}
+    text="Reach for the stars"
+  />
+</a>
+`;
+
+exports[`GoLink light go forward link renders as expected 1`] = `
+<a
+  className="inline-block link link--white txt-m txt-bold"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={false}
+    text="View all of Mapbox"
+  />
+</a>
+`;
+
+exports[`GoLink multiline text, go forward link renders as expected 1`] = `
+<a
+  className="inline-block link link--blue txt-m txt-bold"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={false}
+    text="\\"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us...\\" - A Tale of Two Cities"
+  />
+</a>
+`;
+
+exports[`GoLink small go forward link renders as expected 1`] = `
+<a
+  className="inline-block link link--blue txt-s txt-bold"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={false}
+    text="Maybe there's something cool if you go here"
+  />
+</a>
+`;
+
+exports[`GoLink small, unbolded, go back new tab link renders as expected 1`] = `
+<NewTabLink
+  className="inline-block link link--blue txt-s"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={true}
+    text="Jusk kidding! Go back to this new place."
+  />
+</NewTabLink>
+`;
+
+exports[`GoLink unbolded go forward link renders as expected 1`] = `
+<a
+  className="inline-block link link--blue txt-m"
+  href="http://www.mapbox.com"
+>
+  <ChevronousText
+    iconBefore={false}
+    text="Go to Mapbox"
+  />
+</a>
+`;
