@@ -44,13 +44,25 @@ export default class GoLink extends React.PureComponent {
       'txt-bold': isBold
     });
 
-    return isNewTab ? (
-      <NewTabLink href={href} className={linkClasses}>
-        <ChevronousText text={text} iconBefore={goBack} />
-      </NewTabLink>
-    ) : (
+    // iconSize is based on known set line-height
+    let iconSize = 24;
+    if (size === 'small') {
+      iconSize = 18;
+    } else if (size === 'large') {
+      iconSize = 30;
+    }
+
+    if (isNewTab) {
+      return (
+        <NewTabLink href={href} className={linkClasses}>
+          <ChevronousText text={text} iconBefore={goBack} iconSize={iconSize} />
+        </NewTabLink>
+      );
+    }
+
+    return (
       <a href={href} className={linkClasses}>
-        <ChevronousText text={text} iconBefore={goBack} />
+        <ChevronousText text={text} iconBefore={goBack} iconSize={iconSize} />
       </a>
     );
   }
