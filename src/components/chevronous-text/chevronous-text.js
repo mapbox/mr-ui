@@ -6,16 +6,22 @@ export default class ChevronousText extends React.PureComponent {
   static propTypes = {
     /** When true, the text will follow after a left pointed chevron. */
     iconBefore: PropTypes.bool,
+    /**
+     * The width and height size of the chevron icon. Note that this icon is
+     * inline and the height won't go beyond the line-height.
+     */
+    iconSize: PropTypes.number,
     /** The text that should be aligned next to the chevron. */
     text: PropTypes.string.isRequired
   };
 
   static defaultProps = {
-    iconBefore: false
+    iconBefore: false,
+    iconSize: 18
   };
 
   render() {
-    const { iconBefore, text } = this.props;
+    const { iconBefore, iconSize, text } = this.props;
     const splitText = text.split(' ');
     const iconWord = iconBefore ? splitText.shift() : splitText.pop();
     const textWithoutIconWord = splitText.join(' ');
@@ -24,7 +30,7 @@ export default class ChevronousText extends React.PureComponent {
       return (
         <span className="inline-block">
           <span className="txt-nowrap">
-            <Icon name="chevron-left" inline={true} />
+            <Icon name="chevron-left" inline={true} size={iconSize} />
             {iconWord}
           </span>{' '}
           {textWithoutIconWord}
@@ -37,7 +43,7 @@ export default class ChevronousText extends React.PureComponent {
         {textWithoutIconWord}{' '}
         <span className="txt-nowrap">
           {iconWord}
-          <Icon name="chevron-right" inline={true} />
+          <Icon name="chevron-right" inline={true} size={iconSize} />
         </span>
       </span>
     );

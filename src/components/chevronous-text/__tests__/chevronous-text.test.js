@@ -36,6 +36,18 @@ describe('ChevronousText', () => {
     });
   });
 
+  describe(testCases.sizedIcon.description, () => {
+    const wrapper = shallow(
+      React.createElement(
+        testCases.sizedIcon.component,
+        testCases.sizedIcon.props
+      )
+    );
+    test('renders as expected', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
   describe(testCases.iconBeforeOneLongWord.description, () => {
     const wrapper = shallow(
       React.createElement(
@@ -53,6 +65,18 @@ describe('ChevronousText', () => {
       React.createElement(
         testCases.iconBeforeMultilineText.component,
         testCases.iconBeforeMultilineText.props
+      )
+    );
+    test('renders as expected', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe(testCases.sizedIconBeforeText.description, () => {
+    const wrapper = shallow(
+      React.createElement(
+        testCases.sizedIconBeforeText.component,
+        testCases.sizedIconBeforeText.props
       )
     );
     test('renders as expected', () => {

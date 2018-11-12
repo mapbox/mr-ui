@@ -8,7 +8,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div className="txt-xl">
-        <ChevronousText text="Hello Explorer" iconBefore={true} />
+        <ChevronousText text="Hello Explorer" iconBefore={true} iconSize={45} />
       </div>
     );
   }

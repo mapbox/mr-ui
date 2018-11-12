@@ -97,3 +97,41 @@ exports[`ChevronousText one long unwrappable word text renders as expected 1`] =
   </span>
 </span>
 `;
+
+exports[`ChevronousText sized icon before text renders as expected 1`] = `
+<span
+  className="inline-block"
+>
+  <span
+    className="txt-nowrap"
+  >
+    <Icon
+      inline={true}
+      name="chevron-left"
+      passthroughProps={Object {}}
+      size={24}
+    />
+    Cheers!
+  </span>
+   
+</span>
+`;
+
+exports[`ChevronousText sized icon renders as expected 1`] = `
+<span
+  className="inline-block"
+>
+   
+  <span
+    className="txt-nowrap"
+  >
+    Cheers!
+    <Icon
+      inline={true}
+      name="chevron-right"
+      passthroughProps={Object {}}
+      size={10}
+    />
+  </span>
+</span>
+`;
