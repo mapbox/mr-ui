@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewTabLink basic 1`] = `
+<a
+  href=""
+  rel="noopener"
+  target="_blank"
+>
+  Hello explorer!
+</a>
+`;
+
+exports[`NewTabLink styling 1`] = `
+<a
+  className="link link--pink"
+  href="http://www.mapbox.com"
+  rel="noopener"
+  target="_blank"
+>
+  Hello explorer!
+</a>
+`;

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 - Next release
+- [feature] Add **GoLink** component.
+- [feature] Add **NewTabLink** component.
+- **ChevronousText**
+  - 🚨 [breaking change] Remove `themeIcon` prop.
+  - [feature] Add `iconSize` prop.
+  - [feature] Add `beforeIcon` prop.
+- **Icon**
+  - [feature] Allow `size` prop to be a number or string .
+
 ## 0.3.2
 
 - [fix] Put `ControlFile`'s icon and text on the same line.

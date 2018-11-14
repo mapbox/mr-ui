@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { testCases } from './chevronous-text-test-cases';
+import { testCases } from './go-link-test-cases';
 
-describe('ChevronousText', () => {
+describe('GoLink', () => {
   describe(testCases.basic.description, () => {
     const wrapper = shallow(
       React.createElement(testCases.basic.component, testCases.basic.props)
@@ -12,11 +12,11 @@ describe('ChevronousText', () => {
     });
   });
 
-  describe(testCases.oneLongWord.description, () => {
+  describe(testCases.multilineTextGoForward.description, () => {
     const wrapper = shallow(
       React.createElement(
-        testCases.oneLongWord.component,
-        testCases.oneLongWord.props
+        testCases.multilineTextGoForward.component,
+        testCases.multilineTextGoForward.props
       )
     );
     test('renders as expected', () => {
@@ -24,11 +24,11 @@ describe('ChevronousText', () => {
     });
   });
 
-  describe(testCases.multilineText.description, () => {
+  describe(testCases.smallGoForward.description, () => {
     const wrapper = shallow(
       React.createElement(
-        testCases.multilineText.component,
-        testCases.multilineText.props
+        testCases.smallGoForward.component,
+        testCases.smallGoForward.props
       )
     );
     test('renders as expected', () => {
@@ -36,11 +36,11 @@ describe('ChevronousText', () => {
     });
   });
 
-  describe(testCases.sizedIcon.description, () => {
+  describe(testCases.largeGoForward.description, () => {
     const wrapper = shallow(
       React.createElement(
-        testCases.sizedIcon.component,
-        testCases.sizedIcon.props
+        testCases.largeGoForward.component,
+        testCases.largeGoForward.props
       )
     );
     test('renders as expected', () => {
@@ -48,11 +48,11 @@ describe('ChevronousText', () => {
     });
   });
 
-  describe(testCases.iconBeforeOneLongWord.description, () => {
+  describe(testCases.unboldedGoForward.description, () => {
     const wrapper = shallow(
       React.createElement(
-        testCases.iconBeforeOneLongWord.component,
-        testCases.iconBeforeOneLongWord.props
+        testCases.unboldedGoForward.component,
+        testCases.unboldedGoForward.props
       )
     );
     test('renders as expected', () => {
@@ -60,11 +60,11 @@ describe('ChevronousText', () => {
     });
   });
 
-  describe(testCases.iconBeforeMultilineText.description, () => {
+  describe(testCases.lightGoForward.description, () => {
     const wrapper = shallow(
       React.createElement(
-        testCases.iconBeforeMultilineText.component,
-        testCases.iconBeforeMultilineText.props
+        testCases.lightGoForward.component,
+        testCases.lightGoForward.props
       )
     );
     test('renders as expected', () => {
@@ -72,11 +72,23 @@ describe('ChevronousText', () => {
     });
   });
 
-  describe(testCases.sizedIconBeforeText.description, () => {
+  describe(testCases.newTabGoForward.description, () => {
     const wrapper = shallow(
       React.createElement(
-        testCases.sizedIconBeforeText.component,
-        testCases.sizedIconBeforeText.props
+        testCases.newTabGoForward.component,
+        testCases.newTabGoForward.props
+      )
+    );
+    test('renders as expected', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe(testCases.smallUnboldedNewTabGoBack.description, () => {
+    const wrapper = shallow(
+      React.createElement(
+        testCases.smallUnboldedNewTabGoBack.component,
+        testCases.smallUnboldedNewTabGoBack.props
       )
     );
     test('renders as expected', () => {
