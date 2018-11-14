@@ -14,7 +14,7 @@ exports[`ChevronousText basic renders as expected 1`] = `
       inline={true}
       name="chevron-right"
       passthroughProps={Object {}}
-      size={18}
+      size="1.5em"
     />
   </span>
 </span>
@@ -31,7 +31,7 @@ exports[`ChevronousText chevron before multiline text renders as expected 1`] = 
       inline={true}
       name="chevron-left"
       passthroughProps={Object {}}
-      size={18}
+      size="1.5em"
     />
     "It
   </span>
@@ -51,7 +51,7 @@ exports[`ChevronousText chevron before one long unwrappable word text renders as
       inline={true}
       name="chevron-left"
       passthroughProps={Object {}}
-      size={18}
+      size="1.5em"
     />
     Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon
   </span>
@@ -73,7 +73,7 @@ exports[`ChevronousText multiline text renders as expected 1`] = `
       inline={true}
       name="chevron-right"
       passthroughProps={Object {}}
-      size={18}
+      size="1.5em"
     />
   </span>
 </span>
@@ -92,7 +92,7 @@ exports[`ChevronousText one long unwrappable word text renders as expected 1`] =
       inline={true}
       name="chevron-right"
       passthroughProps={Object {}}
-      size={18}
+      size="1.5em"
     />
   </span>
 </span>
@@ -109,7 +109,7 @@ exports[`ChevronousText sized icon before text renders as expected 1`] = `
       inline={true}
       name="chevron-left"
       passthroughProps={Object {}}
-      size={24}
+      size="1.7em"
     />
     Cheers!
   </span>

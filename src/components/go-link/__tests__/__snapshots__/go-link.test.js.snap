@@ -7,7 +7,7 @@ exports[`GoLink basic go forward link renders as expected 1`] = `
 >
   <ChevronousText
     iconBefore={false}
-    iconSize={24}
+    iconSize="1.5em"
     text="Read Mapbox"
   />
 </a>
@@ -20,7 +20,7 @@ exports[`GoLink go forward new tab link renders as expected 1`] = `
 >
   <ChevronousText
     iconBefore={false}
-    iconSize={24}
+    iconSize="1.5em"
     text="See all of the things"
   />
 </NewTabLink>
@@ -33,7 +33,7 @@ exports[`GoLink large go forward link renders as expected 1`] = `
 >
   <ChevronousText
     iconBefore={false}
-    iconSize={30}
+    iconSize="1.5em"
     text="Reach for the stars"
   />
 </a>
@@ -46,7 +46,7 @@ exports[`GoLink light go forward link renders as expected 1`] = `
 >
   <ChevronousText
     iconBefore={false}
-    iconSize={24}
+    iconSize="1.5em"
     text="View all of Mapbox"
   />
 </a>
@@ -59,7 +59,7 @@ exports[`GoLink multiline text, go forward link renders as expected 1`] = `
 >
   <ChevronousText
     iconBefore={false}
-    iconSize={24}
+    iconSize="1.5em"
     text="\\"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us...\\" - A Tale of Two Cities"
   />
 </a>
@@ -72,7 +72,7 @@ exports[`GoLink small go forward link renders as expected 1`] = `
 >
   <ChevronousText
     iconBefore={false}
-    iconSize={18}
+    iconSize="1.5em"
     text="Maybe there's something cool if you go here"
   />
 </a>
@@ -85,7 +85,7 @@ exports[`GoLink small, unbolded, go back new tab link renders as expected 1`] = 
 >
   <ChevronousText
     iconBefore={true}
-    iconSize={18}
+    iconSize="1.5em"
     text="Jusk kidding! Go back to this new place."
   />
 </NewTabLink>
@@ -98,7 +98,7 @@ exports[`GoLink unbolded go forward link renders as expected 1`] = `
 >
   <ChevronousText
     iconBefore={false}
-    iconSize={24}
+    iconSize="1.5em"
     text="Go to Mapbox"
   />
 </a>

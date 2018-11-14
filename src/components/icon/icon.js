@@ -89,7 +89,7 @@ Icon.propTypes = {
    * be in accordance with your `size` value (because it's limited by the
    * width).
    */
-  size: PropTypes.number,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * If `true`, the icon will be adjusted after mounting so that its height
    * matches the line-height of its container. The result of this is that

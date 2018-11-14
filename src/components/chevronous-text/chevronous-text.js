@@ -8,16 +8,18 @@ export default class ChevronousText extends React.PureComponent {
     iconBefore: PropTypes.bool,
     /**
      * The width and height size of the chevron icon. Note that this icon is
-     * inline and the height won't go beyond the line-height.
+     * inline and the height won't go beyond the line-height. This can be a
+     * number which will fall back to px, or a string in the units of
+     * px, em, %, or pt.
      */
-    iconSize: PropTypes.number,
+    iconSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     /** The text that should be aligned next to the chevron. */
     text: PropTypes.string.isRequired
   };
 
   static defaultProps = {
     iconBefore: false,
-    iconSize: 18
+    iconSize: '1.5em'
   };
 
   render() {

@@ -61,7 +61,7 @@ testCases.sizedIconBeforeText = {
   component: ChevronousText,
   props: {
     iconBefore: true,
-    iconSize: 24,
+    iconSize: '1.7em',
     text: 'Cheers!'
   }
 };
