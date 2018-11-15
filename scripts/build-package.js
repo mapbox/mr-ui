@@ -12,6 +12,10 @@ const makeDir = require('make-dir');
 const rootDir = path.resolve(__dirname, '..');
 const outputDir = path.resolve(rootDir, 'pkg');
 const srcDir = path.resolve(rootDir, 'src/components');
+const configFilePath = path.relative(
+  srcDir,
+  path.join(__dirname, '../babel.config.js')
+);
 
 // Build a single directory that is ready to be published as an npm package.
 // From that package components should be importable without any
@@ -25,7 +29,7 @@ const srcDir = path.resolve(rootDir, 'src/components');
 // tests and examples.
 function compileComponents() {
   return execa.shell(
-    `babel "**/!(examples|__tests__)/*.js" --out-dir ${outputDir}`,
+    `babel "**/!(examples|__tests__)/*.js" --out-dir ${outputDir} --config-file ${configFilePath}`,
     {
       cwd: srcDir,
       stdio: 'inherit'
