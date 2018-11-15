@@ -25,7 +25,7 @@ export default class FormSubmit extends React.PureComponent {
   render() {
     const { testId, disabled, label, onSubmit, themeButton } = this.props;
 
-    const inputProps: Object = {
+    const inputProps = {
       onClick: onSubmit,
       disabled: disabled,
       'data-test': testId

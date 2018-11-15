@@ -1,0 +1,23 @@
+'use strict';
+
+module.exports = `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Mr. UI</title>
+    <link
+      href="https://api.mapbox.com/mapbox-assembly/mbx/v0.27.0/assembly.min.css"
+      rel="stylesheet"
+    />
+    <script
+      async
+      src="https://api.mapbox.com/mapbox-assembly/mbx/v0.27.0/assembly.js"
+    />
+  </head>
+  <body>
+  </body>
+  </html>
+`;
