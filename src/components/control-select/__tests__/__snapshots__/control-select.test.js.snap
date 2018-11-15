@@ -24,6 +24,7 @@ exports[`ControlSelect Supported values renders 1`] = `
       value=""
     >
       <option
+        key=""
         value=""
       >
         Empty string
