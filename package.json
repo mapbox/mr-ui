@@ -41,7 +41,6 @@
     "react-dom": "^15.5.0 || ^16.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
     "@mapbox/query-selector-contains-node": "^1.0.0",
     "classnames": "^2.2.6",
     "clipboard": "^2.0.0",
@@ -60,10 +59,6 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-transform-runtime": "^7.1.0",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
     "@mapbox/babel-preset-mapbox": "^7.0.1",
     "@mapbox/eslint-config-mapbox": "^1.2.1",
     "@mapbox/jsxtreme-markdown": "^0.9.3",
