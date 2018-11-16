@@ -64,7 +64,7 @@
     "@mapbox/eslint-config-mapbox": "^1.2.1",
     "@mapbox/jsxtreme-markdown": "^0.9.3",
     "@mapbox/react-test-kitchen": "^0.3.0",
-    "@mapbox/underreact": "^0.2.0",
+    "@mapbox/underreact": "^0.1.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.6",
