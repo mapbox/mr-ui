@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlCard basic renders as expected 1`] = `
+<section
+  className="bg-white round-bold shadow-darken10-bold relative py36 py60-ml px18 px36-mm px60-ml"
+>
+  This is a basic card.
+</section>
+`;
+
+exports[`ControlCard collapsible onButtonClick is called 1`] = `
+<section
+  className="bg-white round-bold shadow-darken10-bold relative py36 py60-ml px18 px36-mm px60-ml"
+>
+  <div
+    className="mb24"
+  >
+    <Heading
+      variant="tertiary"
+    >
+      Title
+    </Heading>
+  </div>
+  <div
+    className="absolute top right mt18 mr18"
+  >
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Collapse"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "isThrow": false,
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        type="button"
+      >
+        <Icon
+          inline={false}
+          name="caret-up"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+  This is a titled card with a collapsible button.
+</section>
+`;
+
+exports[`ControlCard collapsible renders as expected 1`] = `
+<section
+  className="bg-white round-bold shadow-darken10-bold relative py36 py60-ml px18 px36-mm px60-ml"
+>
+  <div
+    className="mb24"
+  >
+    <Heading
+      variant="tertiary"
+    >
+      Title
+    </Heading>
+  </div>
+  <div
+    className="absolute top right mt18 mr18"
+  >
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Collapse"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        <Icon
+          inline={false}
+          name="caret-up"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+  This is a titled card with a collapsible button.
+</section>
+`;
+
+exports[`ControlCard sized title and closable onButtonClick is called 1`] = `
+<section
+  className="bg-white round-bold shadow-darken10-bold relative py36 py60-ml px18 px36-mm px60-ml"
+>
+  <div
+    className="mb24"
+  >
+    <Heading
+      variant="secondary"
+    >
+      Title
+    </Heading>
+  </div>
+  <div
+    className="absolute top right mt18 mr18"
+  >
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Close"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "isThrow": false,
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        type="button"
+      >
+        <Icon
+          inline={false}
+          name="close"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+  This is a sized titled card with a closable button.
+</section>
+`;
+
+exports[`ControlCard sized title and closable renders as expected 1`] = `
+<section
+  className="bg-white round-bold shadow-darken10-bold relative py36 py60-ml px18 px36-mm px60-ml"
+>
+  <div
+    className="mb24"
+  >
+    <Heading
+      variant="secondary"
+    >
+      Title
+    </Heading>
+  </div>
+  <div
+    className="absolute top right mt18 mr18"
+  >
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Close"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        <Icon
+          inline={false}
+          name="close"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+  This is a sized titled card with a closable button.
+</section>
+`;
+
+exports[`ControlCard sized title renders as expected 1`] = `
+<section
+  className="bg-white round-bold shadow-darken10-bold relative py36 py60-ml px18 px36-mm px60-ml"
+>
+  <div
+    className="mb24"
+  >
+    <Heading
+      variant="primary"
+    >
+      Title
+    </Heading>
+  </div>
+  This is a sized titled card.
+</section>
+`;
+
+exports[`ControlCard title renders as expected 1`] = `
+<section
+  className="bg-white round-bold shadow-darken10-bold relative py36 py60-ml px18 px36-mm px60-ml"
+>
+  <div
+    className="mb24"
+  >
+    <Heading
+      variant="tertiary"
+    >
+      Title
+    </Heading>
+  </div>
+  This is a titled card.
+</section>
+`;
