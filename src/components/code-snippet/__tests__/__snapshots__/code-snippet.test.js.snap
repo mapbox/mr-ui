@@ -31,7 +31,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">import</span> Mapbox",
+                "__html": "import Mapbox",
               }
             }
             style={
@@ -83,7 +83,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">class</span> <span class=\\"hljs-title\\">ViewController</span>: <span class=\\"hljs-title\\">UIViewController</span> </span>{",
+                "__html": "<span class=\\"hljs-keyword\\">class</span> ViewController: UIViewController {",
               }
             }
             style={
@@ -106,7 +106,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">override</span> <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">func</span> <span class=\\"hljs-title\\">viewDidLoad</span><span class=\\"hljs-params\\">()</span></span> {",
+                "__html": "override func view<span class=\\"hljs-constructor\\">DidLoad()</span> {",
               }
             }
             style={
@@ -129,7 +129,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">super</span>.viewDidLoad()",
+                "__html": "super.view<span class=\\"hljs-constructor\\">DidLoad()</span>",
               }
             }
             style={
@@ -181,7 +181,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-type\\">URL</span>(string: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)",
+                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-constructor\\">URL(<span class=\\"hljs-params\\">string</span>: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)</span>",
               }
             }
             style={
@@ -204,7 +204,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-type\\">MGLMapView</span>(frame: view.bounds, styleURL: url)",
+                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-constructor\\">MGLMapView(<span class=\\"hljs-params\\">frame</span>: <span class=\\"hljs-params\\">view</span>.<span class=\\"hljs-params\\">bounds</span>, <span class=\\"hljs-params\\">styleURL</span>: <span class=\\"hljs-params\\">url</span>)</span>",
               }
             }
             style={
@@ -227,7 +227,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]",
+                "__html": "mapView.autoresizingMask = <span class=\\"hljs-literal\\">[.<span class=\\"hljs-identifier\\">flexibleWidth</span>, .<span class=\\"hljs-identifier\\">flexibleHeight</span>]</span>",
               }
             }
             style={
@@ -250,7 +250,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "mapView.setCenter(<span class=\\"hljs-type\\">CLLocationCoordinate2D</span>(latitude: <span class=\\"hljs-number\\">59.31</span>, longitude: <span class=\\"hljs-number\\">18.06</span>), zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
+                "__html": "mapView.set<span class=\\"hljs-constructor\\">Center(CLLocationCoordinate2D(<span class=\\"hljs-params\\">latitude</span>: 59.31, <span class=\\"hljs-params\\">longitude</span>: 18.06)</span>, zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
               }
             }
             style={
@@ -273,7 +273,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "view.addSubview(mapView)",
+                "__html": "view.add<span class=\\"hljs-constructor\\">Subview(<span class=\\"hljs-params\\">mapView</span>)</span>",
               }
             }
             style={
@@ -403,7 +403,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">import</span> Mapbox",
+                "__html": "import Mapbox",
               }
             }
             style={
@@ -455,7 +455,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">class</span> <span class=\\"hljs-title\\">ViewController</span>: <span class=\\"hljs-title\\">UIViewController</span> </span>{",
+                "__html": "<span class=\\"hljs-keyword\\">class</span> ViewController: UIViewController {",
               }
             }
             style={
@@ -478,7 +478,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">override</span> <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">func</span> <span class=\\"hljs-title\\">viewDidLoad</span><span class=\\"hljs-params\\">()</span></span> {",
+                "__html": "override func view<span class=\\"hljs-constructor\\">DidLoad()</span> {",
               }
             }
             style={
@@ -501,7 +501,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">super</span>.viewDidLoad()",
+                "__html": "super.view<span class=\\"hljs-constructor\\">DidLoad()</span>",
               }
             }
             style={
@@ -553,7 +553,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-type\\">URL</span>(string: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)",
+                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-constructor\\">URL(<span class=\\"hljs-params\\">string</span>: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)</span>",
               }
             }
             style={
@@ -576,7 +576,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-type\\">MGLMapView</span>(frame: view.bounds, styleURL: url)",
+                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-constructor\\">MGLMapView(<span class=\\"hljs-params\\">frame</span>: <span class=\\"hljs-params\\">view</span>.<span class=\\"hljs-params\\">bounds</span>, <span class=\\"hljs-params\\">styleURL</span>: <span class=\\"hljs-params\\">url</span>)</span>",
               }
             }
             style={
@@ -599,7 +599,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]",
+                "__html": "mapView.autoresizingMask = <span class=\\"hljs-literal\\">[.<span class=\\"hljs-identifier\\">flexibleWidth</span>, .<span class=\\"hljs-identifier\\">flexibleHeight</span>]</span>",
               }
             }
             style={
@@ -622,7 +622,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "mapView.setCenter(<span class=\\"hljs-type\\">CLLocationCoordinate2D</span>(latitude: <span class=\\"hljs-number\\">59.31</span>, longitude: <span class=\\"hljs-number\\">18.06</span>), zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
+                "__html": "mapView.set<span class=\\"hljs-constructor\\">Center(CLLocationCoordinate2D(<span class=\\"hljs-params\\">latitude</span>: 59.31, <span class=\\"hljs-params\\">longitude</span>: 18.06)</span>, zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
               }
             }
             style={
@@ -645,7 +645,7 @@ exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] =
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "view.addSubview(mapView)",
+                "__html": "view.add<span class=\\"hljs-constructor\\">Subview(<span class=\\"hljs-params\\">mapView</span>)</span>",
               }
             }
             style={
@@ -1105,7 +1105,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">import</span> Mapbox",
+                "__html": "import Mapbox",
               }
             }
             style={
@@ -1157,7 +1157,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">class</span> <span class=\\"hljs-title\\">ViewController</span>: <span class=\\"hljs-title\\">UIViewController</span> </span>{",
+                "__html": "<span class=\\"hljs-keyword\\">class</span> ViewController: UIViewController {",
               }
             }
             style={
@@ -1180,7 +1180,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">override</span> <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">func</span> <span class=\\"hljs-title\\">viewDidLoad</span><span class=\\"hljs-params\\">()</span></span> {",
+                "__html": "override func view<span class=\\"hljs-constructor\\">DidLoad()</span> {",
               }
             }
             style={
@@ -1203,7 +1203,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">super</span>.viewDidLoad()",
+                "__html": "super.view<span class=\\"hljs-constructor\\">DidLoad()</span>",
               }
             }
             style={
@@ -1255,7 +1255,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-type\\">URL</span>(string: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)",
+                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-constructor\\">URL(<span class=\\"hljs-params\\">string</span>: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)</span>",
               }
             }
             style={
@@ -1278,7 +1278,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-type\\">MGLMapView</span>(frame: view.bounds, styleURL: url)",
+                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-constructor\\">MGLMapView(<span class=\\"hljs-params\\">frame</span>: <span class=\\"hljs-params\\">view</span>.<span class=\\"hljs-params\\">bounds</span>, <span class=\\"hljs-params\\">styleURL</span>: <span class=\\"hljs-params\\">url</span>)</span>",
               }
             }
             style={
@@ -1301,7 +1301,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]",
+                "__html": "mapView.autoresizingMask = <span class=\\"hljs-literal\\">[.<span class=\\"hljs-identifier\\">flexibleWidth</span>, .<span class=\\"hljs-identifier\\">flexibleHeight</span>]</span>",
               }
             }
             style={
@@ -1324,7 +1324,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "mapView.setCenter(<span class=\\"hljs-type\\">CLLocationCoordinate2D</span>(latitude: <span class=\\"hljs-number\\">59.31</span>, longitude: <span class=\\"hljs-number\\">18.06</span>), zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
+                "__html": "mapView.set<span class=\\"hljs-constructor\\">Center(CLLocationCoordinate2D(<span class=\\"hljs-params\\">latitude</span>: 59.31, <span class=\\"hljs-params\\">longitude</span>: 18.06)</span>, zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
               }
             }
             style={
@@ -1347,7 +1347,7 @@ exports[`CodeSnippet maximum height renders as expected 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": "view.addSubview(mapView)",
+                "__html": "view.add<span class=\\"hljs-constructor\\">Subview(<span class=\\"hljs-params\\">mapView</span>)</span>",
               }
             }
             style={

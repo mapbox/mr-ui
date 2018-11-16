@@ -15,7 +15,7 @@ module.exports = `
     <script
       async
       src="https://api.mapbox.com/mapbox-assembly/mbx/v0.27.0/assembly.js"
-    />
+    ></script>
   </head>
   <body>
   </body>

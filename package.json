@@ -59,14 +59,16 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
     "@mapbox/babel-preset-mapbox": "^7.0.1",
     "@mapbox/eslint-config-mapbox": "^1.2.1",
     "@mapbox/jsxtreme-markdown": "^0.9.3",
     "@mapbox/react-test-kitchen": "^0.3.0",
-    "@mapbox/underreact": "^0.2.1",
+    "@mapbox/underreact": "^0.3.0",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.6.0",
     "babelify": "^8.0.0",
     "budo": "^11.3.2",
     "chalk": "^2.4.1",
@@ -101,6 +103,7 @@
     "react-docgen": "^2.21.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
-    "react-test-renderer": "^16.4.1"
+    "react-test-renderer": "^16.4.1",
+    "regenerator-runtime": "^0.12.1"
   }
 }
