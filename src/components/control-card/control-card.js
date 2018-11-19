@@ -1,7 +1,7 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import Heading from '../heading';
 import Icon from '../icon';
-import PropTypes from 'prop-types';
-import React from 'react';
 import Tooltip from '../tooltip';
 
 export default class ControlCard extends React.Component {
