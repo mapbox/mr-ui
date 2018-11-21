@@ -1,5 +1,5 @@
 import React from 'react';
-import components from '../data/components'; // eslint-disable-line
+import components from '../../data/components'; // eslint-disable-line
 import ComponentSection from './component-section';
 import Sidebar from './sidebar';
 
