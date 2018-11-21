@@ -49,9 +49,7 @@ export default class Example extends React.Component {
     return (
       <div className="animation-fade-in animation--speed-1 txt-s">
         <ControlAlert onButtonClick={this.toggleAlert} theme="warning">
-          <p className="mx6 align-center txt-uppercase txt-em">
-            The yellow power ranger
-          </p>
+          <p className="mx6">The yellow power ranger is the best.</p>
         </ControlAlert>
       </div>
     );

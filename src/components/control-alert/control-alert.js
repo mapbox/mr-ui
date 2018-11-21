@@ -56,7 +56,7 @@ export default class ControlAlert extends React.Component {
             data-test="alert-dismiss"
             onClick={this.onButtonClick}
           >
-            <Icon name="close" inline={true} />
+            <Icon name="close" inline={true} size="1.3em" />
           </button>
         </Tooltip>
       </div>
@@ -81,7 +81,7 @@ export default class ControlAlert extends React.Component {
     return (
       <div className={containerClasses}>
         <div className="flex-child flex-child--no-shrink">
-          <Icon name={iconName} inline={true} />
+          <Icon name={iconName} inline={true} size="1.3em" />
         </div>
         <div
           className="flex-child flex-child--grow"

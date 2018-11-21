@@ -11,7 +11,7 @@ exports[`ControlAlert basic error renders as expected 1`] = `
       inline={true}
       name="alert"
       passthroughProps={Object {}}
-      size={18}
+      size="1.3em"
     />
   </div>
   <div
@@ -39,7 +39,7 @@ exports[`ControlAlert basic locked renders as expected 1`] = `
       inline={true}
       name="lock"
       passthroughProps={Object {}}
-      size={18}
+      size="1.3em"
     />
   </div>
   <div
@@ -67,7 +67,7 @@ exports[`ControlAlert basic success renders as expected 1`] = `
       inline={true}
       name="check"
       passthroughProps={Object {}}
-      size={18}
+      size="1.3em"
     />
   </div>
   <div
@@ -95,7 +95,7 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
       inline={true}
       name="alert"
       passthroughProps={Object {}}
-      size={18}
+      size="1.3em"
     />
   </div>
   <div
@@ -140,7 +140,7 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
           inline={true}
           name="close"
           passthroughProps={Object {}}
-          size={18}
+          size="1.3em"
         />
       </button>
     </Tooltip>
@@ -159,7 +159,7 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
       inline={true}
       name="alert"
       passthroughProps={Object {}}
-      size={18}
+      size="1.3em"
     />
   </div>
   <div
@@ -204,7 +204,7 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
           inline={true}
           name="close"
           passthroughProps={Object {}}
-          size={18}
+          size="1.3em"
         />
       </button>
     </Tooltip>
@@ -223,7 +223,7 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
       inline={true}
       name="alert"
       passthroughProps={Object {}}
-      size={18}
+      size="1.3em"
     />
   </div>
   <div
@@ -259,7 +259,7 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
           inline={true}
           name="close"
           passthroughProps={Object {}}
-          size={18}
+          size="1.3em"
         />
       </button>
     </Tooltip>
@@ -278,7 +278,7 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
       inline={true}
       name="alert"
       passthroughProps={Object {}}
-      size={18}
+      size="1.3em"
     />
   </div>
   <div
@@ -314,7 +314,7 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
           inline={true}
           name="close"
           passthroughProps={Object {}}
-          size={18}
+          size="1.3em"
         />
       </button>
     </Tooltip>
