@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlAlert basic error renders as expected 1`] = `
+<div
+  className="round px24 py24 flex-parent bg-red-faint"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Icon
+      inline={true}
+      name="alert"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </div>
+  <div
+    className="flex-child flex-child--grow"
+    role={null}
+    tabIndex={null}
+  >
+    <span
+      className="ml6"
+    >
+      Drats.
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlAlert basic locked renders as expected 1`] = `
+<div
+  className="round px24 py24 flex-parent bg-yellow-light"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Icon
+      inline={true}
+      name="lock"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </div>
+  <div
+    className="flex-child flex-child--grow"
+    role={null}
+    tabIndex={null}
+  >
+    <span
+      className="ml6"
+    >
+      Nope.
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlAlert basic success renders as expected 1`] = `
+<div
+  className="round px24 py24 flex-parent bg-green-light"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Icon
+      inline={true}
+      name="check"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </div>
+  <div
+    className="flex-child flex-child--grow"
+    role={null}
+    tabIndex={null}
+  >
+    <span
+      className="ml6"
+    >
+      Woohoo!
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
+<div
+  className="round px24 py24 flex-parent bg-red-faint"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Icon
+      inline={true}
+      name="alert"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </div>
+  <div
+    className="flex-child flex-child--grow"
+    role={null}
+    tabIndex={null}
+  >
+    <p
+      className="mx6"
+    >
+      This is the song that never ends.
+       
+      <a
+        className="link"
+        href="http://www.mapbox.com"
+      >
+        Yes, it just goes on and on my friends.
+      </a>
+       
+      Some people started singing it, not knowing what it was. And they'll continue singing it forever just because. This is the song that never ends.
+    </p>
+  </div>
+  <div>
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Dismiss"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        data-test="alert-dismiss"
+        onClick={[Function]}
+      >
+        <Icon
+          inline={true}
+          name="close"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+</div>
+`;
+
+exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
+<div
+  className="round px24 py24 flex-parent bg-red-faint"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Icon
+      inline={true}
+      name="alert"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </div>
+  <div
+    className="flex-child flex-child--grow"
+    role={null}
+    tabIndex={null}
+  >
+    <p
+      className="mx6"
+    >
+      This is the song that never ends.
+       
+      <a
+        className="link"
+        href="http://www.mapbox.com"
+      >
+        Yes, it just goes on and on my friends.
+      </a>
+       
+      Some people started singing it, not knowing what it was. And they'll continue singing it forever just because. This is the song that never ends.
+    </p>
+  </div>
+  <div>
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Dismiss"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        data-test="alert-dismiss"
+        onClick={[Function]}
+      >
+        <Icon
+          inline={true}
+          name="close"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+</div>
+`;
+
+exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
+<div
+  className="round px24 py24 flex-parent bg-yellow-light"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Icon
+      inline={true}
+      name="alert"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </div>
+  <div
+    className="flex-child flex-child--grow"
+    role={null}
+    tabIndex={null}
+  >
+    <span
+      className="mx6"
+    >
+      Uh oh...
+    </span>
+  </div>
+  <div>
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Dismiss"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        data-test="alert-dismiss"
+        onClick={[Function]}
+      >
+        <Icon
+          inline={true}
+          name="close"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+</div>
+`;
+
+exports[`ControlAlert dismissive warning renders as expected 1`] = `
+<div
+  className="round px24 py24 flex-parent bg-yellow-light"
+>
+  <div
+    className="flex-child flex-child--no-shrink"
+  >
+    <Icon
+      inline={true}
+      name="alert"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </div>
+  <div
+    className="flex-child flex-child--grow"
+    role={null}
+    tabIndex={null}
+  >
+    <span
+      className="mx6"
+    >
+      Uh oh...
+    </span>
+  </div>
+  <div>
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Dismiss"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
+    >
+      <button
+        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+        data-test="alert-dismiss"
+        onClick={[Function]}
+      >
+        <Icon
+          inline={true}
+          name="close"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
+  </div>
+</div>
+`;
