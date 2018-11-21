@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.4.0 - Next release
+- [feature] Add **ControlAlert** component.
 - [feature] Add **ControlCard** component.
 - [feature] Add **GoLink** component.
 - [feature] Add **NewTabLink** component.
