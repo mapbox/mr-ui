@@ -5,7 +5,7 @@
   "description": "UI components for Mapbox projects",
   "main": "index.js",
   "scripts": {
-    "build-component-index": "rtk-index ./src/components ./test-cases-app/component-index.js",
+    "build-component-index": "rtk-index ./src/components ./test-cases-app/src/component-index.js",
     "prestart": "npm run build-component-index",
     "start": "scripts/build-module-indexes.js && underreact start --config='test-cases-app/test-cases-app-underreact.config.js'",
     "start-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && underreact start --config='docs/docs-underreact.config.js'",

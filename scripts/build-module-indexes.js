@@ -5,7 +5,6 @@ require('hard-rejection/register');
 const fs = require('fs');
 const path = require('path');
 const pify = require('pify');
-
 const excludeDirs = new Set(['utils']);
 const srcRoot = path.resolve(__dirname, '../src/components/');
 
