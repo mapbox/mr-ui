@@ -52,17 +52,15 @@ export default class ControlAlert extends React.Component {
     if (!onButtonClick) return null;
 
     return (
-      <div>
-        <Tooltip content="Dismiss" block={true}>
-          <button
-            className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
-            data-test="alert-dismiss"
-            onClick={this.onButtonClick}
-          >
-            <Icon name="close" inline={true} size="1.3em" />
-          </button>
-        </Tooltip>
-      </div>
+      <Tooltip content="Dismiss" block={true}>
+        <button
+          className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+          data-test="alert-dismiss"
+          onClick={this.onButtonClick}
+        >
+          <Icon name="close" inline={true} size="1.3em" />
+        </button>
+      </Tooltip>
     );
   }
 

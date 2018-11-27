@@ -118,33 +118,31 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
       Some people started singing it, not knowing what it was. And they'll continue singing it forever just because. This is the song that never ends.
     </p>
   </div>
-  <div>
-    <Tooltip
-      alignment="center"
-      block={true}
-      coloring="light"
-      content="Dismiss"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
+  <Tooltip
+    alignment="center"
+    block={true}
+    coloring="light"
+    content="Dismiss"
+    disabled={false}
+    maxWidth="medium"
+    padding="small"
+    placement="top"
+    respondsToClick={false}
+    textSize="s"
+  >
+    <button
+      className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+      data-test="alert-dismiss"
+      onClick={[Function]}
     >
-      <button
-        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
-        data-test="alert-dismiss"
-        onClick={[Function]}
-      >
-        <Icon
-          inline={true}
-          name="close"
-          passthroughProps={Object {}}
-          size="1.3em"
-        />
-      </button>
-    </Tooltip>
-  </div>
+      <Icon
+        inline={true}
+        name="close"
+        passthroughProps={Object {}}
+        size="1.3em"
+      />
+    </button>
+  </Tooltip>
 </div>
 `;
 
@@ -182,33 +180,31 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
       Some people started singing it, not knowing what it was. And they'll continue singing it forever just because. This is the song that never ends.
     </p>
   </div>
-  <div>
-    <Tooltip
-      alignment="center"
-      block={true}
-      coloring="light"
-      content="Dismiss"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
+  <Tooltip
+    alignment="center"
+    block={true}
+    coloring="light"
+    content="Dismiss"
+    disabled={false}
+    maxWidth="medium"
+    padding="small"
+    placement="top"
+    respondsToClick={false}
+    textSize="s"
+  >
+    <button
+      className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+      data-test="alert-dismiss"
+      onClick={[Function]}
     >
-      <button
-        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
-        data-test="alert-dismiss"
-        onClick={[Function]}
-      >
-        <Icon
-          inline={true}
-          name="close"
-          passthroughProps={Object {}}
-          size="1.3em"
-        />
-      </button>
-    </Tooltip>
-  </div>
+      <Icon
+        inline={true}
+        name="close"
+        passthroughProps={Object {}}
+        size="1.3em"
+      />
+    </button>
+  </Tooltip>
 </div>
 `;
 
@@ -237,33 +233,31 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
       Uh oh...
     </span>
   </div>
-  <div>
-    <Tooltip
-      alignment="center"
-      block={true}
-      coloring="light"
-      content="Dismiss"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
+  <Tooltip
+    alignment="center"
+    block={true}
+    coloring="light"
+    content="Dismiss"
+    disabled={false}
+    maxWidth="medium"
+    padding="small"
+    placement="top"
+    respondsToClick={false}
+    textSize="s"
+  >
+    <button
+      className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+      data-test="alert-dismiss"
+      onClick={[Function]}
     >
-      <button
-        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
-        data-test="alert-dismiss"
-        onClick={[Function]}
-      >
-        <Icon
-          inline={true}
-          name="close"
-          passthroughProps={Object {}}
-          size="1.3em"
-        />
-      </button>
-    </Tooltip>
-  </div>
+      <Icon
+        inline={true}
+        name="close"
+        passthroughProps={Object {}}
+        size="1.3em"
+      />
+    </button>
+  </Tooltip>
 </div>
 `;
 
@@ -292,32 +286,30 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
       Uh oh...
     </span>
   </div>
-  <div>
-    <Tooltip
-      alignment="center"
-      block={true}
-      coloring="light"
-      content="Dismiss"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
+  <Tooltip
+    alignment="center"
+    block={true}
+    coloring="light"
+    content="Dismiss"
+    disabled={false}
+    maxWidth="medium"
+    padding="small"
+    placement="top"
+    respondsToClick={false}
+    textSize="s"
+  >
+    <button
+      className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
+      data-test="alert-dismiss"
+      onClick={[Function]}
     >
-      <button
-        className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
-        data-test="alert-dismiss"
-        onClick={[Function]}
-      >
-        <Icon
-          inline={true}
-          name="close"
-          passthroughProps={Object {}}
-          size="1.3em"
-        />
-      </button>
-    </Tooltip>
-  </div>
+      <Icon
+        inline={true}
+        name="close"
+        passthroughProps={Object {}}
+        size="1.3em"
+      />
+    </button>
+  </Tooltip>
 </div>
 `;
