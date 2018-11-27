@@ -10,7 +10,10 @@ export default class ControlAlert extends React.Component {
     autoFocus: PropTypes.bool,
     /** The content of the alert. */
     children: PropTypes.node.isRequired,
-    /** Called on click of dismiss button. */
+    /**
+     * Called on click of dismiss button. Must have this callback to display
+     * the button.
+     */
     onButtonClick: PropTypes.func,
     /**
      * The alert `theme` options are "error", "locked", "success", and
