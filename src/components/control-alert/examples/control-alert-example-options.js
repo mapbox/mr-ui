@@ -1,5 +1,5 @@
 /*
-Controlled alert with options.
+Control alert with callback to toggle warning themed alert in view.
 */
 import React from 'react';
 import ControlAlert from '../control-alert';
