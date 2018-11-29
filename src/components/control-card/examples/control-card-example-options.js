@@ -1,5 +1,5 @@
 /*
-Controlled card with options.
+Control card with callback to toggle collapsable card in view and title options.
 */
 import React from 'react';
 import ControlCard from '../control-card';
