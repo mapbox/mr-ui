@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = `
   <!DOCTYPE html>
   <html lang='en'>

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestCasesApp from './src/components/test-cases-app';
+import App from './app';
+import './prism-theme.css';
 
 const container = document.createElement('div');
 document.body.appendChild(container);
-ReactDOM.render(<TestCasesApp />, container);
+ReactDOM.render(<App />, container);

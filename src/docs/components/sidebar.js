@@ -1,6 +1,6 @@
 import React from 'react';
-import Icon from '../../../src/components/icon';
-import components from '../../data/components'; // eslint-disable-line
+import Icon from '../../components/icon';
+import components from '../data/components'; // eslint-disable-line
 
 export default class Sidebar extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import React from 'react';
-import components from '../../data/components'; // eslint-disable-line
-import ComponentSection from './component-section';
-import Sidebar from './sidebar';
+import components from './data/components'; // eslint-disable-line
+import ComponentSection from './components/component-section';
+import Sidebar from './components/sidebar';
 
 export default class App extends React.Component {
   render() {
