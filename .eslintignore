@@ -6,5 +6,5 @@ src/docs/data
 pkg
 src/test-cases-app/component-index.js
 dist
-*underreact.config.js
+**/*underreact.config.js
 html.js
