@@ -2,7 +2,7 @@ node_modules
 *.log
 coverage
 .DS_Store
-_batfish*
+_site*
 src/docs/data
 pkg
 src/test-cases-app/component-index.js

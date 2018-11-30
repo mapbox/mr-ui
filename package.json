@@ -7,11 +7,11 @@
   "scripts": {
     "build-component-index": "rtk-index ./src/components ./src/test-cases-app/component-index.js",
     "prestart": "npm run build-component-index",
-    "start": "scripts/build-module-indexes.js && budo ./src/test-cases-app/test-cases-app.js --dir ./src/test-cases-app --live --debug --pushstate -- -t babelify",
-    "start-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && batfish --config batfish-docs.config.js start",
-    "build-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && batfish --config batfish-docs.config.js build",
-    "serve-static-docs": "batfish --config batfish-docs.config.js serve-static",
-    "deploy-docs": "npm run build-docs && gh-pages -d _batfish_site",
+    "start": "scripts/build-module-indexes.js && underreact start --config='src/test-cases-app/test-cases-app-underreact.config.js'",
+    "start-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && underreact start --config='src/docs/docs-underreact.config.js'",
+    "build-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && underreact build --config='src/docs/docs-underreact.config.js'",
+    "serve-static-docs": "underreact serve-static --config='src/docs/docs-underreact.config.js'",
+    "deploy-docs": "npm run build-docs && gh-pages -d _underreact-site",
     "test-jest": "jest",
     "format": "prettier --write '**/*.js'",
     "lint": "eslint .",
@@ -59,19 +59,16 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "@mapbox/batfish": "^1.9.2",
+    "@babel/core": "^7.1.6",
+    "@mapbox/babel-preset-mapbox": "^7.0.1",
     "@mapbox/eslint-config-mapbox": "^1.2.1",
     "@mapbox/jsxtreme-markdown": "^0.9.3",
     "@mapbox/react-test-kitchen": "^0.3.0",
+    "@mapbox/underreact": "^0.3.0",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.6",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babelify": "^8.0.0",
-    "budo": "^11.3.2",
+    "babel-jest": "^23.6.0",
     "chalk": "^2.4.1",
     "cpy": "^7.0.1",
     "del": "^3.0.0",
@@ -104,6 +101,7 @@
     "react-docgen": "^2.21.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
-    "react-test-renderer": "^16.4.1"
+    "react-test-renderer": "^16.4.1",
+    "regenerator-runtime": "^0.12.1"
   }
 }
