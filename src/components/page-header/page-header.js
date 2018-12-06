@@ -73,6 +73,28 @@ class MobilePageHeader extends React.Component {
     return this.state.open !== nextState.open;
   }
 
+  componentDidMount() {
+    const doc = window.document;
+    doc.addEventListener('click', this.closeOnDocumentClick);
+  }
+
+  componentWillUnmount() {
+    const doc = window.document;
+    doc.removeEventListener('click', this.closeOnDocumentClick);
+  }
+
+  closeOnDocumentClick = event => {
+    // Close the popup if the target is me
+    if (
+      this.state.open &&
+      event.target instanceof Node &&
+      !this.node.contains(event.target)
+    ) {
+      this.setState(() => ({ open: false }));
+    }
+  };
+
+  // look into mobile safari click bugfix
   toggleMenu = () => {
     this.setState(state => ({ open: !state.open }));
   };
@@ -106,36 +128,19 @@ class MobilePageHeader extends React.Component {
 
     const itemEls = items.map(item => {
       return (
-        <li key={item.href} className="mt18">
+        <li key={item.href} className="mb12 color-black-on-hover">
           <a href={item.href}>{item.text}</a>
         </li>
       );
     });
 
     return (
-      <div className="fixed top left right bottom bg-darken50 flex-parent flex-parent--stretch-cross">
-        <div className="flex-child flex-child--no-shrink bg-white py12 pl24 pr12">
-          <div className="flex-parent flex-parent--center-cross">
-            <div className="flex-child">{this.renderLogoName()}</div>
-            <div className="flex-child ml36">
-              <button
-                type="button"
-                aria-label="close"
-                className="block color-blue"
-                onClick={this.toggleMenu}
-              >
-                <Icon name="close" size={36} />
-              </button>
-            </div>
-          </div>
+      <div className="absolute left shadow-darken10" style={{ top: '100%' }}>
+        <div className="bg-white py12 px12">
           <nav>
-            <ul className="txt-bold color-gray-dark">{itemEls}</ul>
+            <ul className="txt-bold color-darken75">{itemEls}</ul>
           </nav>
         </div>
-        <div
-          className="flex-child flex-child--grow cursor-pointer"
-          onClick={this.toggleMenu}
-        />
       </div>
     );
   }
@@ -144,14 +149,17 @@ class MobilePageHeader extends React.Component {
     return (
       <div className="relative">
         <div className="limiter flex-parent flex-parent--center-cross flex-parent--space-between-main">
-          <div className="flex-child">
+          <div className="relative flex-child">
             <button
               type="button"
               aria-label="menu"
               className="block color-blue"
+              ref={node => {
+                this.node = node;
+              }}
               onClick={this.toggleMenu}
             >
-              <Icon name="menu" size={36} />
+              <Icon name={this.state.open ? 'close' : 'menu'} size={36} />
             </button>
           </div>
           <div className="flex-child">{this.renderLogoName()}</div>
@@ -161,8 +169,8 @@ class MobilePageHeader extends React.Component {
           >
             User
           </div>
-          {this.renderMenu()}
         </div>
+        {this.renderMenu()}
       </div>
     );
   }
