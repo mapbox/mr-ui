@@ -125,18 +125,35 @@ class MobilePageHeader extends React.Component {
     if (!this.state.open) return null;
 
     const { items } = this.props;
-
-    const itemEls = items.map(item => {
-      return (
-        <li key={item.href} className="mb12 color-black-on-hover">
-          <a href={item.href}>{item.text}</a>
-        </li>
-      );
+    const itemEls = items.map((item, i) => {
+      if (items.length === i + 1) {
+        console.log('👹');
+        return (
+          <li
+            key={item.href}
+            className="color-gray-dark color-blue-on-hover txt-s txt-bold block"
+          >
+            <a href={item.href}>{item.text}</a>
+          </li>
+        );
+      } else {
+        return (
+          <li
+            key={item.href}
+            className="color-gray-dark color-blue-on-hover txt-s txt-bold block mb12"
+          >
+            <a href={item.href}>{item.text}</a>
+          </li>
+        );
+      }
     });
 
     return (
-      <div className="absolute left shadow-darken10" style={{ top: '100%' }}>
-        <div className="bg-white py12 px12">
+      <div
+        className="absolute left shadow-darken10 bg-white round"
+        style={{ top: '100%' }}
+      >
+        <div className="py12 px12">
           <nav>
             <ul className="txt-bold color-darken75">{itemEls}</ul>
           </nav>
