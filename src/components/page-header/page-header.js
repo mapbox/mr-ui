@@ -94,9 +94,36 @@ class MobilePageHeader extends React.Component {
     }
   };
 
-  // look into mobile safari click bugfix
+  // Position the mobile menu popup pointer
+  positionPointer(options) {
+    const { pointerEl, triggerEl, containerEl } = options;
+    const triggerClientRect = triggerEl.getBoundingClientRect();
+    const containerClientRect = containerEl.getBoundingClientRect();
+    pointerEl.style.left =
+      Math.round(
+        triggerClientRect.left +
+          triggerClientRect.width / 2 -
+          containerClientRect.left -
+          12
+      ) + 'px';
+    containerEl.style.top =
+      Math.round(triggerClientRect.bottom - containerClientRect.height + 8) +
+      'px'; // i hate this
+  }
+
   toggleMenu = () => {
-    this.setState(state => ({ open: !state.open }));
+    this.setState(
+      state => ({ open: !state.open }),
+      () => {
+        // Position the mobile menu popup when the mobile menu is open
+        if (this.state.open === true) {
+          const pointerEl = document.getElementById('mobile-menu-pointer');
+          const containerEl = document.getElementById('mobile-menu-container');
+          const triggerEl = document.getElementById('mobile-menu-trigger');
+          this.positionPointer({ pointerEl, triggerEl, containerEl });
+        }
+      }
+    );
   };
 
   renderLogoName() {
@@ -127,7 +154,6 @@ class MobilePageHeader extends React.Component {
     const { items } = this.props;
     const itemEls = items.map((item, i) => {
       if (items.length === i + 1) {
-        console.log('👹');
         return (
           <li
             key={item.href}
@@ -150,10 +176,15 @@ class MobilePageHeader extends React.Component {
 
     return (
       <div
-        className="absolute left shadow-darken10 bg-white round"
-        style={{ top: '100%' }}
+        id="mobile-menu-container"
+        className="absolute left shadow-darken10-bold bg-white round"
       >
-        <div className="py12 px12">
+        <div
+          id="mobile-menu-pointer"
+          className="absolute triangle-l--u color-white z5"
+          style={{ top: '-18px' }}
+        />
+        <div className="py30 px30">
           <nav>
             <ul className="txt-bold color-darken75">{itemEls}</ul>
           </nav>
@@ -168,6 +199,7 @@ class MobilePageHeader extends React.Component {
         <div className="limiter flex-parent flex-parent--center-cross flex-parent--space-between-main">
           <div className="relative flex-child">
             <button
+              id="mobile-menu-trigger"
               type="button"
               aria-label="menu"
               className="block color-blue"

@@ -19,6 +19,10 @@ testCases.basic = {
       {
         href: '/datasets',
         text: 'Datasets'
+      },
+      {
+        href: '/foo',
+        text: 'Another item with a long name'
       }
     ]
   }
