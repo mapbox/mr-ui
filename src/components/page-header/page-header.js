@@ -48,9 +48,9 @@ class NonMobilePageHeader extends React.Component {
           {itemEls}
         </nav>
         <div
+          id="mbx-user-menu"
           style={{ width: 66 }}
           className="flex-child py6 round-full border color-blue txt-bold align-center txt-s"
-          id="mbx-user-menu"
         >
           User
         </div>
@@ -108,7 +108,7 @@ class MobilePageHeader extends React.Component {
           16
       ) + 'px';
     containerEl.style.top =
-      Math.round(triggerClientRect.bottom - containerClientRect.height + 18) +
+      Math.round(triggerClientRect.bottom - containerClientRect.height + 17) +
       'px';
   }
 
@@ -225,6 +225,7 @@ class MobilePageHeader extends React.Component {
           </div>
           <div className="flex-child">{this.renderLogoName()}</div>
           <div
+            id="mbx-user-menu-mobile"
             style={{ width: 66 }}
             className="flex-child py6 round-full border color-blue txt-bold align-center txt-s"
           >
