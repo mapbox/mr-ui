@@ -1,4 +1,4 @@
-import PageFooter from '../page-footer';
+import PageFooter from '../footer-legal-strip';
 
 const testCases = {};
 testCases.basic = {

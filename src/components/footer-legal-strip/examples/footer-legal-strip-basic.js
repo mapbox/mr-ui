@@ -2,7 +2,7 @@
 Basic.
 */
 import React from 'react';
-import PageFooter from '../page-footer';
+import PageFooter from '../footer-legal-strip';
 
 export default class Example extends React.Component {
   render() {

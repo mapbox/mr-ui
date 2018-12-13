@@ -1,13 +1,11 @@
 import React from 'react';
 
 /**
- * A simple footer component.
+ * A simple component including copyright and links to Mapbox's legal pages.
  *
- * This component includes boilerplate Mapbox legal
- * links in a convenient package.
  */
 
-export default class PageFooter extends React.Component {
+export default class FooterLegalStrip extends React.Component {
   shouldComponentUpdate() {
     return false;
   }
