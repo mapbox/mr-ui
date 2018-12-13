@@ -57,6 +57,10 @@ function getExamples(componentDirectory) {
 }
 
 function processProps(props) {
+  if (!props) {
+    return null;
+  }
+
   let objectBody = '';
   Object.keys(props).forEach(prop => {
     const propData = props[prop];
