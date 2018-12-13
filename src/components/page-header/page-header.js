@@ -104,11 +104,11 @@ class MobilePageHeader extends React.Component {
         triggerClientRect.left +
           triggerClientRect.width / 2 -
           containerClientRect.left -
-          12
+          16
       ) + 'px';
     containerEl.style.top =
-      Math.round(triggerClientRect.bottom - containerClientRect.height + 8) +
-      'px'; // i hate this
+      Math.round(triggerClientRect.bottom - containerClientRect.height + 18) +
+      'px';
   }
 
   toggleMenu = () => {
@@ -151,6 +151,17 @@ class MobilePageHeader extends React.Component {
   renderMenu() {
     if (!this.state.open) return null;
 
+    const pointerStyle = {
+      width: '16px',
+      height: '16px',
+      fontSize: 0,
+      lineHeight: 0,
+      borderLeft: '16px solid transparent',
+      borderRight: '16px solid transparent',
+      borderBottom: '16px solid currentColor',
+      top: '-16px'
+    };
+
     const { items } = this.props;
     const itemEls = items.map((item, i) => {
       if (items.length === i + 1) {
@@ -181,8 +192,8 @@ class MobilePageHeader extends React.Component {
       >
         <div
           id="mobile-menu-pointer"
-          className="absolute triangle-l--u color-white z5"
-          style={{ top: '-18px' }}
+          className="absolute color-white z5"
+          style={pointerStyle}
         />
         <div className="py30 px30">
           <nav>
