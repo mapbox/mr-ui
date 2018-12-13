@@ -57,21 +57,23 @@ function getExamples(componentDirectory) {
 }
 
 function processProps(props) {
-  let objectBody = '';
-  Object.keys(props).forEach(prop => {
-    const propData = props[prop];
-    const renderedDescription = encodeJsx(
-      jsxtremeMarkdown.toJsx(propData.description || ' ').trim() || '<div />'
-    );
-    objectBody += `${prop}: {
-      type: ${JSON.stringify(propData.type)},
-      required: ${propData.required},
-      defaultValue: ${propData.defaultValue &&
-        JSON.stringify(propData.defaultValue.value)},
-      description: ${renderedDescription}
-    },`;
-  });
-  return `{${objectBody}}`;
+  if (props) {
+    let objectBody = '';
+    Object.keys(props).forEach(prop => {
+      const propData = props[prop];
+      const renderedDescription = encodeJsx(
+        jsxtremeMarkdown.toJsx(propData.description || ' ').trim() || '<div />'
+      );
+      objectBody += `${prop}: {
+        type: ${JSON.stringify(propData.type)},
+        required: ${propData.required},
+        defaultValue: ${propData.defaultValue &&
+          JSON.stringify(propData.defaultValue.value)},
+        description: ${renderedDescription}
+      },`;
+    });
+    return `{${objectBody}}`;
+  }
 }
 
 function processComponent(hyphenName) {
