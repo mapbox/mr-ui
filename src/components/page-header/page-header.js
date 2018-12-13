@@ -50,6 +50,7 @@ class NonMobilePageHeader extends React.Component {
         <div
           style={{ width: 66 }}
           className="flex-child py6 round-full border color-blue txt-bold align-center txt-s"
+          id="mbx-user-menu"
         >
           User
         </div>
