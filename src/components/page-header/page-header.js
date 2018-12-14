@@ -23,7 +23,7 @@ class NonMobilePageHeader extends React.Component {
     });
 
     return (
-      <div className="limiter flex-parent-mm flex-parent--center-cross">
+      <div className="limiter flex-parent flex-parent--center-cross">
         <div className="flex-child flex-child--no-shrink flex-parent flex-parent--center-cross">
           <a
             className="flex-child mb-logo"
@@ -47,13 +47,7 @@ class NonMobilePageHeader extends React.Component {
         <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s">
           {itemEls}
         </nav>
-        <div
-          id="mbx-user-menu"
-          style={{ width: 66 }}
-          className="flex-child py6 round-full border color-blue txt-bold align-center txt-s"
-        >
-          User
-        </div>
+        <div id="mbx-user-menu" style={{ width: 66 }} className="flex-child" />
       </div>
     );
   }
@@ -85,12 +79,8 @@ class MobilePageHeader extends React.Component {
   }
 
   closeOnDocumentClick = event => {
-    // Close the popup if the target is me
-    if (
-      this.state.open &&
-      event.target instanceof Node &&
-      !this.node.contains(event.target)
-    ) {
+    // Close the popup if the target is outside of the popup
+    if (this.state.open && !this.node.contains(event.target)) {
       this.setState(() => ({ open: false }));
     }
   };
@@ -107,9 +97,6 @@ class MobilePageHeader extends React.Component {
           containerClientRect.left -
           16
       ) + 'px';
-    containerEl.style.top =
-      Math.round(triggerClientRect.bottom - containerClientRect.height + 17) +
-      'px';
   }
 
   toggleMenu = () => {
@@ -165,31 +152,26 @@ class MobilePageHeader extends React.Component {
 
     const { items } = this.props;
     const itemEls = items.map((item, i) => {
+      let classList;
       if (items.length === i + 1) {
-        return (
-          <li
-            key={item.href}
-            className="color-gray-dark color-blue-on-hover txt-s txt-bold block"
-          >
-            <a href={item.href}>{item.text}</a>
-          </li>
-        );
+        classList = 'color-gray-dark color-blue-on-hover txt-s txt-bold block';
       } else {
-        return (
-          <li
-            key={item.href}
-            className="color-gray-dark color-blue-on-hover txt-s txt-bold block mb12"
-          >
-            <a href={item.href}>{item.text}</a>
-          </li>
-        );
+        classList =
+          'color-gray-dark color-blue-on-hover txt-s txt-bold block mb12';
       }
+
+      return (
+        <li key={item.href} className={classList}>
+          <a href={item.href}>{item.text}</a>
+        </li>
+      );
     });
 
     return (
       <div
         id="mobile-menu-container"
         className="absolute left shadow-darken10-bold bg-white round"
+        style={{ top: '56px', marginLeft: '10px' }}
       >
         <div
           id="mobile-menu-pointer"
@@ -227,10 +209,8 @@ class MobilePageHeader extends React.Component {
           <div
             id="mbx-user-menu-mobile"
             style={{ width: 66 }}
-            className="flex-child py6 round-full border color-blue txt-bold align-center txt-s"
-          >
-            User
-          </div>
+            className="flex-child"
+          />
         </div>
         {this.renderMenu()}
       </div>
