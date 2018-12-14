@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Icon from '../icon';
 
 const MOBILE_NAV_TRIGGER_WIDTH = 36;
-const MOBILE_NAV_POINTER_WIDTH = 16;
+const MOBILE_NAV_POINTER_WIDTH = 32;
 const MOBILE_NAV_MENU_OFFSET_LEFT = 10;
 
 class NonMobilePageHeader extends React.Component {
@@ -127,21 +127,21 @@ class MobilePageHeader extends React.Component {
     if (!this.state.open) return null;
 
     const pointerStyle = {
-      width: MOBILE_NAV_POINTER_WIDTH,
-      height: MOBILE_NAV_POINTER_WIDTH,
+      width: MOBILE_NAV_POINTER_WIDTH / 2,
+      height: MOBILE_NAV_POINTER_WIDTH / 2,
       fontSize: 0,
       lineHeight: 0,
-      borderLeft: `${MOBILE_NAV_POINTER_WIDTH}px solid transparent`,
-      borderRight: `${MOBILE_NAV_POINTER_WIDTH}px solid transparent`,
-      borderBottom: `${MOBILE_NAV_POINTER_WIDTH}px solid currentColor`,
+      borderLeft: `${MOBILE_NAV_POINTER_WIDTH / 2}px solid transparent`,
+      borderRight: `${MOBILE_NAV_POINTER_WIDTH / 2}px solid transparent`,
+      borderBottom: `${MOBILE_NAV_POINTER_WIDTH / 2}px solid currentColor`,
       position: 'absolute',
-      top: -1 * MOBILE_NAV_POINTER_WIDTH,
+      top: (-1 * MOBILE_NAV_POINTER_WIDTH) / 2,
       // 24 is the limiter's left padding.
       left:
         24 -
         MOBILE_NAV_MENU_OFFSET_LEFT +
         MOBILE_NAV_TRIGGER_WIDTH / 2 -
-        MOBILE_NAV_POINTER_WIDTH
+        MOBILE_NAV_POINTER_WIDTH / 2
     };
 
     const { items } = this.props;
