@@ -34,10 +34,7 @@ class NonMobilePageHeader extends React.Component {
             href="https://www.mapbox.com"
             aria-label="Mapbox"
           />
-          <div
-            className="flex-child flex-parent flex-parent--center-cross color-blue txt-l txt-bold relative"
-            style={{ marginBottom: 1 }}
-          >
+          <div className="flex-child flex-parent flex-parent--center-cross color-blue txt-l txt-bold relative">
             <div className="flex-child mx12 bg-blue h24" style={{ width: 2 }} />
             <a
               href="/"
@@ -48,7 +45,7 @@ class NonMobilePageHeader extends React.Component {
           </div>
         </div>
 
-        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s">
+        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s mt6">
           {itemEls}
         </nav>
         <div id="mbx-user-menu" style={{ width: 66 }} className="flex-child" />
@@ -146,12 +143,10 @@ class MobilePageHeader extends React.Component {
 
     const { items } = this.props;
     const itemEls = items.map((item, i) => {
-      let classList;
-      if (items.length === i + 1) {
-        classList = 'color-gray-dark color-blue-on-hover txt-s txt-bold block';
-      } else {
-        classList =
-          'color-gray-dark color-blue-on-hover txt-s txt-bold block mb12';
+      let classList =
+        'color-gray-dark color-blue-on-hover txt-s txt-bold block';
+      if (i < items.length - 1) {
+        classList += ' mb12';
       }
 
       return (
@@ -190,7 +185,7 @@ class MobilePageHeader extends React.Component {
     return (
       <div className="relative">
         <div className="limiter flex-parent flex-parent--center-cross">
-          <div className="relative flex-child flex-child--no-shrink">
+          <div className="flex-child flex-child--no-shrink">
             <button
               id="mobile-menu-trigger"
               type="button"
@@ -210,7 +205,7 @@ class MobilePageHeader extends React.Component {
           <div
             id="mbx-user-menu-mobile"
             style={{ width: 66 }}
-            className="flex-child flex-child--no-shrink bg-blue"
+            className="flex-child flex-child--no-shrink"
           />
         </div>
         {this.renderMenu()}

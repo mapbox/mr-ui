@@ -24,4 +24,30 @@ testCases.basic = {
   }
 };
 
+testCases.accounts = {
+  description: 'Account',
+  component: PageHeader,
+  props: {
+    siteName: 'Account',
+    items: [
+      {
+        href: '/access-tokens/',
+        text: 'Tokens'
+      },
+      {
+        href: '/statistics/',
+        text: 'Stats'
+      },
+      {
+        href: '/invoices/',
+        text: 'Invoices'
+      },
+      {
+        href: '',
+        text: 'Settings'
+      }
+    ]
+  }
+};
+
 export { testCases };

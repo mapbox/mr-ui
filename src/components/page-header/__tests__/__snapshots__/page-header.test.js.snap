@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account renders as expected 1`] = `
+<div>
+  <div
+    className="none block-mm"
+  >
+    <NonMobilePageHeader
+      items={
+        Array [
+          Object {
+            "href": "/access-tokens/",
+            "text": "Tokens",
+          },
+          Object {
+            "href": "/statistics/",
+            "text": "Stats",
+          },
+          Object {
+            "href": "/invoices/",
+            "text": "Invoices",
+          },
+          Object {
+            "href": "",
+            "text": "Settings",
+          },
+        ]
+      }
+      siteName="Account"
+    />
+  </div>
+  <div
+    className="none-mm"
+  >
+    <MobilePageHeader
+      items={
+        Array [
+          Object {
+            "href": "/access-tokens/",
+            "text": "Tokens",
+          },
+          Object {
+            "href": "/statistics/",
+            "text": "Stats",
+          },
+          Object {
+            "href": "/invoices/",
+            "text": "Invoices",
+          },
+          Object {
+            "href": "",
+            "text": "Settings",
+          },
+        ]
+      }
+      siteName="Account"
+    />
+  </div>
+</div>
+`;
+
+exports[`basic renders as expected 1`] = `
+<div>
+  <div
+    className="none block-mm"
+  >
+    <NonMobilePageHeader
+      items={
+        Array [
+          Object {
+            "href": "/styles",
+            "text": "Styles",
+          },
+          Object {
+            "href": "/tilesets",
+            "text": "Tilesets",
+          },
+          Object {
+            "href": "/datasets",
+            "text": "Datasets",
+          },
+        ]
+      }
+      siteName="Studio"
+    />
+  </div>
+  <div
+    className="none-mm"
+  >
+    <MobilePageHeader
+      items={
+        Array [
+          Object {
+            "href": "/styles",
+            "text": "Styles",
+          },
+          Object {
+            "href": "/tilesets",
+            "text": "Tilesets",
+          },
+          Object {
+            "href": "/datasets",
+            "text": "Datasets",
+          },
+        ]
+      }
+      siteName="Studio"
+    />
+  </div>
+</div>
+`;
