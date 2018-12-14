@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icon';
 
+const MOBILE_NAV_TRIGGER_WIDTH = 36;
+const MOBILE_NAV_POINTER_WIDTH = 16;
+const MOBILE_NAV_MENU_OFFSET_LEFT = 10;
+
 class NonMobilePageHeader extends React.Component {
   shouldComponentUpdate() {
     return false;
@@ -80,38 +84,21 @@ class MobilePageHeader extends React.Component {
 
   closeOnDocumentClick = event => {
     // Close the popup if the target is outside of the popup
-    if (this.state.open && !this.node.contains(event.target)) {
-      this.setState(() => ({ open: false }));
+    if (!this.state.open) return;
+    if (document.getElementById('mobile-menu-trigger').contains(event.target)) {
+      return;
     }
+    if (
+      this.menuBodyElement.contains(event.target) &&
+      !event.target.getAttribute('data-page-header-mobile-link')
+    ) {
+      return;
+    }
+    this.setState({ open: false });
   };
 
-  // Position the mobile menu popup pointer
-  positionPointer(options) {
-    const { pointerEl, triggerEl, containerEl } = options;
-    const triggerClientRect = triggerEl.getBoundingClientRect();
-    const containerClientRect = containerEl.getBoundingClientRect();
-    pointerEl.style.left =
-      Math.round(
-        triggerClientRect.left +
-          triggerClientRect.width / 2 -
-          containerClientRect.left -
-          16
-      ) + 'px';
-  }
-
   toggleMenu = () => {
-    this.setState(
-      state => ({ open: !state.open }),
-      () => {
-        // Position the mobile menu popup when the mobile menu is open
-        if (this.state.open === true) {
-          const pointerEl = document.getElementById('mobile-menu-pointer');
-          const containerEl = document.getElementById('mobile-menu-container');
-          const triggerEl = document.getElementById('mobile-menu-trigger');
-          this.positionPointer({ pointerEl, triggerEl, containerEl });
-        }
-      }
-    );
+    this.setState(state => ({ open: !state.open }));
   };
 
   renderLogoName() {
@@ -127,7 +114,7 @@ class MobilePageHeader extends React.Component {
         />
         <a
           href="/"
-          className="flex-child color-blue color-blue-dark-on-hover txt-l txt-bold ml12"
+          className="flex-child color-blue color-blue-dark-on-hover txt-l txt-bold ml6"
           style={{ marginBottom: 1 }}
         >
           {siteName}
@@ -140,14 +127,21 @@ class MobilePageHeader extends React.Component {
     if (!this.state.open) return null;
 
     const pointerStyle = {
-      width: '16px',
-      height: '16px',
+      width: MOBILE_NAV_POINTER_WIDTH,
+      height: MOBILE_NAV_POINTER_WIDTH,
       fontSize: 0,
       lineHeight: 0,
-      borderLeft: '16px solid transparent',
-      borderRight: '16px solid transparent',
-      borderBottom: '16px solid currentColor',
-      top: '-16px'
+      borderLeft: `${MOBILE_NAV_POINTER_WIDTH}px solid transparent`,
+      borderRight: `${MOBILE_NAV_POINTER_WIDTH}px solid transparent`,
+      borderBottom: `${MOBILE_NAV_POINTER_WIDTH}px solid currentColor`,
+      position: 'absolute',
+      top: -1 * MOBILE_NAV_POINTER_WIDTH,
+      // 24 is the limiter's left padding.
+      left:
+        24 -
+        MOBILE_NAV_MENU_OFFSET_LEFT +
+        MOBILE_NAV_TRIGGER_WIDTH / 2 -
+        MOBILE_NAV_POINTER_WIDTH
     };
 
     const { items } = this.props;
@@ -162,7 +156,9 @@ class MobilePageHeader extends React.Component {
 
       return (
         <li key={item.href} className={classList}>
-          <a href={item.href}>{item.text}</a>
+          <a href={item.href} data-page-header-mobile-link={true}>
+            {item.text}
+          </a>
         </li>
       );
     });
@@ -171,11 +167,14 @@ class MobilePageHeader extends React.Component {
       <div
         id="mobile-menu-container"
         className="absolute left shadow-darken10-bold bg-white round"
-        style={{ top: '56px', marginLeft: '10px' }}
+        style={{ top: '56px', marginLeft: MOBILE_NAV_MENU_OFFSET_LEFT }}
+        ref={node => {
+          this.menuBodyElement = node;
+        }}
       >
         <div
           id="mobile-menu-pointer"
-          className="absolute color-white z5"
+          className="color-white z5"
           style={pointerStyle}
         />
         <div className="py30 px30">
@@ -190,26 +189,28 @@ class MobilePageHeader extends React.Component {
   render() {
     return (
       <div className="relative">
-        <div className="limiter flex-parent flex-parent--center-cross flex-parent--space-between-main">
-          <div className="relative flex-child">
+        <div className="limiter flex-parent flex-parent--center-cross">
+          <div className="relative flex-child flex-child--no-shrink">
             <button
               id="mobile-menu-trigger"
               type="button"
               aria-label="menu"
               className="block color-blue"
-              ref={node => {
-                this.node = node;
-              }}
               onClick={this.toggleMenu}
             >
-              <Icon name={this.state.open ? 'close' : 'menu'} size={36} />
+              <Icon
+                name={this.state.open ? 'close' : 'menu'}
+                size={MOBILE_NAV_TRIGGER_WIDTH}
+              />
             </button>
           </div>
-          <div className="flex-child">{this.renderLogoName()}</div>
+          <div className="flex-child flex-child--grow ml12">
+            {this.renderLogoName()}
+          </div>
           <div
             id="mbx-user-menu-mobile"
             style={{ width: 66 }}
-            className="flex-child"
+            className="flex-child flex-child--no-shrink bg-blue"
           />
         </div>
         {this.renderMenu()}
