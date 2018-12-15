@@ -9,12 +9,16 @@ exports[`Account renders as expected 1`] = `
       items={
         Array [
           Object {
+            "href": "/",
+            "text": "Dashboard",
+          },
+          Object {
             "href": "/access-tokens/",
             "text": "Tokens",
           },
           Object {
             "href": "/statistics/",
-            "text": "Stats",
+            "text": "Statistics",
           },
           Object {
             "href": "/invoices/",
@@ -36,12 +40,16 @@ exports[`Account renders as expected 1`] = `
       items={
         Array [
           Object {
+            "href": "/",
+            "text": "Dashboard",
+          },
+          Object {
             "href": "/access-tokens/",
             "text": "Tokens",
           },
           Object {
             "href": "/statistics/",
-            "text": "Stats",
+            "text": "Statistics",
           },
           Object {
             "href": "/invoices/",
