@@ -30,15 +30,18 @@ class NonMobilePageHeader extends React.Component {
       <div className="limiter flex-parent flex-parent--center-cross">
         <div className="flex-child flex-child--no-shrink flex-parent flex-parent--center-cross">
           <a
-            className="flex-child mb-logo"
+            className="flex-child mb-logo wmax180-mxl wmax30-mm"
             href="https://www.mapbox.com"
             aria-label="Mapbox"
           />
           <div className="flex-child flex-parent flex-parent--center-cross color-blue txt-l txt-bold relative">
-            <div className="flex-child mx12 bg-blue h24" style={{ width: 2 }} />
+            <div
+              className="flex-child mx12 bg-blue h24 none-mm block-mxl"
+              style={{ width: 2 }}
+            />
             <a
               href="/"
-              className="flex-child color-blue color-blue-dark-on-hover"
+              className="flex-child color-blue color-blue-dark-on-hover ml6-mm ml0-mxl"
             >
               {siteName}
             </a>
@@ -48,7 +51,11 @@ class NonMobilePageHeader extends React.Component {
         <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s mt6">
           {itemEls}
         </nav>
-        <div id="mbx-user-menu" style={{ width: 66 }} className="flex-child" />
+        <div
+          id="mbx-user-menu"
+          style={{ width: 66 }}
+          className="flex-child flex-child--no-shrink"
+        />
       </div>
     );
   }

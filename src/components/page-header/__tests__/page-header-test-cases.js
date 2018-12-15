@@ -31,12 +31,16 @@ testCases.accounts = {
     siteName: 'Account',
     items: [
       {
+        href: '/',
+        text: 'Dashboard'
+      },
+      {
         href: '/access-tokens/',
         text: 'Tokens'
       },
       {
         href: '/statistics/',
-        text: 'Stats'
+        text: 'Statistics'
       },
       {
         href: '/invoices/',
