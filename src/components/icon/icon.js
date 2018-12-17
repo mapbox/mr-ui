@@ -76,7 +76,7 @@ export default class Icon extends React.Component {
 
 Icon.propTypes = {
   /**
-   * The name of the [Assembly icon](https://www.mapbox.com/assembly/icons/) that
+   * The name of the [Assembly icon](https://labs.mapbox.com/assembly/icons/) that
    * you want to display.
    */
   name: PropTypes.string.isRequired,
