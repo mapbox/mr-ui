@@ -122,6 +122,10 @@ class MobilePageHeader extends React.Component {
     if (this.state.open && !prevState.open) {
       const doc = window.document;
       doc.addEventListener('click', this.closeOnDocumentClick);
+      return;
+    } else if (!this.state.open && prevState.open) {
+      const doc = window.document;
+      doc.removeEventListener('click', this.closeOnDocumentClick);
     }
   }
 
