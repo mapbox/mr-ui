@@ -12,19 +12,17 @@ let wrapper;
 describe(testCases.basic.description, () => {
   beforeEach(() => {
     testCase = testCases.basic;
+    wrapper = shallow(React.createElement(testCase.component, testCase.props));
   });
 
   test('renders as expected', () => {
-    const wrapper = shallow(
-      React.createElement(testCase.component, testCase.props)
-    );
     expect(wrapper).toMatchSnapshot();
   });
 });
 
-describe(testCases.accounts.description, () => {
+describe(testCases.account.description, () => {
   beforeEach(() => {
-    testCase = testCases.accounts;
+    testCase = testCases.account;
     wrapper = shallow(React.createElement(testCase.component, testCase.props));
   });
 

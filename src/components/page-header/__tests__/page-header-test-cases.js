@@ -24,7 +24,7 @@ testCases.basic = {
   }
 };
 
-testCases.accounts = {
+testCases.account = {
   description: 'Account',
   component: PageHeader,
   props: {

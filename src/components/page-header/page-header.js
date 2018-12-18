@@ -5,6 +5,8 @@ import Icon from '../icon';
 const MOBILE_NAV_TRIGGER_WIDTH = 36;
 const MOBILE_NAV_POINTER_WIDTH = 32;
 const MOBILE_NAV_MENU_OFFSET_LEFT = 10;
+const MBX_USER_MENU_WIDTH = 66;
+const MOBILE_NAV_MENU_OFFSET_TOP = 56;
 
 class NonMobilePageHeader extends React.Component {
   shouldComponentUpdate() {
@@ -30,30 +32,30 @@ class NonMobilePageHeader extends React.Component {
       <div className="limiter flex-parent flex-parent--center-cross">
         <div className="flex-child flex-child--no-shrink flex-parent flex-parent--center-cross">
           <a
-            className="flex-child mb-logo wmax180-mxl wmax30-mm"
+            className="flex-child mb-logo wmax180-mxl wmax30"
             href="https://www.mapbox.com"
             aria-label="Mapbox"
           />
           <div className="flex-child flex-parent flex-parent--center-cross color-blue txt-l txt-bold relative">
             <div
-              className="flex-child mx12 bg-blue h24 none-mm block-mxl"
+              className="flex-child mx12 bg-blue h24 none block-mxl"
               style={{ width: 2 }}
             />
             <a
               href="/"
-              className="flex-child color-blue color-blue-dark-on-hover ml6-mm ml0-mxl"
+              className="flex-child color-blue color-blue-dark-on-hover ml6 ml0-mxl"
             >
               {siteName}
             </a>
           </div>
         </div>
 
-        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s mt6">
+        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s mt3">
           {itemEls}
         </nav>
         <div
           id="mbx-user-menu"
-          style={{ width: 66 }}
+          style={{ width: MBX_USER_MENU_WIDTH }}
           className="flex-child flex-child--no-shrink"
         />
       </div>
@@ -76,20 +78,11 @@ class MobilePageHeader extends React.Component {
     return this.state.open !== nextState.open;
   }
 
-  componentDidMount() {
-    const doc = window.document;
-    doc.addEventListener('click', this.closeOnDocumentClick);
-  }
-
-  componentWillUnmount() {
-    const doc = window.document;
-    doc.removeEventListener('click', this.closeOnDocumentClick);
-  }
-
   closeOnDocumentClick = event => {
     // Close the popup if the target is outside of the popup
     if (!this.state.open) return;
-    if (document.getElementById('mobile-menu-trigger').contains(event.target)) {
+    const mobileMenuTrigger = this.mobileTriggerRef;
+    if (mobileMenuTrigger.contains(event.target)) {
       return;
     }
     if (
@@ -102,7 +95,13 @@ class MobilePageHeader extends React.Component {
   };
 
   toggleMenu = () => {
-    this.setState(state => ({ open: !state.open }));
+    if (this.state.open) {
+      this.setState(() => ({ open: false }));
+      const doc = window.document;
+      doc.removeEventListener('click', this.closeOnDocumentClick);
+      return;
+    }
+    this.setState(() => ({ open: true }));
   };
 
   renderLogoName() {
@@ -129,6 +128,9 @@ class MobilePageHeader extends React.Component {
 
   renderMenu() {
     if (!this.state.open) return null;
+
+    const doc = window.document;
+    doc.addEventListener('click', this.closeOnDocumentClick);
 
     const pointerStyle = {
       width: MOBILE_NAV_POINTER_WIDTH / 2,
@@ -167,18 +169,16 @@ class MobilePageHeader extends React.Component {
 
     return (
       <div
-        id="mobile-menu-container"
-        className="absolute left shadow-darken10-bold bg-white round"
-        style={{ top: '56px', marginLeft: MOBILE_NAV_MENU_OFFSET_LEFT }}
+        className="absolute left shadow-darken10-bold bg-white round z5"
+        style={{
+          top: MOBILE_NAV_MENU_OFFSET_TOP,
+          marginLeft: MOBILE_NAV_MENU_OFFSET_LEFT
+        }}
         ref={node => {
           this.menuBodyElement = node;
         }}
       >
-        <div
-          id="mobile-menu-pointer"
-          className="color-white z5"
-          style={pointerStyle}
-        />
+        <div className="color-white" style={pointerStyle} />
         <div className="py30 px30">
           <nav>
             <ul className="txt-bold color-darken75">{itemEls}</ul>
@@ -194,8 +194,10 @@ class MobilePageHeader extends React.Component {
         <div className="limiter flex-parent flex-parent--center-cross">
           <div className="flex-child flex-child--no-shrink">
             <button
-              id="mobile-menu-trigger"
               type="button"
+              ref={el => {
+                this.mobileTriggerRef = el;
+              }}
               aria-label="menu"
               className="block color-blue"
               onClick={this.toggleMenu}
@@ -211,7 +213,7 @@ class MobilePageHeader extends React.Component {
           </div>
           <div
             id="mbx-user-menu-mobile"
-            style={{ width: 66 }}
+            style={{ width: MBX_USER_MENU_WIDTH }}
             className="flex-child flex-child--no-shrink"
           />
         </div>
