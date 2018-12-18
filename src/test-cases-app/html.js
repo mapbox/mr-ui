@@ -7,6 +7,7 @@ module.exports = `
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://api.mapbox.com/mapbox-assembly/mbx/v0.28.1/assembly.min.css" rel="stylesheet">
     <script async src="https://api.mapbox.com/mapbox-assembly/mbx/v0.28.1/assembly.js"></script>
+    <script src="https://static-assets.mapbox.com/user-menu/user-menu.js"></script>
   </head>
   <body>
   </body>

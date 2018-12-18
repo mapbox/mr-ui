@@ -13,6 +13,28 @@ class NonMobilePageHeader extends React.Component {
     return false;
   }
 
+  componentDidMount() {
+    window.MapboxUserMenu.initialize({
+      // Boolean to indicate if the menu is used on a production or staging
+      // site, which impacts which API endpoints are used.
+      // Defaults to `false`.
+      isProduction: false,
+      // Boolean to indicate if text and other elements should be dark
+      // so that they show up against a light background.
+      // Defaults to `true`.
+      dark: true,
+      // ID of the element that the menu will be mounted into.
+      // Defaults to "mbx-user-menu".
+      elementId: 'mbx-user-menu',
+      // Function called after the session is checked.
+      // It will be passed `false` if the session is not valid, or a `user` object.
+      // Optional.
+      userCallback: function(user) {
+        console.log('The user session has been checked!', user);
+      }
+    });
+  }
+
   render() {
     const { items, siteName } = this.props;
 
@@ -50,7 +72,7 @@ class NonMobilePageHeader extends React.Component {
           </div>
         </div>
 
-        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s mt3">
+        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s">
           {itemEls}
         </nav>
         <div
@@ -74,6 +96,40 @@ class MobilePageHeader extends React.Component {
     this.state = { open: false };
   }
 
+  componentDidMount() {
+    window.MapboxUserMenu.initialize({
+      // Boolean to indicate if the menu is used on a production or staging
+      // site, which impacts which API endpoints are used.
+      // Defaults to `false`.
+      isProduction: false,
+      // Boolean to indicate if text and other elements should be dark
+      // so that they show up against a light background.
+      // Defaults to `true`.
+      dark: true,
+      // ID of the element that the menu will be mounted into.
+      // Defaults to "mbx-user-menu".
+      elementId: 'mbx-user-menu',
+      // Function called after the session is checked.
+      // It will be passed `false` if the session is not valid, or a `user` object.
+      // Optional.
+      userCallback: function(user) {
+        console.log('The user session has been checked!', user);
+      }
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.open && !prevState.open) {
+      const doc = window.document;
+      doc.addEventListener('click', this.closeOnDocumentClick);
+    }
+  }
+
+  componentWillUnmount() {
+    const doc = window.document;
+    doc.removeEventListener('click', this.closeOnDocumentClick);
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     return this.state.open !== nextState.open;
   }
@@ -95,13 +151,7 @@ class MobilePageHeader extends React.Component {
   };
 
   toggleMenu = () => {
-    if (this.state.open) {
-      this.setState(() => ({ open: false }));
-      const doc = window.document;
-      doc.removeEventListener('click', this.closeOnDocumentClick);
-      return;
-    }
-    this.setState(() => ({ open: true }));
+    this.setState(state => ({ open: !state.open }));
   };
 
   renderLogoName() {
@@ -128,9 +178,6 @@ class MobilePageHeader extends React.Component {
 
   renderMenu() {
     if (!this.state.open) return null;
-
-    const doc = window.document;
-    doc.addEventListener('click', this.closeOnDocumentClick);
 
     const pointerStyle = {
       width: MOBILE_NAV_POINTER_WIDTH / 2,
