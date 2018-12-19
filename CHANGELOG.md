@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0 - Next release
+## 0.4.0
 - [feature] Add **PageHeader** component.
 - [feature] Add **FooterLegalStrip** component.
 - [feature] Add **ControlAlert** component.
@@ -13,6 +13,7 @@
   - [feature] Add `beforeIcon` prop.
 - **Icon**
   - [feature] Allow `size` prop to be a number or string .
+- [build] Move to [Underreact](https://github.com/mapbox/underreact) for test-cases app and documentation generation.
 
 ## 0.3.2
 
