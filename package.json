@@ -11,7 +11,7 @@
     "start-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && underreact start --config='src/docs/docs-underreact.config.js'",
     "build-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && underreact build --config='src/docs/docs-underreact.config.js'",
     "serve-static-docs": "underreact serve-static --config='src/docs/docs-underreact.config.js'",
-    "deploy-docs": "npm run build-docs && gh-pages -d _underreact-site",
+    "deploy-docs": "npm run build-docs && gh-pages -d src/docs/_site",
     "test-jest": "jest",
     "format": "prettier --write '**/*.js'",
     "lint": "eslint .",
