@@ -50,7 +50,7 @@ class NonMobilePageHeader extends React.Component {
           </div>
         </div>
 
-        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s mt3">
+        <nav className="flex-child flex-child--grow flex-parent flex-parent--center-cross flex-parent--end-main txt-bold txt-s">
           {itemEls}
         </nav>
         <div
@@ -74,6 +74,22 @@ class MobilePageHeader extends React.Component {
     this.state = { open: false };
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.open && !prevState.open) {
+      const doc = window.document;
+      doc.addEventListener('click', this.closeOnDocumentClick);
+      return;
+    } else if (!this.state.open && prevState.open) {
+      const doc = window.document;
+      doc.removeEventListener('click', this.closeOnDocumentClick);
+    }
+  }
+
+  componentWillUnmount() {
+    const doc = window.document;
+    doc.removeEventListener('click', this.closeOnDocumentClick);
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     return this.state.open !== nextState.open;
   }
@@ -95,13 +111,7 @@ class MobilePageHeader extends React.Component {
   };
 
   toggleMenu = () => {
-    if (this.state.open) {
-      this.setState(() => ({ open: false }));
-      const doc = window.document;
-      doc.removeEventListener('click', this.closeOnDocumentClick);
-      return;
-    }
-    this.setState(() => ({ open: true }));
+    this.setState(state => ({ open: !state.open }));
   };
 
   renderLogoName() {
@@ -128,9 +138,6 @@ class MobilePageHeader extends React.Component {
 
   renderMenu() {
     if (!this.state.open) return null;
-
-    const doc = window.document;
-    doc.addEventListener('click', this.closeOnDocumentClick);
 
     const pointerStyle = {
       width: MOBILE_NAV_POINTER_WIDTH / 2,
