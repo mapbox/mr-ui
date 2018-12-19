@@ -13,28 +13,6 @@ class NonMobilePageHeader extends React.Component {
     return false;
   }
 
-  componentDidMount() {
-    window.MapboxUserMenu.initialize({
-      // Boolean to indicate if the menu is used on a production or staging
-      // site, which impacts which API endpoints are used.
-      // Defaults to `false`.
-      isProduction: false,
-      // Boolean to indicate if text and other elements should be dark
-      // so that they show up against a light background.
-      // Defaults to `true`.
-      dark: true,
-      // ID of the element that the menu will be mounted into.
-      // Defaults to "mbx-user-menu".
-      elementId: 'mbx-user-menu',
-      // Function called after the session is checked.
-      // It will be passed `false` if the session is not valid, or a `user` object.
-      // Optional.
-      userCallback: function(user) {
-        console.log('The user session has been checked!', user);
-      }
-    });
-  }
-
   render() {
     const { items, siteName } = this.props;
 
@@ -94,28 +72,6 @@ class MobilePageHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
-  }
-
-  componentDidMount() {
-    window.MapboxUserMenu.initialize({
-      // Boolean to indicate if the menu is used on a production or staging
-      // site, which impacts which API endpoints are used.
-      // Defaults to `false`.
-      isProduction: false,
-      // Boolean to indicate if text and other elements should be dark
-      // so that they show up against a light background.
-      // Defaults to `true`.
-      dark: true,
-      // ID of the element that the menu will be mounted into.
-      // Defaults to "mbx-user-menu".
-      elementId: 'mbx-user-menu',
-      // Function called after the session is checked.
-      // It will be passed `false` if the session is not valid, or a `user` object.
-      // Optional.
-      userCallback: function(user) {
-        console.log('The user session has been checked!', user);
-      }
-    });
   }
 
   componentDidUpdate(prevProps, prevState) {
