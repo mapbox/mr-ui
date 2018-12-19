@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0 - Next release
+## 0.4.0
 - [feature] Add **PageHeader** component.
 - [feature] Add **FooterLegalStrip** component.
 - [feature] Add **ControlAlert** component.
