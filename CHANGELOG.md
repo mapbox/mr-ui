@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1
+- [fix] Update build script for Babel 7 to fix broken v0.4.0 publication. 
+
 ## 0.4.0
 - [feature] Add **PageHeader** component.
 - [feature] Add **FooterLegalStrip** component.
