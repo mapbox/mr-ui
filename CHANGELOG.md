@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.2
+- [fix] Tweak babel.config.js to tell babel to compile modules to cjs during `build` step.
+
 ## 0.4.1
 - [fix] Update build script for Babel 7 to fix broken v0.4.0 publication. 
 
