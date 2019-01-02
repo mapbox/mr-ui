@@ -1,5 +1,10 @@
 # Changelog
 
+## HEAD
+
+- 🚨 [breaking change] Remove **PageHeader** component.
+- 🚨 [breaking change] Remove **FooterLegalStrip** component.
+
 ## 0.4.1-0.4.3
 - [fix] Update build script for Babel 7 to fix broken v0.4.0 publication.
 
