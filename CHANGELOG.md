@@ -1,6 +1,6 @@
 # Changelog
 
-## HEAD
+## 0.5.0
 
 - 🚨 [breaking change] Remove **PageHeader** component.
 - 🚨 [breaking change] Remove **FooterLegalStrip** component.
