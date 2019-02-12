@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChevronousText basic renders as expected 1`] = `
-<span
-  className="inline-block"
->
+<span>
   Explore
    
   <span
@@ -21,9 +19,7 @@ exports[`ChevronousText basic renders as expected 1`] = `
 `;
 
 exports[`ChevronousText chevron before multiline text renders as expected 1`] = `
-<span
-  className="inline-block"
->
+<span>
   <span
     className="txt-nowrap"
   >
@@ -41,9 +37,7 @@ exports[`ChevronousText chevron before multiline text renders as expected 1`] = 
 `;
 
 exports[`ChevronousText chevron before one long unwrappable word text renders as expected 1`] = `
-<span
-  className="inline-block"
->
+<span>
   <span
     className="txt-nowrap"
   >
@@ -60,9 +54,7 @@ exports[`ChevronousText chevron before one long unwrappable word text renders as
 `;
 
 exports[`ChevronousText multiline text renders as expected 1`] = `
-<span
-  className="inline-block"
->
+<span>
   "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us..." - A Tale of Two
    
   <span
@@ -80,9 +72,7 @@ exports[`ChevronousText multiline text renders as expected 1`] = `
 `;
 
 exports[`ChevronousText one long unwrappable word text renders as expected 1`] = `
-<span
-  className="inline-block"
->
+<span>
    
   <span
     className="txt-nowrap"
@@ -99,9 +89,7 @@ exports[`ChevronousText one long unwrappable word text renders as expected 1`] =
 `;
 
 exports[`ChevronousText sized icon before text renders as expected 1`] = `
-<span
-  className="inline-block"
->
+<span>
   <span
     className="txt-nowrap"
   >
@@ -118,9 +106,7 @@ exports[`ChevronousText sized icon before text renders as expected 1`] = `
 `;
 
 exports[`ChevronousText sized icon renders as expected 1`] = `
-<span
-  className="inline-block"
->
+<span>
    
   <span
     className="txt-nowrap"

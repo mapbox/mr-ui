@@ -30,7 +30,7 @@ export default class ChevronousText extends React.PureComponent {
 
     if (iconBefore) {
       return (
-        <span className="inline-block">
+        <span>
           <span className="txt-nowrap">
             <Icon name="chevron-left" inline={true} size={iconSize} />
             {iconWord}
@@ -41,7 +41,7 @@ export default class ChevronousText extends React.PureComponent {
     }
 
     return (
-      <span className="inline-block">
+      <span>
         {textWithoutIconWord}{' '}
         <span className="txt-nowrap">
           {iconWord}
