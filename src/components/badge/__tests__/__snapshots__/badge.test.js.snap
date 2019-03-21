@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`badge basic renders as expected 1`] = `
+<div
+  className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-orange-faint color-orange-dark "
+>
+  Hello
+</div>
+`;
+
+exports[`badge color and tooltip renders as expected 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="A call used to greet someone or draw attention to something from a distance."
+  disabled={false}
+  maxWidth="small"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <div
+    className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-purple-faint color-purple "
+  >
+    Ahoy
+  </div>
+</Tooltip>
+`;
+
+exports[`badge color renders as expected 1`] = `
+<div
+  className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-blue-faint color-blue "
+>
+  Blue
+</div>
+`;
+
+exports[`badge tooltip renders as expected 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="The best day."
+  disabled={false}
+  maxWidth="small"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <div
+    className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-orange-faint color-orange-dark "
+  >
+    Friday
+  </div>
+</Tooltip>
+`;
