@@ -7,8 +7,13 @@ describe('badge', () => {
     const wrapper = shallow(
       React.createElement(testCases.basic.component, testCases.basic.props)
     );
+
     test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    test('no Tooltip', () => {
+      expect(wrapper.find('Tooltip').exists()).toBe(false);
     });
   });
 
@@ -16,8 +21,13 @@ describe('badge', () => {
     const wrapper = shallow(
       React.createElement(testCases.color.component, testCases.color.props)
     );
+
     test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    test('no Tooltip', () => {
+      expect(wrapper.find('Tooltip').exists()).toBe(false);
     });
   });
 
@@ -25,8 +35,13 @@ describe('badge', () => {
     const wrapper = shallow(
       React.createElement(testCases.tooltip.component, testCases.tooltip.props)
     );
+
     test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    test('tooltipText renders Tooltip', () => {
+      expect(wrapper.find('Tooltip').exists()).toBe(true);
     });
   });
 
@@ -37,8 +52,13 @@ describe('badge', () => {
         testCases.colorAndTooltip.props
       )
     );
+
     test('renders as expected', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    test('tooltipText renders Tooltip', () => {
+      expect(wrapper.find('Tooltip').exists()).toBe(true);
     });
   });
 });
