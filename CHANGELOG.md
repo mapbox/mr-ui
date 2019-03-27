@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.0
+- [feature] Add **Badge** component.
+
 ## 0.5.0
 
 - 🚨 [breaking change] Remove **PageHeader** component.

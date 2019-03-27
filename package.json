@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@mapbox/mr-ui",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
   "scripts": {
