@@ -254,6 +254,18 @@ testCases.warning = {
   )
 };
 
+testCases.noPointer = {
+  description: 'no pointer',
+  element: (
+    <PopoverTrigger
+      popoverProps={{
+        hasPointer: false
+      }}
+      content="No pointer here"
+    />
+  )
+};
+
 const noDisplayCases = {};
 
 noDisplayCases.basic = {
@@ -282,6 +294,16 @@ noDisplayCases.warning = {
     getAnchorElement: () => {},
     children: getPopoverContent(),
     coloring: 'warning'
+  }
+};
+
+noDisplayCases.noPointer = {
+  description: 'no pointer',
+  component: Popover,
+  props: {
+    getAnchorElement: () => {},
+    children: getPopoverContent(),
+    hasPointer: false
   }
 };
 

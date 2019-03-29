@@ -45,6 +45,19 @@ describe('Popover', () => {
     });
   });
 
+  describe(noDisplayCases.noPointer.description, () => {
+    beforeEach(() => {
+      testCase = noDisplayCases.noPointer;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('renders', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
   describe(noDisplayCases.allProps.description, () => {
     beforeEach(() => {
       testCase = noDisplayCases.allProps;

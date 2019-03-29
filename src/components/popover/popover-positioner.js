@@ -103,6 +103,7 @@ class PopoverPositioner extends React.PureComponent {
       getAnchorElement: props.getAnchorElement,
       placement: props.placement,
       alignment: props.alignment,
+      hasPointer: props.hasPointer,
       offsetFromAnchor: props.offsetFromAnchor,
       pointerBase: props.pointerBase,
       pointerAltitude: props.pointerAltitude,

@@ -16,7 +16,7 @@ exports[`Popover all props renders 1`] = `
 >
   <div
     className="color-text shadow-darken25 round"
-    data-popover-id={4}
+    data-popover-id={5}
     data-test={true}
     key="body"
     onFocus={[Function]}
@@ -97,6 +97,42 @@ exports[`Popover dark renders 1`] = `
     style={
       Object {
         "backgroundColor": "#273d56",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover no pointer renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={false}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#fff"
+>
+  <div
+    className="color-text shadow-darken25 round px12 py12"
+    data-popover-id={4}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#fff",
       }
     }
     tabIndex={-1}
