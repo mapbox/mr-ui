@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.1
+- [fix] fix issue that prevented popovers from recognizing the hasPointer prop.
+
 ## 0.6.0
 - [feature] Add **Badge** component.
 
