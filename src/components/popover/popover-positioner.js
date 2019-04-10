@@ -26,6 +26,7 @@ let popoverPositionerList = [];
  * @param {boolean} [containWithinViewport] - See options for calculatePosition.
  * @param {Function} [getContainingElement] - See options for calculatePosition.
  * @param {Function} [onElement] - A function that receives the containing element.
+ * @param {number} [zIndex] - z-index for body element.
  */
 class PopoverPositioner extends React.PureComponent {
   static propTypes = {
@@ -43,6 +44,7 @@ class PopoverPositioner extends React.PureComponent {
     containWithinViewport: PropTypes.bool,
     getContainingElement: PropTypes.func,
     onElement: PropTypes.func,
+    zIndex: PropTypes.number,
     // For mockery
     calculatePosition: PropTypes.func,
     getScrollableParents: PropTypes.func,
@@ -157,7 +159,7 @@ class PopoverPositioner extends React.PureComponent {
   render() {
     const basicStyle = {
       position: 'absolute',
-      zIndex: 1,
+      zIndex: this.props.zIndex,
       top: 0,
       left: 0,
       visibility: 'hidden'

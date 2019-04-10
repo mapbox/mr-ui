@@ -49,6 +49,7 @@ describe('PopoverPositioner', () => {
       calculatePosition: mockCalculatePosition,
       getScrollableParents: mockGetScrollableParents,
       createScrollListener: mockCreateScrollListener,
+      zIndex: 3,
       getWindow: mockGetWindow
     };
   });
@@ -203,6 +204,7 @@ describe('PopoverPositioner', () => {
     const wrapper = mount(<PopoverPositioner.WrappedComponent {...props} />);
     expect(mockCalculatePosition).toHaveBeenCalledTimes(1);
     wrapper.setProps({ children: <span>horses</span> });
+    expect(wrapper.instance().bodyElement.style.zIndex).toBe('3');
     expect(mockCalculatePosition).toHaveBeenCalledTimes(2);
   });
 

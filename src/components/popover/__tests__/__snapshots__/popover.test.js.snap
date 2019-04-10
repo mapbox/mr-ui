@@ -13,6 +13,7 @@ exports[`Popover all props renders 1`] = `
   onElement={[Function]}
   placement="left"
   pointerColor="#fff"
+  zIndex={1}
 >
   <div
     className="color-text shadow-darken25 round"
@@ -50,6 +51,7 @@ exports[`Popover basic renders 1`] = `
   onElement={[Function]}
   placement="right"
   pointerColor="#fff"
+  zIndex={1}
 >
   <div
     className="color-text shadow-darken25 round px12 py12"
@@ -86,6 +88,7 @@ exports[`Popover dark renders 1`] = `
   onElement={[Function]}
   placement="right"
   pointerColor="#273d56"
+  zIndex={1}
 >
   <div
     className="color-white shadow-darken25 round px12 py12"
@@ -122,6 +125,7 @@ exports[`Popover no pointer renders 1`] = `
   onElement={[Function]}
   placement="right"
   pointerColor="#fff"
+  zIndex={1}
 >
   <div
     className="color-text shadow-darken25 round px12 py12"
@@ -158,6 +162,7 @@ exports[`Popover warning renders 1`] = `
   onElement={[Function]}
   placement="right"
   pointerColor="#FFF5A0"
+  zIndex={1}
 >
   <div
     className="color-text shadow-darken25 round px12 py12"

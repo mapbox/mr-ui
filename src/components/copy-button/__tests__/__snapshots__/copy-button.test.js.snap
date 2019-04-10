@@ -40,6 +40,7 @@ exports[`CopyButton Defaults changes state on click 1`] = `
       placement="top"
       receiveFocus={true}
       trapFocus={false}
+      zIndex={1}
     >
       <div
         className="txt-s"
@@ -150,6 +151,7 @@ exports[`CopyButton all props changes state on click 1`] = `
       placement="top"
       receiveFocus={true}
       trapFocus={false}
+      zIndex={1}
     >
       <div
         className="txt-s"
