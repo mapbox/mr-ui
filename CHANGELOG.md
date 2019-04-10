@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.7.0
+- [feature] Add `zIndex` option to **Popover** component.
+
 ## 0.6.1
 - [fix] fix issue that prevented popovers from recognizing the hasPointer prop.
 
@@ -12,6 +15,9 @@
 - 🚨 [breaking change] Remove **FooterLegalStrip** component.
 
 ## 0.4.1-0.4.3
+
+## 0.7.0
+- [feature] Add `zIndex` option to **Popover** component.
 - [fix] Update build script for Babel 7 to fix broken v0.4.0 publication.
 
 ## 0.4.0
