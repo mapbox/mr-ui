@@ -208,6 +208,7 @@ export default class Popover extends React.Component {
         getContainingElement={props.getContainingElement}
         offsetFromAnchor={props.offsetFromAnchor}
         onElement={this.setPopoverElement}
+        zIndex={props.zIndex}
       >
         <div
           key="body"
@@ -333,7 +334,11 @@ Popover.propTypes = {
   /**
    * Props to pass directly to the `<div>` that will wrap your popover content.
    */
-  passthroughProps: PropTypes.object
+  passthroughProps: PropTypes.object,
+  /**
+   * CSS z-index number to order popover over content.
+   */
+  zIndex: PropTypes.number
 };
 
 Popover.defaultProps = {
@@ -348,7 +353,8 @@ Popover.defaultProps = {
   clickOutsideCloses: true,
   escapeCloses: true,
   receiveFocus: true,
-  trapFocus: false
+  trapFocus: false,
+  zIndex: 1
 };
 
 Popover.repositionPopovers = PopoverPositioner.recalculatePositions;

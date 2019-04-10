@@ -82,6 +82,7 @@ exports[`basic shows copy hint when focused 1`] = `
     placement="top"
     receiveFocus={true}
     trapFocus={false}
+    zIndex={1}
   >
     <div
       className="txt-s"

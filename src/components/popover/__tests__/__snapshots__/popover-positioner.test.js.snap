@@ -10,7 +10,7 @@ exports[`PopoverPositioner renders initially with everything hidden 1`] = `
         "position": "absolute",
         "top": 0,
         "visibility": "hidden",
-        "zIndex": 1,
+        "zIndex": 3,
       }
     }
   >
@@ -26,7 +26,7 @@ exports[`PopoverPositioner renders initially with everything hidden 1`] = `
         "position": "absolute",
         "top": 0,
         "visibility": "hidden",
-        "zIndex": 1,
+        "zIndex": 3,
       }
     }
   />
