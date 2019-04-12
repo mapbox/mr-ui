@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.7.1
+- [fix] Evaluate parentNode before removeChild in **page-loading-indicator** component.
+
 ## 0.7.0
 - [feature] Add `zIndex` option to **Popover** component.
 
