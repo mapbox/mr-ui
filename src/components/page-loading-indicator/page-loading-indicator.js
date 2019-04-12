@@ -42,7 +42,7 @@ function end() {
       setTimeout(() => {
         mounted = false;
         canEnd = null;
-        el.parentNode.removeChild(el);
+        if (el.parentNode) el.parentNode.removeChild(el);
         el.className = BASE_CLASSNAME;
         resolve();
       }, 300);
