@@ -113,6 +113,27 @@ testCases.unpadded = {
   )
 };
 
+testCases.pausedFocusTrap = {
+  description: 'wandering focus',
+  element: (
+    <ModalWrapper
+      componentProps={{
+        accessibleTitle: 'Not focus-trapped',
+        size: 'small',
+        focusTrapPaused: true,
+        children: (
+          <div>
+            <p>You can tab out of this modal. Try it!</p>
+            <p>
+              <a href="#">Some link</a>
+            </p>
+          </div>
+        )
+      }}
+    />
+  )
+};
+
 // Automatable test cases
 
 const noDisplayCases = {};

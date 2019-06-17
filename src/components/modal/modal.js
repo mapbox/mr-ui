@@ -130,6 +130,10 @@ export default class Modal extends React.Component {
       modalProps.focusDialog = true;
     }
 
+    if (props.focusTrapPaused) {
+      modalProps.focusTrapPaused = true;
+    }
+
     return <AriaModal {...modalProps}>{dialogBody}</AriaModal>;
   }
 }
@@ -177,6 +181,13 @@ Modal.propTypes = {
    * `'large'` or `'none'`.
    */
   padding: PropTypes.oneOf(['large', 'none']),
+  /**
+   * If `true`, this will allow interaction with elements outside of the
+   * modal container. You normally don't want to set this, but it can be
+   * useful for nesting different components that are displaced to other
+   * parts of the DOM.
+   */
+  focusTrapPaused: PropTypes.bool,
   /**
    * If `true`, the modal will have the accessibility props of an alert modal.
    * (Only affects screen readers.)
