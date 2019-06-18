@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.2
+- [feature] Update `react-aria-modal` to v4.
+- [feature] Allow the **modal** component to pass through the `focusTrapPaused` prop.
+
 ## 0.7.1
 - [fix] Evaluate parentNode before removeChild in **page-loading-indicator** component.
 
