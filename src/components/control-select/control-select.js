@@ -93,7 +93,14 @@ export default class ControlSelect extends React.Component {
     themeLabel: PropTypes.string
   };
 
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+    this.onChange = this.onChange.bind(this);
+  }
+
   onChange = e => {
+    this.setState({ value: e.target.value });
     return this.props.onChange(e.target.value, this.props.id);
   };
 
@@ -169,7 +176,7 @@ export default class ControlSelect extends React.Component {
           />
         )}
         <div className={`select-container ${themeControlSelectContainer}`}>
-          <select {...selectProps} {...extraProps}>
+          <select {...selectProps} {...extraProps} value={this.state.value}>
             {options.map(renderOptions)}
           </select>
           <div className="select-arrow" />
