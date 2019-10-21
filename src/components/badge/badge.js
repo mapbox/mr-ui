@@ -8,13 +8,13 @@ export default class Badge extends React.Component {
     /** Text in the badge. */
     badgeText: PropTypes.string.isRequired,
     /** Badge coloring options. */
-    coloring: PropTypes.oneOf(['blue', 'orange', 'purple']),
+    coloring: PropTypes.oneOf(['blue', 'orange', 'purple', 'green']),
     /** Text in the tooltip. If not provided, there is no tooltip. */
     tooltipText: PropTypes.string
   };
 
   static defaultProps = {
-    coloring: 'orange'
+    coloring: 'green'
   };
 
   render() {
@@ -24,7 +24,8 @@ export default class Badge extends React.Component {
       {
         'bg-blue-faint color-blue ': coloring === 'blue',
         'bg-orange-faint color-orange-dark ': coloring === 'orange',
-        'bg-purple-faint color-purple ': coloring === 'purple'
+        'bg-purple-faint color-purple ': coloring === 'purple',
+        'bg-green-faint color-green-dark': coloring === 'green'
       }
     );
 
