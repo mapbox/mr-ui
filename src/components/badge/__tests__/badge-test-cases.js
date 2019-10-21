@@ -33,7 +33,7 @@ testCases.colorAndTooltip = {
   component: Badge,
   props: {
     badgeText: 'Ahoy',
-    coloring: 'green',
+    coloring: 'purple',
     tooltipText:
       'A call used to greet someone or draw attention to something from a distance.'
   }
