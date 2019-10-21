@@ -2,7 +2,7 @@
 
 exports[`badge basic renders as expected 1`] = `
 <div
-  className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-orange-faint color-orange-dark "
+  className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-green-faint color-green-dark"
 >
   Hello
 </div>
@@ -51,7 +51,7 @@ exports[`badge tooltip renders as expected 1`] = `
   textSize="s"
 >
   <div
-    className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-orange-faint color-orange-dark "
+    className="txt-s txt-bold round px6 py3 inline-block cursor-default bg-green-faint color-green-dark"
   >
     Friday
   </div>
