@@ -14,7 +14,7 @@ export default class Badge extends React.Component {
   };
 
   static defaultProps = {
-    coloring: 'green'
+    coloring: 'orange'
   };
 
   render() {
