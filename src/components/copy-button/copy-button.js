@@ -74,11 +74,11 @@ export default class CopyButton extends React.PureComponent {
   };
 
   setClipboard(element) {
-    const { trapFocus } = this.props;
+    const { focusTrapPaused } = this.props;
     this.clipboard = new Clipboard(element, {
       // Setting the container is necessary for Clipboard to function within
       // focus traps, like in a Modal.
-      ...(trapFocus && { container: element })
+      ...(!focusTrapPaused && { container: element })
     });
   }
 
@@ -167,12 +167,12 @@ CopyButton.propTypes = {
    */
   block: PropTypes.bool,
   /**
-   * If `true`, this will maintain focus within a modal container.
-   * You normally don't want to set this, but it can be useful
-   * for nesting different components that are displaced to other
+   * If `true`, this will allow interaction with elements outside of the
+   * modal container. You normally don't want to set this, but it can be
+   * useful for nesting different components that are displaced to other
    * parts of the DOM.
    */
-  trapFocus: PropTypes.bool,
+  focusTrapPaused: PropTypes.bool,
   /**
    * The `className` prop of the `<button>`.
    */

@@ -100,7 +100,7 @@ export default class Copiable extends React.Component {
         <CopyButton
           text={props.value}
           block={true}
-          trapFocus={props.trapFocus}
+          focusTrapPaused={props.focusTrapPaused}
         />
       </div>
     );
@@ -158,12 +158,12 @@ Copiable.propTypes = {
    */
   value: PropTypes.string.isRequired,
   /**
-   * If `true`, this will maintain focus within a modal container.
-   * You normally don't want to set this, but it can be useful
-   * for nesting different components that are displaced to other
+   * If `true`, this will allow interaction with elements outside of the
+   * modal container. You normally don't want to set this, but it can be
+   * useful for nesting different components that are displaced to other
    * parts of the DOM.
    */
-  trapFocus: PropTypes.bool,
+  focusTrapPaused: PropTypes.bool,
   /**
    * If `false` (default), the text will be overflow to multiple lines,
    * and words longer than a single line (e.g. long access tokens or URLs)

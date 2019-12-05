@@ -41,7 +41,7 @@ class InModal extends React.Component {
     }
     return (
       <Modal accessibleTitle="Copy test" onExit={this.toggleModal}>
-        <CopyButton trapFocus={true} text="You copied this text from a modal" />
+        <CopyButton text="You copied this text from a modal" />
       </Modal>
     );
   }
