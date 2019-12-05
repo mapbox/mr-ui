@@ -97,7 +97,11 @@ export default class Copiable extends React.Component {
 
     return (
       <div className="absolute top right px6 py6">
-        <CopyButton text={props.value} block={true} />
+        <CopyButton
+          text={props.value}
+          block={true}
+          focusTrapPaused={props.focusTrapPaused}
+        />
       </div>
     );
   }
@@ -153,6 +157,13 @@ Copiable.propTypes = {
    * The text that will be displayed and copied.
    */
   value: PropTypes.string.isRequired,
+  /**
+   * If `true`, this will allow interaction with elements outside of the
+   * modal container. You normally don't want to set this, but it can be
+   * useful for nesting different components that are displaced to other
+   * parts of the DOM.
+   */
+  focusTrapPaused: PropTypes.bool,
   /**
    * If `false` (default), the text will be overflow to multiple lines,
    * and words longer than a single line (e.g. long access tokens or URLs)
