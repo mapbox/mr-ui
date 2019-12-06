@@ -10,18 +10,6 @@ const mockUserAgent =
 
 jest.mock('clipboard/dist/clipboard.min.js');
 
-// jest.mock('clipboard/dist/clipboard.min.js', () => {
-//   class Clipboard {}
-//   Clipboard.isSupported = () => true;
-//   return Clipboard;
-// });
-
-// const FakeClipboard = jest.fn(() => {
-//   class Clipboard {}
-//   Clipboard.isSupported = () => true;
-//   return Clipboard;
-// });
-
 Clipboard.isSupported = () => true;
 
 jest.mock('../../utils/get-window', () => {
