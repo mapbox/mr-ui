@@ -3,15 +3,15 @@ import { shallow } from 'enzyme';
 import delay from 'delay';
 import { testCases } from './copy-button-test-cases';
 import getWindow from '../../utils/get-window';
+import Clipboard from 'clipboard/dist/clipboard.min.js';
 
 const mockUserAgent =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36';
 
-jest.mock('clipboard/dist/clipboard.min.js', () => {
-  class Clipboard {}
-  Clipboard.isSupported = () => true;
-  return Clipboard;
-});
+jest.mock('clipboard/dist/clipboard.min.js');
+
+Clipboard.isSupported = () => true;
+
 jest.mock('../../utils/get-window', () => {
   return jest.fn();
 });
@@ -49,6 +49,14 @@ describe('CopyButton', () => {
         expect(wrapper).toMatchSnapshot();
       });
     });
+
+    test('focusTrapPaused false/undefined updates container element when setting clipboard', () => {
+      wrapper.instance().setClipboard('cool container');
+
+      expect(Clipboard).toHaveBeenCalledWith('cool container', {
+        container: 'cool container'
+      });
+    });
   });
 
   describe(testCases.allProps.description, () => {
@@ -78,6 +86,12 @@ describe('CopyButton', () => {
       wrapper.find('button').prop('onClick')();
       expect(testCase.props.onCopy).toHaveBeenCalledTimes(1);
       expect(testCase.props.onCopy).toHaveBeenCalledWith(testCase.props.text);
+    });
+
+    test('focusTrapPaused true does not update container element when setting clipboard', () => {
+      wrapper.instance().setClipboard('cool container');
+
+      expect(Clipboard).toHaveBeenCalledWith('cool container', {});
     });
   });
 });
