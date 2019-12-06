@@ -20,6 +20,7 @@ testCases.allProps = {
     text: 'more copiable text',
     onCopy: safeSpy(),
     className: 'px6 py6 btn btn--purple btn--stroke',
+    focusTrapPaused: true,
     passthroughProps: {
       'data-test': 'copy-button'
     }

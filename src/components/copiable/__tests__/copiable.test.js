@@ -73,3 +73,15 @@ describe(testCases.basic.description, () => {
     });
   });
 });
+
+describe(testCases.focusTrapPaused.description, () => {
+  beforeEach(() => {
+    testCase = testCases.focusTrapPaused;
+    wrapper = shallow(React.createElement(testCase.component, testCase.props));
+  });
+
+  test('passed focusTrapPaused to CopyButton', () => {
+    const focusTrapPaused = wrapper.find('CopyButton').props().focusTrapPaused;
+    expect(focusTrapPaused).toBe(true);
+  });
+});

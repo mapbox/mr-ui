@@ -11,6 +11,16 @@ testCases.basic = {
   }
 };
 
+testCases.focusTrapPaused = {
+  description: 'focusTrapPaused',
+  component: Copiable,
+  props: {
+    focusTrapPaused: true,
+    value:
+      'thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy '
+  }
+};
+
 testCases.truncated = {
   description: 'truncated',
   component: Copiable,
