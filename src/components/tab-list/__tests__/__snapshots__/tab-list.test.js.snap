@@ -1,5 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TabList a label contains a node renders 1`] = `
+<div
+  className="clearfix"
+>
+  <div
+    className="fl"
+    key="0"
+  >
+    <button
+      className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--transparent "
+      data-test="one"
+      key="one"
+      onClick={[Function]}
+      type="button"
+    >
+      <Icon
+        inline={false}
+        name="star"
+        passthroughProps={Object {}}
+        size={18}
+      />
+    </button>
+  </div>
+  <div
+    className="fl"
+    key="1"
+  >
+    <button
+      className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--transparent "
+      data-test="two"
+      key="two"
+      onClick={[Function]}
+      type="button"
+    >
+      Label two
+    </button>
+  </div>
+  <div
+    className="fl"
+    key="0"
+  >
+    <button
+      className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block-mm none border--blue txt-bold "
+      data-test="three"
+      key="three"
+      onClick={[Function]}
+      type="button"
+    >
+      Label three
+    </button>
+  </div>
+  <div
+    className="fl"
+    key="1"
+  >
+    <button
+      className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block-mm none border--transparent "
+      data-test="four"
+      key="four"
+      onClick={[Function]}
+      type="button"
+    >
+      Label four
+    </button>
+  </div>
+  <div
+    className="fl"
+  >
+    <PopoverTrigger
+      block={false}
+      content={
+        Array [
+          <div
+            className="block"
+          >
+            <button
+              className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 border-b--0 border--blue txt-bold "
+              data-test="three"
+              onClick={[Function]}
+              type="button"
+            >
+              Label three
+            </button>
+          </div>,
+          <div
+            className="block"
+          >
+            <button
+              className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 border-b--0 border--transparent "
+              data-test="four"
+              onClick={[Function]}
+              type="button"
+            >
+              Label four
+            </button>
+          </div>,
+        ]
+      }
+      disabled={false}
+      onPopoverClose={[Function]}
+      onPopoverOpen={[Function]}
+      popoverProps={
+        Object {
+          "placement": "bottom",
+          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+        }
+      }
+      receiveFocus={true}
+      renderHiddenContent={false}
+      respondsToClick={true}
+      respondsToFocus={false}
+      respondsToHover={true}
+      trapFocus={true}
+      triggerProps={
+        Object {
+          "data-test": "more-dropdown-menu",
+        }
+      }
+    >
+      <button
+        className="px6 py12 mr12 align-l cursor-pointer none-mm"
+        type="button"
+      >
+        More +
+      </button>
+    </PopoverTrigger>
+  </div>
+</div>
+`;
+
 exports[`TabList basic renders 1`] = `
 <div
   className="clearfix"

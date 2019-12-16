@@ -72,4 +72,31 @@ describe('TabList', () => {
       wrapper.update();
     });
   });
+  describe(testCases.labelNode.description, () => {
+    beforeEach(() => {
+      testCase = testCases.labelNode;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('renders', () => {
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    test('onChange is called', () => {
+      wrapper
+        .find('button')
+        .first()
+        .props()
+        .onClick('one');
+      expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
+      expect(testCase.props.onChange).toHaveBeenCalledWith('one');
+    });
+
+    test('activeItem prop updates active item', () => {
+      wrapper.setProps({ activeItem: 'one' });
+      wrapper.update();
+    });
+  });
 });
