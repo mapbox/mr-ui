@@ -1,5 +1,8 @@
 # Changelog
 
+## master
+- [feature] Allow `Tablist` label to accept a node.
+
 ## 0.7.3
 - [feature] Allow the **CopyButton** and **Copiable** components to pass through the `focusTrapPaused` prop.
 

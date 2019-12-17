@@ -10,7 +10,8 @@ export default class TabList extends React.PureComponent {
         /** Identifying value for tab list item. */
         id: PropTypes.string.isRequired,
         /** The name of the tab to be displayed. */
-        label: PropTypes.string.isRequired,
+        label: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+          .isRequired,
         /** Determines if the state of the tab list item is active. */
         active: PropTypes.bool,
         /** Link to the page the lab list item should take you to when clicked. */

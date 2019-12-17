@@ -1,5 +1,7 @@
+import React from 'react';
 import safeSpy from '../../../test-utils/safe-spy';
 import TabList from '../tab-list';
+import Icon from '../../icon';
 
 const testCases = {};
 
@@ -43,6 +45,21 @@ testCases.truncateAll = {
       { id: 'two', label: 'Label two', href: '#' },
       { id: 'three', label: 'Label three', href: '#' },
       { id: 'four', label: 'Label four', href: '#' }
+    ]
+  }
+};
+
+testCases.labelNode = {
+  description: 'a label contains a node',
+  component: TabList,
+  props: {
+    onChange: safeSpy(),
+    activeItem: 'three',
+    items: [
+      { id: 'one', label: <Icon name="star" /> },
+      { id: 'two', label: 'Label two' },
+      { id: 'three', label: 'Label three' },
+      { id: 'four', label: 'Label four' }
     ]
   }
 };
