@@ -9,6 +9,7 @@ exports[`TabList a label contains a node renders 1`] = `
     key="0"
   >
     <button
+      aria-label="one"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--transparent "
       data-test="one"
       key="one"
@@ -28,6 +29,7 @@ exports[`TabList a label contains a node renders 1`] = `
     key="1"
   >
     <button
+      aria-label="two"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--transparent "
       data-test="two"
       key="two"
@@ -42,6 +44,7 @@ exports[`TabList a label contains a node renders 1`] = `
     key="0"
   >
     <button
+      aria-label="three"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block-mm none border--blue txt-bold "
       data-test="three"
       key="three"
@@ -56,6 +59,7 @@ exports[`TabList a label contains a node renders 1`] = `
     key="1"
   >
     <button
+      aria-label="four"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block-mm none border--transparent "
       data-test="four"
       key="four"
@@ -76,6 +80,7 @@ exports[`TabList a label contains a node renders 1`] = `
             className="block"
           >
             <button
+              aria-label="three"
               className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 border-b--0 border--blue txt-bold "
               data-test="three"
               onClick={[Function]}
@@ -88,6 +93,7 @@ exports[`TabList a label contains a node renders 1`] = `
             className="block"
           >
             <button
+              aria-label="four"
               className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 border-b--0 border--transparent "
               data-test="four"
               onClick={[Function]}
@@ -120,6 +126,7 @@ exports[`TabList a label contains a node renders 1`] = `
       }
     >
       <button
+        aria-label="More"
         className="px6 py12 mr12 align-l cursor-pointer none-mm"
         type="button"
       >
@@ -139,6 +146,7 @@ exports[`TabList basic renders 1`] = `
     key="0"
   >
     <button
+      aria-label="one"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--transparent "
       data-test="one"
       key="one"
@@ -153,6 +161,7 @@ exports[`TabList basic renders 1`] = `
     key="1"
   >
     <button
+      aria-label="two"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--transparent "
       data-test="two"
       key="two"
@@ -167,6 +176,7 @@ exports[`TabList basic renders 1`] = `
     key="0"
   >
     <button
+      aria-label="three"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block-mm none border--blue txt-bold "
       data-test="three"
       key="three"
@@ -181,6 +191,7 @@ exports[`TabList basic renders 1`] = `
     key="1"
   >
     <button
+      aria-label="four"
       className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block-mm none border--transparent "
       data-test="four"
       key="four"
@@ -201,6 +212,7 @@ exports[`TabList basic renders 1`] = `
             className="block"
           >
             <button
+              aria-label="three"
               className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 border-b--0 border--blue txt-bold "
               data-test="three"
               onClick={[Function]}
@@ -213,6 +225,7 @@ exports[`TabList basic renders 1`] = `
             className="block"
           >
             <button
+              aria-label="four"
               className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 border-b--0 border--transparent "
               data-test="four"
               onClick={[Function]}
@@ -245,6 +258,7 @@ exports[`TabList basic renders 1`] = `
       }
     >
       <button
+        aria-label="More"
         className="px6 py12 mr12 align-l cursor-pointer none-mm"
         type="button"
       >
@@ -364,6 +378,7 @@ exports[`TabList links renders 1`] = `
       }
     >
       <button
+        aria-label="More"
         className="px6 py12 mr12 align-l cursor-pointer none-mm"
         type="button"
       >
@@ -505,6 +520,7 @@ exports[`TabList truncate all renders 1`] = `
       }
     >
       <button
+        aria-label="More"
         className="px6 py12 mr12 align-l cursor-pointer none-mm"
         type="button"
       >

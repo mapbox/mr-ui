@@ -53,6 +53,7 @@ function ToggleCodeButton(props) {
   const text = props.codeIsVisible ? 'Hide code' : 'Show code';
   return (
     <button
+      aria-label={text}
       className="block btn btn--s btn--gray unround-b round-t"
       onClick={props.onClick}
     >

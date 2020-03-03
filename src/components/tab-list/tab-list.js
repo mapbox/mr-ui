@@ -113,6 +113,7 @@ export default class TabList extends React.PureComponent {
       } else {
         renderedItem = (
           <button
+            aria-label={item.id}
             key={item.id}
             type="button"
             className={renderedItemClasses}
@@ -187,6 +188,7 @@ export default class TabList extends React.PureComponent {
           }}
         >
           <button
+            aria-label="More"
             className="px6 py12 mr12 align-l cursor-pointer none-mm"
             type="button"
           >

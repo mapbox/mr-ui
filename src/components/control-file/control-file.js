@@ -177,6 +177,7 @@ export default class ControlFile extends React.Component {
             <div className="flex-child">
               <Tooltip content="Clear" block={true}>
                 <button
+                  aria-label="Clear"
                   type="button"
                   className={`block link link--gray relative bg-transparent py0 ${themeControlFileClear}`}
                   onClick={this.onClear}

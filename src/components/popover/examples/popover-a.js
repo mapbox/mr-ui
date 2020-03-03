@@ -54,6 +54,7 @@ export default class Example extends React.Component {
           onClick={this.togglePopover}
           size="medium"
           passthroughProps={{
+            'aria-label': 'Toggle popover',
             ref: this.setAnchor
           }}
         >

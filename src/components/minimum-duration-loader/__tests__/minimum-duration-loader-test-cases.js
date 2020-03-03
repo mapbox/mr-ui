@@ -24,7 +24,7 @@ class TestMinimumDurationLoader extends React.Component {
           Current Loading State: {this.state.isLoaded ? 'Loaded' : 'Not Loaded'}
         </div>
         <div>
-          <button className="btn" onClick={this.toggleLoading}>
+          <button aria-label="Toggle" className="btn" onClick={this.toggleLoading}>
             Toggle Loading State
           </button>
         </div>

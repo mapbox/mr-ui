@@ -25,7 +25,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-default`}
           respondsToClick={options.respondsToClick}
         >
-          <button className={buttonClasses}>default</button>
+          <button aria-label="default" className={buttonClasses}>default</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -35,7 +35,7 @@ function getTooltipList(options = {}) {
           respondsToClick={options.respondsToClick}
           disabled={true}
         >
-          <button className={buttonClasses}>disabled</button>
+          <button aria-hidden={true} className={buttonClasses}>disabled</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -45,7 +45,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-top`}
           respondsToClick={options.respondsToClick}
         >
-          <button className={buttonClasses}>top</button>
+          <button aria-label="top" className={buttonClasses}>top</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -55,7 +55,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-left`}
           respondsToClick={options.respondsToClick}
         >
-          <button className={buttonClasses}>left</button>
+          <button aria-label="left" className={buttonClasses}>left</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -65,7 +65,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-right`}
           respondsToClick={options.respondsToClick}
         >
-          <button className={buttonClasses}>right</button>
+          <button aria-label="right" className={buttonClasses}>right</button>
         </Tooltip>
       </div>
       <div className={containerClasses}>
@@ -75,7 +75,7 @@ function getTooltipList(options = {}) {
           testId={`${options.testId}-bottom`}
           respondsToClick={options.respondsToClick}
         >
-          <button className={buttonClasses}>bottom</button>
+          <button aria-label="bottom" className={buttonClasses}>bottom</button>
         </Tooltip>
       </div>
     </div>
@@ -116,7 +116,7 @@ testCases.buttonChild = {
   description: 'Button child',
   component: Tooltip,
   props: {
-    children: <Button>trigger</Button>,
+    children: <Button passthroughProps={{'aria-label': 'trigger'}}>trigger</Button>,
     content: 'Button child'
   }
 };

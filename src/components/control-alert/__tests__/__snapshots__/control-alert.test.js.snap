@@ -131,6 +131,7 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
     textSize="s"
   >
     <button
+      aria-label="Dismiss"
       className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
       data-test="alert-dismiss"
       onClick={[Function]}
@@ -193,6 +194,7 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
     textSize="s"
   >
     <button
+      aria-label="Dismiss"
       className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
       data-test="alert-dismiss"
       onClick={[Function]}
@@ -246,6 +248,7 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
     textSize="s"
   >
     <button
+      aria-label="Dismiss"
       className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
       data-test="alert-dismiss"
       onClick={[Function]}
@@ -299,6 +302,7 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
     textSize="s"
   >
     <button
+      aria-label="Dismiss"
       className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
       data-test="alert-dismiss"
       onClick={[Function]}

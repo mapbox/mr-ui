@@ -14,6 +14,7 @@ exports[`CopyButton Defaults changes state on click 1`] = `
   textSize="s"
 >
   <button
+    aria-label="Copy"
     className="btn btn--xs py3 px3 round"
     data-clipboard-text="Copied by the default test case"
     onClick={[Function]}
@@ -66,6 +67,7 @@ exports[`CopyButton Defaults changes state on click 2`] = `
   textSize="s"
 >
   <button
+    aria-label="Copy"
     className="btn btn--xs py3 px3 round"
     data-clipboard-text="Copied by the default test case"
     onClick={[Function]}
@@ -95,6 +97,7 @@ exports[`CopyButton Defaults renders as expected 1`] = `
   textSize="s"
 >
   <button
+    aria-label="Copy"
     className="btn btn--xs py3 px3 round"
     data-clipboard-text="Copied by the default test case"
     onClick={[Function]}
@@ -124,6 +127,7 @@ exports[`CopyButton all props changes state on click 1`] = `
   textSize="s"
 >
   <button
+    aria-label="Copy"
     className="px6 py6 btn btn--purple btn--stroke"
     data-clipboard-text="more copiable text"
     data-test="copy-button"
@@ -177,6 +181,7 @@ exports[`CopyButton all props changes state on click 2`] = `
   textSize="s"
 >
   <button
+    aria-label="Copy"
     className="px6 py6 btn btn--purple btn--stroke"
     data-clipboard-text="more copiable text"
     data-test="copy-button"
@@ -207,6 +212,7 @@ exports[`CopyButton all props renders as expected 1`] = `
   textSize="s"
 >
   <button
+    aria-label="Copy"
     className="px6 py6 btn btn--purple btn--stroke"
     data-clipboard-text="more copiable text"
     data-test="copy-button"

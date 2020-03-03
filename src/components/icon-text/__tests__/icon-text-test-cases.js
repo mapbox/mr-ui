@@ -45,7 +45,7 @@ testCases.bothIcons = {
 testCases.buttonyDisplay = {
   description: 'a buttony look',
   element: (
-    <button type="button" className="link txt-bold txt-s block">
+    <button aria-label="Duplicate" type="button" className="link txt-bold txt-s block">
       <IconText iconBefore="duplicate">Duplicate</IconText>
     </button>
   )

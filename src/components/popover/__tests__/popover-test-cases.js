@@ -57,6 +57,7 @@ class PopoverTrigger extends React.Component {
     return (
       <div className="inline-block">
         <button
+          aria-label="Trigger"
           ref={this.setAnchorNode}
           className={buttonClasses}
           onClick={this.togglePopover}
@@ -180,7 +181,7 @@ testCases.receiveFocus = {
             <input className="input" placeholder="eh?" />
           </div>
           <div className="flex-child">
-            <button className="btn ml6">Submit</button>
+            <button aria-label="Submit" className="btn ml6">Submit</button>
           </div>
         </div>
       }
@@ -201,7 +202,7 @@ testCases.doNotReceiveFocus = {
             <input className="input" placeholder="eh?" />
           </div>
           <div className="flex-child">
-            <button className="btn ml6">Submit</button>
+            <button aria-label="Submit" className="btn ml6">Submit</button>
           </div>
         </div>
       }
@@ -222,7 +223,7 @@ testCases.trapFocus = {
             <input className="input" placeholder="eh?" />
           </div>
           <div className="flex-child">
-            <button className="btn ml6">Submit</button>
+            <button aria-label="Submit" className="btn ml6">Submit</button>
           </div>
         </div>
       }

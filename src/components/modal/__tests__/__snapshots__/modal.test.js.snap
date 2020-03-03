@@ -41,6 +41,7 @@ exports[`Modal No fixed width, display only renders 1`] = `
         textSize="s"
       >
         <button
+          aria-label="Close"
           className="btn btn--transparent unround-t unround-br color-gray py12 px12"
           data-test="modal-close"
           onClick={[MockFunction]}
@@ -88,6 +89,7 @@ exports[`Modal all options renders 1`] = `
         I am a message
       </div>
       <button
+        aria-label="press me"
         className="btn"
         id="foo"
       >
@@ -110,6 +112,7 @@ exports[`Modal all options renders 1`] = `
         textSize="s"
       >
         <button
+          aria-label="Close"
           className="btn btn--transparent unround-t unround-br color-gray py12 px12"
           data-test="modal-close"
           onClick={[MockFunction]}
@@ -194,6 +197,7 @@ exports[`Modal basic default renders 1`] = `
         textSize="s"
       >
         <button
+          aria-label="Close"
           className="btn btn--transparent unround-t unround-br color-gray py12 px12"
           data-test="modal-close"
           onClick={[MockFunction]}
@@ -265,6 +269,7 @@ exports[`Modal basic small renders 1`] = `
         textSize="s"
       >
         <button
+          aria-label="Close"
           className="btn btn--transparent unround-t unround-br color-gray py12 px12"
           data-test="modal-close"
           onClick={[MockFunction]}

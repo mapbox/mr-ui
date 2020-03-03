@@ -86,7 +86,7 @@ class UnderlineTabItem extends React.PureComponent {
     }
 
     return (
-      <button type="button" {...universalProps}>
+      <button aria-label={label} type="button" {...universalProps}>
         {content}
       </button>
     );

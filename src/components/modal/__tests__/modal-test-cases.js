@@ -25,7 +25,7 @@ class ModalWrapper extends React.Component {
     );
     return (
       <div>
-        <button type="button" className="btn" onClick={this.toggleModal}>
+        <button aria-label="Open modal" type="button" className="btn" onClick={this.toggleModal}>
           Open modal
         </button>
         {modal}
@@ -202,7 +202,7 @@ noDisplayCases.allOptions = {
     children: (
       <div>
         <div className="mb12">I am a message</div>
-        <button id="foo" className="btn">
+        <button aria-label="press me" id="foo" className="btn">
           press me
         </button>
       </div>

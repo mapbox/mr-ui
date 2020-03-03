@@ -54,6 +54,7 @@ export default class ControlAlert extends React.Component {
     return (
       <Tooltip content="Dismiss" block={true}>
         <button
+          aria-label="Dismiss"
           className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
           data-test="alert-dismiss"
           onClick={this.onButtonClick}

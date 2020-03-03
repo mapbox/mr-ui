@@ -13,7 +13,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <button className="btn btn--purple" onClick={this.show}>
+        <button aria-label="Show for 1 second" className="btn btn--purple" onClick={this.show}>
           Show for 1 second
         </button>
       </div>

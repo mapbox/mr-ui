@@ -9,6 +9,7 @@ exports[`PopoverTrigger default props renders 1`] = `
   onKeyDown={[Function]}
 >
   <button
+    aria-label="Trigger"
     className="btn"
   >
     Trigger
@@ -25,6 +26,7 @@ exports[`PopoverTrigger responds to all interactions renders 1`] = `
   onKeyDown={[Function]}
 >
   <button
+    aria-label="Trigger"
     className="btn"
   >
     Trigger

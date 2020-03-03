@@ -138,6 +138,7 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
         textSize="s"
       >
         <button
+          aria-label="Clear"
           className="block link link--gray relative bg-transparent py0 "
           data-test="control-file-clear"
           onClick={[Function]}
@@ -343,6 +344,7 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
         textSize="s"
       >
         <button
+          aria-label="Clear"
           className="block link link--gray relative bg-transparent py0 "
           data-test="control-file-clear"
           onClick={[Function]}

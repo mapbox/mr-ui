@@ -67,6 +67,7 @@ export default class ControlCard extends React.Component {
       <div className="absolute top right mt18 mr18">
         <Tooltip content={toolTipMessage} block={true}>
           <button
+            aria-label={toolTipMessage}
             type="button"
             className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
             onClick={onButtonClick}
