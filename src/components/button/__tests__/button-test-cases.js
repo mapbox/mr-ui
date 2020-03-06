@@ -12,7 +12,7 @@ testCases.primary = {
     children: 'Primary',
     onClick: safeSpy(),
     passthroughProps: {
-      'aria-label': 'Primary'
+      'aria-label': 'Example primary button'
     }
   }
 };
@@ -25,7 +25,7 @@ testCases.secondary = {
     variant: 'secondary',
     onClick: safeSpy(),
     passthroughProps: {
-      'aria-label': 'Secondary'
+      'aria-label': 'Example secondary button'
     }
   }
 };
@@ -38,7 +38,7 @@ testCases.discouraging = {
     variant: 'discouraging',
     onClick: safeSpy(),
     passthroughProps: {
-      'aria-label': 'Discouraging'
+      'aria-label': 'Example discouraging button'
     }
   }
 };
@@ -51,7 +51,7 @@ testCases.destructive = {
     variant: 'destructive',
     onClick: safeSpy(),
     passthroughProps: {
-      'aria-label': 'Destructive'
+      'aria-label': 'Example destructive button'
     }
   }
 };
@@ -64,7 +64,7 @@ testCases.appPrimary = {
     variant: 'appPrimary',
     onClick: safeSpy(),
     passthroughProps: {
-      'aria-label': 'AppPrimary'
+      'aria-label': 'Example smaller app primary button'
     }
   }
 };
@@ -77,7 +77,7 @@ testCases.appSecondary = {
     variant: 'appSecondary',
     onClick: safeSpy(),
     passthroughProps: {
-      'aria-label': 'AppSecondary'
+      'aria-label': 'Example smaller app secondary button'
     }
   }
 };
@@ -102,7 +102,7 @@ testCases.fullWidthPurple = {
     color: 'purple',
     width: 'full',
     passthroughProps: {
-      'aria-label': 'Here we are'
+      'aria-label': 'Example full width, purple button'
     }
   }
 };
@@ -118,7 +118,7 @@ testCases.weird = {
     onClick: safeSpy(),
     component: 'div',
     passthroughProps: {
-      'aria-label': 'Save',
+      'aria-label': 'Example save button',
       role: 'button',
       'data-test': 'foo'
     }
