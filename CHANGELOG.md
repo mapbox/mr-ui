@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.8.0
+- [feature] Add `aria-label` to all components, test cases, and examples with buttons.
+
 ## 0.7.4
 - [fix] Allow `Tablist` label to accept a node.
 
