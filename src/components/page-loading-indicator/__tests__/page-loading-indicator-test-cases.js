@@ -17,7 +17,7 @@ class Showman extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.go} className="btn">
+        <button aria-label={`${String(this.props.time)}ms`} onClick={this.go} className="btn">
           {String(this.props.time)}ms
         </button>
       </div>

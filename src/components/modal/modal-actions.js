@@ -16,6 +16,7 @@ export default class ModalActions extends React.Component {
           size="medium"
           onClick={props.secondaryAction.callback}
           data-test="secondary-modal-action"
+          passthroughProps={{ 'aria-label': props.secondaryAction.text }}
         >
           {props.secondaryAction.text}
         </Button>
@@ -36,6 +37,7 @@ export default class ModalActions extends React.Component {
     return (
       <div className="flex-child flex-child--grow flex-child--no-shrink mr12">
         <button
+          aria-label={props.tertiaryAction.text}
           type="button"
           className="link link--gray txt-bold txt-s"
           onClick={props.tertiaryAction.callback}
@@ -62,6 +64,7 @@ export default class ModalActions extends React.Component {
             size="medium"
             onClick={props.primaryAction.callback}
             data-test="primary-modal-action"
+            passthroughProps={{ 'aria-label': props.primaryAction.text }}
           >
             {props.primaryAction.text}
           </Button>

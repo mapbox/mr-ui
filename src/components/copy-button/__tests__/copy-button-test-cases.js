@@ -49,7 +49,7 @@ class InModal extends React.Component {
   render() {
     return (
       <div>
-        <button className="btn" onClick={this.toggleModal}>
+        <button aria-label="Open modal" className="btn" onClick={this.toggleModal}>
           Open modal
         </button>
         {this.renderModal()}

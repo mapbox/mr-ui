@@ -10,7 +10,10 @@ testCases.primary = {
   component: Button,
   props: {
     children: 'Primary',
-    onClick: safeSpy()
+    onClick: safeSpy(),
+    passthroughProps: {
+      'aria-label': 'Example primary button'
+    }
   }
 };
 
@@ -20,7 +23,10 @@ testCases.secondary = {
   props: {
     children: 'Secondary',
     variant: 'secondary',
-    onClick: safeSpy()
+    onClick: safeSpy(),
+    passthroughProps: {
+      'aria-label': 'Example secondary button'
+    }
   }
 };
 
@@ -30,7 +36,10 @@ testCases.discouraging = {
   props: {
     children: 'Discouraging',
     variant: 'discouraging',
-    onClick: safeSpy()
+    onClick: safeSpy(),
+    passthroughProps: {
+      'aria-label': 'Example discouraging button'
+    }
   }
 };
 
@@ -40,7 +49,10 @@ testCases.destructive = {
   props: {
     children: 'Destructive',
     variant: 'destructive',
-    onClick: safeSpy()
+    onClick: safeSpy(),
+    passthroughProps: {
+      'aria-label': 'Example destructive button'
+    }
   }
 };
 
@@ -50,7 +62,10 @@ testCases.appPrimary = {
   props: {
     children: 'AppPrimary',
     variant: 'appPrimary',
-    onClick: safeSpy()
+    onClick: safeSpy(),
+    passthroughProps: {
+      'aria-label': 'Example smaller app primary button'
+    }
   }
 };
 
@@ -60,7 +75,10 @@ testCases.appSecondary = {
   props: {
     children: 'AppSecondary',
     variant: 'appSecondary',
-    onClick: safeSpy()
+    onClick: safeSpy(),
+    passthroughProps: {
+      'aria-label': 'Example smaller app secondary button'
+    }
   }
 };
 
@@ -82,7 +100,10 @@ testCases.fullWidthPurple = {
   props: {
     children: 'Here we are',
     color: 'purple',
-    width: 'full'
+    width: 'full',
+    passthroughProps: {
+      'aria-label': 'Example full width, purple button'
+    }
   }
 };
 
@@ -97,6 +118,7 @@ testCases.weird = {
     onClick: safeSpy(),
     component: 'div',
     passthroughProps: {
+      'aria-label': 'Example save button',
       role: 'button',
       'data-test': 'foo'
     }
@@ -108,7 +130,10 @@ testCases.disabled = {
   component: Button,
   props: {
     children: 'Oops',
-    disabled: true
+    disabled: true,
+    passthroughProps: {
+      'aria-hidden': true
+    }
   }
 };
 
@@ -119,7 +144,10 @@ testCases.disabledSecondary = {
     children: 'Oops',
     disabled: true,
     variant: 'secondary',
-    onClick: safeSpy()
+    onClick: safeSpy(),
+    passthroughProps: {
+      'aria-hidden': true
+    }
   }
 };
 
@@ -131,7 +159,10 @@ testCases.disabledSpecial = {
     variant: 'appPrimary',
     onClick: safeSpy(),
     disabled: true,
-    color: 'gray'
+    color: 'gray',
+    passthroughProps: {
+      'aria-hidden': true
+    }
   }
 };
 

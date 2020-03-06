@@ -49,7 +49,7 @@ export default class Example extends React.Component {
           </div>
           <div className="align-center mt24">
             <input className="input mb12" id="modal-input" />
-            <Button size="medium" onClick={this.closeModal}>
+            <Button size="medium" onClick={this.closeModal} passthroughProps={{ 'aria-label': 'Done' }}>
               Ok, done
             </Button>
           </div>
@@ -61,7 +61,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Button size="medium" onClick={this.openModal}>
+        <Button size="medium" onClick={this.openModal} passthroughProps={{ 'aria-label': 'Show modal' }}>
           Show modal
         </Button>
         {this.renderModal()}

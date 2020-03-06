@@ -27,7 +27,7 @@ export default class Example extends React.Component {
 
     return (
       <div>
-        <button className="btn btn--purple" onClick={this.showLoader}>
+        <button aria-label="Show loader" className="btn btn--purple" onClick={this.showLoader}>
           Show loader
         </button>
         {loader}

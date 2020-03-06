@@ -13,17 +13,17 @@ export default class Example extends React.Component {
       <div>
         <div className="mb24 flex-parent">
           <div className="flex-child w120 mr12">
-            <Button size="medium" width="full" onClick={noop}>
+            <Button size="medium" width="full" onClick={noop} passthroughProps={{ 'aria-label': 'Click door button' }}>
               Door
             </Button>
           </div>
           <div className="flex-child w120 mr12">
-            <Button size="medium" width="full" onClick={noop}>
+            <Button size="medium" width="full" onClick={noop} passthroughProps={{ 'aria-label': 'Click dog button' }}>
               Dog
             </Button>
           </div>
           <div className="flex-child w120 mr12">
-            <Button size="medium" width="full" onClick={noop}>
+            <Button size="medium" width="full" onClick={noop} passthroughProps={{ 'aria-label': 'Click dash button' }}>
               Dash
             </Button>
           </div>
@@ -35,6 +35,7 @@ export default class Example extends React.Component {
               size="medium"
               width="full"
               onClick={noop}
+              passthroughProps={{ 'aria-label': 'Click button A' }}
             >
               A
             </Button>
@@ -45,6 +46,7 @@ export default class Example extends React.Component {
               size="medium"
               width="full"
               onClick={noop}
+              passthroughProps={{ 'aria-label': 'Click button B' }}
             >
               B
             </Button>
@@ -55,6 +57,7 @@ export default class Example extends React.Component {
               size="medium"
               width="full"
               onClick={noop}
+              passthroughProps={{ 'aria-label': 'Click button C' }}
             >
               C
             </Button>

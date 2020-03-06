@@ -77,6 +77,7 @@ export default class Modal extends React.Component {
         <div className="absolute top right">
           <Tooltip block={true} content="Close">
             <button
+              aria-label="Close"
               type="button"
               className="btn btn--transparent unround-t unround-br color-gray py12 px12"
               onClick={props.onExit}

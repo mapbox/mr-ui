@@ -9,6 +9,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
     key="ant"
   >
     <button
+      aria-label="Ant"
       className="block relative color-gray color-blue-on-hover"
       data-test="ant"
       onClick={[Function]}
@@ -35,6 +36,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
     key="bug"
   >
     <button
+      aria-label="Bug"
       className="block relative color-gray-light cursor-default"
       data-test="bug"
       onClick={[Function]}
@@ -61,6 +63,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
     key="cat"
   >
     <button
+      aria-label="Cat"
       className="block relative color-gray-dark cursor-default"
       data-test="cat"
       onClick={[Function]}
@@ -97,6 +100,7 @@ exports[`customized renders as expected 1`] = `
     key="A"
   >
     <button
+      aria-label="Letter A"
       className="block relative color-pink cursor-default"
       data-test="A"
       onClick={[Function]}
@@ -126,6 +130,7 @@ exports[`customized renders as expected 1`] = `
     key="B"
   >
     <button
+      aria-label="Letter B"
       className="block relative color-purple color-pink-on-hover"
       data-test="B"
       onClick={[Function]}
@@ -152,6 +157,7 @@ exports[`customized renders as expected 1`] = `
     key="C"
   >
     <button
+      aria-label="Letter C"
       className="block relative color-purple color-pink-on-hover"
       data-test="C"
       onClick={[Function]}
@@ -185,6 +191,7 @@ exports[`defaults renders as expected 1`] = `
     key="A"
   >
     <button
+      aria-label="Letter A"
       className="block relative color-gray color-blue-on-hover"
       data-test="A"
       onClick={[Function]}
@@ -211,6 +218,7 @@ exports[`defaults renders as expected 1`] = `
     key="B"
   >
     <button
+      aria-label="Letter B"
       className="block relative color-gray-dark cursor-default"
       data-test="B"
       onClick={[Function]}
@@ -240,6 +248,7 @@ exports[`defaults renders as expected 1`] = `
     key="C"
   >
     <button
+      aria-label="Letter C"
       className="block relative color-gray color-blue-on-hover"
       data-test="C"
       onClick={[Function]}
@@ -361,6 +370,7 @@ exports[`large renders as expected 1`] = `
     key="A"
   >
     <button
+      aria-label="Letter A"
       className="block relative color-gray color-blue-on-hover"
       data-test="A"
       onClick={[Function]}
@@ -387,6 +397,7 @@ exports[`large renders as expected 1`] = `
     key="B"
   >
     <button
+      aria-label="Letter B"
       className="block relative color-gray color-blue-on-hover"
       data-test="B"
       onClick={[Function]}
@@ -413,6 +424,7 @@ exports[`large renders as expected 1`] = `
     key="C"
   >
     <button
+      aria-label="Letter C"
       className="block relative color-gray-dark cursor-default"
       data-test="C"
       onClick={[Function]}
@@ -449,6 +461,7 @@ exports[`overlap renders as expected 1`] = `
     key="A"
   >
     <button
+      aria-label="Letter A"
       className="block relative mb-neg1 mt-neg1 color-gray color-blue-on-hover"
       data-test="A"
       onClick={[Function]}
@@ -475,6 +488,7 @@ exports[`overlap renders as expected 1`] = `
     key="B"
   >
     <button
+      aria-label="Letter B"
       className="block relative mb-neg1 mt-neg1 color-gray-dark cursor-default"
       data-test="B"
       onClick={[Function]}
@@ -504,6 +518,7 @@ exports[`overlap renders as expected 1`] = `
     key="C"
   >
     <button
+      aria-label="Letter C"
       className="block relative mb-neg1 mt-neg1 color-gray color-blue-on-hover"
       data-test="C"
       onClick={[Function]}
@@ -537,6 +552,7 @@ exports[`small renders as expected 1`] = `
     key="A"
   >
     <button
+      aria-label="Letter A"
       className="block relative color-gray color-blue-on-hover"
       data-test="A"
       onClick={[Function]}
@@ -563,6 +579,7 @@ exports[`small renders as expected 1`] = `
     key="B"
   >
     <button
+      aria-label="Letter B"
       className="block relative color-gray-dark cursor-default"
       data-test="B"
       onClick={[Function]}
@@ -592,6 +609,7 @@ exports[`small renders as expected 1`] = `
     key="C"
   >
     <button
+      aria-label="Letter C"
       className="block relative color-gray color-blue-on-hover"
       data-test="C"
       onClick={[Function]}

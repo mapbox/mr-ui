@@ -63,6 +63,7 @@ export default class AccordionItem extends React.Component {
     return (
       <div className={themeItem}>
         <button
+          aria-label="Toggle"
           className={buttonClasses}
           disabled={disabled}
           data-test={id}

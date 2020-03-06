@@ -29,6 +29,7 @@ export default class Example extends React.Component {
     return (
       <div className="flex-parent flex-parent--end-main mr18 mb18">
         <button
+          aria-label="Show card"
           className="color-gray-dark color-blue-on-hover flex-child"
           onClick={this.toggleCard}
           type="button"

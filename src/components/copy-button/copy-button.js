@@ -126,6 +126,7 @@ export default class CopyButton extends React.PureComponent {
         block={props.block}
       >
         <button
+          aria-label="Copy"
           type="button"
           className={buttonClasses}
           {...props.passthroughProps}

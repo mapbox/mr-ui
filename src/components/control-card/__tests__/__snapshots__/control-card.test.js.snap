@@ -37,6 +37,7 @@ exports[`ControlCard collapsible onButtonClick is called 1`] = `
       textSize="s"
     >
       <button
+        aria-label="Collapse"
         className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
         onClick={
           [MockFunction] {
@@ -95,6 +96,7 @@ exports[`ControlCard collapsible renders as expected 1`] = `
       textSize="s"
     >
       <button
+        aria-label="Collapse"
         className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
         onClick={[MockFunction]}
         type="button"
@@ -141,6 +143,7 @@ exports[`ControlCard sized title and closable onButtonClick is called 1`] = `
       textSize="s"
     >
       <button
+        aria-label="Close"
         className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
         onClick={
           [MockFunction] {
@@ -199,6 +202,7 @@ exports[`ControlCard sized title and closable renders as expected 1`] = `
       textSize="s"
     >
       <button
+        aria-label="Close"
         className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
         onClick={[MockFunction]}
         type="button"
