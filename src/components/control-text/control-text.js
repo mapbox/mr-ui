@@ -44,7 +44,7 @@ export default class ControlText extends React.Component {
      */
     onChange: PropTypes.func.isRequired,
     /** The control's value. Can be an empty string to indicate no value. */
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     /** Type attribute to override the existing default of 'text' */
     type: PropTypes.string,
     /** Label for the control. */
