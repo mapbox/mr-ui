@@ -1,6 +1,6 @@
 # Changelog
 
-## Master
+## 0.9.1
 - [fix] Initialize `Clipboard` in **CopyButton** after it is destroyed so it can be copied again.
 
 ## 0.9.0
