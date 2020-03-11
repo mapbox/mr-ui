@@ -29,9 +29,7 @@ export default class CopyButton extends React.PureComponent {
 
   componentWillUnmount() {
     clearTimeout(this.revertTimer);
-    if (this.clipboard) {
-      this.clipboard.destroy();
-    }
+    this.destroyClipboard();
   }
 
   handleCopyButtonClick = () => {
@@ -41,6 +39,7 @@ export default class CopyButton extends React.PureComponent {
       onCopy(text);
     }
     this.showFeedback();
+    this.destroyClipboard();
   };
 
   showFeedback = () => {
@@ -55,8 +54,8 @@ export default class CopyButton extends React.PureComponent {
     if (nextProps.textEl !== this.props.textEl && copyAvailable) {
       this.setClipboard(nextProps.textEl);
     }
-    if (!copyAvailable && this.clipboard) {
-      this.clipboard.destroy();
+    if (!copyAvailable) {
+      this.destroyClipboard();
     }
   }
 
@@ -71,6 +70,12 @@ export default class CopyButton extends React.PureComponent {
 
   getContainer = () => {
     return this.container;
+  };
+
+  destroyClipboard = () => {
+    if (this.clipboard) {
+      this.clipboard.destroy();
+    }
   };
 
   setClipboard(element) {
