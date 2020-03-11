@@ -1,5 +1,8 @@
 # Changelog
 
+## Master
+- [fix] Initialize `Clipboard` in **CopyButton** after it is destroyed so it can be copied again.
+
 ## 0.9.0
 - [feature] Allow **ControlText** `value` to accept a number or a string.
 - [fix] Destroy `Clipboard` after copy in **CopyButton** to prevent exaggerated scroll length in scrolled code snippets.

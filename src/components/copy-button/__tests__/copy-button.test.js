@@ -42,10 +42,14 @@ describe('CopyButton', () => {
 
     test('changes state on click', () => {
       const destroySpy = jest.spyOn(wrapper.instance(), 'destroyClipboard');
-      wrapper.find('button').prop('onClick')();
+      const setClipboardSpy = jest.spyOn(wrapper.instance(), 'setClipboard');
+      wrapper.find('button').prop('onClick')({
+        target: wrapper.find('button')
+      });
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(destroySpy).toHaveBeenCalled();
+      expect(setClipboardSpy).toHaveBeenCalled();
       return delay(820).then(() => {
         wrapper.update();
         expect(wrapper).toMatchSnapshot();
@@ -76,10 +80,14 @@ describe('CopyButton', () => {
     // Extra classes need to carry over to both states
     test('changes state on click', () => {
       const destroySpy = jest.spyOn(wrapper.instance(), 'destroyClipboard');
-      wrapper.find('button').prop('onClick')();
+      const setClipboardSpy = jest.spyOn(wrapper.instance(), 'setClipboard');
+      wrapper.find('button').prop('onClick')({
+        target: wrapper.find('button')
+      });
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(destroySpy).toHaveBeenCalled();
+      expect(setClipboardSpy).toHaveBeenCalled();
       return delay(820).then(() => {
         wrapper.update();
         expect(wrapper).toMatchSnapshot();
