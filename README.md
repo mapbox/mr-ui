@@ -2,7 +2,7 @@
 
 ![mr-ui logo](https://github.com/mapbox/mr-ui/raw/master/logo/mr-ui.gif)
 
-[![Build Status](https://travis-ci.com/mapbox/mr-ui.svg?token=FB2dZNVWaGo68KZnwz9M&branch=master)](https://travis-ci.com/mapbox/mr-ui)
+[![Build Status](https://travis-ci.com/mapbox/mr-ui.svg?token=FB2dZNVWaGo68KZnwz9M&branch=main)](https://travis-ci.com/mapbox/mr-ui)
 
 Pronounced `'mis-tər yü-'ī`. **M**apbox **R**eact **UI** components.
 
