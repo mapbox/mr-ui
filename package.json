@@ -98,9 +98,9 @@
     "pify": "^3.0.0",
     "prettier": "^2.3.1",
     "prismjs": "^1.15.0",
-    "react": "^16.4.1",
+    "react": "^16.13.1",
     "react-docgen": "^2.21.0",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.0",
     "react-test-renderer": "^16.4.1",
     "regenerator-runtime": "^0.13.7"
