@@ -25,7 +25,12 @@ class ModalWrapper extends React.Component {
     );
     return (
       <div>
-        <button aria-label="Open modal" type="button" className="btn" onClick={this.toggleModal}>
+        <button
+          aria-label="Open modal"
+          type="button"
+          className="btn"
+          onClick={this.toggleModal}
+        >
           Open modal
         </button>
         {modal}
@@ -33,6 +38,90 @@ class ModalWrapper extends React.Component {
     );
   }
 }
+
+class OuterModal extends React.Component {
+  state = {
+    modalOpen: false
+  };
+
+  toggleModal = () => {
+    this.setState(state => ({ modalOpen: !state.modalOpen }));
+  };
+
+  render() {
+    const modal = this.state.modalOpen && (
+      <Modal
+        accessibleTitle="Small modal title"
+        size="small"
+        primaryAction={{
+          text: 'Okay outer',
+          callback: safeSpy()
+        }}
+        onExit={this.toggleModal}
+      >
+        <InnerModal />
+      </Modal>
+    );
+    return (
+      <div>
+        <button
+          aria-label="Open modal"
+          type="button"
+          className="btn"
+          onClick={this.toggleModal}
+        >
+          Open modal
+        </button>
+        {modal}
+      </div>
+    );
+  }
+}
+
+class InnerModal extends React.Component {
+  state = {
+    modalOpen: false
+  };
+
+  toggleModal = () => {
+    this.setState(state => ({ modalOpen: !state.modalOpen }));
+  };
+
+  render() {
+    const modal = this.state.modalOpen && (
+      <Modal
+        alternateLocation="[data-gr-c-s-loaded]"
+        accessibleTitle="Small modal title"
+        size="small"
+        primaryAction={{
+          text: 'Okay inner',
+          callback: safeSpy()
+        }}
+        onExit={this.toggleModal}
+      >
+        <div>hi hello i am inner</div>
+      </Modal>
+    );
+    return (
+      <div>
+        <button
+          aria-label="Open modal"
+          type="button"
+          className="btn"
+          onClick={this.toggleModal}
+        >
+          Open modal
+        </button>
+        {modal}
+      </div>
+    );
+  }
+}
+
+testCases.nested = {
+  description: 'nested modals',
+  element: <OuterModal />
+};
 
 testCases.basicSmallDisplay = {
   description: 'basic small, display only',
