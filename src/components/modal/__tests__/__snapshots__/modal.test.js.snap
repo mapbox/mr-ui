@@ -1,317 +1,327 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal No fixed width, display only renders 1`] = `
-<Displaced
-  focusDialog={true}
-  getApplicationNode={[Function]}
-  mounted={true}
-  onExit={[MockFunction]}
-  titleText="Auto modal title"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
-  underlayProps={
-    Object {
-      "data-popover-ignore-clicks": true,
+<EventTrap>
+  <Displaced
+    focusDialog={true}
+    getApplicationNode={[Function]}
+    mounted={true}
+    onExit={[MockFunction]}
+    titleText="Auto modal title"
+    underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
+    underlayProps={
+      Object {
+        "data-popover-ignore-clicks": true,
+      }
     }
-  }
-  underlayStyle={
-    Object {
-      "zIndex": 1,
+    underlayStyle={
+      Object {
+        "zIndex": 1,
+      }
     }
-  }
->
-  <div
-    className="relative wmax-full  bg-white round px36 py36"
   >
-    <div>
-      No fixed width on the modal container. But very tall.
-    </div>
     <div
-      className="absolute top right"
+      className="relative wmax-full  bg-white round px36 py36"
     >
-      <Tooltip
-        alignment="center"
-        block={true}
-        coloring="light"
-        content="Close"
-        disabled={false}
-        maxWidth="medium"
-        padding="small"
-        placement="top"
-        respondsToClick={false}
-        textSize="s"
+      <div>
+        No fixed width on the modal container. But very tall.
+      </div>
+      <div
+        className="absolute top right"
       >
-        <button
-          aria-label="Close"
-          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
-          data-test="modal-close"
-          onClick={[MockFunction]}
-          type="button"
+        <Tooltip
+          alignment="center"
+          block={true}
+          coloring="light"
+          content="Close"
+          disabled={false}
+          maxWidth="medium"
+          padding="small"
+          placement="top"
+          respondsToClick={false}
+          textSize="s"
         >
-          <Icon
-            inline={false}
-            name="close"
-            passthroughProps={Object {}}
-            size={18}
-          />
-        </button>
-      </Tooltip>
+          <button
+            aria-label="Close"
+            className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+            data-test="modal-close"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <Icon
+              inline={false}
+              name="close"
+              passthroughProps={Object {}}
+              size={18}
+            />
+          </button>
+        </Tooltip>
+      </div>
     </div>
-  </div>
-</Displaced>
+  </Displaced>
+</EventTrap>
 `;
 
 exports[`Modal all options renders 1`] = `
-<Displaced
-  getApplicationNode={[Function]}
-  initialFocus="#foo"
-  mounted={true}
-  onExit={[MockFunction]}
-  titleText="All options"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
-  underlayProps={
-    Object {
-      "data-popover-ignore-clicks": true,
+<EventTrap>
+  <Displaced
+    getApplicationNode={[Function]}
+    initialFocus="#foo"
+    mounted={true}
+    onExit={[MockFunction]}
+    titleText="All options"
+    underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
+    underlayProps={
+      Object {
+        "data-popover-ignore-clicks": true,
+      }
     }
-  }
-  underlayStyle={
-    Object {
-      "zIndex": 1,
+    underlayStyle={
+      Object {
+        "zIndex": 1,
+      }
     }
-  }
->
-  <div
-    className="relative wmax-full w360 bg-white round px36 py36"
   >
-    <div>
-      <div
-        className="mb12"
-      >
-        I am a message
-      </div>
-      <button
-        aria-label="press me"
-        className="btn"
-        id="foo"
-      >
-        press me
-      </button>
-    </div>
     <div
-      className="absolute top right"
+      className="relative wmax-full w360 bg-white round px36 py36"
     >
-      <Tooltip
-        alignment="center"
-        block={true}
-        coloring="light"
-        content="Close"
-        disabled={false}
-        maxWidth="medium"
-        padding="small"
-        placement="top"
-        respondsToClick={false}
-        textSize="s"
-      >
-        <button
-          aria-label="Close"
-          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
-          data-test="modal-close"
-          onClick={[MockFunction]}
-          type="button"
+      <div>
+        <div
+          className="mb12"
         >
-          <Icon
-            inline={false}
-            name="close"
-            passthroughProps={Object {}}
-            size={18}
-          />
+          I am a message
+        </div>
+        <button
+          aria-label="press me"
+          className="btn"
+          id="foo"
+        >
+          press me
         </button>
-      </Tooltip>
+      </div>
+      <div
+        className="absolute top right"
+      >
+        <Tooltip
+          alignment="center"
+          block={true}
+          coloring="light"
+          content="Close"
+          disabled={false}
+          maxWidth="medium"
+          padding="small"
+          placement="top"
+          respondsToClick={false}
+          textSize="s"
+        >
+          <button
+            aria-label="Close"
+            className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+            data-test="modal-close"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <Icon
+              inline={false}
+              name="close"
+              passthroughProps={Object {}}
+              size={18}
+            />
+          </button>
+        </Tooltip>
+      </div>
     </div>
-  </div>
-</Displaced>
+  </Displaced>
+</EventTrap>
 `;
 
 exports[`Modal basic default renders 1`] = `
-<Displaced
-  focusDialog={true}
-  getApplicationNode={[Function]}
-  mounted={true}
-  onExit={[MockFunction]}
-  titleText="Large modal title"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
-  underlayProps={
-    Object {
-      "data-popover-ignore-clicks": true,
+<EventTrap>
+  <Displaced
+    focusDialog={true}
+    getApplicationNode={[Function]}
+    mounted={true}
+    onExit={[MockFunction]}
+    titleText="Large modal title"
+    underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
+    underlayProps={
+      Object {
+        "data-popover-ignore-clicks": true,
+      }
     }
-  }
-  underlayStyle={
-    Object {
-      "zIndex": 1,
+    underlayStyle={
+      Object {
+        "zIndex": 1,
+      }
     }
-  }
->
-  <div
-    className="relative wmax-full w600 bg-white round px36 py36"
   >
-    <div>
-      Large modal body
-    </div>
     <div
-      className="mt24"
+      className="relative wmax-full w600 bg-white round px36 py36"
     >
-      <ModalActions
-        primaryAction={
-          Object {
-            "callback": [MockFunction],
-            "destructive": true,
-            "text": "Okay",
-          }
-        }
-        secondaryAction={
-          Object {
-            "callback": [MockFunction],
-            "text": "Cancel",
-          }
-        }
-        tertiaryAction={
-          Object {
-            "callback": [MockFunction],
-            "text": "Give up",
-          }
-        }
-      />
-    </div>
-    <div
-      className="absolute top right"
-    >
-      <Tooltip
-        alignment="center"
-        block={true}
-        coloring="light"
-        content="Close"
-        disabled={false}
-        maxWidth="medium"
-        padding="small"
-        placement="top"
-        respondsToClick={false}
-        textSize="s"
+      <div>
+        Large modal body
+      </div>
+      <div
+        className="mt24"
       >
-        <button
-          aria-label="Close"
-          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
-          data-test="modal-close"
-          onClick={[MockFunction]}
-          type="button"
+        <ModalActions
+          primaryAction={
+            Object {
+              "callback": [MockFunction],
+              "destructive": true,
+              "text": "Okay",
+            }
+          }
+          secondaryAction={
+            Object {
+              "callback": [MockFunction],
+              "text": "Cancel",
+            }
+          }
+          tertiaryAction={
+            Object {
+              "callback": [MockFunction],
+              "text": "Give up",
+            }
+          }
+        />
+      </div>
+      <div
+        className="absolute top right"
+      >
+        <Tooltip
+          alignment="center"
+          block={true}
+          coloring="light"
+          content="Close"
+          disabled={false}
+          maxWidth="medium"
+          padding="small"
+          placement="top"
+          respondsToClick={false}
+          textSize="s"
         >
-          <Icon
-            inline={false}
-            name="close"
-            passthroughProps={Object {}}
-            size={18}
-          />
-        </button>
-      </Tooltip>
+          <button
+            aria-label="Close"
+            className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+            data-test="modal-close"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <Icon
+              inline={false}
+              name="close"
+              passthroughProps={Object {}}
+              size={18}
+            />
+          </button>
+        </Tooltip>
+      </div>
     </div>
-  </div>
-</Displaced>
+  </Displaced>
+</EventTrap>
 `;
 
 exports[`Modal basic small renders 1`] = `
-<Displaced
-  focusDialog={true}
-  getApplicationNode={[Function]}
-  mounted={true}
-  onExit={[MockFunction]}
-  titleText="Small modal title"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
-  underlayProps={
-    Object {
-      "data-popover-ignore-clicks": true,
+<EventTrap>
+  <Displaced
+    focusDialog={true}
+    getApplicationNode={[Function]}
+    mounted={true}
+    onExit={[MockFunction]}
+    titleText="Small modal title"
+    underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
+    underlayProps={
+      Object {
+        "data-popover-ignore-clicks": true,
+      }
     }
-  }
-  underlayStyle={
-    Object {
-      "zIndex": 1,
+    underlayStyle={
+      Object {
+        "zIndex": 1,
+      }
     }
-  }
->
-  <div
-    className="relative wmax-full w360 bg-white round px36 py36"
   >
-    <div>
-      Small modal body
-    </div>
     <div
-      className="mt24"
+      className="relative wmax-full w360 bg-white round px36 py36"
     >
-      <ModalActions
-        primaryAction={
-          Object {
-            "callback": [MockFunction],
-            "text": "Okay",
-          }
-        }
-      />
-    </div>
-    <div
-      className="absolute top right"
-    >
-      <Tooltip
-        alignment="center"
-        block={true}
-        coloring="light"
-        content="Close"
-        disabled={false}
-        maxWidth="medium"
-        padding="small"
-        placement="top"
-        respondsToClick={false}
-        textSize="s"
+      <div>
+        Small modal body
+      </div>
+      <div
+        className="mt24"
       >
-        <button
-          aria-label="Close"
-          className="btn btn--transparent unround-t unround-br color-gray py12 px12"
-          data-test="modal-close"
-          onClick={[MockFunction]}
-          type="button"
+        <ModalActions
+          primaryAction={
+            Object {
+              "callback": [MockFunction],
+              "text": "Okay",
+            }
+          }
+        />
+      </div>
+      <div
+        className="absolute top right"
+      >
+        <Tooltip
+          alignment="center"
+          block={true}
+          coloring="light"
+          content="Close"
+          disabled={false}
+          maxWidth="medium"
+          padding="small"
+          placement="top"
+          respondsToClick={false}
+          textSize="s"
         >
-          <Icon
-            inline={false}
-            name="close"
-            passthroughProps={Object {}}
-            size={18}
-          />
-        </button>
-      </Tooltip>
+          <button
+            aria-label="Close"
+            className="btn btn--transparent unround-t unround-br color-gray py12 px12"
+            data-test="modal-close"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <Icon
+              inline={false}
+              name="close"
+              passthroughProps={Object {}}
+              size={18}
+            />
+          </button>
+        </Tooltip>
+      </div>
     </div>
-  </div>
-</Displaced>
+  </Displaced>
+</EventTrap>
 `;
 
 exports[`Modal no onExit renders 1`] = `
-<Displaced
-  focusDialog={true}
-  getApplicationNode={[Function]}
-  mounted={true}
-  titleText="No onExit passed as prop"
-  underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
-  underlayProps={
-    Object {
-      "data-popover-ignore-clicks": true,
+<EventTrap>
+  <Displaced
+    focusDialog={true}
+    getApplicationNode={[Function]}
+    mounted={true}
+    titleText="No onExit passed as prop"
+    underlayClass="bg-darken50 px12 py12 px60-mm py60-mm "
+    underlayProps={
+      Object {
+        "data-popover-ignore-clicks": true,
+      }
     }
-  }
-  underlayStyle={
-    Object {
-      "zIndex": 1,
+    underlayStyle={
+      Object {
+        "zIndex": 1,
+      }
     }
-  }
->
-  <div
-    className="relative wmax-full w360 bg-white round px36 py36"
   >
-    <div>
-      You can't close me
+    <div
+      className="relative wmax-full w360 bg-white round px36 py36"
+    >
+      <div>
+        You can't close me
+      </div>
     </div>
-  </div>
-</Displaced>
+  </Displaced>
+</EventTrap>
 `;
