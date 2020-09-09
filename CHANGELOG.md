@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0-beta.0
+- [feature] Trap events in modals by default
+- [fix] rename unsafe lifecycle methods to eliminate warnings under React 16
+
 ## 0.12.0
 
 - [feature] Update dependencies and add browserslist.
