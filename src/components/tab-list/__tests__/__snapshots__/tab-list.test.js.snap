@@ -389,7 +389,7 @@ exports[`TabList links renders 1`] = `
 </div>
 `;
 
-exports[`TabList only show the more+ button if there are more items not currently visible renders 1`] = `
+exports[`TabList only show the more + button if there are more items not currently visible renders 1`] = `
 <div
   className="clearfix"
 >

@@ -51,7 +51,7 @@ testCases.truncateAll = {
 
 testCases.moreButtonOnlyIfNeeded = {
   description:
-    'only show the more+ button if there are more items not currently visible',
+    'only show the more + button if there are more items not currently visible',
   component: TabList,
   props: {
     activeItem: 'one',
