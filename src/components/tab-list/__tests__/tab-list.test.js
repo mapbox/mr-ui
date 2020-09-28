@@ -72,6 +72,25 @@ describe('TabList', () => {
       wrapper.update();
     });
   });
+  describe(testCases.moreButtonOnlyIfNeeded.description, () => {
+    beforeEach(() => {
+      testCase = testCases.moreButtonOnlyIfNeeded;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('renders', () => {
+      expect(
+        toJson(shallow(React.createElement(testCase.component, testCase.props)))
+      ).toMatchSnapshot();
+    });
+
+    test('activeItem prop updates active item', () => {
+      wrapper.setProps({ activeItem: 'one' });
+      wrapper.update();
+    });
+  });
   describe(testCases.labelNode.description, () => {
     beforeEach(() => {
       testCase = testCases.labelNode;
