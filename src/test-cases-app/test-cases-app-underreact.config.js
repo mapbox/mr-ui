@@ -5,6 +5,7 @@ module.exports = () => {
   return {
     siteBasePath: '/', // react-test-kitchen does not currently support configurable basepaths
     jsEntry: path.resolve(__dirname, './index.js'),
-    htmlSource: html
+    htmlSource: html,
+    devServerHistoryFallback: true
   };
 };
