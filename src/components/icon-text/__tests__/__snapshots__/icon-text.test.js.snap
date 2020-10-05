@@ -78,7 +78,7 @@ exports[`icons on both sides, including a non-string one renders as expected 1`]
 
 exports[`inline flex parent renders as expected 1`] = `
 <span
-  className="flex-parent flex-parent--center-cross"
+  className="flex-parent-inline flex-parent--center-cross"
 >
   <span
     className="flex-child mr3"
