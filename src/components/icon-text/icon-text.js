@@ -18,6 +18,7 @@ class IconText extends React.Component {
   render() {
     const { props } = this;
     const spacer = props.gap === 'small' ? '3' : '6';
+    const inline = props.inline ? '-inline' : '';
 
     const before = !props.iconBefore ? null : (
       <span className={`flex-child mr${spacer}`}>
@@ -32,7 +33,7 @@ class IconText extends React.Component {
     );
 
     return (
-      <span className="flex-parent flex-parent--center-cross">
+      <span className={`flex-parent${inline} flex-parent--center-cross`}>
         {before}
         <span className="flex-child">{props.children}</span>
         {after}
@@ -61,11 +62,17 @@ IconText.propTypes = {
   /**
    * An icon to place after the text. See details documented for `iconBefore`.
    */
-  iconAfter: PropTypes.oneOfType([PropTypes.node, PropTypes.string])
+  iconAfter: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /**
+   * A boolean indicating whether the component's wrapper element should be
+   * 'flex-parent' (false) or 'flex-parent-inline' (true).
+   */
+  inline: PropTypes.bool
 };
 
 IconText.defaultProps = {
-  gap: 'small'
+  gap: 'small',
+  inline: false
 };
 
 export default IconText;
