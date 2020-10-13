@@ -202,7 +202,7 @@ export default class TabList extends React.PureComponent {
       <div className="clearfix">
         {alwaysRenderedItems}
         {sometimesHiddenItems}
-        {moreButton}
+        {truncateBy < items.length && moreButton}
       </div>
     );
   }
