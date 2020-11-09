@@ -45,10 +45,24 @@ testCases.bothIcons = {
 testCases.buttonyDisplay = {
   description: 'a buttony look',
   element: (
-    <button aria-label="Duplicate" type="button" className="link txt-bold txt-s block">
+    <button
+      aria-label="Duplicate"
+      type="button"
+      className="link txt-bold txt-s block"
+    >
       <IconText iconBefore="duplicate">Duplicate</IconText>
     </button>
   )
+};
+
+testCases.flexParentInline = {
+  description: 'inline flex parent',
+  component: IconText,
+  props: {
+    children: 'Inline!',
+    iconBefore: 'polyline',
+    inline: true
+  }
 };
 
 export { testCases };

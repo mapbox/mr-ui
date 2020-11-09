@@ -76,6 +76,28 @@ exports[`icons on both sides, including a non-string one renders as expected 1`]
 </span>
 `;
 
+exports[`inline flex parent renders as expected 1`] = `
+<span
+  className="flex-parent-inline flex-parent--center-cross"
+>
+  <span
+    className="flex-child mr3"
+  >
+    <Icon
+      inline={false}
+      name="polyline"
+      passthroughProps={Object {}}
+      size={18}
+    />
+  </span>
+  <span
+    className="flex-child"
+  >
+    Inline!
+  </span>
+</span>
+`;
+
 exports[`large gap renders as expected 1`] = `
 <span
   className="flex-parent flex-parent--center-cross"

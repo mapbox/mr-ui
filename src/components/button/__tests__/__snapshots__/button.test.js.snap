@@ -92,6 +92,7 @@ exports[`Link with outline and icon text, extra padding renders as expected 1`] 
   <IconText
     gap="small"
     iconBefore="bug"
+    inline={false}
   >
     Go do things
   </IconText>
