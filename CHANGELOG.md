@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.10.0
+
+- [feature] Add `inline` prop to `IconText` component.
+- [fix] Only render "More +" in `TabList` when needed.
+
 ## 0.9.1
 - [fix] Initialize `Clipboard` in **CopyButton** after it is destroyed so it can be copied again.
 
