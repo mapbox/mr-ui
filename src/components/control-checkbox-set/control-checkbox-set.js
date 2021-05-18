@@ -63,9 +63,8 @@ export default class ControlCheckboxSet extends React.Component {
     optional: false,
     autoFocus: false,
     icon: 'check',
-    themeCheckboxContainer: 'txt-s block mb6 flex-parent',
-    themeCheckbox:
-      'mr6 inline-block checkbox--blue checkbox--s-label flex-child'
+    themeCheckboxContainer: 'txt-s block mb6 flex',
+    themeCheckbox: 'mr6 inline-block checkbox--blue checkbox--s-label '
   };
 
   onChange = e => {

@@ -63,10 +63,10 @@ class UnderlineTabItem extends React.PureComponent {
     const label = props.label || capitalize(props.id);
     const content = (
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={{ height: this.getHeight(props.size) }}
       >
-        <span className="flex-child">{label}</span>
+        <span className="">{label}</span>
         {this.renderBorder()}
       </span>
     );

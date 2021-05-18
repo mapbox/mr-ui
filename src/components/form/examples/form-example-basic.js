@@ -17,10 +17,10 @@ export default class Example extends React.Component {
   renderForm = (/* getControlProps, onSubmit */) => {
     return (
       <div className="grid grid--gut24">
-        <div className="col col--12 col--6-mm">
+        <div className="col w-1/12 w-1/2-mm">
           {/* <ControlText {...getControlProps('name')} /> */}
         </div>
-        <div className="col col--12 col--6-mm">
+        <div className="col w-1/12 w-1/2-mm">
           {/* <FormSubmit onSubmit={onSubmit} /> */}
         </div>
       </div>

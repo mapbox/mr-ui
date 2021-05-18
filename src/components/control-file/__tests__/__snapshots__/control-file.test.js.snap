@@ -18,10 +18,10 @@ exports[`ControlFile all options renders 1`] = `
     themeLabel="txt-s txt-bold"
   />
   <div
-    className="flex-parent flex-parent--center-cross clip"
+    className="flex flex--center-cross clip"
   >
     <div
-      className="flex-child flex-child--grow"
+      className="flex-child-grow"
     >
       <button
         aria-hidden={true}
@@ -81,10 +81,10 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
     themeLabel="txt-s txt-bold mb6"
   />
   <div
-    className="flex-parent flex-parent--center-cross clip"
+    className="flex flex--center-cross clip"
   >
     <div
-      className="flex-child flex-child--grow"
+      className="flex-child-grow"
     >
       <button
         aria-hidden={true}
@@ -124,37 +124,33 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
         type="file"
       />
     </div>
-    <div
-      className="flex-child"
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Clear"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
     >
-      <Tooltip
-        alignment="center"
-        block={true}
-        coloring="light"
-        content="Clear"
-        disabled={false}
-        maxWidth="medium"
-        padding="small"
-        placement="top"
-        respondsToClick={false}
-        textSize="s"
+      <button
+        aria-label="Clear"
+        className="ml6 block link link--gray relative bg-transparent py0 "
+        data-test="control-file-clear"
+        onClick={[Function]}
+        type="button"
       >
-        <button
-          aria-label="Clear"
-          className="block link link--gray relative bg-transparent py0 "
-          data-test="control-file-clear"
-          onClick={[Function]}
-          type="button"
-        >
-          <Icon
-            inline={false}
-            name="trash"
-            passthroughProps={Object {}}
-            size={18}
-          />
-        </button>
-      </Tooltip>
-    </div>
+        <Icon
+          inline={false}
+          name="trash"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
   </div>
 </ControlWrapper>
 `;
@@ -171,10 +167,10 @@ exports[`ControlFile basic renders 1`] = `
     themeLabel="txt-s txt-bold mb6"
   />
   <div
-    className="flex-parent flex-parent--center-cross clip"
+    className="flex flex--center-cross clip"
   >
     <div
-      className="flex-child flex-child--grow"
+      className="flex-child-grow"
     >
       <button
         aria-hidden={true}
@@ -230,10 +226,10 @@ exports[`ControlFile disabled renders 1`] = `
     themeLabel="txt-s txt-bold mb6"
   />
   <div
-    className="flex-parent flex-parent--center-cross clip"
+    className="flex flex--center-cross clip"
   >
     <div
-      className="flex-child flex-child--grow"
+      className="flex-child-grow"
     >
       <button
         aria-hidden={true}
@@ -289,10 +285,10 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
     themeLabel="txt-s txt-bold mb6"
   />
   <div
-    className="flex-parent flex-parent--center-cross clip"
+    className="flex flex--center-cross clip"
   >
     <div
-      className="flex-child flex-child--grow"
+      className="flex-child-grow"
     >
       <button
         aria-hidden={true}
@@ -333,37 +329,33 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
         type="file"
       />
     </div>
-    <div
-      className="flex-child"
+    <Tooltip
+      alignment="center"
+      block={true}
+      coloring="light"
+      content="Clear"
+      disabled={false}
+      maxWidth="medium"
+      padding="small"
+      placement="top"
+      respondsToClick={false}
+      textSize="s"
     >
-      <Tooltip
-        alignment="center"
-        block={true}
-        coloring="light"
-        content="Clear"
-        disabled={false}
-        maxWidth="medium"
-        padding="small"
-        placement="top"
-        respondsToClick={false}
-        textSize="s"
+      <button
+        aria-label="Clear"
+        className="ml6 block link link--gray relative bg-transparent py0 "
+        data-test="control-file-clear"
+        onClick={[Function]}
+        type="button"
       >
-        <button
-          aria-label="Clear"
-          className="block link link--gray relative bg-transparent py0 "
-          data-test="control-file-clear"
-          onClick={[Function]}
-          type="button"
-        >
-          <Icon
-            inline={false}
-            name="trash"
-            passthroughProps={Object {}}
-            size={18}
-          />
-        </button>
-      </Tooltip>
-    </div>
+        <Icon
+          inline={false}
+          name="trash"
+          passthroughProps={Object {}}
+          size={18}
+        />
+      </button>
+    </Tooltip>
   </div>
 </ControlWrapper>
 `;

@@ -181,7 +181,7 @@ export default class TabList extends React.PureComponent {
           popoverProps={{
             placement: 'bottom',
             themePopover:
-              'round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled'
+              'round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled'
           }}
           triggerProps={{
             'data-test': 'more-dropdown-menu'

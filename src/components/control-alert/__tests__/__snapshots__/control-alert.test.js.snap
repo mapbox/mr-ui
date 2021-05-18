@@ -2,10 +2,10 @@
 
 exports[`ControlAlert basic error renders as expected 1`] = `
 <div
-  className="round px24 py24 flex-parent bg-red-faint"
+  className="round px24 py24 flex bg-red-faint"
 >
   <div
-    className="flex-child flex-child--no-shrink"
+    className="flex-child-no-shrink"
   >
     <Icon
       inline={true}
@@ -15,7 +15,7 @@ exports[`ControlAlert basic error renders as expected 1`] = `
     />
   </div>
   <div
-    className="flex-child flex-child--grow"
+    className="flex-child-grow"
     role={null}
     tabIndex={null}
   >
@@ -30,10 +30,10 @@ exports[`ControlAlert basic error renders as expected 1`] = `
 
 exports[`ControlAlert basic locked renders as expected 1`] = `
 <div
-  className="round px24 py24 flex-parent bg-yellow-light"
+  className="round px24 py24 flex bg-yellow-light"
 >
   <div
-    className="flex-child flex-child--no-shrink"
+    className="flex-child-no-shrink"
   >
     <Icon
       inline={true}
@@ -43,7 +43,7 @@ exports[`ControlAlert basic locked renders as expected 1`] = `
     />
   </div>
   <div
-    className="flex-child flex-child--grow"
+    className="flex-child-grow"
     role={null}
     tabIndex={null}
   >
@@ -58,10 +58,10 @@ exports[`ControlAlert basic locked renders as expected 1`] = `
 
 exports[`ControlAlert basic success renders as expected 1`] = `
 <div
-  className="round px24 py24 flex-parent bg-green-light"
+  className="round px24 py24 flex bg-green-light"
 >
   <div
-    className="flex-child flex-child--no-shrink"
+    className="flex-child-no-shrink"
   >
     <Icon
       inline={true}
@@ -71,7 +71,7 @@ exports[`ControlAlert basic success renders as expected 1`] = `
     />
   </div>
   <div
-    className="flex-child flex-child--grow"
+    className="flex-child-grow"
     role={null}
     tabIndex={null}
   >
@@ -86,10 +86,10 @@ exports[`ControlAlert basic success renders as expected 1`] = `
 
 exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
 <div
-  className="round px24 py24 flex-parent bg-red-faint"
+  className="round px24 py24 flex bg-red-faint"
 >
   <div
-    className="flex-child flex-child--no-shrink"
+    className="flex-child-no-shrink"
   >
     <Icon
       inline={true}
@@ -99,7 +99,7 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
     />
   </div>
   <div
-    className="flex-child flex-child--grow"
+    className="flex-child-grow"
     role={null}
     tabIndex={null}
   >
@@ -149,10 +149,10 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
 
 exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
 <div
-  className="round px24 py24 flex-parent bg-red-faint"
+  className="round px24 py24 flex bg-red-faint"
 >
   <div
-    className="flex-child flex-child--no-shrink"
+    className="flex-child-no-shrink"
   >
     <Icon
       inline={true}
@@ -162,7 +162,7 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
     />
   </div>
   <div
-    className="flex-child flex-child--grow"
+    className="flex-child-grow"
     role={null}
     tabIndex={null}
   >
@@ -212,10 +212,10 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
 
 exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
 <div
-  className="round px24 py24 flex-parent bg-yellow-light"
+  className="round px24 py24 flex bg-yellow-light"
 >
   <div
-    className="flex-child flex-child--no-shrink"
+    className="flex-child-no-shrink"
   >
     <Icon
       inline={true}
@@ -225,7 +225,7 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
     />
   </div>
   <div
-    className="flex-child flex-child--grow"
+    className="flex-child-grow"
     role={null}
     tabIndex={null}
   >
@@ -266,10 +266,10 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
 
 exports[`ControlAlert dismissive warning renders as expected 1`] = `
 <div
-  className="round px24 py24 flex-parent bg-yellow-light"
+  className="round px24 py24 flex bg-yellow-light"
 >
   <div
-    className="flex-child flex-child--no-shrink"
+    className="flex-child-no-shrink"
   >
     <Icon
       inline={true}
@@ -279,7 +279,7 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
     />
   </div>
   <div
-    className="flex-child flex-child--grow"
+    className="flex-child-grow"
     role={null}
     tabIndex={null}
   >

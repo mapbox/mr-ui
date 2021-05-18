@@ -63,8 +63,8 @@ export default class ControlRadioSet extends React.Component {
     value: '',
     optional: false,
     autoFocus: false,
-    themeRadioContainer: 'txt-s block mb6 flex-parent',
-    themeRadio: 'mr6 radio--blue radio--s-label inline-block flex-child'
+    themeRadioContainer: 'txt-s block mb6 flex',
+    themeRadio: 'mr6 radio--blue radio--s-label inline-block '
   };
 
   render() {

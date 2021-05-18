@@ -33,8 +33,8 @@ export default class Example extends React.Component {
   render() {
     return (
       <div className="px12 py12 bg-gray-faint">
-        <div className="border-b border--gray-light w300 flex-parent flex-parent--end-main">
-          <div className="flex-child">
+        <div className="border-b border--gray-light w300 flex flex--end-main">
+          <div className="">
             <UnderlineTabs
               items={items}
               active={this.state.active}

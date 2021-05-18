@@ -2,15 +2,13 @@
 
 exports[`icon after renders as expected 1`] = `
 <span
-  className="flex-parent flex-parent--center-cross"
+  className="flex flex--center-cross"
 >
-  <span
-    className="flex-child"
-  >
+  <span>
     Next
   </span>
   <span
-    className="flex-child ml3"
+    className="ml6"
   >
     <Icon
       inline={false}
@@ -24,10 +22,10 @@ exports[`icon after renders as expected 1`] = `
 
 exports[`icon before renders as expected 1`] = `
 <span
-  className="flex-parent flex-parent--center-cross"
+  className="flex flex--center-cross"
 >
   <span
-    className="flex-child mr3"
+    className="mr6"
   >
     <Icon
       inline={false}
@@ -36,9 +34,7 @@ exports[`icon before renders as expected 1`] = `
       size={18}
     />
   </span>
-  <span
-    className="flex-child"
-  >
+  <span>
     Copy
   </span>
 </span>
@@ -46,10 +42,10 @@ exports[`icon before renders as expected 1`] = `
 
 exports[`icons on both sides, including a non-string one renders as expected 1`] = `
 <span
-  className="flex-parent flex-parent--center-cross"
+  className="flex flex--center-cross"
 >
   <span
-    className="flex-child mr3"
+    className="mr6"
   >
     <Icon
       inline={false}
@@ -58,13 +54,11 @@ exports[`icons on both sides, including a non-string one renders as expected 1`]
       size={18}
     />
   </span>
-  <span
-    className="flex-child"
-  >
+  <span>
     What
   </span>
   <span
-    className="flex-child ml3"
+    className="ml6"
   >
     <Icon
       inline={false}
@@ -78,10 +72,10 @@ exports[`icons on both sides, including a non-string one renders as expected 1`]
 
 exports[`inline flex parent renders as expected 1`] = `
 <span
-  className="flex-parent-inline flex-parent--center-cross"
+  className="inline-flex flex--center-cross"
 >
   <span
-    className="flex-child mr3"
+    className="mr6"
   >
     <Icon
       inline={false}
@@ -90,9 +84,7 @@ exports[`inline flex parent renders as expected 1`] = `
       size={18}
     />
   </span>
-  <span
-    className="flex-child"
-  >
+  <span>
     Inline!
   </span>
 </span>
@@ -100,10 +92,10 @@ exports[`inline flex parent renders as expected 1`] = `
 
 exports[`large gap renders as expected 1`] = `
 <span
-  className="flex-parent flex-parent--center-cross"
+  className="flex flex--center-cross"
 >
   <span
-    className="flex-child mr6"
+    className="mr6"
   >
     <Icon
       inline={false}
@@ -112,9 +104,7 @@ exports[`large gap renders as expected 1`] = `
       size={18}
     />
   </span>
-  <span
-    className="flex-child"
-  >
+  <span>
     Done
   </span>
 </span>

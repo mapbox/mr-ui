@@ -435,9 +435,7 @@ const datePickerStyle = `
 .react-datepicker__portal .react-datepicker__navigation--next:hover {
   border-left-color: #b3b2b2;
 }
-
 /* REACT CONTROL DATE CUSTOM STYLES */
-
 .react-control-date .react-datepicker {
   font-family: 'Open Sans', sans-serif;
 }

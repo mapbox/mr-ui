@@ -74,7 +74,7 @@ testCases.headerMenu = {
   description: 'header menu',
   element: (
     <div className="grid">
-      <div className="col col--4-mm">
+      <div className="col w-1/3-mm">
         <PopoverTrigger
           popoverProps={{
             placement: 'bottom',
@@ -82,7 +82,7 @@ testCases.headerMenu = {
           }}
         />
       </div>
-      <div className="col col--4-mm">
+      <div className="col w-1/3-mm">
         <PopoverTrigger
           popoverProps={{
             placement: 'bottom',
@@ -90,7 +90,7 @@ testCases.headerMenu = {
           }}
         />
       </div>
-      <div className="col col--4-mm">
+      <div className="col w-1/3-mm">
         <PopoverTrigger
           popoverProps={{
             placement: 'bottom',
@@ -135,13 +135,13 @@ class StudioPanel extends React.Component {
       <div className="clearfix">
         <div
           ref="container-a"
-          className="fl hmax600 w240 scroll-auto border border--gray-light"
+          className="fl hmax600 w240 overflow-auto border border--gray-light"
         >
           {this.getTriggers('a')}
         </div>
         <div
           ref="container-b"
-          className="fr hmax600 w240 scroll-auto border border--gray-light"
+          className="fr hmax600 w240 overflow-auto border border--gray-light"
         >
           {this.getTriggers('b')}
         </div>
@@ -176,12 +176,14 @@ testCases.receiveFocus = {
   element: (
     <PopoverTrigger
       content={
-        <div className="flex-parent flex-parent--center-cross">
-          <div className="flex-child">
+        <div className="flex flex--center-cross">
+          <div className="">
             <input className="input" placeholder="eh?" />
           </div>
-          <div className="flex-child">
-            <button aria-label="Submit" className="btn ml6">Submit</button>
+          <div className="">
+            <button aria-label="Submit" className="btn ml6">
+              Submit
+            </button>
           </div>
         </div>
       }
@@ -197,12 +199,14 @@ testCases.doNotReceiveFocus = {
         receiveFocus: false
       }}
       content={
-        <div className="flex-parent flex-parent--center-cross">
-          <div className="flex-child">
+        <div className="flex flex--center-cross">
+          <div className="">
             <input className="input" placeholder="eh?" />
           </div>
-          <div className="flex-child">
-            <button aria-label="Submit" className="btn ml6">Submit</button>
+          <div className="">
+            <button aria-label="Submit" className="btn ml6">
+              Submit
+            </button>
           </div>
         </div>
       }
@@ -218,12 +222,14 @@ testCases.trapFocus = {
         trapFocus: true
       }}
       content={
-        <div className="flex-parent flex-parent--center-cross">
-          <div className="flex-child">
+        <div className="flex flex--center-cross">
+          <div className="">
             <input className="input" placeholder="eh?" />
           </div>
-          <div className="flex-child">
-            <button aria-label="Submit" className="btn ml6">Submit</button>
+          <div className="">
+            <button aria-label="Submit" className="btn ml6">
+              Submit
+            </button>
           </div>
         </div>
       }

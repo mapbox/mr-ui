@@ -25,13 +25,11 @@ export default class ComponentExample extends React.Component {
     const { props, state } = this;
     return (
       <div>
-        <div className="flex-parent flex-parent--end-cross">
-          <div className="flex-child flex-child--grow pb6 prose">
-            {props.description}
-          </div>
-          <div className="flex-child flex-child--no-shrink w120">
-            <div className="flex-parent flex-parent--end-main">
-              <div className="flex-child">
+        <div className="flex flex--end-cross">
+          <div className="flex-child-grow pb6 prose">{props.description}</div>
+          <div className="flex-child-no-shrink w120">
+            <div className="flex flex--end-main">
+              <div className="">
                 <ToggleCodeButton
                   onClick={this.toggleCode}
                   codeIsVisible={state.showCode}
@@ -57,13 +55,11 @@ function ToggleCodeButton(props) {
       className="block btn btn--s btn--gray unround-b round-t"
       onClick={props.onClick}
     >
-      <span className="flex-parent flex-parent--center-cross">
-        <span className="flex-child">
-          <svg className="icon">
-            <use xlinkHref="#icon-code" />
-          </svg>
-        </span>
-        <span className="ml6 flex-child">{text}</span>
+      <span className="flex flex--center-cross">
+        <svg className="icon">
+          <use xlinkHref="#icon-code" />
+        </svg>
+        <span className="ml6">{text}</span>
       </span>
     </button>
   );

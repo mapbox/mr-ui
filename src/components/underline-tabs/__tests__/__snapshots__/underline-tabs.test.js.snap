@@ -2,10 +2,10 @@
 
 exports[`ID labels and a disabled item renders as expected 1`] = `
 <ul
-  className="flex-parent txt-nowrap unselectable txt-bold txt-s"
+  className="flex txt-nowrap unselectable txt-bold txt-s"
 >
   <li
-    className="flex-child"
+    className=""
     key="ant"
   >
     <button
@@ -16,7 +16,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 42,
@@ -24,7 +24,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Ant
         </span>
@@ -32,7 +32,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="bug"
   >
     <button
@@ -43,7 +43,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 42,
@@ -51,7 +51,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Bug
         </span>
@@ -59,7 +59,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="cat"
   >
     <button
@@ -70,7 +70,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 42,
@@ -78,7 +78,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Cat
         </span>
@@ -93,10 +93,10 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
 
 exports[`customized renders as expected 1`] = `
 <ul
-  className="flex-parent txt-nowrap unselectable txt-xs"
+  className="flex txt-nowrap unselectable txt-xs"
 >
   <li
-    className="flex-child"
+    className=""
     key="A"
   >
     <button
@@ -107,7 +107,7 @@ exports[`customized renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 36,
@@ -115,7 +115,7 @@ exports[`customized renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter A
         </span>
@@ -126,7 +126,7 @@ exports[`customized renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml12"
+    className="ml12"
     key="B"
   >
     <button
@@ -137,7 +137,7 @@ exports[`customized renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 36,
@@ -145,7 +145,7 @@ exports[`customized renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter B
         </span>
@@ -153,7 +153,7 @@ exports[`customized renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml12"
+    className="ml12"
     key="C"
   >
     <button
@@ -164,7 +164,7 @@ exports[`customized renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 36,
@@ -172,7 +172,7 @@ exports[`customized renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter C
         </span>
@@ -184,10 +184,10 @@ exports[`customized renders as expected 1`] = `
 
 exports[`defaults renders as expected 1`] = `
 <ul
-  className="flex-parent txt-nowrap unselectable txt-bold txt-s"
+  className="flex txt-nowrap unselectable txt-bold txt-s"
 >
   <li
-    className="flex-child"
+    className=""
     key="A"
   >
     <button
@@ -198,7 +198,7 @@ exports[`defaults renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 42,
@@ -206,7 +206,7 @@ exports[`defaults renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter A
         </span>
@@ -214,7 +214,7 @@ exports[`defaults renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="B"
   >
     <button
@@ -225,7 +225,7 @@ exports[`defaults renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 42,
@@ -233,7 +233,7 @@ exports[`defaults renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter B
         </span>
@@ -244,7 +244,7 @@ exports[`defaults renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="C"
   >
     <button
@@ -255,7 +255,7 @@ exports[`defaults renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 42,
@@ -263,7 +263,7 @@ exports[`defaults renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter C
         </span>
@@ -275,10 +275,10 @@ exports[`defaults renders as expected 1`] = `
 
 exports[`large links with icons renders as expected 1`] = `
 <ul
-  className="flex-parent txt-nowrap unselectable txt-bold"
+  className="flex txt-nowrap unselectable txt-bold"
 >
   <li
-    className="flex-child"
+    className=""
     key="A"
   >
     <a
@@ -288,7 +288,7 @@ exports[`large links with icons renders as expected 1`] = `
       onClick={[Function]}
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 48,
@@ -296,7 +296,7 @@ exports[`large links with icons renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           IconText
         </span>
@@ -307,7 +307,7 @@ exports[`large links with icons renders as expected 1`] = `
     </a>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="B"
   >
     <a
@@ -317,7 +317,7 @@ exports[`large links with icons renders as expected 1`] = `
       onClick={[Function]}
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 48,
@@ -325,7 +325,7 @@ exports[`large links with icons renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           IconText
         </span>
@@ -333,7 +333,7 @@ exports[`large links with icons renders as expected 1`] = `
     </a>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="C"
   >
     <a
@@ -343,7 +343,7 @@ exports[`large links with icons renders as expected 1`] = `
       onClick={[Function]}
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 48,
@@ -351,7 +351,7 @@ exports[`large links with icons renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           IconText
         </span>
@@ -363,10 +363,10 @@ exports[`large links with icons renders as expected 1`] = `
 
 exports[`large renders as expected 1`] = `
 <ul
-  className="flex-parent txt-nowrap unselectable txt-bold"
+  className="flex txt-nowrap unselectable txt-bold"
 >
   <li
-    className="flex-child"
+    className=""
     key="A"
   >
     <button
@@ -377,7 +377,7 @@ exports[`large renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 48,
@@ -385,7 +385,7 @@ exports[`large renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter A
         </span>
@@ -393,7 +393,7 @@ exports[`large renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="B"
   >
     <button
@@ -404,7 +404,7 @@ exports[`large renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 48,
@@ -412,7 +412,7 @@ exports[`large renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter B
         </span>
@@ -420,7 +420,7 @@ exports[`large renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="C"
   >
     <button
@@ -431,7 +431,7 @@ exports[`large renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 48,
@@ -439,7 +439,7 @@ exports[`large renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter C
         </span>
@@ -454,10 +454,10 @@ exports[`large renders as expected 1`] = `
 
 exports[`overlap renders as expected 1`] = `
 <ul
-  className="flex-parent txt-nowrap unselectable txt-bold txt-s"
+  className="flex txt-nowrap unselectable txt-bold txt-s"
 >
   <li
-    className="flex-child"
+    className=""
     key="A"
   >
     <button
@@ -468,7 +468,7 @@ exports[`overlap renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 44,
@@ -476,7 +476,7 @@ exports[`overlap renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter A
         </span>
@@ -484,7 +484,7 @@ exports[`overlap renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="B"
   >
     <button
@@ -495,7 +495,7 @@ exports[`overlap renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 44,
@@ -503,7 +503,7 @@ exports[`overlap renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter B
         </span>
@@ -514,7 +514,7 @@ exports[`overlap renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml24 ml36-mxl"
+    className="ml24 ml36-mxl"
     key="C"
   >
     <button
@@ -525,7 +525,7 @@ exports[`overlap renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 44,
@@ -533,7 +533,7 @@ exports[`overlap renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter C
         </span>
@@ -545,10 +545,10 @@ exports[`overlap renders as expected 1`] = `
 
 exports[`small renders as expected 1`] = `
 <ul
-  className="flex-parent txt-nowrap unselectable txt-bold txt-xs"
+  className="flex txt-nowrap unselectable txt-bold txt-xs"
 >
   <li
-    className="flex-child"
+    className=""
     key="A"
   >
     <button
@@ -559,7 +559,7 @@ exports[`small renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 36,
@@ -567,7 +567,7 @@ exports[`small renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter A
         </span>
@@ -575,7 +575,7 @@ exports[`small renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml12"
+    className="ml12"
     key="B"
   >
     <button
@@ -586,7 +586,7 @@ exports[`small renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 36,
@@ -594,7 +594,7 @@ exports[`small renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter B
         </span>
@@ -605,7 +605,7 @@ exports[`small renders as expected 1`] = `
     </button>
   </li>
   <li
-    className="flex-child ml12"
+    className="ml12"
     key="C"
   >
     <button
@@ -616,7 +616,7 @@ exports[`small renders as expected 1`] = `
       type="button"
     >
       <span
-        className="block relative flex-parent flex-parent--center-cross"
+        className="block relative flex flex--center-cross"
         style={
           Object {
             "height": 36,
@@ -624,7 +624,7 @@ exports[`small renders as expected 1`] = `
         }
       >
         <span
-          className="flex-child"
+          className=""
         >
           Letter C
         </span>

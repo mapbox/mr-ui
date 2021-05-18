@@ -1,6 +1,6 @@
 /*
 A dark tooltip with custom placement, which uses a function child
-to render a custom component as  the trigger and a function for its
+to render a custom component as the trigger and a function for its
 `content` prop. Also limits itself to a small width.
 */
 import React from 'react';

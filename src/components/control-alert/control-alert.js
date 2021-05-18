@@ -67,7 +67,7 @@ export default class ControlAlert extends React.Component {
 
   render() {
     const { autoFocus, children, theme } = this.props;
-    const containerClasses = classnames('round px24 py24 flex-parent', {
+    const containerClasses = classnames('round px24 py24 flex', {
       'bg-green-light': theme === 'success',
       'bg-red-faint': theme === 'error',
       'bg-yellow-light': theme === 'warning' || theme === 'locked'
@@ -82,11 +82,11 @@ export default class ControlAlert extends React.Component {
 
     return (
       <div className={containerClasses}>
-        <div className="flex-child flex-child--no-shrink">
+        <div className="flex-child-no-shrink">
           <Icon name={iconName} inline={true} size="1.3em" />
         </div>
         <div
-          className="flex-child flex-child--grow"
+          className="flex-child-grow"
           ref={this.handleContentRef}
           role={autoFocus ? 'alert' : null}
           tabIndex={autoFocus ? -1 : null}

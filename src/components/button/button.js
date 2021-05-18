@@ -28,7 +28,6 @@ class Button extends React.Component {
     const classes = classnames('btn', {
       [`btn--${props.color}`]: props.color,
       'btn--stroke': props.outline,
-      'btn--stroke--2': props.outline && !sizeSmall,
       round: props.corners,
       'round-full': !props.corners,
       h24: sizeSmall,

@@ -1279,7 +1279,7 @@ describe('calculatePosition', () => {
     });
   });
 
-  test('left-top with encroaching viewport bottom  containWithinViewport: true', () => {
+  test('left-top with encroaching viewport bottom containWithinViewport: true', () => {
     mockAnchorElementRect = {
       height: 50,
       width: 50,

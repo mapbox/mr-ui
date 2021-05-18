@@ -13,7 +13,7 @@ exports[`ControlFile all controls renders 1`] = `
         className="grid grid--gut24"
       >
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -35,7 +35,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -57,7 +57,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -80,7 +80,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -103,10 +103,10 @@ exports[`ControlFile all controls renders 1`] = `
         </div>
       </div>
       <div
-        className="flex-parent flex-parent--center-main w-full mb12 py12 round bg-gray-light"
+        className="flex flex--center-main w-full mb12 py12 round bg-gray-light"
       >
         <div
-          className="flex-child"
+          className=""
         >
           <ControlToggleSet
             autoFocus={false}
@@ -148,7 +148,7 @@ exports[`ControlFile all controls renders 1`] = `
         className="grid grid--gut24"
       >
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <ControlFile
             disabled={false}
@@ -165,7 +165,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <div
             className="mb12"
@@ -198,7 +198,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <div
             className="mb12"
@@ -263,14 +263,14 @@ exports[`ControlFile all controls renders 1`] = `
                 },
               ]
             }
-            themeRadio="mr6 radio--blue radio--s-label inline-block flex-child"
-            themeRadioContainer="txt-s block mb6 flex-parent"
+            themeRadio="mr6 radio--blue radio--s-label inline-block "
+            themeRadioContainer="txt-s block mb6 flex"
             validationError=""
             value="beginner"
           />
         </div>
         <div
-          className="col col--12 col--3-mm"
+          className="col w-1/12 w-1/4-mm"
         >
           <ControlCheckboxSet
             autoFocus={false}
@@ -312,14 +312,14 @@ exports[`ControlFile all controls renders 1`] = `
                 },
               ]
             }
-            themeCheckbox="mr6 inline-block checkbox--blue checkbox--s-label flex-child"
-            themeCheckboxContainer="txt-s block mb6 flex-parent"
+            themeCheckbox="mr6 inline-block checkbox--blue checkbox--s-label "
+            themeCheckboxContainer="txt-s block mb6 flex"
             validationError=""
             value={Array []}
           />
         </div>
         <div
-          className="col col--12 col--9-mm"
+          className="col w-1/12 w-3/4-mm"
         >
           <ControlDate
             dateRange={true}
@@ -332,7 +332,7 @@ exports[`ControlFile all controls renders 1`] = `
             placeholder="M/D/YYYY"
             themeCalendar="shadow-darken10 border--0 none block-mm"
             themeTextInput="input w180 none block-mm"
-            themeWrapper="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+            themeWrapper="react-control-date react-control-date--disable-keyboard inline-flex flex--center-cross flex--wrap"
             validationError=""
             validator={
               Array [
