@@ -18,10 +18,12 @@ export default class App extends React.Component {
     });
     return (
       <div>
-        <div className="fixed top left bottom w300 py24 px24 scroll-styled overflow-auto">
+        <div className="relative fixed-mm top left bottom w240-mm py24 px24 scroll-styled overflow-auto">
           <Sidebar />
         </div>
-        <div className="ml300 px24">{componentEls}</div>
+        <div className="mx-auto pl240-mm wmax1200">
+          <div className="px24">{componentEls}</div>
+        </div>
       </div>
     );
   }

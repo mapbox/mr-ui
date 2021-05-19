@@ -93,14 +93,14 @@ function sortedProps(propsData) {
 
 function PropRow(props) {
   const required = !props.required ? null : (
-    <span className="txt-xs txt-mono ml6 bg-purple-faint color-purple px6 py3 round">
+    <span className="txt-xs txt-mono bg-purple-faint color-purple px6 py3 round">
       REQUIRED
     </span>
   );
 
   return (
-    <tr>
-      <td className="txt-mono txt-bold txt-nowrap">
+    <tr className="txt-ms txt-m-mxl">
+      <td className="txt-mono txt-bold">
         {props.name} {required}
       </td>
       <td className="txt-mono mx12">{props.type.name}</td>
@@ -118,7 +118,7 @@ function LabeledDefaultValue(props) {
   }
 
   return (
-    <div className="mt12 flex txt-s">
+    <div className="mt12 flex flex--wrap txt-s">
       <div className="flex-child-no-shrink color-gray">Default value:</div>
       <div className="ml6 flex-child-grow">
         <DefaultValueDisplay value={props.value} />

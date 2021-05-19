@@ -12,12 +12,12 @@ export default class Page extends React.Component {
           <meta name="robots" content="noindex" />
           <title>Mr. UI</title>
           <link
-            href="https://api.mapbox.com/mapbox-assembly/mbx/v0.27.0/assembly.min.css"
+            href="https://api.mapbox.com/mapbox-assembly/v1.1.0/assembly.min.css"
             rel="stylesheet"
           />
           <script
             async
-            src="https://api.mapbox.com/mapbox-assembly/mbx/v0.27.0/assembly.js"
+            src="https://api.mapbox.com/mapbox-assembly/v1.1.0/assembly.js"
           />
         </Helmet>
         <App />

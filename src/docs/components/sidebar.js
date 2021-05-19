@@ -6,10 +6,10 @@ export default class Sidebar extends React.Component {
   render() {
     const componentLinks = components.map(component => {
       return (
-        <li key={component.name} className="my6">
+        <li key={component.name}>
           <a
             href={`#${component.name.toLowerCase()}`}
-            className="txt-bold color-blue-on-hover"
+            className="pr6 py3 block txt-bold color-blue-on-hover"
           >
             {component.name}
           </a>
@@ -31,7 +31,7 @@ export default class Sidebar extends React.Component {
           <span className="">View on GitHub</span>
         </a>
         <div className="pt12 txt-s">
-          <ul>{componentLinks}</ul>
+          <ul className="flex flex--wrap block-mm">{componentLinks}</ul>
         </div>
       </div>
     );
