@@ -7,4 +7,5 @@ pkg
 src/test-cases-app/component-index.js
 dist
 **/*underreact.config.js
+**/*babel.config.js
 html.js

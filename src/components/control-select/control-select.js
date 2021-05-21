@@ -35,7 +35,7 @@ export default class ControlSelect extends React.Component {
           if (
             !props.value &&
             typeof props.value !== 'string' &&
-            !props.hasOwnProperty('options')
+            props.options === undefined
           ) {
             return new Error(
               `The prop "${propName}" is required in ${componentName} if a options array is not provided for select groups.`
@@ -51,8 +51,8 @@ export default class ControlSelect extends React.Component {
               } of type ${typeof props.value} supplied to ${componentName}, expected a number or string.`
             );
           } else if (
-            props.hasOwnProperty('value') &&
-            props.hasOwnProperty('options')
+            props.value !== undefined &&
+            props.options !== undefined
           ) {
             return new Error(
               `You've provided both an 'options' & 'value' key to one of your options object groups. Only 'options' will be used.`
