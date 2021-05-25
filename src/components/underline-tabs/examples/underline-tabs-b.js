@@ -34,16 +34,14 @@ export default class Example extends React.Component {
     return (
       <div className="px12 py12 bg-gray-faint">
         <div className="border-b border--gray-light w300 flex flex--end-main">
-          <div className="">
-            <UnderlineTabs
-              items={items}
-              active={this.state.active}
-              onChange={this.changeTab}
-              size="small"
-              overlapBorder={true}
-              bold={false}
-            />
-          </div>
+          <UnderlineTabs
+            items={items}
+            active={this.state.active}
+            onChange={this.changeTab}
+            size="small"
+            overlapBorder={true}
+            bold={false}
+          />
         </div>
       </div>
     );

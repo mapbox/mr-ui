@@ -29,12 +29,10 @@ export default class ComponentExample extends React.Component {
           <div className="flex-child-grow pb6 prose">{props.description}</div>
           <div className="flex-child-no-shrink w120">
             <div className="flex flex--end-main">
-              <div className="">
-                <ToggleCodeButton
-                  onClick={this.toggleCode}
-                  codeIsVisible={state.showCode}
-                />
-              </div>
+              <ToggleCodeButton
+                onClick={this.toggleCode}
+                codeIsVisible={state.showCode}
+              />
             </div>
           </div>
         </div>

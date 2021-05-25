@@ -37,9 +37,7 @@ function renderForm(getControlProps, onSubmit) {
         </div>
       </div>
       <div className="flex flex--center-main w-full mb12 py12 round bg-gray-light">
-        <div className="">
-          <ControlToggleSet {...getControlProps('spiritAnimal')} />
-        </div>
+        <ControlToggleSet {...getControlProps('spiritAnimal')} />
       </div>
       <div className="grid grid--gut24">
         <div className="col w-1/12 w-1/4-mm">

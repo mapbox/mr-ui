@@ -177,14 +177,10 @@ testCases.receiveFocus = {
     <PopoverTrigger
       content={
         <div className="flex flex--center-cross">
-          <div className="">
-            <input className="input" placeholder="eh?" />
-          </div>
-          <div className="">
-            <button aria-label="Submit" className="btn ml6">
-              Submit
-            </button>
-          </div>
+          <input className="input" placeholder="eh?" />
+          <button aria-label="Submit" className="btn ml6">
+            Submit
+          </button>
         </div>
       }
     />
@@ -200,14 +196,10 @@ testCases.doNotReceiveFocus = {
       }}
       content={
         <div className="flex flex--center-cross">
-          <div className="">
-            <input className="input" placeholder="eh?" />
-          </div>
-          <div className="">
-            <button aria-label="Submit" className="btn ml6">
-              Submit
-            </button>
-          </div>
+          <input className="input" placeholder="eh?" />
+          <button aria-label="Submit" className="btn ml6">
+            Submit
+          </button>
         </div>
       }
     />
@@ -223,14 +215,10 @@ testCases.trapFocus = {
       }}
       content={
         <div className="flex flex--center-cross">
-          <div className="">
-            <input className="input" placeholder="eh?" />
-          </div>
-          <div className="">
-            <button aria-label="Submit" className="btn ml6">
-              Submit
-            </button>
-          </div>
+          <input className="input" placeholder="eh?" />
+          <button aria-label="Submit" className="btn ml6">
+            Submit
+          </button>
         </div>
       }
     />

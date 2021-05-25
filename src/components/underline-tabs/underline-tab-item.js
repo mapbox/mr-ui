@@ -66,7 +66,7 @@ class UnderlineTabItem extends React.PureComponent {
         className="block relative flex flex--center-cross"
         style={{ height: this.getHeight(props.size) }}
       >
-        <span className="">{label}</span>
+        {label}
         {this.renderBorder()}
       </span>
     );

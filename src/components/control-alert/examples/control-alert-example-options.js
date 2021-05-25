@@ -30,7 +30,7 @@ export default class Example extends React.Component {
       <div className="flex flex--end-main mr18 mb18">
         <button
           aria-label="Show alert again"
-          className="color-gray-dark color-blue-on-hover "
+          className="color-gray-dark color-blue-on-hover"
           onClick={this.toggleAlert}
           type="button"
         >

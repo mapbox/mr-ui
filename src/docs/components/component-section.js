@@ -13,7 +13,7 @@ export default class ComponentSection extends React.Component {
 
     return (
       <div className="mt24 mb12">
-        <h3 className="txt-h4 txt-bold mb12">Props</h3>
+        <h3 className="txt-h4 txt-fancy mb12">Props</h3>
         <table className="table">
           <thead>
             <tr>
@@ -42,7 +42,7 @@ export default class ComponentSection extends React.Component {
 
     return (
       <div className="mt24 mb12">
-        <h3 className="txt-h4 txt-bold mb12">Examples</h3>
+        <h3 className="txt-h4 txt-fancy mb12">Examples</h3>
         {exampleEls}
       </div>
     );
@@ -52,22 +52,16 @@ export default class ComponentSection extends React.Component {
     const { data } = this.props;
 
     const description = !data.description ? null : (
-      <div className="prose">{data.description}</div>
+      <div className="wmax600-mm prose">{data.description}</div>
     );
 
     const slug = data.name.toLowerCase();
 
-    // Top padding gives us the whitespace we want with hash links.
     return (
       <section id={slug} className="pt24">
-        <div>
-          <div className="inline-block">
-            <a href={`#${slug}`} className="color-blue-on-hover">
-              <h2 className="txt-fancy txt-h3">{data.name}</h2>
-            </a>
-          </div>
-        </div>
-        <div className="mt6 mb12 txt-s color-gray" />
+        <a href={`#${slug}`} className="mb12 block color-blue-on-hover">
+          <h2 className="txt-fancy txt-h3">{data.name}</h2>
+        </a>
         {description}
         {this.renderAllExamples()}
         {data.props && this.renderProps()}
@@ -93,8 +87,8 @@ function sortedProps(propsData) {
 
 function PropRow(props) {
   const required = !props.required ? null : (
-    <span className="txt-xs txt-mono bg-purple-faint color-purple px6 py3 round">
-      REQUIRED
+    <span className="txt-uppercase txt-xs txt-mono bg-purple-faint color-purple px6 py3 round">
+      Required
     </span>
   );
 
