@@ -23,11 +23,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Ant
-        </span>
+        Ant
       </span>
     </button>
   </li>
@@ -50,11 +46,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Bug
-        </span>
+        Bug
       </span>
     </button>
   </li>
@@ -77,11 +69,7 @@ exports[`ID labels and a disabled item renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Cat
-        </span>
+        Cat
         <span
           className="absolute bottom left right border-b border-b--2"
         />
@@ -114,11 +102,7 @@ exports[`customized renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter A
-        </span>
+        Letter A
         <span
           className="absolute bottom left right border-b"
         />
@@ -144,11 +128,7 @@ exports[`customized renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter B
-        </span>
+        Letter B
       </span>
     </button>
   </li>
@@ -171,11 +151,7 @@ exports[`customized renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter C
-        </span>
+        Letter C
       </span>
     </button>
   </li>
@@ -205,11 +181,7 @@ exports[`defaults renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter A
-        </span>
+        Letter A
       </span>
     </button>
   </li>
@@ -232,11 +204,7 @@ exports[`defaults renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter B
-        </span>
+        Letter B
         <span
           className="absolute bottom left right border-b border-b--2"
         />
@@ -262,11 +230,7 @@ exports[`defaults renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter C
-        </span>
+        Letter C
       </span>
     </button>
   </li>
@@ -295,11 +259,7 @@ exports[`large links with icons renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          IconText
-        </span>
+        IconText
         <span
           className="absolute bottom left right border-b border-b--2"
         />
@@ -324,11 +284,7 @@ exports[`large links with icons renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          IconText
-        </span>
+        IconText
       </span>
     </a>
   </li>
@@ -350,11 +306,7 @@ exports[`large links with icons renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          IconText
-        </span>
+        IconText
       </span>
     </a>
   </li>
@@ -384,11 +336,7 @@ exports[`large renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter A
-        </span>
+        Letter A
       </span>
     </button>
   </li>
@@ -411,11 +359,7 @@ exports[`large renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter B
-        </span>
+        Letter B
       </span>
     </button>
   </li>
@@ -438,11 +382,7 @@ exports[`large renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter C
-        </span>
+        Letter C
         <span
           className="absolute bottom left right border-b border-b--2"
         />
@@ -475,11 +415,7 @@ exports[`overlap renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter A
-        </span>
+        Letter A
       </span>
     </button>
   </li>
@@ -502,11 +438,7 @@ exports[`overlap renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter B
-        </span>
+        Letter B
         <span
           className="absolute bottom left right border-b border-b--2"
         />
@@ -532,11 +464,7 @@ exports[`overlap renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter C
-        </span>
+        Letter C
       </span>
     </button>
   </li>
@@ -566,11 +494,7 @@ exports[`small renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter A
-        </span>
+        Letter A
       </span>
     </button>
   </li>
@@ -593,11 +517,7 @@ exports[`small renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter B
-        </span>
+        Letter B
         <span
           className="absolute bottom left right border-b"
         />
@@ -623,11 +543,7 @@ exports[`small renders as expected 1`] = `
           }
         }
       >
-        <span
-          className=""
-        >
-          Letter C
-        </span>
+        Letter C
       </span>
     </button>
   </li>

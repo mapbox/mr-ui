@@ -25,7 +25,7 @@ class UnderlineTabs extends React.Component {
 
     const itemEls = props.items.map((item, index) => {
       const first = index === 0;
-      const layoutClasses = classnames('', {
+      const layoutClasses = classnames({
         ml12: !first && small,
         'ml24 ml36-mxl': !first && !small
       });

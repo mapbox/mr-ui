@@ -12,7 +12,7 @@ export default class ComponentSection extends React.Component {
     });
 
     return (
-      <div className="mt24 mb12">
+      <div className="mt24 mb12 overflow-auto">
         <h3 className="txt-h4 txt-fancy mb12">Props</h3>
         <table className="table">
           <thead>
@@ -93,8 +93,8 @@ function PropRow(props) {
   );
 
   return (
-    <tr className="txt-ms txt-m-mxl">
-      <td className="txt-mono txt-bold">
+    <tr className="txt-s txt-ms-mm txt-m-mxl">
+      <td className="txt-mono txt-bold txt-break-word">
         {props.name} {required}
       </td>
       <td className="txt-mono mx12">{props.type.name}</td>

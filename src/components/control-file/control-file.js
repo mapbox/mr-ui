@@ -156,7 +156,7 @@ export default class ControlFile extends React.Component {
             themeLabel={themeLabel}
           />
         )}
-        <div className="flex flex--center-cross clip">
+        <div className="flex flex--center-cross overflow-hidden">
           <div className="flex-child-grow">
             <button
               type="button"

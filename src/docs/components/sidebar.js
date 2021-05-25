@@ -42,7 +42,7 @@ export default function Sidebar({ sections }) {
           <span className="mr6">
             <Icon name="github" />
           </span>
-          GitHub
+          View on GitHub
         </a>
       </div>
       <div className="pt12 txt-s">

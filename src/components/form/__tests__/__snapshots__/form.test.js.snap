@@ -13,7 +13,7 @@ exports[`ControlFile all controls renders 1`] = `
         className="grid grid--gut24"
       >
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -35,7 +35,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -57,7 +57,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -80,7 +80,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <ControlText
             errorStyle="default"
@@ -105,50 +105,46 @@ exports[`ControlFile all controls renders 1`] = `
       <div
         className="flex flex--center-main w-full mb12 py12 round bg-gray-light"
       >
-        <div
-          className=""
-        >
-          <ControlToggleSet
-            autoFocus={false}
-            id="spiritAnimal"
-            initialValue="sea-otter"
-            label="Choose animal guide"
-            onChange={[Function]}
-            optional={false}
-            options={
-              Array [
-                Object {
-                  "label": "Humpback whale",
-                  "value": "humpback-whale",
-                },
-                Object {
-                  "label": "Rufous Hummingbird",
-                  "value": "rufous hummingbird",
-                },
-                Object {
-                  "label": "Sea Otter",
-                  "value": "sea-otter",
-                },
-                Object {
-                  "label": "Snowshoe Hare",
-                  "value": "snowshoe-hare",
-                },
-              ]
-            }
-            themeLabel="color-gray-dark txt-s txt-bold"
-            themeToggle="txt-s py3 toggle--gray toggle--active-white"
-            themeToggleContainer=""
-            themeToggleGroup="border border--2 border--gray-faint bg-gray-faint"
-            validationError=""
-            value="sea-otter"
-          />
-        </div>
+        <ControlToggleSet
+          autoFocus={false}
+          id="spiritAnimal"
+          initialValue="sea-otter"
+          label="Choose animal guide"
+          onChange={[Function]}
+          optional={false}
+          options={
+            Array [
+              Object {
+                "label": "Humpback whale",
+                "value": "humpback-whale",
+              },
+              Object {
+                "label": "Rufous Hummingbird",
+                "value": "rufous hummingbird",
+              },
+              Object {
+                "label": "Sea Otter",
+                "value": "sea-otter",
+              },
+              Object {
+                "label": "Snowshoe Hare",
+                "value": "snowshoe-hare",
+              },
+            ]
+          }
+          themeLabel="color-gray-dark txt-s txt-bold"
+          themeToggle="txt-s py3 toggle--gray toggle--active-white"
+          themeToggleContainer=""
+          themeToggleGroup="border border--2 border--gray-faint bg-gray-faint"
+          validationError=""
+          value="sea-otter"
+        />
       </div>
       <div
         className="grid grid--gut24"
       >
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <ControlFile
             disabled={false}
@@ -165,7 +161,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <div
             className="mb12"
@@ -198,7 +194,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <div
             className="mb12"
@@ -270,7 +266,7 @@ exports[`ControlFile all controls renders 1`] = `
           />
         </div>
         <div
-          className="col w-1/12 w-1/4-mm"
+          className="col w-full w-1/4-mm"
         >
           <ControlCheckboxSet
             autoFocus={false}
@@ -312,14 +308,14 @@ exports[`ControlFile all controls renders 1`] = `
                 },
               ]
             }
-            themeCheckbox="mr6 inline-block checkbox--blue checkbox--s-label "
+            themeCheckbox="mr6 inline-block checkbox--blue checkbox--s-label"
             themeCheckboxContainer="txt-s block mb6 flex"
             validationError=""
             value={Array []}
           />
         </div>
         <div
-          className="col w-1/12 w-3/4-mm"
+          className="col w-full w-3/4-mm"
         >
           <ControlDate
             dateRange={true}
