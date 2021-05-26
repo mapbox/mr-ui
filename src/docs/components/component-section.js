@@ -94,7 +94,7 @@ function PropRow(props) {
 
   return (
     <tr className="txt-s txt-ms-mm txt-m-mxl">
-      <td className="txt-mono txt-bold txt-break-word">
+      <td className="txt-mono txt-bold">
         {props.name} {required}
       </td>
       <td className="txt-mono mx12">{props.type.name}</td>
