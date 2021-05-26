@@ -105,6 +105,6 @@
     "react-helmet": "^5.2.0",
     "react-test-renderer": "^16.4.1",
     "regenerator-runtime": "^0.12.1",
-    "@mapbox/mbx-assembly": "1.0.0"
+    "@mapbox/mbx-assembly": "1.0.1"
   }
 }
