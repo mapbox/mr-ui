@@ -1,40 +1,54 @@
 # Changelog
 
+## 0.11.0
+
+- [breaking] Migrate to Assembly 1+
+
 ## 0.10.0
 
 - [feature] Add `inline` prop to `IconText` component.
 - [fix] Only render "More +" in `TabList` when needed.
 
 ## 0.9.1
+
 - [fix] Initialize `Clipboard` in **CopyButton** after it is destroyed so it can be copied again.
 
 ## 0.9.0
+
 - [feature] Allow **ControlText** `value` to accept a number or a string.
 - [fix] Destroy `Clipboard` after copy in **CopyButton** to prevent exaggerated scroll length in scrolled code snippets.
 
 ## 0.8.0
+
 - [feature] Add `aria-label` to all components, test cases, and examples with buttons.
 
 ## 0.7.4
+
 - [fix] Allow **TabList** label to accept a node.
 
 ## 0.7.3
+
 - [feature] Allow the **CopyButton** and **Copiable** components to pass through the `focusTrapPaused` prop.
 
 ## 0.7.2
+
 - [feature] Update `react-aria-modal` to v4.
 - [feature] Allow the **modal** component to pass through the `focusTrapPaused` prop.
 
 ## 0.7.1
+
 - [fix] Evaluate parentNode before removeChild in **page-loading-indicator** component.
 
 ## 0.7.0
+
 - [feature] Add `zIndex` option to **Popover** component.
 
 ## 0.6.1
+
 - [fix] fix issue that prevented popovers from recognizing the hasPointer prop.
 
 ## 0.6.0
+
 - [feature] Add **Badge** component.
 
 ## 0.5.0
@@ -45,10 +59,12 @@
 ## 0.4.1-0.4.3
 
 ## 0.7.0
+
 - [feature] Add `zIndex` option to **Popover** component.
 - [fix] Update build script for Babel 7 to fix broken v0.4.0 publication.
 
 ## 0.4.0
+
 - [feature] Add **PageHeader** component.
 - [feature] Add **FooterLegalStrip** component.
 - [feature] Add **ControlAlert** component.
@@ -87,7 +103,7 @@
 - **PopoverTrigger**
   - 🚨 [breaking change] Rename `triggerProps` prop to `passthroughTriggerProps`.
   - 🚨 [breaking change] Replace `display` prop with `block`.
-  - [fix] If the trigger responds to focus but not click, and you focus the trigger *first* and *then* click, that click *closes* the popover instead of leaving it open even after you move the mouse away.
+  - [fix] If the trigger responds to focus but not click, and you focus the trigger _first_ and _then_ click, that click _closes_ the popover instead of leaving it open even after you move the mouse away.
   - [fix] If you use `disable` to disable a trigger with an open popover, the popover will hide.
 - **CopyButton**
   - 🚨 [breaking change] Arbitrary props will not be passed through to the button.
