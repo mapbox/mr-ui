@@ -22,7 +22,7 @@ class LoaderFull extends React.PureComponent {
 
   render() {
     let bgClasses =
-      'fixed top left right bottom flex-parent flex-parent--center-main flex-parent--center-cross';
+      'fixed top left right bottom flex flex--center-main flex--center-cross';
     let loaderClasses = 'loading';
     if (this.props.opaque) {
       bgClasses += ' bg-white';

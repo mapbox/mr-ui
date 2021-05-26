@@ -67,15 +67,15 @@ testCases.noNesting = {
 };
 
 testCases.nestedTwice = {
-  description: 'nested in two scrollable parents, one with scroll-always',
+  description: 'nested in two scrollable parents, one with overflow-always',
   element: (
     <div
       data-test="nestedTwice-1"
-      className="bg-darken10 h72 scroll-auto scroll-styled px6 py6"
+      className="bg-darken10 h72 overflow-auto scroll-styled px6 py6"
     >
       <div
         data-test="nestedTwice-2"
-        className="bg-darken10 h96 scroll-always scroll-styled px6 py6"
+        className="bg-darken10 h96 overflow-always scroll-styled px6 py6"
       >
         <GetScrollableParentsTest testId="nestedTwice" color="red" />
       </div>
@@ -90,7 +90,7 @@ testCases.trickNested = {
     <div data-test="trickNested-1" className="bg-darken10 h120 px6 py6">
       <div
         data-test="trickNested-2"
-        className="bg-darken10 h48 scroll-auto scroll-styled px6 py6"
+        className="bg-darken10 h48 overflow-auto scroll-styled px6 py6"
       >
         <GetScrollableParentsTest testId="trickNested" color="blue" />
       </div>
@@ -104,7 +104,7 @@ testCases.absolute = {
     <div data-test="absolute-1" className="bg-darken10 relative">
       <div
         data-test="absolute-2"
-        className="bg-darken10 h120 scroll-auto scroll-styled px6 py6"
+        className="bg-darken10 h120 overflow-auto scroll-styled px6 py6"
       >
         some text inside the statically positioned parent
         <div
@@ -121,7 +121,7 @@ testCases.absolute = {
 testCases.fixed = {
   description: 'fixed but inside auto-scrollable parent',
   element: (
-    <div data-test="fixed-1" className="scroll-auto scroll-styled">
+    <div data-test="fixed-1" className="overflow-auto scroll-styled">
       See pink box in bottom left
       <GetScrollableParentsTest
         testId="fixed"
@@ -139,7 +139,7 @@ testCases.insideFixed = {
       See green box in top right
       <div
         data-test="insideFixed-2"
-        className="fixed top right scroll-auto scroll-styled"
+        className="fixed top right overflow-auto scroll-styled"
       >
         <GetScrollableParentsTest testId="insideFixed" color="green" />
       </div>

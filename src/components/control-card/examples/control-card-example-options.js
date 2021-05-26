@@ -27,10 +27,10 @@ export default class Example extends React.Component {
     if (showCard) return null;
 
     return (
-      <div className="flex-parent flex-parent--end-main mr18 mb18">
+      <div className="flex flex--end-main mr18 mb18">
         <button
           aria-label="Show card"
-          className="color-gray-dark color-blue-on-hover flex-child"
+          className="color-gray-dark color-blue-on-hover"
           onClick={this.toggleCard}
           type="button"
         >

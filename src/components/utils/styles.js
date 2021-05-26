@@ -10,7 +10,7 @@ const styles = {
   pMedium: 'txt-m mb12',
   pSmall: 'txt-s mb12',
   btnPrimary: 'btn px24 py12 txt-s',
-  btnSecondary: 'btn px24 py12 txt-s btn--stroke btn--stroke--2',
+  btnSecondary: 'btn px24 py12 txt-s btn--stroke',
   gridLarge: 'grid grid--gut36 grid--gut60-mm grid--gut120-mxl',
   gridMedium: 'grid grid--gut24 grid--gut36-mm grid--gut60-mxl',
   gridSmall: 'grid grid--gut12 grid--gut18-mm grid--gut24-mxl',

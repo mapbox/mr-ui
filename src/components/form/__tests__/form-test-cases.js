@@ -23,44 +23,42 @@ function renderForm(getControlProps, onSubmit) {
   return (
     <div>
       <div className="grid grid--gut24">
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <ControlText {...getControlProps('firstName')} />
         </div>
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <ControlText {...getControlProps('lastName')} />
         </div>
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <ControlText {...getControlProps('email')} />
         </div>
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <ControlText {...getControlProps('url')} />
         </div>
       </div>
-      <div className="flex-parent flex-parent--center-main w-full mb12 py12 round bg-gray-light">
-        <div className="flex-child">
-          <ControlToggleSet {...getControlProps('spiritAnimal')} />
-        </div>
+      <div className="flex flex--center-main w-full mb12 py12 round bg-gray-light">
+        <ControlToggleSet {...getControlProps('spiritAnimal')} />
       </div>
       <div className="grid grid--gut24">
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <ControlFile {...getControlProps('upload')} />
         </div>
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <div className="mb12">
             <ControlRange {...getControlProps('area')} />
           </div>
           <ControlSwitch {...getControlProps('active')} />
         </div>
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <div className="mb12">
             <ControlSelect {...getControlProps('level')} />
           </div>
           <ControlRadioSet {...getControlProps('difficulty')} />
         </div>
-        <div className="col col--12 col--3-mm">
+        <div className="col w-full w-1/4-mm">
           <ControlCheckboxSet {...getControlProps('tools')} />
         </div>
-        <div className="col col--12 col--9-mm">
+        <div className="col w-full w-3/4-mm">
           <ControlDate {...getControlProps('date')} />
         </div>
       </div>

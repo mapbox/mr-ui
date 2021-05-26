@@ -267,7 +267,7 @@ Popover.propTypes = {
    * If `true`, the popover will hide when its anchor is scrolled offscreen.
    * By default, the popover will follow its anchor wherever it goes.
    *
-   * If your anchor is within an  internally scrolling area, you may want to
+   * If your anchor is within an internally scrolling area, you may want to
    * use `true`, so the popover doesn't existing in a disembodied state after
    * its anchor is scrolled away.
    */

@@ -309,7 +309,7 @@ export default class CodeSnippet extends React.PureComponent {
     }
 
     let containerClasses = 'relative round z0 scroll-styled';
-    if (props.maxHeight !== undefined) containerClasses += ' scroll-auto';
+    if (props.maxHeight !== undefined) containerClasses += ' overflow-auto';
 
     const containerStyles = {};
     if (props.maxHeight !== undefined)

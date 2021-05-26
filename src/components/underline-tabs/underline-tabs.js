@@ -17,7 +17,7 @@ class UnderlineTabs extends React.Component {
     const small = props.size === SIZE_SMALL;
     const medium = props.size === SIZE_MEDIUM;
 
-    const containerClasses = classnames('flex-parent txt-nowrap unselectable', {
+    const containerClasses = classnames('flex txt-nowrap unselectable', {
       'txt-bold': props.bold,
       'txt-s': medium,
       'txt-xs': small
@@ -25,7 +25,7 @@ class UnderlineTabs extends React.Component {
 
     const itemEls = props.items.map((item, index) => {
       const first = index === 0;
-      const layoutClasses = classnames('flex-child', {
+      const layoutClasses = classnames({
         ml12: !first && small,
         'ml24 ml36-mxl': !first && !small
       });

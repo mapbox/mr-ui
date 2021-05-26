@@ -110,7 +110,7 @@ exports[`TabList a label contains a node renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}
@@ -242,7 +242,7 @@ exports[`TabList basic renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}
@@ -362,7 +362,7 @@ exports[`TabList links renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}
@@ -541,7 +541,7 @@ exports[`TabList truncate all renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}

@@ -47,7 +47,7 @@ testCases.allOptions = {
     optional: true,
     label: <span>All options</span>,
     themeControlSwitchContainer: 'txt-s',
-    themeControlSwitch: 'switch--red switch--dot-red',
+    themeControlSwitch: 'switch--red switch--dot-yellow',
     themeControlWrapper: 'bg-red-light',
     themeLabel: 'color-white txt-m',
     onChange: safeSpy()

@@ -10,7 +10,7 @@ export default class ModalActions extends React.Component {
     }
 
     return (
-      <div className="flex-child flex-child--no-shrink mr12">
+      <div className="flex-child-no-shrink mr12">
         <Button
           variant="discouraging"
           size="medium"
@@ -35,7 +35,7 @@ export default class ModalActions extends React.Component {
     }
 
     return (
-      <div className="flex-child flex-child--grow flex-child--no-shrink mr12">
+      <div className="flex-child-grow flex-child-no-shrink mr12">
         <button
           aria-label={props.tertiaryAction.text}
           type="button"
@@ -57,8 +57,8 @@ export default class ModalActions extends React.Component {
       : 'primary';
 
     return (
-      <div className="flex-parent flex-parent--center-main flex-parent--center-cross flex-parent--row-reverse flex-parent--wrap">
-        <div className="flex-child flex-child--no-shrink">
+      <div className="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap">
+        <div className="flex-child-no-shrink">
           <Button
             variant={primaryButtonVariant}
             size="medium"

@@ -7,12 +7,12 @@ module.exports = `
     <meta name="robots" content="noindex" />
     <title>Mr. UI</title>
     <link
-      href="https://api.mapbox.com/mapbox-assembly/mbx/v0.28.1/assembly.min.css"
+      href="https://api.mapbox.com/mapbox-assembly/mbx/v1.0.1/assembly.min.css"
       rel="stylesheet"
     />
     <script
       async
-      src="https://api.mapbox.com/mapbox-assembly/mbx/v0.28.1/assembly.js"
+      src="https://api.mapbox.com/mapbox-assembly/mbx/v1.0.1/assembly.js"
     ></script>
   </head>
   <body>

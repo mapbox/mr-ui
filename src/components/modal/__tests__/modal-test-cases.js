@@ -25,7 +25,12 @@ class ModalWrapper extends React.Component {
     );
     return (
       <div>
-        <button aria-label="Open modal" type="button" className="btn" onClick={this.toggleModal}>
+        <button
+          aria-label="Open modal"
+          type="button"
+          className="btn"
+          onClick={this.toggleModal}
+        >
           Open modal
         </button>
         {modal}
@@ -100,11 +105,11 @@ testCases.unpadded = {
       componentProps={{
         accessibleTitle: 'Unpadded',
         children: (
-          <div className="flex-parent flex-parent--stretch-cross">
-            <div className="flex-child w300 bg-gray-dark px24 py24 round-l color-white">
+          <div className="flex flex--stretch-cross">
+            <div className="w300 bg-gray-dark px24 py24 round-l color-white">
               One side
             </div>
-            <div className="flex-child px24 py24">The other side</div>
+            <div className="px24 py24">The other side</div>
           </div>
         ),
         padding: 'none'

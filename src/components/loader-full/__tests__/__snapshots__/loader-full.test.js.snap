@@ -2,7 +2,7 @@
 
 exports[`LoaderFull basic renders 1`] = `
 <div
-  className="fixed top left right bottom flex-parent flex-parent--center-main flex-parent--center-cross bg-darken50"
+  className="fixed top left right bottom flex flex--center-main flex--center-cross bg-darken50"
   data-test="loader"
   style={
     Object {
