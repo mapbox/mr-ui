@@ -9,7 +9,7 @@ export default class Example extends React.Component {
     activeItem: ''
   };
 
-  onToggle = id => {
+  onToggle = (id) => {
     this.setState({
       activeItem: id === this.state.activeItem ? '' : id
     });

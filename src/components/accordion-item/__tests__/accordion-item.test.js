@@ -19,10 +19,7 @@ describe('Accordion', () => {
     });
 
     test('internal onToggle is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .simulate('click');
+      wrapper.find('button').first().simulate('click');
       expect(testCase.props.onToggle).toHaveBeenCalledTimes(1);
       expect(testCase.props.onToggle).toHaveBeenCalledWith('one');
     });
@@ -41,10 +38,7 @@ describe('Accordion', () => {
     });
 
     test('disabled works', () => {
-      const props = wrapper
-        .find('button')
-        .last()
-        .props();
+      const props = wrapper.find('button').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
   });

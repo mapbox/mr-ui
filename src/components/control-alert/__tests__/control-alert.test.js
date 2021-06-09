@@ -59,11 +59,7 @@ describe('ControlAlert', () => {
     });
 
     test('onButtonClick is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick();
+      wrapper.find('button').first().props().onClick();
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(
@@ -89,11 +85,7 @@ describe('ControlAlert', () => {
     });
 
     test('onButtonClick is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick();
+      wrapper.find('button').first().props().onClick();
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(

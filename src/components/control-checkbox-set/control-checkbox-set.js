@@ -63,12 +63,11 @@ export default class ControlCheckboxSet extends React.Component {
     optional: false,
     autoFocus: false,
     icon: 'check',
-    themeCheckboxContainer: 'txt-s block mb6 flex-parent',
-    themeCheckbox:
-      'mr6 inline-block checkbox--blue checkbox--s-label flex-child'
+    themeCheckboxContainer: 'txt-s block mb6 flex',
+    themeCheckbox: 'mr6 inline-block checkbox--blue checkbox--s-label'
   };
 
-  onChange = e => {
+  onChange = (e) => {
     const current = e.target.value;
     const { value } = this.props;
     const index = value.indexOf(current);
@@ -109,7 +108,7 @@ export default class ControlCheckboxSet extends React.Component {
       groupProps['aria-invalid'] = true;
     }
 
-    const renderOptions = d => {
+    const renderOptions = (d) => {
       const isActive = value.indexOf(d.value) >= 0 ? true : false;
       const extraProps = omit(d, ['value', 'label']);
       return (

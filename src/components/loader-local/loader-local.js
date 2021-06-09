@@ -16,7 +16,7 @@ export default class LoaderLocal extends React.PureComponent {
 
   render() {
     const { themeLoader } = this.props;
-    let className = 'loading absolute top left right bottom flex-parent';
+    let className = 'loading absolute top left right bottom flex';
     if (themeLoader) className += ' ' + themeLoader;
     const passedProps = omit(this.props, LoaderLocal.propNames);
     return <div className={className} {...passedProps} />;

@@ -1072,7 +1072,7 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
 
 exports[`CodeSnippet maximum height renders as expected 1`] = `
 <div
-  className="relative round z0 scroll-styled scroll-auto"
+  className="relative round z0 scroll-styled overflow-auto"
   style={
     Object {
       "maxHeight": 120,

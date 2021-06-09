@@ -52,76 +52,75 @@ export default class Example extends React.Component {
     zoomValidationError: ''
   };
 
-  updateAccessToken = accessToken => {
+  updateAccessToken = (accessToken) => {
     const accessTokenValidationError = validateAccessToken(accessToken);
     this.setState({ accessToken, accessTokenValidationError });
   };
 
-  updateBearing = bearing => {
+  updateBearing = (bearing) => {
     const bearingValidationError = validateBearing(bearing);
     this.setState({ bearing, bearingValidationError });
   };
 
-  updateDate = date => {
+  updateDate = (date) => {
     const dateValidationError = validateDate(date);
     this.setState({ date, dateValidationError });
   };
 
-  updateDateRange = dateRange => {
+  updateDateRange = (dateRange) => {
     const dateRangeValidationError = validateStartDateBeforeEndDate(dateRange);
     this.setState({ dateRange, dateRangeValidationError });
   };
 
-  updateEmail = email => {
+  updateEmail = (email) => {
     const emailValidationError = validateEmail(email);
     this.setState({ email, emailValidationError });
   };
 
-  updateLatitude = latitude => {
+  updateLatitude = (latitude) => {
     const latitudeValidationError = validateLatitude(latitude);
     this.setState({ latitude, latitudeValidationError });
   };
 
-  updateLongitude = longitude => {
+  updateLongitude = (longitude) => {
     const longitudeValidationError = validateLongitude(longitude);
     this.setState({ longitude, longitudeValidationError });
   };
 
-  updateNumberBetween = numberBetween => {
+  updateNumberBetween = (numberBetween) => {
     const validateNumberBetween0and10 = validateNumberBetween(0, 10);
-    const numberBetweenValidationError = validateNumberBetween0and10(
-      numberBetween
-    );
+    const numberBetweenValidationError =
+      validateNumberBetween0and10(numberBetween);
     this.setState({ numberBetween, numberBetweenValidationError });
   };
 
-  updateNumber = number => {
+  updateNumber = (number) => {
     const numberValidationError = validateNumber(number);
     this.setState({ number, numberValidationError });
   };
 
-  updatePassword = password => {
+  updatePassword = (password) => {
     const passwordValidationError = validatePassword(password);
     this.setState({ password, passwordValidationError });
   };
 
-  updatePitch = pitch => {
+  updatePitch = (pitch) => {
     const pitchValidationError = validatePitch(pitch);
     this.setState({ pitch, pitchValidationError });
   };
 
-  updateRequired = required => {
+  updateRequired = (required) => {
     const validateRequiredDescription = validateRequired('a value');
     const requiredValidationError = validateRequiredDescription(required);
     this.setState({ required, requiredValidationError });
   };
 
-  updateStyleUri = styleUri => {
+  updateStyleUri = (styleUri) => {
     const styleUriValidationError = validateStyleUri(styleUri);
     this.setState({ styleUri, styleUriValidationError });
   };
 
-  updateZoom = zoom => {
+  updateZoom = (zoom) => {
     const zoomValidationError = validateZoom(zoom);
     this.setState({ zoom, zoomValidationError });
   };

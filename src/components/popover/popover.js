@@ -78,7 +78,7 @@ export default class Popover extends React.Component {
   }
 
   componentWillUnmount() {
-    this.hackListenerRemovers.forEach(r => r());
+    this.hackListenerRemovers.forEach((r) => r());
     document.removeEventListener('mousedown', this.onDocumentMousedown);
     if (this.focusBodyTimer) clearTimeout(this.focusBodyTimer);
 
@@ -135,7 +135,7 @@ export default class Popover extends React.Component {
     }
   };
 
-  onDocumentMousedown = event => {
+  onDocumentMousedown = (event) => {
     const { onExit } = this.props;
     if (!this.bodyElement || !onExit) return;
     if (this.bodyElement.contains(event.target)) return;
@@ -152,7 +152,7 @@ export default class Popover extends React.Component {
     onExit();
   };
 
-  onBodyKeyDown = event => {
+  onBodyKeyDown = (event) => {
     if (
       this.props.onExit &&
       this.props.escapeCloses &&
@@ -169,7 +169,7 @@ export default class Popover extends React.Component {
     }
   };
 
-  elementIsWithinChildPopover = element => {
+  elementIsWithinChildPopover = (element) => {
     const elementPopoverId = element.getAttribute('data-popover-id');
     if (elementPopoverId) {
       return Number(elementPopoverId) > this.popoverId;
@@ -179,7 +179,7 @@ export default class Popover extends React.Component {
     return false;
   };
 
-  setPopoverElement = element => {
+  setPopoverElement = (element) => {
     this.bodyElement = element;
     if (this.props.onElement) this.props.onElement(element);
   };
@@ -267,7 +267,7 @@ Popover.propTypes = {
    * If `true`, the popover will hide when its anchor is scrolled offscreen.
    * By default, the popover will follow its anchor wherever it goes.
    *
-   * If your anchor is within an  internally scrolling area, you may want to
+   * If your anchor is within an internally scrolling area, you may want to
    * use `true`, so the popover doesn't existing in a disembodied state after
    * its anchor is scrolled away.
    */

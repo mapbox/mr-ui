@@ -5,5 +5,5 @@ export default function safeSpy(nonSpyImplementation) {
     return jest.fn();
   }
   if (nonSpyImplementation) return nonSpyImplementation;
-  return function() {};
+  return function () {};
 }

@@ -55,7 +55,7 @@ export default class ControlRadioSet extends React.Component {
     themeLegend: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     return this.props.onChange(e.target.value, this.props.id);
   };
 
@@ -63,8 +63,8 @@ export default class ControlRadioSet extends React.Component {
     value: '',
     optional: false,
     autoFocus: false,
-    themeRadioContainer: 'txt-s block mb6 flex-parent',
-    themeRadio: 'mr6 radio--blue radio--s-label inline-block flex-child'
+    themeRadioContainer: 'txt-s block mb6 flex',
+    themeRadio: 'mr6 radio--blue radio--s-label inline-block '
   };
 
   render() {
@@ -94,7 +94,7 @@ export default class ControlRadioSet extends React.Component {
       groupProps['aria-invalid'] = true;
     }
 
-    const renderOptions = d => {
+    const renderOptions = (d) => {
       const extraProps = omit(d, ['value', 'label']);
       return (
         <label

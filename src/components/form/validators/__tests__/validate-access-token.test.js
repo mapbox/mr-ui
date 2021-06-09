@@ -5,7 +5,7 @@ test('accepts empty value', () => {
 });
 
 test('valid returns ""', () => {
-  ['pk.access.token', 'sk.access.token', 'tk.access.token'].forEach(val => {
+  ['pk.access.token', 'sk.access.token', 'tk.access.token'].forEach((val) => {
     expect(validateAccessToken(val)).toBe('');
   });
 });

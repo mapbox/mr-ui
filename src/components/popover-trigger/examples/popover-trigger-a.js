@@ -14,7 +14,9 @@ export default class Example extends React.Component {
     return (
       <div>
         <PopoverTrigger content={this.getPopoverContent}>
-          <Button size="medium" passthroughProps={{ 'aria-label': 'Trigger' }}>Trigger</Button>
+          <Button size="medium" passthroughProps={{ 'aria-label': 'Trigger' }}>
+            Trigger
+          </Button>
         </PopoverTrigger>
       </div>
     );

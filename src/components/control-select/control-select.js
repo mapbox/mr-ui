@@ -50,10 +50,7 @@ export default class ControlSelect extends React.Component {
                 props.value
               } of type ${typeof props.value} supplied to ${componentName}, expected a number or string.`
             );
-          } else if (
-            props.value !== undefined &&
-            props.options !== undefined
-          ) {
+          } else if (props.value !== undefined && props.options !== undefined) {
             return new Error(
               `You've provided both an 'options' & 'value' key to one of your options object groups. Only 'options' will be used.`
             );
@@ -93,7 +90,7 @@ export default class ControlSelect extends React.Component {
     themeLabel: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     return this.props.onChange(e.target.value, this.props.id);
   };
 
@@ -137,7 +134,7 @@ export default class ControlSelect extends React.Component {
       selectProps['aria-invalid'] = true;
     }
 
-    const renderOptions = d => {
+    const renderOptions = (d) => {
       if (d.options) {
         return (
           <optgroup key={d.label} label={d.label}>

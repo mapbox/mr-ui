@@ -25,7 +25,7 @@ export default class Example extends React.Component {
   constructor(props) {
     super(props);
     this.state = { active: 'sizes' };
-    this.changeTab = id => {
+    this.changeTab = (id) => {
       this.setState({ active: id });
     };
   }
@@ -33,17 +33,15 @@ export default class Example extends React.Component {
   render() {
     return (
       <div className="px12 py12 bg-gray-faint">
-        <div className="border-b border--gray-light w300 flex-parent flex-parent--end-main">
-          <div className="flex-child">
-            <UnderlineTabs
-              items={items}
-              active={this.state.active}
-              onChange={this.changeTab}
-              size="small"
-              overlapBorder={true}
-              bold={false}
-            />
-          </div>
+        <div className="border-b border--gray-light w300 flex flex--end-main">
+          <UnderlineTabs
+            items={items}
+            active={this.state.active}
+            onChange={this.changeTab}
+            size="small"
+            overlapBorder={true}
+            bold={false}
+          />
         </div>
       </div>
     );

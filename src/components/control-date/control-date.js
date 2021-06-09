@@ -89,7 +89,7 @@ export default class ControlDate extends React.Component {
     endDatePlaceholder: 'M/D/YYYY',
     format: 'M/D/YYYY',
     themeWrapper:
-      'react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap',
+      'react-control-date react-control-date--disable-keyboard inline-flex flex--center-cross flex--wrap',
     themeCalendar: 'shadow-darken10 border--0 none block-mm',
     themeTextInput: 'input w180 none block-mm'
   };
@@ -139,11 +139,11 @@ export default class ControlDate extends React.Component {
       this.props.onChange(this.getDateData(), this.props.id);
     });
   };
-  changeStartDate = date => this.handleChange(date, 'momentDate');
-  changeEndDate = date => this.handleChange(date, 'momentEndDate');
-  nativeChangeDate = e =>
+  changeStartDate = (date) => this.handleChange(date, 'momentDate');
+  changeEndDate = (date) => this.handleChange(date, 'momentEndDate');
+  nativeChangeDate = (e) =>
     this.handleChange(this.moment(e.target.value, 'YYYY-MM-DD'), 'momentDate');
-  nativeChangeEndDate = e =>
+  nativeChangeEndDate = (e) =>
     this.handleChange(
       this.moment(e.target.value, 'YYYY-MM-DD'),
       'momentEndDate'
@@ -158,9 +158,9 @@ export default class ControlDate extends React.Component {
       });
     }
   };
-  onChangeRawStartDate = e =>
+  onChangeRawStartDate = (e) =>
     this.handleChangeRaw(e.target.value, 'momentDate');
-  onChangeRawEndDate = e =>
+  onChangeRawEndDate = (e) =>
     this.handleChangeRaw(e.target.value, 'momentEndDate');
 
   render() {
@@ -223,7 +223,7 @@ export default class ControlDate extends React.Component {
       />
     );
     const basePicker = (
-      <div className="flex-parent">
+      <div className="flex">
         <DatePicker
           {...sharedDatePickerProps}
           selected={this.state.momentDate}
@@ -246,7 +246,7 @@ export default class ControlDate extends React.Component {
     );
     const endDatePicker =
       this.state.momentEndDate || dateRange ? (
-        <div className="flex-parent">
+        <div className="flex">
           <DatePicker
             {...sharedDatePickerProps}
             selected={this.state.momentEndDate}

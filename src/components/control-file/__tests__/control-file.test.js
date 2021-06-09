@@ -27,10 +27,7 @@ describe('ControlFile', () => {
           files: [bonJoviFile]
         }
       };
-      wrapper
-        .find('input')
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('input').props().onChange(mockEvent);
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith(
         [bonJoviFile],
@@ -78,10 +75,7 @@ describe('ControlFile', () => {
           files: [bonJoviFile, aerosmithFile]
         }
       };
-      wrapper
-        .find('input')
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('input').props().onChange(mockEvent);
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith(
         [bonJoviFile, aerosmithFile],

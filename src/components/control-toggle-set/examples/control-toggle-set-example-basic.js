@@ -18,19 +18,19 @@ export default class Example extends React.Component {
         initialValue={['sea-otter', 'humpback-whale']}
         options={[
           {
-            label: 'Humpback whale',
+            label: 'Whale',
             value: 'humpback-whale'
           },
           {
-            label: 'Rufous Hummingbird',
+            label: 'Bird',
             value: 'rufous-hummingbird'
           },
           {
-            label: 'Sea Otter',
+            label: 'Otter',
             value: 'sea-otter'
           },
           {
-            label: 'Snowshoe Hare',
+            label: 'Hare',
             value: 'snowshoe-hare'
           }
         ]}

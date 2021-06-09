@@ -20,12 +20,12 @@ class PopoverTrigger extends React.Component {
     this.state = { visible: false };
   }
 
-  ignore = el => {
+  ignore = (el) => {
     return el === this.getAnchorElement();
   };
 
   togglePopover = () => {
-    this.setState(state => {
+    this.setState((state) => {
       return { visible: !state.visible };
     });
   };
@@ -34,7 +34,7 @@ class PopoverTrigger extends React.Component {
     return this.anchorNode;
   };
 
-  setAnchorNode = el => {
+  setAnchorNode = (el) => {
     this.anchorNode = el;
   };
 
@@ -74,7 +74,7 @@ testCases.headerMenu = {
   description: 'header menu',
   element: (
     <div className="grid">
-      <div className="col col--4-mm">
+      <div className="col w-1/3-mm">
         <PopoverTrigger
           popoverProps={{
             placement: 'bottom',
@@ -82,7 +82,7 @@ testCases.headerMenu = {
           }}
         />
       </div>
-      <div className="col col--4-mm">
+      <div className="col w-1/3-mm">
         <PopoverTrigger
           popoverProps={{
             placement: 'bottom',
@@ -90,7 +90,7 @@ testCases.headerMenu = {
           }}
         />
       </div>
-      <div className="col col--4-mm">
+      <div className="col w-1/3-mm">
         <PopoverTrigger
           popoverProps={{
             placement: 'bottom',
@@ -103,11 +103,11 @@ testCases.headerMenu = {
 };
 
 class StudioPanel extends React.Component {
-  getContainingElement = id => {
+  getContainingElement = (id) => {
     return this.refs[`container-${id}`];
   };
 
-  getTriggers = id => {
+  getTriggers = (id) => {
     let triggers = [];
     for (let i = 0; i < 20; i++) {
       let itemClasses = 'px12 py12';
@@ -135,13 +135,13 @@ class StudioPanel extends React.Component {
       <div className="clearfix">
         <div
           ref="container-a"
-          className="fl hmax600 w240 scroll-auto border border--gray-light"
+          className="fl hmax600 w240 overflow-auto border border--gray-light"
         >
           {this.getTriggers('a')}
         </div>
         <div
           ref="container-b"
-          className="fr hmax600 w240 scroll-auto border border--gray-light"
+          className="fr hmax600 w240 overflow-auto border border--gray-light"
         >
           {this.getTriggers('b')}
         </div>
@@ -176,13 +176,11 @@ testCases.receiveFocus = {
   element: (
     <PopoverTrigger
       content={
-        <div className="flex-parent flex-parent--center-cross">
-          <div className="flex-child">
-            <input className="input" placeholder="eh?" />
-          </div>
-          <div className="flex-child">
-            <button aria-label="Submit" className="btn ml6">Submit</button>
-          </div>
+        <div className="flex flex--center-cross">
+          <input className="input" placeholder="eh?" />
+          <button aria-label="Submit" className="btn ml6">
+            Submit
+          </button>
         </div>
       }
     />
@@ -197,13 +195,11 @@ testCases.doNotReceiveFocus = {
         receiveFocus: false
       }}
       content={
-        <div className="flex-parent flex-parent--center-cross">
-          <div className="flex-child">
-            <input className="input" placeholder="eh?" />
-          </div>
-          <div className="flex-child">
-            <button aria-label="Submit" className="btn ml6">Submit</button>
-          </div>
+        <div className="flex flex--center-cross">
+          <input className="input" placeholder="eh?" />
+          <button aria-label="Submit" className="btn ml6">
+            Submit
+          </button>
         </div>
       }
     />
@@ -218,13 +214,11 @@ testCases.trapFocus = {
         trapFocus: true
       }}
       content={
-        <div className="flex-parent flex-parent--center-cross">
-          <div className="flex-child">
-            <input className="input" placeholder="eh?" />
-          </div>
-          <div className="flex-child">
-            <button aria-label="Submit" className="btn ml6">Submit</button>
-          </div>
+        <div className="flex flex--center-cross">
+          <input className="input" placeholder="eh?" />
+          <button aria-label="Submit" className="btn ml6">
+            Submit
+          </button>
         </div>
       }
     />

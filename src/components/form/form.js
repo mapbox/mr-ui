@@ -49,7 +49,7 @@ export default class Form extends React.Component {
     const controlValues = {};
     const controlValidationErrors = {};
 
-    Object.keys(config).forEach(controlName => {
+    Object.keys(config).forEach((controlName) => {
       const controlConfig = config[controlName];
       if (
         this.state &&
@@ -91,10 +91,8 @@ export default class Form extends React.Component {
   componentWillReceiveProps(nextProps) {
     const { config } = this.props;
     if (!shallowEqualObjects(nextProps.config, config)) {
-      const {
-        controlValues,
-        controlValidationErrors
-      } = this.setControlProperties(nextProps.config);
+      const { controlValues, controlValidationErrors } =
+        this.setControlProperties(nextProps.config);
       this.setState({
         controlValues,
         controlValidationErrors,
@@ -108,10 +106,10 @@ export default class Form extends React.Component {
   }
 
   checkValidation(formState) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const controlValidationErrors = this.state.controlValidationErrors;
 
-      Object.keys(this.state.controlValues).forEach(controlName => {
+      Object.keys(this.state.controlValues).forEach((controlName) => {
         const errorMessage = validateControlValue(
           this.state.controlValues[controlName],
           this.props.config[controlName].validator,
@@ -151,7 +149,7 @@ export default class Form extends React.Component {
     if (this.props.onChange) this.props.onChange(controlValues);
   };
 
-  getControlProps = controlName => {
+  getControlProps = (controlName) => {
     const control = this.props.config[controlName];
     return xtend(control, {
       id: controlName,
@@ -178,7 +176,7 @@ export default class Form extends React.Component {
           this.setState({ formState: formStates.completeSubmission });
         }
       })
-      .catch(err => {
+      .catch((err) => {
         if (!this._isMounted) return;
         if (this.state.formState === formStates.pendingSubmission) {
           this.setState({ formState: formStates.completeSubmission });

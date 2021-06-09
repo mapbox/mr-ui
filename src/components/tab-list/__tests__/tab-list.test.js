@@ -20,11 +20,7 @@ describe('TabList', () => {
     });
 
     test('onChange is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick('one');
+      wrapper.find('button').first().props().onClick('one');
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith('one');
     });
@@ -102,11 +98,7 @@ describe('TabList', () => {
     });
 
     test('onChange is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick('one');
+      wrapper.find('button').first().props().onClick('one');
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith('one');
     });

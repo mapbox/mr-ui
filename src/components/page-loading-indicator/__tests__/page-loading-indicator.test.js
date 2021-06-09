@@ -25,7 +25,7 @@ describe('pageLoadingIndictor.start', () => {
     const els = [];
     els.push(pageLoadingIndictor.start());
     els.push(pageLoadingIndictor.start());
-    expect(els.filter(x => !!x).length).toBe(1);
+    expect(els.filter((x) => !!x).length).toBe(1);
   });
 });
 

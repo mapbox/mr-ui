@@ -24,11 +24,7 @@ describe('ControlSwitch', () => {
           checked: true
         }
       };
-      wrapper
-        .find('input')
-        .first()
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('input').first().props().onChange(mockEvent);
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
@@ -62,10 +58,7 @@ describe('ControlSwitch', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('input')
-        .last()
-        .props();
+      const props = wrapper.find('input').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
   });
@@ -83,10 +76,7 @@ describe('ControlSwitch', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('input')
-        .last()
-        .props();
+      const props = wrapper.find('input').last().props();
       expect(props).toHaveProperty('autoFocus', true);
     });
   });
