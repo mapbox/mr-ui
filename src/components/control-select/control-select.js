@@ -93,7 +93,7 @@ export default class ControlSelect extends React.Component {
     themeLabel: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     return this.props.onChange(e.target.value, this.props.id);
   };
 
@@ -137,7 +137,7 @@ export default class ControlSelect extends React.Component {
       selectProps['aria-invalid'] = true;
     }
 
-    const renderOptions = d => {
+    const renderOptions = (d) => {
       if (d.options) {
         return (
           <optgroup key={d.label} label={d.label}>

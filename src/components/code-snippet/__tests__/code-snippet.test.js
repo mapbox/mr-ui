@@ -57,10 +57,7 @@ describe('CodeSnippet', () => {
     });
 
     test('onCopy works', () => {
-      wrapper
-        .find('CopyButton')
-        .props()
-        .onCopy();
+      wrapper.find('CopyButton').props().onCopy();
       expect(testCase.props.onCopy).toHaveBeenCalledTimes(1);
       expect(testCase.props.onCopy.mock.calls[0].length).toBe(0);
     });
@@ -94,19 +91,13 @@ describe('CodeSnippet', () => {
     });
 
     test('onCopy works', () => {
-      wrapper
-        .find('CopyButton')
-        .get(0)
-        .props.onCopy();
+      wrapper.find('CopyButton').get(0).props.onCopy();
       expect(testCase.props.onCopy).toHaveBeenCalledTimes(1);
       expect(testCase.props.onCopy).toHaveBeenCalledWith(0);
     });
 
     test('onCopy works again, providing correct index', () => {
-      wrapper
-        .find('CopyButton')
-        .get(1)
-        .props.onCopy();
+      wrapper.find('CopyButton').get(1).props.onCopy();
       expect(testCase.props.onCopy).toHaveBeenCalledTimes(1);
       expect(testCase.props.onCopy).toHaveBeenCalledWith(1);
     });

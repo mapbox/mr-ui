@@ -34,7 +34,7 @@ class InModal extends React.Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
   toggleModal() {
-    this.setState(state => ({ modalOpen: !state.modalOpen }));
+    this.setState((state) => ({ modalOpen: !state.modalOpen }));
   }
   renderModal() {
     if (!this.state.modalOpen) {
@@ -49,7 +49,11 @@ class InModal extends React.Component {
   render() {
     return (
       <div>
-        <button aria-label="Open modal" className="btn" onClick={this.toggleModal}>
+        <button
+          aria-label="Open modal"
+          className="btn"
+          onClick={this.toggleModal}
+        >
           Open modal
         </button>
         {this.renderModal()}

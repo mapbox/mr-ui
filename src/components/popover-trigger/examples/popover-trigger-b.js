@@ -49,7 +49,9 @@ export default class Example extends React.Component {
             'data-test': 'trigger-container'
           }}
         >
-          <Button size="medium" passthroughProps={{ 'aria-label': 'Trigger' }}>Trigger</Button>
+          <Button size="medium" passthroughProps={{ 'aria-label': 'Trigger' }}>
+            Trigger
+          </Button>
         </PopoverTrigger>
       </div>
     );

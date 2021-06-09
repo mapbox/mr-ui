@@ -7,7 +7,7 @@ export default class ComponentSection extends React.Component {
     const { data } = this.props;
     if (!data) return null;
 
-    const propRows = sortedProps(data.props).map(propData => {
+    const propRows = sortedProps(data.props).map((propData) => {
       return <PropRow key={propData.name} {...propData} />;
     });
 

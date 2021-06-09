@@ -158,7 +158,7 @@ export default class CodeSnippet extends React.PureComponent {
     }
   }, 300);
 
-  onContainerElement = element => {
+  onContainerElement = (element) => {
     this.containerElement = element;
   };
 
@@ -182,7 +182,7 @@ export default class CodeSnippet extends React.PureComponent {
     const endCurrentChunk = ({ live }) => {
       allChunks.push({
         live,
-        highlightedLines: currentChunk.map(line => line.highlighted),
+        highlightedLines: currentChunk.map((line) => line.highlighted),
         raw: currentChunk.reduce(
           (result, line) => (result += line.raw + '\n'),
           ''

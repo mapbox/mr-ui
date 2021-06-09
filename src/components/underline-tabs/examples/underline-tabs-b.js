@@ -25,7 +25,7 @@ export default class Example extends React.Component {
   constructor(props) {
     super(props);
     this.state = { active: 'sizes' };
-    this.changeTab = id => {
+    this.changeTab = (id) => {
       this.setState({ active: id });
     };
   }

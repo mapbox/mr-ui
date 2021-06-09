@@ -78,7 +78,7 @@ export default class ControlText extends React.Component {
     themeLabel: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     return this.props.onChange(e.target.value, this.props.id);
   };
 
@@ -98,11 +98,11 @@ export default class ControlText extends React.Component {
     };
   }
 
-  setInputElement = el => {
+  setInputElement = (el) => {
     this.inputElement = el;
   };
 
-  setErrorElement = el => {
+  setErrorElement = (el) => {
     this.errorElement = el;
   };
 
@@ -154,11 +154,8 @@ export default class ControlText extends React.Component {
   };
 
   renderPopover = () => {
-    const {
-      validationError,
-      errorTooltipTheme,
-      errorTooltipBackgroundColor
-    } = this.props;
+    const { validationError, errorTooltipTheme, errorTooltipBackgroundColor } =
+      this.props;
 
     const popoverProps = {
       getAnchorElement: this.getErrorElement,

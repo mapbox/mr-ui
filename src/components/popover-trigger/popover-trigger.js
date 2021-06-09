@@ -83,7 +83,7 @@ export default class PopoverTrigger extends React.Component {
     );
   };
 
-  closePopover = callback => {
+  closePopover = (callback) => {
     const alreadyClosed = !this.state.visible;
     this.setState(
       {
@@ -99,7 +99,7 @@ export default class PopoverTrigger extends React.Component {
     );
   };
 
-  onAnyClick = event => {
+  onAnyClick = (event) => {
     // If the trigger responds to focus but not click and you *first*
     // focus *then* click, that click closes the popover instead of
     // leaving it open even when the mouse moves away.
@@ -175,7 +175,7 @@ export default class PopoverTrigger extends React.Component {
     this.showBecauseHover();
   };
 
-  onTriggerMouseLeave = event => {
+  onTriggerMouseLeave = (event) => {
     if (
       this.props.disabled ||
       !this.props.respondsToHover ||
@@ -195,7 +195,7 @@ export default class PopoverTrigger extends React.Component {
     }
   };
 
-  onPopoverMouseLeave = event => {
+  onPopoverMouseLeave = (event) => {
     if (
       this.props.disabled ||
       !this.props.respondsToHover ||
@@ -239,7 +239,7 @@ export default class PopoverTrigger extends React.Component {
     this.hide();
   };
 
-  onTriggerKeyDown = event => {
+  onTriggerKeyDown = (event) => {
     const escapeCloses = this.props.popoverProps.escapeCloses;
     if (escapeCloses === false) return;
     if (event.key === 'Escape') {
@@ -295,11 +295,11 @@ export default class PopoverTrigger extends React.Component {
       clearTimeout(this.addMouseMoveUnblockTimeout);
   }
 
-  ignoreClickWithinElement = element => {
+  ignoreClickWithinElement = (element) => {
     if (this.triggerElement && this.triggerElement.contains(element))
       return true;
-    const ignoreClickWithinElement = this.props.popoverProps
-      .ignoreClickWithinElement;
+    const ignoreClickWithinElement =
+      this.props.popoverProps.ignoreClickWithinElement;
     if (ignoreClickWithinElement) {
       return ignoreClickWithinElement(element);
     }
@@ -314,11 +314,11 @@ export default class PopoverTrigger extends React.Component {
     return this.triggerElement.firstChild;
   };
 
-  setTriggerElement = element => {
+  setTriggerElement = (element) => {
     this.triggerElement = element;
   };
 
-  setPopoverElement = element => {
+  setPopoverElement = (element) => {
     this.popoverElement = element;
   };
 
@@ -364,7 +364,7 @@ export default class PopoverTrigger extends React.Component {
       hiddenContent = (
         <div
           className="hide-visually"
-          {...this.props.popoverProps.passthroughProps || {}}
+          {...(this.props.popoverProps.passthroughProps || {})}
         >
           {this.getPopoverContent()}
         </div>

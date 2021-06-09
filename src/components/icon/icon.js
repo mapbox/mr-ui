@@ -34,7 +34,7 @@ export default class Icon extends React.Component {
     }
   }
 
-  setIconElement = element => {
+  setIconElement = (element) => {
     this.iconElement = element;
   };
 

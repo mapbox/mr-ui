@@ -24,10 +24,7 @@ describe('ControlRange', () => {
           value: '100'
         }
       };
-      wrapper
-        .find('input')
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('input').props().onChange(mockEvent);
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
@@ -61,10 +58,7 @@ describe('ControlRange', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('input')
-        .last()
-        .props();
+      const props = wrapper.find('input').last().props();
       expect(props).toHaveProperty('min', 100);
       expect(props).toHaveProperty('max', 1000);
       expect(props).toHaveProperty('step', 100);

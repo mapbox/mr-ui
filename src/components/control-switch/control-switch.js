@@ -43,7 +43,7 @@ export default class ControlSwitch extends React.Component {
     themeLabel: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     return this.props.onChange(e.target.checked, this.props.id);
   };
 

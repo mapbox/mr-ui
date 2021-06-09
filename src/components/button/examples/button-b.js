@@ -8,7 +8,13 @@ import IconText from '../../icon-text';
 export default class Example extends React.Component {
   render() {
     return (
-      <Button onClick={() => {}} width="large" outline={true} color="purple" passthroughProps={{ 'aria-label': 'Save your map' }}>
+      <Button
+        onClick={() => {}}
+        width="large"
+        outline={true}
+        color="purple"
+        passthroughProps={{ 'aria-label': 'Save your map' }}
+      >
         <IconText iconBefore="floppy">Save your map</IconText>
       </Button>
     );

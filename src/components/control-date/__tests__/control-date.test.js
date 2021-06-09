@@ -4,16 +4,10 @@ import { testCases } from './control-date-test-cases';
 import moment from 'moment';
 
 function getDatePickerProps(wrapper) {
-  return wrapper
-    .find('DatePicker')
-    .first()
-    .props();
+  return wrapper.find('DatePicker').first().props();
 }
 function getEndDatePickerProps(wrapper) {
-  return wrapper
-    .find('DatePicker')
-    .last()
-    .props();
+  return wrapper.find('DatePicker').last().props();
 }
 
 describe('ControlDate', () => {
@@ -193,7 +187,7 @@ describe('ControlDate', () => {
     });
 
     test('disabled prop works', () => {
-      wrapper.find('input').forEach(input => {
+      wrapper.find('input').forEach((input) => {
         expect(input.props()).toHaveProperty('disabled', true);
       });
     });
@@ -287,18 +281,12 @@ describe('ControlDate', () => {
       const inputClassName = `.${testCase.props.themeTextInput
         .split(' ')
         .join('.')}`;
-      expect(
-        wrapper
-          .find(inputClassName)
-          .first()
-          .props().placeholderText
-      ).toBe(testCase.props.placeholder);
-      expect(
-        wrapper
-          .find(inputClassName)
-          .last()
-          .props().placeholderText
-      ).toBe(testCase.props.endDatePlaceholder);
+      expect(wrapper.find(inputClassName).first().props().placeholderText).toBe(
+        testCase.props.placeholder
+      );
+      expect(wrapper.find(inputClassName).last().props().placeholderText).toBe(
+        testCase.props.endDatePlaceholder
+      );
     });
   });
 });

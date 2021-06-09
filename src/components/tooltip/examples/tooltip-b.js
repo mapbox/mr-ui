@@ -24,7 +24,7 @@ export default class Example extends React.Component {
         coloring="dark"
         maxWidth="small"
       >
-        {triggerProps => <CustomTrigger spanProps={triggerProps} />}
+        {(triggerProps) => <CustomTrigger spanProps={triggerProps} />}
       </Tooltip>
     );
   }

@@ -9,7 +9,7 @@ import validateStartDateBeforeEndDate from '../../form/validators/validate-start
 export default class Example extends React.Component {
   state = { dateValue: '', validationError: '' };
 
-  onDateChange = dateValue => {
+  onDateChange = (dateValue) => {
     const validationError = validateStartDateBeforeEndDate(dateValue);
     this.setState({ dateValue, validationError });
   };

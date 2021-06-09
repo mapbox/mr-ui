@@ -53,11 +53,7 @@ describe('ControlCard', () => {
     });
 
     test('onButtonClick is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick();
+      wrapper.find('button').first().props().onClick();
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCases.collapsible.props.onButtonClick).toHaveBeenCalledTimes(
@@ -83,11 +79,7 @@ describe('ControlCard', () => {
     });
 
     test('onButtonClick is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick();
+      wrapper.find('button').first().props().onClick();
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(

@@ -39,10 +39,7 @@ describe('ControlText', () => {
           value: 'foo'
         }
       };
-      wrapper
-        .find('input')
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('input').props().onChange(mockEvent);
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
@@ -63,10 +60,7 @@ describe('ControlText', () => {
     });
 
     test('disabled is true', () => {
-      const props = wrapper
-        .find('input')
-        .last()
-        .props();
+      const props = wrapper.find('input').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
   });
@@ -106,22 +100,14 @@ describe('ControlText', () => {
         false
       );
 
-      wrapper
-        .find('input')
-        .last()
-        .props()
-        .onFocus();
+      wrapper.find('input').last().props().onFocus();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
         true
       );
 
-      wrapper
-        .find('input')
-        .last()
-        .props()
-        .onBlur();
+      wrapper.find('input').last().props().onBlur();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
@@ -134,22 +120,14 @@ describe('ControlText', () => {
         false
       );
 
-      wrapper
-        .find('button')
-        .last()
-        .props()
-        .onFocus();
+      wrapper.find('button').last().props().onFocus();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
         true
       );
 
-      wrapper
-        .find('button')
-        .last()
-        .props()
-        .onBlur();
+      wrapper.find('button').last().props().onBlur();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
@@ -172,10 +150,7 @@ describe('ControlText', () => {
         true
       );
 
-      wrapper
-        .find('[data-test="control-text-container"]')
-        .props()
-        .onMouseOut();
+      wrapper.find('[data-test="control-text-container"]').props().onMouseOut();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
@@ -209,10 +184,7 @@ describe('ControlText', () => {
         true
       );
 
-      wrapper
-        .find('[data-test="control-text-container"]')
-        .props()
-        .onMouseOut();
+      wrapper.find('[data-test="control-text-container"]').props().onMouseOut();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(

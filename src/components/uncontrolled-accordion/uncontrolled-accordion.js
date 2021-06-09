@@ -36,7 +36,7 @@ export default class UncontrolledAccordion extends React.PureComponent {
     };
   }
 
-  onToggle = id => {
+  onToggle = (id) => {
     const { onToggle } = this.props;
     this.setState(
       {
@@ -51,7 +51,7 @@ export default class UncontrolledAccordion extends React.PureComponent {
   render() {
     const { items, themeItem, themeItemHeader, themeItemBody } = this.props;
 
-    const renderItems = item => {
+    const renderItems = (item) => {
       return (
         <AccordionItem
           {...item}
