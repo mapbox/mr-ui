@@ -57,7 +57,7 @@ export default class TabList extends React.PureComponent {
     this.state = { openPopover: false };
   }
 
-  onChange = id => {
+  onChange = (id) => {
     const { onChange } = this.props;
     onChange(id);
   };

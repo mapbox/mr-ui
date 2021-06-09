@@ -24,10 +24,7 @@ describe('ControlToggleSet', () => {
           value: 'foo'
         }
       };
-      wrapper
-        .find('textarea')
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('textarea').props().onChange(mockEvent);
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
@@ -48,10 +45,7 @@ describe('ControlToggleSet', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('textarea')
-        .last()
-        .props();
+      const props = wrapper.find('textarea').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
   });
@@ -69,10 +63,7 @@ describe('ControlToggleSet', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('textarea')
-        .last()
-        .props();
+      const props = wrapper.find('textarea').last().props();
       expect(props).toHaveProperty('autoFocus', true);
       expect(props).toHaveProperty('placeholder');
     });

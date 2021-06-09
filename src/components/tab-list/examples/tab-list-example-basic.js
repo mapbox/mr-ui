@@ -9,7 +9,7 @@ export default class Example extends React.Component {
     activeItem: ''
   };
 
-  onChange = id => {
+  onChange = (id) => {
     this.setState({
       activeItem: id === this.state.activeItem ? '' : id
     });

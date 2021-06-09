@@ -34,7 +34,7 @@ export default class ControlAlert extends React.Component {
     }
   }
 
-  handleContentRef = ref => {
+  handleContentRef = (ref) => {
     this.contentRef = ref;
   };
 

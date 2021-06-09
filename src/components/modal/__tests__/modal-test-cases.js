@@ -16,7 +16,7 @@ class ModalWrapper extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState(state => ({ modalOpen: !state.modalOpen }));
+    this.setState((state) => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {

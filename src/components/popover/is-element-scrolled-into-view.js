@@ -13,7 +13,7 @@ import getScrollableParents from './get-scrollable-parents';
  * @return {Boolean}
  */
 export default function isElementScrolledIntoView(element) {
-  const scrollableParents = getScrollableParents(element).filter(parent => {
+  const scrollableParents = getScrollableParents(element).filter((parent) => {
     return parent !== window;
   });
 

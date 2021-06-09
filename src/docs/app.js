@@ -13,13 +13,15 @@ function AppSection({ name, entries, intro }) {
         <h2 className="mb12 pt60 txt-h2 txt-fancy">{name}</h2>
       </a>
       {intro}
-      {entries.map(c => <div key={c.name}>{c.content}</div>)}
+      {entries.map((c) => (
+        <div key={c.name}>{c.content}</div>
+      ))}
     </div>
   );
 }
 
 export default function App() {
-  const componentEls = components.map(component => {
+  const componentEls = components.map((component) => {
     let containerClasses = 'pb60';
     return {
       name: component.name,
@@ -69,7 +71,7 @@ export default function App() {
       </div>
       <div className="mx-auto pl240-mm wmax1200">
         <div className="px24">
-          {sections.map(s => (
+          {sections.map((s) => (
             <AppSection
               key={s.name}
               entries={s.entries}

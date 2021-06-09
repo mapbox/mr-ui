@@ -6,8 +6,8 @@ import AssemblyIntro from './assembly-intro';
 const mainColors = ['blue', 'gray', 'red', 'orange'];
 const secondaryColors = ['purple', 'pink', 'yellow', 'green'];
 
-const getVariants = colors => {
-  return colors.map(c => [
+const getVariants = (colors) => {
+  return colors.map((c) => [
     `${c}-dark`,
     `${c}-deep`,
     c,
@@ -87,7 +87,9 @@ export default function Color() {
         </p>
       </AssemblyIntro>
       <div className="mt24">
-        {sections.map(s => <AssemblySection key={s.name} sectionData={s} />)}
+        {sections.map((s) => (
+          <AssemblySection key={s.name} sectionData={s} />
+        ))}
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ class GetScrollableParentsTest extends React.Component {
     if (!this.el) return;
     const scrollableParents = getScrollableParents(this.el);
 
-    scrollableParents.forEach(parent => {
+    scrollableParents.forEach((parent) => {
       if (parent === window) parent = document.body;
       const boxShadows = parent.style.boxShadow
         ? parent.style.boxShadow.split(',')
@@ -26,10 +26,10 @@ class GetScrollableParentsTest extends React.Component {
       boxShadows.push(
         `inset 0 0 0 ${3 * (boxShadows.length + 1)}px ${this.props.color}`
       );
-      parent.style.boxShadow = boxShadows.map(s => s.trim()).join(', ');
+      parent.style.boxShadow = boxShadows.map((s) => s.trim()).join(', ');
     });
 
-    const scrollableParentsTestIds = scrollableParents.map(parent => {
+    const scrollableParentsTestIds = scrollableParents.map((parent) => {
       if (parent === window) return 'window';
       return parent.getAttribute('data-test');
     });
@@ -37,7 +37,7 @@ class GetScrollableParentsTest extends React.Component {
     this.setState({ scrollableParentsTestIds });
   }
 
-  registerEl = element => {
+  registerEl = (element) => {
     this.el = element;
   };
 
@@ -112,7 +112,8 @@ testCases.absolute = {
           className="bg-darken10 absolute top left mx3 my3"
         >
           <GetScrollableParentsTest testId="absolute" color="orange" />
-        </div>"
+        </div>
+        "
       </div>
     </div>
   )

@@ -32,7 +32,12 @@ export default class FormSubmit extends React.PureComponent {
     };
 
     return (
-      <button aria-label={label} type="button" className={themeButton} {...inputProps}>
+      <button
+        aria-label={label}
+        type="button"
+        className={themeButton}
+        {...inputProps}
+      >
         {label}
       </button>
     );

@@ -57,7 +57,10 @@ testCases.copyRanges = {
   props: {
     code: snippetB,
     highlightedCode: hljs.highlightAuto(snippetB).value,
-    copyRanges: [[1, 1], [7, 11]]
+    copyRanges: [
+      [1, 1],
+      [7, 11]
+    ]
   }
 };
 
@@ -67,7 +70,10 @@ testCases.copyRangesWithCallback = {
   props: {
     code: snippetB,
     highlightedCode: hljs.highlightAuto(snippetB).value,
-    copyRanges: [[1, 1], [7, 11]],
+    copyRanges: [
+      [1, 1],
+      [7, 11]
+    ],
     onCopy: safeSpy()
   }
 };
@@ -78,7 +84,10 @@ testCases.maxHeight = {
   props: {
     code: snippetB,
     highlightedCode: hljs.highlightAuto(snippetB).value,
-    copyRanges: [[1, 1], [7, 11]],
+    copyRanges: [
+      [1, 1],
+      [7, 11]
+    ],
     maxHeight: 120
   }
 };

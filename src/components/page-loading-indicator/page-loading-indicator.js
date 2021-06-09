@@ -22,7 +22,7 @@ function start() {
   }
   document.body.appendChild(el);
   // Next-tick delay to allow the node to be added and ready for a transition.
-  canEnd = new Promise(resolve => {
+  canEnd = new Promise((resolve) => {
     setTimeout(() => {
       el.className += ' ' + ENTER_CLASSNAME;
       setTimeout(resolve, 300);
@@ -36,7 +36,7 @@ function end() {
     return Promise.resolve();
   }
   return (canEnd || Promise.resolve()).then(() => {
-    new Promise(resolve => {
+    new Promise((resolve) => {
       el.classList.remove(ENTER_CLASSNAME);
       el.classList.add(LEAVE_CLASSNAME);
       setTimeout(() => {

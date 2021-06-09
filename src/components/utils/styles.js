@@ -57,7 +57,7 @@ function getStyle(constant, exclude) {
   if (exclude && exclude.length > 0) {
     classList = classList
       .split(' ')
-      .filter(c => {
+      .filter((c) => {
         return exclude.indexOf(c) === -1;
       })
       .join(' ');

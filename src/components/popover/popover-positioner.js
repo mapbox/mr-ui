@@ -66,7 +66,7 @@ class PopoverPositioner extends React.PureComponent {
     );
     this.handleResize = debounce(this.setPosition, 200);
     this.props.getWindow().addEventListener('resize', this.handleResize);
-    this.scrollListeners = this.scrollableParents.map(scrollableParent => {
+    this.scrollListeners = this.scrollableParents.map((scrollableParent) => {
       const scrollListener = this.props.createScrollListener(
         scrollableParent,
         this.setPosition
@@ -83,7 +83,7 @@ class PopoverPositioner extends React.PureComponent {
 
   componentWillUnmount() {
     this.props.getWindow().removeEventListener('resize', this.handleResize);
-    this.scrollListeners.forEach(scrollListener => {
+    this.scrollListeners.forEach((scrollListener) => {
       scrollListener.stop();
     });
     popoverPositionerList.splice(
@@ -139,11 +139,11 @@ class PopoverPositioner extends React.PureComponent {
     }
   };
 
-  setBodyElement = element => {
+  setBodyElement = (element) => {
     this.bodyElement = element;
   };
 
-  setContainerElement = element => {
+  setContainerElement = (element) => {
     this.containerElement = element;
     if (this.props.onElement) this.props.onElement(element);
   };
@@ -152,7 +152,7 @@ class PopoverPositioner extends React.PureComponent {
     return this.bodyElement;
   };
 
-  setPointerElement = element => {
+  setPointerElement = (element) => {
     this.pointerElement = element;
   };
 
@@ -186,7 +186,7 @@ class PopoverPositioner extends React.PureComponent {
 
 const displaced = displace(PopoverPositioner);
 displaced.recalculatePositions = () => {
-  popoverPositionerList.forEach(recalcFn => {
+  popoverPositionerList.forEach((recalcFn) => {
     recalcFn();
   });
 };

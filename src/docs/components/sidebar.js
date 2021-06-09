@@ -23,7 +23,9 @@ function SidebarSection({ name, entries }) {
         <h2 className="txt-h5 mb6 color-blue-on-hover color-gray">{name}</h2>
       </a>
       <ul className="flex flex--wrap block-mm">
-        {entries.map(e => <Link key={e.name} name={e.name} />)}
+        {entries.map((e) => (
+          <Link key={e.name} name={e.name} />
+        ))}
       </ul>
     </div>
   );
@@ -46,7 +48,7 @@ export default function Sidebar({ sections }) {
         </a>
       </div>
       <div className="pt12 txt-s">
-        {sections.map(s => (
+        {sections.map((s) => (
           <SidebarSection key={s.name} name={s.name} entries={s.entries} />
         ))}
       </div>

@@ -63,7 +63,7 @@ export default class ControlFile extends React.Component {
     themeLabel: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     const fileList = e.target.files;
     if (!fileList.length) return;
     const filesArray = [];
@@ -89,7 +89,7 @@ export default class ControlFile extends React.Component {
   componentWillReceiveProps(nextProps) {
     const nextDisplayValue = !nextProps.value
       ? ''
-      : nextProps.value.map(f => f.name).join(', ');
+      : nextProps.value.map((f) => f.name).join(', ');
     if (nextDisplayValue !== this.state.displayValue) {
       this.setState({ displayValue: nextDisplayValue });
     }

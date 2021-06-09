@@ -10,7 +10,7 @@ import Button from '../button';
 
 export default class Example extends React.Component {
   render() {
-    const btnClasses = variantClasses => {
+    const btnClasses = (variantClasses) => {
       return `${variantClasses} shadow-darken25`;
     };
     return (

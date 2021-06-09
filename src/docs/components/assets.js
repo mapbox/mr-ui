@@ -76,7 +76,9 @@ export default class Assets extends React.Component {
           </p>
         </AssemblyIntro>
         <div className="mt24">
-          {sections.map(s => <AssemblySection key={s.name} sectionData={s} />)}
+          {sections.map((s) => (
+            <AssemblySection key={s.name} sectionData={s} />
+          ))}
         </div>
       </section>
     );

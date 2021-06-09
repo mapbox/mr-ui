@@ -55,7 +55,7 @@ export default class ControlRadioSet extends React.Component {
     themeLegend: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     return this.props.onChange(e.target.value, this.props.id);
   };
 
@@ -94,7 +94,7 @@ export default class ControlRadioSet extends React.Component {
       groupProps['aria-invalid'] = true;
     }
 
-    const renderOptions = d => {
+    const renderOptions = (d) => {
       const extraProps = omit(d, ['value', 'label']);
       return (
         <label

@@ -20,12 +20,12 @@ class PopoverTrigger extends React.Component {
     this.state = { visible: false };
   }
 
-  ignore = el => {
+  ignore = (el) => {
     return el === this.getAnchorElement();
   };
 
   togglePopover = () => {
-    this.setState(state => {
+    this.setState((state) => {
       return { visible: !state.visible };
     });
   };
@@ -34,7 +34,7 @@ class PopoverTrigger extends React.Component {
     return this.anchorNode;
   };
 
-  setAnchorNode = el => {
+  setAnchorNode = (el) => {
     this.anchorNode = el;
   };
 
@@ -103,11 +103,11 @@ testCases.headerMenu = {
 };
 
 class StudioPanel extends React.Component {
-  getContainingElement = id => {
+  getContainingElement = (id) => {
     return this.refs[`container-${id}`];
   };
 
-  getTriggers = id => {
+  getTriggers = (id) => {
     let triggers = [];
     for (let i = 0; i < 20; i++) {
       let itemClasses = 'px12 py12';

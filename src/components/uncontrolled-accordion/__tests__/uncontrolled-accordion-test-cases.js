@@ -44,7 +44,7 @@ testCases.allOptions = {
     items: [
       {
         id: 'one',
-        header: active => {
+        header: (active) => {
           return (
             <div>
               one
@@ -56,7 +56,7 @@ testCases.allOptions = {
       },
       {
         id: 'two',
-        header: active => {
+        header: (active) => {
           return (
             <div>
               two
@@ -68,7 +68,7 @@ testCases.allOptions = {
       },
       {
         id: 'third',
-        header: active => {
+        header: (active) => {
           return (
             <div>
               third

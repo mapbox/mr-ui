@@ -7,7 +7,7 @@ export default class ComponentExample extends React.Component {
   };
 
   toggleCode = () => {
-    this.setState(state => ({ showCode: !state.showCode }));
+    this.setState((state) => ({ showCode: !state.showCode }));
   };
 
   renderCode() {

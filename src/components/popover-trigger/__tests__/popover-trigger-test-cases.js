@@ -12,7 +12,9 @@ testCases.defaultProps = {
   description: 'default props',
   element: (
     <PopoverTrigger content={getPopoverContent}>
-      <button aria-label="Trigger" className="btn">Trigger</button>
+      <button aria-label="Trigger" className="btn">
+        Trigger
+      </button>
     </PopoverTrigger>
   )
 };
@@ -27,7 +29,9 @@ testCases.respondsToAllInteractions = {
       respondsToFocus={true}
       respondsToClick={true}
     >
-      <button aria-label="Trigger" className="btn">Trigger</button>
+      <button aria-label="Trigger" className="btn">
+        Trigger
+      </button>
     </PopoverTrigger>
   )
 };
@@ -41,7 +45,9 @@ testCases.focusHoverNotClick = {
       respondsToFocus={true}
       respondsToClick={false}
     >
-      <button aria-label="Trigger" className="btn">Trigger</button>
+      <button aria-label="Trigger" className="btn">
+        Trigger
+      </button>
     </PopoverTrigger>
   )
 };
@@ -59,7 +65,11 @@ testCases.callbacks = {
     }),
     respondsToFocus: true,
     respondsToHover: true,
-    children: <button aria-label="Trigger" className="btn">Trigger</button>
+    children: (
+      <button aria-label="Trigger" className="btn">
+        Trigger
+      </button>
+    )
   }
 };
 

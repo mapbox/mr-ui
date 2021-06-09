@@ -5,7 +5,7 @@ import React from 'react';
 import ControlLegend from '../control-legend';
 
 export default class Example extends React.Component {
-  renderOptions = p => {
+  renderOptions = (p) => {
     return <input key={p.value} type="text" placeholder={p.label} />;
   };
 

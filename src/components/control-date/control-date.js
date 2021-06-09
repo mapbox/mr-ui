@@ -139,11 +139,11 @@ export default class ControlDate extends React.Component {
       this.props.onChange(this.getDateData(), this.props.id);
     });
   };
-  changeStartDate = date => this.handleChange(date, 'momentDate');
-  changeEndDate = date => this.handleChange(date, 'momentEndDate');
-  nativeChangeDate = e =>
+  changeStartDate = (date) => this.handleChange(date, 'momentDate');
+  changeEndDate = (date) => this.handleChange(date, 'momentEndDate');
+  nativeChangeDate = (e) =>
     this.handleChange(this.moment(e.target.value, 'YYYY-MM-DD'), 'momentDate');
-  nativeChangeEndDate = e =>
+  nativeChangeEndDate = (e) =>
     this.handleChange(
       this.moment(e.target.value, 'YYYY-MM-DD'),
       'momentEndDate'
@@ -158,9 +158,9 @@ export default class ControlDate extends React.Component {
       });
     }
   };
-  onChangeRawStartDate = e =>
+  onChangeRawStartDate = (e) =>
     this.handleChangeRaw(e.target.value, 'momentDate');
-  onChangeRawEndDate = e =>
+  onChangeRawEndDate = (e) =>
     this.handleChangeRaw(e.target.value, 'momentEndDate');
 
   render() {

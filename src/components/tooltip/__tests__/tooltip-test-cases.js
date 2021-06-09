@@ -117,7 +117,7 @@ testCases.functionChild = {
   description: 'function child',
   component: Tooltip,
   props: {
-    children: triggerProps => (
+    children: (triggerProps) => (
       <CustomThing {...triggerProps}>trigger</CustomThing>
     ),
     content: 'function child'
