@@ -118,7 +118,7 @@ function generateDocsData() {
         module.exports = ${componentArrayString}`;
       return pify(fs.writeFile)(
         dataFilename,
-        prettier.format(code, { parser: 'babylon' })
+        prettier.format(code, { parser: 'babel' })
       );
     });
 }
