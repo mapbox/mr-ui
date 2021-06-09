@@ -65,6 +65,7 @@
     "@babel/preset-react": "^7.0.0",
     "@mapbox/eslint-config-mapbox": "^1.2.1",
     "@mapbox/jsxtreme-markdown": "^0.9.3",
+    "@mapbox/mbx-assembly": "^1.1.0",
     "@mapbox/react-test-kitchen": "^0.3.0",
     "@mapbox/underreact": "^0.3.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -103,8 +104,7 @@
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "react-test-renderer": "^16.4.1",
-    "regenerator-runtime": "^0.12.1",
-    "@mapbox/mbx-assembly": "1.0.1"
+    "regenerator-runtime": "^0.12.1"
   },
   "husky": {
     "hooks": {
