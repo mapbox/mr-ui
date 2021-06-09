@@ -41,12 +41,14 @@ describe('MinimumDurationLoader', () => {
       wrapper.setProps({ isLoaded: true });
       expect(wrapper.html()).toEqual(loaderHtml);
       jest.runTimersToTime(1000);
+      wrapper.update();
       expect(wrapper.html()).toEqual(contentHtml);
       wrapper.setProps({ isLoaded: false });
       expect(wrapper.html()).toEqual(loaderHtml);
       wrapper.setProps({ isLoaded: true });
       expect(wrapper.html()).toEqual(loaderHtml);
       jest.runTimersToTime(1000);
+      wrapper.update();
       expect(wrapper.html()).toEqual(contentHtml);
     });
 

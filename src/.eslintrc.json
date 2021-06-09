@@ -31,7 +31,7 @@
     {
       "files": ["**/examples/**.js"],
       "rules": {
-        "react/prop-types": false
+        "react/prop-types": "off"
       }
     }
   ]

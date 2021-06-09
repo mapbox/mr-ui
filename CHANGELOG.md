@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.0
+
+- [feature] Update dependencies and add browserslist.
+
 ## 0.11.0
 
 - [breaking] Migrate to Assembly 1+
