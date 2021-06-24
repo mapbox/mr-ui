@@ -50,7 +50,7 @@ export default class CopyButton extends React.PureComponent {
     }, FEEDBACK_TIME);
   };
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const copyAvailable = Clipboard.isSupported();
     if (nextProps.textEl !== this.props.textEl && copyAvailable) {
       this.setClipboard(nextProps.textEl);

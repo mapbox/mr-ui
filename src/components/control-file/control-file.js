@@ -86,7 +86,7 @@ export default class ControlFile extends React.Component {
     displayValue: ''
   };
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const nextDisplayValue = !nextProps.value
       ? ''
       : nextProps.value.map((f) => f.name).join(', ');

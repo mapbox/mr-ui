@@ -41,7 +41,7 @@ export default class MinimumDurationLoader extends React.PureComponent {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const currentTime = Date.now();
 
     if (!nextProps.isLoaded && this._delayedMountTimeout !== null) {

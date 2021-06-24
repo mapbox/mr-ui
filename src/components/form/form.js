@@ -88,7 +88,7 @@ export default class Form extends React.Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { config } = this.props;
     if (!shallowEqualObjects(nextProps.config, config)) {
       const { controlValues, controlValidationErrors } =

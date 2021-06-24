@@ -24,6 +24,12 @@ describe('Modal', () => {
 
       expect(testCase.props.onExit).toHaveBeenCalledTimes(1);
     });
+
+    test('allowEventBubbling disables event trapping', () => {
+      expect(wrapper.find('EventTrap').length).toBe(1);
+      wrapper.setProps({ allowEventBubbling: true });
+      expect(wrapper.find('EventTrap').length).toBe(0);
+    });
   });
 
   describe(noDisplayCases.basicLarge.description, () => {
