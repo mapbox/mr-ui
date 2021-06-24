@@ -64,7 +64,7 @@ export default class Copiable extends React.Component {
     clearTimeout(this.revertTimer);
   }
 
-  setTextEl = el => {
+  setTextEl = (el) => {
     this.textEl = el;
   };
 
@@ -82,7 +82,7 @@ export default class Copiable extends React.Component {
     this.showCopyTooltip();
   };
 
-  handleTextBlur = event => {
+  handleTextBlur = (event) => {
     if (!this.textEl.contains(event.relatedTarget)) {
       this.setState({ copyTooltipActive: false });
     }

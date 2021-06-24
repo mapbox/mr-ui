@@ -24,11 +24,7 @@ describe('ControlToggleGroup', () => {
           value: 'foo'
         }
       };
-      wrapper
-        .find('input')
-        .first()
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('input').first().props().onChange(mockEvent);
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
@@ -49,10 +45,7 @@ describe('ControlToggleGroup', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('input')
-        .last()
-        .props();
+      const props = wrapper.find('input').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
   });

@@ -46,7 +46,7 @@ exports[`ControlCard collapsible onButtonClick is called 1`] = `
             ],
             "results": Array [
               Object {
-                "isThrow": false,
+                "type": "return",
                 "value": undefined,
               },
             ],
@@ -152,7 +152,7 @@ exports[`ControlCard sized title and closable onButtonClick is called 1`] = `
             ],
             "results": Array [
               Object {
-                "isThrow": false,
+                "type": "return",
                 "value": undefined,
               },
             ],

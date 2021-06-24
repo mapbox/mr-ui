@@ -63,7 +63,7 @@ export default class ControlFile extends React.Component {
     themeLabel: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     const fileList = e.target.files;
     if (!fileList.length) return;
     const filesArray = [];
@@ -89,7 +89,7 @@ export default class ControlFile extends React.Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     const nextDisplayValue = !nextProps.value
       ? ''
-      : nextProps.value.map(f => f.name).join(', ');
+      : nextProps.value.map((f) => f.name).join(', ');
     if (nextDisplayValue !== this.state.displayValue) {
       this.setState({ displayValue: nextDisplayValue });
     }
@@ -156,8 +156,8 @@ export default class ControlFile extends React.Component {
             themeLabel={themeLabel}
           />
         )}
-        <div className="flex-parent flex-parent--center-cross clip">
-          <div className="flex-child flex-child--grow">
+        <div className="flex flex--center-cross overflow-hidden">
+          <div className="flex-child-grow">
             <button
               type="button"
               aria-hidden={true}
@@ -174,19 +174,17 @@ export default class ControlFile extends React.Component {
             <input {...inputProps} {...extraProps} />
           </div>
           {this.state.displayValue && (
-            <div className="flex-child">
-              <Tooltip content="Clear" block={true}>
-                <button
-                  aria-label="Clear"
-                  type="button"
-                  className={`block link link--gray relative bg-transparent py0 ${themeControlFileClear}`}
-                  onClick={this.onClear}
-                  data-test="control-file-clear"
-                >
-                  <Icon name="trash" />
-                </button>
-              </Tooltip>
-            </div>
+            <Tooltip content="Clear" block={true}>
+              <button
+                aria-label="Clear"
+                type="button"
+                className={`ml6 block link link--gray relative bg-transparent py0 ${themeControlFileClear}`}
+                onClick={this.onClear}
+                data-test="control-file-clear"
+              >
+                <Icon name="trash" />
+              </button>
+            </Tooltip>
           )}
         </div>
       </ControlWrapper>

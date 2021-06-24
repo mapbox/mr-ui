@@ -5,7 +5,7 @@ export default function validateRequired(partial, full) {
   if (!partial && !full) {
     throw new Error('Provide a partial or full message to validateRequired');
   }
-  return value => {
+  return (value) => {
     if (!isEmptyControlValue(value)) {
       return '';
     }

@@ -49,6 +49,20 @@ testCases.truncateAll = {
   }
 };
 
+testCases.moreButtonOnlyIfNeeded = {
+  description:
+    'only show the more + button if there are more items not currently visible',
+  component: TabList,
+  props: {
+    activeItem: 'one',
+    truncateBy: 2,
+    items: [
+      { id: 'one', label: 'Label one' },
+      { id: 'two', label: 'Label two' }
+    ]
+  }
+};
+
 testCases.labelNode = {
   description: 'a label contains a node',
   component: TabList,

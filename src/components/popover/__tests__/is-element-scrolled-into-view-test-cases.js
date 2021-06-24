@@ -25,7 +25,7 @@ class WindowTest extends React.Component {
 
   updateList = () => {
     let nextList = [];
-    _.forEach(document.querySelectorAll('[data-test]'), el => {
+    _.forEach(document.querySelectorAll('[data-test]'), (el) => {
       const testId = el.getAttribute('data-test');
       if (!/^window-el-/.test(testId)) return;
       if (isElementScrolledIntoView(el)) {
@@ -91,7 +91,7 @@ class ParentTest extends React.Component {
 
   updateList = () => {
     let nextList = [];
-    _.forEach(document.querySelectorAll('[data-test]'), el => {
+    _.forEach(document.querySelectorAll('[data-test]'), (el) => {
       const testId = el.getAttribute('data-test');
       if (!/^parent-el-/.test(testId)) return;
       if (isElementScrolledIntoView(el)) {
@@ -106,7 +106,7 @@ class ParentTest extends React.Component {
       <div>
         <div data-test="parent-list">{this.state.list.join(', ')}</div>
         <div
-          className="border h240 scroll-auto"
+          className="border h240 overflow-auto"
           data-test="parent-container"
           ref="parent"
         >

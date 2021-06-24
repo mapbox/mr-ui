@@ -106,7 +106,7 @@ exports[`ControlRadioSet basic onChange gets called with input id and value 1`] 
       role="radiogroup"
     >
       <label
-        className="radio-container txt-s block mb6 flex-parent"
+        className="radio-container txt-s block mb6 flex"
         key="Option value 1"
       >
         <input
@@ -118,12 +118,12 @@ exports[`ControlRadioSet basic onChange gets called with input id and value 1`] 
           value="Option value 1"
         />
         <div
-          className="mr6 radio--blue radio--s-label inline-block flex-child radio"
+          className="mr6 radio--blue radio--s-label inline-block  radio"
         />
         Option 1
       </label>
       <label
-        className="radio-container txt-s block mb6 flex-parent"
+        className="radio-container txt-s block mb6 flex"
         key="Option value 2"
       >
         <input
@@ -135,7 +135,7 @@ exports[`ControlRadioSet basic onChange gets called with input id and value 1`] 
           value="Option value 2"
         />
         <div
-          className="mr6 radio--blue radio--s-label inline-block flex-child radio"
+          className="mr6 radio--blue radio--s-label inline-block  radio"
         />
         Option 2
       </label>
@@ -163,7 +163,7 @@ exports[`ControlRadioSet basic renders 1`] = `
       role="radiogroup"
     >
       <label
-        className="radio-container txt-s block mb6 flex-parent"
+        className="radio-container txt-s block mb6 flex"
         key="Option value 1"
       >
         <input
@@ -175,12 +175,12 @@ exports[`ControlRadioSet basic renders 1`] = `
           value="Option value 1"
         />
         <div
-          className="mr6 radio--blue radio--s-label inline-block flex-child radio"
+          className="mr6 radio--blue radio--s-label inline-block  radio"
         />
         Option 1
       </label>
       <label
-        className="radio-container txt-s block mb6 flex-parent"
+        className="radio-container txt-s block mb6 flex"
         key="Option value 2"
       >
         <input
@@ -192,7 +192,7 @@ exports[`ControlRadioSet basic renders 1`] = `
           value="Option value 2"
         />
         <div
-          className="mr6 radio--blue radio--s-label inline-block flex-child radio"
+          className="mr6 radio--blue radio--s-label inline-block  radio"
         />
         Option 2
       </label>
@@ -220,7 +220,7 @@ exports[`ControlRadioSet disabled renders 1`] = `
       role="radiogroup"
     >
       <label
-        className="radio-container txt-s block mb6 flex-parent"
+        className="radio-container txt-s block mb6 flex"
         key="Option value 1"
       >
         <input
@@ -232,12 +232,12 @@ exports[`ControlRadioSet disabled renders 1`] = `
           value="Option value 1"
         />
         <div
-          className="mr6 radio--blue radio--s-label inline-block flex-child radio"
+          className="mr6 radio--blue radio--s-label inline-block  radio"
         />
         Option 1
       </label>
       <label
-        className="radio-container txt-s block mb6 flex-parent"
+        className="radio-container txt-s block mb6 flex"
         key="Option value 2"
       >
         <input
@@ -250,7 +250,7 @@ exports[`ControlRadioSet disabled renders 1`] = `
           value="Option value 2"
         />
         <div
-          className="mr6 radio--blue radio--s-label inline-block flex-child radio"
+          className="mr6 radio--blue radio--s-label inline-block  radio"
         />
         Option 2
       </label>

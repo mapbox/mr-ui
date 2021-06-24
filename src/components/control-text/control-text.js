@@ -78,7 +78,7 @@ export default class ControlText extends React.Component {
     themeLabel: PropTypes.string
   };
 
-  onChange = e => {
+  onChange = (e) => {
     return this.props.onChange(e.target.value, this.props.id);
   };
 
@@ -98,11 +98,11 @@ export default class ControlText extends React.Component {
     };
   }
 
-  setInputElement = el => {
+  setInputElement = (el) => {
     this.inputElement = el;
   };
 
-  setErrorElement = el => {
+  setErrorElement = (el) => {
     this.errorElement = el;
   };
 
@@ -154,11 +154,8 @@ export default class ControlText extends React.Component {
   };
 
   renderPopover = () => {
-    const {
-      validationError,
-      errorTooltipTheme,
-      errorTooltipBackgroundColor
-    } = this.props;
+    const { validationError, errorTooltipTheme, errorTooltipBackgroundColor } =
+      this.props;
 
     const popoverProps = {
       getAnchorElement: this.getErrorElement,
@@ -218,7 +215,7 @@ export default class ControlText extends React.Component {
     }
 
     if (validationError && errorStyle === 'inline') {
-      inputProps.className = `${themeControlInput} round-l flex-child flex-child--grow`;
+      inputProps.className = `${themeControlInput} round-l flex-child-grow`;
       inputProps.style = {
         boxShadow: 'inset 0 0 0 1px #f74e4e'
       };
@@ -237,7 +234,7 @@ export default class ControlText extends React.Component {
             onMouseOver={this.onContainerMouseOver}
             onMouseOut={this.onContainerMouseOut}
             data-test="control-text-container"
-            className="flex-parent"
+            className="flex"
           >
             <input
               ref={this.setInputElement}
@@ -254,9 +251,9 @@ export default class ControlText extends React.Component {
               onClick={this.onErrorClick}
               role="alert"
               aria-label={validationError}
-              className="flex-child bg-red color-white round-r px6"
+              className="bg-red color-white round-r px6"
             >
-              <span className="flex-parent flex-parent--center-cross flex-parent--center-main">
+              <span className="flex flex--center-cross flex--center-main">
                 <Icon name="alert" themeIcon="cursor-pointer" />
               </span>
             </button>

@@ -29,21 +29,9 @@ describe('ControlCheckbox', () => {
           value: 'foobar'
         }
       };
-      wrapper
-        .find('input')
-        .first()
-        .props()
-        .onChange(mockEventOne);
-      wrapper
-        .find('input')
-        .first()
-        .props()
-        .onChange(mockEventTwo);
-      wrapper
-        .find('input')
-        .first()
-        .props()
-        .onChange(mockEventOne);
+      wrapper.find('input').first().props().onChange(mockEventOne);
+      wrapper.find('input').first().props().onChange(mockEventTwo);
+      wrapper.find('input').first().props().onChange(mockEventOne);
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(3);
@@ -67,10 +55,7 @@ describe('ControlCheckbox', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('input')
-        .last()
-        .props();
+      const props = wrapper.find('input').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
   });

@@ -48,3 +48,14 @@ describe(testCases.bothIcons.description, () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+
+describe(testCases.flexParentInline.description, () => {
+  beforeEach(() => {
+    testCase = testCases.flexParentInline;
+    wrapper = shallow(React.createElement(testCase.component, testCase.props));
+  });
+
+  test('renders as expected', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});

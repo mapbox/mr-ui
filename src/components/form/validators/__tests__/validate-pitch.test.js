@@ -5,13 +5,13 @@ test('accepts empty value', () => {
 });
 
 test('valid returns ""', () => {
-  ['0', 60].forEach(val => {
+  ['0', 60].forEach((val) => {
     expect(validatePitch(val)).toBe('');
   });
 });
 
 test('invalid returns correct error message', () => {
-  ['string', '1abc', true, false].forEach(val => {
+  ['string', '1abc', true, false].forEach((val) => {
     expect(validatePitch(val)).toBe('Please enter a number');
   });
 

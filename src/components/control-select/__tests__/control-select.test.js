@@ -24,10 +24,7 @@ describe('ControlSelect', () => {
           value: 'foo'
         }
       };
-      wrapper
-        .find('select')
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('select').props().onChange(mockEvent);
       wrapper.update();
       expect(wrapper).toMatchSnapshot();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
@@ -83,10 +80,7 @@ describe('ControlSelect', () => {
     });
 
     test('extra props works', () => {
-      const props = wrapper
-        .find('option')
-        .last()
-        .props();
+      const props = wrapper.find('option').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
 

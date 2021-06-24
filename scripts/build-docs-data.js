@@ -23,7 +23,7 @@ const dataFilename = path.resolve(dataDir, 'components.js');
 const excludeSourceDirs = new Set(['page-loading-indicator', 'utils']);
 
 function processExampleFile(filename) {
-  return pify(fs.readFile)(filename, 'utf8').then(code => {
+  return pify(fs.readFile)(filename, 'utf8').then((code) => {
     // Assumes there is only one block comment, and it is the description.
     const descriptionMatch = /\/\*([\s\S]+?)\*\//.exec(code);
     if (!descriptionMatch) {
@@ -51,7 +51,7 @@ function processExampleFile(filename) {
 
 function getExamples(componentDirectory) {
   const examplesDirectory = path.join(componentDirectory, 'examples');
-  return globby(path.join(examplesDirectory, '*.js')).then(filenames => {
+  return globby(path.join(examplesDirectory, '*.js')).then((filenames) => {
     return Promise.all(filenames.sort().map(processExampleFile));
   });
 }
@@ -62,7 +62,7 @@ function processProps(props) {
   }
 
   let objectBody = '';
-  Object.keys(props).forEach(prop => {
+  Object.keys(props).forEach((prop) => {
     const propData = props[prop];
     const renderedDescription = encodeJsx(
       jsxtremeMarkdown.toJsx(propData.description || ' ').trim() || '<div />'
@@ -70,8 +70,9 @@ function processProps(props) {
     objectBody += `${prop}: {
       type: ${JSON.stringify(propData.type)},
       required: ${propData.required},
-      defaultValue: ${propData.defaultValue &&
-        JSON.stringify(propData.defaultValue.value)},
+      defaultValue: ${
+        propData.defaultValue && JSON.stringify(propData.defaultValue.value)
+      },
       description: ${renderedDescription}
     },`;
   });
@@ -89,8 +90,9 @@ function processComponent(hyphenName) {
     const parsedData = reactDocgen.parse(code);
     return `{
       name: '${parsedData.displayName}',
-      description: ${jsxtremeMarkdown.toJsx(parsedData.description).trim() ||
-        'null'},
+      description: ${
+        jsxtremeMarkdown.toJsx(parsedData.description).trim() || 'null'
+      },
       props: ${processProps(parsedData.props)},
       examples: [${examples.join(',')}]
     }`;
@@ -101,22 +103,22 @@ function generateDocsData() {
   return del(dataDir)
     .then(() => makeDir(dataDir))
     .then(() => pify(fs.readdir)(srcDir))
-    .then(srcContents => {
-      return srcContents.filter(filename => !excludeSourceDirs.has(filename));
+    .then((srcContents) => {
+      return srcContents.filter((filename) => !excludeSourceDirs.has(filename));
     })
-    .then(componentDirs => {
+    .then((componentDirs) => {
       return Promise.all(componentDirs.sort().map(processComponent));
     })
     .then(_.compact)
-    .then(componentObjectStrings => `[${componentObjectStrings.join(',')}]`)
-    .then(componentArrayString => {
+    .then((componentObjectStrings) => `[${componentObjectStrings.join(',')}]`)
+    .then((componentArrayString) => {
       const code = `
         'use strict';
         const React = require('react');
         module.exports = ${componentArrayString}`;
       return pify(fs.writeFile)(
         dataFilename,
-        prettier.format(code, { parser: 'babylon' })
+        prettier.format(code, { parser: 'babel' })
       );
     });
 }

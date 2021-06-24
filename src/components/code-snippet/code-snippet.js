@@ -158,7 +158,7 @@ export default class CodeSnippet extends React.PureComponent {
     }
   }, 300);
 
-  onContainerElement = element => {
+  onContainerElement = (element) => {
     this.containerElement = element;
   };
 
@@ -182,7 +182,7 @@ export default class CodeSnippet extends React.PureComponent {
     const endCurrentChunk = ({ live }) => {
       allChunks.push({
         live,
-        highlightedLines: currentChunk.map(line => line.highlighted),
+        highlightedLines: currentChunk.map((line) => line.highlighted),
         raw: currentChunk.reduce(
           (result, line) => (result += line.raw + '\n'),
           ''
@@ -309,7 +309,7 @@ export default class CodeSnippet extends React.PureComponent {
     }
 
     let containerClasses = 'relative round z0 scroll-styled';
-    if (props.maxHeight !== undefined) containerClasses += ' scroll-auto';
+    if (props.maxHeight !== undefined) containerClasses += ' overflow-auto';
 
     const containerStyles = {};
     if (props.maxHeight !== undefined)

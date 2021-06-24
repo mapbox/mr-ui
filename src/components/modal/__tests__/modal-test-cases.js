@@ -16,7 +16,7 @@ class ModalWrapper extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState(state => ({ modalOpen: !state.modalOpen }));
+    this.setState((state) => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {
@@ -45,7 +45,7 @@ class OuterModal extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState(state => ({ modalOpen: !state.modalOpen }));
+    this.setState((state) => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {
@@ -84,7 +84,7 @@ class InnerModal extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState(state => ({ modalOpen: !state.modalOpen }));
+    this.setState((state) => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {
@@ -189,11 +189,11 @@ testCases.unpadded = {
       componentProps={{
         accessibleTitle: 'Unpadded',
         children: (
-          <div className="flex-parent flex-parent--stretch-cross">
-            <div className="flex-child w300 bg-gray-dark px24 py24 round-l color-white">
+          <div className="flex flex--stretch-cross">
+            <div className="w300 bg-gray-dark px24 py24 round-l color-white">
               One side
             </div>
-            <div className="flex-child px24 py24">The other side</div>
+            <div className="px24 py24">The other side</div>
           </div>
         ),
         padding: 'none'

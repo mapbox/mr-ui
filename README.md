@@ -1,6 +1,6 @@
 # @mapbox/mr-ui
 
-![mr-ui logo](https://github.com/mapbox/mr-ui/raw/master/logo/mr-ui.gif)
+![mr-ui logo](https://github.com/mapbox/mr-ui/raw/main/logo/mr-ui.gif)
 
 [![Build Status](https://travis-ci.com/mapbox/mr-ui.svg?token=FB2dZNVWaGo68KZnwz9M&branch=main)](https://travis-ci.com/mapbox/mr-ui)
 
@@ -16,7 +16,7 @@ UI components for Mapbox projects. See docs at https://mapbox.github.io/mr-ui/.
 npm install @mapbox/mr-ui
 ```
 
-On Mapbox projects, pair these components with version 0.26.0+ of Mapbox's custom [Assembly](https://labs.mapbox.com/assembly/) build. (This is not in `peerDependencies` because you might use `<link>` and `<script>` tags instead of the npm package.)
+On Mapbox projects, pair these components with version 1.1.0+ of Mapbox's custom [Assembly](https://labs.mapbox.com/assembly/) build. (This is not in `peerDependencies` because you might use `<link>` and `<script>` tags instead of the npm package.)
 
 The public Assembly build should work fine, with maybe one or two hiccups.
 

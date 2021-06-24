@@ -110,7 +110,7 @@ exports[`TabList a label contains a node renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}
@@ -242,7 +242,7 @@ exports[`TabList basic renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}
@@ -362,7 +362,7 @@ exports[`TabList links renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}
@@ -385,6 +385,43 @@ exports[`TabList links renders 1`] = `
         More +
       </button>
     </PopoverTrigger>
+  </div>
+</div>
+`;
+
+exports[`TabList only show the more + button if there are more items not currently visible renders 1`] = `
+<div
+  className="clearfix"
+>
+  <div
+    className="fl"
+    key="0"
+  >
+    <button
+      aria-label="one"
+      className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--blue txt-bold "
+      data-test="one"
+      key="one"
+      onClick={[Function]}
+      type="button"
+    >
+      Label one
+    </button>
+  </div>
+  <div
+    className="fl"
+    key="1"
+  >
+    <button
+      aria-label="two"
+      className="px6 mr24 fl-mm align-center-mm align-l py12 border-b-mm border-b--2 inline-block border-b border--transparent "
+      data-test="two"
+      key="two"
+      onClick={[Function]}
+      type="button"
+    >
+      Label two
+    </button>
   </div>
 </div>
 `;
@@ -504,7 +541,7 @@ exports[`TabList truncate all renders 1`] = `
       popoverProps={
         Object {
           "placement": "bottom",
-          "themePopover": "round shadow-darken25 h480 scroll-auto px12 py12 scroll-styled",
+          "themePopover": "round shadow-darken25 h480 overflow-auto px12 py12 scroll-styled",
         }
       }
       receiveFocus={true}

@@ -27,27 +27,17 @@ describe('ControlFile', () => {
       submitHandler.props().onSubmit();
       wrapper.update();
 
-      expect(
-        wrapper
-          .find('ControlText')
-          .first()
-          .props().validationError
-      ).toBe('Please enter a first name');
+      expect(wrapper.find('ControlText').first().props().validationError).toBe(
+        'Please enter a first name'
+      );
       expect(testCase.props.handleFormData).toHaveBeenCalledTimes(0);
 
-      wrapper
-        .find('ControlText')
-        .first()
-        .props()
-        .onChange('foo', 'firstName');
+      wrapper.find('ControlText').first().props().onChange('foo', 'firstName');
       wrapper.update();
 
-      expect(
-        wrapper
-          .find('ControlText')
-          .first()
-          .props().validationError
-      ).toBe('');
+      expect(wrapper.find('ControlText').first().props().validationError).toBe(
+        ''
+      );
     });
   });
 
@@ -83,10 +73,7 @@ describe('ControlFile', () => {
         }
       };
 
-      wrapper
-        .find('textarea')
-        .props()
-        .onChange(mockEvent);
+      wrapper.find('textarea').props().onChange(mockEvent);
       wrapper.update();
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith({

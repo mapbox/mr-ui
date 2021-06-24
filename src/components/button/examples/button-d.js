@@ -11,19 +11,34 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <div className="mb24 flex-parent">
-          <div className="flex-child w120 mr12">
-            <Button size="medium" width="full" onClick={noop} passthroughProps={{ 'aria-label': 'Click door button' }}>
+        <div className="mb24 flex">
+          <div className="w120 mr12">
+            <Button
+              size="medium"
+              width="full"
+              onClick={noop}
+              passthroughProps={{ 'aria-label': 'Click door button' }}
+            >
               Door
             </Button>
           </div>
-          <div className="flex-child w120 mr12">
-            <Button size="medium" width="full" onClick={noop} passthroughProps={{ 'aria-label': 'Click dog button' }}>
+          <div className="w120 mr12">
+            <Button
+              size="medium"
+              width="full"
+              onClick={noop}
+              passthroughProps={{ 'aria-label': 'Click dog button' }}
+            >
               Dog
             </Button>
           </div>
-          <div className="flex-child w120 mr12">
-            <Button size="medium" width="full" onClick={noop} passthroughProps={{ 'aria-label': 'Click dash button' }}>
+          <div className="w120 mr12">
+            <Button
+              size="medium"
+              width="full"
+              onClick={noop}
+              passthroughProps={{ 'aria-label': 'Click dash button' }}
+            >
               Dash
             </Button>
           </div>

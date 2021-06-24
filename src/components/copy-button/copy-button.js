@@ -32,7 +32,7 @@ export default class CopyButton extends React.PureComponent {
     this.destroyClipboard();
   }
 
-  handleCopyButtonClick = event => {
+  handleCopyButtonClick = (event) => {
     // Clipboard.js attaches its own click handlers for copying
     const { onCopy, text } = this.props;
     if (onCopy) {
@@ -60,7 +60,7 @@ export default class CopyButton extends React.PureComponent {
     }
   }
 
-  setContainer = element => {
+  setContainer = (element) => {
     if (!element) return;
     const { textEl } = this.props;
     this.container = element;

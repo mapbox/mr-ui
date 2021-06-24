@@ -16,7 +16,7 @@ export default class Example extends React.Component {
   }
 
   togglePopover() {
-    this.setState(state => ({ popoverOpen: !state.popoverOpen }));
+    this.setState((state) => ({ popoverOpen: !state.popoverOpen }));
   }
 
   setAnchor(el) {

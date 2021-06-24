@@ -19,10 +19,7 @@ describe('Uncontrolled Accordion', () => {
     });
 
     test('internal onToggle is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .simulate('click');
+      wrapper.find('button').first().simulate('click');
       expect(testCase.props.onToggle).toHaveBeenCalledTimes(1);
       expect(testCase.props.onToggle).toHaveBeenCalledWith('one');
       const item = wrapper.find('AccordionItem').first();
@@ -43,10 +40,7 @@ describe('Uncontrolled Accordion', () => {
     });
 
     test('disabled works', () => {
-      const props = wrapper
-        .find('button')
-        .last()
-        .props();
+      const props = wrapper.find('button').last().props();
       expect(props).toHaveProperty('disabled', true);
     });
   });
@@ -68,10 +62,7 @@ describe('Uncontrolled Accordion', () => {
       expect(testCase.props).toHaveProperty('initiallyActiveItem');
 
       // Optional props passed to items
-      const props = wrapper
-        .find('AccordionItem')
-        .first()
-        .props();
+      const props = wrapper.find('AccordionItem').first().props();
       expect(props).toHaveProperty('active', true);
       expect(props).toHaveProperty('themeItem');
       expect(props).toHaveProperty('themeItemHeader');
@@ -79,11 +70,7 @@ describe('Uncontrolled Accordion', () => {
     });
 
     test('onToggle gets called', () => {
-      wrapper
-        .find('AccordionItem')
-        .first()
-        .props()
-        .onToggle('one');
+      wrapper.find('AccordionItem').first().props().onToggle('one');
       expect(testCase.props.onToggle).toHaveBeenCalledTimes(1);
       expect(testCase.props.onToggle).toHaveBeenCalledWith('one');
     });

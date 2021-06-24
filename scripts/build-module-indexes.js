@@ -19,7 +19,7 @@ export default main;
   return pify(fs.writeFile)(filename, content);
 }
 
-pify(fs.readdir)(srcRoot).then(dirs => {
-  const filteredDirs = dirs.filter(dir => !excludeDirs.has(dir));
+pify(fs.readdir)(srcRoot).then((dirs) => {
+  const filteredDirs = dirs.filter((dir) => !excludeDirs.has(dir));
   return Promise.all(filteredDirs.map(generateIndex));
 });

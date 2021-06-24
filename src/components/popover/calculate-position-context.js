@@ -57,8 +57,8 @@ export default function calculatePositionContext(options) {
     options.offsetFromEdge !== undefined
       ? options.offsetFromEdge
       : containingElementRect
-        ? 0
-        : 5;
+      ? 0
+      : 5;
   context.bodyOffsetFromAnchor =
     options.offsetFromAnchor + options.pointerAltitude;
   context.availableWidth = docEl.scrollWidth;

@@ -29,9 +29,7 @@ export default function calculatePointerStyle(placement, options, context) {
     context.anchorVerticalCenter - options.pointerBase / 2
   );
   const helperBorder = `${options.pointerBase / 2}px solid transparent`;
-  const coloredBorder = `${options.pointerAltitude}px solid ${
-    options.pointerColor
-  }`;
+  const coloredBorder = `${options.pointerAltitude}px solid ${options.pointerColor}`;
   const pointerDirection = mapPlacementToPointerDirection[placement];
   const prefixedTransform = prefix.dash('transform');
 

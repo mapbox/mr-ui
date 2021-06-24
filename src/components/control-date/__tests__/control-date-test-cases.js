@@ -83,7 +83,7 @@ testCases.allOptions = {
     maxDate,
     placeholder: 'Select a radical date',
     endDatePlaceholder: 'Select a radical end date',
-    themeWrapper: 'react-control-date flex-parent',
+    themeWrapper: 'react-control-date flex',
     themeCalendar: 'border--0',
     themeTextInput: 'input someFunSelector',
     utcOffset: 0,

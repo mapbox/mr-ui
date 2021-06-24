@@ -20,11 +20,7 @@ describe('TabList', () => {
     });
 
     test('onChange is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick('one');
+      wrapper.find('button').first().props().onClick('one');
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith('one');
     });
@@ -32,6 +28,7 @@ describe('TabList', () => {
     test('activeItem prop updates active item', () => {
       wrapper.setProps({ activeItem: 'one' });
       wrapper.update();
+      expect(wrapper.find('.border--blue.txt-bold').length).toBe(1);
     });
   });
   describe(testCases.links.description, () => {
@@ -43,14 +40,13 @@ describe('TabList', () => {
     });
 
     test('renders', () => {
-      expect(
-        toJson(shallow(React.createElement(testCase.component, testCase.props)))
-      ).toMatchSnapshot();
+      expect(toJson(wrapper)).toMatchSnapshot();
     });
 
     test('activeItem prop updates active item', () => {
       wrapper.setProps({ activeItem: 'one' });
       wrapper.update();
+      expect(wrapper.find({ 'data-test': 'one' }).length).toBe(1);
     });
   });
   describe(testCases.truncateAll.description, () => {
@@ -62,14 +58,31 @@ describe('TabList', () => {
     });
 
     test('renders', () => {
-      expect(
-        toJson(shallow(React.createElement(testCase.component, testCase.props)))
-      ).toMatchSnapshot();
+      expect(toJson(wrapper)).toMatchSnapshot();
     });
 
     test('activeItem prop updates active item', () => {
       wrapper.setProps({ activeItem: 'one' });
       wrapper.update();
+      expect(wrapper.find({ 'data-test': 'one' }).length).toBe(1);
+    });
+  });
+  describe(testCases.moreButtonOnlyIfNeeded.description, () => {
+    beforeEach(() => {
+      testCase = testCases.moreButtonOnlyIfNeeded;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('renders', () => {
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    test('activeItem prop updates active item', () => {
+      wrapper.setProps({ activeItem: 'one' });
+      wrapper.update();
+      expect(wrapper.find({ 'data-test': 'one' }).length).toBe(1);
     });
   });
   describe(testCases.labelNode.description, () => {
@@ -85,11 +98,7 @@ describe('TabList', () => {
     });
 
     test('onChange is called', () => {
-      wrapper
-        .find('button')
-        .first()
-        .props()
-        .onClick('one');
+      wrapper.find('button').first().props().onClick('one');
       expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
       expect(testCase.props.onChange).toHaveBeenCalledWith('one');
     });
@@ -97,6 +106,7 @@ describe('TabList', () => {
     test('activeItem prop updates active item', () => {
       wrapper.setProps({ activeItem: 'one' });
       wrapper.update();
+      expect(wrapper.find({ 'data-test': 'one' }).length).toBe(1);
     });
   });
 });

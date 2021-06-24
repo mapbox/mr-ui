@@ -13,7 +13,7 @@ class InteractiveDemo extends React.Component {
       active: 'A'
     };
 
-    this.changeActive = nextActive => {
+    this.changeActive = (nextActive) => {
       this.setState({ active: nextActive });
     };
   }

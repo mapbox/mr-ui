@@ -17,7 +17,7 @@ exports[`ControlText all options renders 1`] = `
     themeLabel="txt-s txt-bold"
   />
   <div
-    className="flex-parent"
+    className="flex"
     data-test="control-text-container"
     onMouseOut={[Function]}
     onMouseOver={[Function]}
@@ -28,7 +28,7 @@ exports[`ControlText all options renders 1`] = `
       autoCapitalize="none"
       autoCorrect="off"
       autoFocus={true}
-      className="txt-bold input round-l flex-child flex-child--grow"
+      className="txt-bold input round-l flex-child-grow"
       data-test="testinput-input"
       id="testinput"
       name="testinput"
@@ -47,7 +47,7 @@ exports[`ControlText all options renders 1`] = `
     />
     <button
       aria-label="oh no!"
-      className="flex-child bg-red color-white round-r px6"
+      className="bg-red color-white round-r px6"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -55,7 +55,7 @@ exports[`ControlText all options renders 1`] = `
       type="button"
     >
       <span
-        className="flex-parent flex-parent--center-cross flex-parent--center-main"
+        className="flex flex--center-cross flex--center-main"
       >
         <Icon
           inline={false}
@@ -181,7 +181,7 @@ exports[`ControlText error inline option renders 1`] = `
     themeLabel="txt-s txt-bold mb6"
   />
   <div
-    className="flex-parent"
+    className="flex"
     data-test="control-text-container"
     onMouseOut={[Function]}
     onMouseOver={[Function]}
@@ -189,7 +189,7 @@ exports[`ControlText error inline option renders 1`] = `
     <input
       aria-invalid={true}
       aria-required={true}
-      className="input round-l flex-child flex-child--grow"
+      className="input round-l flex-child-grow"
       data-test="testinput-input"
       id="testinput"
       name="testinput"
@@ -206,7 +206,7 @@ exports[`ControlText error inline option renders 1`] = `
     />
     <button
       aria-label="oh no!"
-      className="flex-child bg-red color-white round-r px6"
+      className="bg-red color-white round-r px6"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -214,7 +214,7 @@ exports[`ControlText error inline option renders 1`] = `
       type="button"
     >
       <span
-        className="flex-parent flex-parent--center-cross flex-parent--center-main"
+        className="flex flex--center-cross flex--center-main"
       >
         <Icon
           inline={false}

@@ -13,10 +13,10 @@ exports[`ControlDate All datepicker options renders 1`] = `
       themeLabel="txt-s txt-bold mb6"
     />
     <div
-      className="react-control-date flex-parent"
+      className="react-control-date flex"
     >
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}
@@ -76,7 +76,7 @@ exports[`ControlDate All datepicker options renders 1`] = `
         to
       </span>
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}
@@ -146,10 +146,10 @@ exports[`ControlDate Restricted Date range renders 1`] = `
       themeLabel="txt-s txt-bold mb6"
     />
     <div
-      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+      className="react-control-date react-control-date--disable-keyboard inline-flex flex--center-cross flex--wrap"
     >
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}
@@ -205,7 +205,7 @@ exports[`ControlDate Restricted Date range renders 1`] = `
         to
       </span>
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}
@@ -271,10 +271,10 @@ exports[`ControlDate disabled datepicker renders 1`] = `
       themeLabel="txt-s txt-bold mb6"
     />
     <div
-      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+      className="react-control-date react-control-date--disable-keyboard inline-flex flex--center-cross flex--wrap"
     >
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}
@@ -330,7 +330,7 @@ exports[`ControlDate disabled datepicker renders 1`] = `
         to
       </span>
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}
@@ -396,10 +396,10 @@ exports[`ControlDate double datepicker renders 1`] = `
       themeLabel="txt-s txt-bold mb6"
     />
     <div
-      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+      className="react-control-date react-control-date--disable-keyboard inline-flex flex--center-cross flex--wrap"
     >
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}
@@ -465,10 +465,10 @@ exports[`ControlDate single datepicker renders 1`] = `
       themeLabel="txt-s txt-bold mb6"
     />
     <div
-      className="react-control-date react-control-date--disable-keyboard flex-parent-inline flex-parent--center-cross flex-parent--wrap"
+      className="react-control-date react-control-date--disable-keyboard inline-flex flex--center-cross flex--wrap"
     >
       <div
-        className="flex-parent"
+        className="flex"
       >
         <DatePicker
           allowSameDay={false}

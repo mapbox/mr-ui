@@ -8,7 +8,7 @@ import ControlDate from '../control-date';
 export default class Example extends React.Component {
   state = { dateValue: '' };
 
-  onDateChange = dateValue => {
+  onDateChange = (dateValue) => {
     this.setState({ dateValue });
   };
 

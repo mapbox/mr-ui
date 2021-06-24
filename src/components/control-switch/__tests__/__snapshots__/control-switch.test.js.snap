@@ -19,7 +19,7 @@ exports[`ControlSwitch all options renders 1`] = `
       type="checkbox"
     />
     <div
-      className="switch switch--red switch--dot-red"
+      className="switch switch--red switch--dot-yellow"
     />
     <span
       className="color-white txt-m"
