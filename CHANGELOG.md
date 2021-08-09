@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.0-beta.2
+
+- [fix] Fix coloring values for popover
 ## 1.0.0-beta.0
 - [feature] Trap events in modals by default
 - [fix] rename unsafe lifecycle methods to eliminate warnings under React 16

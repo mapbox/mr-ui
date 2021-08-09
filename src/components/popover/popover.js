@@ -364,13 +364,13 @@ function noop() {}
 function getColors(coloring) {
   if (coloring === 'dark') {
     return {
-      background: '#273d56', // gray-dark
+      background: '#0E2127', // gray-dark
       textClass: 'color-white'
     };
   }
   if (coloring === 'warning') {
     return {
-      background: '#FFF5A0', // yellow-light
+      background: '#FBC997', // orange-light
       textClass: 'color-text'
     };
   }
