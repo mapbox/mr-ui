@@ -87,7 +87,7 @@ exports[`Popover dark renders 1`] = `
   mounted={true}
   onElement={[Function]}
   placement="right"
-  pointerColor="#273d56"
+  pointerColor="#0E2127"
   zIndex={1}
 >
   <div
@@ -99,7 +99,7 @@ exports[`Popover dark renders 1`] = `
     role="dialog"
     style={
       Object {
-        "backgroundColor": "#273d56",
+        "backgroundColor": "#0E2127",
       }
     }
     tabIndex={-1}
@@ -161,7 +161,7 @@ exports[`Popover warning renders 1`] = `
   mounted={true}
   onElement={[Function]}
   placement="right"
-  pointerColor="#FFF5A0"
+  pointerColor="#FBC997"
   zIndex={1}
 >
   <div
@@ -173,7 +173,7 @@ exports[`Popover warning renders 1`] = `
     role="dialog"
     style={
       Object {
-        "backgroundColor": "#FFF5A0",
+        "backgroundColor": "#FBC997",
       }
     }
     tabIndex={-1}
