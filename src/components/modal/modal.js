@@ -138,7 +138,6 @@ export default class Modal extends React.Component {
 
     if (!props.allowEventBubbling) {
       // stopPropagation prevents child modals from closing parent modals when nesting
-      // return <div onMouseDown={e => e.stopPropagation()}><AriaModal {...modalProps}>{dialogBody}</AriaModal></div>;
       return (
         <EventTrap>
           <AriaModal {...modalProps}>{dialogBody}</AriaModal>
