@@ -191,7 +191,8 @@ export default class Popover extends React.Component {
       `${colors.textClass} shadow-darken25 round`,
       {
         'px12 py12': props.padding === 'medium',
-        'px12 py6': props.padding === 'small'
+        'px12 py6': props.padding === 'small',
+        [`border border-1 border--${colors.borderColor}`]: colors.borderColor
       }
     );
 
@@ -201,7 +202,7 @@ export default class Popover extends React.Component {
         hasPointer={props.hasPointer}
         placement={props.placement}
         alignment={props.alignment}
-        pointerColor={colors.background}
+        pointerColor={colors.borderColor || colors.background}
         hideWhenAnchorIsOffscreen={props.hideWhenAnchorIsOffscreen}
         allowPlacementAxisChange={props.allowPlacementAxisChange}
         containWithinViewport={props.containWithinViewport}
@@ -252,9 +253,9 @@ Popover.propTypes = {
    */
   alignment: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'center']),
   /**
-   * `'light'`, `'dark'`, or `'warning'`.
+   * `'light'`, `'dark'`, `'warning'`, or `'error'`.
    */
-  coloring: PropTypes.oneOf(['light', 'dark', 'warning']),
+  coloring: PropTypes.oneOf(['light', 'dark', 'warning', 'error']),
   /**
    * `'medium'`, `'small'`, or `'none'`.
    */
@@ -370,8 +371,18 @@ function getColors(coloring) {
   }
   if (coloring === 'warning') {
     return {
-      background: '#FFF5A0', // yellow-light
-      textClass: 'color-text'
+      background: '#FEF2EB', // orange-light
+      textClass: 'color-orange-deep',
+      borderColor: 'orange',
+      pointerColor: '#DD7A08'
+    };
+  }
+  if (coloring === 'error') {
+    return {
+      background: '#FDEDE8', // red-faint
+      textClass: 'color-red-deep',
+      borderColor: 'red',
+      pointerColor: '#EB1414'
     };
   }
   return {

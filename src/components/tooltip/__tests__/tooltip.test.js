@@ -57,4 +57,30 @@ describe('Tooltip', () => {
       expect(wrapper.children()).toMatchSnapshot();
     });
   });
+
+  describe(testCases.warningProp.description, () => {
+    beforeEach(() => {
+      testCase = testCases.warningProp;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('trigger renders as expected', () => {
+      expect(wrapper.children()).toMatchSnapshot();
+    });
+  });
+
+  describe(testCases.errorProp.description, () => {
+    beforeEach(() => {
+      testCase = testCases.errorProp;
+      wrapper = shallow(
+        React.createElement(testCase.component, testCase.props)
+      );
+    });
+
+    test('trigger renders as expected', () => {
+      expect(wrapper.children()).toMatchSnapshot();
+    });
+  });
 });

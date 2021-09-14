@@ -145,9 +145,9 @@ Tooltip.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * `'light'`, `'dark'`, or `'warning'`.
+   * `'light'`, `'dark'`, `'warning'`, or `'error'`.
    */
-  coloring: PropTypes.oneOf(['light', 'dark', 'warning']),
+  coloring: PropTypes.oneOf(['light', 'dark', 'warning', 'error']),
   /**
    * `'xs'` (extra small), `'s'` (small), or `'none'` (no size class).
    */
