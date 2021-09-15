@@ -202,7 +202,7 @@ export default class Popover extends React.Component {
         hasPointer={props.hasPointer}
         placement={props.placement}
         alignment={props.alignment}
-        pointerColor={colors.borderColor || colors.background}
+        pointerColor={colors.pointerColor || colors.background}
         hideWhenAnchorIsOffscreen={props.hideWhenAnchorIsOffscreen}
         allowPlacementAxisChange={props.allowPlacementAxisChange}
         containWithinViewport={props.containWithinViewport}
@@ -374,7 +374,7 @@ function getColors(coloring) {
       background: '#FEF2EB', // orange-light
       textClass: 'color-orange-deep',
       borderColor: 'orange',
-      pointerColor: '#DD7A08'
+      pointerColor: '#dd7a08'
     };
   }
   if (coloring === 'error') {
