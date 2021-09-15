@@ -33,7 +33,7 @@ export default class Popover extends React.Component {
     this.popoverId = popoverCounter;
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // For focus management: focus will return to this element
     // when the popover is closed
     this.previouslyFocusedElement = document.activeElement;
@@ -365,7 +365,7 @@ function noop() {}
 function getColors(coloring) {
   if (coloring === 'dark') {
     return {
-      background: '#273d56', // gray-dark
+      background: '#0E2127', // gray-dark
       textClass: 'color-white'
     };
   }

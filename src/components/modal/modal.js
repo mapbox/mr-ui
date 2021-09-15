@@ -6,6 +6,7 @@ import Tooltip from '../tooltip';
 import Icon from '../icon';
 import getWindow from '../utils/get-window';
 import ModalActions from './modal-actions';
+import EventTrap from './event-trap';
 
 /**
  * An accessible modal dialog.
@@ -135,6 +136,15 @@ export default class Modal extends React.Component {
       modalProps.focusTrapPaused = true;
     }
 
+    if (!props.allowEventBubbling) {
+      // stopPropagation prevents child modals from closing parent modals when nesting
+      return (
+        <EventTrap>
+          <AriaModal {...modalProps}>{dialogBody}</AriaModal>
+        </EventTrap>
+      );
+    }
+
     return <AriaModal {...modalProps}>{dialogBody}</AriaModal>;
   }
 }
@@ -244,7 +254,13 @@ Modal.propTypes = {
   tertiaryAction: PropTypes.shape({
     text: PropTypes.string.isRequired,
     callback: PropTypes.func.isRequired
-  })
+  }),
+  /**
+   * We stop propagation on clicks by default to enable more intuitive
+   * operation with React Portals. If you need click events to bubble up
+   * to parent components, set this prop to true
+   */
+  allowEventBubbling: PropTypes.bool
 };
 
 Modal.defaultProps = {
