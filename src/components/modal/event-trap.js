@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const trap = e => e.stopPropagation();
+const trap = (e) => e.stopPropagation();
 
 function EventTrap({ children }) {
   return (

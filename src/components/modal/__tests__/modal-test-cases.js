@@ -45,7 +45,7 @@ class OuterModal extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState(state => ({ modalOpen: !state.modalOpen }));
+    this.setState((state) => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {
@@ -84,7 +84,7 @@ class InnerModal extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState(state => ({ modalOpen: !state.modalOpen }));
+    this.setState((state) => ({ modalOpen: !state.modalOpen }));
   };
 
   render() {

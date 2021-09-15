@@ -150,6 +150,26 @@ testCases.allProps = {
   }
 };
 
+testCases.warningProp = {
+  description: 'warning prop',
+  component: Tooltip,
+  props: {
+    children: <div>test tooltip</div>,
+    content: getTooltipContent,
+    coloring: 'warning'
+  }
+};
+
+testCases.errorProp = {
+  description: 'error prop',
+  component: Tooltip,
+  props: {
+    children: <div>test tooltip</div>,
+    content: getTooltipContent,
+    coloring: 'error'
+  }
+};
+
 testCases.respondsToClick = {
   description: 'responds to click',
   component: Tooltip,

@@ -63,10 +63,26 @@ exports[`Tooltip all props trigger renders as expected 1`] = `
 </div>
 `;
 
+exports[`Tooltip error prop trigger renders as expected 1`] = `
+<div
+  aria-describedby="tooltip-6"
+>
+  test tooltip
+</div>
+`;
+
 exports[`Tooltip function child trigger renders as expected 1`] = `
 <CustomThing
   aria-describedby="tooltip-2"
 >
   trigger
 </CustomThing>
+`;
+
+exports[`Tooltip warning prop trigger renders as expected 1`] = `
+<div
+  aria-describedby="tooltip-5"
+>
+  test tooltip
+</div>
 `;

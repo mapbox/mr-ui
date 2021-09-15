@@ -161,11 +161,11 @@ exports[`Popover warning renders 1`] = `
   mounted={true}
   onElement={[Function]}
   placement="right"
-  pointerColor="#FBC997"
+  pointerColor="orange"
   zIndex={1}
 >
   <div
-    className="color-text shadow-darken25 round px12 py12"
+    className="color-orange-deep shadow-darken25 round px12 py12 border border-1 border--orange"
     data-popover-id={3}
     key="body"
     onFocus={[Function]}
@@ -173,7 +173,7 @@ exports[`Popover warning renders 1`] = `
     role="dialog"
     style={
       Object {
-        "backgroundColor": "#FBC997",
+        "backgroundColor": "#FEF2EB",
       }
     }
     tabIndex={-1}
