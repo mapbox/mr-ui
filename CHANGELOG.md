@@ -1,4 +1,7 @@
 # Changelog
+## 1.1.0
+
+- [feature] Add new error popover style, improve warning popover style
 ## 1.0.0
 
 - [feature] Trap events in modals by default
