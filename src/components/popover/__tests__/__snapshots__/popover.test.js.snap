@@ -161,7 +161,7 @@ exports[`Popover warning renders 1`] = `
   mounted={true}
   onElement={[Function]}
   placement="right"
-  pointerColor="orange"
+  pointerColor="#dd7a08"
   zIndex={1}
 >
   <div
