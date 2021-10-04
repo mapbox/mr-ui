@@ -36,6 +36,12 @@ exports[`ControlText all options renders 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       placeholder="Enter an email address"
+      popoverProps={
+        Object {
+          "coloring": "dark",
+          "padding": "small",
+        }
+      }
       spellCheck={false}
       style={
         Object {

@@ -57,8 +57,10 @@ testCases.allOptions = {
     type: 'email',
     validationError: 'oh no!',
     errorStyle: 'inline',
-    errorTooltipTheme: 'color-white round py6 px12 shadow-darken25 txt-xs',
-    errorTooltipBackgroundColor: '#2c3d54',
+    popoverProps: {
+      coloring: 'dark',
+      padding: 'small'
+    },
     placeholder: 'Enter an email address',
     value: 'foo@bar.baz',
     optional: true,

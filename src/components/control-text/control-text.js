@@ -18,8 +18,6 @@ const propNames = [
   'aside',
   'validationError',
   'errorStyle',
-  'errorTooltipTheme',
-  'errorTooltipBackgroundColor',
   'themeControlInput',
   'themeControlWrapper',
   'themeLabel',
@@ -66,10 +64,11 @@ export default class ControlText extends React.Component {
      *   with the value of `validationError` prop displayed in a tooltip.
      */
     errorStyle: PropTypes.oneOf(['default', 'inline']),
-    /** Background color of the error tooltip when `errorStyle: "inline"` is set. */
-    errorTooltipBackgroundColor: PropTypes.string,
-    /** Classes to style the error tooltip container. */
-    errorTooltipTheme: PropTypes.string,
+    /**
+     * Props to pass directly to the [Popover](#popover) component when inline error validation is in use. See Popover's
+     * documentation for details.
+     */
+    popoverProps: PropTypes.object,
     /** Classes to apply to the input element */
     themeControlInput: PropTypes.string,
     /** Classes to apply to the control wrapper */
@@ -154,8 +153,7 @@ export default class ControlText extends React.Component {
   };
 
   renderPopover = () => {
-    const { validationError, errorTooltipTheme, errorTooltipBackgroundColor } =
-      this.props;
+    const { validationError } = this.props;
 
     const popoverProps = {
       getAnchorElement: this.getErrorElement,
@@ -164,15 +162,11 @@ export default class ControlText extends React.Component {
       accessibleTitle: 'Validation error'
     };
 
-    if (errorTooltipBackgroundColor) {
-      popoverProps.backgroundColor = errorTooltipBackgroundColor;
-    }
-
-    if (errorTooltipTheme) {
-      popoverProps.themePopover = errorTooltipTheme;
-    }
-
-    return <Popover {...popoverProps}>{validationError}</Popover>;
+    return (
+      <Popover {...{ ...popoverProps, ...this.props.popoverProps }}>
+        {validationError}
+      </Popover>
+    );
   };
 
   render() {

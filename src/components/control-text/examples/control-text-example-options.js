@@ -25,8 +25,10 @@ export default class Example extends React.Component {
         themeControlWrapper="bg-gray-faint px12 py12"
         themeControlInput="input input--s"
         themeLabel="txt-bold"
-        errorTooltipTheme="color-white round py6 px12 shadow-darken25 txt-xs"
-        errorTooltipBackgroundColor="#2c3d54"
+        popoverProps={{
+          coloring: 'dark',
+          padding: 'small'
+        }}
         onChange={this.handleChange}
         placeholder="Enter an email address"
         value="foo@bar.baz"
