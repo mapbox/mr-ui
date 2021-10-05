@@ -95,26 +95,6 @@ describe('ControlText', () => {
       ).toMatchSnapshot();
     });
 
-    test('popover toggles on input focus/blur states', () => {
-      expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
-        false
-      );
-
-      wrapper.find('input').last().props().onFocus();
-
-      wrapper.update();
-      expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
-        true
-      );
-
-      wrapper.find('input').last().props().onBlur();
-
-      wrapper.update();
-      expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
-        false
-      );
-    });
-
     test('popover toggles on button focus/blur states', () => {
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
         false
@@ -135,22 +115,19 @@ describe('ControlText', () => {
       );
     });
 
-    test('popover toggles on container mouseOver/mouseOut states', () => {
+    test('popover toggles on button mouseOver/mouseOut states', () => {
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
         false
       );
 
-      wrapper
-        .find('[data-test="control-text-container"]')
-        .props()
-        .onMouseOver();
+      wrapper.find('button').last().props().onMouseOver();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
         true
       );
 
-      wrapper.find('[data-test="control-text-container"]').props().onMouseOut();
+      wrapper.find('button').last().props().onMouseOut();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
@@ -170,21 +147,21 @@ describe('ControlText', () => {
       });
     });
 
-    test('popover toggles on container mouseOver/mouseOut states', () => {
+    test('popover toggles on button mouseOver/mouseOut states', () => {
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
         false
       );
 
-      const inputEl = getWindow().document.activeElement;
-      wrapper.instance().setInputElement(inputEl);
+      const errorEl = getWindow().document.activeElement;
+      wrapper.instance().setErrorElement(errorEl);
       wrapper.instance().onFocus();
-      wrapper.update();
 
+      wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(
         true
       );
 
-      wrapper.find('[data-test="control-text-container"]').props().onMouseOut();
+      wrapper.find('button').last().props().onMouseOut();
 
       wrapper.update();
       expect(wrapper.find('[data-test="popover-component"]').exists()).toBe(

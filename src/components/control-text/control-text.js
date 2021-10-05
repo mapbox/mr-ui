@@ -6,6 +6,7 @@ import ControlWrapper from '../control-wrapper';
 import Popover from '../popover';
 import Icon from '../icon';
 import getWindow from '../utils/get-window';
+import assemblyCssVariables from '@mapbox/mbx-assembly/dist/variables.json';
 
 const propNames = [
   'id',
@@ -97,10 +98,6 @@ export default class ControlText extends React.Component {
     };
   }
 
-  setInputElement = (el) => {
-    this.inputElement = el;
-  };
-
   setErrorElement = (el) => {
     this.errorElement = el;
   };
@@ -117,23 +114,20 @@ export default class ControlText extends React.Component {
     this.setState({ popoverOpen: true });
   };
 
+  isActive = () => {
+    return getWindow().document.activeElement === this.errorElement;
+  };
+
   onBlur = () => {
     this.setState({ popoverOpen: false });
   };
 
-  isActive = () => {
-    return (
-      getWindow().document.activeElement === this.inputElement ||
-      getWindow().document.activeElement === this.errorElement
-    );
-  };
-
-  onContainerMouseOver = () => {
+  onMouseOver = () => {
     if (this.isActive()) return;
     this.setState({ popoverOpen: true });
   };
 
-  onContainerMouseOut = () => {
+  onMouseOut = () => {
     if (this.isActive()) return;
     this.setState({ popoverOpen: false });
   };
@@ -210,9 +204,6 @@ export default class ControlText extends React.Component {
 
     if (validationError && errorStyle === 'inline') {
       inputProps.className = `${themeControlInput} round-l flex-child-grow`;
-      inputProps.style = {
-        boxShadow: 'inset 0 0 0 1px #f74e4e'
-      };
     }
 
     const labelElement = label ? this.renderLabel() : null;
@@ -224,28 +215,22 @@ export default class ControlText extends React.Component {
     if (errorStyle === 'inline') {
       if (validationError) {
         control = (
-          <div
-            onMouseOver={this.onContainerMouseOver}
-            onMouseOut={this.onContainerMouseOut}
-            data-test="control-text-container"
-            className="flex"
-          >
-            <input
-              ref={this.setInputElement}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              {...inputProps}
-              {...extraProps}
-            />
+          <div data-test="control-text-container" className="flex">
+            <input {...inputProps} {...extraProps} />
             <button
               type="button"
+              ref={this.setErrorElement}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
-              ref={this.setErrorElement}
               onClick={this.onErrorClick}
+              onMouseOver={this.onMouseOver}
+              onMouseOut={this.onMouseOut}
               role="alert"
               aria-label={validationError}
               className="bg-red color-white round-r px6"
+              style={{
+                boxShadow: `-1px 0 0 0 ${assemblyCssVariables['red']}`
+              }}
             >
               <span className="flex flex--center-cross flex--center-main">
                 <Icon name="alert" themeIcon="cursor-pointer" />

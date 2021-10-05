@@ -19,8 +19,6 @@ exports[`ControlText all options renders 1`] = `
   <div
     className="flex"
     data-test="control-text-container"
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
   >
     <input
       aria-invalid={true}
@@ -32,9 +30,7 @@ exports[`ControlText all options renders 1`] = `
       data-test="testinput-input"
       id="testinput"
       name="testinput"
-      onBlur={[Function]}
       onChange={[Function]}
-      onFocus={[Function]}
       placeholder="Enter an email address"
       popoverProps={
         Object {
@@ -43,11 +39,6 @@ exports[`ControlText all options renders 1`] = `
         }
       }
       spellCheck={false}
-      style={
-        Object {
-          "boxShadow": "inset 0 0 0 1px #f74e4e",
-        }
-      }
       type="email"
       value="foo@bar.baz"
     />
@@ -57,7 +48,14 @@ exports[`ControlText all options renders 1`] = `
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
       role="alert"
+      style={
+        Object {
+          "boxShadow": "-1px 0 0 0 #EB1414",
+        }
+      }
       type="button"
     >
       <span
@@ -189,8 +187,6 @@ exports[`ControlText error inline option renders 1`] = `
   <div
     className="flex"
     data-test="control-text-container"
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
   >
     <input
       aria-invalid={true}
@@ -199,14 +195,7 @@ exports[`ControlText error inline option renders 1`] = `
       data-test="testinput-input"
       id="testinput"
       name="testinput"
-      onBlur={[Function]}
       onChange={[Function]}
-      onFocus={[Function]}
-      style={
-        Object {
-          "boxShadow": "inset 0 0 0 1px #f74e4e",
-        }
-      }
       type="text"
       value=""
     />
@@ -216,7 +205,14 @@ exports[`ControlText error inline option renders 1`] = `
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
       role="alert"
+      style={
+        Object {
+          "boxShadow": "-1px 0 0 0 #EB1414",
+        }
+      }
       type="button"
     >
       <span
