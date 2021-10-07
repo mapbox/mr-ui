@@ -98,6 +98,10 @@ export default class ControlText extends React.Component {
     };
   }
 
+  setInputElement = (el) => {
+    this.inputElement = el;
+  };
+
   setErrorElement = (el) => {
     this.errorElement = el;
   };
@@ -216,7 +220,7 @@ export default class ControlText extends React.Component {
       if (validationError) {
         control = (
           <div data-test="control-text-container" className="flex">
-            <input {...inputProps} {...extraProps} />
+            <input ref={this.setInputElement} {...inputProps} {...extraProps} />
             <button
               type="button"
               ref={this.setErrorElement}
