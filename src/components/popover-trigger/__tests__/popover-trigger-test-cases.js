@@ -73,4 +73,35 @@ testCases.callbacks = {
   }
 };
 
+let popoverTriggerRef = null;
+function setPopoverTriggerRef(ref) {
+  popoverTriggerRef = ref;
+}
+
+testCases.clickInsideContent = {
+  description: 'click inside content',
+  element: (
+    <PopoverTrigger
+      ref={setPopoverTriggerRef}
+      content={() => {
+        return (
+          <button
+            aria-label="Close"
+            onClick={() => {
+              if (popoverTriggerRef) popoverTriggerRef.hide();
+            }}
+          >
+            Close
+          </button>
+        );
+      }}
+      respondsToClick={true}
+    >
+      <button aria-label="Trigger" className="btn">
+        Trigger
+      </button>
+    </PopoverTrigger>
+  )
+};
+
 export { testCases };
