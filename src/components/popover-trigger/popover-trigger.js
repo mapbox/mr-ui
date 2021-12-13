@@ -322,6 +322,9 @@ export default class PopoverTrigger extends React.Component {
   };
 
   setPopoverElement = (element) => {
+    if (this.props.popoverProps.ref) {
+      this.props.popoverProps.ref(element);
+    }
     this.popoverElement = element;
   };
 
