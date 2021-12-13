@@ -128,7 +128,10 @@ export default class PopoverTrigger extends React.Component {
       (!this.popoverElement || !this.popoverElement.contains(event.target))
     ) {
       this.hide();
-    } else {
+    } else if (
+      !this.popoverContentElement ||
+      !this.popoverContentElement.contains(event.target)
+    ) {
       this.showBecauseClick();
     }
   };
@@ -322,6 +325,10 @@ export default class PopoverTrigger extends React.Component {
     this.popoverElement = element;
   };
 
+  setPopoverContentElement = (element) => {
+    this.popoverContentElement = element;
+  };
+
   getPopoverContent = () => {
     const { content } = this.props;
     if (typeof content === 'function') {
@@ -351,6 +358,10 @@ export default class PopoverTrigger extends React.Component {
           receiveFocus={receiveFocus}
           trapFocus={trapFocus}
           onElement={this.setPopoverElement}
+          passthroughProps={{
+            ...(props.popoverProps.passthroughProps || {}),
+            ref: this.setPopoverContentElement
+          }}
         >
           {this.getPopoverContent()}
         </Popover>
