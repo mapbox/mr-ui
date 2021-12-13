@@ -42,14 +42,12 @@ class Button extends React.Component {
       'py3 txt-xs': sizeSmall
     });
 
-    const universalProps = Object.assign(
-      {
-        className: classes,
-        onClick: props.onClick,
-        children: props.children
-      },
-      props.passthroughProps
-    );
+    const universalProps = {
+      className: classes,
+      onClick: props.onClick,
+      children: props.children,
+      ...props.passthroughProps
+    };
 
     if (props.href) {
       return <a href={props.href} {...universalProps} />;

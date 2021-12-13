@@ -37,7 +37,7 @@ function setStyles(constants = styles) {
  * @param s {object} an object that conforms to { [id]: string }.
  */
 function mergeStyles(constants) {
-  Object.assign(_styles, constants);
+  _styles = { ..._styles, ...constants };
 }
 
 /**
