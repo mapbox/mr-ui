@@ -50,7 +50,8 @@ describe('PopoverPositioner', () => {
       getScrollableParents: mockGetScrollableParents,
       createScrollListener: mockCreateScrollListener,
       zIndex: 3,
-      getWindow: mockGetWindow
+      getWindow: mockGetWindow,
+      observeSize: true
     };
   });
 
@@ -212,6 +213,22 @@ describe('PopoverPositioner', () => {
     mount(<PopoverPositioner.WrappedComponent {...props} />);
     expect(mockCalculatePosition).toHaveBeenCalledTimes(1);
     PopoverPositioner.recalculatePositions();
+    expect(mockCalculatePosition).toHaveBeenCalledTimes(2);
+  });
+
+  test('resize observer does not exist with observeSize=false', () => {
+    const wrapper = mount(
+      <PopoverPositioner.WrappedComponent {...props} observeSize={false} />
+    );
+    expect(mockCalculatePosition).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().resizeObserver).toBeFalsy();
+  });
+
+  test('resize observer forces position recalc', () => {
+    const wrapper = mount(<PopoverPositioner.WrappedComponent {...props} />);
+    expect(mockCalculatePosition).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().resizeObserver).not.toBeFalsy();
+    wrapper.instance().resizeObserver.resizeFn();
     expect(mockCalculatePosition).toHaveBeenCalledTimes(2);
   });
 });

@@ -25,6 +25,10 @@ let popoverCounter = 0; // Incremented on creation
  * useful if some state change other than a scroll or resize may have caused
  * the popover's anchor to move or the space available to the
  * popover to change.
+ *
+ * If `ResizeObserver` is available in the user's browser, the popover will
+ * automatically reposition itself when the content is resized. This can be disabled
+ * in the `observeSize` prop.
  */
 export default class Popover extends React.Component {
   constructor(props) {
@@ -210,6 +214,7 @@ export default class Popover extends React.Component {
         offsetFromAnchor={props.offsetFromAnchor}
         onElement={this.setPopoverElement}
         zIndex={props.zIndex}
+        observeSize={props.observeSize}
       >
         <div
           key="body"
@@ -339,7 +344,12 @@ Popover.propTypes = {
   /**
    * CSS z-index number to order popover over content.
    */
-  zIndex: PropTypes.number
+  zIndex: PropTypes.number,
+  /**
+   * If `true` and `ResizeObserver` is available in the user's browser,
+   * the popover will automatically reposition itself when the content is resized.
+   */
+  observeSize: PropTypes.bool
 };
 
 Popover.defaultProps = {
@@ -355,7 +365,8 @@ Popover.defaultProps = {
   escapeCloses: true,
   receiveFocus: true,
   trapFocus: false,
-  zIndex: 1
+  zIndex: 1,
+  observeSize: true
 };
 
 Popover.repositionPopovers = PopoverPositioner.recalculatePositions;
