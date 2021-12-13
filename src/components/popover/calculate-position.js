@@ -1,4 +1,3 @@
-import xtend from 'xtend';
 import calculatePositionContext from './calculate-position-context';
 import calculatePlacementAlignment from './calculate-placement-alignment';
 import calculateBodyStyle from './calculate-body-style';
@@ -40,7 +39,7 @@ import adjustStylesForAnchorVisibility from './adjust-styles-for-anchor-visibili
  * @return {PopoverPositionData}
  */
 export default function calculatePopoverPosition(options) {
-  const defaultedOptions = xtend(options);
+  const defaultedOptions = { ...(options || {}) };
   defaultedOptions.offsetFromAnchor = def(options.offsetFromAnchor, 5);
   defaultedOptions.containWithinViewport = def(
     options.containWithinViewport,

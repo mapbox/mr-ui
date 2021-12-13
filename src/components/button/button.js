@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import xtend from 'xtend';
 
 /**
  * A good-looking button!
@@ -43,7 +42,7 @@ class Button extends React.Component {
       'py3 txt-xs': sizeSmall
     });
 
-    const universalProps = xtend(
+    const universalProps = Object.assign(
       {
         className: classes,
         onClick: props.onClick,
@@ -52,15 +51,18 @@ class Button extends React.Component {
       props.passthroughProps
     );
 
+    if (props.href) {
+      return <a href={props.href} {...universalProps} />;
+    }
+
     // "disabled" is not a valid attributes for anchors.
-    const buttonProps = xtend(universalProps, { disabled: props.disabled });
+    const buttonProps = {
+      ...universalProps,
+      disabled: props.disabled
+    };
 
     if (props.component) {
       return React.createElement(props.component, buttonProps);
-    }
-
-    if (props.href) {
-      return <a href={props.href} {...universalProps} />;
     }
 
     return <button type="button" {...buttonProps} />;
@@ -77,55 +79,32 @@ const defaults = {
 function applyVariant(props) {
   switch (props.variant) {
     case 'primary':
-      return xtend(defaults, props);
+      return { ...defaults, ...props };
     case 'secondary':
-      return xtend(
-        defaults,
-        {
-          outline: true
-        },
-        props
-      );
+      return { ...defaults, outline: true, ...props };
     case 'discouraging':
-      return xtend(
-        defaults,
-        {
-          color: 'gray',
-          outline: true
-        },
-        props
-      );
+      return { ...defaults, color: 'gray', outline: true, ...props };
     case 'destructive':
-      return xtend(
-        defaults,
-        {
-          color: 'red'
-        },
-        props
-      );
+      return { ...defaults, color: 'red', ...props };
     case 'appPrimary':
-      return xtend(
-        defaults,
-        {
-          color: 'gray',
-          size: 'small',
-          width: 'small',
-          corners: true
-        },
-        props
-      );
+      return {
+        ...defaults,
+        color: 'gray',
+        size: 'small',
+        width: 'small',
+        corners: true,
+        ...props
+      };
     case 'appSecondary':
-      return xtend(
-        defaults,
-        {
-          color: 'gray',
-          size: 'small',
-          width: 'small',
-          corners: true,
-          outline: true
-        },
-        props
-      );
+      return {
+        ...defaults,
+        color: 'gray',
+        size: 'small',
+        width: 'small',
+        corners: true,
+        outline: true,
+        ...props
+      };
   }
 }
 

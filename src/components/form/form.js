@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import xtend from 'xtend';
 import shallowEqualObjects from 'shallow-equal/objects';
 import Submittable from 'react-submittable';
 import LoaderFull from '../loader-full';
@@ -75,10 +74,11 @@ export default class Form extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = xtend(this.setControlProperties(props.config), {
+    this.state = {
+      ...this.setControlProperties(props.config),
       formState: formStates.preSubmission,
       ready: false
-    });
+    };
   }
 
   componentDidMount() {
@@ -151,12 +151,13 @@ export default class Form extends React.Component {
 
   getControlProps = (controlName) => {
     const control = this.props.config[controlName];
-    return xtend(control, {
+    return {
+      ...control,
       id: controlName,
       onChange: this.onControlChange,
       validationError: this.state.controlValidationErrors[controlName],
       value: this.state.controlValues[controlName]
-    });
+    };
   };
 
   onSubmit = () => {
