@@ -10,12 +10,9 @@ import ControlRange from '../../control-range';
 import ControlCheckboxSet from '../../control-checkbox-set';
 import ControlToggleSet from '../../control-toggle-set';
 import ControlRadioSet from '../../control-radio-set';
-import ControlDate from '../../control-date';
 import safeSpy from '../../../test-utils/safe-spy';
 import validateRequired from '../validators/validate-required';
 import validateEmail from '../validators/validate-email';
-import validateStartDateBeforeEndDate from '../validators/validate-start-date-before-end-date';
-import moment from 'moment';
 
 const testCases = {};
 
@@ -58,9 +55,6 @@ function renderForm(getControlProps, onSubmit) {
         <div className="col w-full w-1/4-mm">
           <ControlCheckboxSet {...getControlProps('tools')} />
         </div>
-        <div className="col w-full w-3/4-mm">
-          <ControlDate {...getControlProps('date')} />
-        </div>
       </div>
       <div className="mt6">
         <ControlTextarea {...getControlProps('description')} />
@@ -99,12 +93,6 @@ const formConfig = {
     type: 'url',
     placeholder: 'Enter your URL',
     validator: [validateRequired('URL')]
-  },
-  date: {
-    moment,
-    dateRange: true,
-    label: 'Date',
-    validator: [validateStartDateBeforeEndDate]
   },
   upload: {
     label: 'Upload a picture',
