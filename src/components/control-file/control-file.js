@@ -86,13 +86,12 @@ export default class ControlFile extends React.Component {
     displayValue: ''
   };
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const nextDisplayValue = !nextProps.value
+  static getDerivedStateFromProps(nextProps) {
+    const displayValue = !nextProps.value
       ? ''
       : nextProps.value.map((f) => f.name).join(', ');
-    if (nextDisplayValue !== this.state.displayValue) {
-      this.setState({ displayValue: nextDisplayValue });
-    }
+
+    return { displayValue };
   }
 
   onButtonClick = () => {

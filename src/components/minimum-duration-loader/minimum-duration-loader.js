@@ -1,17 +1,89 @@
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 
-// This component displays a loading indicator in place of its children until
-// the isLoaded prop is true. The indicator will be displayed for a minimum
-// amount of time as specified by the minDuration prop (defaults to one second).
+/**
+ * It doesn't look like react-docgen works with hooks so keep this as an "inner" function.
+ */
+function MinimumDurationLoaderInner({
+  children,
+  isLoaded,
+  loader,
+  minDuration
+}) {
+  // If was initially loaded, load immediately.
+  const [wasLoaded] = useState(isLoaded);
 
+  const isLoadedRef = useRef(isLoaded);
+  const isLoadedPrevious = isLoadedRef.current;
+  useEffect(() => {
+    isLoadedRef.current = isLoaded;
+  }, [isLoaded]);
+
+  const startedLoadingTimestampRef = useRef(0);
+  const delayedMountTimeoutRef = useRef(null);
+
+  const [delayedLoaded, setDelayedLoaded] = useState(false);
+
+  useEffect(() => {
+    // Duration for our timeout to set delayedLoaded to true.
+    let duration = 0;
+
+    if (!isLoadedPrevious && isLoaded) {
+      startedLoadingTimestampRef.current = null;
+      setDelayedLoaded(false);
+    }
+
+    if (startedLoadingTimestampRef.current) {
+      // This means the minDuration has changed after we started the timer.
+      duration = Math.min(
+        0,
+        minDuration - (Date.now() - startedLoadingTimestampRef.current)
+      );
+    } else {
+      // This is our first time.
+      startedLoadingTimestampRef.current = Date.now();
+      duration = minDuration;
+    }
+
+    delayedMountTimeoutRef.current = setTimeout(() => {
+      delayedMountTimeoutRef.current = null;
+      setDelayedLoaded(true);
+    }, duration);
+
+    // Clear the existing timeout if the content begins loading again.
+    return () => {
+      if (delayedMountTimeoutRef.current) {
+        clearTimeout(delayedMountTimeoutRef.current);
+      }
+    };
+  }, [
+    startedLoadingTimestampRef,
+    delayedMountTimeoutRef,
+    minDuration,
+    isLoadedPrevious,
+    isLoaded
+  ]);
+
+  const shouldRenderContent = isLoaded && (wasLoaded || delayedLoaded);
+
+  if (shouldRenderContent) {
+    return children;
+  }
+
+  return loader;
+}
+
+/**
+ * This component displays a loading indicator in place of its children until
+ * the `isLoaded` prop is true. The indicator will be displayed for a minimum
+ * amount of time as specified by the minDuration prop (defaults to one second).
+ */
 export default class MinimumDurationLoader extends React.PureComponent {
   static propTypes = {
     children: PropTypes.node,
     isLoaded: PropTypes.bool,
     loader: PropTypes.node,
-    minDuration: PropTypes.number,
-    onContentRender: PropTypes.func
+    minDuration: PropTypes.number
   };
 
   static defaultProps = {
@@ -19,69 +91,7 @@ export default class MinimumDurationLoader extends React.PureComponent {
     minDuration: 1000
   };
 
-  _delayedMountTimeout = null;
-  _startedLoadingTimestamp = 0;
-
-  constructor(props) {
-    super(props);
-
-    this.state = { shouldRenderContent: props.isLoaded };
-  }
-
-  componentDidMount() {
-    this._startedLoadingTimestamp = Date.now();
-    if (this.props.onContentRender && this.state.shouldRenderContent) {
-      this.props.onContentRender();
-    }
-  }
-
-  componentDidUpdate() {
-    if (this.props.onContentRender && this.state.shouldRenderContent) {
-      this.props.onContentRender();
-    }
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const currentTime = Date.now();
-
-    if (!nextProps.isLoaded && this._delayedMountTimeout !== null) {
-      // Clear the existing timeout if the content begins loading again.
-      clearTimeout(this._delayedMountTimeout);
-      this._delayedMountTimeout = null;
-    }
-
-    if (nextProps.isLoaded && !this.state.shouldRenderContent) {
-      const timeSinceLoading = currentTime - this._startedLoadingTimestamp;
-      const nextState = { shouldRenderContent: true };
-
-      if (timeSinceLoading < nextProps.minDuration) {
-        // Display the content after the minimum duration has been reached.
-        this._delayedMountTimeout = setTimeout(() => {
-          this._delayedMountTimeout = null;
-          this.setState(nextState);
-        }, nextProps.minDuration - timeSinceLoading);
-      } else {
-        // The minimum duration has been reached, so show the content immediately.
-        this.setState(nextState);
-      }
-    } else if (!nextProps.isLoaded && this.state.shouldRenderContent) {
-      // Reset the component's original state if the content begins loading again.
-      this._startedLoadingTimestamp = currentTime;
-      this.setState({ shouldRenderContent: false });
-    }
-  }
-
-  componentWillUnmount() {
-    if (this._delayedMountTimeout) {
-      clearTimeout(this._delayedMountTimeout);
-    }
-  }
-
   render() {
-    if (this.state.shouldRenderContent) {
-      return this.props.children;
-    }
-
-    return this.props.loader;
+    return <MinimumDurationLoaderInner {...this.props} />;
   }
 }

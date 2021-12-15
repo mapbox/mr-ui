@@ -314,30 +314,6 @@ exports[`ControlFile all controls renders 1`] = `
             value={Array []}
           />
         </div>
-        <div
-          className="col w-full w-3/4-mm"
-        >
-          <ControlDate
-            dateRange={true}
-            endDatePlaceholder="M/D/YYYY"
-            format="M/D/YYYY"
-            id="date"
-            label="Date"
-            moment={[Function]}
-            onChange={[Function]}
-            placeholder="M/D/YYYY"
-            themeCalendar="shadow-darken10 border--0 none block-mm"
-            themeTextInput="input w180 none block-mm"
-            themeWrapper="react-control-date react-control-date--disable-keyboard inline-flex flex--center-cross flex--wrap"
-            validationError=""
-            validator={
-              Array [
-                [Function],
-              ]
-            }
-            value=""
-          />
-        </div>
       </div>
       <div
         className="mt6"

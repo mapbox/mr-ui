@@ -33,13 +33,11 @@ export default class Popover extends React.Component {
     this.popoverId = popoverCounter;
   }
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     // For focus management: focus will return to this element
     // when the popover is closed
     this.previouslyFocusedElement = document.activeElement;
-  }
 
-  componentDidMount() {
     this.hackListenerRemovers = [];
     if ('ontouchstart' in document.documentElement) {
       // Prevent a full-screen flash when there's a click.

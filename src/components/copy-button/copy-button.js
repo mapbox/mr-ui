@@ -27,6 +27,16 @@ export default class CopyButton extends React.PureComponent {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const copyAvailable = Clipboard.isSupported();
+    if (this.props.textEl !== prevProps.textEl && copyAvailable) {
+      this.setClipboard(this.props.textEl);
+    }
+    if (!copyAvailable) {
+      this.destroyClipboard();
+    }
+  }
+
   componentWillUnmount() {
     clearTimeout(this.revertTimer);
     this.destroyClipboard();
@@ -49,16 +59,6 @@ export default class CopyButton extends React.PureComponent {
       this.setState({ showingFeedback: false });
     }, FEEDBACK_TIME);
   };
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const copyAvailable = Clipboard.isSupported();
-    if (nextProps.textEl !== this.props.textEl && copyAvailable) {
-      this.setClipboard(nextProps.textEl);
-    }
-    if (!copyAvailable) {
-      this.destroyClipboard();
-    }
-  }
 
   setContainer = (element) => {
     if (!element) return;

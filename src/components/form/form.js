@@ -1,10 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import xtend from 'xtend';
-import shallowEqualObjects from 'shallow-equal/objects';
+import shallowEqualObjects from '../utils/shallow-equal-objects';
 import Submittable from 'react-submittable';
 import LoaderFull from '../loader-full';
 import LoaderLocal from '../loader-local';
+
+function setControlProperties(config, state) {
+  const controlValues = {};
+  const controlValidationErrors = {};
+
+  Object.keys(config).forEach((controlName) => {
+    const controlConfig = config[controlName];
+    if (state && state.controlValues && state.controlValues[controlName]) {
+      controlValues[controlName] = state.controlValues[controlName];
+    } else {
+      controlValues[controlName] =
+        controlConfig.initialValue !== undefined
+          ? controlConfig.initialValue
+          : '';
+    }
+
+    controlValidationErrors[controlName] = '';
+  });
+
+  return {
+    controlValues,
+    controlValidationErrors
+  };
+}
 
 function validateControlValue(value, validators, controlValues) {
   if (!validators) return '';
@@ -45,40 +68,13 @@ export default class Form extends React.Component {
 
   _isMounted = false;
 
-  setControlProperties(config) {
-    const controlValues = {};
-    const controlValidationErrors = {};
-
-    Object.keys(config).forEach((controlName) => {
-      const controlConfig = config[controlName];
-      if (
-        this.state &&
-        this.state.controlValues &&
-        this.state.controlValues[controlName]
-      ) {
-        controlValues[controlName] = this.state.controlValues[controlName];
-      } else {
-        controlValues[controlName] =
-          controlConfig.initialValue !== undefined
-            ? controlConfig.initialValue
-            : '';
-      }
-
-      controlValidationErrors[controlName] = '';
-    });
-
-    return {
-      controlValues,
-      controlValidationErrors
-    };
-  }
-
   constructor(props) {
     super(props);
-    this.state = xtend(this.setControlProperties(props.config), {
+    this.state = {
+      ...setControlProperties(props.config),
       formState: formStates.preSubmission,
       ready: false
-    });
+    };
   }
 
   componentDidMount() {
@@ -88,21 +84,25 @@ export default class Form extends React.Component {
     });
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const { config } = this.props;
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  componentDidUpdate({ config }) {
+    const nextProps = this.props;
+
     if (!shallowEqualObjects(nextProps.config, config)) {
-      const { controlValues, controlValidationErrors } =
-        this.setControlProperties(nextProps.config);
+      const { controlValues, controlValidationErrors } = setControlProperties(
+        nextProps.config,
+        this.state
+      );
+
       this.setState({
         controlValues,
         controlValidationErrors,
         formState: formStates.preSubmission
       });
     }
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
   }
 
   checkValidation(formState) {
@@ -151,12 +151,13 @@ export default class Form extends React.Component {
 
   getControlProps = (controlName) => {
     const control = this.props.config[controlName];
-    return xtend(control, {
+    return {
+      ...control,
       id: controlName,
       onChange: this.onControlChange,
       validationError: this.state.controlValidationErrors[controlName],
       value: this.state.controlValues[controlName]
-    });
+    };
   };
 
   onSubmit = () => {
