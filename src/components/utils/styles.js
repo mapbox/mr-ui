@@ -1,5 +1,3 @@
-import xtend from 'xtend';
-
 const styles = {
   h1: 'txt-h1-mm txt-h2 txt-fancy mb6',
   h2: 'txt-h2-mm txt-h3 txt-fancy mb6',
@@ -31,7 +29,7 @@ let _styles = styles;
  * @param s {object} an object that conforms to { [id]: string }.
  */
 function setStyles(constants = styles) {
-  _styles = xtend({}, constants);
+  _styles = { ...constants };
 }
 
 /**
@@ -39,7 +37,7 @@ function setStyles(constants = styles) {
  * @param s {object} an object that conforms to { [id]: string }.
  */
 function mergeStyles(constants) {
-  _styles = xtend(_styles, constants);
+  _styles = { ..._styles, ...constants };
 }
 
 /**

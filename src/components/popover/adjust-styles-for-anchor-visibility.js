@@ -1,4 +1,3 @@
-import xtend from 'xtend';
 import getWindow from '../utils/get-window';
 import {
   PLACEMENT_TOP,
@@ -33,17 +32,17 @@ export default function adjustStylesForAnchorVisibility(
   context
 ) {
   const hideThings = () => {
-    const newPointerStyle = xtend(pointerStyle, hideStyles);
+    const newPointerStyle = { ...(pointerStyle || {}), ...hideStyles };
     const newBodyStyle = options.hideWhenAnchorIsOffscreen
-      ? xtend(bodyStyle, hideStyles)
+      ? { ...(bodyStyle || {}), ...hideStyles }
       : bodyStyle;
     return { pointerStyle: newPointerStyle, bodyStyle: newBodyStyle };
   };
 
   const showThings = () => {
-    const newPointerStyle = xtend(pointerStyle, showStyles);
+    const newPointerStyle = { ...(pointerStyle || {}), ...showStyles };
     const newBodyStyle = options.hideWhenAnchorIsOffscreen
-      ? xtend(bodyStyle, showStyles)
+      ? { ...(bodyStyle || {}), ...showStyles }
       : bodyStyle;
     return { pointerStyle: newPointerStyle, bodyStyle: newBodyStyle };
   };

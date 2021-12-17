@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import displace from 'react-displace';
 import omit from '../utils/omit';
-import xtend from 'xtend';
 
 class LoaderFull extends React.PureComponent {
   static propTypes = {
@@ -37,7 +36,7 @@ class LoaderFull extends React.PureComponent {
     );
     // This needs to end up on top of *everything*, so it goes to the bottom
     // of body with the maximum z's.
-    const style = xtend(this.props.style, { zIndex: 9999 });
+    const style = { ...(this.props.style || {}), zIndex: 9999 };
 
     return (
       <div
