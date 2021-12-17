@@ -52,6 +52,7 @@
     "react-displace": "^2.3.0",
     "react-submittable": "^2.0.0",
     "select": "^1.1.2",
+    "shallow-equal": "^1.2.1",
     "tabbable": "^3.1.1",
     "xtend": "^4.0.0"
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import shallowEqualObjects from '../utils/shallow-equal-objects';
+import shallowEqualObjects from 'shallow-equal/objects';
 import Submittable from 'react-submittable';
 import LoaderFull from '../loader-full';
 import LoaderLocal from '../loader-local';
