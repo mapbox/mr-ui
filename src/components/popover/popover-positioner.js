@@ -45,6 +45,7 @@ class PopoverPositioner extends React.PureComponent {
     getContainingElement: PropTypes.func,
     onElement: PropTypes.func,
     zIndex: PropTypes.number,
+    observeSize: PropTypes.bool,
     // For mockery
     calculatePosition: PropTypes.func,
     getScrollableParents: PropTypes.func,
@@ -75,6 +76,17 @@ class PopoverPositioner extends React.PureComponent {
       return scrollListener;
     }, this);
     this.setPosition();
+
+    const popoverEl = this.getPopoverElement();
+    if (this.props.observeSize && 'ResizeObserver' in window) {
+      this.resizeObserver = new ResizeObserver(this.setPosition);
+      this.resizeObserver.observe(popoverEl);
+    } else {
+      if (this.resizeObserver) {
+        this.resizeObserver.unobserve(popoverEl);
+        this.resizeObserver = null;
+      }
+    }
   }
 
   componentDidUpdate() {
@@ -82,6 +94,10 @@ class PopoverPositioner extends React.PureComponent {
   }
 
   componentWillUnmount() {
+    if (this.resizeObserver) {
+      this.resizeObserver.unobserve(this.getPopoverElement());
+      this.resizeObserver = null;
+    }
     this.props.getWindow().removeEventListener('resize', this.handleResize);
     this.scrollListeners.forEach((scrollListener) => {
       scrollListener.stop();

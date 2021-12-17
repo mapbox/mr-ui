@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { testCases } from './popover-trigger-test-cases';
 
 describe('PopoverTrigger', () => {
@@ -114,6 +114,26 @@ describe('PopoverTrigger', () => {
       wrapper.update();
       expect(testCase.props.onPopoverOpen).toHaveBeenCalledTimes(1);
       expect(testCase.props.onPopoverClose).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe(testCases.clickInsideContent.description, () => {
+    beforeEach(() => {
+      testCase = testCases.clickInsideContent;
+      wrapper = mount(testCase.element);
+    });
+
+    test('when click inside content, popover closes', () => {
+      expect(wrapper.find('Popover').length).toBe(0);
+      wrapper.simulate('click');
+      wrapper.update();
+      expect(wrapper.find('Popover').length).toBe(1);
+
+      const closeButtons = wrapper.find('button[aria-label="Close"]');
+      expect(closeButtons.length).toBe(1);
+      closeButtons.at(0).simulate('click');
+      wrapper.update();
+      expect(wrapper.find('Popover').length).toBe(0);
     });
   });
 });

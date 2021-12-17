@@ -44,20 +44,14 @@ describe('MinimumDurationLoader', () => {
       wrapper.update();
       expect(wrapper.html()).toEqual(contentHtml);
       wrapper.setProps({ isLoaded: false });
+      wrapper.update();
       expect(wrapper.html()).toEqual(loaderHtml);
       wrapper.setProps({ isLoaded: true });
+      wrapper.update();
       expect(wrapper.html()).toEqual(loaderHtml);
       jest.runTimersToTime(1000);
       wrapper.update();
       expect(wrapper.html()).toEqual(contentHtml);
-    });
-
-    it('calls onContentRender after the content is rendered', () => {
-      const onContentRender = jest.fn();
-      wrapper.setProps({ onContentRender, isLoaded: true });
-      expect(onContentRender).not.toHaveBeenCalled();
-      jest.runTimersToTime(1000);
-      expect(onContentRender).toHaveBeenCalled();
     });
   });
 
@@ -75,17 +69,6 @@ describe('MinimumDurationLoader', () => {
       wrapper = mount(React.createElement(testCase.component, testCase.props));
       expect(wrapper.find('[data-test-loader]').length).toEqual(0);
       expect(wrapper.find('[data-test-content]').length).toEqual(1);
-    });
-
-    it('calls onContentRender on mount when isLoaded is true on mount', () => {
-      const onContentRender = jest.fn();
-      wrapper = mount(
-        React.createElement(
-          testCase.component,
-          Object.assign({ onContentRender }, testCase.props)
-        )
-      );
-      expect(onContentRender).toHaveBeenCalled();
     });
   });
 
