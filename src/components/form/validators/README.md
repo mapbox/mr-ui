@@ -25,7 +25,7 @@ import validateEmail from '../utils/validators/dist/validate-email';
 The validator function signature is `(value) => string`, and the return value is an empty string if there is no error.
 
 Some validator module are validator functions.
-But some are functions that *return* validator functions.
+But some are functions that _return_ validator functions.
 This is necessary if the validator function varies from one case to another.
 For example, the `validateRequired` module takes an argument, a string describing the required value, and returns a validator function.
 
@@ -157,8 +157,8 @@ Standard validator function signature.
 
 You must provide either a partial or full error message to show the user.
 Typically, you can use a partial message.
-It will be plugged into the sentence ``Please enter a/an ${partialMessage}``.
-Provide a full  message if you need special language or face one of the situations where a computer might pick the wrong indefinite article, e.g. "Please enter an username".
+It will be plugged into the sentence `Please enter a/an ${partialMessage}`.
+Provide a full message if you need special language or face one of the situations where a computer might pick the wrong indefinite article, e.g. "Please enter an username".
 
 ```
 import validateRequired from '../utils/validators/dist/validate-required';
@@ -175,17 +175,6 @@ const validationError = validateRequiredEmail(value);
 ```
 
 Validates that the value is not empty. "Empty" values are `""`, `undefined`, and `null`.
-
-### validate-start-date-before-end-date
-
-```
-import validateStartDateBeforeEndDate from '../utils/validators/dist/validate-start-date-before-end-date';
-```
-
-Value must be an object with a `date` property (the "start date") and an `endDate` property.
-Validates that `endDate` is before `date`.
-
-Standard validator function signature.
 
 ### validate-style-uri
 

@@ -13,11 +13,8 @@ import validateNumber from '../validate-number';
 import validatePassword from '../validate-password';
 import validatePitch from '../validate-pitch';
 import validateRequired from '../validate-required';
-import validateStartDateBeforeEndDate from '../validate-start-date-before-end-date';
 import validateStyleUri from '../validate-style-uri';
 import validateZoom from '../validate-zoom';
-import moment from 'moment';
-import ControlDate from '../../../control-date';
 import ControlText from '../../../control-text';
 
 export default class Example extends React.Component {
@@ -65,11 +62,6 @@ export default class Example extends React.Component {
   updateDate = (date) => {
     const dateValidationError = validateDate(date);
     this.setState({ date, dateValidationError });
-  };
-
-  updateDateRange = (dateRange) => {
-    const dateRangeValidationError = validateStartDateBeforeEndDate(dateRange);
-    this.setState({ dateRange, dateRangeValidationError });
   };
 
   updateEmail = (email) => {
@@ -215,19 +207,6 @@ export default class Example extends React.Component {
           value={this.state.required}
           onChange={this.updateRequired}
           validationError={this.state.requiredValidationError}
-        />
-        <ControlDate
-          id="dateRange"
-          moment={moment}
-          value={this.state.dateRangeValue}
-          onChange={this.updateDateRange}
-          dateRange={true}
-          placeholder="start"
-          endDatePlaceholder="end"
-          label="Start date before end date"
-          minDate={new Date('2017-10-1')}
-          maxDate={new Date('2018-10-1')}
-          validationError={this.state.dateRangeValidationError}
         />
         <ControlText
           id="style-uri"
