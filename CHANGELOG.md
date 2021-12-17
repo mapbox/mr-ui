@@ -1,7 +1,24 @@
 # Changelog
+
+## 2.0.0-beta.1
+
+- [feature] Remove unsafe lifecycle methods that cause React 16+ warnings.
+
+- 🚨 [breaking change] Drop support for React 15.
+- 🚨 [breaking change] Remove **ControlDate** component.
+- 🚨 [breaking change] Remove `validateStartDateBeforeEndDate`.
+- 🚨 [breaking change] Remove `onContentRender` property from **MinimumDurationLoader**.
+- 🚨 [breaking change] Remove `errorTooltipTheme` and `errorTooltipBackgroundColor` properties from the **ControlText** component. These props can be specified in `popoverProps` instead as `backgroundColor` and `themePopover`.
+
+- [fix] Watch **PopoverPosition** DOM children for size changes to reposition.
+- [fix] Don't show **PopoverTrigger** (showBecauseClick) if clicked element is inside the container.
+
+- [chore] Remove need for `xtend` dependency.
+
 ## 1.1.0
 
 - [feature] Add new error popover style, improve warning popover style
+
 ## 1.0.0
 
 - [feature] Trap events in modals by default
