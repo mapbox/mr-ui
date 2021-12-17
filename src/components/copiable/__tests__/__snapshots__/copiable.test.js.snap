@@ -78,6 +78,7 @@ exports[`basic shows copy hint when focused 1`] = `
     getAnchorElement={[Function]}
     hasPointer={true}
     hideWhenAnchorIsOffscreen={true}
+    observeSize={true}
     padding="small"
     placement="top"
     receiveFocus={true}
