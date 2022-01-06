@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@mapbox/mr-ui",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
   "scripts": {
@@ -47,6 +47,7 @@
     "focus-trap": "^3.0.0",
     "hoverintent": "^2.0.0",
     "os-key": "^1.0.0",
+    "password-validator": "^5.2.1",
     "prefix": "^1.0.0",
     "react-aria-modal": "^4.0.0",
     "react-displace": "^2.3.0",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0-beta.2
+
+- [feature] Added rules for password validation: password must have one uppercase, one lowercase, one special char, one digit, and at least 8 chars long.
+
 ## 2.0.0-beta.1
 
 - [feature] Remove unsafe lifecycle methods that cause React 16+ warnings.
