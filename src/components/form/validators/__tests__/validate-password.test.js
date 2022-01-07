@@ -9,25 +9,25 @@ test('valid returns ""', () => {
 });
 
 test('invalid missing symbol returns error', () => {
-  expect(validatePassword('Mapbox123')).toBe(
-    'The string should have a minimum of 1 symbol'
+  expect(validatePassword('Mapbox123')).toContain(
+    'The password must have a punctuation'
   );
 });
 
 test('invalid too short returns error', () => {
   expect(validatePassword('Mbx12~')).toContain(
-    'The string should have a minimum length of 8 characters'
+    'The password must be at least eight characters long'
   );
 });
 
-test('invalid missing upper case returns error', () => {
+test('invalid missing uppercase returns error', () => {
   expect(validatePassword('mapbox123~')).toContain(
-    'The string should have a minimum of 1 uppercase letter'
+    'The password must have a uppercase letter'
   );
 });
 
-test('invalid returns correct error message', () => {
+test('invalid missing lowercase letter returns correct error message', () => {
   expect(validatePassword('MAPBOX123~')).toContain(
-    'The string should have a minimum of 1 lowercase letter'
+    'The password must have a lowercase letter'
   );
 });

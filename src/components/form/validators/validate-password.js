@@ -1,27 +1,21 @@
 import isEmptyControlValue from './is-empty-control-value';
-import passwordValidator from 'password-validator';
 
 export default function validatePassword(value) {
   if (isEmptyControlValue(value)) return '';
 
-  const schema = new passwordValidator();
-  schema
-    .is()
-    .min(8)
-    .is()
-    .max(100)
-    .has()
-    .uppercase()
-    .has()
-    .lowercase()
-    .has()
-    .digits(1)
-    .has()
-    .symbols(1);
+  if (value.length < 8)
+    return 'The password must be at least eight characters long';
 
-  const validateDetail = schema.validate(value, { details: true });
+  let validationResult = '';
 
-  let validationresult = validateDetail.map((a) => a.message).join('; \r\n');
+  if (!/[a-z]/.test(value))
+    validationResult += 'The password must have a lowercase letter. \r\n';
+  if (!/[A-Z]/.test(value))
+    validationResult += 'The password must have a uppercase letter. \r\n';
+  if (!/\d/.test(value))
+    validationResult += 'The password must have a number. \r\n';
+  if (!/\W/.test(value))
+    validationResult += 'The password must have a punctuation. \r\n';
 
-  return validationresult;
+  return validationResult;
 }
