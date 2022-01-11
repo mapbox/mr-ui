@@ -1,21 +1,40 @@
+import React from 'react';
 import isEmptyControlValue from './is-empty-control-value';
 
 export default function validatePassword(value) {
   if (isEmptyControlValue(value)) return '';
 
-  if (value.length < 8)
-    return 'The password must be at least eight characters long';
+  const validations = [];
 
-  let validationResult = '';
+  if (value.length < 8) {
+    validations.push('Password must be at least eight characters long.');
+  }
 
-  if (!/[a-z]/.test(value))
-    validationResult += 'The password must have a lowercase letter. \r\n';
-  if (!/[A-Z]/.test(value))
-    validationResult += 'The password must have a uppercase letter. \r\n';
-  if (!/\d/.test(value))
-    validationResult += 'The password must have a number. \r\n';
-  if (!/\W/.test(value))
-    validationResult += 'The password must have a punctuation. \r\n';
+  if (!/[a-z]/.test(value)) {
+    validations.push('Password must have a lowercase letter.');
+  }
 
-  return validationResult;
+  if (!/[A-Z]/.test(value)) {
+    validations.push('Password must have an uppercase letter.');
+  }
+
+  if (!/\d/.test(value)) {
+    validations.push('Password must have a number.');
+  }
+
+  if (!/\W/.test(value)) {
+    validations.push(
+      'Password must have a special character like ".!@#$%^&*()_+-=,".'
+    );
+  }
+
+  return validations.length === 0 ? (
+    ''
+  ) : (
+    <ul className="list-group">
+      {validations.map((listitem) => (
+        <li className="list-group-item">{listitem}</li>
+      ))}
+    </ul>
+  );
 }
