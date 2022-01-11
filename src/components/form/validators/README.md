@@ -138,6 +138,10 @@ import validatePassword from '../utils/validators/dist/validate-password';
 Validates that the value is a password according to the following criteria:
 
 - 8 or more characters.
+- at least one uppercase letter
+- at least one lowercase letter
+- at least one special character(.!@#$%^&*()_+-=,)
+- at least one number
 
 Standard validator function signature.
 
