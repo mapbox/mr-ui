@@ -29,7 +29,7 @@ test('Invalid password missing number returns error message', () => {
 test('Invalid password missing special characters returns error message', () => {
   let element = shallow(validatePassword('Mapbox123')).contains(
     <li className="list-group-item">
-      Password must have a special character like ".!@#$%^&*()_+-=,".
+      Password must have a special character like ".!@#$%^&*()+-=,".
     </li>
   );
   expect(element).toBeTruthy();

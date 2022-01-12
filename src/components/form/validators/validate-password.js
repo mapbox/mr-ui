@@ -24,7 +24,7 @@ export default function validatePassword(value) {
 
   if (!/\W/.test(value)) {
     validations.push(
-      'Password must have a special character like ".!@#$%^&*()_+-=,".'
+      'Password must have a special character like ".!@#$%^&*()+-=,".'
     );
   }
 
