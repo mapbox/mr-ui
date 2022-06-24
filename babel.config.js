@@ -1,6 +1,18 @@
-'use strict';
-
 module.exports = {
-  presets: ['@babel/preset-env', '@babel/preset-react'],
-  plugins: ['@babel/plugin-proposal-class-properties']
+  presets: ['@mapbox/babel-preset-mapbox'],
+  overrides: [
+    {
+      test: /\.tsx$/,
+      presets: [
+        '@mapbox/babel-preset-mapbox',
+        [
+          '@babel/typescript',
+          {
+            allExtensions: true,
+            isTSX: true
+          }
+        ]
+      ]
+    }
+  ]
 };

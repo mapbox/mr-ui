@@ -25,7 +25,7 @@ const srcDir = path.resolve(rootDir, 'src/components');
 // tests and examples.
 function compileComponents() {
   return execa.shell(
-    `babel "${rootDir}/src/components" --out-dir ${outputDir} --ignore "**/examples","**/__tests__" --config-file ${rootDir}/babel.config.js`,
+    `babel "${rootDir}/src/components" --out-dir ${outputDir} --ignore "**/examples","**/*test" --config-file ${rootDir}/babel.config.js`,
     {
       cwd: srcDir,
       stdio: 'inherit'

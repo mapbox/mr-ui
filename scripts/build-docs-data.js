@@ -20,7 +20,7 @@ loadLanguages(['jsx']);
 const dataDir = path.resolve(__dirname, '../src/docs/data');
 const srcDir = path.resolve(__dirname, '../src/components');
 const dataFilename = path.resolve(dataDir, 'components.js');
-const excludeSourceDirs = new Set(['page-loading-indicator', 'utils']);
+const excludeSourceDirs = new Set(['page-loading-indicator', 'utils', '.DS_Store']);
 
 function processExampleFile(filename) {
   return pify(fs.readFile)(filename, 'utf8').then((code) => {
@@ -40,7 +40,6 @@ function processExampleFile(filename) {
     const renderedDescription = encodeJsx(
       jsxtremeMarkdown.toJsx(descriptionMatch[1].trim())
     );
-
     return `{
       exampleModule: require('${filename}'),
       code: \`${encodeJsx(highlightedCode)}\`,
@@ -51,7 +50,7 @@ function processExampleFile(filename) {
 
 function getExamples(componentDirectory) {
   const examplesDirectory = path.join(componentDirectory, 'examples');
-  return globby(path.join(examplesDirectory, '*.js')).then((filenames) => {
+  return globby(path.join(examplesDirectory, '*.tsx')).then((filenames) => {
     return Promise.all(filenames.sort().map(processExampleFile));
   });
 }
@@ -81,7 +80,7 @@ function processProps(props) {
 
 function processComponent(hyphenName) {
   const componentDir = path.join(srcDir, hyphenName);
-  const srcFilename = path.join(componentDir, `${hyphenName}.js`);
+  const srcFilename = path.join(componentDir, `${hyphenName}.tsx`);
 
   return Promise.all([
     pify(fs.readFile)(srcFilename, 'utf8'),
