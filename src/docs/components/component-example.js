@@ -23,6 +23,7 @@ export default class ComponentExample extends React.Component {
 
   render() {
     const { props, state } = this;
+
     return (
       <div>
         <div className="flex flex--end-cross">
