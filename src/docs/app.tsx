@@ -1,11 +1,12 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import components from './data/components'; // eslint-disable-line
 import ComponentSection from './components/component-section';
 import Sidebar from './components/sidebar';
 import Colors from './components/colors';
 import Assets from './components/assets';
+import { Data, Entry, Section } from './typings';
 
-function AppSection({ name, entries, intro }) {
+function AppSection({ name, entries, intro }: Section): ReactElement {
   const id = name.replace(/ /g, '-').toLowerCase();
   return (
     <div id={id}>
@@ -13,15 +14,15 @@ function AppSection({ name, entries, intro }) {
         <h2 className="mb12 pt60 txt-h2 txt-fancy">{name}</h2>
       </a>
       {intro}
-      {entries.map((c) => (
-        <div key={c.name}>{c.content}</div>
+      {entries.map(({ name, content }: Entry) => (
+        <div key={name}>{content}</div>
       ))}
     </div>
   );
 }
 
 export default function App() {
-  const componentEls = components.map((component) => {
+  const componentEls: Array<Entry> = components.map((component) => {
     let containerClasses = 'pb60';
     return {
       name: component.name,
@@ -33,7 +34,7 @@ export default function App() {
     };
   });
 
-  const sections = [
+  const sections: Array<Section> = [
     {
       name: 'Mapbox Assembly',
       intro: (
@@ -65,22 +66,22 @@ export default function App() {
   ];
 
   return (
-    <div>
+    <>
       <div className="relative fixed-mm top left bottom w240-mm py24 px24 scroll-styled overflow-auto">
         <Sidebar sections={sections} />
       </div>
       <div className="mx-auto pl240-mm wmax1200">
         <div className="px24">
-          {sections.map((s) => (
+          {sections.map(({ name, entries, intro }: Section) => (
             <AppSection
-              key={s.name}
-              entries={s.entries}
-              intro={s.intro}
-              name={s.name}
+              key={name}
+              entries={entries}
+              intro={intro}
+              name={name}
             />
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }

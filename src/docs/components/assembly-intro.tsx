@@ -1,6 +1,11 @@
-import React from 'react';
+import { ReactElement } from 'react';
 
-export default function AssemblyIntro({ name, children }) {
+interface Props {
+  name: string;
+  children: ReactElement;
+}
+
+export default function AssemblyIntro({ name, children }: Props): ReactElement {
   const id = name.replace(/ /g, '-').toLowerCase();
   return (
     <div className="prose wmax600-mm">

@@ -1,15 +1,13 @@
 /*
 A standard tooltip.
 */
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Tooltip from '../tooltip';
 
-export default class Example extends React.Component {
-  render() {
-    return (
-      <Tooltip content="Here's your tooltip">
-        <div>Here</div>
-      </Tooltip>
-    );
-  }
+export default function Example(): ReactElement {
+  return (
+    <Tooltip content="Here's your tooltip">
+      <div>Here</div>
+    </Tooltip>
+  );
 }
