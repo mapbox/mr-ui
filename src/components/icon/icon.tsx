@@ -1,7 +1,7 @@
 import React, { ReactElement, CSSProperties, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import getWindow from '../utils/get-window';
-import shallowEqualObjects from '../utils/shallow-equal-objects';
+import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 
 interface Props {
   name: string;
@@ -52,19 +52,19 @@ export default function Icon({
   }
 
   return (
-    <svg
-      ref={el}
-      role="presentation"
-      focusable="false"
-      className={iconClasses}
-      {...passthroughProps}
-      style={svgStyle}
-    >
-      <use
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        xlinkHref={`#icon-${name}`}
-      />
-    </svg>
+    <AccessibleIcon.Root label={name}>
+      <svg
+        ref={el}
+        className={iconClasses}
+        {...passthroughProps}
+        style={svgStyle}
+      >
+        <use
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          xlinkHref={`#icon-${name}`}
+        />
+      </svg>
+    </AccessibleIcon.Root>
   );
 }
 

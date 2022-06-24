@@ -1,21 +1,13 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import Icon from '../../components/icon';
 import components from '../data/components'; // eslint-disable-line
+import { Section } from '../typings';
 
-function Link({ name }) {
-  return (
-    <li>
-      <a
-        href={`#${name.toLowerCase()}`}
-        className="pr6 py3 block txt-bold color-blue-on-hover"
-      >
-        {name}
-      </a>
-    </li>
-  );
+interface Props {
+  sections: Array<Section>
 }
 
-function SidebarSection({ name, entries }) {
+function SidebarSection({ name, entries }: Section): ReactElement {
   const id = name.replace(/ /g, '-').toLowerCase();
   return (
     <div className="mt12">
@@ -23,15 +15,22 @@ function SidebarSection({ name, entries }) {
         <h2 className="txt-h5 mb6 color-blue-on-hover color-gray">{name}</h2>
       </a>
       <ul className="flex flex--wrap block-mm">
-        {entries.map((e) => (
-          <Link key={e.name} name={e.name} />
+        {entries.map(({ name }: { name: string}) => (
+          <li>
+            <a
+              href={`#${name.toLowerCase()}`}
+              className="pr6 py3 block txt-bold color-blue-on-hover"
+            >
+              {name}
+            </a>
+          </li>
         ))}
       </ul>
     </div>
   );
 }
 
-export default function Sidebar({ sections }) {
+export default function Sidebar({ sections }: Props): ReactElement {
   return (
     <div>
       <div className="border-b border--gray-light pb12">
@@ -48,8 +47,8 @@ export default function Sidebar({ sections }) {
         </a>
       </div>
       <div className="pt12 txt-s">
-        {sections.map((s) => (
-          <SidebarSection key={s.name} name={s.name} entries={s.entries} />
+        {sections.map(({ name, entries }: Section): ReactElement => (
+          <SidebarSection key={name} name={name} entries={entries} />
         ))}
       </div>
     </div>

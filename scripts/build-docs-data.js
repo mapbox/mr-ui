@@ -20,7 +20,11 @@ loadLanguages(['jsx']);
 const dataDir = path.resolve(__dirname, '../src/docs/data');
 const srcDir = path.resolve(__dirname, '../src/components');
 const dataFilename = path.resolve(dataDir, 'components.js');
-const excludeSourceDirs = new Set(['page-loading-indicator', 'utils', '.DS_Store']);
+const excludeSourceDirs = new Set([
+  'page-loading-indicator',
+  'utils',
+  '.DS_Store'
+]);
 
 function processExampleFile(filename) {
   return pify(fs.readFile)(filename, 'utf8').then((code) => {
@@ -113,8 +117,8 @@ function generateDocsData() {
     .then((componentArrayString) => {
       const code = `
         'use strict';
-        const React = require('react');
-        module.exports = ${componentArrayString}`;
+        import React from 'react';
+        export default ${componentArrayString}`;
       return pify(fs.writeFile)(
         dataFilename,
         prettier.format(code, { parser: 'babel' })
