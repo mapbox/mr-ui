@@ -36,7 +36,7 @@ export default function Icon({
       ];
       el.current.style.height = lineHeight;
     }
-  }, [inline]);
+  }, [inline, size]);
 
   let iconClasses = 'events-none icon';
   if (inline) {
@@ -56,6 +56,7 @@ export default function Icon({
       <svg
         ref={el}
         className={iconClasses}
+        data-testid={`icon-${name}`}
         {...passthroughProps}
         style={svgStyle}
       >

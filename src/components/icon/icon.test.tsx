@@ -1,91 +1,95 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import getWindow from '../utils/get-window';
+import Icon from './icon';
 
-jest.mock('../../utils/get-window', () => {
-  return jest.fn();
-});
+jest.mock('../utils/get-window');
 
-let testCase;
-let wrapper;
+const getWindowMock = getWindow as any;
 
-/*
-describe(testCases.basic.description, () => {
-  beforeEach(() => {
-    testCase = testCases.basic;
+describe('renders', () => {
+  test('basic', () => {
+    const { baseElement } = render(<Icon name='bike' />)
+    expect(baseElement).toMatchSnapshot();
   });
 
-  test('renders as expected', () => {
-    const wrapper = shallow(
-      React.createElement(testCase.component, testCase.props)
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-});
+  test('passthrough prop', () => {
+    const props = {
+      name: 'alert',
+      passthroughProps: {
+        'data-test': 'alert-icon'
+      }
+    };
 
-describe(testCases.extraProps.description, () => {
-  beforeEach(() => {
-    testCase = testCases.extraProps;
-    wrapper = shallow(React.createElement(testCase.component, testCase.props));
+    const { baseElement } = render(<Icon {...props} />)
+    expect(baseElement).toMatchSnapshot();
   });
 
-  test('renders as expected', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-});
+  test('special size', () => {
+    const props = {
+      name: 'alert',
+      size: 36
+    };
 
-describe(testCases.specialSize.description, () => {
-  beforeEach(() => {
-    testCase = testCases.specialSize;
-    wrapper = shallow(React.createElement(testCase.component, testCase.props));
-  });
-
-  test('renders as expected', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-});
-
-describe(testCases.specialSizeStyle.description, () => {
-  beforeEach(() => {
-    testCase = testCases.specialSizeStyle;
-    wrapper = shallow(React.createElement(testCase.component, testCase.props));
+    const { baseElement } = render(<Icon {...props} />)
+    expect(baseElement).toMatchSnapshot();
   });
 
-  test('renders as expected', () => {
-    expect(wrapper).toMatchSnapshot();
+  test('special size via style', () => {
+    const props = {
+      name: 'alert',
+      passthroughProps: {
+        'data-test': 'alert-icon',
+        style: { height: 36, width: 36 }
+      }
+    };
+
+    const { baseElement } = render(<Icon {...props} />)
+    expect(baseElement).toMatchSnapshot();
   });
 });
 
-describe(testCases.inline.description, () => {
+describe('inline', () => {
   beforeEach(() => {
-    testCase = testCases.inline;
     const mockWindow = {
       getComputedStyle: jest.fn(() => ({
         'line-height': '14px'
       }))
     };
-    getWindow.mockReturnValueOnce(mockWindow);
+    getWindowMock.mockReturnValue(mockWindow);
   });
 
-  test('renders as expected', () => {
-    const wrapper = shallow(
-      React.createElement(testCase.component, testCase.props)
-    );
-    expect(wrapper).toMatchSnapshot();
+  test('renders', () => {
+    let props = {
+      name: 'check',
+      inline: true
+    };
+
+    const { baseElement, getByTestId } = render(<Icon {...props} />)
+    expect(baseElement).toMatchSnapshot();
+    expect(getByTestId('icon-check')).toHaveClass('inline-block');
   });
 
-  test('after mount, adjusts height to match line-height', () => {
-    const wrapper = mount(
-      React.createElement(testCase.component, testCase.props)
-    );
-    expect(wrapper.instance().iconElement.style.height).toBe('14px');
+  test('renders inline with derived height from computed line height', () => {
+    let props = {
+      name: 'check',
+      inline: true
+    };
+
+    const { getByTestId } = render(<Icon {...props} />)
+    expect(getByTestId('icon-check').style.height).toBe('14px');
   });
 
   test('after update, adjusts height to match line-height', () => {
-    const wrapper = mount(
-      React.createElement(testCase.component, testCase.props)
-    );
-    wrapper.setProps({ size: 45 });
-    expect(wrapper.instance().iconElement.style.height).toBe('14px');
+    let props = {
+      name: 'check',
+      inline: true
+    };
+
+    const { rerender, getByTestId } = render(<Icon {...props} />)
+    rerender(<Icon {...props} size={45} />);
+
+    expect(getByTestId('icon-check').style.width).toBe('45px');
+    expect(getByTestId('icon-check').style.height).toBe('14px');
   });
 });
-*/
