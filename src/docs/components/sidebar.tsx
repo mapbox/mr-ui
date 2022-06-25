@@ -16,7 +16,7 @@ function SidebarSection({ name, entries }: Section): ReactElement {
       </a>
       <ul className="flex flex--wrap block-mm">
         {entries.map(({ name }: { name: string}) => (
-          <li>
+          <li key={name}>
             <a
               href={`#${name.toLowerCase()}`}
               className="pr6 py3 block txt-bold color-blue-on-hover"

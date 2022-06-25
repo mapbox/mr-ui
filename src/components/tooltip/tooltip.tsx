@@ -1,8 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-// import Button from '../button';
-// import PopoverTrigger from '../popover-trigger';
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
 interface Props {
   placement?: 'top' | 'bottom' | 'left' | 'right';
@@ -20,9 +19,6 @@ interface Props {
 /**
  * Wrap a trigger element so that when it is hovered or focused a tooltip
  * appears.
- *
- * Tooltip extends [PopoverTrigger](#popovertrigger) and configures the
- * popover and trigger for accessibility.
  */
 
 export default function Tooltip({
@@ -38,7 +34,6 @@ export default function Tooltip({
   content = null
 }: Props): ReactElement {
 
-  /*
   const getContent = () => {
     if (typeof content === 'function') {
       return content();
@@ -46,12 +41,19 @@ export default function Tooltip({
       return content;
     }
   }
-  */
 
   return (
-    <div>
-      tooltip
-    </div>
+    <TooltipPrimitive.Provider delayDuration={0}>
+      <TooltipPrimitive.Root>
+        <TooltipPrimitive.Trigger asChild>
+          <span>trigger</span>
+        </TooltipPrimitive.Trigger>
+        <TooltipPrimitive.Content>
+          Add to library
+          <TooltipPrimitive.Arrow />
+        </TooltipPrimitive.Content>
+      </TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider>
   );
 }
 
