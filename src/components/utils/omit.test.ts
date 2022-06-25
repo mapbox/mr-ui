@@ -1,4 +1,4 @@
-import omit from '../omit';
+import omit from './omit';
 
 describe('omit', () => {
   test('empty arguments work', () => {

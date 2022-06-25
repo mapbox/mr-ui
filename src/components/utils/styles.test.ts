@@ -1,4 +1,4 @@
-import { mergeStyles, setStyles, getStyle } from '../styles';
+import { mergeStyles, setStyles, getStyle } from './styles';
 
 describe('styles utils ', () => {
   test('getStyle works with default styles ', () => {
