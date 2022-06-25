@@ -1,4 +1,4 @@
-import shallowEqualObjects from '../shallow-equal-objects';
+import shallowEqualObjects from './shallow-equal-objects';
 
 test('returns true', () => {
   expect(

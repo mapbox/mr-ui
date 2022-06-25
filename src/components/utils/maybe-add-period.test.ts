@@ -1,4 +1,4 @@
-import maybeAddPeriod from '../maybe-add-period';
+import maybeAddPeriod from './maybe-add-period';
 
 describe('maybeAddPeriod', () => {
   test('returns an empty string when passed an empty string', () => {
