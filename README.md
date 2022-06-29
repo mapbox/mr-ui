@@ -42,11 +42,8 @@ See [the utils documentation](./src/components/utils/README.md).
 Here are some commands you'll probably want to use:
 
 ```bash
-# Start the test-cases app.
-npm start
-
 # Start the documentation site.
-npm run start-docs
+npm start
 
 # Start Jest's CLI in watch mode.
 npx jest --watchAll
