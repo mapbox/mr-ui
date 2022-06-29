@@ -54,9 +54,11 @@ function processExampleFile(filename) {
 
 function getExamples(componentDirectory) {
   const examplesDirectory = path.join(componentDirectory, 'examples');
-  return globby(path.join(examplesDirectory, '*.tsx')).then((filenames) => {
-    return Promise.all(filenames.sort().map(processExampleFile));
-  });
+  return globby(path.join(examplesDirectory, '*.(js|tsx)')).then(
+    (filenames) => {
+      return Promise.all(filenames.sort().map(processExampleFile));
+    }
+  );
 }
 
 function processProps(props) {
@@ -84,10 +86,12 @@ function processProps(props) {
 
 function processComponent(hyphenName) {
   const componentDir = path.join(srcDir, hyphenName);
-  const srcFilename = path.join(componentDir, `${hyphenName}.tsx`);
-
   return Promise.all([
-    pify(fs.readFile)(srcFilename, 'utf8'),
+    globby(path.join(componentDir, `${hyphenName}.(js|tsx)`)).then(
+      ([srcFilename]) => {
+        return pify(fs.readFile)(srcFilename, 'utf8');
+      }
+    ),
     getExamples(componentDir)
   ]).then(([code, examples]) => {
     const parsedData = reactDocgen.parse(code);

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopoverPositioner renders initially with everything hidden 1`] = `
+<div>
+  <div
+    data-test="popover-body"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+        "zIndex": 3,
+      }
+    }
+  >
+    <span>
+      children
+    </span>
+  </div>
+  <div
+    data-test="popover-pointer"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+        "zIndex": 3,
+      }
+    }
+  />
+</div>
+`;

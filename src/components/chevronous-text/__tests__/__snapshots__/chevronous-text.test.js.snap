@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChevronousText basic renders as expected 1`] = `
+<span>
+  Explore
+   
+  <span
+    className="txt-nowrap"
+  >
+    Mapbox
+    <Icon
+      inline={true}
+      name="chevron-right"
+      size="1.5em"
+    />
+  </span>
+</span>
+`;
+
+exports[`ChevronousText chevron before multiline text renders as expected 1`] = `
+<span>
+  <span
+    className="txt-nowrap"
+  >
+    <Icon
+      inline={true}
+      name="chevron-left"
+      size="1.5em"
+    />
+    "It
+  </span>
+   
+  was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us..." - A Tale of Two Cities
+</span>
+`;
+
+exports[`ChevronousText chevron before one long unwrappable word text renders as expected 1`] = `
+<span>
+  <span
+    className="txt-nowrap"
+  >
+    <Icon
+      inline={true}
+      name="chevron-left"
+      size="1.5em"
+    />
+    Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon
+  </span>
+   
+</span>
+`;
+
+exports[`ChevronousText multiline text renders as expected 1`] = `
+<span>
+  "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us..." - A Tale of Two
+   
+  <span
+    className="txt-nowrap"
+  >
+    Cities
+    <Icon
+      inline={true}
+      name="chevron-right"
+      size="1.5em"
+    />
+  </span>
+</span>
+`;
+
+exports[`ChevronousText one long unwrappable word text renders as expected 1`] = `
+<span>
+   
+  <span
+    className="txt-nowrap"
+  >
+    Pneumonoultramicroscopicsilicovolcanoconiosis
+    <Icon
+      inline={true}
+      name="chevron-right"
+      size="1.5em"
+    />
+  </span>
+</span>
+`;
+
+exports[`ChevronousText sized icon before text renders as expected 1`] = `
+<span>
+  <span
+    className="txt-nowrap"
+  >
+    <Icon
+      inline={true}
+      name="chevron-left"
+      size="1.7em"
+    />
+    Cheers!
+  </span>
+   
+</span>
+`;
+
+exports[`ChevronousText sized icon renders as expected 1`] = `
+<span>
+   
+  <span
+    className="txt-nowrap"
+  >
+    Cheers!
+    <Icon
+      inline={true}
+      name="chevron-right"
+      size={10}
+    />
+  </span>
+</span>
+`;

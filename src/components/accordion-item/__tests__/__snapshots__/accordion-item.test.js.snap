@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion all options renders 1`] = `
+<div
+  className="bg-red-faint border-b border--red-dark"
+>
+  <button
+    aria-label="Toggle"
+    className="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
+    data-test="one"
+    onClick={[Function]}
+  >
+    <span>
+      one
+    </span>
+  </button>
+  <div
+    className="py6 px6 txt-l bg-red-light"
+  >
+    First body
+  </div>
+</div>
+`;
+
+exports[`Accordion basic renders 1`] = `
+<div>
+  <button
+    aria-label="Toggle"
+    className="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
+    data-test="one"
+    onClick={[Function]}
+  >
+    <span>
+      one
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Accordion disabled renders 1`] = `
+<div>
+  <button
+    aria-label="Toggle"
+    className="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-default color-gray-light"
+    data-test="one"
+    disabled={true}
+    onClick={[Function]}
+  >
+    <span>
+      one
+    </span>
+  </button>
+</div>
+`;

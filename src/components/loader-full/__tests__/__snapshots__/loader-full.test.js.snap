@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoaderFull basic renders 1`] = `
+<div
+  className="fixed top left right bottom flex flex--center-main flex--center-cross bg-darken50"
+  data-test="loader"
+  style={
+    Object {
+      "zIndex": 9999,
+    }
+  }
+>
+  <div
+    className="loading loading--dark"
+  />
+</div>
+`;

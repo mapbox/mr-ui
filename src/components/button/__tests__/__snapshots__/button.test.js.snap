@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppPrimary renders as expected 1`] = `
+<button
+  aria-label="Example smaller app primary button"
+  className="btn btn--gray round h24 px6 py3 txt-xs"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  AppPrimary
+</button>
+`;
+
+exports[`AppSecondary renders as expected 1`] = `
+<button
+  aria-label="Example smaller app secondary button"
+  className="btn btn--gray btn--stroke round h24 px6 py3 txt-xs"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  AppSecondary
+</button>
+`;
+
+exports[`Destructive renders as expected 1`] = `
+<button
+  aria-label="Example destructive button"
+  className="btn btn--red round-full py12 px24 txt-s"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  Destructive
+</button>
+`;
+
+exports[`Disabled renders as expected 1`] = `
+<button
+  aria-hidden={true}
+  className="btn btn--blue round-full py12 px24 txt-s"
+  disabled={true}
+  type="button"
+>
+  Oops
+</button>
+`;
+
+exports[`Discouraging renders as expected 1`] = `
+<button
+  aria-label="Example discouraging button"
+  className="btn btn--gray btn--stroke round-full py12 px24 txt-s"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  Discouraging
+</button>
+`;
+
+exports[`Div styled like a medium destructive button with some elementAttributes renders as expected 1`] = `
+<div
+  aria-label="Example save button"
+  className="btn btn--red round-full py6 px24 txt-s"
+  data-test="foo"
+  disabled={false}
+  onClick={[MockFunction]}
+  role="button"
+>
+  Save
+</div>
+`;
+
+exports[`Full width, alternate color renders as expected 1`] = `
+<button
+  aria-label="Example full width, purple button"
+  className="btn btn--purple round-full py12 w-full block txt-s"
+  disabled={false}
+  type="button"
+>
+  Here we are
+</button>
+`;
+
+exports[`Link with outline and icon text, extra padding renders as expected 1`] = `
+<a
+  className="btn btn--blue btn--stroke round-full py12 px36 txt-s"
+  href="#"
+  onClick={[MockFunction]}
+>
+  <IconText
+    gap="small"
+    iconBefore="bug"
+    inline={false}
+  >
+    Go do things
+  </IconText>
+</a>
+`;
+
+exports[`Primary renders as expected 1`] = `
+<button
+  aria-label="Example primary button"
+  className="btn btn--blue round-full py12 px24 txt-s"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  Primary
+</button>
+`;
+
+exports[`Secondary renders as expected 1`] = `
+<button
+  aria-label="Example secondary button"
+  className="btn btn--blue btn--stroke round-full py12 px24 txt-s"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  Secondary
+</button>
+`;

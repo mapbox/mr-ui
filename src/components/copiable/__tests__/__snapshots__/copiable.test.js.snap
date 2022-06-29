@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic renders as expected 1`] = `
+<div
+  className="relative clearfix bg-darken5 round"
+>
+  <div
+    className="absolute top right px6 py6"
+  >
+    <CopyButton
+      block={true}
+      className="btn btn--xs py3 px3 round"
+      text="thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy "
+    />
+  </div>
+  <div
+    className="py6 px12"
+    data-test="copiable-text-el"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    tabIndex="-1"
+  >
+    <div
+      className="my3 txt-mono txt-s mr24"
+      style={
+        Object {
+          "overflowWrap": "break-word",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
+    </div>
+  </div>
+</div>
+`;
+
+exports[`basic shows copy hint when focused 1`] = `
+<div
+  className="relative clearfix bg-darken5 round"
+>
+  <div
+    className="absolute top right px6 py6"
+  >
+    <CopyButton
+      block={true}
+      className="btn btn--xs py3 px3 round"
+      text="thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy "
+    />
+  </div>
+  <div
+    className="py6 px12"
+    data-test="copiable-text-el"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    tabIndex="-1"
+  >
+    <div
+      className="my3 txt-mono txt-s mr24"
+      style={
+        Object {
+          "overflowWrap": "break-word",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
+    </div>
+  </div>
+  <Popover
+    accessibleTitle="Copy the selected text"
+    alignment="center"
+    allowPlacementAxisChange={true}
+    clickOutsideCloses={true}
+    coloring="light"
+    containWithinViewport={true}
+    escapeCloses={true}
+    getAnchorElement={[Function]}
+    hasPointer={true}
+    hideWhenAnchorIsOffscreen={true}
+    observeSize={true}
+    padding="small"
+    placement="top"
+    receiveFocus={true}
+    trapFocus={false}
+    zIndex={1}
+  >
+    <div
+      className="txt-s"
+    >
+      <span>
+        <span
+          className="txt-kbd"
+        >
+          eh+C
+        </span>
+         
+        to copy
+      </span>
+    </div>
+  </Popover>
+</div>
+`;

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip Button child trigger renders as expected 1`] = `
+<Button
+  block={false}
+  disabled={false}
+  passthroughProps={
+    Object {
+      "aria-describedby": "tooltip-3",
+    }
+  }
+  variant="primary"
+>
+  trigger
+</Button>
+`;
+
+exports[`Tooltip DOM element child renders as expected 1`] = `
+<PopoverTrigger
+  block={false}
+  content={
+    <div
+      className="txt-s wmax240"
+    >
+      DOM element child
+    </div>
+  }
+  disabled={false}
+  popoverProps={
+    Object {
+      "alignment": "center",
+      "coloring": "light",
+      "hasPointer": true,
+      "hideWhenAnchorIsOffscreen": true,
+      "padding": "small",
+      "passthroughProps": Object {
+        "id": "tooltip-1",
+        "role": "tooltip",
+      },
+      "placement": "top",
+    }
+  }
+  receiveFocus={false}
+  renderHiddenContent={true}
+  respondsToClick={false}
+  respondsToFocus={true}
+  respondsToHover={true}
+  trapFocus={false}
+>
+  <span
+    aria-describedby="tooltip-1"
+  >
+    trigger
+  </span>
+</PopoverTrigger>
+`;
+
+exports[`Tooltip all props trigger renders as expected 1`] = `
+<div
+  aria-describedby="tooltip-4"
+>
+  test tooltip
+</div>
+`;
+
+exports[`Tooltip error prop trigger renders as expected 1`] = `
+<div
+  aria-describedby="tooltip-6"
+>
+  test tooltip
+</div>
+`;
+
+exports[`Tooltip function child trigger renders as expected 1`] = `
+<CustomThing
+  aria-describedby="tooltip-2"
+>
+  trigger
+</CustomThing>
+`;
+
+exports[`Tooltip warning prop trigger renders as expected 1`] = `
+<div
+  aria-describedby="tooltip-5"
+>
+  test tooltip
+</div>
+`;

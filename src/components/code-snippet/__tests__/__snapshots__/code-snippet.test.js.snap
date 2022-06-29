@@ -1,0 +1,1582 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeSnippet copy ranges renders as expected 1`] = `
+<div
+  className="relative round z0 scroll-styled"
+  style={Object {}}
+>
+  <pre>
+    <code
+      className="px0 hljs"
+    >
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-0"
+        key="0"
+      />
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-1"
+        key="1"
+      >
+        <div
+          className="pr12 py3"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "import Mapbox",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-2"
+        key="2"
+      >
+        <div
+          className="pr12 opacity75"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": " ",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">class</span> ViewController: UIViewController {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "override func view<span class=\\"hljs-constructor\\">DidLoad()</span> {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "super.view<span class=\\"hljs-constructor\\">DidLoad()</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": " ",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-3"
+        key="3"
+      >
+        <div
+          className="pr12 py3"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-constructor\\">URL(<span class=\\"hljs-params\\">string</span>: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-constructor\\">MGLMapView(<span class=\\"hljs-params\\">frame</span>: <span class=\\"hljs-params\\">view</span>.<span class=\\"hljs-params\\">bounds</span>, <span class=\\"hljs-params\\">styleURL</span>: <span class=\\"hljs-params\\">url</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "mapView.autoresizingMask = <span class=\\"hljs-literal\\">[.<span class=\\"hljs-identifier\\">flexibleWidth</span>, .<span class=\\"hljs-identifier\\">flexibleHeight</span>]</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "mapView.set<span class=\\"hljs-constructor\\">Center(CLLocationCoordinate2D(<span class=\\"hljs-params\\">latitude</span>: 59.31, <span class=\\"hljs-params\\">longitude</span>: 18.06)</span>, zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "view.add<span class=\\"hljs-constructor\\">Subview(<span class=\\"hljs-params\\">mapView</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-4"
+        key="4"
+      >
+        <div
+          className="pr12 opacity75"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+    </code>
+  </pre>
+  <div
+    className="bg-darken75 absolute left right"
+    data-chunk-overlay="chunk-1"
+    key="1"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <div
+      className="bg-blue h-full w6"
+    />
+  </div>
+  <div
+    className="bg-darken75 absolute left right"
+    data-chunk-overlay="chunk-3"
+    key="3"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <div
+      className="bg-blue h-full w6"
+    />
+  </div>
+</div>
+`;
+
+exports[`CodeSnippet copy ranges, with onCopy callback renders as expected 1`] = `
+<div
+  className="relative round z0 scroll-styled"
+  style={Object {}}
+>
+  <pre>
+    <code
+      className="px0 hljs"
+    >
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-0"
+        key="0"
+      />
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-1"
+        key="1"
+      >
+        <div
+          className="pr12 py3"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "import Mapbox",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-2"
+        key="2"
+      >
+        <div
+          className="pr12 opacity75"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": " ",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">class</span> ViewController: UIViewController {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "override func view<span class=\\"hljs-constructor\\">DidLoad()</span> {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "super.view<span class=\\"hljs-constructor\\">DidLoad()</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": " ",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-3"
+        key="3"
+      >
+        <div
+          className="pr12 py3"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-constructor\\">URL(<span class=\\"hljs-params\\">string</span>: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-constructor\\">MGLMapView(<span class=\\"hljs-params\\">frame</span>: <span class=\\"hljs-params\\">view</span>.<span class=\\"hljs-params\\">bounds</span>, <span class=\\"hljs-params\\">styleURL</span>: <span class=\\"hljs-params\\">url</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "mapView.autoresizingMask = <span class=\\"hljs-literal\\">[.<span class=\\"hljs-identifier\\">flexibleWidth</span>, .<span class=\\"hljs-identifier\\">flexibleHeight</span>]</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "mapView.set<span class=\\"hljs-constructor\\">Center(CLLocationCoordinate2D(<span class=\\"hljs-params\\">latitude</span>: 59.31, <span class=\\"hljs-params\\">longitude</span>: 18.06)</span>, zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "view.add<span class=\\"hljs-constructor\\">Subview(<span class=\\"hljs-params\\">mapView</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-4"
+        key="4"
+      >
+        <div
+          className="pr12 opacity75"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+    </code>
+  </pre>
+  <div
+    className="bg-darken75 absolute left right"
+    data-chunk-overlay="chunk-1"
+    key="1"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <div
+      className="bg-blue h-full w6"
+    />
+  </div>
+  <div
+    className="bg-darken75 absolute left right"
+    data-chunk-overlay="chunk-3"
+    key="3"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <div
+      className="bg-blue h-full w6"
+    />
+  </div>
+  <div
+    className="absolute z3 right mr3 color-white"
+    data-chunk-copy="chunk-1"
+    key="1"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <CopyButton
+      block={false}
+      className="btn btn--xs py3 px3 round"
+      onCopy={[Function]}
+      text="import Mapbox
+"
+    />
+  </div>
+  <div
+    className="absolute z3 right mr3 color-white"
+    data-chunk-copy="chunk-3"
+    key="3"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <CopyButton
+      block={false}
+      className="btn btn--xs py3 px3 round"
+      onCopy={[Function]}
+      text="    let url = URL(string: \\"mapbox://styles/mapbox/streets-v9\\")
+    let mapView = MGLMapView(frame: view.bounds, styleURL: url)
+    mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
+    view.addSubview(mapView)
+"
+    />
+  </div>
+</div>
+`;
+
+exports[`CodeSnippet highlighted renders as expected 1`] = `
+<div
+  className="relative round z0 scroll-styled"
+  style={Object {}}
+>
+  <pre>
+    <code
+      className="px0 hljs"
+    >
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-0"
+        key="0"
+      >
+        <div
+          className="pr12"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">dependencies</span> {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">compile</span>(<span class=\\"hljs-string\\">'com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar'</span>) {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "transitive=<span class=\\"hljs-keyword\\">true</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+    </code>
+  </pre>
+</div>
+`;
+
+exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as expected 1`] = `
+<div
+  className="relative round z0 scroll-styled"
+  style={Object {}}
+>
+  <pre>
+    <code
+      className="px0 hljs"
+    >
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-0"
+        key="0"
+      >
+        <div
+          className="pr12"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">dependencies</span> {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">compile</span>(<span class=\\"hljs-string\\">'com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar'</span>) {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "transitive=<span class=\\"hljs-keyword\\">true</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+    </code>
+  </pre>
+  <div
+    className="absolute z2 top right mr6 mt6 color-white"
+  >
+    <CopyButton
+      block={false}
+      className="btn btn--xs py3 px3 round"
+      onCopy={[MockFunction]}
+      text="dependencies {
+  compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar') {
+    transitive=true
+  }
+}"
+    />
+  </div>
+</div>
+`;
+
+exports[`CodeSnippet maximum height renders as expected 1`] = `
+<div
+  className="relative round z0 scroll-styled overflow-auto"
+  style={
+    Object {
+      "maxHeight": 120,
+    }
+  }
+>
+  <pre>
+    <code
+      className="px0 hljs"
+    >
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-0"
+        key="0"
+      />
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-1"
+        key="1"
+      >
+        <div
+          className="pr12 py3"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "import Mapbox",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-2"
+        key="2"
+      >
+        <div
+          className="pr12 opacity75"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": " ",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">class</span> ViewController: UIViewController {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "override func view<span class=\\"hljs-constructor\\">DidLoad()</span> {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "super.view<span class=\\"hljs-constructor\\">DidLoad()</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": " ",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-3"
+        key="3"
+      >
+        <div
+          className="pr12 py3"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">let</span> url = <span class=\\"hljs-constructor\\">URL(<span class=\\"hljs-params\\">string</span>: <span class=\\"hljs-string\\">\\"mapbox://styles/mapbox/streets-v9\\"</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"hljs-keyword\\">let</span> mapView = <span class=\\"hljs-constructor\\">MGLMapView(<span class=\\"hljs-params\\">frame</span>: <span class=\\"hljs-params\\">view</span>.<span class=\\"hljs-params\\">bounds</span>, <span class=\\"hljs-params\\">styleURL</span>: <span class=\\"hljs-params\\">url</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "mapView.autoresizingMask = <span class=\\"hljs-literal\\">[.<span class=\\"hljs-identifier\\">flexibleWidth</span>, .<span class=\\"hljs-identifier\\">flexibleHeight</span>]</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "mapView.set<span class=\\"hljs-constructor\\">Center(CLLocationCoordinate2D(<span class=\\"hljs-params\\">latitude</span>: 59.31, <span class=\\"hljs-params\\">longitude</span>: 18.06)</span>, zoomLevel: <span class=\\"hljs-number\\">9</span>, animated: <span class=\\"hljs-literal\\">false</span>)",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 py3"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "view.add<span class=\\"hljs-constructor\\">Subview(<span class=\\"hljs-params\\">mapView</span>)</span>",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-4"
+        key="4"
+      >
+        <div
+          className="pr12 opacity75"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12 opacity75"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+    </code>
+  </pre>
+  <div
+    className="bg-darken75 absolute left right"
+    data-chunk-overlay="chunk-1"
+    key="1"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <div
+      className="bg-blue h-full w6"
+    />
+  </div>
+  <div
+    className="bg-darken75 absolute left right"
+    data-chunk-overlay="chunk-3"
+    key="3"
+    style={
+      Object {
+        "opacity": 0,
+        "transition": "opacity 300ms linear",
+      }
+    }
+  >
+    <div
+      className="bg-blue h-full w6"
+    />
+  </div>
+</div>
+`;
+
+exports[`CodeSnippet not highlighted renders as expected 1`] = `
+<div
+  className="relative round z0 scroll-styled"
+  style={Object {}}
+>
+  <pre>
+    <code
+      className="px0 hljs"
+    >
+      <div
+        className="relative z2"
+        data-chunk-code="chunk-0"
+        key="0"
+      >
+        <div
+          className="pr12"
+          key="0"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "dependencies {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="1"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar') {",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="2"
+          style={
+            Object {
+              "paddingLeft": 40.9,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "transitive=true",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="3"
+          style={
+            Object {
+              "paddingLeft": 26.45,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+        <div
+          className="pr12"
+          key="4"
+          style={
+            Object {
+              "paddingLeft": 12,
+            }
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "}",
+              }
+            }
+            style={
+              Object {
+                "marginLeft": 14.45,
+                "textIndent": -14.45,
+              }
+            }
+          />
+        </div>
+      </div>
+    </code>
+  </pre>
+</div>
+`;

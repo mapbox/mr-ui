@@ -25,6 +25,7 @@ The public Assembly build should work fine, with maybe one or two hiccups.
 **Import individual components!** All components are exposed at `@mapbox/mr-ui/{component-name}`. For example:
 
 ```js
+import Modal from '@mapbox/mr-ui/modal';
 import Tooltip from '@mapbox/mr-ui/tooltip';
 ```
 
@@ -41,8 +42,11 @@ See [the utils documentation](./src/components/utils/README.md).
 Here are some commands you'll probably want to use:
 
 ```bash
-# Start the documentation site.
+# Start the test-cases app.
 npm start
+
+# Start the documentation site.
+npm run start-docs
 
 # Start Jest's CLI in watch mode.
 npx jest --watchAll

@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyButton Defaults changes state on click 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={true}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    aria-label="Copy"
+    className="btn btn--xs py3 px3 round"
+    data-clipboard-text="Copied by the default test case"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      name="check"
+    />
+    <Popover
+      accessibleTitle={null}
+      alignment="center"
+      allowPlacementAxisChange={true}
+      clickOutsideCloses={true}
+      coloring="light"
+      containWithinViewport={true}
+      escapeCloses={true}
+      getAnchorElement={[Function]}
+      hasPointer={true}
+      hideWhenAnchorIsOffscreen={true}
+      observeSize={true}
+      padding="small"
+      placement="top"
+      receiveFocus={true}
+      trapFocus={false}
+      zIndex={1}
+    >
+      <div
+        className="txt-s"
+      >
+        Copied!
+      </div>
+    </Popover>
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton Defaults changes state on click 2`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    aria-label="Copy"
+    className="btn btn--xs py3 px3 round"
+    data-clipboard-text="Copied by the default test case"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton Defaults renders as expected 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    aria-label="Copy"
+    className="btn btn--xs py3 px3 round"
+    data-clipboard-text="Copied by the default test case"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton all props changes state on click 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={true}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    aria-label="Copy"
+    className="px6 py6 btn btn--purple btn--stroke"
+    data-clipboard-text="more copiable text"
+    data-test="copy-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      name="check"
+    />
+    <Popover
+      accessibleTitle={null}
+      alignment="center"
+      allowPlacementAxisChange={true}
+      clickOutsideCloses={true}
+      coloring="light"
+      containWithinViewport={true}
+      escapeCloses={true}
+      getAnchorElement={[Function]}
+      hasPointer={true}
+      hideWhenAnchorIsOffscreen={true}
+      observeSize={true}
+      padding="small"
+      placement="top"
+      receiveFocus={true}
+      trapFocus={false}
+      zIndex={1}
+    >
+      <div
+        className="txt-s"
+      >
+        Copied!
+      </div>
+    </Popover>
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton all props changes state on click 2`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    aria-label="Copy"
+    className="px6 py6 btn btn--purple btn--stroke"
+    data-clipboard-text="more copiable text"
+    data-test="copy-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
+`;
+
+exports[`CopyButton all props renders as expected 1`] = `
+<Tooltip
+  alignment="center"
+  block={false}
+  coloring="light"
+  content="Copy"
+  disabled={false}
+  maxWidth="medium"
+  padding="small"
+  placement="top"
+  respondsToClick={false}
+  textSize="s"
+>
+  <button
+    aria-label="Copy"
+    className="px6 py6 btn btn--purple btn--stroke"
+    data-clipboard-text="more copiable text"
+    data-test="copy-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      name="clipboard"
+    />
+  </button>
+</Tooltip>
+`;

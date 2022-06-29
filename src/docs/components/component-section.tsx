@@ -1,7 +1,37 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import assign from 'lodash/assign';
 import ComponentExample from './component-example';
 import { Data, Example, PropData } from '../typings';
+
+interface Props {
+  data: Data
+}
+
+function sortedProps(propsData: { [key: string]: PropData }): Array<PropData> {
+  return Object.keys(propsData)
+    .reduce((memo, key) => {
+      memo.push(assign({ name: key }, propsData[key]));
+      return memo;
+    }, [])
+    .sort((a, b) => {
+      if (a.required && !b.required) return -1;
+      if (!a.required && b.required) return 1;
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+}
+
+function DefaultValueDisplay({ value }: { value: string }): ReactElement {
+  if (/\n/.test(value)) {
+    return (
+      <pre className="pre">
+        <code>{value}</code>
+      </pre>
+    );
+  }
+  return <div className="inline-block txt-code">{value}</div>;
+}
 
 function LabeledDefaultValue({ value }: { value: string | null }): ReactElement {
   if (!value) {
@@ -18,19 +48,25 @@ function LabeledDefaultValue({ value }: { value: string | null }): ReactElement 
   );
 }
 
-function DefaultValueDisplay({ value }: { value: string }): ReactElement {
-  if (/\n/.test(value)) {
-    return (
-      <pre className="pre">
-        <code>{value}</code>
-      </pre>
-    );
-  }
-  return <div className="inline-block txt-code">{value}</div>;
-}
+function PropRow({ required, name, description, type, defaultValue }: PropData): ReactElement {
+  const isRequired = !required ? null : (
+    <span className="txt-uppercase txt-xs txt-mono bg-purple-faint color-purple px6 py3 round">
+      Required
+    </span>
+  );
 
-interface Props {
-  data: Data
+  return (
+    <tr className="txt-s txt-ms-mm txt-m-mxl">
+      <td className="txt-mono txt-bold">
+        {name} {isRequired}
+      </td>
+      <td className="txt-mono mx12">{type.name}</td>
+      <td>
+        <div className="prose">{description}</div>
+        <LabeledDefaultValue value={defaultValue} />
+      </td>
+    </tr>
+  );
 }
 
 export default function ComponentSection({ data }: Props): ReactElement {
@@ -95,38 +131,3 @@ export default function ComponentSection({ data }: Props): ReactElement {
   );
 }
 
-function sortedProps(propsData: { [key: string]: PropData }): Array<PropData> {
-  return Object.keys(propsData)
-    .reduce((memo, key) => {
-      memo.push(assign({ name: key }, propsData[key]));
-      return memo;
-    }, [])
-    .sort((a, b) => {
-      if (a.required && !b.required) return -1;
-      if (!a.required && b.required) return 1;
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    });
-}
-
-function PropRow({ required, name, description, type, defaultValue }: PropData): ReactElement {
-  const isRequired = !required ? null : (
-    <span className="txt-uppercase txt-xs txt-mono bg-purple-faint color-purple px6 py3 round">
-      Required
-    </span>
-  );
-
-  return (
-    <tr className="txt-s txt-ms-mm txt-m-mxl">
-      <td className="txt-mono txt-bold">
-        {name} {isRequired}
-      </td>
-      <td className="txt-mono mx12">{type.name}</td>
-      <td>
-        <div className="prose">{description}</div>
-        <LabeledDefaultValue value={defaultValue} />
-      </td>
-    </tr>
-  );
-}
