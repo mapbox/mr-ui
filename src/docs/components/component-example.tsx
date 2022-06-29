@@ -1,6 +1,24 @@
 import React, { ReactElement, useState } from 'react';
 import { Example } from '../typings';
 
+function ToggleCodeButton({ codeIsVisible, onClick }: { codeIsVisible: boolean, onClick: () => void }): ReactElement {
+  const text = codeIsVisible ? 'Hide code' : 'Show code';
+  return (
+    <button
+      aria-label={text}
+      className="block btn btn--s btn--gray unround-b round-t"
+      onClick={onClick}
+    >
+      <span className="flex flex--center-cross">
+        <svg className="icon">
+          <use xlinkHref="#icon-code" />
+        </svg>
+        <span className="ml6">{text}</span>
+      </span>
+    </button>
+  );
+}
+
 export default function ComponentExample({ code, description, exampleModule }: Example): ReactElement {
 
   const [showCode, setShowCode] = useState(false);
@@ -11,7 +29,9 @@ export default function ComponentExample({ code, description, exampleModule }: E
     }
     return (
       <pre className="my0 round-tl pre language-jsx unround-tr unround-b">
-        <code dangerouslySetInnerHTML={{ __html: code }} />
+        {
+          // eslint-disable-next-line react/no-danger
+        }<code dangerouslySetInnerHTML={{ __html: code }} />
       </pre>
     );
   }
@@ -34,23 +54,5 @@ export default function ComponentExample({ code, description, exampleModule }: E
         {React.createElement(exampleModule.default)}
       </div>
     </div>
-  );
-}
-
-function ToggleCodeButton({ codeIsVisible, onClick }: { codeIsVisible: boolean, onClick: () => void }): ReactElement {
-  const text = codeIsVisible ? 'Hide code' : 'Show code';
-  return (
-    <button
-      aria-label={text}
-      className="block btn btn--s btn--gray unround-b round-t"
-      onClick={onClick}
-    >
-      <span className="flex flex--center-cross">
-        <svg className="icon">
-          <use xlinkHref="#icon-code" />
-        </svg>
-        <span className="ml6">{text}</span>
-      </span>
-    </button>
   );
 }

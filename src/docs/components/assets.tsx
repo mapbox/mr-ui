@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import AssemblySection from './assembly-section';
 import AssemblyIntro from './assembly-intro';
 

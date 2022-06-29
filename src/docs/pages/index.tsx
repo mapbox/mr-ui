@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, { ReactElement } from 'react';
 import Helmet from 'react-helmet';
 import App from '../app';
 

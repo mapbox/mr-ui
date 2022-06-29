@@ -1,19 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { ReactElement } from 'react';
 
-export type Entry = { name: string; content: ReactElement };
+interface Value {
+  [key: string]: any
+}
 
 export interface PropData {
   name?: string;
   type: {
     name: string;
-    value?: Array<{
-      name?: string;
-      value?: string;
-      computed?: boolean;
-    }>
+    value?: Value | Array<Value>
   };
   required: boolean;
-  defaultValue: string;
+  defaultValue: string | undefined;
   description: ReactElement;
 }
 
@@ -32,9 +32,10 @@ export interface Data {
   examples: Array<Example>;
 }
 
+export type Entry = { name: string; content: ReactElement };
+
 export interface Section {
   name: string;
   entries: Array<Entry>;
   intro?: ReactElement;
-};
-
+}

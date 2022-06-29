@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover all props renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={false}
+  containWithinViewport={false}
+  getAnchorElement={[Function]}
+  getContainingElement={[Function]}
+  hasPointer={false}
+  hideWhenAnchorIsOffscreen={true}
+  mounted={true}
+  observeSize={true}
+  onElement={[Function]}
+  placement="left"
+  pointerColor="#fff"
+  zIndex={1}
+>
+  <div
+    className="color-text shadow-darken25 round"
+    data-popover-id={5}
+    data-test={true}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#fff",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover basic renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={true}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  observeSize={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#fff"
+  zIndex={1}
+>
+  <div
+    className="color-text shadow-darken25 round px12 py12"
+    data-popover-id={1}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#fff",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover dark renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={true}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  observeSize={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#0E2127"
+  zIndex={1}
+>
+  <div
+    className="color-white shadow-darken25 round px12 py12"
+    data-popover-id={2}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#0E2127",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover no pointer renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={false}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  observeSize={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#fff"
+  zIndex={1}
+>
+  <div
+    className="color-text shadow-darken25 round px12 py12"
+    data-popover-id={4}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#fff",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;
+
+exports[`Popover warning renders 1`] = `
+<Displaced
+  alignment="top"
+  allowPlacementAxisChange={true}
+  containWithinViewport={true}
+  getAnchorElement={[Function]}
+  hasPointer={true}
+  hideWhenAnchorIsOffscreen={false}
+  mounted={true}
+  observeSize={true}
+  onElement={[Function]}
+  placement="right"
+  pointerColor="#dd7a08"
+  zIndex={1}
+>
+  <div
+    className="color-orange-deep shadow-darken25 round px12 py12 border border-1 border--orange"
+    data-popover-id={3}
+    key="body"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    style={
+      Object {
+        "backgroundColor": "#FEF2EB",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="w240 h240"
+    >
+      test popover
+    </div>
+  </div>
+</Displaced>
+`;

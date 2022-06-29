@@ -1,0 +1,463 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlFile all controls renders 1`] = `
+<div
+  className="relative"
+>
+  <Submittable
+    noValidate={true}
+    onEnter={[Function]}
+  >
+    <div>
+      <div
+        className="grid grid--gut24"
+      >
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <ControlText
+            errorStyle="default"
+            id="firstName"
+            label="First name"
+            noAuto={false}
+            onChange={[Function]}
+            optional={false}
+            placeholder="Enter your first name"
+            themeControlInput="input"
+            type="text"
+            validationError=""
+            validator={
+              Array [
+                [Function],
+              ]
+            }
+            value=""
+          />
+        </div>
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <ControlText
+            errorStyle="default"
+            id="lastName"
+            label="Last name"
+            noAuto={false}
+            onChange={[Function]}
+            optional={false}
+            placeholder="Enter your last name"
+            themeControlInput="input"
+            type="text"
+            validationError=""
+            validator={
+              Array [
+                [Function],
+              ]
+            }
+            value=""
+          />
+        </div>
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <ControlText
+            errorStyle="default"
+            id="email"
+            label="email"
+            noAuto={false}
+            onChange={[Function]}
+            optional={false}
+            placeholder="Enter your email"
+            themeControlInput="input"
+            type="email"
+            validationError=""
+            validator={
+              Array [
+                [Function],
+                [Function],
+              ]
+            }
+            value=""
+          />
+        </div>
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <ControlText
+            errorStyle="default"
+            id="url"
+            label="url"
+            noAuto={false}
+            onChange={[Function]}
+            optional={false}
+            placeholder="Enter your URL"
+            themeControlInput="input"
+            type="url"
+            validationError=""
+            validator={
+              Array [
+                [Function],
+              ]
+            }
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="flex flex--center-main w-full mb12 py12 round bg-gray-light"
+      >
+        <ControlToggleSet
+          autoFocus={false}
+          id="spiritAnimal"
+          initialValue="sea-otter"
+          label="Choose animal guide"
+          onChange={[Function]}
+          optional={false}
+          options={
+            Array [
+              Object {
+                "label": "Humpback whale",
+                "value": "humpback-whale",
+              },
+              Object {
+                "label": "Rufous Hummingbird",
+                "value": "rufous hummingbird",
+              },
+              Object {
+                "label": "Sea Otter",
+                "value": "sea-otter",
+              },
+              Object {
+                "label": "Snowshoe Hare",
+                "value": "snowshoe-hare",
+              },
+            ]
+          }
+          themeLabel="color-gray-dark txt-s txt-bold"
+          themeToggle="txt-s py3 toggle--gray toggle--active-white"
+          themeToggleContainer=""
+          themeToggleGroup="border border--2 border--gray-faint bg-gray-faint"
+          validationError=""
+          value="sea-otter"
+        />
+      </div>
+      <div
+        className="grid grid--gut24"
+      >
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <ControlFile
+            disabled={false}
+            id="upload"
+            initialDisplayValue="Select a file"
+            label="Upload a picture"
+            multiple={true}
+            onChange={[Function]}
+            optional={true}
+            themeControlFile="btn align-l bg-gray-faint py6 px12 round-full w-full txt-s link--gray txt-normal"
+            themeControlFileClear=""
+            validationError=""
+            value=""
+          />
+        </div>
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <div
+            className="mb12"
+          >
+            <ControlRange
+              id="area"
+              initialValue="10"
+              label="Choose size of area"
+              max={100}
+              min={10}
+              onChange={[Function]}
+              optional={false}
+              step={10}
+              themeControlRange=""
+              validationError=""
+              value="10"
+            />
+          </div>
+          <ControlSwitch
+            id="active"
+            initialValue={false}
+            label="Animal active?"
+            onChange={[Function]}
+            optional={false}
+            themeControlSwitch="switch--s-label"
+            themeControlSwitchContainer=""
+            themeLabel="txt-s ml6"
+            validationError=""
+            value={false}
+          />
+        </div>
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <div
+            className="mb12"
+          >
+            <ControlSelect
+              disabled={false}
+              id="level"
+              initialValue="2"
+              label="Choose level"
+              onChange={[Function]}
+              optional={false}
+              options={
+                Array [
+                  Object {
+                    "label": "One",
+                    "value": "1",
+                  },
+                  Object {
+                    "label": "Two",
+                    "value": "2",
+                  },
+                  Object {
+                    "label": "Three",
+                    "value": "3",
+                  },
+                  Object {
+                    "label": "Four",
+                    "value": "4",
+                  },
+                  Object {
+                    "label": "Five",
+                    "value": "5",
+                  },
+                ]
+              }
+              themeControlSelect=""
+              themeControlSelectContainer=""
+              validationError=""
+              value="2"
+            />
+          </div>
+          <ControlRadioSet
+            autoFocus={false}
+            id="difficulty"
+            initialValue="beginner"
+            label="Choose difficulty"
+            onChange={[Function]}
+            optional={false}
+            options={
+              Array [
+                Object {
+                  "label": "Beginner",
+                  "value": "beginner",
+                },
+                Object {
+                  "label": "Intermediate",
+                  "value": "intermediate",
+                },
+                Object {
+                  "label": "Advanced",
+                  "value": "advanced",
+                },
+              ]
+            }
+            themeRadio="mr6 radio--blue radio--s-label inline-block "
+            themeRadioContainer="txt-s block mb6 flex"
+            validationError=""
+            value="beginner"
+          />
+        </div>
+        <div
+          className="col w-full w-1/4-mm"
+        >
+          <ControlCheckboxSet
+            autoFocus={false}
+            icon="check"
+            id="tools"
+            initialValue={Array []}
+            label="Choose tools"
+            onChange={[Function]}
+            optional={false}
+            options={
+              Array [
+                Object {
+                  "label": "Pick axe",
+                  "value": "axe",
+                },
+                Object {
+                  "label": "Potion",
+                  "value": "potion",
+                },
+                Object {
+                  "label": "Cloak",
+                  "value": "cloak",
+                },
+                Object {
+                  "label": "Telescope",
+                  "value": "telescope",
+                },
+                Object {
+                  "label": "Map",
+                  "value": "map",
+                },
+                Object {
+                  "label": "Sword",
+                  "value": "sword",
+                },
+                Object {
+                  "label": "Armour",
+                  "value": "armour",
+                },
+              ]
+            }
+            themeCheckbox="mr6 inline-block checkbox--blue checkbox--s-label"
+            themeCheckboxContainer="txt-s block mb6 flex"
+            validationError=""
+            value={Array []}
+          />
+        </div>
+      </div>
+      <div
+        className="mt6"
+      >
+        <ControlTextarea
+          id="description"
+          label="Description"
+          noAuto={false}
+          onChange={[Function]}
+          optional={false}
+          placeholder="Enter a short description"
+          themeControlTextarea="textarea hmin120"
+          validationError=""
+          value=""
+        />
+      </div>
+      <div
+        className="mt6"
+      >
+        <FormSubmit
+          disabled={false}
+          label="Submit"
+          onSubmit={[Function]}
+          testId=""
+          themeButton="btn px24 py12 round-full txt-s"
+        />
+      </div>
+    </div>
+  </Submittable>
+</div>
+`;
+
+exports[`ControlFile basic renders 1`] = `
+<div
+  className="relative"
+>
+  <Submittable
+    noValidate={true}
+    onEnter={[Function]}
+  >
+    <div>
+      <div>
+        <ControlText
+          errorStyle="default"
+          id="firstName"
+          label="First name"
+          noAuto={false}
+          onChange={[Function]}
+          optional={false}
+          placeholder="Enter your first name"
+          themeControlInput="input"
+          type="text"
+          validationError=""
+          validator={[Function]}
+          value=""
+        />
+      </div>
+      <div>
+        <ControlText
+          errorStyle="default"
+          id="lastName"
+          label="Last name"
+          noAuto={false}
+          onChange={[Function]}
+          optional={false}
+          placeholder="Enter your last name"
+          themeControlInput="input"
+          type="text"
+          validationError=""
+          value=""
+        />
+      </div>
+      <div
+        className="mt6"
+      >
+        <FormSubmit
+          disabled={false}
+          label="Submit"
+          onSubmit={[Function]}
+          testId=""
+          themeButton="btn px24 py12 round-full txt-s"
+        />
+      </div>
+    </div>
+  </Submittable>
+</div>
+`;
+
+exports[`ControlFile onCancel renders 1`] = `
+<div
+  className="relative"
+>
+  <Submittable
+    noValidate={true}
+    onCancel={[MockFunction]}
+    onEnter={[Function]}
+  >
+    <div>
+      <ControlText
+        errorStyle="default"
+        id="name"
+        label="Name"
+        noAuto={false}
+        onChange={[Function]}
+        optional={false}
+        placeholder="Enter name"
+        themeControlInput="input"
+        type="text"
+        validationError=""
+        value=""
+      />
+      <div
+        className="mt6"
+      >
+        <FormSubmit
+          disabled={false}
+          label="Submit"
+          onSubmit={[Function]}
+          testId=""
+          themeButton="btn px24 py12 round-full txt-s"
+        />
+      </div>
+    </div>
+  </Submittable>
+</div>
+`;
+
+exports[`ControlFile onChange renders 1`] = `
+<div
+  className="relative"
+>
+  <Submittable
+    noValidate={true}
+    onEnter={[Function]}
+  >
+    <ControlTextarea
+      id="description"
+      noAuto={false}
+      onChange={[Function]}
+      optional={false}
+      themeControlTextarea="textarea hmin120"
+      validationError=""
+      value=""
+    />
+  </Submittable>
+</div>
+`;

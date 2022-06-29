@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import components from './data/components'; // eslint-disable-line
 import ComponentSection from './components/component-section';
 import Sidebar from './components/sidebar';
 import Colors from './components/colors';
 import Assets from './components/assets';
-import { Data, Entry, Section } from './typings';
+import { Entry, Section } from './typings';
 
 function AppSection({ name, entries, intro }: Section): ReactElement {
   const id = name.replace(/ /g, '-').toLowerCase();
@@ -23,11 +23,10 @@ function AppSection({ name, entries, intro }: Section): ReactElement {
 
 export default function App() {
   const componentEls: Array<Entry> = components.map((component) => {
-    let containerClasses = 'pb60';
     return {
       name: component.name,
       content: (
-        <div key={component.name} className={containerClasses}>
+        <div key={component.name} className='pb60'>
           <ComponentSection data={component} />
         </div>
       )

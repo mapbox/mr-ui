@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import variables from '@mapbox/mbx-assembly/dist/variables.json';
 import AssemblySection from './assembly-section';
 import AssemblyIntro from './assembly-intro';
