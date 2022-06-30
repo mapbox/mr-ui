@@ -6,9 +6,6 @@
       "dom.iterable",
       "esnext"
     ],
-    "emitDeclarationOnly": true,
-    "outFile": "index.d.ts",
-    "declaration": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -19,7 +16,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "react-jsx"
   },
   "include": [

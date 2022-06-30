@@ -3,7 +3,6 @@
   "version": "3.0.0-alpha.1",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
-  "types": "index.d.ts",
   "scripts": {
     "build-component-index": "rtk-index ./src/components ./src/test-cases-app/component-index.js",
     "prestart": "npm run build-component-index",
@@ -16,8 +15,7 @@
     "jest-watch": "jest --watch --verbose=false",
     "format": "prettier --write '**/*.js'",
     "lint": "eslint .",
-    "tsc": "tsc",
-    "pretest": "npm run lint && npm run jest && npm run tsc",
+    "pretest": "npm run lint",
     "test": "jest",
     "build": "scripts/build-module-indexes.js && scripts/build-package.js"
   },

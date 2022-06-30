@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 module.exports = `
   <!DOCTYPE html>
   <html lang="en">

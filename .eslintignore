@@ -1,8 +1,12 @@
 *.log
 coverage
 .DS_Store
+_batfish*
 src/docs/data
 src/docs/_site
+pkg
 src/test-cases-app/component-index.js
+dist
 **/*underreact.config.js
 **/*babel.config.js
+html.js
