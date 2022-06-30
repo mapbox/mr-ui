@@ -72,7 +72,6 @@ exports[`ControlFile all options renders 1`] = `
 exports[`ControlFile basic receives an array of one file as value, displaying its name and the clear button 1`] = `
 <ControlWrapper
   id="testinput-1"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput-1"
@@ -144,10 +143,7 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
         type="button"
       >
         <Icon
-          inline={false}
           name="trash"
-          passthroughProps={Object {}}
-          size={18}
         />
       </button>
     </Tooltip>
@@ -158,7 +154,6 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
 exports[`ControlFile basic renders 1`] = `
 <ControlWrapper
   id="testinput-1"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput-1"
@@ -217,7 +212,6 @@ exports[`ControlFile basic renders 1`] = `
 exports[`ControlFile disabled renders 1`] = `
 <ControlWrapper
   id="testinput-2"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput-2"
@@ -276,7 +270,6 @@ exports[`ControlFile disabled renders 1`] = `
 exports[`ControlFile multiple receives an array of files as value, displaying their names and the clear button 1`] = `
 <ControlWrapper
   id="testinput-multiple"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput-multiple"
@@ -349,10 +342,7 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
         type="button"
       >
         <Icon
-          inline={false}
           name="trash"
-          passthroughProps={Object {}}
-          size={18}
         />
       </button>
     </Tooltip>

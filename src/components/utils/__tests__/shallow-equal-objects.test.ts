@@ -7,8 +7,8 @@ test('returns true', () => {
   expect(
     shallowEqualObjects({ a: 'true', b: 232 }, { a: 'true', b: 232 })
   ).toBe(true);
-  const fn = () => {};
-  expect(shallowEqualObjects({ a: fn, b: 232 }, { a: fn, b: 232 })).toBe(true);
+  const mockedFn = jest.fn();
+  expect(shallowEqualObjects({ a: mockedFn, b: 232 }, { a: mockedFn, b: 232 })).toBe(true);
   expect(
     shallowEqualObjects(
       { a: true, b: { c: false } },
@@ -23,7 +23,7 @@ test('returns false', () => {
   expect(shallowEqualObjects({ a: true }, { a: false })).toBe(false);
   expect(shallowEqualObjects({ a: 'a' }, { a: 'b' })).toBe(false);
   expect(
-    shallowEqualObjects({ a: () => {}, b: 232 }, { a: () => {}, b: 232 })
+    shallowEqualObjects({ a: jest.fn(), b: 232 }, { a: jest.fn(), b: 232 })
   ).toBe(false);
   expect(
     shallowEqualObjects(

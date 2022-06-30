@@ -1,4 +1,16 @@
-# Changelog
+Changelog
+---
+
+## HEAD
+
+- [breaking] Rewrites `src/components/icon` as a functional component and uses [`accessible-icon` from Radix](https://www.radix-ui.com/docs/primitives/utilities/accessible-icon) as an internal primitive.
+- [breaking] Rewrites `src/components/control-wrapper` as a functional component.
+- [feature] Introduces TypeScript to the source code and converts:
+  - `src/docs/*`
+  - `src/components/utils/*`
+  - `src/components/icon/*`
+  - `src/components/control-wrapper/*`
+- [feature] Adds React Testing Library to newly ported components
 
 ## 2.0.0-beta.2
 

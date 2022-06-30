@@ -38,7 +38,6 @@ exports[`ControlToggleSet allOptions renders 1`] = `
 exports[`ControlToggleSet basic onChange gets called with input id and value 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -61,7 +60,6 @@ exports[`ControlToggleSet basic onChange gets called with input id and value 1`]
 exports[`ControlToggleSet basic renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -84,7 +82,6 @@ exports[`ControlToggleSet basic renders 1`] = `
 exports[`ControlToggleSet disabled renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"

@@ -11,10 +11,7 @@ exports[`icon after renders as expected 1`] = `
     className="ml6"
   >
     <Icon
-      inline={false}
       name="chevron-right"
-      passthroughProps={Object {}}
-      size={18}
     />
   </span>
 </span>
@@ -28,10 +25,7 @@ exports[`icon before renders as expected 1`] = `
     className="mr6"
   >
     <Icon
-      inline={false}
       name="clipboard"
-      passthroughProps={Object {}}
-      size={18}
     />
   </span>
   <span>
@@ -48,10 +42,7 @@ exports[`icons on both sides, including a non-string one renders as expected 1`]
     className="mr6"
   >
     <Icon
-      inline={false}
       name="check"
-      passthroughProps={Object {}}
-      size={18}
     />
   </span>
   <span>
@@ -61,10 +52,7 @@ exports[`icons on both sides, including a non-string one renders as expected 1`]
     className="ml6"
   >
     <Icon
-      inline={false}
       name="github"
-      passthroughProps={Object {}}
-      size={18}
     />
   </span>
 </span>
@@ -78,10 +66,7 @@ exports[`inline flex parent renders as expected 1`] = `
     className="mr6"
   >
     <Icon
-      inline={false}
       name="polyline"
-      passthroughProps={Object {}}
-      size={18}
     />
   </span>
   <span>
@@ -98,10 +83,7 @@ exports[`large gap renders as expected 1`] = `
     className="mr6"
   >
     <Icon
-      inline={false}
       name="check"
-      passthroughProps={Object {}}
-      size={18}
     />
   </span>
   <span>

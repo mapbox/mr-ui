@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import variables from '@mapbox/mbx-assembly/dist/variables.json';
 import AssemblySection from './assembly-section';
 import AssemblyIntro from './assembly-intro';
 
+interface SectionData {
+  name: string;
+  description: ReactElement;
+  preview: ReactElement;
+}
+
 const mainColors = ['blue', 'gray', 'red', 'orange'];
 const secondaryColors = ['purple', 'pink', 'yellow', 'green'];
 
-const getVariants = (colors) => {
-  return colors.map((c) => [
+const getVariants = (colors: Array<string>) => {
+  return colors.map((c: string): Array<string> => [
     `${c}-dark`,
     `${c}-deep`,
     c,
@@ -17,7 +23,7 @@ const getVariants = (colors) => {
   ]);
 };
 
-const getColorSwatch = (c, j) => (
+const getColorSwatch = (c: string, j: number) => (
   <div key={c} className="col w-1/6">
     <div className={`bg-${c} h60`} />
     <div
@@ -31,12 +37,12 @@ const getColorSwatch = (c, j) => (
   </div>
 );
 
-const getColorSwatchGroup = (c, i) => (
+const getColorSwatchGroup = (c: Array<string>, i: number) => (
   <div
     key={i}
     className="overflow-hidden grid border border--gray-light round mb12"
   >
-    {c.map((c, j) => getColorSwatch(c, j))}
+    {c.map((c, j: number) => getColorSwatch(c, j))}
   </div>
 );
 
@@ -45,7 +51,7 @@ const sections = [
     name: 'Core colors',
     preview: (
       <div>
-        {getVariants(mainColors).map((group, i) =>
+        {getVariants(mainColors).map((group: Array<string>, i: number) =>
           getColorSwatchGroup(group, i)
         )}
       </div>
@@ -87,7 +93,7 @@ export default function Color() {
         </p>
       </AssemblyIntro>
       <div className="mt24">
-        {sections.map((s) => (
+        {sections.map((s: SectionData) => (
           <AssemblySection key={s.name} sectionData={s} />
         ))}
       </div>

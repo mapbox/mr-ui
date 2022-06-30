@@ -10,7 +10,6 @@ exports[`ControlAlert basic error renders as expected 1`] = `
     <Icon
       inline={true}
       name="alert"
-      passthroughProps={Object {}}
       size="1.3em"
     />
   </div>
@@ -38,7 +37,6 @@ exports[`ControlAlert basic locked renders as expected 1`] = `
     <Icon
       inline={true}
       name="lock"
-      passthroughProps={Object {}}
       size="1.3em"
     />
   </div>
@@ -66,7 +64,6 @@ exports[`ControlAlert basic success renders as expected 1`] = `
     <Icon
       inline={true}
       name="check"
-      passthroughProps={Object {}}
       size="1.3em"
     />
   </div>
@@ -94,7 +91,6 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
     <Icon
       inline={true}
       name="alert"
-      passthroughProps={Object {}}
       size="1.3em"
     />
   </div>
@@ -139,7 +135,6 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
       <Icon
         inline={true}
         name="close"
-        passthroughProps={Object {}}
         size="1.3em"
       />
     </button>
@@ -157,7 +152,6 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
     <Icon
       inline={true}
       name="alert"
-      passthroughProps={Object {}}
       size="1.3em"
     />
   </div>
@@ -202,7 +196,6 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
       <Icon
         inline={true}
         name="close"
-        passthroughProps={Object {}}
         size="1.3em"
       />
     </button>
@@ -220,7 +213,6 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
     <Icon
       inline={true}
       name="alert"
-      passthroughProps={Object {}}
       size="1.3em"
     />
   </div>
@@ -256,7 +248,6 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
       <Icon
         inline={true}
         name="close"
-        passthroughProps={Object {}}
         size="1.3em"
       />
     </button>
@@ -274,7 +265,6 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
     <Icon
       inline={true}
       name="alert"
-      passthroughProps={Object {}}
       size="1.3em"
     />
   </div>
@@ -310,7 +300,6 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
       <Icon
         inline={true}
         name="close"
-        passthroughProps={Object {}}
         size="1.3em"
       />
     </button>

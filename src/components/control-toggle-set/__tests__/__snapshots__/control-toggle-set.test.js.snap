@@ -94,7 +94,6 @@ exports[`ControlToggleGroup all options renders 1`] = `
 exports[`ControlToggleGroup basic onChange gets called with input id and value 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <fieldset>
     <ControlLegend
@@ -154,7 +153,6 @@ exports[`ControlToggleGroup basic onChange gets called with input id and value 1
 exports[`ControlToggleGroup basic renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <fieldset>
     <ControlLegend
@@ -214,7 +212,6 @@ exports[`ControlToggleGroup basic renders 1`] = `
 exports[`ControlToggleGroup disabled renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <fieldset>
     <ControlLegend

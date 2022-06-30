@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { ReactElement, CSSProperties, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import getWindow from '../utils/get-window';
-import shallowEqualObjects from '../utils/shallow-equal-objects';
+import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
+
+interface Props {
+  name: string;
+  inline?: boolean;
+  passthroughProps?: {
+    style?: CSSProperties
+  };
+  size?: number;
+}
 
 /**
  * Display an Assembly icon.
@@ -12,66 +21,52 @@ import shallowEqualObjects from '../utils/shallow-equal-objects';
  * - Provides an `inline` mode that automatically sizes icons to match their
  *   surrounding text.
  */
-export default class Icon extends React.Component {
-  componentDidMount() {
-    this.setHeight();
-  }
+export default function Icon({
+  name,
+  inline = false,
+  passthroughProps = {},
+  size = 18
+}: Props): ReactElement {
+  const el = useRef(null);
 
-  shouldComponentUpdate(nextProps) {
-    return !shallowEqualObjects(this.props, nextProps, ['passthroughProps']);
-  }
-
-  componentDidUpdate() {
-    this.setHeight();
-  }
-
-  setHeight() {
-    if (this.props.inline && this.iconElement) {
-      const lineHeight = getWindow().getComputedStyle(this.iconElement)[
+  useEffect(() => {
+    if (inline && el.current) {
+      const lineHeight = getWindow().getComputedStyle(el.current)[
         'line-height'
       ];
-      this.iconElement.style.height = lineHeight;
+      el.current.style.height = lineHeight;
     }
+  }, [inline, size]);
+
+  let iconClasses = 'events-none icon';
+  if (inline) {
+    iconClasses += ' inline-block align-t';
   }
 
-  setIconElement = (element) => {
-    this.iconElement = element;
-  };
+  const svgStyle = passthroughProps.style || {};
+  if (!svgStyle.width && size) {
+    svgStyle.width = size;
+  }
+  if (!svgStyle.height && size) {
+    svgStyle.height = size;
+  }
 
-  render() {
-    const { props } = this;
-
-    let iconClasses = 'events-none icon';
-    if (props.inline) {
-      iconClasses += ' inline-block align-t';
-    }
-
-    const svgStyle = props.passthroughProps.style || {};
-    if (!svgStyle.width && props.size) {
-      svgStyle.width = props.size;
-    }
-    if (!svgStyle.height && props.size) {
-      svgStyle.height = props.size;
-    }
-
-    const iconContent = (
+  return (
+    <AccessibleIcon.Root label={name}>
       <svg
-        ref={this.setIconElement}
-        role="presentation"
-        focusable="false"
+        ref={el}
         className={iconClasses}
-        {...props.passthroughProps}
+        data-testid={`icon-${name}`}
+        {...passthroughProps}
         style={svgStyle}
       >
         <use
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          xlinkHref={`#icon-${props.name}`}
+          xlinkHref={`#icon-${name}`}
         />
       </svg>
-    );
-
-    return iconContent;
-  }
+    </AccessibleIcon.Root>
+  );
 }
 
 Icon.propTypes = {
@@ -109,10 +104,4 @@ Icon.propTypes = {
    * Props to pass directly to the `<svg>` element.
    */
   passthroughProps: PropTypes.object
-};
-
-Icon.defaultProps = {
-  inline: false,
-  passthroughProps: {},
-  size: 18
 };
