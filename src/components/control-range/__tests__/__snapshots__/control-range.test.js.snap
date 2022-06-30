@@ -41,7 +41,6 @@ exports[`ControlRange all options renders 1`] = `
 exports[`ControlRange basic onChange gets called with input id and value 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -68,7 +67,6 @@ exports[`ControlRange basic onChange gets called with input id and value 1`] = `
 exports[`ControlRange basic renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -95,7 +93,6 @@ exports[`ControlRange basic renders 1`] = `
 exports[`ControlRange disabled renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"

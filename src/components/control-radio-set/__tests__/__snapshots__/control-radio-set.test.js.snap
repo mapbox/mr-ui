@@ -90,7 +90,6 @@ exports[`ControlRadioSet all options renders 1`] = `
 exports[`ControlRadioSet basic onChange gets called with input id and value 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <fieldset>
     <ControlLegend
@@ -147,7 +146,6 @@ exports[`ControlRadioSet basic onChange gets called with input id and value 1`] 
 exports[`ControlRadioSet basic renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <fieldset>
     <ControlLegend
@@ -204,7 +202,6 @@ exports[`ControlRadioSet basic renders 1`] = `
 exports[`ControlRadioSet disabled renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <fieldset>
     <ControlLegend

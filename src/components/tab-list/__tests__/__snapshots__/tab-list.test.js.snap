@@ -17,10 +17,7 @@ exports[`TabList a label contains a node renders 1`] = `
       type="button"
     >
       <Icon
-        inline={false}
         name="star"
-        passthroughProps={Object {}}
-        size={18}
       />
     </button>
   </div>

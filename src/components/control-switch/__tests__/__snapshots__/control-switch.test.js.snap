@@ -40,7 +40,6 @@ exports[`ControlSwitch all options renders 1`] = `
 exports[`ControlSwitch basic onChange gets called with input id and value 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <label
     className="switch-container "
@@ -67,7 +66,6 @@ exports[`ControlSwitch basic onChange gets called with input id and value 1`] = 
 exports[`ControlSwitch basic renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <label
     className="switch-container "
@@ -94,7 +92,6 @@ exports[`ControlSwitch basic renders 1`] = `
 exports[`ControlSwitch disabled renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <label
     className="switch-container "

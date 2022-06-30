@@ -64,10 +64,7 @@ exports[`ControlText all options renders 1`] = `
         className="flex flex--center-cross flex--center-main"
       >
         <Icon
-          inline={false}
           name="alert"
-          passthroughProps={Object {}}
-          size={18}
           themeIcon="cursor-pointer"
         />
       </span>
@@ -79,7 +76,6 @@ exports[`ControlText all options renders 1`] = `
 exports[`ControlText basic onChange gets called with input id and value 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -103,7 +99,6 @@ exports[`ControlText basic onChange gets called with input id and value 1`] = `
 exports[`ControlText basic renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -127,7 +122,6 @@ exports[`ControlText basic renders 1`] = `
 exports[`ControlText default validation error renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
   validationError="oh no!"
 >
   <ControlLabel
@@ -153,7 +147,6 @@ exports[`ControlText default validation error renders 1`] = `
 exports[`ControlText disabled renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -178,7 +171,6 @@ exports[`ControlText disabled renders 1`] = `
 exports[`ControlText error inline option renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -223,10 +215,7 @@ exports[`ControlText error inline option renders 1`] = `
         className="flex flex--center-cross flex--center-main"
       >
         <Icon
-          inline={false}
           name="alert"
-          passthroughProps={Object {}}
-          size={18}
           themeIcon="cursor-pointer"
         />
       </span>

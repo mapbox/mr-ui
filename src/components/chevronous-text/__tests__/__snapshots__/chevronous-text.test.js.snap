@@ -11,7 +11,6 @@ exports[`ChevronousText basic renders as expected 1`] = `
     <Icon
       inline={true}
       name="chevron-right"
-      passthroughProps={Object {}}
       size="1.5em"
     />
   </span>
@@ -26,7 +25,6 @@ exports[`ChevronousText chevron before multiline text renders as expected 1`] = 
     <Icon
       inline={true}
       name="chevron-left"
-      passthroughProps={Object {}}
       size="1.5em"
     />
     "It
@@ -44,7 +42,6 @@ exports[`ChevronousText chevron before one long unwrappable word text renders as
     <Icon
       inline={true}
       name="chevron-left"
-      passthroughProps={Object {}}
       size="1.5em"
     />
     Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon
@@ -64,7 +61,6 @@ exports[`ChevronousText multiline text renders as expected 1`] = `
     <Icon
       inline={true}
       name="chevron-right"
-      passthroughProps={Object {}}
       size="1.5em"
     />
   </span>
@@ -81,7 +77,6 @@ exports[`ChevronousText one long unwrappable word text renders as expected 1`] =
     <Icon
       inline={true}
       name="chevron-right"
-      passthroughProps={Object {}}
       size="1.5em"
     />
   </span>
@@ -96,7 +91,6 @@ exports[`ChevronousText sized icon before text renders as expected 1`] = `
     <Icon
       inline={true}
       name="chevron-left"
-      passthroughProps={Object {}}
       size="1.7em"
     />
     Cheers!
@@ -115,7 +109,6 @@ exports[`ChevronousText sized icon renders as expected 1`] = `
     <Icon
       inline={true}
       name="chevron-right"
-      passthroughProps={Object {}}
       size={10}
     />
   </span>

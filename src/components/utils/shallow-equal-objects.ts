@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export default function shallowEqualObjects(
-  objA,
-  objB,
-  allowedObjectKeys = []
+  objA: { [key: string]: any },
+  objB: { [key: string]: any },
+  allowedObjectKeys: Array<string> = []
 ) {
   const aKeys = Object.keys(objA);
   const bKeys = Object.keys(objB);

@@ -1,4 +1,8 @@
-const styles = {
+interface Constants {
+  [key: string]: string;
+}
+
+const styles: Constants = {
   h1: 'txt-h1-mm txt-h2 txt-fancy mb6',
   h2: 'txt-h2-mm txt-h3 txt-fancy mb6',
   h3: 'txt-h3-mm txt-h4 txt-fancy mb6',
@@ -26,27 +30,27 @@ let _styles = styles;
 /**
  * Replace existing constant object with a new constant object. Use
  * with no argument to reset constant object to it's default.
- * @param s {object} an object that conforms to { [id]: string }.
+ * @param constants {object} an object that conforms to { [id]: string }.
  */
-function setStyles(constants = styles) {
+function setStyles(constants: Constants = styles) {
   _styles = { ...constants };
 }
 
 /**
  * Merge a new constant object with existing constants.
- * @param s {object} an object that conforms to { [id]: string }.
+ * @param constants {object} an object that conforms to { [id]: string }.
  */
-function mergeStyles(constants) {
+function mergeStyles(constants: Constants) {
   _styles = { ..._styles, ...constants };
 }
 
 /**
  * Get the classlist for a style constant.
  * @param constant {string} a string corresponding to a constant that resolves to a class list.
- * @param exclude {array<string>} a list of classes to exclude from the style constant.
+ * @param exclude {string | array<string>} a list of classes to exclude from the style constant.
  * @return {string} a space-separated list of classes.
  */
-function getStyle(constant, exclude) {
+function getStyle(constant: string, exclude?: string | Array<string>): string {
   if (!_styles[constant]) {
     throw Error(`${constant} is not a valid constant.`);
   }
@@ -55,7 +59,7 @@ function getStyle(constant, exclude) {
   if (exclude && exclude.length > 0) {
     classList = classList
       .split(' ')
-      .filter((c) => {
+      .filter((c: string) => {
         return exclude.indexOf(c) === -1;
       })
       .join(' ');

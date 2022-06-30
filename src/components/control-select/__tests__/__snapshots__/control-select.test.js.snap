@@ -3,7 +3,6 @@
 exports[`ControlSelect Supported values renders 1`] = `
 <ControlWrapper
   id="value"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="value"
@@ -110,7 +109,6 @@ exports[`ControlSelect all options renders 1`] = `
 exports[`ControlSelect basic onChange gets called with input id and value 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -153,7 +151,6 @@ exports[`ControlSelect basic onChange gets called with input id and value 1`] = 
 exports[`ControlSelect basic renders 1`] = `
 <ControlWrapper
   id="testinput"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="testinput"
@@ -196,7 +193,6 @@ exports[`ControlSelect basic renders 1`] = `
 exports[`ControlSelect disabled renders 1`] = `
 <ControlWrapper
   id="disabled"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="disabled"
@@ -239,7 +235,6 @@ exports[`ControlSelect disabled renders 1`] = `
 exports[`ControlSelect grouped dropdown options renders 1`] = `
 <ControlWrapper
   id="grouped"
-  themeControlWrapper=""
 >
   <ControlLabel
     id="grouped"

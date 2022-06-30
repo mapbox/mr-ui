@@ -28,7 +28,7 @@ describe('MinimumDurationLoader', () => {
       wrapper.update();
       expect(wrapper.find('[data-test-loader]').length).toEqual(1);
       expect(wrapper.find('[data-test-content]').length).toEqual(0);
-      jest.runTimersToTime(1000);
+      jest.advanceTimersByTime(1000);
       wrapper.update();
       expect(wrapper.find('[data-test-loader]').length).toEqual(0);
       expect(wrapper.find('[data-test-content]').length).toEqual(1);
@@ -40,7 +40,7 @@ describe('MinimumDurationLoader', () => {
 
       wrapper.setProps({ isLoaded: true });
       expect(wrapper.html()).toEqual(loaderHtml);
-      jest.runTimersToTime(1000);
+      jest.advanceTimersByTime(1000);
       wrapper.update();
       expect(wrapper.html()).toEqual(contentHtml);
       wrapper.setProps({ isLoaded: false });
@@ -49,7 +49,7 @@ describe('MinimumDurationLoader', () => {
       wrapper.setProps({ isLoaded: true });
       wrapper.update();
       expect(wrapper.html()).toEqual(loaderHtml);
-      jest.runTimersToTime(1000);
+      jest.advanceTimersByTime(1000);
       wrapper.update();
       expect(wrapper.html()).toEqual(contentHtml);
     });
@@ -94,12 +94,12 @@ describe('MinimumDurationLoader', () => {
       // Loader should exist
       expect(wrapper.find('[data-test-loader]').length).toEqual(1);
       expect(wrapper.find('[data-test-content]').length).toEqual(0);
-      jest.runTimersToTime(1000);
+      jest.advanceTimersByTime(1000);
       wrapper.update();
       // Loader should still exist because we exceeded the minimum duration
       expect(wrapper.find('[data-test-loader]').length).toEqual(1);
       expect(wrapper.find('[data-test-content]').length).toEqual(0);
-      jest.runTimersToTime(4000);
+      jest.advanceTimersByTime(4000);
       wrapper.update();
       // We've exceeded the minimum duration, so the loader should not exist
       expect(wrapper.find('[data-test-loader]').length).toEqual(0);

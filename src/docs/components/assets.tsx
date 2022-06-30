@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import AssemblySection from './assembly-section';
 import AssemblyIntro from './assembly-intro';
+
+interface SectionData {
+  name: string;
+  description: ReactElement;
+  preview: ReactElement;
+}
 
 const sections = [
   {
@@ -56,31 +62,29 @@ const sections = [
   }
 ];
 
-export default class Assets extends React.Component {
-  render() {
-    return (
-      <section className="pt24" id="assets">
-        <AssemblyIntro name="Assets">
-          <p>
-            These assets are exclusively available in Mapbox's build of
-            Assembly. When using these assets, especially the logo, be attentive
-            to the{' '}
-            <a
-              href="https://www.mapbox.com/about/press/brand-guidelines/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mapbox brand guidelines
-            </a>
-            .
-          </p>
-        </AssemblyIntro>
-        <div className="mt24">
-          {sections.map((s) => (
-            <AssemblySection key={s.name} sectionData={s} />
-          ))}
-        </div>
-      </section>
-    );
-  }
+export default function Assets(): ReactElement {
+  return (
+    <section className="pt24" id="assets">
+      <AssemblyIntro name="Assets">
+        <p>
+          These assets are exclusively available in Mapbox's build of
+          Assembly. When using these assets, especially the logo, be attentive
+          to the{' '}
+          <a
+            href="https://www.mapbox.com/about/press/brand-guidelines/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Mapbox brand guidelines
+          </a>
+          .
+        </p>
+      </AssemblyIntro>
+      <div className="mt24">
+        {sections.map((s: SectionData) => (
+          <AssemblySection key={s.name} sectionData={s} />
+        ))}
+      </div>
+    </section>
+  );
 }

@@ -21,10 +21,7 @@ exports[`CopyButton Defaults changes state on click 1`] = `
     type="button"
   >
     <Icon
-      inline={false}
       name="check"
-      passthroughProps={Object {}}
-      size={18}
     />
     <Popover
       accessibleTitle={null}
@@ -75,10 +72,7 @@ exports[`CopyButton Defaults changes state on click 2`] = `
     type="button"
   >
     <Icon
-      inline={false}
       name="clipboard"
-      passthroughProps={Object {}}
-      size={18}
     />
   </button>
 </Tooltip>
@@ -105,10 +99,7 @@ exports[`CopyButton Defaults renders as expected 1`] = `
     type="button"
   >
     <Icon
-      inline={false}
       name="clipboard"
-      passthroughProps={Object {}}
-      size={18}
     />
   </button>
 </Tooltip>
@@ -136,10 +127,7 @@ exports[`CopyButton all props changes state on click 1`] = `
     type="button"
   >
     <Icon
-      inline={false}
       name="check"
-      passthroughProps={Object {}}
-      size={18}
     />
     <Popover
       accessibleTitle={null}
@@ -191,10 +179,7 @@ exports[`CopyButton all props changes state on click 2`] = `
     type="button"
   >
     <Icon
-      inline={false}
       name="clipboard"
-      passthroughProps={Object {}}
-      size={18}
     />
   </button>
 </Tooltip>
@@ -222,10 +207,7 @@ exports[`CopyButton all props renders as expected 1`] = `
     type="button"
   >
     <Icon
-      inline={false}
       name="clipboard"
-      passthroughProps={Object {}}
-      size={18}
     />
   </button>
 </Tooltip>
