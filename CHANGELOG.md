@@ -11,6 +11,7 @@ Changelog
   - `src/components/icon/*`
   - `src/components/control-wrapper/*`
 - [feature] Adds React Testing Library to newly ported components
+- [internal] Drop `src/test-cases-app` from the development workflow of this project.
 
 ## 2.0.0-beta.2
 
