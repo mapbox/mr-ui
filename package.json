@@ -3,6 +3,7 @@
   "version": "2.0.0-beta.3",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "start": "scripts/build-module-indexes.js && scripts/build-docs-data.js && react-app-rewired start",
     "build-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && react-app-rewired build",
@@ -11,7 +12,7 @@
     "test": "react-app-rewired test",
     "format": "prettier --write '**/*.(j|t)s'",
     "lint": "eslint .",
-    "pretest": "npm run lint"
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",

@@ -34,9 +34,13 @@ function compileComponents() {
 
 // Copy non-src files that we want in the package.
 function copyFiles() {
-  return cpy(['LICENSE_Mapbox', 'CHANGELOG.md', 'README.md'], outputDir, {
-    cwd: rootDir
-  });
+  return cpy(
+    ['LICENSE_Mapbox', 'CHANGELOG.md', 'README.md', 'index.d.ts'],
+    outputDir,
+    {
+      cwd: rootDir
+    }
+  );
 }
 
 // Create a package.json that is ready to be published.
