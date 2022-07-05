@@ -8,9 +8,8 @@ interface Props {
   onChange: (checked: boolean, id: string) => void;
   disabled?: boolean;
   value?: boolean;
-  optional?: boolean;
   label?: ReactElement | string;
-  validationError?: ReactElement;
+  validationError?: ReactElement | string;
   themeControlSwitchContainer?: string;
   themeControlSwitch?: string;
   themeControlWrapper?: string;
@@ -28,7 +27,6 @@ export default function ControlSwitch(props: Props): ReactElement {
     themeControlWrapper = '',
     themeControlSwitchContainer = '',
     themeControlSwitch = 'switch--s-label',
-    optional = false,
     themeLabel = 'txt-s ml6'
   } = props;
 
@@ -47,13 +45,12 @@ export default function ControlSwitch(props: Props): ReactElement {
       validationError={validationError}
     >
       <fieldset className="flex flex--center-cross">
-        <Switch.Root {...switchProps} className={`switch ${themeControlSwitch}`}>
-          <Switch.Thumb />
-        </Switch.Root>
         <label htmlFor={id} className={`switch-container ${themeControlSwitchContainer}`}>
+          <Switch.Root {...switchProps} className={`switch ${themeControlSwitch}`}>
+            <Switch.Thumb />
+          </Switch.Root>
           <span className={themeLabel}>
             {label}
-            {optional && <span className="ml3 txt-normal">(optional)</span>}
           </span>
         </label>
       </fieldset>
@@ -66,9 +63,7 @@ ControlSwitch.propTypes = {
   id: PropTypes.string.isRequired,
   /** Input value */
   value: PropTypes.bool,
-  /** If provided the text, "(optional)" is appended to the value of the label element. */
-  optional: PropTypes.bool,
-  /** Called during changes to the input element. */
+  /** Called during changes to the input element. Two arguments are received: 1. The incoming value and 2. the ID of the input. */
   onChange: PropTypes.func.isRequired,
   /** Value passed to the label element. */
   label: PropTypes.node,
