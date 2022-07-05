@@ -1,25 +1,3 @@
-
-.switch[data-state='checked'] {
-    border-color: transparent;
-    background-color: #757d82;
-}
-
-.switch[data-state='checked']::after {
-    left: 50%;
-    background-color: #fff;
-}
-
-.switch[data-disabled] {
-    border-color: transparent;
-    background-color: rgba(158,163,167,.25);
-    pointer-events: none;
-    color: rgba(26,34,36,.25);
-}
-
-.switch[data-disabled]::after {
-    background-color: rgba(26,34,36,.25);
-}
-
 code[class*="language-"],
 pre[class*="language-"] {
     color: #273d56;
