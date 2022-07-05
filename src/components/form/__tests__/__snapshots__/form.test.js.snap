@@ -185,10 +185,6 @@ exports[`ControlFile all controls renders 1`] = `
             initialValue={false}
             label="Animal active?"
             onChange={[Function]}
-            optional={false}
-            themeControlSwitch="switch--s-label"
-            themeControlSwitchContainer=""
-            themeLabel="txt-s ml6"
             validationError=""
             value={false}
           />

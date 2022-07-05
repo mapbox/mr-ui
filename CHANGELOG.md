@@ -3,6 +3,9 @@ Changelog
 
 ## HEAD
 
+- [breaking] Rewrites `src/components/control-switch` as a functional component.and uses [`swtich` from Radix](https://radix-website-git-release.modulz-deploys.com/docs/primitives/components/switch). 🚨 **Drop options**:
+    - `optional`: Additional text like "optional" should be applied by the consumer using the label prop.
+    - `initialValue` and `validator` which were previously provided by the form component.
 - [breaking] Rewrites `src/components/icon` as a functional component and uses [`accessible-icon` from Radix](https://www.radix-ui.com/docs/primitives/utilities/accessible-icon) as an internal primitive.
 - [breaking] Rewrites `src/components/control-wrapper` as a functional component.
 - [feature] Introduces TypeScript to the source code and converts:

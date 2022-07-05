@@ -9,24 +9,24 @@ exports[`ControlSwitch basic renders 1`] = `
       <fieldset
         class="flex flex--center-cross"
       >
-        <button
-          aria-checked="false"
-          class="switch switch--s-label"
-          data-state="unchecked"
-          data-testid="test-switch"
-          id="test"
-          role="switch"
-          type="button"
-          value="on"
-        >
-          <span
-            data-state="unchecked"
-          />
-        </button>
         <label
           class="switch-container "
           for="test"
         >
+          <button
+            aria-checked="false"
+            class="switch switch--s-label"
+            data-state="unchecked"
+            data-testid="test-switch"
+            id="test"
+            role="switch"
+            type="button"
+            value="on"
+          >
+            <span
+              data-state="unchecked"
+            />
+          </button>
           <span
             class="txt-s ml6"
           >
