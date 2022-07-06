@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+
 import getWindow from '../utils/get-window';
 import {
   PLACEMENT_TOP,

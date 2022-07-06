@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import getWindow from '../../utils/get-window';
 import Icon from '../icon';
 
@@ -66,9 +66,9 @@ describe('inline', () => {
       inline: true
     };
 
-    const { baseElement, getByTestId } = render(<Icon {...props} />)
+    const { baseElement } = render(<Icon {...props} />)
     expect(baseElement).toMatchSnapshot();
-    expect(getByTestId('icon-check')).toHaveClass('inline-block');
+    expect(screen.getByTestId('icon-check')).toHaveClass('inline-block');
   });
 
   test('renders inline with derived height from computed line height', () => {
@@ -77,8 +77,8 @@ describe('inline', () => {
       inline: true
     };
 
-    const { getByTestId } = render(<Icon {...props} />)
-    expect(getByTestId('icon-check').style.height).toBe('14px');
+    render(<Icon {...props} />)
+    expect(screen.getByTestId('icon-check').style.height).toBe('14px');
   });
 
   test('after update, adjusts height to match line-height', () => {
@@ -87,10 +87,10 @@ describe('inline', () => {
       inline: true
     };
 
-    const { rerender, getByTestId } = render(<Icon {...props} />)
+    const { rerender } = render(<Icon {...props} />)
     rerender(<Icon {...props} size={45} />);
 
-    expect(getByTestId('icon-check').style.width).toBe('45px');
-    expect(getByTestId('icon-check').style.height).toBe('14px');
+    expect(screen.getByTestId('icon-check').style.width).toBe('45px');
+    expect(screen.getByTestId('icon-check').style.height).toBe('14px');
   });
 });
