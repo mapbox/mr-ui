@@ -6,6 +6,7 @@
   "scripts": {
     "start": "scripts/build-module-indexes.js && scripts/build-docs-data.js && react-app-rewired start",
     "build": "scripts/build-module-indexes.js && scripts/build-docs-data.js && react-app-rewired build",
+    "deploy-docs": "npm run build && gh-pages -d build",
     "test": "react-app-rewired test",
     "format": "prettier --write '**/*.js'",
     "lint": "eslint .",
