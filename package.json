@@ -12,6 +12,26 @@
     "lint": "eslint .",
     "pretest": "npm run lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/mr-ui.git"
+  },
+  "keywords": [
+    "mapbox",
+    "react",
+    "components"
+  ],
+  "author": "Mapbox",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/mapbox/mr-ui/issues"
+  },
+  "homepage": "https://github.com/mapbox/mr-ui#readme",
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
   "dependencies": {
     "@mapbox/mbx-assembly": "^1.2.0",
     "@mapbox/query-selector-contains-node": "^1.0.0",
@@ -85,5 +105,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
