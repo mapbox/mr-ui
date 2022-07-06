@@ -1,35 +1,42 @@
-import React from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Button from '../button';
-import PopoverTrigger from '../popover-trigger';
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
-let tooltipCounter = 0;
+console.log('TooltipPrimitive', TooltipPrimitive);
+
+interface Props {
+  placement?: 'top' | 'bottom' | 'left' | 'right';
+  alignment?: 'top' | 'bottom' | 'left' | 'right' | 'center';
+  coloring?: 'light' | 'dark' | 'warning' | 'error';
+  padding?: 'small' | 'none';
+  textSize?: 'xs' | 's' | 'none';
+  maxWidth?: 'small' | 'medium' | 'none';
+  disabled?: boolean;
+  respondsToClick?: boolean;
+  block?: boolean;
+  content?: ReactElement | string | (() => ReactElement);
+}
 
 /**
  * Wrap a trigger element so that when it is hovered or focused a tooltip
  * appears.
- *
- * Tooltip extends [PopoverTrigger](#popovertrigger) and configures the
- * popover and trigger for accessibility.
  */
-export default class Tooltip extends React.Component {
-  state = {
-    visible: false,
-    tooltipId: null
-  };
 
-  componentDidMount() {
-    // Save the application for the random generated id until after mount
-    // so that it doesn't mess up the relation of static/dynamic React code.
-    // Generating unique ids for server-rendered code without breaking
-    // the checksum is very hard!
-    tooltipCounter += 1;
-    this.setState({ tooltipId: `tooltip-${tooltipCounter}` });
-  }
+export default function Tooltip({
+  placement = 'top',
+  alignment = 'center',
+  coloring = 'light',
+  disabled = false,
+  respondsToClick = false,
+  padding = 'small',
+  block = false,
+  textSize = 's',
+  maxWidth = 'medium',
+  content = null
+}: Props): ReactElement {
 
-  getContent() {
-    const { content } = this.props;
+  const getContent = () => {
     if (typeof content === 'function') {
       return content();
     } else {
@@ -37,6 +44,23 @@ export default class Tooltip extends React.Component {
     }
   }
 
+  return (
+    <TooltipPrimitive.Provider delayDuration={0}>
+      <TooltipPrimitive.Root>
+        <TooltipPrimitive.Trigger asChild>
+          <span>trigger</span>
+        </TooltipPrimitive.Trigger>
+          <TooltipPrimitive.Content>
+            blah
+            <TooltipPrimitive.Arrow />
+          </TooltipPrimitive.Content>
+      </TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider>
+  );
+}
+
+/*
+export default class Tooltip extends React.Component {
   renderTrigger() {
     const { children, testId } = this.props;
     const { tooltipId } = this.state;
@@ -56,6 +80,7 @@ export default class Tooltip extends React.Component {
     if (children.type && typeof children.type === 'string') {
       return React.cloneElement(children, triggerProps);
     }
+
     if (children.type && children.type === Button) {
       return React.cloneElement(children, { passthroughProps: triggerProps });
     }
@@ -87,6 +112,13 @@ export default class Tooltip extends React.Component {
     const content = <div className={bodyClasses}>{this.getContent()}</div>;
 
     return (
+      <>
+        {this.renderTrigger()}
+      </>
+    )
+
+    /*
+    return (
       <PopoverTrigger
         content={content}
         renderHiddenContent={true}
@@ -111,6 +143,7 @@ export default class Tooltip extends React.Component {
     );
   }
 }
+*/
 
 Tooltip.propTypes = {
   /**
@@ -177,16 +210,4 @@ Tooltip.propTypes = {
    * Added as `data-test` to the tooltip element.
    */
   testId: PropTypes.string
-};
-
-Tooltip.defaultProps = {
-  placement: 'top',
-  alignment: 'center',
-  coloring: 'light',
-  disabled: false,
-  respondsToClick: false,
-  padding: 'small',
-  block: false,
-  textSize: 's',
-  maxWidth: 'medium'
 };
