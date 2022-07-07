@@ -1,14 +1,3 @@
-node_modules
-*.log
-coverage
-.DS_Store
-_site*
-src/docs/data
-pkg
-src/test-cases-app/component-index.js
-dist
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -19,6 +8,7 @@ dist
 
 # production
 /build
+/src/docs/data
 
 # misc
 .DS_Store

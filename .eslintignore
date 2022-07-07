@@ -3,4 +3,3 @@ coverage
 .DS_Store
 src/docs/data
 build
-**/*babel.config.js
