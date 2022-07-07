@@ -15,13 +15,6 @@ jest.mock('select', () => jest.fn());
 jest.mock('os-key', () =>
   jest.fn(() => ({ primaryMeta: true, meta: { symbol: 'eh' } }))
 );
-jest.mock('../utils/get-window', () =>
-  jest.fn(() => ({
-    navigator: {
-      userAgent: 'mock-user-agent'
-    }
-  }))
-);
 jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
 
 let testCase;
