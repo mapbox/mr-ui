@@ -27,7 +27,6 @@
   "bugs": {
     "url": "https://github.com/mapbox/mr-ui/issues"
   },
-  "homepage": "https://github.com/mapbox/mr-ui#readme",
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
