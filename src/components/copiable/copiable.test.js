@@ -19,16 +19,6 @@ jest.mock('os-key', () =>
 let testCase;
 let wrapper;
 
-/*
-jest.mock('../utils/get-window', () =>
-  jest.fn(() => ({
-    navigator: {
-      userAgent: 'mock-user-agent'
-    }
-  }))
-);
-*/
-
 describe(testCases.basic.description, () => {
   beforeEach(() => {
     jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
