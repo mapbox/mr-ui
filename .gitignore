@@ -8,6 +8,7 @@
 
 # production
 /build
+/pkg
 /src/docs/data
 
 # misc
