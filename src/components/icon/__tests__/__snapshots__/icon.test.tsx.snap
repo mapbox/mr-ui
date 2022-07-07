@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inline renders 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      class="events-none icon inline-block align-t"
+      data-testid="icon-check"
+      focusable="false"
+      style="width: 18px; height: 14px;"
+    >
+      <use
+        xlink:href="#icon-check"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      />
+    </svg>
+    <span
+      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+    >
+      check
+    </span>
+  </div>
+</body>
+`;
+
+exports[`renders basic 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      class="events-none icon"
+      data-testid="icon-bike"
+      focusable="false"
+      style="width: 18px; height: 18px;"
+    >
+      <use
+        xlink:href="#icon-bike"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      />
+    </svg>
+    <span
+      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+    >
+      bike
+    </span>
+  </div>
+</body>
+`;
+
+exports[`renders passthrough prop 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      class="events-none icon"
+      data-test="alert-icon"
+      data-testid="icon-alert"
+      focusable="false"
+      style="width: 18px; height: 18px;"
+    >
+      <use
+        xlink:href="#icon-alert"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      />
+    </svg>
+    <span
+      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+    >
+      alert
+    </span>
+  </div>
+</body>
+`;
+
+exports[`renders special size 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      class="events-none icon"
+      data-testid="icon-alert"
+      focusable="false"
+      style="width: 36px; height: 36px;"
+    >
+      <use
+        xlink:href="#icon-alert"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      />
+    </svg>
+    <span
+      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+    >
+      alert
+    </span>
+  </div>
+</body>
+`;
+
+exports[`renders special size via style 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      class="events-none icon"
+      data-test="alert-icon"
+      data-testid="icon-alert"
+      focusable="false"
+      style="height: 36px; width: 36px;"
+    >
+      <use
+        xlink:href="#icon-alert"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      />
+    </svg>
+    <span
+      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+    >
+      alert
+    </span>
+  </div>
+</body>
+`;

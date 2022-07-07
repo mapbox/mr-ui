@@ -135,22 +135,26 @@ class PopoverPositioner extends React.PureComponent {
     const bodyElement = this.bodyElement;
     if (bodyElement) {
       bodyElement.style.setProperty('visibility', 'visible');
-      for (let key in positionData.bodyPositioningStyle) {
-        bodyElement.style.setProperty(
-          key,
-          positionData.bodyPositioningStyle[key]
-        );
+      if (positionData) {
+        for (let key in positionData.bodyPositioningStyle) {
+          bodyElement.style.setProperty(
+            key,
+            positionData.bodyPositioningStyle[key]
+          );
+        }
       }
     }
 
     const pointerElement = this.pointerElement;
     if (pointerElement) {
       pointerElement.style.setProperty('visibility', 'visible');
-      for (let key in positionData.pointerPositioningStyle) {
-        pointerElement.style.setProperty(
-          key,
-          positionData.pointerPositioningStyle[key]
-        );
+      if (positionData) {
+        for (let key in positionData.pointerPositioningStyle) {
+          pointerElement.style.setProperty(
+            key,
+            positionData.pointerPositioningStyle[key]
+          );
+        }
       }
     }
   };
