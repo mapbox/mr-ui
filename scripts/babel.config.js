@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ['@mapbox/babel-preset-mapbox'],
+  presets: ['@babel/preset-react'],
   overrides: [
     {
       test: /\.tsx$/,
