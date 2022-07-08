@@ -15,6 +15,7 @@ interface Props {
   maxWidth?: 'small' | 'medium' | 'none';
   disabled?: boolean;
   ariaLabel?: string;
+  testId?: string;
 }
 
 /**
@@ -32,7 +33,8 @@ export default function Tooltip({
   maxWidth = 'medium',
   content = null,
   children = null,
-  ariaLabel = null
+  ariaLabel = null,
+  testId = null
 }: Props): ReactElement {
   if (!children) return null;
 
@@ -74,7 +76,7 @@ export default function Tooltip({
           align={alignment}
           sideOffset={6}
           className={bodyClasses}
-          data-testid="hey"
+          data-testid={testId}
         >
             {getContent()}
           <TooltipPrimitive.Arrow offset={6} fill={fill} />
