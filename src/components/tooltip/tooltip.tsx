@@ -40,8 +40,8 @@ export default function Tooltip({
 
   const { background, borderColor, color, fill } = getTheme(coloring);
 
-  const bodyClasses = classnames({
-    [background, borderColor, color],
+  const bodyClasses = classnames(
+    `${background} ${borderColor} ${color} shadow-darken25 round`, {
     'txt-s': textSize === 's',
     'txt-xs': textSize === 'xs',
     'px12 py6': padding === 'small',
@@ -58,21 +58,20 @@ export default function Tooltip({
   }
 
   return (
-    <TooltipPrimitive.Provider delayDuration={0}>
-      <TooltipPrimitive.Root>
-        <TooltipPrimitive.Trigger>
-        {children}
-        </TooltipPrimitive.Trigger>
-          <TooltipPrimitive.Content
-            side={placement}
-            align={alignment}
-            className={bodyClasses}
-          >
-              {getContent()}
-            <TooltipPrimitive.Arrow fill={fill} />
-          </TooltipPrimitive.Content>
-      </TooltipPrimitive.Root>
-    </TooltipPrimitive.Provider>
+    <TooltipPrimitive.Root delayDuration={150}>
+      <TooltipPrimitive.Trigger>
+      {children}
+      </TooltipPrimitive.Trigger>
+        <TooltipPrimitive.Content
+          side={placement}
+          align={alignment}
+          sideOffset={6}
+          className={bodyClasses}
+        >
+            {getContent()}
+          <TooltipPrimitive.Arrow offset={6} fill={fill} />
+        </TooltipPrimitive.Content>
+    </TooltipPrimitive.Root>
   );
 }
 
