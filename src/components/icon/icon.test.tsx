@@ -1,9 +1,9 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import getWindow from '../../utils/get-window';
-import Icon from '../icon';
+import getWindow from '../utils/get-window';
+import Icon from './icon';
 
-jest.mock('../../utils/get-window');
+jest.mock('../utils/get-window');
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getWindowMock = getWindow as any;
