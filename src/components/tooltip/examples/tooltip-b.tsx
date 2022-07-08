@@ -19,19 +19,13 @@ export default function Example(): ReactElement {
     <Tooltip
       content={renderTooltipContent}
       placement="bottom"
-      alignment="left"
+      alignment="start"
       coloring="dark"
       maxWidth="small"
     >
-      {(triggerProps) => <CustomTrigger spanProps={triggerProps} />}
+      <span className="txt-h4 txt-fancy cursor-default">
+        custom trigger
+      </span>
     </Tooltip>
-  );
-}
-
-function CustomTrigger(props) {
-  return (
-    <span className="txt-h4 txt-fancy cursor-default" {...props.spanProps}>
-      custom trigger
-    </span>
   );
 }

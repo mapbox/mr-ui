@@ -1,20 +1,21 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { getTheme } from '../utils/styles';
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
 console.log('TooltipPrimitive', TooltipPrimitive);
 
 interface Props {
   placement?: 'top' | 'bottom' | 'left' | 'right';
-  alignment?: 'top' | 'bottom' | 'left' | 'right' | 'center';
+  alignment?: 'center' | 'start' | 'end';
   coloring?: 'light' | 'dark' | 'warning' | 'error';
   padding?: 'small' | 'none';
   textSize?: 'xs' | 's' | 'none';
   maxWidth?: 'small' | 'medium' | 'none';
   disabled?: boolean;
-  respondsToClick?: boolean;
   block?: boolean;
+  children?: React.ReactNode;
   content?: ReactElement | string | (() => ReactElement);
 }
 
@@ -28,13 +29,25 @@ export default function Tooltip({
   alignment = 'center',
   coloring = 'light',
   disabled = false,
-  respondsToClick = false,
   padding = 'small',
   block = false,
   textSize = 's',
   maxWidth = 'medium',
-  content = null
+  content = null,
+  children = null
 }: Props): ReactElement {
+  if (!children) return null;
+
+  const { background, borderColor, color, fill } = getTheme(coloring);
+
+  const bodyClasses = classnames({
+    [background, borderColor, color],
+    'txt-s': textSize === 's',
+    'txt-xs': textSize === 'xs',
+    'px12 py6': padding === 'small',
+    wmax120: maxWidth === 'small',
+    wmax240: maxWidth === 'medium'
+  });
 
   const getContent = () => {
     if (typeof content === 'function') {
@@ -47,103 +60,21 @@ export default function Tooltip({
   return (
     <TooltipPrimitive.Provider delayDuration={0}>
       <TooltipPrimitive.Root>
-        <TooltipPrimitive.Trigger asChild>
-          <span>trigger</span>
+        <TooltipPrimitive.Trigger>
+        {children}
         </TooltipPrimitive.Trigger>
-          <TooltipPrimitive.Content>
-            blah
-            <TooltipPrimitive.Arrow />
+          <TooltipPrimitive.Content
+            side={placement}
+            align={alignment}
+            className={bodyClasses}
+          >
+              {getContent()}
+            <TooltipPrimitive.Arrow fill={fill} />
           </TooltipPrimitive.Content>
       </TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
   );
 }
-
-/*
-export default class Tooltip extends React.Component {
-  renderTrigger() {
-    const { children, testId } = this.props;
-    const { tooltipId } = this.state;
-
-    if (!children) {
-      return null;
-    }
-
-    const triggerProps = { 'aria-describedby': tooltipId };
-    if (testId) {
-      triggerProps['data-test'] = `${testId}-trigger`;
-    }
-
-    if (typeof children === 'function') {
-      return children(triggerProps);
-    }
-    if (children.type && typeof children.type === 'string') {
-      return React.cloneElement(children, triggerProps);
-    }
-
-    if (children.type && children.type === Button) {
-      return React.cloneElement(children, { passthroughProps: triggerProps });
-    }
-    throw new Error(
-      'Tooltip requires a child that is a function, a regular DOM node, or a Button. If your trigger is a different custom component, pass a function as the child.'
-    );
-  }
-
-  render() {
-    const { props, state } = this;
-
-    const popoverPassthroughProps = {
-      id: state.tooltipId,
-      // Override the "dialog" role set by popover
-      role: 'tooltip'
-    };
-
-    if (props.testId) {
-      popoverPassthroughProps['data-test'] = `${props.testId}-tooltip`;
-    }
-
-    const bodyClasses = classnames({
-      'txt-s': props.textSize === 's',
-      'txt-xs': props.textSize === 'xs',
-      wmax120: props.maxWidth === 'small',
-      wmax240: props.maxWidth === 'medium'
-    });
-
-    const content = <div className={bodyClasses}>{this.getContent()}</div>;
-
-    return (
-      <>
-        {this.renderTrigger()}
-      </>
-    )
-
-    /*
-    return (
-      <PopoverTrigger
-        content={content}
-        renderHiddenContent={true}
-        disabled={props.disabled}
-        block={props.block}
-        respondsToClick={props.respondsToClick}
-        respondsToHover={true}
-        respondsToFocus={true}
-        receiveFocus={false}
-        popoverProps={{
-          hasPointer: true,
-          placement: props.placement,
-          alignment: props.alignment,
-          coloring: props.coloring,
-          padding: props.padding,
-          hideWhenAnchorIsOffscreen: true,
-          passthroughProps: popoverPassthroughProps
-        }}
-      >
-        {this.renderTrigger()}
-      </PopoverTrigger>
-    );
-  }
-}
-*/
 
 Tooltip.propTypes = {
   /**
@@ -172,7 +103,7 @@ Tooltip.propTypes = {
   /**
    * Alignment of the tooltip's edge in relation to the trigger element.
    */
-  alignment: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'center']),
+  alignment: PropTypes.oneOf(['center', 'start', 'end']),
   /**
    * If `true`, the tooltip will not appear.
    */
@@ -193,10 +124,6 @@ Tooltip.propTypes = {
    * `'small'` or `'none'`.
    */
   padding: PropTypes.oneOf(['small', 'none']),
-  /**
-   * If `true`, tooltip can be opened with a mouse click.
-   */
-  respondsToClick: PropTypes.bool,
   /**
    * If `true`, the element will be `block` displayed instead of `inline-block`.
    *

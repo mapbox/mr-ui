@@ -1,3 +1,5 @@
+import variables from '@mapbox/mbx-assembly/dist/variables.json';
+
 interface Constants {
   [key: string]: string;
 }
@@ -68,4 +70,42 @@ function getStyle(constant: string, exclude?: string | Array<string>): string {
   return classList;
 }
 
-export { mergeStyles, setStyles, getStyle };
+/**
+ * Consistant color themes for components.
+ * @param theme {string}
+ */
+function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
+  switch (theme) {
+    case 'dark':
+      return {
+        background: 'bg-gray-dark',
+        borderColor: 'border--gray-dark',
+        color: 'color-white',
+        fill: variables['--gray-dark']
+      };
+    case 'warning':
+      return {
+        background: 'bg-orange-light',
+        borderColor: 'border--orange',
+        color: 'color-orange-deep',
+        fill: variables['--orange-deep']
+      };
+    case 'error':
+      return {
+        background: 'bg-red-faint',
+        borderColor: 'border--red',
+        color: 'color-red-deep',
+        fill: variables['--red-deep']
+      };
+    case 'light':
+    default:
+      return {
+        background: 'bg-white',
+        borderColor: 'border--white',
+        color: 'color-text',
+        fill: '#fff'
+      };
+  };
+}
+
+export { mergeStyles, setStyles, getStyle, getTheme };
