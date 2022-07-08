@@ -1,10 +1,12 @@
 type PrimitiveDataTypes = string | boolean | number;
-type PropertyValues = PrimitiveDataTypes | { [key: string]: PrimitiveDataTypes };
+type PropertyValues =
+  | PrimitiveDataTypes
+  | { [key: string]: PrimitiveDataTypes };
 
 export default function omit(
-  source: ({ [key: string]: PropertyValues }) = {},
+  source: { [key: string]: PropertyValues } = {},
   omittedProperties: Array<string> = []
-): ({ [key: string]: PropertyValues }) {
+): { [key: string]: PropertyValues } {
   return Object.keys(source).reduce((result, key) => {
     if (omittedProperties.indexOf(key) === -1) {
       result[key] = source[key];

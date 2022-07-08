@@ -3,14 +3,14 @@
 import { ReactElement } from 'react';
 
 interface Value {
-  [key: string]: any
+  [key: string]: any;
 }
 
 export interface PropData {
   name?: string;
   type: {
     name: string;
-    value?: Value | Array<Value>
+    value?: Value | Array<Value>;
   };
   required: boolean;
   defaultValue: string | undefined;
