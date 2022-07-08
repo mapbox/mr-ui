@@ -19,7 +19,6 @@ export default function Example(): ReactElement {
     <Tooltip
       content={renderTooltipContent}
       placement="bottom"
-      alignment="start"
       coloring="dark"
       maxWidth="small"
     >

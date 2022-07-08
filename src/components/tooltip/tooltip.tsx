@@ -41,7 +41,7 @@ export default function Tooltip({
   const { background, borderColor, color, fill } = getTheme(coloring);
 
   const bodyClasses = classnames(
-    `${background} ${borderColor} ${color} shadow-darken25 round`, {
+    `${background} ${borderColor} ${color} border shadow-darken25 round`, {
     'txt-s': textSize === 's',
     'txt-xs': textSize === 'xs',
     'px12 py6': padding === 'small',
@@ -78,16 +78,6 @@ export default function Tooltip({
 Tooltip.propTypes = {
   /**
    * The trigger element.
-   *
-   * If your element is a DOM element
-   * (e.g. `<button>`, `<a>`, `<span>`, `<div>`),
-   * you can pass it directly and it will have accessibility-related props
-   * automatically added to it.
-   *
-   * If your element is a custom React component, you need to provide a
-   * function as the child. The function will be invoked with a `triggerProps`
-   * object, and you need to apply those `triggerProps` in such a way that
-   * they end up on the DOM element of the trigger.
    */
   children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   /**
@@ -123,15 +113,6 @@ Tooltip.propTypes = {
    * `'small'` or `'none'`.
    */
   padding: PropTypes.oneOf(['small', 'none']),
-  /**
-   * If `true`, the element will be `block` displayed instead of `inline-block`.
-   *
-   * This is sometimes necessary to get your pixel-perfect layout, if you don't
-   * want the extra line-height that wraps inline elements. Typically, you
-   * should only set `block` to `true` if the parent element is controlling
-   * width (in a layout that uses flexbox, absolute positioning, or floats).
-   */
-  block: PropTypes.bool,
   /**
    * Added as `data-test` to the tooltip element.
    */
