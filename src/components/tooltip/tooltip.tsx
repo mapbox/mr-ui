@@ -1,10 +1,8 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { getTheme } from '../utils/styles';
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-
-console.log('TooltipPrimitive', TooltipPrimitive);
 
 interface Props {
   placement?: 'top' | 'bottom' | 'left' | 'right';
@@ -14,7 +12,6 @@ interface Props {
   textSize?: 'xs' | 's' | 'none';
   maxWidth?: 'small' | 'medium' | 'none';
   disabled?: boolean;
-  block?: boolean;
   children?: React.ReactNode;
   content?: ReactElement | string | (() => ReactElement);
 }
@@ -30,7 +27,6 @@ export default function Tooltip({
   coloring = 'light',
   disabled = false,
   padding = 'small',
-  block = false,
   textSize = 's',
   maxWidth = 'medium',
   content = null,

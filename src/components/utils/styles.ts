@@ -70,8 +70,6 @@ function getStyle(constant: string, exclude?: string | Array<string>): string {
   return classList;
 }
 
-console.log('variables', variables)
-
 /**
  * Consistant color themes for components.
  * @param theme {string}
@@ -87,7 +85,7 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
       };
     case 'warning':
       return {
-        background: 'bg-orange-light',
+        background: 'bg-orange-faint',
         borderColor: 'border--orange',
         color: 'color-orange-deep',
         fill: variables['orange-deep']
