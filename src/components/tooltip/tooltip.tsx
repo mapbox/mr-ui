@@ -5,6 +5,8 @@ import { getTheme } from '../utils/styles';
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
 interface Props {
+  children: React.ReactNode;
+  content: ReactElement | string | (() => ReactElement);
   placement?: 'top' | 'bottom' | 'left' | 'right';
   alignment?: 'center' | 'start' | 'end';
   coloring?: 'light' | 'dark' | 'warning' | 'error';
@@ -12,8 +14,7 @@ interface Props {
   textSize?: 'xs' | 's' | 'none';
   maxWidth?: 'small' | 'medium' | 'none';
   disabled?: boolean;
-  children?: React.ReactNode;
-  content?: ReactElement | string | (() => ReactElement);
+  ariaLabel?: string;
 }
 
 /**
@@ -30,7 +31,8 @@ export default function Tooltip({
   textSize = 's',
   maxWidth = 'medium',
   content = null,
-  children = null
+  children = null,
+  ariaLabel = null
 }: Props): ReactElement {
   if (!children) return null;
 
@@ -53,16 +55,26 @@ export default function Tooltip({
     }
   }
 
+  if (disabled) {
+    return (
+      <span tabIndex={0}>
+        {children}
+      </span>
+    )
+  }
+
   return (
     <TooltipPrimitive.Root delayDuration={150}>
       <TooltipPrimitive.Trigger>
       {children}
       </TooltipPrimitive.Trigger>
         <TooltipPrimitive.Content
+          aria-label={ariaLabel}
           side={placement}
           align={alignment}
           sideOffset={6}
           className={bodyClasses}
+          data-testid="hey"
         >
             {getContent()}
           <TooltipPrimitive.Arrow offset={6} fill={fill} />
@@ -86,7 +98,7 @@ Tooltip.propTypes = {
    */
   placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
   /**
-   * Alignment of the tooltip's edge in relation to the trigger element.
+   * `'center'`, `'start'`, `'end'` Alignment of the tooltip's edge in relation to the trigger element.
    */
   alignment: PropTypes.oneOf(['center', 'start', 'end']),
   /**
@@ -112,5 +124,10 @@ Tooltip.propTypes = {
   /**
    * Added as `data-test` to the tooltip element.
    */
-  testId: PropTypes.string
+  testId: PropTypes.string,
+  /**
+   * Optionally provide a description of the tooltip content. By default, 
+   * screenreaders will announce the content inside the component.
+   */
+  ariaLabel: PropTypes.string
 };

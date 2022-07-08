@@ -1,86 +1,11 @@
 import React from 'react';
+import Tooltip from './tooltip';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('Tooltip', () => {
-  let testCase;
-  let wrapper;
-
-  /*
-  describe(testCases.domElementChild.description, () => {
-    beforeEach(() => {
-      testCase = testCases.domElementChild;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
-
-    test('renders as expected', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
+  test('renders', () => {
+    render(<Tooltip content="A tooltip"><span>trigger</span></Tooltip>)
+    expect(screen.getByTestId('hey')).toBeInTheDocument();
   });
-
-  describe(testCases.functionChild.description, () => {
-    beforeEach(() => {
-      testCase = testCases.functionChild;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
-
-    test('trigger renders as expected', () => {
-      expect(wrapper.children()).toMatchSnapshot();
-    });
-  });
-
-  describe(testCases.buttonChild.description, () => {
-    beforeEach(() => {
-      testCase = testCases.buttonChild;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
-
-    test('trigger renders as expected', () => {
-      expect(wrapper.children()).toMatchSnapshot();
-    });
-  });
-
-  describe(testCases.allProps.description, () => {
-    beforeEach(() => {
-      testCase = testCases.allProps;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
-
-    test('trigger renders as expected', () => {
-      expect(wrapper.children()).toMatchSnapshot();
-    });
-  });
-
-  describe(testCases.warningProp.description, () => {
-    beforeEach(() => {
-      testCase = testCases.warningProp;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
-
-    test('trigger renders as expected', () => {
-      expect(wrapper.children()).toMatchSnapshot();
-    });
-  });
-
-  describe(testCases.errorProp.description, () => {
-    beforeEach(() => {
-      testCase = testCases.errorProp;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
-
-    test('trigger renders as expected', () => {
-      expect(wrapper.children()).toMatchSnapshot();
-    });
-  });
-  */
 });
