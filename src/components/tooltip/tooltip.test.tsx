@@ -12,4 +12,13 @@ describe('Tooltip', () => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
     });
   });
+
+  test('does not render tooltip when disabled', async () => {
+    render(<Tooltip data-testid='test-tooltip' disabled content="A tooltip"><span data-testid="trigger">trigger</span></Tooltip>);
+    await userEvent.hover(screen.getByTestId("trigger"));
+
+    await waitFor(() => {
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+    });
+  });
 });
