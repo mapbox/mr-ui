@@ -15,7 +15,6 @@ interface Props {
   maxWidth?: 'small' | 'medium' | 'none';
   disabled?: boolean;
   ariaLabel?: string;
-  testId?: string;
 }
 
 /**
@@ -33,8 +32,7 @@ export default function Tooltip({
   maxWidth = 'medium',
   content = null,
   children = null,
-  ariaLabel = null,
-  testId = null
+  ariaLabel = null
 }: Props): ReactElement {
   if (!children) return null;
 
@@ -76,7 +74,6 @@ export default function Tooltip({
           align={alignment}
           sideOffset={6}
           className={bodyClasses}
-          data-testid={testId}
         >
             {getContent()}
           <TooltipPrimitive.Arrow offset={6} fill={fill} />
@@ -123,10 +120,6 @@ Tooltip.propTypes = {
    * `'small'` or `'none'`.
    */
   padding: PropTypes.oneOf(['small', 'none']),
-  /**
-   * Added as `data-test` to the tooltip element.
-   */
-  testId: PropTypes.string,
   /**
    * Optionally provide a description of the tooltip content. By default, 
    * screenreaders will announce the content inside the component.
