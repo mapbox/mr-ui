@@ -1,6 +1,83 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+
+type Variant = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'appPrimary' | 'appSecondary';
+type Width = 'small' | 'medium' | 'large' | 'full';
+type Size = 'small' | 'medium' | 'large';
+
+interface Props {
+  children: ReactNode;
+  variant?: Variant;
+  color?: string;
+  outline?: boolean;
+  corners?: boolean;
+  disabled?: boolean;
+  block?: boolean;
+  onClick?: () => void;
+  href?: string;
+  size?: Size;
+  width?: Width;
+  'aria-label'?: string;
+  passthroughProps?: {
+    [key: string]: string | number | boolean;
+  }
+}
+
+function getSize(variant: Variant): Size {
+  switch (variant) {
+    case 'appPrimary':
+    case 'appSecondary':
+      return 'small';
+    default:
+      return 'large';
+  }
+}
+
+function getWidth(variant: Variant): Width {
+  switch (variant) {
+    case 'appPrimary':
+    case 'appSecondary':
+      return 'small';
+    default:
+      return 'medium';
+  }
+}
+
+function getCorners(variant: Variant): boolean {
+  switch (variant) {
+    case 'appPrimary':
+    case 'appSecondary':
+      return true;
+    default:
+      return false;
+  }
+}
+
+function getOutline(variant: Variant): boolean {
+  switch (variant) {
+    case 'secondary':
+    case 'appSecondary':
+      return true;
+    default:
+      return false;
+  }
+}
+
+function getColor(variant: Variant): string {
+  switch (variant) {
+    case 'secondary':
+    case 'appPrimary':
+    case 'appSecondary':
+      return 'gray'
+    case 'tertiary':
+      return 'transparent';
+    case 'destructive':
+      return 'red';
+    default:
+      return 'blue';
+  }
+}
 
 /**
  * A good-looking button!
@@ -12,98 +89,72 @@ import PropTypes from 'prop-types';
  * If you'd like to put an icon before or after the text of your button,
  * use [IconText](#icontext) for the content.
  */
-class Button extends React.Component {
-  render() {
-    const props = applyVariant(this.props);
+export default function Button({
+  variant = 'primary',
+  'aria-label': ariaLabel,
+  size = getSize(variant),
+  width = getWidth(variant),
+  color = getColor(variant),
+  outline = getOutline(variant),
+  corners = getCorners(variant),
+  block = false,
+  disabled = false,
+  onClick,
+  passthroughProps,
+  href,
+  children
+}: Props): ReactElement {
 
-    const sizeSmall = props.size === 'small';
-    const sizeMedium = props.size === 'medium';
-    const sizeLarge = props.size === 'large';
-    const widthFull = props.width === 'full';
-    const widthSmall = props.width === 'small';
-    const widthMedium = props.width === 'medium';
-    const widthLarge = props.width === 'large';
+  const isSmall: boolean = size === 'small';
+  const isMedium: boolean = size === 'medium';
+  const isLarge: boolean = size === 'large';
 
-    const classes = classnames('btn', {
-      [`btn--${props.color}`]: props.color,
-      'btn--stroke': props.outline,
-      round: props.corners,
-      'round-full': !props.corners,
-      h24: sizeSmall,
-      py12: sizeLarge,
-      py6: sizeMedium,
-      px6: widthSmall && sizeSmall,
-      px12: (widthMedium && sizeSmall) || (widthSmall && !sizeSmall),
-      px24: (widthLarge && sizeSmall) || (widthMedium && !sizeSmall),
-      px36: !sizeSmall && widthLarge,
-      'w-full block': widthFull,
-      block: props.block,
-      'txt-s': !sizeSmall,
-      'py3 txt-xs': sizeSmall
-    });
+  const widthSmall = width === 'small';
+  const widthMedium = width === 'medium';
+  const widthLarge = width === 'large';
 
-    const universalProps = {
-      className: classes,
-      onClick: props.onClick,
-      children: props.children,
-      ...props.passthroughProps
-    };
+  const classes = classnames('btn', {
+    [`btn--${color}`]: color,
+    'btn--stroke': outline,
+    'link link--gray transition': variant === 'tertiary',
+    round: corners,
+    'round-full': !corners,
+    h24: isSmall,
+    py12: isLarge,
+    py6: isMedium,
+    px6: widthSmall && isSmall,
+    px12: (widthMedium && isSmall) || (widthSmall && !isSmall),
+    px24: (widthLarge && isSmall) || (widthMedium && !isSmall),
+    px36: !isSmall && widthLarge,
+    'w-full block': width === 'full',
+    block,
+    'txt-s': !isSmall,
+    'py3 txt-xs': isSmall
+  });
 
-    if (props.href) {
-      return <a href={props.href} {...universalProps} />;
-    }
+  const universalProps = {
+    className: classes,
+    'aria-label': ariaLabel ? ariaLabel : variant,
+    onClick,
+    children,
+    ...passthroughProps
+  };
 
-    // "disabled" is not a valid attributes for anchors.
-    const buttonProps = {
-      ...universalProps,
-      disabled: props.disabled
-    };
-
-    if (props.component) {
-      return React.createElement(props.component, buttonProps);
-    }
-
-    return <button type="button" {...buttonProps} />;
+  if (href) {
+    return (
+      <a href={href} {...universalProps} />
+    );
   }
-}
 
-const defaults = {
-  color: 'blue',
-  corners: false,
-  outline: false,
-  size: 'large',
-  width: 'medium'
-};
-function applyVariant(props) {
-  switch (props.variant) {
-    case 'primary':
-      return { ...defaults, ...props };
-    case 'secondary':
-      return { ...defaults, outline: true, ...props };
-    case 'discouraging':
-      return { ...defaults, color: 'gray', outline: true, ...props };
-    case 'destructive':
-      return { ...defaults, color: 'red', ...props };
-    case 'appPrimary':
-      return {
-        ...defaults,
-        color: 'gray',
-        size: 'small',
-        width: 'small',
-        corners: true,
-        ...props
-      };
-    case 'appSecondary':
-      return {
-        ...defaults,
-        color: 'gray',
-        size: 'small',
-        width: 'small',
-        corners: true,
-        outline: true,
-        ...props
-      };
-  }
+  // "disabled" is not a valid attributes for anchors.
+  const buttonProps = {
+    ...universalProps,
+    disabled
+  };
+
+  return (
+    <button type="button" {...buttonProps} />
+  );
 }
 
 Button.propTypes = {
@@ -124,7 +175,7 @@ Button.propTypes = {
    *
    * - `"primary"`: For primary actions.
    * - `"secondary"`: For secondary actions.
-   * - `"discouraging"`: For downplayed actions, the ones people shouldn't
+   * - `"tertiary"`: For downplayed actions, the ones people shouldn't
    *   usually want to perform, like cancelling instead of confirming.
    * - `"destructive"`: For destructive actions, like deleting something.
    * - `"appPrimary"`: For primary actions in dense apps.
@@ -133,7 +184,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf([
     'primary',
     'secondary',
-    'discouraging',
+    'tertiary',
     'destructive',
     'appPrimary',
     'appSecondary'
@@ -195,12 +246,11 @@ Button.propTypes = {
    * Is it disabled?
    */
   disabled: PropTypes.bool,
-  /**
-   * An alternate component to render in the style of a button. If the value is
-   * a string, it must refer to a DOM element, like `"div"`. Otherwise, it
-   * can be a React component.
+  /** 
+   * By default, screenreaders will announce the variant value. If this is not 
+   * descriptive enough, use aria-label for a more descriptive label.
    */
-  component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  "'aria-label'": PropTypes.string,
   /**
    * An object of props that you want to pass through to the element that
    * Button renders. This can be useful if you want to disable
@@ -209,11 +259,3 @@ Button.propTypes = {
    */
   passthroughProps: PropTypes.object
 };
-
-Button.defaultProps = {
-  variant: 'primary',
-  block: false,
-  disabled: false
-};
-
-export default Button;

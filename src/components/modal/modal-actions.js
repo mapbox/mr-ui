@@ -12,7 +12,7 @@ export default class ModalActions extends React.Component {
     return (
       <div className="flex-child-no-shrink mr12">
         <Button
-          variant="discouraging"
+          variant="tertiary"
           size="medium"
           onClick={props.secondaryAction.callback}
           data-test="secondary-modal-action"
