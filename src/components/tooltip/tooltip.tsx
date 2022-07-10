@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { getTheme } from '../utils/styles';
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
 interface Props {
-  children: React.ReactNode;
-  content: ReactElement | string | (() => ReactElement);
+  children: ReactNode;
+  content: ReactElement | string | (() => ReactElement | string);
   placement?: 'top' | 'bottom' | 'left' | 'right';
   alignment?: 'center' | 'start' | 'end';
   coloring?: 'light' | 'dark' | 'warning' | 'error';
@@ -14,7 +14,7 @@ interface Props {
   textSize?: 'xs' | 's' | 'none';
   maxWidth?: 'small' | 'medium' | 'none';
   disabled?: boolean;
-  ariaLabel?: string;
+  'aria-label'?: string;
 }
 
 /**
@@ -32,7 +32,7 @@ export default function Tooltip({
   maxWidth = 'medium',
   content = null,
   children = null,
-  ariaLabel = null
+  'aria-label': ariaLabel
 }: Props): ReactElement {
   if (!children) return null;
 
@@ -124,5 +124,5 @@ Tooltip.propTypes = {
    * Optionally provide a description of the tooltip content. By default, 
    * screenreaders will announce the content inside the component.
    */
-  ariaLabel: PropTypes.string
+  "'aria-label'": PropTypes.string
 };

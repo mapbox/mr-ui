@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 describe('Tooltip', () => {
   test('renders', async () => {
-    render(<Tooltip data-testid='test-tooltip' content="A tooltip"><span data-testid="trigger">trigger</span></Tooltip>);
+    render(<Tooltip content="A tooltip"><span data-testid="trigger">trigger</span></Tooltip>);
     await userEvent.hover(screen.getByTestId("trigger"));
 
     await waitFor(() => {
@@ -13,8 +13,22 @@ describe('Tooltip', () => {
     });
   });
 
+  test('renders content as function', async () => {
+
+    function renderContent() {
+      return 'Content is rendered'
+    }
+
+    render(<Tooltip content={renderContent}><span data-testid="trigger">trigger</span></Tooltip>);
+    await userEvent.hover(screen.getByTestId("trigger"));
+
+    await waitFor(() => {
+      expect(screen.getByRole('tooltip').textContent).toEqual('Content is rendered');
+    });
+  });
+
   test('does not render tooltip when disabled', async () => {
-    render(<Tooltip data-testid='test-tooltip' disabled content="A tooltip"><span data-testid="trigger">trigger</span></Tooltip>);
+    render(<Tooltip disabled content="A tooltip"><span data-testid="trigger">trigger</span></Tooltip>);
     await userEvent.hover(screen.getByTestId("trigger"));
 
     await waitFor(() => {
