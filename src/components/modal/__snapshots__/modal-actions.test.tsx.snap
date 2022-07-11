@@ -33,7 +33,7 @@ exports[`primary and secondary renders as expected 1`] = `
         }
       }
       size="medium"
-      variant="tertiary"
+      variant="secondary"
     >
       Cancel
     </Button>
@@ -122,7 +122,7 @@ exports[`primary, secondary, tertiary renders as expected 1`] = `
         }
       }
       size="medium"
-      variant="tertiary"
+      variant="secondary"
     >
       Cancel
     </Button>
@@ -130,15 +130,14 @@ exports[`primary, secondary, tertiary renders as expected 1`] = `
   <div
     className="flex-child-grow flex-child-no-shrink mr12"
   >
-    <button
+    <Button
       aria-label="Give up"
-      className="link link--gray txt-bold txt-s"
       data-test="tertiary-modal-action"
       onClick={[MockFunction]}
-      type="button"
+      variant="tertiary"
     >
       Give up
-    </button>
+    </Button>
   </div>
 </div>
 `;

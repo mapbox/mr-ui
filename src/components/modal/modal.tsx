@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import AriaModal from 'react-aria-modal';
+import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 import Tooltip from '../tooltip';
 import Icon from '../icon';
 import getWindow from '../utils/get-window';
 import ModalActions from './modal-actions';
-import EventTrap from './event-trap';
+
+interface Props {
+  children: ReactNode;
+  accessibleTitle: string;
+  size?: 'small' | 'large' | 'auto';
+  padding?: 'large' | 'none';
+  onExit?: () => void;
+  primaryAction?: {
+    text: string;
+    callback: () => void;
+    destructive?: boolean;
+  },
+  secondaryAction?: {
+    text: string;
+    callback: () => void;
+  },
+  tertiaryAction?: {
+    text: string;
+    callback: () => void;
+  }
+}
 
 /**
  * An accessible modal dialog.
@@ -18,42 +39,19 @@ import EventTrap from './event-trap';
  * can sometimes introduce a hurdle when integrating the modal with other
  * things, especially third-party libraries. But it's an essential UX feature.
  */
-export default class Modal extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.setDialogEl = this.setDialogEl.bind(this);
-  }
+export default function Modal({
+  children,
+  accessibleTitle,
+  size = 'large',
+  padding = 'large',
+  primaryAction,
+  secondaryAction,
+  tertiaryAction,
+  onExit
+}: Props): ReactElement {
 
-  componentDidMount() {
-    // After the modal has mounted, it will receive focus (unless initialFocus)
-    // is set. If it is taller than the viewport, the browser will scroll down
-    // so the top of the modal is at the top of the viewport, instead of
-    // staying at the top where you can see the nice padding. To show the
-    // padding, we get the underlay element and scroll to the top of that
-    // right after the component mounts.
-    if (!this.dialogEl || typeof window === 'undefined') return;
-    // A slight delay is necessary so this happens after focus is placed.
-    this.scrollTimeout = getWindow().setTimeout(() => {
-      const offsetParent = this.dialogEl.offsetParent;
-      if (offsetParent.tagName === 'BODY' || offsetParent.tagName === 'HTML') {
-        return;
-      }
-      offsetParent.scrollTop = 0;
-    }, 0);
-  }
-
-  componentWillUnmount() {
-    if (typeof window === 'undefined') return;
-    getWindow().clearTimeout(this.scrollTimeout);
-  }
-
-  setDialogEl(el) {
-    this.dialogEl = el;
-  }
-
-  renderActions() {
-    const { primaryAction, secondaryAction, tertiaryAction } = this.props;
+  const renderActions = (): ReactElement => {
     if (!primaryAction) {
       return null;
     }
@@ -69,84 +67,85 @@ export default class Modal extends React.Component {
     );
   }
 
-  render() {
-    const { props } = this;
-
-    let closeButton = null;
-    if (props.onExit) {
-      closeButton = (
-        <div className="absolute top right">
-          <Tooltip block={true} content="Close">
-            <button
-              aria-label="Close"
-              type="button"
-              className="btn btn--transparent unround-t unround-br color-gray py12 px12"
-              onClick={props.onExit}
-              data-test="modal-close"
-            >
-              <Icon name="close" />
-            </button>
-          </Tooltip>
-        </div>
-      );
-    }
-
-    let widthClass = '';
-    if (props.size === 'small') {
-      widthClass = 'w360';
-    } else if (props.size === 'large') {
-      widthClass = 'w600';
-    }
-
-    const containerClasses = classnames(
-      `relative wmax-full ${widthClass} bg-white round`,
-      { 'px36 py36': props.padding === 'large' }
-    );
-
-    const dialogBody = (
-      <div ref={this.setDialogEl} className={containerClasses}>
-        {props.children}
-        {this.renderActions()}
-        {closeButton}
+  let closeButton = null;
+  if (onExit) {
+    closeButton = (
+      <div className="absolute top right">
+        <Icon name="close" />
       </div>
     );
+  }
 
-    const modalProps = {
-      titleText: props.accessibleTitle,
-      getApplicationNode: props.getApplicationNode,
-      underlayProps: { 'data-popover-ignore-clicks': true },
-      underlayClass: 'bg-darken50 px12 py12 px60-mm py60-mm ',
-      underlayStyle: {
-        zIndex: 1
-      },
-      alert: props.alert
-    };
+  let widthClass = '';
+  if (size === 'small') {
+    widthClass = 'w360';
+  } else if (size === 'large') {
+    widthClass = 'w600';
+  }
 
-    if (props.onExit) {
-      modalProps.onExit = props.onExit;
-    }
+  const containerClasses = classnames(
+    `relative wmax-full ${widthClass} bg-white round`,
+    { 'px36 py36': padding === 'large' }
+  );
 
-    if (props.initialFocus) {
-      modalProps.initialFocus = props.initialFocus;
-    } else {
-      modalProps.focusDialog = true;
-    }
+  const contentClasses = 'fixed top px12 py12 px60-mm py60-mm z1'
+  const overlayClasses = 'fixed bg-darken50';
 
-    if (props.focusTrapPaused) {
-      modalProps.focusTrapPaused = true;
-    }
+  const modalProps = {
+    titleText: accessibleTitle,
+    // TODO serve an alert dialog
+    alert
+  };
 
-    if (!props.allowEventBubbling) {
-      // stopPropagation prevents child modals from closing parent modals when nesting
+  // if (onExit) {
+  //   modalProps.onExit = onExit;
+  // }
+
+  // if (props.initialFocus) {
+  //   modalProps.initialFocus = props.initialFocus;
+  // } else {
+  //   modalProps.focusDialog = true;
+  // }
+
+  // if (props.focusTrapPaused) {
+  //   modalProps.focusTrapPaused = true;
+  // }
+
+  // if (!props.allowEventBubbling) {
+  //   // stopPropagation prevents child modals from closing parent modals when nesting
+  //   return (
+  //     <EventTrap>
+  //       <AriaModal {...modalProps}>{dialogBody}</AriaModal>
+  //     </EventTrap>
+  //   );
+  // }
+
+  const DialogContent = React.forwardRef(
+    ({ children, ...props }, forwardedRef) => {
+
+      console.log('props', props);
       return (
-        <EventTrap>
-          <AriaModal {...modalProps}>{dialogBody}</AriaModal>
-        </EventTrap>
+        <DialogPrimitive.Portal>
+          <DialogPrimitive.Overlay style={{ inset: '0px' }} className={overlayClasses} />
+          <DialogPrimitive.Content {...props} className={contentClasses} ref={forwardedRef as React.RefObject<HTMLDivElement>}>
+            <div className={containerClasses}>
+              {children}
+              {renderActions()}
+            </div>
+            <DialogPrimitive.Close aria-label="Close">
+              {closeButton}
+            </DialogPrimitive.Close>
+          </DialogPrimitive.Content>
+        </DialogPrimitive.Portal>
       );
     }
+  );
 
-    return <AriaModal {...modalProps}>{dialogBody}</AriaModal>;
-  }
+  return (
+    <DialogPrimitive.Root onOpenChange={onExit} defaultOpen={true}>
+      <DialogContent />
+    </DialogPrimitive.Root>
+  );
 }
 
 Modal.propTypes = {
@@ -172,11 +171,6 @@ Modal.propTypes = {
    * A function that should the primary application node, which should be
    * `aria-hidden` when the modal is open. By default, returns
    * `document.getElementById('app')`.
-   */
-  getApplicationNode: PropTypes.func,
-  /**
-   * Modal container size. Options are `small`, `large`, or `auto`. If `auto`
-   * is provided, a width is not specified.
    */
   size: PropTypes.oneOf(['small', 'large', 'auto']),
   /**
@@ -261,10 +255,4 @@ Modal.propTypes = {
    * to parent components, set this prop to true
    */
   allowEventBubbling: PropTypes.bool
-};
-
-Modal.defaultProps = {
-  size: 'large',
-  getApplicationNode: () => document.getElementById('app'),
-  padding: 'large'
 };

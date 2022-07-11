@@ -136,19 +136,21 @@ export default function Button({
     className: classes,
     'aria-label': ariaLabel ? ariaLabel : variant,
     onClick,
-    children,
     ...passthroughProps
   };
 
   if (href) {
     return (
-      <a href={href} {...universalProps} />
+      <a href={href} {...universalProps}>
+        {children}
+      </a>
     );
   }
 
   // "disabled" is not a valid attributes for anchors.
   const buttonProps = {
     ...universalProps,
+    children,
     disabled
   };
 

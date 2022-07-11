@@ -2,34 +2,17 @@
 A small modal, unpadded to allow for custom background coloring, with
 initial focus set on an input. Also features its own action special button.
 */
-import React from 'react';
+import React, { ReactElement, useState } from 'react';
 import Modal from '../modal';
 import Button from '../../button';
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { modalOpen: false };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-
-  openModal() {
-    this.setState({ modalOpen: true });
-  }
-
-  closeModal() {
-    this.setState({ modalOpen: false });
-  }
-
-  renderModal() {
-    if (!this.state.modalOpen) {
-      return null;
-    }
+export default function Example(): ReactElement {
+  const [modal, setModal] = useState(false);
+  const renderModal = (): ReactElement => {
     return (
       <Modal
         accessibleTitle="Animals"
-        onExit={this.closeModal}
+        onExit={() => setModal(false)}
         padding="none"
         size="small"
         initialFocus="#modal-input"
@@ -51,7 +34,7 @@ export default class Example extends React.Component {
             <input className="input mb12" id="modal-input" />
             <Button
               size="medium"
-              onClick={this.closeModal}
+              onClick={() => setModal(false)}
               passthroughProps={{ 'aria-label': 'Done' }}
             >
               Ok, done
@@ -60,20 +43,18 @@ export default class Example extends React.Component {
         </div>
       </Modal>
     );
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <Button
-          size="medium"
-          onClick={this.openModal}
-          passthroughProps={{ 'aria-label': 'Show modal' }}
-        >
-          Show modal
-        </Button>
-        {this.renderModal()}
-      </div>
-    );
-  }
+  return (
+    <>
+      <Button
+        size="medium"
+        onClick={() => setModal(true)}
+        passthroughProps={{ 'aria-label': 'Show modal' }}
+      >
+        Show modal
+      </Button>
+      {modal && renderModal()}
+    </>
+  );
 }

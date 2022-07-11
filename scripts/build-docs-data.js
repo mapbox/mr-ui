@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-'use strict';
 
 require('hard-rejection/register');
 const _ = require('lodash');
