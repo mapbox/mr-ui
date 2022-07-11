@@ -25,16 +25,8 @@ exports[`ControlCard collapsible onButtonClick is called 1`] = `
     className="absolute top right mt18 mr18"
   >
     <Tooltip
-      alignment="center"
       block={true}
-      coloring="light"
       content="Collapse"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
     >
       <button
         aria-label="Collapse"
@@ -81,16 +73,8 @@ exports[`ControlCard collapsible renders as expected 1`] = `
     className="absolute top right mt18 mr18"
   >
     <Tooltip
-      alignment="center"
       block={true}
-      coloring="light"
       content="Collapse"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
     >
       <button
         aria-label="Collapse"
@@ -125,16 +109,8 @@ exports[`ControlCard sized title and closable onButtonClick is called 1`] = `
     className="absolute top right mt18 mr18"
   >
     <Tooltip
-      alignment="center"
       block={true}
-      coloring="light"
       content="Close"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
     >
       <button
         aria-label="Close"
@@ -181,16 +157,8 @@ exports[`ControlCard sized title and closable renders as expected 1`] = `
     className="absolute top right mt18 mr18"
   >
     <Tooltip
-      alignment="center"
       block={true}
-      coloring="light"
       content="Close"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
     >
       <button
         aria-label="Close"

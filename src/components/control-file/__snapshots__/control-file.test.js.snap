@@ -124,16 +124,8 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
       />
     </div>
     <Tooltip
-      alignment="center"
       block={true}
-      coloring="light"
       content="Clear"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
     >
       <button
         aria-label="Clear"
@@ -323,16 +315,8 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
       />
     </div>
     <Tooltip
-      alignment="center"
       block={true}
-      coloring="light"
       content="Clear"
-      disabled={false}
-      maxWidth="medium"
-      padding="small"
-      placement="top"
-      respondsToClick={false}
-      textSize="s"
     >
       <button
         aria-label="Clear"

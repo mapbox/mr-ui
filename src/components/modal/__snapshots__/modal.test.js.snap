@@ -30,16 +30,8 @@ exports[`Modal No fixed width, display only renders 1`] = `
         className="absolute top right"
       >
         <Tooltip
-          alignment="center"
           block={true}
-          coloring="light"
           content="Close"
-          disabled={false}
-          maxWidth="medium"
-          padding="small"
-          placement="top"
-          respondsToClick={false}
-          textSize="s"
         >
           <button
             aria-label="Close"
@@ -100,16 +92,8 @@ exports[`Modal all options renders 1`] = `
         className="absolute top right"
       >
         <Tooltip
-          alignment="center"
           block={true}
-          coloring="light"
           content="Close"
-          disabled={false}
-          maxWidth="medium"
-          padding="small"
-          placement="top"
-          respondsToClick={false}
-          textSize="s"
         >
           <button
             aria-label="Close"
@@ -184,16 +168,8 @@ exports[`Modal basic default renders 1`] = `
         className="absolute top right"
       >
         <Tooltip
-          alignment="center"
           block={true}
-          coloring="light"
           content="Close"
-          disabled={false}
-          maxWidth="medium"
-          padding="small"
-          placement="top"
-          respondsToClick={false}
-          textSize="s"
         >
           <button
             aria-label="Close"
@@ -255,16 +231,8 @@ exports[`Modal basic small renders 1`] = `
         className="absolute top right"
       >
         <Tooltip
-          alignment="center"
           block={true}
-          coloring="light"
           content="Close"
-          disabled={false}
-          maxWidth="medium"
-          padding="small"
-          placement="top"
-          respondsToClick={false}
-          textSize="s"
         >
           <button
             aria-label="Close"

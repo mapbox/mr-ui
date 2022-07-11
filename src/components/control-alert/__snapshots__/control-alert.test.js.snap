@@ -115,16 +115,8 @@ exports[`ControlAlert dismissive multiline error onButtonClick is called 1`] = `
     </p>
   </div>
   <Tooltip
-    alignment="center"
     block={true}
-    coloring="light"
     content="Dismiss"
-    disabled={false}
-    maxWidth="medium"
-    padding="small"
-    placement="top"
-    respondsToClick={false}
-    textSize="s"
   >
     <button
       aria-label="Dismiss"
@@ -176,16 +168,8 @@ exports[`ControlAlert dismissive multiline error renders as expected 1`] = `
     </p>
   </div>
   <Tooltip
-    alignment="center"
     block={true}
-    coloring="light"
     content="Dismiss"
-    disabled={false}
-    maxWidth="medium"
-    padding="small"
-    placement="top"
-    respondsToClick={false}
-    textSize="s"
   >
     <button
       aria-label="Dismiss"
@@ -228,16 +212,8 @@ exports[`ControlAlert dismissive warning onButtonClick is called 1`] = `
     </span>
   </div>
   <Tooltip
-    alignment="center"
     block={true}
-    coloring="light"
     content="Dismiss"
-    disabled={false}
-    maxWidth="medium"
-    padding="small"
-    placement="top"
-    respondsToClick={false}
-    textSize="s"
   >
     <button
       aria-label="Dismiss"
@@ -280,16 +256,8 @@ exports[`ControlAlert dismissive warning renders as expected 1`] = `
     </span>
   </div>
   <Tooltip
-    alignment="center"
     block={true}
-    coloring="light"
     content="Dismiss"
-    disabled={false}
-    maxWidth="medium"
-    padding="small"
-    placement="top"
-    respondsToClick={false}
-    textSize="s"
   >
     <button
       aria-label="Dismiss"
