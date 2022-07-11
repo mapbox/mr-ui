@@ -2,16 +2,9 @@
 
 exports[`CopyButton Defaults changes state on click 1`] = `
 <Tooltip
-  alignment="center"
   block={false}
-  coloring="light"
   content="Copy"
   disabled={true}
-  maxWidth="medium"
-  padding="small"
-  placement="top"
-  respondsToClick={false}
-  textSize="s"
 >
   <button
     aria-label="Copy"
@@ -53,16 +46,9 @@ exports[`CopyButton Defaults changes state on click 1`] = `
 
 exports[`CopyButton Defaults changes state on click 2`] = `
 <Tooltip
-  alignment="center"
   block={false}
-  coloring="light"
   content="Copy"
   disabled={false}
-  maxWidth="medium"
-  padding="small"
-  placement="top"
-  respondsToClick={false}
-  textSize="s"
 >
   <button
     aria-label="Copy"
@@ -80,16 +66,9 @@ exports[`CopyButton Defaults changes state on click 2`] = `
 
 exports[`CopyButton Defaults renders as expected 1`] = `
 <Tooltip
-  alignment="center"
   block={false}
-  coloring="light"
   content="Copy"
   disabled={false}
-  maxWidth="medium"
-  padding="small"
-  placement="top"
-  respondsToClick={false}
-  textSize="s"
 >
   <button
     aria-label="Copy"
@@ -107,16 +86,9 @@ exports[`CopyButton Defaults renders as expected 1`] = `
 
 exports[`CopyButton all props changes state on click 1`] = `
 <Tooltip
-  alignment="center"
   block={false}
-  coloring="light"
   content="Copy"
   disabled={true}
-  maxWidth="medium"
-  padding="small"
-  placement="top"
-  respondsToClick={false}
-  textSize="s"
 >
   <button
     aria-label="Copy"
@@ -159,16 +131,9 @@ exports[`CopyButton all props changes state on click 1`] = `
 
 exports[`CopyButton all props changes state on click 2`] = `
 <Tooltip
-  alignment="center"
   block={false}
-  coloring="light"
   content="Copy"
   disabled={false}
-  maxWidth="medium"
-  padding="small"
-  placement="top"
-  respondsToClick={false}
-  textSize="s"
 >
   <button
     aria-label="Copy"
@@ -187,16 +152,9 @@ exports[`CopyButton all props changes state on click 2`] = `
 
 exports[`CopyButton all props renders as expected 1`] = `
 <Tooltip
-  alignment="center"
   block={false}
-  coloring="light"
   content="Copy"
   disabled={false}
-  maxWidth="medium"
-  padding="small"
-  placement="top"
-  respondsToClick={false}
-  textSize="s"
 >
   <button
     aria-label="Copy"
