@@ -83,12 +83,12 @@ export default function Modal({
     widthClass = 'w600';
   }
 
-  const containerClasses = classnames(
-    `relative wmax-full ${widthClass} bg-white round`,
+  const contentClasses = classnames(
+    `fixed top wmax-full mx12 my12 my60-mm ${widthClass} bg-white round`,
     { 'px36 py36': padding === 'large' }
   );
 
-  const contentClasses = 'fixed top px12 py12 px60-mm py60-mm z1'
+  // const contentClasses = 'fixed top px12 py12 px60-mm py60-mm z1'
   const overlayClasses = 'fixed bg-darken50';
 
   const modalProps = {
@@ -120,30 +120,18 @@ export default function Modal({
   //   );
   // }
 
-  const DialogContent = React.forwardRef(
-    ({ children, ...props }, forwardedRef) => {
-
-      console.log('props', props);
-      return (
-        <DialogPrimitive.Portal>
-          <DialogPrimitive.Overlay style={{ inset: '0px' }} className={overlayClasses} />
-          <DialogPrimitive.Content {...props} className={contentClasses} ref={forwardedRef as React.RefObject<HTMLDivElement>}>
-            <div className={containerClasses}>
-              {children}
-              {renderActions()}
-            </div>
-            <DialogPrimitive.Close aria-label="Close">
-              {closeButton}
-            </DialogPrimitive.Close>
-          </DialogPrimitive.Content>
-        </DialogPrimitive.Portal>
-      );
-    }
-  );
-
   return (
     <DialogPrimitive.Root onOpenChange={onExit} defaultOpen={true}>
-      <DialogContent />
+      <DialogPrimitive.Portal>
+        <DialogPrimitive.Overlay style={{ inset: '0px' }} className={overlayClasses} />
+        <DialogPrimitive.Content style={{ left: 'calc(50% - 6px)', transform: 'translateX(-50%) translateX(-6px)' }} className={contentClasses}>
+          {children}
+          {renderActions()}
+          <DialogPrimitive.Close aria-label="Close">
+            {closeButton}
+          </DialogPrimitive.Close>
+        </DialogPrimitive.Content>
+      </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
   );
 }

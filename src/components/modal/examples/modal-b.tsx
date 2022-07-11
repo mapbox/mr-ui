@@ -17,30 +17,32 @@ export default function Example(): ReactElement {
         size="small"
         initialFocus="#modal-input"
       >
-        <h2 className="px24 py24 bg-gray-dark color-white txt-h4 txt-fancy round-t">
-          Animals!
-        </h2>
-        <div className="px24 py24">
-          <div className="prose">
-            <p>Type an animal name. Here are some suggestions:</p>
-            <ul>
-              <li>Humpback whale</li>
-              <li>Rufous hummingbird</li>
-              <li>Sea otter</li>
-              <li>Snowshoe hare</li>
-            </ul>
+        <>
+          <h2 className="px24 py24 bg-gray-dark color-white txt-h4 txt-fancy round-t">
+            Animals!
+          </h2>
+          <div className="px24 py24">
+            <div className="prose">
+              <p>Type an animal name. Here are some suggestions:</p>
+              <ul>
+                <li>Humpback whale</li>
+                <li>Rufous hummingbird</li>
+                <li>Sea otter</li>
+                <li>Snowshoe hare</li>
+              </ul>
+            </div>
+            <div className="align-center mt24">
+              <input className="input mb12" id="modal-input" />
+              <Button
+                size="medium"
+                onClick={() => setModal(false)}
+                passthroughProps={{ 'aria-label': 'Done' }}
+              >
+                Ok, done
+              </Button>
+            </div>
           </div>
-          <div className="align-center mt24">
-            <input className="input mb12" id="modal-input" />
-            <Button
-              size="medium"
-              onClick={() => setModal(false)}
-              passthroughProps={{ 'aria-label': 'Done' }}
-            >
-              Ok, done
-            </Button>
-          </div>
-        </div>
+        </>
       </Modal>
     );
   };
