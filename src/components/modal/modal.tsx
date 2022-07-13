@@ -3,9 +3,9 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import Tooltip from '../tooltip';
 import Icon from '../icon';
-import getWindow from '../utils/get-window';
 import ModalActions from './modal-actions';
 
 interface Props {
@@ -70,21 +70,21 @@ export default function Modal({
   let closeButton = null;
   if (onExit) {
     closeButton = (
-      <div className="absolute top right">
+      <Tooltip content="Close">
         <Icon name="close" />
-      </div>
+      </Tooltip>
     );
   }
 
   let widthClass = '';
   if (size === 'small') {
-    widthClass = 'w360';
+    widthClass = 'wmax360';
   } else if (size === 'large') {
-    widthClass = 'w600';
+    widthClass = 'wmax600';
   }
 
   const contentClasses = classnames(
-    `fixed top wmax-full mx12 my12 my60-mm ${widthClass} bg-white round`,
+    `fixed top w-11/12 my12 my60-mm ${widthClass} bg-white round`,
     { 'px36 py36': padding === 'large' }
   );
 
@@ -124,10 +124,15 @@ export default function Modal({
     <DialogPrimitive.Root onOpenChange={onExit} defaultOpen={true}>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay style={{ inset: '0px' }} className={overlayClasses} />
-        <DialogPrimitive.Content style={{ left: 'calc(50% - 6px)', transform: 'translateX(-50%) translateX(-6px)' }} className={contentClasses}>
+        <DialogPrimitive.Content style={{ left: '50%', transform: 'translateX(-50%)' }} className={contentClasses}>
+          <VisuallyHidden.Root>
+            <DialogPrimitive.Title>
+              {accessibleTitle}
+            </DialogPrimitive.Title>
+          </VisuallyHidden.Root>
           {children}
           {renderActions()}
-          <DialogPrimitive.Close aria-label="Close">
+          <DialogPrimitive.Close className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right" asChild aria-label="Close">
             {closeButton}
           </DialogPrimitive.Close>
         </DialogPrimitive.Content>
