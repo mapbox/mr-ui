@@ -58,7 +58,7 @@ export default function Tooltip({
 
   if (disabled) {
     return (
-      <span>
+      <span tabIndex={0}>
         {children}
       </span>
     )
