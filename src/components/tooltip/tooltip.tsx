@@ -1,4 +1,5 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode, forwardRef, isValidElement, Children } from 'react';
+
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { getTheme } from '../utils/styles';
@@ -14,7 +15,7 @@ interface Props {
   textSize?: 'xs' | 's' | 'none';
   maxWidth?: 'small' | 'medium' | 'none';
   disabled?: boolean;
-  'aria-label'?: string;
+  ariaLabel?: string;
 }
 
 /**
@@ -32,7 +33,7 @@ export default function Tooltip({
   maxWidth = 'medium',
   content = null,
   children = null,
-  'aria-label': ariaLabel
+  ariaLabel
 }: Props): ReactElement {
   if (!children) return null;
 
@@ -57,17 +58,47 @@ export default function Tooltip({
 
   if (disabled) {
     return (
-      <span tabIndex={0}>
+      <span>
         {children}
       </span>
     )
   }
 
+  const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
+    let child = Children.only(children);
+
+    if (!child) {
+      return null;
+    }
+
+    if (isValidElement(child) && child.type === 'button') {
+      if (child.props.disabled) {
+        child = (
+          <span {...props} ref={ref} tabIndex={0}>
+            {child}
+          </span>
+        );
+      } else {
+        child = React.cloneElement(child, { ...props, ref }); 
+      }
+    } else {
+      child = (
+        <button {...props} ref={ref}>
+          {child}
+        </button>
+      );
+    }
+
+    return (
+      <TooltipPrimitive.Trigger asChild>
+        {child}
+      </TooltipPrimitive.Trigger>
+    );
+  });
+
   return (
     <TooltipPrimitive.Root delayDuration={150}>
-      <TooltipPrimitive.Trigger>
-      {children}
-      </TooltipPrimitive.Trigger>
+        <Trigger />
         <TooltipPrimitive.Content
           aria-label={ariaLabel}
           side={placement}
@@ -124,5 +155,5 @@ Tooltip.propTypes = {
    * Optionally provide a description of the tooltip content. By default, 
    * screenreaders will announce the content inside the component.
    */
-  "'aria-label'": PropTypes.string
+  ariaLabel: PropTypes.string
 };
