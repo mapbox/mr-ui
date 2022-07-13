@@ -22,7 +22,6 @@ interface Props {
  * Wrap a trigger element so that when it is hovered or focused a tooltip
  * appears.
  */
-
 export default function Tooltip({
   placement = 'top',
   alignment = 'center',
@@ -31,12 +30,10 @@ export default function Tooltip({
   padding = 'small',
   textSize = 's',
   maxWidth = 'medium',
-  content = null,
-  children = null,
+  content,
+  children,
   ariaLabel
 }: Props): ReactElement {
-  if (!children) return null;
-
   const { background, borderColor, color, fill } = getTheme(coloring);
 
   const bodyClasses = classnames(
@@ -58,7 +55,7 @@ export default function Tooltip({
 
   if (disabled) {
     return (
-      <span tabIndex={0}>
+      <span>
         {children}
       </span>
     )
@@ -66,10 +63,6 @@ export default function Tooltip({
 
   const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
     let child = Children.only(children);
-
-    if (!child) {
-      return null;
-    }
 
     if (isValidElement(child) && child.type === 'button') {
       if (child.props.disabled) {
