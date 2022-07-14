@@ -60,7 +60,7 @@ function PropRow({ required, name, description, type, defaultValue }: PropData):
       <td className="txt-mono txt-bold">
         {name} {isRequired}
       </td>
-      <td className="txt-mono mx12">{type.name}</td>
+      <td className="txt-mono mx12">{type?.name}</td>
       <td>
         <div className="prose">{description}</div>
         <LabeledDefaultValue value={defaultValue} />
