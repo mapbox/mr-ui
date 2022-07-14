@@ -10,6 +10,7 @@ interface Props {
 function EventTrap({ children }: Props): ReactElement {
   return (
     <div
+      data-testid="event-trap"
       onClick={trap}
       onContextMenu={trap}
       onDoubleClick={trap}

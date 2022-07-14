@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, forwardRef } from 'react';
+import React, { ReactElement, ReactNode, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
@@ -79,12 +79,15 @@ export default function Modal({
   }
 
   // const contentClasses = 'fixed top px12 py12 px60-mm py60-mm z1'
-  const overlayProps = {
+  const overlayProps: {
+    className: string,
+    style: CSSProperties
+  } = {
     className: 'fixed top bottom left right bg-darken50',
     style: {
       display: 'grid',
-      placeItems: 'start center',
-      'overflow-y': 'auto'
+      overflowY: 'auto',
+      placeItems: 'start center'
     }
   };
 
@@ -97,6 +100,7 @@ export default function Modal({
             aria-label="Close"
             onClick={onExit}
             type="button"
+            data-testid="modal-close"
             className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
             {...props}
             >

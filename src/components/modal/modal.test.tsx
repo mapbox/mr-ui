@@ -1,415 +1,131 @@
 import React from 'react';
+import Modal from './modal';
+import { render, screen, fireEvent } from '@testing-library/react';
 
-/*
 describe('Modal', () => {
-  let testCase;
-  let wrapper;
-
-  describe(noDisplayCases.basicSmall.description, () => {
-    beforeEach(() => {
-      testCase = noDisplayCases.basicSmall;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('basic', () => {
+    const mockedOnExit = jest.fn();
+    const props = {
+      accessibleTitle: 'Small modal title',
+      size: 'small',
+      onExit: mockedOnExit,
+      children: <div>Content</div>,
+      primaryAction: {
+        text: 'Okay',
+        callback: jest.fn()
+      }
+    } as const;
 
     test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+      const { baseElement } = render(<Modal {...props} />);
+      expect(baseElement).toMatchSnapshot();
     });
 
     test('fires onExit', () => {
-      // find the button that triggers onExit method
-      wrapper.find({ 'data-test': 'modal-close' }).prop('onClick')();
-
-      expect(testCase.props.onExit).toHaveBeenCalledTimes(1);
+      render(<Modal {...props} />);
+      fireEvent.click(screen.getByTestId('modal-close'));
+      expect(mockedOnExit).toHaveBeenCalledTimes(1);
     });
 
     test('allowEventBubbling disables event trapping', () => {
-      expect(wrapper.find('EventTrap').length).toBe(1);
-      wrapper.setProps({ allowEventBubbling: true });
-      expect(wrapper.find('EventTrap').length).toBe(0);
+      const props = {
+        children: 'content',
+        accessibleTitle: 'Modal title'
+      };
+      const { rerender } = render(<Modal {...props} />);
+      expect(screen.getByTestId('event-trap')).toBeInTheDocument();
+      rerender(<Modal {...props } allowEventBubbling={true} />);
+      expect(screen.queryByTestId('event-trap')).not.toBeInTheDocument();
     });
   });
 
-  describe(noDisplayCases.basicLarge.description, () => {
-    beforeEach(() => {
-      testCase = noDisplayCases.basicLarge;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('basic, large', () => {
+    const mockedOnExit = jest.fn();
+    const props = {
+      accessibleTitle: 'Large modal title',
+      onExit: mockedOnExit,
+      children: <div>Large modal body</div>,
+      primaryAction: {
+        text: 'Okay',
+        callback: jest.fn(),
+        destructive: true
+      },
+      secondaryAction: {
+        text: 'Cancel',
+        callback: jest.fn()
+      },
+      tertiaryAction: {
+        text: 'Give up',
+        callback: jest.fn()
+      }
+    } as const;
 
     test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+      const { baseElement } = render(<Modal {...props} />);
+      expect(baseElement).toMatchSnapshot();
     });
 
     test('fires onExit', () => {
-      // find the button that triggers onExit method
-      wrapper.find({ 'data-test': 'modal-close' }).prop('onClick')();
-
-      expect(testCase.props.onExit).toHaveBeenCalledTimes(1);
+      render(<Modal {...props} />);
+      fireEvent.click(screen.getByTestId('modal-close'));
+      expect(mockedOnExit).toHaveBeenCalledTimes(1);
     });
   });
 
-  describe(noDisplayCases.basicAuto.description, () => {
-    beforeEach(() => {
-      testCase = noDisplayCases.basicAuto;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('basic, auto', () => {
+    const mockedOnExit = jest.fn();
+    const props = {
+      accessibleTitle: 'Auto modal title',
+      onExit: mockedOnExit,
+      size: 'auto',
+      children: <div>No fixed width on the modal container. But very tall.</div>
+    } as const;
 
     test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+      const { baseElement } = render(<Modal {...props} />);
+      expect(baseElement).toMatchSnapshot();
     });
 
     test('fires onExit', () => {
-      // find the button that triggers onExit method
-      wrapper.find({ 'data-test': 'modal-close' }).prop('onClick')();
-
-      expect(testCase.props.onExit).toHaveBeenCalledTimes(1);
+      render(<Modal {...props} />);
+      fireEvent.click(screen.getByTestId('modal-close'));
+      expect(mockedOnExit).toHaveBeenCalledTimes(1);
     });
   });
 
-  describe(noDisplayCases.allOptions.description, () => {
-    beforeEach(() => {
-      testCase = noDisplayCases.allOptions;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('all options', () => {
+    const mockedOnExit = jest.fn();
+    const props = {
+      accessibleTitle: 'All options',
+      padding: 'none',
+      size: 'small',
+      onExit: jest.fn(),
+      initialFocus: '#foo',
+      padded: false,
+      children: (
+        <div>
+          <div className="mb12">I am a message</div>
+          <button aria-label="press me" id="foo" className="btn">
+            press me
+          </button>
+        </div>
+      )
+    } as const;
 
     test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+      const { baseElement } = render(<Modal {...props} />);
+      expect(baseElement).toMatchSnapshot();
     });
   });
 
-  describe(noDisplayCases.optionalOnExit.description, () => {
-    beforeEach(() => {
-      testCase = noDisplayCases.optionalOnExit;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('optional on exit', () => {
+    const props = {
+      accessibleTitle: 'No onExit passed as prop',
+      size: 'small',
+      children: <div>You can't close me</div>
+    } as const;
 
-    test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
-
-    test('close button is not present', () => {
-      expect(wrapper.find({ 'data-test': 'modal-close' }).exists()).toBe(false);
-    });
+    render(<Modal {...props} />);
+    expect(screen.queryByTestId('modal-close')).not.toBeInTheDocument();
   });
 });
-*/
-
-/*
-// Wrapper to show and hide modal in the test-cases app.
-class ModalWrapper extends React.Component {
-  static propTypes = {
-    componentProps: PropTypes.object
-  };
-
-  state = {
-    modalOpen: false
-  };
-
-  toggleModal = () => {
-    this.setState((state) => ({ modalOpen: !state.modalOpen }));
-  };
-
-  render() {
-    const modal = this.state.modalOpen && (
-      <Modal {...this.props.componentProps} onExit={this.toggleModal} />
-    );
-    return (
-      <div>
-        <button
-          aria-label="Open modal"
-          type="button"
-          className="btn"
-          onClick={this.toggleModal}
-        >
-          Open modal
-        </button>
-        {modal}
-      </div>
-    );
-  }
-}
-
-class OuterModal extends React.Component {
-  state = {
-    modalOpen: false
-  };
-
-  toggleModal = () => {
-    this.setState((state) => ({ modalOpen: !state.modalOpen }));
-  };
-
-  render() {
-    const modal = this.state.modalOpen && (
-      <Modal
-        accessibleTitle="Small modal title"
-        size="small"
-        primaryAction={{
-          text: 'Okay outer',
-          callback: safeSpy()
-        }}
-        onExit={this.toggleModal}
-      >
-        <InnerModal />
-      </Modal>
-    );
-    return (
-      <div>
-        <button
-          aria-label="Open modal"
-          type="button"
-          className="btn"
-          onClick={this.toggleModal}
-        >
-          Open modal
-        </button>
-        {modal}
-      </div>
-    );
-  }
-}
-
-class InnerModal extends React.Component {
-  state = {
-    modalOpen: false
-  };
-
-  toggleModal = () => {
-    this.setState((state) => ({ modalOpen: !state.modalOpen }));
-  };
-
-  render() {
-    const modal = this.state.modalOpen && (
-      <Modal
-        alternateLocation="[data-gr-c-s-loaded]"
-        accessibleTitle="Small modal title"
-        size="small"
-        primaryAction={{
-          text: 'Okay inner',
-          callback: safeSpy()
-        }}
-        onExit={this.toggleModal}
-      >
-        <div>hi hello i am inner</div>
-      </Modal>
-    );
-    return (
-      <div>
-        <button
-          aria-label="Open modal"
-          type="button"
-          className="btn"
-          onClick={this.toggleModal}
-        >
-          Open modal
-        </button>
-        {modal}
-      </div>
-    );
-  }
-}
-
-testCases.nested = {
-  description: 'nested modals',
-  element: <OuterModal />
-};
-
-testCases.basicSmallDisplay = {
-  description: 'basic small, display only',
-  element: (
-    <ModalWrapper
-      componentProps={{
-        accessibleTitle: 'Small modal title',
-        size: 'small',
-        children: <div>Small modal body</div>,
-        primaryAction: {
-          text: 'Okay',
-          callback: safeSpy()
-        }
-      }}
-    />
-  )
-};
-
-testCases.basicLargeDisplay = {
-  description: 'basic large, display only',
-  element: (
-    <ModalWrapper
-      componentProps={{
-        accessibleTitle: 'Large modal title',
-        children: <div>Large modal body</div>,
-        primaryAction: {
-          text: 'Okay',
-          callback: safeSpy(),
-          destructive: true
-        },
-        secondaryAction: {
-          text: 'Cancel',
-          callback: safeSpy()
-        },
-        tertiaryAction: {
-          text: 'Give up',
-          callback: safeSpy()
-        }
-      }}
-    />
-  )
-};
-
-testCases.basicAutoDisplay = {
-  description: 'No fixed width, display only',
-  element: (
-    <ModalWrapper
-      componentProps={{
-        accessibleTitle: 'Auto modal title',
-        size: 'auto',
-        children: (
-          <div style={{ height: 1200 }}>
-            No fixed width on the modal container
-          </div>
-        )
-      }}
-    />
-  )
-};
-
-testCases.unpadded = {
-  description: 'unpadded modal',
-  element: (
-    <ModalWrapper
-      componentProps={{
-        accessibleTitle: 'Unpadded',
-        children: (
-          <div className="flex flex--stretch-cross">
-            <div className="w300 bg-gray-dark px24 py24 round-l color-white">
-              One side
-            </div>
-            <div className="px24 py24">The other side</div>
-          </div>
-        ),
-        padding: 'none'
-      }}
-    />
-  )
-};
-
-testCases.pausedFocusTrap = {
-  description: 'wandering focus',
-  element: (
-    <ModalWrapper
-      componentProps={{
-        accessibleTitle: 'Not focus-trapped',
-        size: 'small',
-        focusTrapPaused: true,
-        children: (
-          <div>
-            <p>You can tab out of this modal. Try it!</p>
-            <p>
-              <a href="#">Some link</a>
-            </p>
-          </div>
-        )
-      }}
-    />
-  )
-};
-
-// Automatable test cases
-
-const noDisplayCases = {};
-
-noDisplayCases.basicLarge = {
-  description: 'basic default',
-  component: Modal,
-  props: {
-    accessibleTitle: 'Large modal title',
-    onExit: safeSpy(),
-    children: <div>Large modal body</div>,
-    primaryAction: {
-      text: 'Okay',
-      callback: safeSpy(),
-      destructive: true
-    },
-    secondaryAction: {
-      text: 'Cancel',
-      callback: safeSpy()
-    },
-    tertiaryAction: {
-      text: 'Give up',
-      callback: safeSpy()
-    }
-  },
-  noDisplay: true
-};
-
-noDisplayCases.basicSmall = {
-  description: 'basic small',
-  component: Modal,
-  props: {
-    accessibleTitle: 'Small modal title',
-    onExit: safeSpy(),
-    size: 'small',
-    children: <div>Small modal body</div>,
-    primaryAction: {
-      text: 'Okay',
-      callback: safeSpy()
-    }
-  },
-  noDisplay: true
-};
-
-noDisplayCases.basicAuto = {
-  description: 'No fixed width, display only',
-  component: Modal,
-  props: {
-    accessibleTitle: 'Auto modal title',
-    onExit: safeSpy(),
-    size: 'auto',
-    children: <div>No fixed width on the modal container. But very tall.</div>
-  },
-  noDisplay: true
-};
-
-noDisplayCases.allOptions = {
-  description: 'all options',
-  component: Modal,
-  props: {
-    accessibleTitle: 'All options',
-    size: 'small',
-    onExit: safeSpy(),
-    initialFocus: '#foo',
-    padded: false,
-    children: (
-      <div>
-        <div className="mb12">I am a message</div>
-        <button aria-label="press me" id="foo" className="btn">
-          press me
-        </button>
-      </div>
-    )
-  },
-  noDisplay: true
-};
-
-noDisplayCases.optionalOnExit = {
-  description: 'no onExit',
-  component: Modal,
-  props: {
-    accessibleTitle: 'No onExit passed as prop',
-    size: 'small',
-    children: <div>You can't close me</div>
-  },
-  noDisplay: true
-};
-
-export { testCases, noDisplayCases };
-
-*/

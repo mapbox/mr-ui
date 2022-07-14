@@ -1,7 +1,6 @@
 import React from 'react';
 import ModalActions from './modal-actions';
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 describe('ModalActions', () => {
   describe('primary only', () => {
@@ -42,14 +41,14 @@ describe('ModalActions', () => {
     test('fires callbacks', () => {
       const mockedPrimaryCallback = jest.fn();
       const mockedSecondaryCallback = jest.fn();
-      const { queryAllByRole } = render(
+      render(
         <ModalActions
           primaryAction={{ text: 'Okay', callback: mockedPrimaryCallback }}
           secondaryAction={{ text: 'Cancel', callback: mockedSecondaryCallback }}
         />
       );
 
-      const actions = queryAllByRole('button');
+      const actions = screen.queryAllByRole('button');
 
       fireEvent.click(actions[0]);
       expect(mockedPrimaryCallback).toHaveBeenCalledTimes(1);
@@ -76,7 +75,7 @@ describe('ModalActions', () => {
       const mockedPrimaryCallback = jest.fn();
       const mockedSecondaryCallback = jest.fn();
       const mockedTertiaryCallback = jest.fn();
-      const { queryAllByRole } = render(
+      render(
         <ModalActions
           primaryAction={{ text: 'Okay', callback: mockedPrimaryCallback }}
           secondaryAction={{ text: 'Cancel', callback: mockedSecondaryCallback }}
@@ -84,7 +83,7 @@ describe('ModalActions', () => {
         />
       );
 
-      const actions = queryAllByRole('button');
+      const actions = screen.queryAllByRole('button');
 
       fireEvent.click(actions[0]);
       expect(mockedPrimaryCallback).toHaveBeenCalledTimes(1);
@@ -112,14 +111,14 @@ describe('ModalActions', () => {
     test('only renders primary', () => {
       const mockedPrimaryCallback = jest.fn();
       const mockedTertiaryCallback = jest.fn();
-      const { queryAllByRole } = render(
+      render(
         <ModalActions
           primaryAction={{ text: 'Okay', callback: mockedPrimaryCallback }}
           tertiaryAction={{ text: 'Exit', callback: mockedTertiaryCallback }}
         />
       );
 
-      const actions = queryAllByRole('button');
+      const actions = screen.queryAllByRole('button');
       expect(actions.length).toEqual(1);
     });
   });
