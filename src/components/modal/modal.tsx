@@ -6,6 +6,7 @@ import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import Tooltip from '../tooltip';
 import Icon from '../icon';
 import ModalActions from './modal-actions';
+import EventTrap from './event-trap';
 
 interface Props {
   children: ReactNode;
@@ -13,6 +14,7 @@ interface Props {
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
   onExit?: () => void;
+  allowEventBubbling?: boolean;
   initialFocus?: string;
   primaryAction?: {
     text: string;
@@ -45,6 +47,7 @@ export default function Modal({
   accessibleTitle,
   size = 'large',
   padding = 'large',
+  allowEventBubbling = false,
   initialFocus,
   primaryAction,
   secondaryAction,
@@ -104,15 +107,6 @@ export default function Modal({
     );
   });
 
-  // if (!props.allowEventBubbling) {
-  //   // stopPropagation prevents child modals from closing parent modals when nesting
-  //   return (
-  //     <EventTrap>
-  //       <AriaModal {...modalProps}>{dialogBody}</AriaModal>
-  //     </EventTrap>
-  //   );
-  // }
-
   const rootProps: {
     defaultOpen: true,
     onOpenChange?: () => void
@@ -162,6 +156,14 @@ export default function Modal({
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
   );
+
+  if (!allowEventBubbling) {
+    return (
+      <EventTrap>
+        {modal}
+      </EventTrap>
+    );
+  }
 
   return modal;
 }
