@@ -1,143 +1,126 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`primary and secondary renders as expected 1`] = `
-<div
-  className="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
->
-  <div
-    className="flex-child-no-shrink"
-  >
-    <Button
-      data-test="primary-modal-action"
-      onClick={[MockFunction]}
-      passthroughProps={
-        Object {
-          "aria-label": "Okay",
-        }
-      }
-      size="medium"
-      variant="primary"
+exports[`ModalActions primary and secondary renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
     >
-      Okay
-    </Button>
+      <div
+        class="flex-child-no-shrink"
+      >
+        <button
+          aria-label="Okay"
+          class="btn btn--blue round-full py6 px24 txt-s"
+          tabindex="0"
+          type="button"
+        >
+          Okay
+        </button>
+      </div>
+      <div
+        class="flex-child-no-shrink mr12"
+      >
+        <button
+          aria-label="Cancel"
+          class="btn btn--gray btn--stroke round-full py6 px24 txt-s"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
   </div>
-  <div
-    className="flex-child-no-shrink mr12"
-  >
-    <Button
-      data-test="secondary-modal-action"
-      onClick={[MockFunction]}
-      passthroughProps={
-        Object {
-          "aria-label": "Cancel",
-        }
-      }
-      size="medium"
-      variant="secondary"
-    >
-      Cancel
-    </Button>
-  </div>
-</div>
+</body>
 `;
 
-exports[`primary and tertiary does not render tertiary button, since secondary is not provided 1`] = `
-<div
-  className="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
->
-  <div
-    className="flex-child-no-shrink"
-  >
-    <Button
-      data-test="primary-modal-action"
-      onClick={[MockFunction]}
-      passthroughProps={
-        Object {
-          "aria-label": "Okay",
-        }
-      }
-      size="medium"
-      variant="primary"
+exports[`ModalActions primary and tertiary renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
     >
-      Okay
-    </Button>
+      <div
+        class="flex-child-no-shrink"
+      >
+        <button
+          aria-label="Okay"
+          class="btn btn--blue round-full py6 px24 txt-s"
+          tabindex="0"
+          type="button"
+        >
+          Okay
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+</body>
 `;
 
-exports[`primary only renders as expected 1`] = `
-<div
-  className="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
->
-  <div
-    className="flex-child-no-shrink"
-  >
-    <Button
-      data-test="primary-modal-action"
-      onClick={[MockFunction]}
-      passthroughProps={
-        Object {
-          "aria-label": "Okay",
-        }
-      }
-      size="medium"
-      variant="primary"
+exports[`ModalActions primary only renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
     >
-      Okay
-    </Button>
+      <div
+        class="flex-child-no-shrink"
+      >
+        <button
+          aria-label="Okay"
+          class="btn btn--blue round-full py6 px24 txt-s"
+          tabindex="0"
+          type="button"
+        >
+          Okay
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+</body>
 `;
 
-exports[`primary, secondary, tertiary renders as expected 1`] = `
-<div
-  className="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
->
-  <div
-    className="flex-child-no-shrink"
-  >
-    <Button
-      data-test="primary-modal-action"
-      onClick={[MockFunction]}
-      passthroughProps={
-        Object {
-          "aria-label": "Okay",
-        }
-      }
-      size="medium"
-      variant="primary"
+exports[`ModalActions primary, secondary and tertiary renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
     >
-      Okay
-    </Button>
+      <div
+        class="flex-child-no-shrink"
+      >
+        <button
+          aria-label="Okay"
+          class="btn btn--blue round-full py6 px24 txt-s"
+          tabindex="0"
+          type="button"
+        >
+          Okay
+        </button>
+      </div>
+      <div
+        class="flex-child-no-shrink mr12"
+      >
+        <button
+          aria-label="Cancel"
+          class="btn btn--gray btn--stroke round-full py6 px24 txt-s"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
+      <div
+        class="flex-child-no-shrink mr12"
+      >
+        <button
+          aria-label="tertiary"
+          class="btn btn--transparent link link--gray transition round-full py12 px24 txt-s"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
   </div>
-  <div
-    className="flex-child-no-shrink mr12"
-  >
-    <Button
-      data-test="secondary-modal-action"
-      onClick={[MockFunction]}
-      passthroughProps={
-        Object {
-          "aria-label": "Cancel",
-        }
-      }
-      size="medium"
-      variant="secondary"
-    >
-      Cancel
-    </Button>
-  </div>
-  <div
-    className="flex-child-grow flex-child-no-shrink mr12"
-  >
-    <Button
-      aria-label="Give up"
-      data-test="tertiary-modal-action"
-      onClick={[MockFunction]}
-      variant="tertiary"
-    >
-      Give up
-    </Button>
-  </div>
-</div>
+</body>
 `;

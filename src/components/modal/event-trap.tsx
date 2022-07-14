@@ -7,7 +7,7 @@ interface Props {
   children: ReactNode;
 }
 
-function EventTrap({ children }): ReactElement {
+function EventTrap({ children }: Props): ReactElement {
   return (
     <div
       onClick={trap}

@@ -78,7 +78,10 @@ export default function ModalActions({
           size="medium"
           onClick={primaryAction.callback}
           data-test="primary-modal-action"
-          passthroughProps={{ 'aria-label': primaryAction.text }}
+          passthroughProps={{
+            tabIndex: 0,
+            'aria-label': primaryAction.text
+          }}
         >
           {primaryAction.text}
         </Button>
