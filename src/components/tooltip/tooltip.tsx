@@ -65,6 +65,11 @@ export default function Tooltip({
     let child = Children.only(children);
 
     if (isValidElement(child) && child.type === 'button') {
+
+      // Following the instructions provided by Radix on handling disabled
+      // button elements: Since disabled buttons don't fire events, you need to:
+      // - Render the Trigger as `span`.
+      // - Ensure the `button` has no `pointerEvents`.
       if (child.props.disabled) {
         child = (
           <span {...props} ref={ref} tabIndex={0}>
@@ -72,7 +77,10 @@ export default function Tooltip({
           </span>
         );
       } else {
-        child = React.cloneElement(child, { ...props, ref }); 
+        // In order to attach the prop and ref instances of Trigger to the
+        // button child element, we clone it and pass `props` + `ref` as
+        // arguments.
+        child = React.cloneElement(child, { ...props, ref });
       }
     } else {
       child = (
@@ -145,7 +153,7 @@ Tooltip.propTypes = {
    */
   padding: PropTypes.oneOf(['small', 'none']),
   /**
-   * Optionally provide a description of the tooltip content. By default, 
+   * Optionally provide a description of the tooltip content. By default,
    * screenreaders will announce the content inside the component.
    */
   ariaLabel: PropTypes.string
