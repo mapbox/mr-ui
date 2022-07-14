@@ -14,6 +14,7 @@ export default function Example(): ReactElement {
         onExit={() => setModal(false)}
         primaryAction={{ text: 'Okay', callback: () => setModal(false) }}
         secondaryAction={{ text: 'Not sure', callback: () => setModal(false) }}
+        tertiaryAction={{ text: 'Really not sure', callback: () => setModal(false) }}
       >
         <div className="prose">
           <h4>Animals</h4>

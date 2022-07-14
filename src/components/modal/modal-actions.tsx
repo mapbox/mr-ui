@@ -53,7 +53,7 @@ export default function ModalActions({
     }
 
     return (
-      <div className="flex-child-grow flex-child-no-shrink mr12">
+      <div className="flex-child-no-shrink mr12">
         <Button
           aria-label={tertiaryAction.text}
           variant="tertiary"

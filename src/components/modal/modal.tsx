@@ -1,7 +1,6 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode, forwardRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import Tooltip from '../tooltip';
@@ -14,6 +13,7 @@ interface Props {
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
   onExit?: () => void;
+  initialFocus?: string;
   primaryAction?: {
     text: string;
     callback: () => void;
@@ -45,6 +45,7 @@ export default function Modal({
   accessibleTitle,
   size = 'large',
   padding = 'large',
+  initialFocus,
   primaryAction,
   secondaryAction,
   tertiaryAction,
@@ -67,15 +68,6 @@ export default function Modal({
     );
   }
 
-  let closeButton = null;
-  if (onExit) {
-    closeButton = (
-      <Tooltip content="Close">
-        <Icon name="close" />
-      </Tooltip>
-    );
-  }
-
   let widthClass = '';
   if (size === 'small') {
     widthClass = 'wmax360';
@@ -83,33 +75,34 @@ export default function Modal({
     widthClass = 'wmax600';
   }
 
-  const contentClasses = classnames(
-    `fixed top w-11/12 my12 my60-mm ${widthClass} bg-white round`,
-    { 'px36 py36': padding === 'large' }
-  );
-
   // const contentClasses = 'fixed top px12 py12 px60-mm py60-mm z1'
-  const overlayClasses = 'fixed bg-darken50';
-
-  const modalProps = {
-    titleText: accessibleTitle,
-    // TODO serve an alert dialog
-    alert
+  const overlayProps = {
+    className: 'fixed top bottom left right bg-darken50',
+    style: {
+      display: 'grid',
+      placeItems: 'start center',
+      'overflow-y': 'auto'
+    }
   };
 
-  // if (onExit) {
-  //   modalProps.onExit = onExit;
-  // }
-
-  // if (props.initialFocus) {
-  //   modalProps.initialFocus = props.initialFocus;
-  // } else {
-  //   modalProps.focusDialog = true;
-  // }
-
-  // if (props.focusTrapPaused) {
-  //   modalProps.focusTrapPaused = true;
-  // }
+  const Close = forwardRef<HTMLButtonElement>((props, ref): ReactElement => {
+    return (
+      <DialogPrimitive.Close asChild>
+        <Tooltip content="Close">
+          <button
+            ref={ref}
+            aria-label="Close"
+            onClick={onExit}
+            type="button"
+            className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+            {...props}
+            >
+            <Icon name="close" />
+          </button>
+        </Tooltip>
+      </DialogPrimitive.Close>
+    );
+  });
 
   // if (!props.allowEventBubbling) {
   //   // stopPropagation prevents child modals from closing parent modals when nesting
@@ -120,25 +113,57 @@ export default function Modal({
   //   );
   // }
 
-  return (
-    <DialogPrimitive.Root onOpenChange={onExit} defaultOpen={true}>
+  const rootProps: {
+    defaultOpen: true,
+    onOpenChange?: () => void
+  } = {
+    defaultOpen: true
+  };
+
+  if (onExit) {
+    rootProps.onOpenChange = onExit
+  }
+
+  const contentProps: {
+    className: string,
+    onOpenAutoFocus?: (e) => void
+  } = {
+    className: classnames(
+      `relative w-11/12 my12 my60-mm ${widthClass} bg-white round`,
+      { 'px36 py36': padding === 'large' }
+    )
+  }
+
+  if (initialFocus) {
+    contentProps.onOpenAutoFocus = e => {
+      const el: HTMLElement | null = document.querySelector(initialFocus);
+      if (el !== null) {
+        e.preventDefault();
+        el.focus();
+      }
+    }
+  }
+
+  const modal = (
+    <DialogPrimitive.Root {...rootProps}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay style={{ inset: '0px' }} className={overlayClasses} />
-        <DialogPrimitive.Content style={{ left: '50%', transform: 'translateX(-50%)' }} className={contentClasses}>
-          <VisuallyHidden.Root>
-            <DialogPrimitive.Title>
-              {accessibleTitle}
-            </DialogPrimitive.Title>
-          </VisuallyHidden.Root>
-          {children}
-          {renderActions()}
-          <DialogPrimitive.Close className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right" asChild aria-label="Close">
-            {closeButton}
-          </DialogPrimitive.Close>
-        </DialogPrimitive.Content>
+        <DialogPrimitive.Overlay { ...overlayProps}>
+          <DialogPrimitive.Content { ...contentProps}>
+            <VisuallyHidden.Root>
+              <DialogPrimitive.Title>
+                {accessibleTitle}
+              </DialogPrimitive.Title>
+            </VisuallyHidden.Root>
+            {children}
+            {renderActions()}
+            {onExit && <Close/>}
+          </DialogPrimitive.Content>
+        </DialogPrimitive.Overlay>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
   );
+
+  return modal;
 }
 
 Modal.propTypes = {
@@ -179,18 +204,6 @@ Modal.propTypes = {
    * `'large'` or `'none'`.
    */
   padding: PropTypes.oneOf(['large', 'none']),
-  /**
-   * If `true`, this will allow interaction with elements outside of the
-   * modal container. You normally don't want to set this, but it can be
-   * useful for nesting different components that are displaced to other
-   * parts of the DOM.
-   */
-  focusTrapPaused: PropTypes.bool,
-  /**
-   * If `true`, the modal will have the accessibility props of an alert modal.
-   * (Only affects screen readers.)
-   */
-  alert: PropTypes.bool,
   /**
    * The modal's primary action. If this is provided, an encouraging
    * button will be rendered at the bottom of the modal.

@@ -72,7 +72,7 @@ export default function Tooltip({
       // - Ensure the `button` has no `pointerEvents`.
       if (child.props.disabled) {
         child = (
-          <span {...props} ref={ref} tabIndex={0}>
+          <span {...props} ref={ref} className='inline-block' tabIndex={0}>
             {child}
           </span>
         );
