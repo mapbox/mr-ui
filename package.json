@@ -85,7 +85,7 @@
     "prismjs": "^1.15.0",
     "react": "^16.14.0",
     "react-app-rewired": "^2.2.1",
-    "react-docgen": "^2.21.0",
+    "react-docgen": "^5.4.3",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.0",
     "react-scripts": "5.0.1",
