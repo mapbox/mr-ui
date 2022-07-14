@@ -3,15 +3,21 @@ Changelog
 
 ## HEAD
 
-- [breaking] Rewrites `src/components/tooltip` as a functional component.and uses [`TooltipPrimitive ` from Radix](https://www.radix-ui.com/docs/primitives/components/tooltip#custom-apis). 🚨 **Dropped props**:
-  - `triggerprops`. This is no longer needed for Radix and will need to be considered when porting tooltips using the older version.
-  - `respondsToClick` which triggers a tooltip on Click. Radix doesn't support it as it believes a tooltip shouldn't have this native behavior and I think we can get away without it - encouraging consumers to use a popup instead.
-  - `alignment` has values `start` and `end` and **dropped** `top`, `bottom`, `left`, `right`.
-  - `block` I'm not seeing strong usage of this property and I believe its a tradeoff we can make
-  - `testId` Passing custom data attributes to the Radix tooltip isn't supported. There are other good ways to test the presence of tooltip contents like: `screen.getByRole('tooltip')` or by wrapping a child prop in a data test attribute.
-- [breaking] Rewrites `src/components/control-switch` as a functional component.and uses [`swtich` from Radix](https://radix-website-git-release.modulz-deploys.com/docs/primitives/components/switch). 🚨 **Dropped props**:
-    - `optional`: Additional text like "optional" should be applied by the consumer using the label prop.
-    - `initialValue` and `validator` which were previously provided by the form component.
+- [breaking] Rewrites `src/components/modal` as a functional component.and uses [`DialogPrimitive ` from Radix](https://www.radix-ui.com/docs/primitives/components/dialog#custom-apis). 🚨 **Prop changes**:
+  - Dropped `alert`
+  - Dropped `focusTrapPaused` which isn't exposed as an option from Radix
+- [breaking] Rewrites `src/components/buttton` as a functional component. 🚨 **Prop changes**:
+  - Dropped `component` which accepted a component or a string equally a DOM value.
+  - Renamed `discouraging` to `tertiary`
+- [breaking] Rewrites `src/components/tooltip` as a functional component.and uses [`TooltipPrimitive ` from Radix](https://www.radix-ui.com/docs/primitives/components/tooltip#custom-apis). 🚨 **Prop changes**:
+  - Dropped `triggerprops`. This is no longer needed for Radix and will need to be considered when porting tooltips using the older version.
+  - Dropped `respondsToClick` which triggers a tooltip on Click. Radix doesn't support it as it believes a tooltip shouldn't have this native behavior and I think we can get away without it - encouraging consumers to use a popup instead.
+  - Dropped `alignment` has values `start` and `end` and **dropped** `top`, `bottom`, `left`, `right`.
+  - Dropped `block` I'm not seeing strong usage of this property and I believe its a tradeoff we can make
+  - Dropped `testId` Passing custom data attributes to the Radix tooltip isn't supported. There are other good ways to test the presence of tooltip contents like: `screen.getByRole('tooltip')` or by wrapping a child prop in a data test attribute.
+- [breaking] Rewrites `src/components/control-switch` as a functional component.and uses [`swtich` from Radix](https://radix-website-git-release.modulz-deploys.com/docs/primitives/components/switch). 🚨 **Prop changes**:
+    - Dropped `optional`: Additional text like "optional" should be applied by the consumer using the label prop.
+    - Dropped `initialValue` and `validator` which were previously provided by the form component.
 - [breaking] Rewrites `src/components/icon` as a functional component and uses [`accessible-icon` from Radix](https://www.radix-ui.com/docs/primitives/utilities/accessible-icon) as an internal primitive.
 - [breaking] Rewrites `src/components/control-wrapper` as a functional component.
 - [feature] Introduces TypeScript to the source code and converts:
