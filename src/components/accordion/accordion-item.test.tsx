@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { testCases } from './uncontrolled-accordion-test-cases';
+import AccordionItem from './accordion-item';
 
-describe('Uncontrolled Accordion', () => {
+describe('AccordionItem', () => {
+/*
   let testCase;
   let wrapper;
 
@@ -22,8 +22,6 @@ describe('Uncontrolled Accordion', () => {
       wrapper.find('button').first().simulate('click');
       expect(testCase.props.onToggle).toHaveBeenCalledTimes(1);
       expect(testCase.props.onToggle).toHaveBeenCalledWith('one');
-      const item = wrapper.find('AccordionItem').first();
-      expect(item.props()).toHaveProperty('active', true);
     });
   });
 
@@ -59,20 +57,54 @@ describe('Uncontrolled Accordion', () => {
 
     test('extra props works', () => {
       expect(testCase.props).toHaveProperty('onToggle');
-      expect(testCase.props).toHaveProperty('initiallyActiveItem');
 
       // Optional props passed to items
-      const props = wrapper.find('AccordionItem').first().props();
-      expect(props).toHaveProperty('active', true);
-      expect(props).toHaveProperty('themeItem');
-      expect(props).toHaveProperty('themeItemHeader');
-      expect(props).toHaveProperty('themeItemBody');
-    });
-
-    test('onToggle gets called', () => {
-      wrapper.find('AccordionItem').first().props().onToggle('one');
-      expect(testCase.props.onToggle).toHaveBeenCalledTimes(1);
-      expect(testCase.props.onToggle).toHaveBeenCalledWith('one');
+      expect(testCase.props).toHaveProperty('active', true);
+      expect(testCase.props).toHaveProperty('themeItem');
+      expect(testCase.props).toHaveProperty('themeItemHeader');
+      expect(testCase.props).toHaveProperty('themeItemBody');
     });
   });
+  */
 });
+
+/*
+testCases.basic = {
+  description: 'basic',
+  component: AccordionItem,
+  props: {
+    onToggle: safeSpy(),
+    id: 'one',
+    header: () => <span>one</span>,
+    body: 'First body'
+  }
+};
+
+testCases.disabled = {
+  description: 'disabled',
+  component: AccordionItem,
+  props: {
+    onToggle: safeSpy(),
+    id: 'one',
+    header: () => <span>one</span>,
+    body: 'First body',
+    disabled: true
+  }
+};
+
+testCases.allOptions = {
+  description: 'all options',
+  component: AccordionItem,
+  props: {
+    onToggle: safeSpy(),
+    id: 'one',
+    active: true,
+    header: () => <span>one</span>,
+    body: 'First body',
+    themeItem: 'bg-red-faint border-b border--red-dark',
+    themeItemHeader:
+      'bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6',
+    themeItemBody: 'py6 px6 txt-l bg-red-light'
+  }
+};
+*/
