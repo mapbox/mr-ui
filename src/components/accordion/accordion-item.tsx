@@ -8,7 +8,6 @@ interface Props {
   body: ReactNode;
   disabled?: boolean;
   active?: boolean;
-  onToggle: (id: string) => void;
   themeItem?: string;
   themeItemBody?: string;
   themeItemHeader?: string;
@@ -17,7 +16,6 @@ interface Props {
 
 export default function AccordionItem({
   id,
-  onToggle,
   header,
   body,
   active = false,
@@ -36,8 +34,7 @@ export default function AccordionItem({
   }
 
   return (
-    /*
-    <AccordionPrimitive.Item className={themeItem} value={id}>
+    <AccordionPrimitive.Item data-assembly-focus-within className={themeItem} value={id}>
       <AccordionPrimitive.Trigger className={themeHeader}>
         {header(active)}
       </AccordionPrimitive.Trigger>
@@ -45,43 +42,5 @@ export default function AccordionItem({
         {active && <div className={themeItemBody}>{body}</div>}
       </AccordionPrimitive.Content>
     </AccordionPrimitive.Item>
-    */
-
-
-
-    <div className={themeItem}>
-      <button
-        aria-label="Toggle"
-        className={buttonClasses}
-        disabled={disabled}
-        data-test={id}
-        onClick={() => onToggle(id)}
-      >
-        {header(active)}
-      </button>
-    </div>
   );
 }
-
-AccordionItem.propTypes = {
-  /** Identifying value for accordion item. */
-  id: PropTypes.string.isRequired,
-  /** Callback when an accordion header item is clicked. */
-  onToggle: PropTypes.func.isRequired,
-  /** Function that accepts an `active` boolean argument and returns JSX. */
-  header: PropTypes.func.isRequired,
-  /** Contents that shown when the accordion is active. */
-  body: PropTypes.node.isRequired,
-  /** Determines if the state of the accordion item is active. */
-  active: PropTypes.bool,
-  /** Determines if the state of the accordion item is disabled. */
-  disabled: PropTypes.bool,
-  /** CSS classes to apply to the accordion item container. */
-  themeItem: PropTypes.string,
-  /** CSS classes to apply to the accordion header. */
-  themeItemHeader: PropTypes.string,
-  /** CSS classes to apply to the accordion header when `disabled` is true/ */
-  themeItemHeaderDisabled: PropTypes.string,
-  /** CSS classes to apply to the accordion body. */
-  themeItemBody: PropTypes.string
-};

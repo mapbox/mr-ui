@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AccordionItem from './accordion-item';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
-interface Item = {
+interface Item {
   id: string;
   header: (active: boolean) => ReactElement;
   body: ReactNode;
@@ -26,16 +26,15 @@ export default function Accordion({
   activeItem,
   themeItem,
   themeItemBody,
-  themeItemHeader
+  themeItemHeader,
+  themeItemHeaderDisabled
 }: Props): ReactElement {
-
   const renderItems = (item: Item) => {
     return (
       <AccordionItem
         {...item}
         key={item.id}
         active={item.id === activeItem}
-        onToggle={onToggle}
         themeItem={themeItem}
         themeItemHeader={themeItemHeader}
         themeItemBody={themeItemBody}
@@ -45,9 +44,9 @@ export default function Accordion({
   };
 
   return (
-    <>
+    <AccordionPrimitive.Root type="single" value={activeItem} onValueChange={onToggle} collapsible>
       {items.map(renderItems)}
-    </>
+    </AccordionPrimitive.Root>
   );
 }
 

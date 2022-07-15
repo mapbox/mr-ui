@@ -150,3 +150,7 @@
   background-color: var(--darken75);
 }
 
+[data-assembly-focus-within]:focus-within {
+  box-shadow: 0 0 0 3px rgb(137 199 216 / 65%);
+}
+
