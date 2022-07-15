@@ -91,26 +91,6 @@ export default function Modal({
     }
   };
 
-  const Close = forwardRef<HTMLButtonElement>((props, ref): ReactElement => {
-    return (
-      <DialogPrimitive.Close asChild>
-        <Tooltip content="Close">
-          <button
-            ref={ref}
-            aria-label="Close"
-            onClick={onExit}
-            type="button"
-            data-testid="modal-close"
-            className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
-            {...props}
-            >
-            <Icon name="close" />
-          </button>
-        </Tooltip>
-      </DialogPrimitive.Close>
-    );
-  });
-
   const rootProps: {
     defaultOpen: true,
     onOpenChange?: () => void
@@ -154,7 +134,17 @@ export default function Modal({
             </VisuallyHidden.Root>
             {children}
             {renderActions()}
-            {onExit && <Close/>}
+            {onExit && <Tooltip content="Close">
+              <button
+                onClick={onExit}
+                type="button"
+                data-testid="modal-close"
+                aria-label="Close"
+                className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+                >
+                <Icon name="close" />
+              </button>
+            </Tooltip>}
           </DialogPrimitive.Content>
         </DialogPrimitive.Overlay>
       </DialogPrimitive.Portal>
