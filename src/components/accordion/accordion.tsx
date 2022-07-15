@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import AccordionItem from './accordion-item';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
 interface Item {
@@ -26,20 +26,31 @@ export default function Accordion({
   activeItem,
   themeItem,
   themeItemBody,
-  themeItemHeader,
-  themeItemHeaderDisabled
+  themeItemHeader = 'txt-s txt-bold txt-truncate link link--gray py6',
+  themeItemHeaderDisabled = 'color-gray-light'
 }: Props): ReactElement {
   const renderItems = (item: Item) => {
+    const { id, header, body, disabled } = item;
+    const active = id === activeItem;
+    const themeHeader = classnames(`w-full ${themeItemHeader}`, {
+      [`cursor-default ${themeItemHeaderDisabled}`]: disabled,
+      'cursor-pointer': !disabled
+    });
+
     return (
-      <AccordionItem
-        {...item}
-        key={item.id}
-        active={item.id === activeItem}
-        themeItem={themeItem}
-        themeItemHeader={themeItemHeader}
-        themeItemBody={themeItemBody}
-        themeItemHeaderDisabled={themeItemHeaderDisabled}
-      />
+      <AccordionPrimitive.Item
+        data-assembly-focus-within
+        className={themeItem}
+        key={id}
+        value={id}
+      >
+        <AccordionPrimitive.Trigger disabled={disabled} data-testid="accordion-trigger" className={themeHeader}>
+          {header(active)}
+        </AccordionPrimitive.Trigger>
+        <AccordionPrimitive.Content>
+          {active && <div className={themeItemBody}>{body}</div>}
+        </AccordionPrimitive.Content>
+      </AccordionPrimitive.Item>
     );
   };
 
@@ -71,6 +82,8 @@ Accordion.propTypes = {
   themeItem: PropTypes.string,
   /** CSS classes to apply to the accordion header */
   themeItemHeader: PropTypes.string,
+  /** CSS classes to apply to the disabled accordion header */
+  themeItemHeaderDisabled: PropTypes.string,
   /** CSS classes to apply to the accordion body */
   themeItemBody: PropTypes.string
 };
