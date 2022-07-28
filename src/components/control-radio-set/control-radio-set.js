@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
-import ControlLegend from '../control-legend';
 import ControlWrapper from '../control-wrapper';
 
 export default class ControlRadioSet extends React.Component {
@@ -33,14 +32,10 @@ export default class ControlRadioSet extends React.Component {
      * - The `id` prop.
      */
     onChange: PropTypes.func.isRequired,
-    /** Legend label for the control. */
-    legend: PropTypes.string,
     /** The control's value. Can be an empty string to indicate no value. */
     value: PropTypes.string,
-    /** If provided, "(optional)" is appended to the value of the legend element. */
+    /** If provided, aria-required=true is added to the control element. */
     optional: PropTypes.bool,
-    /** Additional content inserted alongside the legend element. */
-    aside: PropTypes.node,
     /** When set, auto focus attributes are applied to the input that matches the `value` prop passed. */
     autoFocus: PropTypes.bool,
     /** A validation error to display beneath the control. */
@@ -50,9 +45,7 @@ export default class ControlRadioSet extends React.Component {
     /** Classes to apply to the radio element */
     themeRadio: PropTypes.string,
     /** Classes to apply to the control wrapper */
-    themeControlWrapper: PropTypes.string,
-    /** Classes to apply to the legend element */
-    themeLegend: PropTypes.string
+    themeControlWrapper: PropTypes.string
   };
 
   onChange = (e) => {
@@ -71,16 +64,13 @@ export default class ControlRadioSet extends React.Component {
     const {
       id,
       value,
-      legend,
       options,
       optional,
-      aside,
       autoFocus,
       validationError,
       themeRadioContainer,
       themeRadio,
-      themeControlWrapper,
-      themeLegend
+      themeControlWrapper
     } = this.props;
 
     const groupProps = {
@@ -122,18 +112,7 @@ export default class ControlRadioSet extends React.Component {
         id={id}
         validationError={validationError}
       >
-        <fieldset>
-          {legend && (
-            <ControlLegend
-              text={legend}
-              id={id}
-              aside={aside}
-              optional={optional}
-              themeLegend={themeLegend}
-            />
-          )}
-          <div {...groupProps}>{options.map(renderOptions)}</div>
-        </fieldset>
+        <div {...groupProps}>{options.map(renderOptions)}</div>
       </ControlWrapper>
     );
   }
