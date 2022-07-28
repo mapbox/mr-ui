@@ -62,6 +62,11 @@ export default function Accordion({
 }
 
 Accordion.propTypes = {
+  /** An array of items that represents each tab. Each entry supports:
+   * 1. `id` Identifying value for accordion item.
+   * 2. `header` Contents that are always shown.
+   * 3. `body` Contents that are shown when the accorion is active.
+   * 4. `disabled` Flag to disable the clickability of an accorion item (optional). */
   items: PropTypes.arrayOf(
     PropTypes.shape({
       /** Identifying value for accordion item. */
