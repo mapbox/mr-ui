@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, forwardRef, CSSProperties } from 'react';
+import React, { ReactElement, ReactNode, CSSProperties } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
