@@ -45,8 +45,6 @@
     "debounce": "^1.1.0",
     "focus-trap": "^3.0.0",
     "hoverintent": "^2.0.0",
-    "install": "^0.13.0",
-    "npm": "^8.13.2",
     "os-key": "^1.0.0",
     "prefix": "^1.0.0",
     "react-displace": "^2.3.0",
@@ -99,6 +97,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": ["**/*.ts?(x)"],
+        "rules": {
+          "no-unused-vars": [2]
+        }
+      }
     ]
   },
   "browserslist": {

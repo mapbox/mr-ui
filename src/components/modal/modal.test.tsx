@@ -94,7 +94,6 @@ describe('Modal', () => {
   });
 
   describe('all options', () => {
-    const mockedOnExit = jest.fn();
     const props = {
       accessibleTitle: 'All options',
       padding: 'none',
