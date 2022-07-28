@@ -271,7 +271,6 @@ exports[`ControlFile all controls renders 1`] = `
             initialValue={Array []}
             label="Choose tools"
             onChange={[Function]}
-            optional={false}
             options={
               Array [
                 Object {

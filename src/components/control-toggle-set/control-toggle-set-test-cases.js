@@ -9,7 +9,6 @@ testCases.basic = {
   component: ControlToggleSet,
   props: {
     id: 'testinput',
-    legend: 'Basic',
     options: [
       { label: 'Toggle 1', value: 'Toggle value 1' },
       { label: 'Toggle 2', value: 'Toggle value 2' }
@@ -23,7 +22,6 @@ testCases.disabled = {
   component: ControlToggleSet,
   props: {
     id: 'testinput',
-    legend: 'Disabled',
     theme: {
       toggleGroup: 'bg-gray-faint'
     },
@@ -49,13 +47,10 @@ testCases.allOptions = {
     value: 'Toggle value 1',
     autoFocus: true,
     optional: true,
-    legend: 'All options',
-    aside: <span>Aside text</span>,
     themeToggleGroup: 'bg-red border border--2 border--red',
     themeToggleContainer: 'w-full',
     themeToggle: 'toggle--white toggle--active-red',
     themeControlWrapper: 'bg-red-light px12 py12',
-    themeLegend: 'color-white',
     onChange: safeSpy()
   }
 };
