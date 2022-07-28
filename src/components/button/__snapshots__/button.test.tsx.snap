@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-hidden="true"
+      aria-label="primary"
+      class="btn btn--blue round-full py12 px24 txt-s"
+      disabled=""
+      type="button"
+    >
+      Oops
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Div styled like a medium destructive button with some elementAttributes renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="Example save button"
+      class="btn btn--red round-full py6 px24 txt-s"
+      data-test="foo"
+      role="button"
+      type="button"
+    >
+      Save
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Full width, alternate color renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="Example full width, purple button"
+      class="btn btn--purple round-full py12 w-full block txt-s"
+      type="button"
+    >
+      Here we are
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link with outline and icon text, extra padding renders as expected 1`] = `
+<body>
+  <div>
+    <a
+      aria-label="primary"
+      class="btn btn--blue btn--stroke round-full py12 px36 txt-s"
+      href="#"
+      role="button"
+    >
+      <span
+        class="flex flex--center-cross"
+      >
+        <span
+          class="mr6"
+        >
+          <svg
+            aria-hidden="true"
+            class="events-none icon"
+            data-testid="icon-bug"
+            focusable="false"
+            style="width: 18px; height: 18px;"
+          >
+            <use
+              xlink:href="#icon-bug"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
+          <span
+            style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+          >
+            bug
+          </span>
+        </span>
+        <span>
+          Go do things
+        </span>
+      </span>
+    </a>
+  </div>
+</body>
+`;
+
+exports[`appPrimary renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="appPrimary"
+      class="btn btn--gray round h24 px6 py3 txt-xs"
+      type="button"
+    >
+      appPrimary
+    </button>
+  </div>
+</body>
+`;
+
+exports[`appSecondary renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="appSecondary"
+      class="btn btn--gray btn--stroke round h24 px6 py3 txt-xs"
+      type="button"
+    >
+      appSecondary
+    </button>
+  </div>
+</body>
+`;
+
+exports[`destructive renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="destructive"
+      class="btn btn--red round-full py12 px24 txt-s"
+      type="button"
+    >
+      destructive
+    </button>
+  </div>
+</body>
+`;
+
+exports[`primary renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="primary"
+      class="btn btn--blue round-full py12 px24 txt-s"
+      role="button"
+      type="button"
+    >
+      Primary
+    </button>
+  </div>
+</body>
+`;
+
+exports[`secondary renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="secondary"
+      class="btn btn--gray btn--stroke round-full py12 px24 txt-s"
+      type="button"
+    >
+      secondary
+    </button>
+  </div>
+</body>
+`;
+
+exports[`tertiary renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="tertiary"
+      class="btn btn--transparent link link--gray transition round-full py12 px24 txt-s"
+      type="button"
+    >
+      tertiary
+    </button>
+  </div>
+</body>
+`;

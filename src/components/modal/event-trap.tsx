@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
-const trap = (e) => e.stopPropagation();
+const trap = e => e.stopPropagation();
 
-function EventTrap({ children }) {
+interface Props {
+  children: ReactNode;
+}
+
+function EventTrap({ children }: Props): ReactElement {
   return (
     <div
+      data-testid="event-trap"
       onClick={trap}
       onContextMenu={trap}
       onDoubleClick={trap}
