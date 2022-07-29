@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import Icon from '../icon';
-import ControlLegend from '../control-legend';
 import ControlWrapper from '../control-wrapper';
 
 export default class ControlCheckboxSet extends React.Component {
@@ -34,14 +33,8 @@ export default class ControlCheckboxSet extends React.Component {
      * - The `id` prop.
      */
     onChange: PropTypes.func.isRequired,
-    /** Legend label for the control. */
-    legend: PropTypes.string,
     /** Accepts an array of strings, where each string matches the value property of an entry in the options prop. */
     value: PropTypes.array,
-    /** If provided, "(optional)" is appended to the value of the legend element. */
-    optional: PropTypes.bool,
-    /** Additional content inserted alongside the legend element. */
-    aside: PropTypes.node,
     /** Icon to use for the checkbox active style. Must match an icon name available in Assembly. */
     icon: PropTypes.string,
     /** When `true`, autofocus attributes are applied to the input that matches the `value` prop passed. */
@@ -53,14 +46,11 @@ export default class ControlCheckboxSet extends React.Component {
     /** Classes to apply to the checkbox element. */
     themeCheckbox: PropTypes.string,
     /** Classes to apply to the control container. */
-    themeControlWrapper: PropTypes.string,
-    /** Classes to apply to the legend element. */
-    themeLegend: PropTypes.string
+    themeControlWrapper: PropTypes.string
   };
 
   static defaultProps = {
     value: [],
-    optional: false,
     autoFocus: false,
     icon: 'check',
     themeCheckboxContainer: 'txt-s block mb6 flex',
@@ -86,17 +76,13 @@ export default class ControlCheckboxSet extends React.Component {
     const {
       id,
       value,
-      legend,
       options,
-      optional,
-      aside,
       autoFocus,
       icon,
       validationError,
       themeCheckboxContainer,
       themeCheckbox,
-      themeControlWrapper,
-      themeLegend
+      themeControlWrapper
     } = this.props;
 
     const groupProps = {
@@ -141,18 +127,7 @@ export default class ControlCheckboxSet extends React.Component {
         id={id}
         validationError={validationError}
       >
-        <fieldset>
-          {legend && (
-            <ControlLegend
-              text={legend}
-              id={id}
-              aside={aside}
-              optional={optional}
-              themeLegend={themeLegend}
-            />
-          )}
-          <div {...groupProps}>{options.map(renderOptions)}</div>
-        </fieldset>
+        <div {...groupProps}>{options.map(renderOptions)}</div>
       </ControlWrapper>
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
-import ControlLegend from '../control-legend';
 import ControlWrapper from '../control-wrapper';
 
 export default class ControlToggleSet extends React.Component {
@@ -17,14 +16,10 @@ export default class ControlToggleSet extends React.Component {
         value: PropTypes.string.isRequired
       })
     ).isRequired,
-    /** Legend name */
-    legend: PropTypes.string,
     /** input value */
     value: PropTypes.string,
-    /** If provided, "(optional)" is appended to the value of the legend element. */
+    /** If provided, aria-required=true is added to the control element. */
     optional: PropTypes.bool,
-    /** Additional content inserted alongside the legend element. */
-    aside: PropTypes.node,
     /** Add auto focus attributes. */
     autoFocus: PropTypes.bool,
     /** If provided, the value of this propery displays as an error message. */
@@ -36,9 +31,7 @@ export default class ControlToggleSet extends React.Component {
     /** Assembly classes to apply to the toggle element */
     themeToggle: PropTypes.string,
     /** Assembly classes to apply to the control wrapper */
-    themeControlWrapper: PropTypes.string,
-    /** Assembly classes to apply to the legend element */
-    themeLegend: PropTypes.string
+    themeControlWrapper: PropTypes.string
   };
 
   onChange = (e) => {
@@ -58,17 +51,14 @@ export default class ControlToggleSet extends React.Component {
     const {
       id,
       value,
-      legend,
       options,
       optional,
-      aside,
       autoFocus,
       validationError,
       themeToggleGroup,
       themeToggleContainer,
       themeToggle,
-      themeControlWrapper,
-      themeLegend
+      themeControlWrapper
     } = this.props;
 
     const groupProps = {
@@ -110,18 +100,7 @@ export default class ControlToggleSet extends React.Component {
         id={id}
         validationError={validationError}
       >
-        <fieldset>
-          {legend && (
-            <ControlLegend
-              text={legend}
-              id={id}
-              aside={aside}
-              optional={optional}
-              themeLegend={themeLegend}
-            />
-          )}
-          <div {...groupProps}>{options.map(renderOptions)}</div>
-        </fieldset>
+        <div {...groupProps}>{options.map(renderOptions)}</div>
       </ControlWrapper>
     );
   }

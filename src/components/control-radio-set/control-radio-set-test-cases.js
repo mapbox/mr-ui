@@ -9,7 +9,6 @@ testCases.basic = {
   component: ControlRadioSet,
   props: {
     id: 'testinput',
-    legend: 'Basic',
     options: [
       { label: 'Option 1', value: 'Option value 1' },
       { label: 'Option 2', value: 'Option value 2' }
@@ -23,7 +22,6 @@ testCases.disabled = {
   component: ControlRadioSet,
   props: {
     id: 'testinput',
-    legend: 'Disabled',
     options: [
       { label: 'Option 1', value: 'Option value 1' },
       { label: 'Option 2', value: 'Option value 2', disabled: true }
@@ -46,12 +44,9 @@ testCases.allOptions = {
     value: 'Option value 1',
     autoFocus: true,
     optional: true,
-    legend: 'All options',
-    aside: <span>Aside text</span>,
     themeRadioContainer: 'w-full',
     themeRadio: 'radio--white radio--active-red mr6',
     themeControlWrapper: 'bg-red-light',
-    themeLegend: 'color-white',
     onChange: safeSpy()
   }
 };
