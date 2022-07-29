@@ -9,7 +9,7 @@ right-align the tabs.
 import React, { ReactElement, useState } from 'react';
 import Tabs from '../tabs';
 
-const tabs = [
+const items = [
   {
     id: 'colors'
   },
@@ -22,18 +22,14 @@ const tabs = [
 ];
 
 export default function Example(): ReactElement {
-  const [activeTab, setActiveTab] = useState('sizes');
-
-  const onTabChange = (id: string) => {
-    setActiveTab(id);
-  };
+  const [active, setActive] = useState('sizes');
 
   return (
     <div className="px12 py12 bg-gray-faint">
       <Tabs
-        tabs={tabs}
-        activeTab={activeTab}
-        onTabChange={onTabChange}
+        items={items}
+        active={active}
+        onChange={(id: string) => setActive(id)}
         size="small"
         overlapBorder={true}
         bold={false}

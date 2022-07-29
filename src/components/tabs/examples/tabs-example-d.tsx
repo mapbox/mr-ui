@@ -25,18 +25,15 @@ const items = [
 ];
 
 export default function Example(): ReactElement {
-  const [activeTab, setActiveTab] = useState('Clouds');
-
-  const onTabChange = (id: string) => {
-    setActiveTab(id);
-  };
+  const [active, setActive] = useState('Clouds');
 
   return (
     <Tabs
-      tabs={items}
-      activeTab={activeTab}
-      onTabChange={onTabChange}
+      items={items}
+      active={active}
+      onChange={(id: string) => setActive(id)}
       size="large"
+      themeTabsContainer="py12"
       activeColor="pink"
       inactiveColor="purple"
       hoverColor="purple-dark"

@@ -4,7 +4,7 @@ Pass themeTabsContainer css classes
 import React, { ReactElement, useState } from 'react';
 import Tabs from '../tabs';
 
-const tabs = [
+const items = [
   {
     label: 'Breakfast',
     id: 'bf',
@@ -41,17 +41,13 @@ const tabs = [
 ];
 
 export default function Example(): ReactElement {
-  const [activeTab, setActiveTab] = useState('bf');
-
-  const onTabChange = (id: string) => {
-    setActiveTab(id);
-  };
+  const [active, setActive] = useState('bf');
 
   return (
     <Tabs
-      tabs={tabs}
-      activeTab={activeTab}
-      onTabChange={onTabChange}
+      items={items}
+      active={active}
+      onChange={(id: string) => setActive(id)}
       overlapBorder={true}
       themeTabsContainer={"border-b border--gray-light"}
     />

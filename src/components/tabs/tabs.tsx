@@ -11,9 +11,9 @@ import { TabItemProps, SizeType } from './types';
  */
 
 interface Props {
-  tabs: Array<TabItemProps>;
-  activeTab?: string;
-  onTabChange?: (a: string) => void;
+  items: Array<TabItemProps>;
+  active: string;
+  onChange?: (a: string) => void;
   size?: SizeType;
   overlapBorder?: boolean;
   inactiveColor?: string;
@@ -30,9 +30,9 @@ export default function Tabs({
   hoverColor = 'blue',
   overlapBorder = false,
   bold = true,
-  tabs,
-  activeTab,
-  onTabChange,
+  items,
+  active,
+  onChange,
   themeTabsContainer = ""
 }: Props): ReactElement {
   const small = size === SIZE_SMALL;
@@ -44,7 +44,7 @@ export default function Tabs({
     'txt-xs': small,
   });
 
-  const itemEls = tabs.map((item, index) => {
+  const itemEls = items.map((item, index) => {
     const first = index === 0;
     const layoutClasses = classnames({
       ml12: !first && small,
@@ -55,7 +55,7 @@ export default function Tabs({
       <RadixTabs.Trigger aria-label={item.label} data-testid={`button-tab-${item.id}`} value={item.id} key={item.id} disabled={item.disabled}>
         <div key={item.id} className={layoutClasses}>
           <TabItem
-            active={activeTab === item.id}
+            active={active === item.id}
             size={size}
             inactiveColor={inactiveColor}
             activeColor={activeColor}
@@ -69,7 +69,7 @@ export default function Tabs({
     );
   });
 
-  const tabContents = tabs.map((item) => {
+  const tabContents = items.map((item) => {
     return (
       <RadixTabs.TabsContent value={item.id} key={item.id}>
         {item.content}
@@ -78,7 +78,7 @@ export default function Tabs({
   });
 
   return (
-    <RadixTabs.Root onValueChange={onTabChange} value={activeTab}>
+    <RadixTabs.Root onValueChange={onChange} value={active}>
       <div className={containerClasses} data-testid="tabs-wrapper">
         <RadixTabs.List>
           {itemEls}
@@ -92,6 +92,11 @@ export default function Tabs({
 
 Tabs.propTypes = {
   /**
+   * The ID of the active item. Value must correspond with an `id` property
+   * in the `items` array.
+   */
+  active: PropTypes.string.isRequired,
+  /**
    * Each tab is an object with the following properties:
    * - `id` (required): A string ID.
    * - `label`: Text. A button will be automatically created based on the label. if label is not provided the id will serve as a label
@@ -99,7 +104,7 @@ Tabs.propTypes = {
    * - `content`: React node for generating the tab content. 
    *    If provided, the tab content will automatically be rendered when changing tabs. Tab content does not have any styling applied by by default
    */
-  tabs: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string,
@@ -108,15 +113,10 @@ Tabs.propTypes = {
     })
   ).isRequired,
   /**
-   * The ID of the active item. Value must correspond with an `id` property
-   * in the `items` array.
-   */
-  activeTab: PropTypes.string.isRequired,
-  /**
    * A callback that will be invoked when an item is clicked.
    * It will receive the ID of the clicked item and the click `event` itself as arguments.
    */
-  onTabChange: PropTypes.func,
+  onChange: PropTypes.func,
   /**
    * Three sizes: "small", "medium", or "large".
    */
