@@ -33,7 +33,7 @@ export default function Example(): ReactElement {
       active={active}
       onChange={(id: string) => setActive(id)}
       size="large"
-      themeTabsContainer="py12"
+      themeTabsContainer="mb12"
       activeColor="pink"
       inactiveColor="purple"
       hoverColor="purple-dark"

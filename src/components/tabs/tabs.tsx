@@ -52,18 +52,16 @@ export default function Tabs({
       'inline-block': true
     });
     return (
-      <RadixTabs.Trigger aria-label={item.label} data-testid={`button-tab-${item.id}`} value={item.id} key={item.id} disabled={item.disabled}>
-        <div key={item.id} className={layoutClasses}>
-          <TabItem
-            active={active === item.id}
-            size={size}
-            inactiveColor={inactiveColor}
-            activeColor={activeColor}
-            hoverColor={hoverColor}
-            overlapBorder={overlapBorder}
-            {...item}
-          />
-        </div>
+      <RadixTabs.Trigger aria-label={item.label} className={layoutClasses} data-testid={`button-tab-${item.id}`} value={item.id} key={item.id} disabled={item.disabled}>
+        <TabItem
+          active={active === item.id}
+          size={size}
+          inactiveColor={inactiveColor}
+          activeColor={activeColor}
+          hoverColor={hoverColor}
+          overlapBorder={overlapBorder}
+          {...item}
+        />
       </RadixTabs.Trigger>
 
     );

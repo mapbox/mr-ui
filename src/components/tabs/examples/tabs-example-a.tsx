@@ -11,7 +11,7 @@ export default function Example(): ReactElement {
     <Tabs
       onChange={(id: string) => setActive(id)}
       active={active}
-      themeTabsContainer="py12"
+      themeTabsContainer="mb12"
       items={[
         { id: 'one', label: 'Tab 1 title', content: "Tab 1 content" },
         { id: 'two', label: 'Tab 2 title', content: "Tab 2 content" },

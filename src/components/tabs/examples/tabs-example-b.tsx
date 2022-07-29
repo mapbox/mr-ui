@@ -49,7 +49,7 @@ export default function Example(): ReactElement {
       active={active}
       onChange={(id: string) => setActive(id)}
       overlapBorder={true}
-      themeTabsContainer={"border-b border--gray-light"}
+      themeTabsContainer={"mb12 border-b border--gray-light"}
     />
   );
 }
