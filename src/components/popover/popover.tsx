@@ -1,11 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import createFocusTrap from 'focus-trap';
-import tabbable from 'tabbable';
-import isElementScrolledIntoView from './is-element-scrolled-into-view';
-import PopoverPositioner from './popover-positioner';
-import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { getTheme } from '../utils/styles';
 
@@ -15,7 +10,6 @@ let popoverCounter = 0; // Incremented on creation
 
 
 interface Props {
-  getAnchorElement: HTMLElement;
   children: ReactNode;
   padding?: 'medium' | 'small' | 'none';
   coloring?: 'light' | 'dark' | 'warning' | 'error';
@@ -98,12 +92,15 @@ export default function Popover({
   );
 }
 
+export function PopoverAnchor({ children }) {
+  return (
+    <>
+      {children}
+    </>
+  );
+}
+
 Popover.propTypes = {
-  /**
-   * A function that returns the DOM node to which this Popover should be
-   * anchored. `placement` and `alignment` values are related to this anchor.
-   */
-  getAnchorElement: PropTypes.func.isRequired,
   /**
    * The content of the popover.
    */

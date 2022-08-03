@@ -41,6 +41,7 @@
     "@radix-ui/react-label": "^1.0.0",
     "@radix-ui/react-portal": "^1.0.0",
     "@radix-ui/react-slider": "^1.0.0",
+    "@radix-ui/react-popover": "^1.0.0",
     "@radix-ui/react-switch": "^0.1.5",
     "@radix-ui/react-tabs": "^0.1.5",
     "@radix-ui/react-tooltip": "^0.1.7",
