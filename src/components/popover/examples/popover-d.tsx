@@ -2,36 +2,31 @@
 Error popover.
 */
 import React, { ReactElement, useState } from 'react';
-import Popover, { PopoverAnchor } from '../popover';
-import Button from '../../button';
+import Popover from '../popover';
 
 export default function Example(): ReactElement {
   const [open, setOpen] = useState(false);
 
   const renderPopover = (
-    <Popover
-      coloring="error"
-      onExit={() => setOpen(false)}
-      alignment="center"
-    >
+    <>
       This is a error popover.
-    </Popover>
+    </>
   );
 
   return (
-    <>
-      <PopoverAnchor>
-        <Button
-          onClick={() => setOpen(open ? false : true)}
-          size="medium"
-          passthroughProps={{
-            'aria-label': 'Toggle popover'
-          }}
-        >
-          Toggle popover
-        </Button>
-      </PopoverAnchor>
-      {open && renderPopover}
-    </>
+    <Popover
+      active={open}
+      content={renderPopover}
+      coloring="error"
+      onExit={() => setOpen(false)}
+      alignment="start"
+    >
+      <button
+        onClick={() => setOpen(open ? false : true)}
+        className="btn btn--red"
+      >
+        Toggle popover
+      </button>
+    </Popover>
   );
 }

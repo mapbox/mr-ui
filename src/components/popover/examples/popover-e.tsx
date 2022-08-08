@@ -3,7 +3,7 @@ Popover with non-static height.
 */
 
 import React, { ReactElement, useState } from 'react';
-import Popover, { PopoverAnchor } from '../popover';
+import Popover from '../popover';
 import Button from '../../button';
 
 function ExampleInner(): ReactElement {
@@ -36,29 +36,23 @@ export default function Example(): ReactElement {
   const [open, setOpen] = useState(false);
 
   const renderPopover = (
-    <Popover
-      onExit={() => setOpen(false)}
-      placement="top"
-      alignment="left"
-    >
-      <ExampleInner />
-    </Popover>
+    <ExampleInner />
   );
 
   return (
-    <>
-      <PopoverAnchor>
-        <Button
-          onClick={() => setOpen(open ? false : true)}
-          size="medium"
-          passthroughProps={{
-            'aria-label': 'Toggle popover'
-          }}
-        >
-          Toggle popover
-        </Button>
-      </PopoverAnchor>
-      {open && renderPopover}
-    </>
+    <Popover
+      active={open}
+      content={renderPopover}
+      onExit={() => setOpen(false)}
+      placement="top"
+      alignment="start"
+    >
+      <button
+        onClick={() => setOpen(open ? false : true)}
+        className="btn"
+      >
+        Toggle popover
+      </button>
+    </Popover>
   );
 }
