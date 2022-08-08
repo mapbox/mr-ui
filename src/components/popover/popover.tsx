@@ -74,8 +74,8 @@ export default function Popover({
     }
 
     return (
-      <PopoverPrimitive.Trigger>
-        {children}
+      <PopoverPrimitive.Trigger asChild>
+        {child}
       </PopoverPrimitive.Trigger>
     );
   });
