@@ -1,37 +1,20 @@
 /*
 Control alert with callback to toggle warning themed alert in view.
 */
-import React from 'react';
+import React, { useState } from 'react';
 import ControlAlert from '../control-alert';
 import Icon from '../../icon';
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showAlert: true
-    };
-  }
+export default function Example() {
+  const [showAlert, setShowAlert] = useState(true);
 
-  toggleAlert = () => {
-    const { showAlert } = this.state;
-
-    this.setState({
-      showAlert: !showAlert
-    });
-  };
-
-  renderShowAlertButton() {
-    const { showAlert } = this.state;
-
-    if (showAlert) return null;
-
+  const renderShowAlertButton = () => {
     return (
       <div className="flex flex--end-main mr18 mb18">
         <button
           aria-label="Show alert again"
           className="color-gray-dark color-blue-on-hover"
-          onClick={this.toggleAlert}
+          onClick={() => setShowAlert(true)}
           type="button"
         >
           <span className="inline-block txt-s">
@@ -42,26 +25,20 @@ export default class Example extends React.Component {
     );
   }
 
-  renderAlert() {
-    const { showAlert } = this.state;
-
-    if (!showAlert) return null;
-
+  const renderAlert = () => {
     return (
       <div className="animation-fade-in animation--speed-1 txt-s">
-        <ControlAlert onButtonClick={this.toggleAlert} theme="warning">
+        <ControlAlert onButtonClick={() => setShowAlert(false)} theme="warning">
           <p className="mx6">The yellow power ranger is the best.</p>
         </ControlAlert>
       </div>
     );
   }
 
-  render() {
-    return (
-      <div>
-        {this.renderShowAlertButton()}
-        {this.renderAlert()}
-      </div>
-    );
-  }
+  return (
+    <div>
+      {!showAlert && renderShowAlertButton()}
+      {showAlert && renderAlert()}
+    </div>
+  );
 }
