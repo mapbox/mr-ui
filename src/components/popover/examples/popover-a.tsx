@@ -20,7 +20,7 @@ export default function Example(): ReactElement {
       onExit={() => setOpen(false)}
       alignment="center"
     >
-      <button className="btn" onClick={() => setOpen(open ? false : true)}>
+      <button className="btn" onClick={() => setOpen(!open)}>
         Toggle popover
       </button>
     </Popover>

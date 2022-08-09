@@ -22,7 +22,7 @@ export default function Example(): ReactElement {
       placement="left"
     >
       <button
-        onClick={() => setOpen(open ? false : true)}
+        onClick={() => setOpen(!open)}
         className="btn btn--orange"
       >
         Toggle popover

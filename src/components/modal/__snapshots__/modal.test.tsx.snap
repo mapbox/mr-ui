@@ -339,11 +339,11 @@ exports[`Modal basic, auto renders 1`] = `
           >
             <svg
               fill="#fff"
-              height="5"
+              height="6"
               preserveAspectRatio="none"
               style="display: block;"
               viewBox="0 0 30 10"
-              width="10"
+              width="6"
             >
               <polygon
                 points="0,0 30,0 15,10"
@@ -365,11 +365,11 @@ exports[`Modal basic, auto renders 1`] = `
             >
               <svg
                 fill="#fff"
-                height="5"
+                height="6"
                 preserveAspectRatio="none"
                 style="display: block;"
                 viewBox="0 0 30 10"
-                width="10"
+                width="6"
               >
                 <polygon
                   points="0,0 30,0 15,10"

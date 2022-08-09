@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, forwardRef, isValidElement, Children } from 'react';
+import React, { ReactElement, ReactNode, forwardRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
@@ -57,28 +57,23 @@ export default function Popover({
     }
   );
 
-  const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
-    let child = Children.only(children);
-
-    if (isValidElement(child) && child.type === 'button') {
-      // In order to attach the prop and ref instances of Trigger to the
-      // button child element, we clone it and pass `props` + `ref` as
-      // arguments.
-      child = React.cloneElement(child, { ...props, ref });
-    } else {
-      child = (
-        <button {...props} ref={ref}>
-          {child}
-        </button>
-      );
-    }
-
+  const Anchor = forwardRef<HTMLButtonElement>((props, ref) => {
     return (
-      <PopoverPrimitive.Trigger asChild>
-        {child}
-      </PopoverPrimitive.Trigger>
+      <PopoverPrimitive.Anchor asChild>
+        <span {...props} ref={ref}>
+          {children}
+        </span>
+      </PopoverPrimitive.Anchor>
     );
   });
+
+  const getContent = () => {
+    if (typeof content === 'function') {
+      return content();
+    } else {
+      return content;
+    }
+  }
 
   return (
     <PopoverPrimitive.Root open={active}>
@@ -95,19 +90,24 @@ export default function Popover({
         avoidCollisions={allowPlacementAxisChange}
         {...passthroughProps}
       >
-        {content}
+        {getContent()}
         {hasPointer && <PopoverPrimitive.Arrow width={6} height={6} fill={fill} />}
       </PopoverPrimitive.Content>
-      <Trigger />
+      <Anchor />
     </PopoverPrimitive.Root>
   );
 }
 
 Popover.propTypes = {
   /**
-   * The content of the popover.
+   * The trigger eleemnt.
    */
   children: PropTypes.node.isRequired,
+  /**
+   * The popover content. This can either be a string, valid JSX, or a function
+   * returning either.
+   */
+  content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   /**
    * Preferred placement of the popover in relation to the anchor.
    * Adjusted according to available space.

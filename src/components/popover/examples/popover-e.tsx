@@ -40,19 +40,22 @@ export default function Example(): ReactElement {
   );
 
   return (
-    <Popover
-      active={open}
-      content={renderPopover}
-      onExit={() => setOpen(false)}
-      placement="top"
-      alignment="start"
-    >
+    <div className="flex flex--space-between-main">
       <button
-        onClick={() => setOpen(open ? false : true)}
+        onClick={() => setOpen(!open)}
         className="btn"
       >
-        Toggle popover
+        Trigger here
       </button>
-    </Popover>
+      <Popover
+        active={open}
+        content={renderPopover}
+        onExit={() => setOpen(false)}
+        placement="top"
+        alignment="start"
+      >
+        Anchor here
+      </Popover>
+    </div>
   );
 }

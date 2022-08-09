@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Popover from './popover';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+function PopoverTest() {
+  const [active, setActive] = useState(false);
+  return (
+    <Popover active={active} content="A tooltip">
+      <button data-testid="trigger" onClick={() => setActive(true)}>trigger</button>
+    </Popover>
+  )
+}
 
 describe('Popover', () => {
-  /*
-  let testCase;
-  let wrapper;
+  test('renders', async () => {
+    render(<PopoverTest />);
 
+    await userEvent.click(screen.getByTestId("trigger"));
+
+    await waitFor(() => {
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+    });
+  });
+
+  /*
   describe(noDisplayCases.basic.description, () => {
+
+  test('renders', async () => {
+    render(<Tooltip content="A tooltip"><span data-testid="trigger">trigger</span></Tooltip>);
+    await userEvent.hover(screen.getByTestId("trigger"));
+
+    await waitFor(() => {
+      expect(screen.getByRole('tooltip')).toBeInTheDocument();
+    });
+  });
+
+
+
     beforeEach(() => {
       testCase = noDisplayCases.basic;
       wrapper = shallow(
