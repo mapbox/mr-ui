@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlFile all options renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative bg-red-light"
+    >
+      <div
+        class="flex flex--center-cross overflow-hidden"
+      >
+        <div
+          class="flex-child-grow"
+        >
+          <button
+            aria-hidden="true"
+            class="bg-red-faint py6 px12 round-full link--red txt-s relative"
+            type="button"
+          >
+            <span
+              class="txt-truncate"
+            >
+              <span
+                class="flex flex--center-cross"
+              >
+                <span
+                  class="mr6"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="events-none icon"
+                    data-testid="icon-harddrive"
+                    focusable="false"
+                    style="width: 18px; height: 18px;"
+                  >
+                    <use
+                      xlink:href="#icon-harddrive"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    />
+                  </svg>
+                  <span
+                    style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                  >
+                    harddrive
+                  </span>
+                </span>
+                <span>
+                  Select an image
+                </span>
+              </span>
+            </span>
+          </button>
+          <input
+            accept=".jpg, .jpeg, .png"
+            aria-invalid="true"
+            aria-required="false"
+            class="absolute opacity0 top left"
+            data-testid="testinput-3-input"
+            id="testinput-3"
+            multiple=""
+            name="testinput-3"
+            style="height: 0px; width: 0px; z-index: -1;"
+            tabindex="-1"
+            type="file"
+          />
+        </div>
+      </div>
+      <div
+        role="alert"
+      >
+        <div
+          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          data-testid="testinput-3-error"
+          id="testinput-3-error"
+        >
+          oh no!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlFile basic renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        class="flex flex--center-cross overflow-hidden"
+      >
+        <div
+          class="flex-child-grow"
+        >
+          <button
+            aria-hidden="true"
+            class="btn relative"
+            type="button"
+          >
+            <span
+              class="txt-truncate"
+            >
+              <span
+                class="flex flex--center-cross"
+              >
+                <span
+                  class="mr6"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="events-none icon"
+                    data-testid="icon-harddrive"
+                    focusable="false"
+                    style="width: 18px; height: 18px;"
+                  >
+                    <use
+                      xlink:href="#icon-harddrive"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    />
+                  </svg>
+                  <span
+                    style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                  >
+                    harddrive
+                  </span>
+                </span>
+                <span>
+                  Select a file
+                </span>
+              </span>
+            </span>
+          </button>
+          <input
+            aria-required="true"
+            class="absolute opacity0 top left"
+            data-testid="testinput-1-input"
+            id="testinput-1"
+            name="testinput-1"
+            style="height: 0px; width: 0px; z-index: -1;"
+            tabindex="-1"
+            type="file"
+          />
+        </div>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlFile disabled renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        class="flex flex--center-cross overflow-hidden"
+      >
+        <div
+          class="flex-child-grow"
+        >
+          <button
+            aria-hidden="true"
+            class="btn relative"
+            disabled=""
+            type="button"
+          >
+            <span
+              class="txt-truncate"
+            >
+              <span
+                class="flex flex--center-cross"
+              >
+                <span
+                  class="mr6"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="events-none icon"
+                    data-testid="icon-harddrive"
+                    focusable="false"
+                    style="width: 18px; height: 18px;"
+                  >
+                    <use
+                      xlink:href="#icon-harddrive"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    />
+                  </svg>
+                  <span
+                    style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                  >
+                    harddrive
+                  </span>
+                </span>
+                <span>
+                  Select a file
+                </span>
+              </span>
+            </span>
+          </button>
+          <input
+            aria-required="true"
+            class="absolute opacity0 top left"
+            data-testid="testinput-1-input"
+            disabled=""
+            id="testinput-1"
+            name="testinput-1"
+            style="height: 0px; width: 0px; z-index: -1;"
+            tabindex="-1"
+            type="file"
+          />
+        </div>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;

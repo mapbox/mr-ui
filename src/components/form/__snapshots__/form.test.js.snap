@@ -147,15 +147,11 @@ exports[`ControlFile all controls renders 1`] = `
           className="col w-full w-1/4-mm"
         >
           <ControlFile
-            disabled={false}
             id="upload"
-            initialDisplayValue="Select a file"
             label="Upload a picture"
             multiple={true}
             onChange={[Function]}
             optional={true}
-            themeControlFile="btn align-l bg-gray-faint py6 px12 round-full w-full txt-s link--gray txt-normal"
-            themeControlFileClear=""
             validationError=""
             value=""
           />
