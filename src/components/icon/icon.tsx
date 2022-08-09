@@ -9,7 +9,7 @@ interface Props {
   passthroughProps?: {
     style?: CSSProperties
   };
-  size?: number;
+  size?: number | string;
 }
 
 /**
