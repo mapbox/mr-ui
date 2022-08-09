@@ -3,7 +3,7 @@ import Popover from './popover';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-function PopoverTest() {
+const PopoverTest = () => {
   const [active, setActive] = useState(false);
   return (
     <Popover active={active} content="A tooltip">
