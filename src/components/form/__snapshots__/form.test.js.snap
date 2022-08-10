@@ -325,11 +325,7 @@ exports[`ControlFile all controls renders 1`] = `
         className="mt6"
       >
         <FormSubmit
-          disabled={false}
-          label="Submit"
           onSubmit={[Function]}
-          testId=""
-          themeButton="btn px24 py12 round-full txt-s"
         />
       </div>
     </div>
@@ -381,11 +377,7 @@ exports[`ControlFile basic renders 1`] = `
         className="mt6"
       >
         <FormSubmit
-          disabled={false}
-          label="Submit"
           onSubmit={[Function]}
-          testId=""
-          themeButton="btn px24 py12 round-full txt-s"
         />
       </div>
     </div>
@@ -420,11 +412,7 @@ exports[`ControlFile onCancel renders 1`] = `
         className="mt6"
       >
         <FormSubmit
-          disabled={false}
-          label="Submit"
           onSubmit={[Function]}
-          testId=""
-          themeButton="btn px24 py12 round-full txt-s"
         />
       </div>
     </div>
