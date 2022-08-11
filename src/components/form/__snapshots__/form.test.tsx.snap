@@ -1,0 +1,857 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form all controls renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative"
+    >
+      <form
+        novalidate=""
+      >
+        <div
+          class="grid grid--gut24"
+        >
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="relative "
+            >
+              <div>
+                <label
+                  class="inline-block txt-s txt-bold mb6"
+                  for="firstName"
+                >
+                  First name
+                   
+                </label>
+              </div>
+              <input
+                aria-required="true"
+                class="input"
+                data-testid="firstName-input"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter your first name"
+                type="text"
+                value=""
+              />
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="relative "
+            >
+              <div>
+                <label
+                  class="inline-block txt-s txt-bold mb6"
+                  for="lastName"
+                >
+                  Last name
+                   
+                </label>
+              </div>
+              <input
+                aria-required="true"
+                class="input"
+                data-testid="lastName-input"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter your last name"
+                type="text"
+                value=""
+              />
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="relative "
+            >
+              <div>
+                <label
+                  class="inline-block txt-s txt-bold mb6"
+                  for="email"
+                >
+                  email
+                   
+                </label>
+              </div>
+              <input
+                aria-required="true"
+                class="input"
+                data-testid="email-input"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                type="email"
+                value=""
+              />
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="relative "
+            >
+              <div>
+                <label
+                  class="inline-block txt-s txt-bold mb6"
+                  for="url"
+                >
+                  url
+                   
+                </label>
+              </div>
+              <input
+                aria-required="true"
+                class="input"
+                data-testid="url-input"
+                id="url"
+                name="url"
+                placeholder="Enter your URL"
+                type="url"
+                value=""
+              />
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex--center-main w-full mb12 py12 round bg-gray-light"
+        >
+          <div
+            class="relative "
+          >
+            <div
+              aria-required="true"
+              class="toggle-group round-full border border--2 border--gray-faint bg-gray-faint"
+              data-test="spiritAnimal-input"
+              id="spiritAnimal"
+              role="radiogroup"
+            >
+              <label
+                class="toggle-container "
+              >
+                <input
+                  name="spiritAnimal"
+                  type="radio"
+                  value="humpback-whale"
+                />
+                <div
+                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                >
+                  Humpback whale
+                </div>
+              </label>
+              <label
+                class="toggle-container "
+              >
+                <input
+                  name="spiritAnimal"
+                  type="radio"
+                  value="rufous hummingbird"
+                />
+                <div
+                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                >
+                  Rufous Hummingbird
+                </div>
+              </label>
+              <label
+                class="toggle-container "
+              >
+                <input
+                  checked=""
+                  name="spiritAnimal"
+                  type="radio"
+                  value="sea-otter"
+                />
+                <div
+                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                >
+                  Sea Otter
+                </div>
+              </label>
+              <label
+                class="toggle-container "
+              >
+                <input
+                  name="spiritAnimal"
+                  type="radio"
+                  value="snowshoe-hare"
+                />
+                <div
+                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                >
+                  Snowshoe Hare
+                </div>
+              </label>
+            </div>
+            <div
+              role="alert"
+            />
+          </div>
+        </div>
+        <div
+          class="grid grid--gut24"
+        >
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="relative "
+            >
+              <div
+                class="flex flex--center-cross overflow-hidden"
+              >
+                <div
+                  class="flex-child-grow"
+                >
+                  <button
+                    aria-hidden="true"
+                    class="btn relative"
+                    type="button"
+                  >
+                    <span
+                      class="txt-truncate"
+                    >
+                      <span
+                        class="flex flex--center-cross"
+                      >
+                        <span
+                          class="mr6"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="events-none icon"
+                            data-testid="icon-harddrive"
+                            focusable="false"
+                            style="width: 18px; height: 18px;"
+                          >
+                            <use
+                              xlink:href="#icon-harddrive"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                            />
+                          </svg>
+                          <span
+                            style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                          >
+                            harddrive
+                          </span>
+                        </span>
+                        <span>
+                          Select a file
+                        </span>
+                      </span>
+                    </span>
+                  </button>
+                  <input
+                    aria-required="false"
+                    class="absolute opacity0 top left"
+                    data-testid="upload-input"
+                    id="upload"
+                    label="Upload a picture"
+                    multiple=""
+                    name="upload"
+                    style="height: 0px; width: 0px; z-index: -1;"
+                    tabindex="-1"
+                    type="file"
+                  />
+                </div>
+              </div>
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="mb12"
+            >
+              <div
+                class="relative "
+              >
+                <div>
+                  <label
+                    class="inline-block txt-s txt-bold mb6"
+                    for="area"
+                  >
+                    Choose size of area
+                     
+                  </label>
+                </div>
+                <div
+                  class="range "
+                >
+                  <input
+                    aria-required="true"
+                    data-test="area-input"
+                    id="area"
+                    max="100"
+                    min="10"
+                    name="area"
+                    step="10"
+                    type="range"
+                    value="10"
+                  />
+                </div>
+                <div
+                  role="alert"
+                />
+              </div>
+            </div>
+            <div
+              class="relative "
+            >
+              <fieldset
+                class="flex flex--center-cross"
+              >
+                <label
+                  class="switch-container "
+                  for="active"
+                >
+                  <button
+                    aria-checked="false"
+                    class="switch switch--s-label"
+                    data-state="unchecked"
+                    data-testid="active-switch"
+                    id="active"
+                    role="switch"
+                    type="button"
+                    value="on"
+                  >
+                    <span
+                      data-state="unchecked"
+                    />
+                  </button>
+                  <input
+                    aria-hidden="true"
+                    style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+                    tabindex="-1"
+                    type="checkbox"
+                    value="on"
+                  />
+                  <span
+                    class="txt-s ml6"
+                  >
+                    Animal active?
+                  </span>
+                </label>
+              </fieldset>
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="mb12"
+            >
+              <div
+                class="relative "
+              >
+                <div>
+                  <label
+                    class="inline-block txt-s txt-bold mb6"
+                    for="level"
+                  >
+                    Choose level
+                     
+                  </label>
+                </div>
+                <div
+                  class="select-container "
+                >
+                  <select
+                    aria-required="true"
+                    class="select "
+                    data-test="level-select"
+                    id="level"
+                  >
+                    <option
+                      value="1"
+                    >
+                      One
+                    </option>
+                    <option
+                      value="2"
+                    >
+                      Two
+                    </option>
+                    <option
+                      value="3"
+                    >
+                      Three
+                    </option>
+                    <option
+                      value="4"
+                    >
+                      Four
+                    </option>
+                    <option
+                      value="5"
+                    >
+                      Five
+                    </option>
+                  </select>
+                  <div
+                    class="select-arrow"
+                  />
+                </div>
+                <div
+                  role="alert"
+                />
+              </div>
+            </div>
+            <div
+              class="relative "
+            >
+              <div
+                aria-required="true"
+                data-test="difficulty-input"
+                id="difficulty"
+                role="radiogroup"
+              >
+                <label
+                  class="radio-container txt-s block mb6 flex"
+                >
+                  <input
+                    checked=""
+                    name="difficulty"
+                    type="radio"
+                    value="beginner"
+                  />
+                  <div
+                    class="mr6 radio--blue radio--s-label inline-block  radio"
+                  />
+                  Beginner
+                </label>
+                <label
+                  class="radio-container txt-s block mb6 flex"
+                >
+                  <input
+                    name="difficulty"
+                    type="radio"
+                    value="intermediate"
+                  />
+                  <div
+                    class="mr6 radio--blue radio--s-label inline-block  radio"
+                  />
+                  Intermediate
+                </label>
+                <label
+                  class="radio-container txt-s block mb6 flex"
+                >
+                  <input
+                    name="difficulty"
+                    type="radio"
+                    value="advanced"
+                  />
+                  <div
+                    class="mr6 radio--blue radio--s-label inline-block  radio"
+                  />
+                  Advanced
+                </label>
+              </div>
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+          <div
+            class="col w-full w-1/4-mm"
+          >
+            <div
+              class="relative "
+            >
+              <div
+                data-test="tools-input"
+                id="tools"
+              >
+                <label
+                  class="checkbox-container txt-s block mb6 flex"
+                >
+                  <input
+                    aria-checked="false"
+                    name="tools"
+                    role="checkbox"
+                    type="checkbox"
+                    value="axe"
+                  />
+                  <div
+                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-check"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
+                    >
+                      <use
+                        xlink:href="#icon-check"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      check
+                    </span>
+                  </div>
+                  Pick axe
+                </label>
+                <label
+                  class="checkbox-container txt-s block mb6 flex"
+                >
+                  <input
+                    aria-checked="false"
+                    name="tools"
+                    role="checkbox"
+                    type="checkbox"
+                    value="potion"
+                  />
+                  <div
+                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-check"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
+                    >
+                      <use
+                        xlink:href="#icon-check"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      check
+                    </span>
+                  </div>
+                  Potion
+                </label>
+                <label
+                  class="checkbox-container txt-s block mb6 flex"
+                >
+                  <input
+                    aria-checked="false"
+                    name="tools"
+                    role="checkbox"
+                    type="checkbox"
+                    value="cloak"
+                  />
+                  <div
+                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-check"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
+                    >
+                      <use
+                        xlink:href="#icon-check"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      check
+                    </span>
+                  </div>
+                  Cloak
+                </label>
+                <label
+                  class="checkbox-container txt-s block mb6 flex"
+                >
+                  <input
+                    aria-checked="false"
+                    name="tools"
+                    role="checkbox"
+                    type="checkbox"
+                    value="telescope"
+                  />
+                  <div
+                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-check"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
+                    >
+                      <use
+                        xlink:href="#icon-check"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      check
+                    </span>
+                  </div>
+                  Telescope
+                </label>
+                <label
+                  class="checkbox-container txt-s block mb6 flex"
+                >
+                  <input
+                    aria-checked="false"
+                    name="tools"
+                    role="checkbox"
+                    type="checkbox"
+                    value="map"
+                  />
+                  <div
+                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-check"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
+                    >
+                      <use
+                        xlink:href="#icon-check"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      check
+                    </span>
+                  </div>
+                  Map
+                </label>
+                <label
+                  class="checkbox-container txt-s block mb6 flex"
+                >
+                  <input
+                    aria-checked="false"
+                    name="tools"
+                    role="checkbox"
+                    type="checkbox"
+                    value="sword"
+                  />
+                  <div
+                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-check"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
+                    >
+                      <use
+                        xlink:href="#icon-check"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      check
+                    </span>
+                  </div>
+                  Sword
+                </label>
+                <label
+                  class="checkbox-container txt-s block mb6 flex"
+                >
+                  <input
+                    aria-checked="false"
+                    name="tools"
+                    role="checkbox"
+                    type="checkbox"
+                    value="armour"
+                  />
+                  <div
+                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-check"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
+                    >
+                      <use
+                        xlink:href="#icon-check"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      check
+                    </span>
+                  </div>
+                  Armour
+                </label>
+              </div>
+              <div
+                role="alert"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt6"
+        >
+          <div
+            class="relative "
+          >
+            <div>
+              <label
+                class="inline-block txt-s txt-bold mb6"
+                for="description"
+              >
+                Description
+                 
+              </label>
+            </div>
+            <textarea
+              aria-required="true"
+              class="textarea hmin120"
+              data-testid="description-textarea"
+              id="description"
+              name="description"
+              placeholder="Enter a short description"
+            />
+            <div
+              role="alert"
+            />
+          </div>
+        </div>
+        <div
+          class="mt6"
+        >
+          <button
+            aria-label="Submit"
+            class="btn"
+            data-testid="form-submit-handler"
+            type="button"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Form basic renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative"
+    >
+      <form
+        novalidate=""
+      >
+        <div>
+          <div
+            class="relative "
+          >
+            <div>
+              <label
+                class="inline-block txt-s txt-bold mb6"
+                for="firstName"
+              >
+                First name
+                 
+              </label>
+            </div>
+            <input
+              aria-required="true"
+              class="input"
+              data-testid="firstName-input"
+              id="firstName"
+              name="firstName"
+              placeholder="Enter your first name"
+              type="text"
+              value=""
+            />
+            <div
+              role="alert"
+            />
+          </div>
+        </div>
+        <div>
+          <div
+            class="relative "
+          >
+            <div>
+              <label
+                class="inline-block txt-s txt-bold mb6"
+                for="lastName"
+              >
+                Last name
+                 
+              </label>
+            </div>
+            <input
+              aria-required="true"
+              class="input"
+              data-testid="lastName-input"
+              id="lastName"
+              name="lastName"
+              placeholder="Enter your last name"
+              type="text"
+              value=""
+            />
+            <div
+              role="alert"
+            />
+          </div>
+        </div>
+        <div
+          class="mt6"
+        >
+          <button
+            aria-label="Submit"
+            class="btn"
+            data-testid="form-submit-handler"
+            type="button"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+`;

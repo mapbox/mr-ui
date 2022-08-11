@@ -195,7 +195,7 @@ export default class ControlText extends React.Component {
       type,
       className: themeControlInput,
       'aria-required': optional ? false : true,
-      'data-test': `${id}-input`
+      'data-testid': `${id}-input`
     };
 
     if (noAuto) {

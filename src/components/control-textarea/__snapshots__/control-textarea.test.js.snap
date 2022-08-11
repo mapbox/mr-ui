@@ -24,7 +24,7 @@ exports[`ControlToggleSet allOptions renders 1`] = `
     autoCorrect="off"
     autoFocus={true}
     className="w-full border--pink round-bold px12 py12"
-    data-test="testinput-textarea"
+    data-testid="testinput-textarea"
     id="testinput"
     name="testinput"
     onChange={[Function]}
@@ -47,7 +47,7 @@ exports[`ControlToggleSet basic onChange gets called with input id and value 1`]
   <textarea
     aria-required={true}
     className="textarea hmin120"
-    data-test="testinput-textarea"
+    data-testid="testinput-textarea"
     id="testinput"
     name="testinput"
     onChange={[Function]}
@@ -68,7 +68,7 @@ exports[`ControlToggleSet basic renders 1`] = `
   <textarea
     aria-required={true}
     className="textarea hmin120"
-    data-test="testinput-textarea"
+    data-testid="testinput-textarea"
     id="testinput"
     name="testinput"
     onChange={[Function]}
@@ -89,7 +89,7 @@ exports[`ControlToggleSet disabled renders 1`] = `
   <textarea
     aria-required={true}
     className="textarea hmin120"
-    data-test="testinput-textarea"
+    data-testid="testinput-textarea"
     disabled={true}
     id="testinput"
     name="testinput"

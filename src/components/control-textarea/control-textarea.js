@@ -84,7 +84,7 @@ export default class ControlTextarea extends React.Component {
       value,
       className: themeControlTextarea,
       'aria-required': optional ? false : true,
-      'data-test': `${id}-textarea`
+      'data-testid': `${id}-textarea`
     };
 
     if (noAuto) {

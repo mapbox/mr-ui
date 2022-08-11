@@ -13,14 +13,14 @@ export default function FormSubmit({
   label = 'Submit',
   testId = '',
   disabled = false,
-  themeButton = 'btn px24 py12 round-full txt-s',
+  themeButton = 'btn',
   onSubmit,
 }: Props): ReactElement {
 
   const inputProps = {
     onClick: onSubmit,
     disabled,
-    'data-testid': testId
+    'data-testid': testId || 'form-submit-handler'
   };
 
   return (
