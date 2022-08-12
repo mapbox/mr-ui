@@ -323,16 +323,18 @@ exports[`Modal basic, auto renders 1`] = `
   >
     <div
       data-radix-popper-content-wrapper=""
-      style="position: fixed; top: 0px; left: 0px; opacity: 0; transform: translate3d(0, -200%, 0);"
+      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, -6px, 0); min-width: max-content; will-change: transform; --radix-popper-transform-origin: center 0px;"
     >
       <div
         class="bg-white border--white color-text border shadow-darken25 round txt-s px12 py6 wmax240"
+        data-align="center"
+        data-side="top"
         data-state="instant-open"
-        style="--radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); animation: none;"
+        style="--radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin);"
       >
         Close
         <span
-          style="position: absolute; opacity: 0; pointer-events: none;"
+          style="position: absolute; pointer-events: none; width: 0px; height: 0px; transform: rotate(0deg); will-change: transform; top: 100%; direction: ltr; left: 0px;"
         >
           <span
             style="display: inline-block; vertical-align: top; pointer-events: auto;"
@@ -358,7 +360,7 @@ exports[`Modal basic, auto renders 1`] = `
         >
           Close
           <span
-            style="position: absolute; opacity: 0; pointer-events: none;"
+            style="position: absolute; pointer-events: none; width: 0px; height: 0px; transform: rotate(0deg); will-change: transform; top: 100%; direction: ltr; left: 0px;"
           >
             <span
               style="display: inline-block; vertical-align: top; pointer-events: auto;"
