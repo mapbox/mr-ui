@@ -23,7 +23,16 @@ exports[`Popover all options renders 1`] = `
         style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); opacity: 0;"
         tabindex="-1"
       >
-        A tooltip
+        <span
+          class="txt-kbd"
+        >
+          Greetings
+        </span>
+        <span
+          class="color-green txt-kbd"
+        >
+          human
+        </span>
       </div>
     </div>
     <span>
@@ -64,7 +73,7 @@ exports[`Popover basic renders 1`] = `
         style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin);"
         tabindex="-1"
       >
-        A tooltip
+        Popup content
         <span
           style="position: absolute; left: 0px; transform-origin: 0 0; transform: translateY(50%) rotate(90deg) translateX(-50%); top: 0px;"
         >
@@ -121,7 +130,7 @@ exports[`Popover dark renders 1`] = `
         style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin);"
         tabindex="-1"
       >
-        A tooltip
+        Content is rendered
         <span
           style="position: absolute; left: 0px; transform-origin: 0 0; transform: translateY(50%) rotate(90deg) translateX(-50%); top: 0px;"
         >
@@ -178,7 +187,9 @@ exports[`Popover no arrow renders 1`] = `
         style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin);"
         tabindex="-1"
       >
-        A tooltip
+        <div>
+          no arrow
+        </div>
       </div>
     </div>
     <span>
@@ -219,7 +230,9 @@ exports[`Popover warning renders 1`] = `
         style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin);"
         tabindex="-1"
       >
-        A tooltip
+        <span>
+          HI there
+        </span>
         <span
           style="position: absolute; left: 0px; transform-origin: 0 0; transform: translateY(50%) rotate(90deg) translateX(-50%); top: 0px;"
         >
