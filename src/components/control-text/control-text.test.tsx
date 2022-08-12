@@ -145,7 +145,7 @@ describe('ControlText', () => {
       fireEvent.mouseOut(screen.getByTestId('control-text-container'));
 
       await waitFor(() => {
-        expect(screen.queryByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
     });
   });

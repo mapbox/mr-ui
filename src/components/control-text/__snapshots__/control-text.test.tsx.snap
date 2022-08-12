@@ -9,7 +9,8 @@ exports[`ControlText all options renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold"
-          for="testinput"
+          id="radix-10"
+          role="label"
         >
           All options
            
@@ -33,6 +34,7 @@ exports[`ControlText all options renders as expected 1`] = `
       >
         <input
           aria-invalid="true"
+          aria-labelledby="radix-10"
           aria-required="false"
           autocapitalize="none"
           autocorrect="off"
@@ -115,13 +117,15 @@ exports[`ControlText basic renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          for="testinput"
+          id="radix-0"
+          role="label"
         >
           basic
            
         </label>
       </div>
       <input
+        aria-labelledby="radix-0"
         aria-required="true"
         class="input"
         data-testid="testinput-input"
@@ -147,13 +151,15 @@ exports[`ControlText disabled renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          for="testinput"
+          id="radix-2"
+          role="label"
         >
           basic
            
         </label>
       </div>
       <input
+        aria-labelledby="radix-2"
         aria-required="true"
         class="input"
         data-testid="testinput-input"
@@ -180,7 +186,8 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          for="testinput"
+          id="radix-5"
+          role="label"
         >
           basic
            
@@ -192,6 +199,7 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
       >
         <input
           aria-invalid="true"
+          aria-labelledby="radix-5"
           aria-required="true"
           class="input round-l flex-child-grow"
           data-testid="testinput-input"
@@ -248,7 +256,8 @@ exports[`ControlText validation error renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          for="testinput"
+          id="radix-4"
+          role="label"
         >
           basic
            
@@ -256,6 +265,7 @@ exports[`ControlText validation error renders as expected 1`] = `
       </div>
       <input
         aria-invalid="true"
+        aria-labelledby="radix-4"
         aria-required="true"
         class="input"
         data-testid="testinput-input"

@@ -21,13 +21,15 @@ exports[`Form all controls renders as expected 1`] = `
               <div>
                 <label
                   class="inline-block txt-s txt-bold mb6"
-                  for="firstName"
+                  id="radix-4"
+                  role="label"
                 >
                   First name
                    
                 </label>
               </div>
               <input
+                aria-labelledby="radix-4"
                 aria-required="true"
                 class="input"
                 data-testid="firstName-input"
@@ -51,13 +53,15 @@ exports[`Form all controls renders as expected 1`] = `
               <div>
                 <label
                   class="inline-block txt-s txt-bold mb6"
-                  for="lastName"
+                  id="radix-5"
+                  role="label"
                 >
                   Last name
                    
                 </label>
               </div>
               <input
+                aria-labelledby="radix-5"
                 aria-required="true"
                 class="input"
                 data-testid="lastName-input"
@@ -81,13 +85,15 @@ exports[`Form all controls renders as expected 1`] = `
               <div>
                 <label
                   class="inline-block txt-s txt-bold mb6"
-                  for="email"
+                  id="radix-6"
+                  role="label"
                 >
                   email
                    
                 </label>
               </div>
               <input
+                aria-labelledby="radix-6"
                 aria-required="true"
                 class="input"
                 data-testid="email-input"
@@ -111,13 +117,15 @@ exports[`Form all controls renders as expected 1`] = `
               <div>
                 <label
                   class="inline-block txt-s txt-bold mb6"
-                  for="url"
+                  id="radix-7"
+                  role="label"
                 >
                   url
                    
                 </label>
               </div>
               <input
+                aria-labelledby="radix-7"
                 aria-required="true"
                 class="input"
                 data-testid="url-input"
@@ -293,7 +301,8 @@ exports[`Form all controls renders as expected 1`] = `
                 <div>
                   <label
                     class="inline-block txt-s txt-bold mb6"
-                    for="area"
+                    id="radix-8"
+                    role="label"
                   >
                     Choose size of area
                      
@@ -303,6 +312,7 @@ exports[`Form all controls renders as expected 1`] = `
                   class="range "
                 >
                   <input
+                    aria-labelledby="radix-8"
                     aria-required="true"
                     data-test="area-input"
                     id="area"
@@ -374,7 +384,8 @@ exports[`Form all controls renders as expected 1`] = `
                 <div>
                   <label
                     class="inline-block txt-s txt-bold mb6"
-                    for="level"
+                    id="radix-9"
+                    role="label"
                   >
                     Choose level
                      
@@ -384,6 +395,7 @@ exports[`Form all controls renders as expected 1`] = `
                   class="select-container "
                 >
                   <select
+                    aria-labelledby="radix-9"
                     aria-required="true"
                     class="select "
                     data-test="level-select"
@@ -736,13 +748,15 @@ exports[`Form all controls renders as expected 1`] = `
             <div>
               <label
                 class="inline-block txt-s txt-bold mb6"
-                for="description"
+                id="radix-10"
+                role="label"
               >
                 Description
                  
               </label>
             </div>
             <textarea
+              aria-labelledby="radix-10"
               aria-required="true"
               class="textarea hmin120"
               data-testid="description-textarea"
@@ -789,13 +803,15 @@ exports[`Form basic renders as expected 1`] = `
             <div>
               <label
                 class="inline-block txt-s txt-bold mb6"
-                for="firstName"
+                id="radix-0"
+                role="label"
               >
                 First name
                  
               </label>
             </div>
             <input
+              aria-labelledby="radix-0"
               aria-required="true"
               class="input"
               data-testid="firstName-input"
@@ -817,13 +833,15 @@ exports[`Form basic renders as expected 1`] = `
             <div>
               <label
                 class="inline-block txt-s txt-bold mb6"
-                for="lastName"
+                id="radix-1"
+                role="label"
               >
                 Last name
                  
               </label>
             </div>
             <input
+              aria-labelledby="radix-1"
               aria-required="true"
               class="input"
               data-testid="lastName-input"

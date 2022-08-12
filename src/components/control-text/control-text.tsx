@@ -67,7 +67,6 @@ export default function ControlText(props: Props): ReactElement {
     themeControlWrapper
   } = props;
 
-
   const onErrorClick = () => {
     if (inputElement.current) inputElement.current.select();
   };
