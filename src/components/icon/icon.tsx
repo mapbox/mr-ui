@@ -1,4 +1,4 @@
-import React, { ReactElement, CSSProperties, useRef, useEffect } from 'react';
+import React, { ReactElement, useRef, useEffect, SVGProps, DetailedHTMLProps } from 'react';
 import PropTypes from 'prop-types';
 import getWindow from '../utils/get-window';
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
@@ -6,9 +6,7 @@ import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 interface Props {
   name: string;
   inline?: boolean;
-  passthroughProps?: {
-    style?: CSSProperties
-  };
+  passthroughProps?: DetailedHTMLProps<SVGProps<SVGSVGElement>, SVGElement>;
   size?: number | string;
 }
 

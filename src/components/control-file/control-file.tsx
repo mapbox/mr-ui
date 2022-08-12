@@ -1,10 +1,11 @@
-import React, { ReactElement, useRef} from 'react';
+import React, { ReactElement, useRef } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlWrapper from '../control-wrapper';
 import IconText from '../icon-text';
+import { InputProps } from '../typings';
 
-interface Props {
+interface Props extends Omit<InputProps, 'value' | 'onChange'> {
   id: string;
   onChange: (files: '' | Array<string>, id: string) => void;
   value?: '' | [{ name: string }];
@@ -18,9 +19,9 @@ interface Props {
 }
 
 const propNames = [
-  'value',
   'id',
   'onChange',
+  'value',
   'optional',
   'disabled',
   'validationError',

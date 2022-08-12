@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen, waitFor, act } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Form from './form';
 import FormSubmit from '../form-submit';
@@ -307,6 +307,9 @@ describe('Form', () => {
 
       await waitFor(() => {
         expect(mockOnChange).toHaveBeenCalledTimes(1);
+      });
+
+      await waitFor(() => {
         expect(mockOnChange).toHaveBeenCalledWith({
           description: 'f'
         });

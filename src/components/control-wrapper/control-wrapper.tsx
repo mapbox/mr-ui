@@ -6,7 +6,7 @@ interface Props {
   id: string;
   children: ReactNode;
   themeControlWrapper?: string;
-  validationError?: ReactElement | string;
+  validationError?: ReactNode;
 }
 
 export default function ControlWrapper({

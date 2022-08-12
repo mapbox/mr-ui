@@ -8,6 +8,7 @@ export default function Example() {
   return (
     <ControlFile
       id="name"
+      multiple={true}
       onChange={(value, id) => {
         console.log(value, id);
       }}

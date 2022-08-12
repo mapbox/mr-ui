@@ -22,6 +22,7 @@ const dataFilename = path.resolve(dataDir, 'components.js');
 const excludeSourceDirs = new Set([
   'page-loading-indicator',
   'utils',
+  'typings.ts',
   '.DS_Store'
 ]);
 

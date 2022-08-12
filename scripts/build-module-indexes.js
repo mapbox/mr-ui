@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const pify = require('pify');
 
-const excludeDirs = new Set(['utils', '.DS_Store']);
+const excludeDirs = new Set(['utils', '.DS_Store', 'typings.ts']);
 const srcRoot = path.resolve(__dirname, '../src/components');
 
 function generateIndex(moduleName) {
