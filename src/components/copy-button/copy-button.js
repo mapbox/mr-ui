@@ -113,9 +113,12 @@ export default class CopyButton extends React.PureComponent {
     const { props, state } = this;
     // don't render the button if you can't use it to copy,
     // or are in Node during a static build
+    // TODO restore back
+    /*
     if (typeof document !== 'undefined' && !Clipboard.isSupported()) {
       return null;
     }
+    */
 
     const iconName = state.showingFeedback ? 'check' : 'clipboard';
     const buttonClasses = classnames(props.className, {
@@ -134,6 +137,7 @@ export default class CopyButton extends React.PureComponent {
         <button
           aria-label="Copy"
           type="button"
+          data-testid="copy-button"
           className={buttonClasses}
           {...props.passthroughProps}
           ref={this.setContainer}
