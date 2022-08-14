@@ -9,7 +9,6 @@ exports[`basic renders as expected 1`] = `
   >
     <CopyButton
       block={true}
-      className="btn btn--xs py3 px3 round"
       text="thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy "
     />
   </div>

@@ -320,6 +320,84 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           class="bg-blue h-full w6"
         />
       </div>
+      <div
+        class="absolute z3 right mr3 color-white"
+        data-chunk-copy="chunk-1"
+        style="opacity: 0; transition: opacity 300ms linear;"
+      >
+        <div
+          aria-label="Copy"
+          data-clipboard-text="import Mapbox
+"
+          data-testid="copy-button"
+          role="button"
+        >
+          <button
+            class="btn btn--xs py3 px3 round"
+            data-state="closed"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-clipboard"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-clipboard"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              clipboard
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="absolute z3 right mr3 color-white"
+        data-chunk-copy="chunk-3"
+        style="opacity: 0; transition: opacity 300ms linear;"
+      >
+        <div
+          aria-label="Copy"
+          data-clipboard-text="    let url = URL(string: \\"mapbox://styles/mapbox/streets-v9\\")
+    let mapView = MGLMapView(frame: view.bounds, styleURL: url)
+    mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
+    view.addSubview(mapView)
+"
+          data-testid="copy-button"
+          role="button"
+        >
+          <button
+            class="btn btn--xs py3 px3 round"
+            data-state="closed"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-clipboard"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-clipboard"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              clipboard
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -508,7 +586,42 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
       </pre>
       <div
         class="absolute z2 top right mr6 mt6 color-white"
-      />
+      >
+        <div
+          aria-label="Copy"
+          data-clipboard-text="dependencies {
+  compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar') {
+    transitive=true
+  }
+}"
+          data-testid="copy-button"
+          role="button"
+        >
+          <button
+            class="btn btn--xs py3 px3 round"
+            data-state="closed"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-clipboard"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-clipboard"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              clipboard
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </body>

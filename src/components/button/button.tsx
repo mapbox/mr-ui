@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { HTMLAttributes, ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -19,9 +19,7 @@ interface Props {
   size?: Size;
   width?: Width;
   ariaLabel?: string;
-  passthroughProps?: {
-    [key: string]: string | number | boolean;
-  }
+  passthroughProps?: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>;
 }
 
 function getSize(variant: Variant): Size {

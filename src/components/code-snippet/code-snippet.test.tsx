@@ -66,19 +66,16 @@ describe('CodeSnippet', () => {
       render(<CodeSnippet {...props} />)
       fireEvent.click(screen.getByTestId('copy-button'));
       expect(onCopyMock).toHaveBeenCalledTimes(1);
-
-      /*
-      await waitFor(() => {
-        expect(screen.getByTestId('firstName-error')).toBeInTheDocument();
-      });
-      */
+      expect(onCopyMock).toHaveBeenCalledWith(snippetA);
     });
   });
 
   describe('copy ranges', () => {
+    const onCopyMock = jest.fn();
     const props = {
       code: snippetB,
       highlightedCode: hljs.highlightAuto(snippetB).value,
+      onCopy: onCopyMock,
       copyRanges: [
         [1, 1],
         [7, 11]
@@ -89,108 +86,44 @@ describe('CodeSnippet', () => {
       const { baseElement } = render(<CodeSnippet {...props} />)
       expect(baseElement).toMatchSnapshot();
     });
-  });
-});
 
-/*
-testCases.copyRangesWithCallback = {
-  description: 'copy ranges, with onCopy callback',
-  component: CodeSnippet,
-  props: {
-    code: snippetB,
-    highlightedCode: hljs.highlightAuto(snippetB).value,
-    copyRanges: [
-      [1, 1],
-      [7, 11]
-    ],
-    onCopy: jest.fn()
-  }
-};
+    test('onCopy callback first range works', () => {
+      render(<CodeSnippet {...props} />)
+      const copyButtons = screen.queryAllByTestId('copy-button');
 
-  describe(testCases.copyRangesWithCallback.description, () => {
-    beforeEach(() => {
-      testCase = testCases.copyRangesWithCallback;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props),
-        { disableLifecycleMethods: true }
-      );
+      fireEvent.click(copyButtons[0]);
+      expect(onCopyMock).toHaveBeenCalledWith(`import Mapbox
+`, 0);
     });
 
-    test('renders as expected', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
+    test('onCopy callbacks second range works', () => {
+      render(<CodeSnippet {...props} />)
+      const copyButtons = screen.queryAllByTestId('copy-button');
 
-    test('onCopy works', () => {
-      wrapper.find('CopyButton').get(0).props.onCopy();
-      expect(testCase.props.onCopy).toHaveBeenCalledTimes(1);
-      expect(testCase.props.onCopy).toHaveBeenCalledWith(0);
-    });
-
-    test('onCopy works again, providing correct index', () => {
-      wrapper.find('CopyButton').get(1).props.onCopy();
-      expect(testCase.props.onCopy).toHaveBeenCalledTimes(1);
-      expect(testCase.props.onCopy).toHaveBeenCalledWith(1);
+      fireEvent.click(copyButtons[1]);
+      expect(onCopyMock).toHaveBeenCalledWith(`    let url = URL(string: \"mapbox://styles/mapbox/streets-v9\")
+    let mapView = MGLMapView(frame: view.bounds, styleURL: url)
+    mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
+    view.addSubview(mapView)
+`, 1);
     });
   });
 
-testCases.maxHeight = {
-  description: 'maximum height',
-  component: CodeSnippet,
-  props: {
-    code: snippetB,
-    highlightedCode: hljs.highlightAuto(snippetB).value,
-    copyRanges: [
-      [1, 1],
-      [7, 11]
-    ],
-    maxHeight: 120
-  }
-};
+  describe('maximum height', () => {
+    const props = {
+      code: snippetA,
+      highlightedCode: hljs.highlightAuto(snippetA).value,
+      maxHeight: 120
+    } as const;
 
-  describe(testCases.maxHeight.description, () => {
-    beforeEach(() => {
-      testCase = testCases.maxHeight;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props),
-        { disableLifecycleMethods: true }
-      );
-    });
-
-    test('renders as expected', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
-  });
-
-  describe('adjusts copy blocks on resize', () => {
-    let mockWindow;
-
-    beforeEach(() => {
-      testCase = testCases.copyRanges;
-      mockWindow = _.assign({}, window, {
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn()
-      });
-      getWindow.mockReturnValue(mockWindow);
-      wrapper = mount(React.createElement(testCase.component, testCase.props));
-    });
-
-    test('adds resize listener on mount, with adjustPositions callback', () => {
-      expect(mockWindow.addEventListener).toHaveBeenCalledTimes(1);
-      expect(mockWindow.addEventListener).toHaveBeenCalledWith(
-        'resize',
-        wrapper.instance().adjustPositions
-      );
-    });
-
-    test('removes resize listener on unmount', () => {
-      const adjustPositions = wrapper.instance().adjustPositions;
-      wrapper.unmount();
-      expect(mockWindow.removeEventListener).toHaveBeenCalledTimes(1);
-      expect(mockWindow.removeEventListener).toHaveBeenCalledWith(
-        'resize',
-        adjustPositions
-      );
+    test('adds resize listener on mount', () => {
+      jest.spyOn(window, 'addEventListener');
+      jest.spyOn(window, 'removeEventListener');
+      const { unmount } = render(<CodeSnippet {...props} />)
+      expect(window.addEventListener).toHaveBeenCalled();
+      unmount();
+      expect(window.removeEventListener).toHaveBeenCalled();
     });
   });
 });
-*/

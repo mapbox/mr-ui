@@ -80,7 +80,7 @@ interface Props {
   highlightedCode?: string;
   copyRanges?: number[][];
   maxHeight?: number;
-  onCopy?: (chunkIndex: number) => void;
+  onCopy?: (text: string, chunkIndex?: number) => void;
   highlightThemeCss?: string;
   characterWidth?: number;
 }
@@ -202,7 +202,7 @@ export default function CodeSnippet({
   allChunks.forEach((codeChunk, i) => {
     const chunkId = `chunk-${i}`;
 
-    const lineEls = codeChunk.highlightedLines.map((line, i) => {
+    const lineEls = codeChunk.highlightedLines.map((line: string, i: number) => {
       // Left padding is determined below
       let lineClasses = 'pr12';
       if (codeChunk.live) lineClasses += ' py3';
@@ -273,7 +273,7 @@ export default function CodeSnippet({
             className="absolute z3 right mr3 color-white"
             style={{ opacity: 0, transition: 'opacity 300ms linear' }}
           >
-            <CopyButton text={codeChunk.raw} onCopy={() => onCopy(chunkIndex)} />
+            <CopyButton text={codeChunk.raw} onCopy={(text: string) => onCopy(text, chunkIndex)} />
           </div>
         );
       }
