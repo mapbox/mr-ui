@@ -70,11 +70,8 @@ export default function Popover({
   const getContent = () => {
     if (typeof content === 'function') {
       return content();
-    } else {
-      return content;
-    if (typeof content === 'function') {
-      return content();
     }
+
     return content;
   }
 
@@ -103,9 +100,13 @@ export default function Popover({
 
 Popover.propTypes = {
   /**
-   * The trigger eleemnt.
+   * The trigger element.
    */
   children: PropTypes.node.isRequired,
+  /**
+   * Triggers the active state of the popover. When true, the popover appears.
+   */
+  active: PropTypes.bool.isRequired,
   /**
    * The popover content. This can either be a string, valid JSX, or a function
    * returning either.
@@ -171,7 +172,6 @@ Popover.propTypes = {
    * receive focus when popover is first rendered.
    */
   getInitialFocus: PropTypes.func,
-  /**
   /**
    * Number of pixels by which the popover should be offset from its anchor.
    */

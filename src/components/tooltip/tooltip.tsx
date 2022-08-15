@@ -48,9 +48,9 @@ export default function Tooltip({
   const getContent = () => {
     if (typeof content === 'function') {
       return content();
-    } else {
-      return content;
     }
+
+    return content;
   }
 
   if (disabled) {
