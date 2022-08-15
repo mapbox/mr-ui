@@ -2,10 +2,9 @@
 Set maxHeight and onCopy
 */
 import React from 'react';
-import hljs from 'highlight.js';
 import CodeSnippet from '../code-snippet';
 
-const code = hljs.highlightAuto(`
+const code = `
 package com.mapbox.mapboxandroiddemo.examples.basics;
 
 import android.os.Bundle;
@@ -99,14 +98,15 @@ protected void onSaveInstanceState(Bundle outState) {
   mapView.onSaveInstanceState(outState);
 }
 }
-`);
+`;
 
 export default function Example() {
   return (
     <CodeSnippet
       maxHeight={300}
       onCopy={() => console.log('Copy!')}
-      code={code.value}
+      copyRanges={[[1, 10], [29, 28]]}
+      code={code}
     />
   );
 }

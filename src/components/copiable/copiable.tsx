@@ -43,7 +43,7 @@ export default function Copiable({
   truncated = false
 }: Props): ReactElement {
   const textEl = useRef(null);
-  const [showCopyButton, setShowCopyButton] = useState(false);
+  const showCopyButton = useRef(CopyButton.isCopySupported());
   const [copyTooltipActive, setCopyTooltipActive] = useState(false);
 
   useEffect(() => {
@@ -57,12 +57,6 @@ export default function Copiable({
 
     return () => clearTimeout(timer);
   }, [copyTooltipActive]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && CopyButton.isCopySupported()) {
-      setShowCopyButton(true);
-    }
-  }, []);
 
   const handleTextFocus = () => {
     if (getWindow().innerWidth < DISABLE_CLICK_TO_SELECT_THRESHOLD) return;
@@ -104,7 +98,7 @@ export default function Copiable({
       accessibleTitle="Copy the selected text"
       padding="small"
     >
-      <div className="txt-s">{showCopyButton && renderCopyHintText}</div>
+      <div className="txt-s">{showCopyButton.current && renderCopyHintText}</div>
     </Popover>
   );
 
@@ -119,7 +113,7 @@ export default function Copiable({
 
   return (
     <div className="relative clearfix bg-darken5 round">
-      {showCopyButton && renderCopyButton}
+      {showCopyButton.current && renderCopyButton}
       <div
         tabIndex={-1}
         ref={textEl}

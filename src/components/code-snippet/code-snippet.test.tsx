@@ -2,6 +2,7 @@ import React from 'react';
 import hljs from 'highlight.js';
 import { screen, render, fireEvent } from '@testing-library/react';
 import CodeSnippet from './code-snippet';
+import CopyButton from '../copy-button';
 
 const snippetA = `dependencies {
   compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar') {
@@ -29,7 +30,7 @@ describe('CodeSnippet', () => {
   describe('non highlighted', () => {
     const props = {
       code: snippetA
-    } as const;
+    };
 
     test('renders as expected', () => {
       const { baseElement } = render(<CodeSnippet {...props} />)
@@ -41,7 +42,7 @@ describe('CodeSnippet', () => {
     const props = {
       code: snippetB,
       highlightedCode: hljs.highlightAuto(snippetA).value
-    } as const;
+    };
 
     test('renders as expected', () => {
       const { baseElement } = render(<CodeSnippet {...props} />)
@@ -50,12 +51,16 @@ describe('CodeSnippet', () => {
   });
 
   describe('highlighted, no ranges, with onCopy callback', () => {
+    beforeEach(() => {
+      jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
+    });
+
     const onCopyMock = jest.fn();
     const props = {
       code: snippetA,
       highlightedCode: hljs.highlightAuto(snippetA).value,
       onCopy: onCopyMock
-    } as const;
+    };
 
     test('renders as expected', () => {
       const { baseElement } = render(<CodeSnippet {...props} />)
@@ -70,6 +75,21 @@ describe('CodeSnippet', () => {
     });
   });
 
+  describe('isCopySupported=false does not render copy-button', () => {
+    const onCopyMock = jest.fn();
+    const props = {
+      code: snippetA,
+      highlightedCode: hljs.highlightAuto(snippetA).value,
+      onCopy: onCopyMock
+    };
+
+    test('copy-button is not rendered', () => {
+      jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => false);
+      render(<CodeSnippet {...props} />)
+      expect(screen.queryAllByTestId('copy-button').length).toBe(0);
+    });
+  });
+
   describe('copy ranges', () => {
     const onCopyMock = jest.fn();
     const props = {
@@ -81,6 +101,10 @@ describe('CodeSnippet', () => {
         [7, 11]
       ]
     };
+
+    beforeEach(() => {
+      jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
+    });
 
     test('renders as expected', () => {
       const { baseElement } = render(<CodeSnippet {...props} />)
@@ -110,12 +134,31 @@ describe('CodeSnippet', () => {
     });
   });
 
+  describe('isCopySupported=false does not render copy-button', () => {
+    const onCopyMock = jest.fn();
+    const props = {
+      code: snippetB,
+      highlightedCode: hljs.highlightAuto(snippetB).value,
+      onCopy: onCopyMock,
+      copyRanges: [
+        [1, 1],
+        [7, 11]
+      ]
+    };
+
+    test('copy-button is not rendered', () => {
+      jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => false);
+      render(<CodeSnippet {...props} />)
+      expect(screen.queryAllByTestId('copy-button').length).toBe(0);
+    });
+  });
+
   describe('maximum height', () => {
     const props = {
       code: snippetA,
       highlightedCode: hljs.highlightAuto(snippetA).value,
       maxHeight: 120
-    } as const;
+    };
 
     test('adds resize listener on mount', () => {
       jest.spyOn(window, 'addEventListener');

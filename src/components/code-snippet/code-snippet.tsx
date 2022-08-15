@@ -94,6 +94,7 @@ export default function CodeSnippet({
   highlightThemeCss = defaultTheme,
   characterWidth = 7.225 // Will need to change this if we change font size
 }: Props): ReactElement {
+  const showCopyButton = useRef(CopyButton.isCopySupported());
   const containerElement = useRef(null);
 
   const adjustPositions = debounce(() => {
@@ -312,9 +313,9 @@ export default function CodeSnippet({
       <pre>
         <code className={codeClasses}>{codeElements}</code>
       </pre>
-      {copyAllButton}
+      {showCopyButton.current && copyAllButton}
       {highlightElements}
-      {copyElements}
+      {showCopyButton.current && copyElements}
     </div>
   );
 }
