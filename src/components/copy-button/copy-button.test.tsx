@@ -1,6 +1,6 @@
 import React from 'react';
 import CopyButton from './copy-button';
-import { act, render, waitFor, screen } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('CopyButton', () => {
@@ -18,9 +18,7 @@ describe('CopyButton', () => {
     test('changes state on click', async () => {
       render(<CopyButton {...props} />)
 
-      await act(async () => {
-        await userEvent.click(screen.getByTestId('copy-button'));
-      });
+      await userEvent.click(screen.getByTestId('copy-button'));
 
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -53,9 +51,7 @@ describe('CopyButton', () => {
     test('changes state on click', async () => {
       render(<CopyButton {...props} />)
 
-      await act(async () => {
-        await userEvent.click(screen.getByTestId('copy-button'));
-      });
+      await userEvent.click(screen.getByTestId('copy-button'));
 
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -69,9 +65,7 @@ describe('CopyButton', () => {
     test('calls onCopy callback', async () => {
       render(<CopyButton {...props} />)
 
-      await act(async () => {
-        await userEvent.click(screen.getByTestId('copy-button'));
-      });
+      await userEvent.click(screen.getByTestId('copy-button'));
 
       expect(mockOnCopy).toHaveBeenCalledTimes(1);
       expect(mockOnCopy).toHaveBeenCalledWith('more copiable text');

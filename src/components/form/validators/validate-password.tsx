@@ -32,8 +32,8 @@ export default function validatePassword(value: any): ReactNode {
     ''
   ) : (
     <ul className="list-group">
-      {validations.map((listitem) => (
-        <li className="list-group-item">{listitem}</li>
+      {validations.map((listitem, i) => (
+        <li key={i} className="list-group-item">{listitem}</li>
       ))}
     </ul>
   );
