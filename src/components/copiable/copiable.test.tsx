@@ -1,6 +1,6 @@
 import React from 'react';
 import delay from 'delay';
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import CopyButton from '../copy-button';
 import Copiable from './copiable';
 import select from 'select';
@@ -28,7 +28,9 @@ describe('Copiable', () => {
       jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
       render(<Copiable {...props} />)
 
-      screen.getByTestId('copiable-text-el').focus();
+      act(() => {
+        screen.getByTestId('copiable-text-el').focus();
+      });
 
       await waitFor(() => {
         expect(select).toHaveBeenCalled();
@@ -39,13 +41,15 @@ describe('Copiable', () => {
       jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
       render(<Copiable {...props} />)
 
-      screen.getByTestId('copiable-text-el').focus();
+      act(() => {
+        screen.getByTestId('copiable-text-el').focus();
+      });
 
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
 
-      delay(FEEDBACK_TIME + 100).then(() => {
+      await delay(FEEDBACK_TIME + 100).then(() => {
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
     });
