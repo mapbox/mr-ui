@@ -72,7 +72,10 @@ export default function Popover({
       return content();
     } else {
       return content;
+    if (typeof content === 'function') {
+      return content();
     }
+    return content;
   }
 
   return (
