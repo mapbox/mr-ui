@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
 import hljs from 'highlight.js';
 import { screen, render, fireEvent } from '@testing-library/react';
@@ -134,7 +135,7 @@ describe('CodeSnippet', () => {
     });
   });
 
-  describe('isCopySupported=false does not render copy-button', () => {
+  describe('isCopySupported=false does not render mutlple ranges copy-button elements', () => {
     const onCopyMock = jest.fn();
     const props = {
       code: snippetB,
