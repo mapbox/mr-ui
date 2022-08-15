@@ -3,6 +3,16 @@ Changelog
 
 ## HEAD
 - [fix] `gap` prop in `src/components/icon-text` which was not in use.
+- [breaking] Removed `isSupported` check in `src/components/copy-button`
+- [breaking] props changes to `src/components/copy-button`
+  - Dropped `textEl`
+- [breaking] props changes to `src/components/control-file`
+  - Dropped `label`
+  - Dropped `themeLabel`
+  - Dropped `aside`
+  - Renamed `initialDisplayValue` to `displayValue`
+- [breaking] Removed clear implementation in `src/components/control-file`. Just a button element that triggers <input type="file" /> is implemented.
+>>>>>>> e0fe270 (Add to changelog)
 - [breaking] Deletes `src/components/tab-list`
   - tab-list component was not used anywhere according to our audit and radix does not have support for such mobile functionality (such as displaying a popover for the rest of the tabs that do not fit on mobile)
 - [breaking] Deletes `src/components/underline-tabs`
