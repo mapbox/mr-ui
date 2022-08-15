@@ -108,7 +108,7 @@ export default function Tooltip({
           className={bodyClasses}
         >
             {getContent()}
-          <TooltipPrimitive.Arrow width={6} height={6} fill={fill} />
+          <TooltipPrimitive.Arrow width={6} height={6} offset={6} fill={fill} />
         </TooltipPrimitive.Content>
     </TooltipPrimitive.Root>
   );
