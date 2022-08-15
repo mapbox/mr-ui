@@ -68,7 +68,7 @@ testCases.allProps = {
     className: 'px6 py6 btn btn--purple btn--stroke',
     focusTrapPaused: true,
     passthroughProps: {
-      'data-test': 'copy-button'
+      'data-testid': 'copy-button'
     }
   }
 };

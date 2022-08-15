@@ -108,15 +108,6 @@ export default function CopyButton({
     );
   }
 
-  // don't render the button if you can't use it to copy,
-  // or are in Node during a static build
-  // TODO restore back
-  /*
-  if (typeof document !== 'undefined' && !Clipboard.isSupported()) {
-    return null;
-  }
-  */
-
   const iconName = showingFeedback ? 'check' : 'clipboard';
   const buttonClasses = classnames(className, {
     block
