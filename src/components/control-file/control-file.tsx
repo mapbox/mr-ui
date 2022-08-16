@@ -14,7 +14,6 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'> {
   validationError?: ReactElement | string;
   displayValue?: string;
   themeControlFile?: string;
-  themeControlFileClear?: string;
   themeControlWrapper?: string;
 }
 
@@ -27,7 +26,6 @@ const propNames = [
   'validationError',
   'displayValue',
   'themeControlFile',
-  'themeControlFileClear',
   'themeControlWrapper',
   // Passed when used with the Form component
   'validator'

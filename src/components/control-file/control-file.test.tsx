@@ -72,7 +72,6 @@ describe('ControlFile', () => {
       id: 'testinput-3',
       themeControlFile: 'bg-red-faint py6 px12 round-full link--red txt-s',
       themeControlWrapper: 'bg-red-light',
-      themeControlFileClear: 'btn btn--red color-white',
       displayValue: 'Select an image',
       validationError: 'oh no!',
       optional: true,

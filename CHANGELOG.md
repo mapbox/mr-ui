@@ -11,6 +11,7 @@ Changelog
   - Dropped `themeLabel`
   - Dropped `aside`
   - Renamed `initialDisplayValue` to `displayValue`
+  - Dropped 'themeControlFileClear'
 - [breaking] Removed clear implementation in `src/components/control-file`. Just a button element that triggers <input type="file" /> is implemented.
 >>>>>>> e0fe270 (Add to changelog)
 - [breaking] Deletes `src/components/tab-list`

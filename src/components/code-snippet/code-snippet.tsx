@@ -146,7 +146,7 @@ export default function CodeSnippet({
     return () => {
       window.removeEventListener('resize', adjustPositions);
     }
-  }, []);
+  }, [adjustPositions, highlightThemeCss]);
 
   // Adjust position on every render
   useEffect(adjustPositions);

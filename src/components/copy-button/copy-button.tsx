@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, HTMLAttributes} from 'react';
+import React, { ReactElement, useState, useEffect, useCallback, HTMLAttributes} from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Clipboard from 'clipboard/dist/clipboard.min.js';
@@ -37,13 +37,13 @@ export default function CopyButton({
   const [clipboardElement, setClipboardElement] = useState(null);
   const [showingFeedback, setShowingFeedback] = useState(false);
 
-  const makeClipboard = (el) => {
+  const makeClipboard = useCallback((el: HTMLElement) => {
     setClipboard(new Clipboard(el, {
       // Setting the container is necessary for Clipboard to function within
       // focus traps, like in a Modal.
       ...(!focusTrapPaused && { container: el })
     }));
-  }
+  }, [focusTrapPaused]);
 
   const destroyClipboard = () => {
     if (clipboard) {
@@ -62,7 +62,7 @@ export default function CopyButton({
     if (clipboardElement && !clipboard) {
       makeClipboard(clipboardElement);
     }
-  }, [clipboardElement]);
+  }, [clipboardElement, clipboard, makeClipboard]);
 
   useEffect(() => {
     let timer;
