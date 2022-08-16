@@ -55,7 +55,8 @@ export default function CopyButton({
     return () => {
       destroyClipboard();
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     // initialize clipboard once ref is set
