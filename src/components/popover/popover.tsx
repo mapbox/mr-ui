@@ -1,6 +1,7 @@
-import React, { ReactElement, ReactNode, forwardRef } from 'react';
+import React, { ReactElement, ReactNode, forwardRef, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { getTheme } from '../utils/styles';
 
@@ -18,7 +19,7 @@ interface Props {
     [key: string]: string | number | boolean;
   };
   onExit?: () => void;
-  getInitialFocus?: () => void;
+  getInitialFocus?: (e: Event) => void;
   clickOutsideCloses?: boolean;
   escapeCloses?: boolean;
   hideWhenAnchorIsOffscreen?: boolean;
@@ -47,6 +48,7 @@ export default function Popover({
   content
 }: Props): ReactElement {
   const { background, borderColor, color, fill } = getTheme(coloring);
+  const anchorRef = useRef(null);
 
   const bodyClasses = classnames(
     `${background} ${borderColor} ${color} border shadow-darken25 round`,
@@ -57,7 +59,7 @@ export default function Popover({
     }
   );
 
-  const Anchor = forwardRef<HTMLButtonElement>((props, ref) => {
+  const Anchor = forwardRef<HTMLElement>((props, ref) => {
     return (
       <PopoverPrimitive.Anchor asChild>
         <span {...props} ref={ref}>
@@ -75,17 +77,39 @@ export default function Popover({
     return content;
   }
 
+  const onDown = (e: Event) => {
+
+          e.preventDefault();
+          console.log('prevent it?', e);
+
+    // If event target contains the trigger element, assume onExit is handled
+    // on its own so don't re-fire it.
+    if (anchorRef.current.contains(e.target)) {
+      return;
+    }
+
+    // Check if the event target contains the following data attribute. If it
+    // does, do not call onExit.
+    if (querySelectorContainsNode('[data-popover-ignore-clicks]', e.target)) {
+      return;
+    }
+
+    onExit();
+  }
+
   return (
     <PopoverPrimitive.Root open={active}>
+      <Anchor ref={anchorRef} />
       <PopoverPrimitive.Content
         sideOffset={6} 
         className={bodyClasses}
         onEscapeKeyDown={escapeCloses && onExit}
-        onPointerDownOutside={clickOutsideCloses && onExit}
+        onPointerDownOutside={clickOutsideCloses && onDown}
         onOpenAutoFocus={getInitialFocus}
         align={alignment}
         alignOffset={offsetFromAnchor}
         side={placement}
+        sticky={'always'}
         hideWhenDetached={hideWhenAnchorIsOffscreen}
         avoidCollisions={allowPlacementAxisChange}
         {...passthroughProps}
@@ -93,7 +117,6 @@ export default function Popover({
         {getContent()}
         {hasPointer && <PopoverPrimitive.Arrow width={6} height={6} fill={fill} />}
       </PopoverPrimitive.Content>
-      <Anchor />
     </PopoverPrimitive.Root>
   );
 }
@@ -177,7 +200,7 @@ Popover.propTypes = {
    */
   offsetFromAnchor: PropTypes.number,
   /**
-   * Props to pass directly to the `<div>` that will wrap your popover content.
+   * Props to pass directly to popover content options from `@radix-ui/react-popover`.
    */
   passthroughProps: PropTypes.object,
 };
