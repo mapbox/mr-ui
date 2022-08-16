@@ -10,7 +10,7 @@ export default class Example extends React.Component {
       <button
         aria-label="Take me there"
         type="button"
-        className="link link-purple"
+        className="link link--purple"
       >
         <IconText iconAfter="chevron-right">Take me there</IconText>
       </button>

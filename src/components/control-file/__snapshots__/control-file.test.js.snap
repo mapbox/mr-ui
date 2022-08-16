@@ -34,9 +34,7 @@ exports[`ControlFile all options renders 1`] = `
           className="txt-truncate"
         >
           <IconText
-            gap="small"
             iconBefore="harddrive"
-            inline={false}
           >
             Select an image
           </IconText>
@@ -96,9 +94,7 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
           className="txt-truncate"
         >
           <IconText
-            gap="small"
             iconBefore="harddrive"
-            inline={false}
           >
             bon jovi.mp3
           </IconText>
@@ -170,9 +166,7 @@ exports[`ControlFile basic renders 1`] = `
           className="txt-truncate"
         >
           <IconText
-            gap="small"
             iconBefore="harddrive"
-            inline={false}
           >
             Select a file
           </IconText>
@@ -228,9 +222,7 @@ exports[`ControlFile disabled renders 1`] = `
           className="txt-truncate"
         >
           <IconText
-            gap="small"
             iconBefore="harddrive"
-            inline={false}
           >
             Select a file
           </IconText>
@@ -286,9 +278,7 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
           className="txt-truncate"
         >
           <IconText
-            gap="small"
             iconBefore="harddrive"
-            inline={false}
           >
             bon jovi.mp3, aerosmith.mp3
           </IconText>

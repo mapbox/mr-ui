@@ -1,40 +1,48 @@
-import React from 'react';
+import React, {ReactElement, ReactNode} from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icon';
+
+interface Props {
+  children: ReactNode;
+  iconBefore?: ReactNode;
+  iconAfter?: ReactNode;
+  inline?: boolean;
+}
 
 /**
  * Put an icon next to some text.
  *
  * The icon and text will be vertically centered, with standard spacing between.
  */
-class IconText extends React.Component {
-  renderIcon(icon) {
+export default function IconText({
+  children,
+  iconBefore,
+  iconAfter,
+  inline = false
+}: Props): ReactElement {
+
+  const renderIcon = (icon: ReactNode) => {
     if (typeof icon === 'string') {
       return <Icon name={icon} />;
     }
     return icon;
   }
 
-  render() {
-    const { props } = this;
-    const flexrule = props.inline ? 'inline-flex' : 'flex';
+  const before = !iconBefore ? null : (
+    <span className="mr6">{renderIcon(iconBefore)}</span>
+  );
 
-    const before = !props.iconBefore ? null : (
-      <span className="mr6">{this.renderIcon(props.iconBefore)}</span>
-    );
+  const after = !iconAfter ? null : (
+    <span className="ml6">{renderIcon(iconAfter)}</span>
+  );
 
-    const after = !props.iconAfter ? null : (
-      <span className="ml6">{this.renderIcon(props.iconAfter)}</span>
-    );
-
-    return (
-      <span className={`${flexrule} flex--center-cross`}>
-        {before}
-        <span>{props.children}</span>
-        {after}
-      </span>
-    );
-  }
+  return (
+    <span className={`${inline ? 'inline-flex' : 'flex'} flex--center-cross`}>
+      {before}
+      <span>{children}</span>
+      {after}
+    </span>
+  );
 }
 
 IconText.propTypes = {
@@ -44,10 +52,6 @@ IconText.propTypes = {
    * using `<span>`s instead of `<div>`s.
    */
   children: PropTypes.node.isRequired,
-  /**
-   * The size of the gap between the text and the icon: `"small"` or `"large"`.
-   */
-  gap: PropTypes.oneOf(['small', 'large']),
   /**
    * An icon to place before the text. If the value is a string, it should name an
    * Assembly icon. If you bring your own SVG or want finer-grained control over
@@ -64,10 +68,3 @@ IconText.propTypes = {
    */
   inline: PropTypes.bool
 };
-
-IconText.defaultProps = {
-  gap: 'small',
-  inline: false
-};
-
-export default IconText;
