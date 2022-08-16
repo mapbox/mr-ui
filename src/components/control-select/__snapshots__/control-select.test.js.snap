@@ -8,7 +8,6 @@ exports[`ControlSelect Supported values renders 1`] = `
     id="value"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="select-container "
@@ -114,7 +113,6 @@ exports[`ControlSelect basic onChange gets called with input id and value 1`] = 
     id="testinput"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="select-container "
@@ -156,7 +154,6 @@ exports[`ControlSelect basic renders 1`] = `
     id="testinput"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="select-container "
@@ -198,7 +195,6 @@ exports[`ControlSelect disabled renders 1`] = `
     id="disabled"
     optional={false}
     text="Disabled"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="select-container "
@@ -240,7 +236,6 @@ exports[`ControlSelect grouped dropdown options renders 1`] = `
     id="grouped"
     optional={false}
     text="Grouped dropdown options"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="select-container "
