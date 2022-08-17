@@ -5,12 +5,12 @@ exports[`LoaderFull basic renders 1`] = `
   <div />
   <div>
     <div
-      class="fixed top left right bottom flex flex--center-main flex--center-cross loading--dark"
+      class="fixed top left right bottom flex flex--center-main flex--center-cross bg-darken50"
       data-testid="loader"
       style="z-index: 9999;"
     >
       <div
-        class="loading bg-darken50"
+        class="loading loading--dark"
       />
     </div>
   </div>
@@ -22,12 +22,12 @@ exports[`LoaderFull opaque renders 1`] = `
   <div />
   <div>
     <div
-      class="fixed top left right bottom flex flex--center-main flex--center-cross"
+      class="fixed top left right bottom flex flex--center-main flex--center-cross bg-white"
       data-testid="loader"
       style="z-index: 9999;"
     >
       <div
-        class="loading bg-white"
+        class="loading"
       />
     </div>
   </div>

@@ -21,11 +21,11 @@ export default function LoaderFull(props: Props): ReactElement {
     style = {}
   } = props;
 
-  const bgClasses = classnames('fixed top left right bottom flex flex--center-main flex--center-cross', {
+  const loaderClasses = classnames('loading', {
     'loading--dark': !opaque
   });
 
-  const loaderClasses = classnames('loading', {
+  const bgClasses = classnames('fixed top left right bottom flex flex--center-main flex--center-cross', {
     'bg-white': opaque,
     'bg-darken50': !opaque
   });

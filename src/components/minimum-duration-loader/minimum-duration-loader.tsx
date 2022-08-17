@@ -10,7 +10,7 @@ interface Props {
 }
 
 /**
- * Display a loading indicator in place of its children until the isLoaded` 
+ * Display a loading indicator in place of its children until the `isLoaded` 
  * prop is true. The indicator will be displayed for a minimum
  * amount of time as specified by the `minDuration`.
  */

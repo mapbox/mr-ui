@@ -27,7 +27,7 @@ export default function Example() {
     <>
       <button
         aria-label="Show loader"
-        className="btn btn--purple"
+        className="btn"
         onClick={() => setLoading(true)}
       >
         Show loader
