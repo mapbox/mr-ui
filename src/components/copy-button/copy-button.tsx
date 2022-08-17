@@ -37,23 +37,28 @@ export default function CopyButton({
   const [clipboardElement, setClipboardElement] = useState(null);
   const [showingFeedback, setShowingFeedback] = useState(false);
 
-  const makeClipboard = useCallback((el: HTMLElement) => {
-    setClipboard(new Clipboard(el, {
-      // Setting the container is necessary for Clipboard to function within
-      // focus traps, like in a Modal.
-      ...(!focusTrapPaused && { container: el })
-    }));
-  }, [focusTrapPaused]);
+  const makeClipboard = useCallback(() => {
+    if (clipboardElement) {
+      setClipboard(new Clipboard(clipboardElement, {
+        // Setting the container is necessary for Clipboard to function within
+        // focus traps, like in a Modal.
+        ...(!focusTrapPaused && { container: clipboardElement })
+      }));
+    }
+  }, [focusTrapPaused, clipboardElement]);
 
-  const destroyClipboard = () => {
+  const reinitializeClipboard = () => {
     if (clipboard) {
       clipboard.destroy();
+      makeClipboard();
     }
   };
 
   useEffect(() => {
     return () => {
-      destroyClipboard();
+      if (clipboard) {
+        clipboard.destroy();
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -61,7 +66,7 @@ export default function CopyButton({
   useEffect(() => {
     // initialize clipboard once ref is set
     if (clipboardElement && !clipboard) {
-      makeClipboard(clipboardElement);
+      makeClipboard();
     }
   }, [clipboardElement, clipboard, makeClipboard]);
 
@@ -77,7 +82,7 @@ export default function CopyButton({
     return () => clearTimeout(timer);
   }, [showingFeedback]);
 
-  const handleCopyButtonClick = (event) => {
+  const handleCopyButtonClick = () => {
     // Clipboard.js attaches its own click handlers for copying
     if (onCopy) {
       onCopy(text);
@@ -85,8 +90,7 @@ export default function CopyButton({
 
     // Show feedback
     setShowingFeedback(true);
-    destroyClipboard(); // destroy clipboard
-    if (event) makeClipboard(event.target); // reinitialize clipboard
+    reinitializeClipboard();
   };
 
   const renderFeedbackPopover = () => {
