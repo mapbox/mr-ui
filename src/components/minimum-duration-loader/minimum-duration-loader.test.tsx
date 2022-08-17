@@ -1,59 +1,68 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { testCases } from './minimum-duration-loader-test-cases';
+import { render, screen } from '@testing-library/react';
+import MinimumDurationLoader from './minimum-duration-loader';
+
+const children = <span data-testid='test-content'>Content</span>;
+//const customLoader = <span>Custom Loader</span>;
 
 describe('MinimumDurationLoader', () => {
-  let testCase;
-  let wrapper;
-
-  describe(testCases.defaultPropsNotLoaded.description, () => {
+  describe('default duration and loader, not loaded on mount', () => {
     beforeEach(() => {
       jest.useFakeTimers();
-      testCase = testCases.defaultPropsNotLoaded;
-      wrapper = mount(React.createElement(testCase.component, testCase.props));
     });
 
-    afterEach(() => {
-      jest.useRealTimers();
+    const props = {
+      children,
+      isLoaded: false
+    };
+
+    test('renders the loading indicator and doesn\'t render the content', () => {
+      render(<MinimumDurationLoader {...props} />)
+      expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
+      expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
     });
 
-    it("renders the loading indicator and doesn't render the content", () => {
-      wrapper.update();
-      expect(wrapper.find('[data-test-loader]').length).toEqual(1);
-      expect(wrapper.find('[data-test-content]').length).toEqual(0);
-    });
+    test('renders the content 1s after `isLoaded` prop changes', () => {
+      const { rerender } = render(<MinimumDurationLoader {...props} />)
 
-    it('renders the content 1s after isLoaded prop changes', () => {
-      wrapper.setProps({ isLoaded: true });
-      wrapper.update();
-      expect(wrapper.find('[data-test-loader]').length).toEqual(1);
-      expect(wrapper.find('[data-test-content]').length).toEqual(0);
+      expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
+      expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
+
+      rerender(<MinimumDurationLoader {...{...props, isLoaded: true}} />)
+
+      expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
+      expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
+
       jest.advanceTimersByTime(1000);
-      wrapper.update();
-      expect(wrapper.find('[data-test-loader]').length).toEqual(0);
-      expect(wrapper.find('[data-test-content]').length).toEqual(1);
+
+      expect(screen.queryByTestId('minimum-duration-loader')).not.toBeInTheDocument();
+      expect(screen.getByTestId('test-content')).toBeInTheDocument();
     });
 
-    it('does not render the content if isLoaded becomes `false` after having been `true`', () => {
-      const contentHtml = '<span data-test-content="true">Content</span>';
-      const loaderHtml = '<div class="loading" data-test-loader="true"></div>';
-
-      wrapper.setProps({ isLoaded: true });
-      expect(wrapper.html()).toEqual(loaderHtml);
+    test.skip('does not render the content if isLoaded becomes `false` after having been `true`', () => {
+      const { rerender } = render(<MinimumDurationLoader {...{...props, isLoaded: true}} />)
+      expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
       jest.advanceTimersByTime(1000);
-      wrapper.update();
-      expect(wrapper.html()).toEqual(contentHtml);
-      wrapper.setProps({ isLoaded: false });
-      wrapper.update();
-      expect(wrapper.html()).toEqual(loaderHtml);
-      wrapper.setProps({ isLoaded: true });
-      wrapper.update();
-      expect(wrapper.html()).toEqual(loaderHtml);
+      expect(screen.getByTestId('test-content')).toBeInTheDocument();
+      rerender(<MinimumDurationLoader {...props } />)
+      expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
       jest.advanceTimersByTime(1000);
-      wrapper.update();
-      expect(wrapper.html()).toEqual(contentHtml);
+      expect(screen.getByTestId('test-content')).toBeInTheDocument();
     });
   });
+});
+
+/*
+
+testCases.defaultPropsLoaded = {
+  description: 'default duration and loader, loaded on mount',
+  component: MinimumDurationLoader,
+  noDisplay: true,
+  props: {
+    children,
+    isLoaded: true
+  }
+};
 
   describe(testCases.defaultPropsLoaded.description, () => {
     beforeEach(() => {
@@ -71,6 +80,17 @@ describe('MinimumDurationLoader', () => {
       expect(wrapper.find('[data-test-content]').length).toEqual(1);
     });
   });
+
+testCases.customDuration = {
+  description: 'custom duration',
+  component: MinimumDurationLoader,
+  noDisplay: true,
+  props: {
+    children,
+    isLoaded: false,
+    minDuration: 5000
+  }
+};
 
   describe(testCases.customDuration.description, () => {
     beforeEach(() => {
@@ -107,6 +127,16 @@ describe('MinimumDurationLoader', () => {
     });
   });
 
+testCases.minimumLoaderLoadedWithDefaultLoader = {
+  description: 'default loader, loaded on mount',
+  component: MinimumDurationLoader,
+  noDisplay: true,
+  props: {
+    children,
+    isLoaded: true
+  }
+};
+
   describe(testCases.minimumLoaderLoadedWithDefaultLoader.description, () => {
     beforeEach(() => {
       testCase = testCases.minimumLoaderLoadedWithDefaultLoader;
@@ -119,6 +149,16 @@ describe('MinimumDurationLoader', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
+
+testCases.minimumLoaderNotLoadedWithDefaultLoader = {
+  description: 'default loader, not loaded on mount',
+  component: MinimumDurationLoader,
+  noDisplay: true,
+  props: {
+    children,
+    isLoaded: false
+  }
+};
 
   describe(
     testCases.minimumLoaderNotLoadedWithDefaultLoader.description,
@@ -136,6 +176,17 @@ describe('MinimumDurationLoader', () => {
     }
   );
 
+testCases.minimumLoaderLoadedWithCustomLoader = {
+  description: 'custom loader, loaded on mount',
+  component: MinimumDurationLoader,
+  noDisplay: true,
+  props: {
+    children,
+    isLoaded: true,
+    loader: customLoader
+  }
+};
+
   describe(testCases.minimumLoaderLoadedWithCustomLoader.description, () => {
     beforeEach(() => {
       testCase = testCases.minimumLoaderLoadedWithCustomLoader;
@@ -149,6 +200,16 @@ describe('MinimumDurationLoader', () => {
     });
   });
 
+testCases.minimumLoaderNotLoadedWithCustomLoader = {
+  description: 'custom loader, not loaded on mount',
+  component: MinimumDurationLoader,
+  noDisplay: true,
+  props: {
+    children,
+    isLoaded: false,
+    loader: customLoader
+  }
+};
   describe(testCases.minimumLoaderNotLoadedWithCustomLoader.description, () => {
     beforeEach(() => {
       testCase = testCases.minimumLoaderNotLoadedWithCustomLoader;
@@ -161,4 +222,4 @@ describe('MinimumDurationLoader', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
-});
+  */

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoaderFull basic renders 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="fixed top left right bottom flex flex--center-main flex--center-cross loading--dark"
+      data-testid="loader"
+      style="z-index: 9999;"
+    >
+      <div
+        class="loading bg-darken50"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LoaderFull opaque renders 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="fixed top left right bottom flex flex--center-main flex--center-cross"
+      data-testid="loader"
+      style="z-index: 9999;"
+    >
+      <div
+        class="loading bg-white"
+      />
+    </div>
+  </div>
+</body>
+`;
