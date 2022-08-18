@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlLabel basic renders 1`] = `
+<body>
+  <div>
+    <div>
+      <label
+        class="inline-block txt-s txt-bold mb6"
+        id="radix-0"
+        role="label"
+      >
+        basic label
+         
+      </label>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlLabel basic with aside renders 1`] = `
+<body>
+  <div>
+    <div>
+      <label
+        class="inline-block txt-s txt-bold mb6"
+        id="radix-1"
+        role="label"
+      >
+        basic label
+         
+      </label>
+      <span
+        class="inline-block ml12"
+      >
+        <span>
+          Aside text
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlLabel basic with optional renders 1`] = `
+<body>
+  <div>
+    <div>
+      <label
+        class="inline-block color-red"
+        id="radix-2"
+        role="label"
+      >
+        basic label
+         
+        <span
+          class="txt-normal"
+        >
+          (optional)
+        </span>
+      </label>
+      <span
+        class="inline-block ml12"
+      >
+        This is an aside
+      </span>
+    </div>
+  </div>
+</body>
+`;

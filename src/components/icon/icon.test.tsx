@@ -8,8 +8,8 @@ jest.mock('../utils/get-window');
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getWindowMock = getWindow as any;
 
-describe('renders', () => {
-  test('basic', () => {
+describe('basic', () => {
+  test('renders', () => {
     const { baseElement } = render(<Icon name='bike' />)
     expect(baseElement).toMatchSnapshot();
   });

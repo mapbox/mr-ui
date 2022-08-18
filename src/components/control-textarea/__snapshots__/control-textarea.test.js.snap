@@ -43,7 +43,6 @@ exports[`ControlToggleSet basic onChange gets called with input id and value 1`]
     id="testinput"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <textarea
     aria-required={true}
@@ -65,7 +64,6 @@ exports[`ControlToggleSet basic renders 1`] = `
     id="testinput"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <textarea
     aria-required={true}
@@ -87,7 +85,6 @@ exports[`ControlToggleSet disabled renders 1`] = `
     id="testinput"
     optional={false}
     text="Disabled"
-    themeLabel="txt-s txt-bold mb6"
   />
   <textarea
     aria-required={true}

@@ -77,7 +77,6 @@ exports[`ControlFile basic receives an array of one file as value, displaying it
     id="testinput-1"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="flex flex--center-cross overflow-hidden"
@@ -151,7 +150,6 @@ exports[`ControlFile basic renders 1`] = `
     id="testinput-1"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="flex flex--center-cross overflow-hidden"
@@ -209,7 +207,6 @@ exports[`ControlFile disabled renders 1`] = `
     id="testinput-2"
     optional={false}
     text="Disabled"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="flex flex--center-cross overflow-hidden"
@@ -267,7 +264,6 @@ exports[`ControlFile multiple receives an array of files as value, displaying th
     id="testinput-multiple"
     optional={false}
     text="Multiple"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="flex flex--center-cross overflow-hidden"

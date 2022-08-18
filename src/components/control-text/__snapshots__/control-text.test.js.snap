@@ -81,7 +81,6 @@ exports[`ControlText basic onChange gets called with input id and value 1`] = `
     id="testinput"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <input
     aria-required={true}
@@ -104,7 +103,6 @@ exports[`ControlText basic renders 1`] = `
     id="testinput"
     optional={false}
     text="Basic"
-    themeLabel="txt-s txt-bold mb6"
   />
   <input
     aria-required={true}
@@ -128,7 +126,6 @@ exports[`ControlText default validation error renders 1`] = `
     id="testinput"
     optional={false}
     text="Validation error"
-    themeLabel="txt-s txt-bold mb6"
   />
   <input
     aria-invalid={true}
@@ -152,7 +149,6 @@ exports[`ControlText disabled renders 1`] = `
     id="testinput"
     optional={false}
     text="Disabled"
-    themeLabel="txt-s txt-bold mb6"
   />
   <input
     aria-required={true}
@@ -176,7 +172,6 @@ exports[`ControlText error inline option renders 1`] = `
     id="testinput"
     optional={false}
     text="Error inline"
-    themeLabel="txt-s txt-bold mb6"
   />
   <div
     className="flex"
