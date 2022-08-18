@@ -1,5 +1,5 @@
 /*
-Basic.
+Different options.
 */
 import React from 'react';
 import ControlSelect from '../control-select';
