@@ -2,17 +2,17 @@ const BASE_CLASSNAME =
   'page-loading-indicator h6 fixed top left opacity50 round-full';
 const ENTER_CLASSNAME = 'page-loading-indicator-enter';
 const LEAVE_CLASSNAME = 'page-loading-indicator-leave';
-let el;
-let canEnd;
+let el: HTMLElement;
+let canEnd: null | Promise<void>;
 let mounted = false;
 
 function createElement() {
   el = document.createElement('div');
-  el.setAttribute('data-test', 'page-loading-indicator');
+  el.setAttribute('data-testid', 'page-loading-indicator');
   el.className = BASE_CLASSNAME;
 }
 
-function start() {
+function start(): HTMLElement {
   if (mounted) {
     return;
   }
@@ -22,7 +22,7 @@ function start() {
   }
   document.body.appendChild(el);
   // Next-tick delay to allow the node to be added and ready for a transition.
-  canEnd = new Promise((resolve) => {
+  canEnd = new Promise<void>((resolve) => {
     setTimeout(() => {
       el.className += ' ' + ENTER_CLASSNAME;
       setTimeout(resolve, 300);
@@ -36,7 +36,7 @@ function end() {
     return Promise.resolve();
   }
   return (canEnd || Promise.resolve()).then(() => {
-    new Promise((resolve) => {
+    new Promise<void>((resolve) => {
       el.classList.remove(ENTER_CLASSNAME);
       el.classList.add(LEAVE_CLASSNAME);
       setTimeout(() => {

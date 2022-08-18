@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MinimumDurationLoader custom loader, loaded on mount renders 1`] = `
+<body>
+  <div>
+    <span
+      data-testid="test-content"
+    >
+      Content
+    </span>
+  </div>
+</body>
+`;
+
+exports[`MinimumDurationLoader custom loader, not loaded on mount renders 1`] = `
+<body>
+  <div>
+    <span>
+      Custom Loader
+    </span>
+  </div>
+</body>
+`;
+
+exports[`MinimumDurationLoader default loader, loaded on mount renders 1`] = `
+<body>
+  <div>
+    <span
+      data-testid="test-content"
+    >
+      Content
+    </span>
+  </div>
+</body>
+`;
+
+exports[`MinimumDurationLoader default loader, not loaded on mount renders 1`] = `
+<body>
+  <div>
+    <div
+      class="loading"
+      data-testid="minimum-duration-loader"
+    />
+  </div>
+</body>
+`;

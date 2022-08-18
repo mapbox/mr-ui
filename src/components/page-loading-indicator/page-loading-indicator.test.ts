@@ -1,5 +1,5 @@
 import delay from 'delay';
-import pageLoadingIndictor from '../page-loading-indicator';
+import pageLoadingIndictor from '.';
 
 describe('pageLoadingIndictor.start', () => {
   afterEach(() => {
@@ -12,13 +12,12 @@ describe('pageLoadingIndictor.start', () => {
     expect(el.className).toMatch(/[\b]?page-loading-indicator[\b]?/);
   });
 
-  test('indicator receives enter class after a short delay', () => {
+  test('indicator receives enter class after a short delay', async () => {
     const el = pageLoadingIndictor.start();
     expect(el.className).toMatch(/[\b]?page-loading-indicator[\b]?/);
-    return delay(10).then(() => {
-      expect(el.className).toMatch(/[\b]?page-loading-indicator[\b]?/);
-      expect(el.className).toMatch(/[\b]?page-loading-indicator-enter[\b]?/);
-    });
+    await delay(10);
+    expect(el.className).toMatch(/[\b]?page-loading-indicator[\b]?/);
+    expect(el.className).toMatch(/[\b]?page-loading-indicator-enter[\b]?/);
   });
 
   test('does not create duplicate elements', () => {
