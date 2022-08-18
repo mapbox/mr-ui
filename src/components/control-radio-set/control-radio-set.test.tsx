@@ -1,10 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { testCases } from './control-toggle-set-test-cases';
+import ControlRadioSet from './control-radio-set';
 
-describe('ControlToggleGroup', () => {
-  let testCase;
-  let wrapper;
+describe('ControlRadioSet', () => {
+
+/*
+testCases.basic = {
+  description: 'basic',
+  component: ControlRadioSet,
+  props: {
+    id: 'testinput',
+    options: [
+      { label: 'Option 1', value: 'Option value 1' },
+      { label: 'Option 2', value: 'Option value 2' }
+    ],
+    onChange: jest.fn()
+  }
+};
 
   describe(testCases.basic.description, () => {
     beforeEach(() => {
@@ -32,6 +43,19 @@ describe('ControlToggleGroup', () => {
     });
   });
 
+testCases.disabled = {
+  description: 'disabled',
+  component: ControlRadioSet,
+  props: {
+    id: 'testinput',
+    options: [
+      { label: 'Option 1', value: 'Option value 1' },
+      { label: 'Option 2', value: 'Option value 2', disabled: true }
+    ],
+    onChange: jest.fn()
+  }
+};
+
   describe(testCases.disabled.description, () => {
     beforeEach(() => {
       testCase = testCases.disabled;
@@ -50,6 +74,26 @@ describe('ControlToggleGroup', () => {
     });
   });
 
+testCases.allOptions = {
+  description: 'all options',
+  component: ControlRadioSet,
+  props: {
+    id: 'testinput',
+    options: [
+      { label: <span>Option 1</span>, value: 'Option value 1' },
+      { label: <span>Option 2</span>, value: 'Option value 2' },
+      { label: <span>Option 3</span>, value: 'Option value 3' }
+    ],
+    validationError: 'oh no!',
+    value: 'Option value 1',
+    autoFocus: true,
+    optional: true,
+    themeRadioContainer: 'w-full',
+    themeRadio: 'radio--white radio--active-red mr6',
+    themeControlWrapper: 'bg-red-light',
+    onChange: jest.fn()
+  }
+};
   describe(testCases.allOptions.description, () => {
     beforeEach(() => {
       testCase = testCases.allOptions;
@@ -62,4 +106,5 @@ describe('ControlToggleGroup', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
+*/
 });

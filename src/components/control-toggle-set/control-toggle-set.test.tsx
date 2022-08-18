@@ -1,10 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { testCases } from './control-radio-set-test-cases';
+import ControlToggleSet from './control-toggle-set';
 
-describe('ControlRadioSet', () => {
-  let testCase;
-  let wrapper;
+describe('ControlToggleGroup', () => {
+
+/*
+testCases.basic = {
+  description: 'basic',
+  component: ControlToggleSet,
+  props: {
+    id: 'testinput',
+    options: [
+      { label: 'Toggle 1', value: 'Toggle value 1' },
+      { label: 'Toggle 2', value: 'Toggle value 2' }
+    ],
+    onChange: jest.fn()
+  }
+};
 
   describe(testCases.basic.description, () => {
     beforeEach(() => {
@@ -32,6 +43,22 @@ describe('ControlRadioSet', () => {
     });
   });
 
+testCases.disabled = {
+  description: 'disabled',
+  component: ControlToggleSet,
+  props: {
+    id: 'testinput',
+    theme: {
+      toggleGroup: 'bg-gray-faint'
+    },
+    options: [
+      { label: 'Toggle 1', value: 'Toggle value 1' },
+      { label: 'Toggle 2', value: 'Toggle value 2', disabled: true }
+    ],
+    onChange: jest.fn()
+  }
+};
+
   describe(testCases.disabled.description, () => {
     beforeEach(() => {
       testCase = testCases.disabled;
@@ -50,6 +77,27 @@ describe('ControlRadioSet', () => {
     });
   });
 
+testCases.allOptions = {
+  description: 'all options',
+  component: ControlToggleSet,
+  props: {
+    id: 'testinput',
+    options: [
+      { label: <span>Toggle 1</span>, value: 'Toggle value 1' },
+      { label: <span>Toggle 2</span>, value: 'Toggle value 2' },
+      { label: <span>Toggle 3</span>, value: 'Toggle value 3' }
+    ],
+    validationError: 'oh no!',
+    value: 'Toggle value 1',
+    autoFocus: true,
+    optional: true,
+    themeToggleGroup: 'bg-red border border--2 border--red',
+    themeToggleContainer: 'w-full',
+    themeToggle: 'toggle--white toggle--active-red',
+    themeControlWrapper: 'bg-red-light px12 py12',
+    onChange: jest.fn()
+  }
+};
   describe(testCases.allOptions.description, () => {
     beforeEach(() => {
       testCase = testCases.allOptions;
@@ -62,4 +110,5 @@ describe('ControlRadioSet', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
+*/
 });
