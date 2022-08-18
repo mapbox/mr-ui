@@ -57,4 +57,8 @@ function _reset() {
   mounted = false;
 }
 
-export default { start, end, _reset };
+const pageLoadingIndicator = {
+  start, end, _reset
+}
+
+export default pageLoadingIndicator;

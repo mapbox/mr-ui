@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChevronousText basic renders as expected 1`] = `
+<body>
+  <div>
+    <span>
+      Explore
+       
+      <span
+        class="txt-nowrap"
+      >
+        Mapbox
+        <svg
+          aria-hidden="true"
+          class="events-none icon inline-block align-t"
+          data-testid="icon-chevron-right"
+          focusable="false"
+          style="width: 1.5em;"
+        >
+          <use
+            xlink:href="#icon-chevron-right"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-right
+        </span>
+      </span>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`ChevronousText chevron before multiline text renders as expected 1`] = `
+<body>
+  <div>
+    <span>
+      <span
+        class="txt-nowrap"
+      >
+        <svg
+          aria-hidden="true"
+          class="events-none icon inline-block align-t"
+          data-testid="icon-chevron-left"
+          focusable="false"
+          style="width: 1.5em;"
+        >
+          <use
+            xlink:href="#icon-chevron-left"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-left
+        </span>
+        "It
+      </span>
+       
+      was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us..." - A Tale of Two Cities
+    </span>
+  </div>
+</body>
+`;
+
+exports[`ChevronousText chevron before one long unwrappable word text renders as expected 1`] = `
+<body>
+  <div>
+    <span>
+      <span
+        class="txt-nowrap"
+      >
+        <svg
+          aria-hidden="true"
+          class="events-none icon inline-block align-t"
+          data-testid="icon-chevron-left"
+          focusable="false"
+          style="width: 1.5em;"
+        >
+          <use
+            xlink:href="#icon-chevron-left"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-left
+        </span>
+        Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon
+      </span>
+       
+      
+    </span>
+  </div>
+</body>
+`;
+
+exports[`ChevronousText multiline text renders as expected 1`] = `
+<body>
+  <div>
+    <span>
+      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us..." - A Tale of Two
+       
+      <span
+        class="txt-nowrap"
+      >
+        Cities
+        <svg
+          aria-hidden="true"
+          class="events-none icon inline-block align-t"
+          data-testid="icon-chevron-right"
+          focusable="false"
+          style="width: 1.5em;"
+        >
+          <use
+            xlink:href="#icon-chevron-right"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-right
+        </span>
+      </span>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`ChevronousText one long unwrappable word text renders as expected 1`] = `
+<body>
+  <div>
+    <span>
+      
+       
+      <span
+        class="txt-nowrap"
+      >
+        Pneumonoultramicroscopicsilicovolcanoconiosis
+        <svg
+          aria-hidden="true"
+          class="events-none icon inline-block align-t"
+          data-testid="icon-chevron-right"
+          focusable="false"
+          style="width: 1.5em;"
+        >
+          <use
+            xlink:href="#icon-chevron-right"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-right
+        </span>
+      </span>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`ChevronousText sized icon before text renders as expected 1`] = `
+<body>
+  <div>
+    <span>
+      <span
+        class="txt-nowrap"
+      >
+        <svg
+          aria-hidden="true"
+          class="events-none icon inline-block align-t"
+          data-testid="icon-chevron-left"
+          focusable="false"
+          style="width: 1.7em;"
+        >
+          <use
+            xlink:href="#icon-chevron-left"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-left
+        </span>
+        Cheers!
+      </span>
+       
+      
+    </span>
+  </div>
+</body>
+`;
+
+exports[`ChevronousText sized icon renders as expected 1`] = `
+<body>
+  <div>
+    <span>
+      
+       
+      <span
+        class="txt-nowrap"
+      >
+        Cheers!
+        <svg
+          aria-hidden="true"
+          class="events-none icon inline-block align-t"
+          data-testid="icon-chevron-right"
+          focusable="false"
+          style="width: 10px;"
+        >
+          <use
+            xlink:href="#icon-chevron-right"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-right
+        </span>
+      </span>
+    </span>
+  </div>
+</body>
+`;

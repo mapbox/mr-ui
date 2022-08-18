@@ -12,13 +12,11 @@ const propNames = [
   'themeLoader'
 ];
 
-export default function LoaderLocal(props: Props): ReactElement {
-  const {
-    themeLoader = 'bg-gray-faint'
-  } = props;
-
+export default function LoaderLocal({
+  themeLoader = 'bg-gray-faint',
+  ...props
+}: Props): ReactElement {
   const passedProps: Props = omit(props, propNames);
-
   return <div
     className={`loading absolute top left right bottom flex flex--center-cross flex--center-main ${themeLoader}`}
     {...passedProps}

@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import maybeAddPeriod from '../utils/maybe-add-period';
 
 interface Props {
   id: string;
-  children: ReactElement;
+  children: ReactNode;
   themeControlWrapper?: string;
-  validationError?: ReactElement | string;
+  validationError?: ReactNode;
 }
 
 export default function ControlWrapper({

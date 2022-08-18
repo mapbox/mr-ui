@@ -18,7 +18,7 @@ describe('basic', () => {
     const props = {
       name: 'alert',
       passthroughProps: {
-        'data-test': 'alert-icon'
+        'data-testid': 'alert-icon'
       }
     };
 
@@ -40,8 +40,8 @@ describe('basic', () => {
     const props = {
       name: 'alert',
       passthroughProps: {
-        'data-test': 'alert-icon',
-        style: { height: 36, width: 36 }
+        'data-testid': 'alert-icon',
+        style: { height: '36px', width: '36px' }
       }
     };
 

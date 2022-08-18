@@ -6,8 +6,7 @@ exports[`basic passthrough prop 1`] = `
     <svg
       aria-hidden="true"
       class="events-none icon"
-      data-test="alert-icon"
-      data-testid="icon-alert"
+      data-testid="alert-icon"
       focusable="false"
       style="width: 18px; height: 18px;"
     >
@@ -79,8 +78,7 @@ exports[`basic special size via style 1`] = `
     <svg
       aria-hidden="true"
       class="events-none icon"
-      data-test="alert-icon"
-      data-testid="icon-alert"
+      data-testid="alert-icon"
       focusable="false"
       style="height: 36px; width: 36px;"
     >

@@ -1,7 +1,7 @@
 import { mergeStyles, setStyles, getStyle } from './styles';
 
-describe('styles utils ', () => {
-  test('getStyle works with default styles ', () => {
+describe('styles utils', () => {
+  test('getStyle works with default styles', () => {
     expect(getStyle('h1')).toBe('txt-h1-mm txt-h2 txt-fancy mb6');
     expect(getStyle('h1', ['txt-h1-mm', 'txt-fancy'])).toBe('txt-h2 mb6');
   });
