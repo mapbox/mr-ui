@@ -2,6 +2,7 @@ Changelog
 ---
 
 ## HEAD
+- [fix] `gap` prop in `src/components/icon-text` which was not in use.
 - [breaking] Deletes `src/components/tab-list`
   - tab-list component was not used anywhere according to our audit and radix does not have support for such mobile functionality (such as displaying a popover for the rest of the tabs that do not fit on mobile)
 - [breaking] Deletes `src/components/underline-tabs`
