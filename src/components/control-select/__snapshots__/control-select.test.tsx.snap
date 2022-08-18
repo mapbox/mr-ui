@@ -125,7 +125,7 @@ exports[`ControlSelect basic renders 1`] = `
 </body>
 `;
 
-exports[`ControlSelect basic renders 2`] = `
+exports[`ControlSelect disabled renders 1`] = `
 <body>
   <div>
     <div

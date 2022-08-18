@@ -37,7 +37,7 @@ describe('ControlSelect', () => {
     });
   });
 
-  describe('basic', () => {
+  describe('disabled', () => {
     const mockOnChange = jest.fn();
     const props = {
       id: 'testinput',
