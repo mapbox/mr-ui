@@ -36,22 +36,21 @@ const propNames = [
   'validator'
 ];
 
-export default function ControlTextarea(props: Props): ReactElement {
+export default function ControlTextarea({
+  id,
+  onChange,
+  value = '',
+  label,
+  optional = false,
+  aside,
+  validationError,
+  noAuto = false,
+  themeControlTextarea = 'textarea hmin120',
+  themeControlWrapper,
+  themeLabel,
+  ...props
+}: Props): ReactElement {
   const extraProps = omit(props, propNames);
-  const {
-    id,
-    onChange,
-    value = '',
-    label,
-    optional = false,
-    aside,
-    validationError,
-    noAuto = false,
-    themeControlTextarea = 'textarea hmin120',
-    themeControlWrapper,
-    themeLabel
-  } = props;
-
   const textareaProps: {
     id: string,
     name: string,

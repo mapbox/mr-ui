@@ -45,27 +45,26 @@ const propNames = [
   'validator'
 ];
 
-export default function ControlText(props: Props): ReactElement {
+export default function ControlText({
+  id,
+  onChange,
+  value = '',
+  label,
+  aside,
+  type = 'text',
+  optional = false,
+  validationError,
+  errorStyle = 'default',
+  noAuto = false,
+  themeLabel,
+  themeControlInput = 'input',
+  themeControlWrapper,
+  ...props
+}: Props): ReactElement {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const extraProps = omit(props, propNames);
   const inputElement = useRef(null);
   const errorElement = useRef(null);
-
-  const {
-    id,
-    onChange,
-    value = '',
-    label,
-    aside,
-    type = 'text',
-    optional = false,
-    validationError,
-    errorStyle = 'default',
-    noAuto = false,
-    themeLabel,
-    themeControlInput = 'input',
-    themeControlWrapper
-  } = props;
 
   const onErrorClick = () => {
     if (inputElement.current) inputElement.current.select();

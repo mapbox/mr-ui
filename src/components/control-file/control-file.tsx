@@ -31,19 +31,18 @@ const propNames = [
   'validator'
 ];
 
-export default function ControlFile(props: Props): ReactElement {
+export default function ControlFile({
+  id,
+  optional = false,
+  disabled = false,
+  validationError,
+  displayValue = 'Select a file',
+  themeControlFile = 'btn',
+  themeControlWrapper,
+  ...props
+}: Props): ReactElement {
   const extraProps = omit(props, propNames);
   const file = useRef(null);
-
-  const {
-    id,
-    optional = false,
-    disabled = false,
-    validationError,
-    displayValue = 'Select a file',
-    themeControlFile = 'btn',
-    themeControlWrapper
-  } = props;
 
   const onChange = e => {
     const fileList = e.target.files;

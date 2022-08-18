@@ -15,12 +15,7 @@ const propNames = [
   'style'
 ];
 
-export default function LoaderFull(props: Props): ReactElement {
-  const {
-    opaque,
-    style = {}
-  } = props;
-
+export default function LoaderFull({ opaque, style, ...props }: Props): ReactElement {
   const loaderClasses = classnames('loading', {
     'loading--dark': !opaque
   });
