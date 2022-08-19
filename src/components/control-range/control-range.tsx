@@ -48,20 +48,21 @@ export default function ControlRange({
   themeLabel,
   ...props
 }: Props): ReactElement {
+
   const extraProps = omit(props, propNames);
 
-  const inputProps = {
+  const rootProps = {
     id,
     name: id,
-    onChange: (e) => onChange(e.target.value, id),
+    onValueChange: (value: Array<number>) => onChange(value, id),
     value,
-    type: 'range',
     'aria-required': optional ? false : true,
-    'data-test': `${id}-input`
+    'data-test': `${id}-input`,
+    ...extraProps
   };
 
   if (validationError) {
-    inputProps['aria-invalid'] = true;
+    rootProps['aria-invalid'] = true;
   }
 
   return (
@@ -80,7 +81,14 @@ export default function ControlRange({
         />
       )}
       <div className={`range ${themeControlRange}`}>
-        <input {...inputProps} {...extraProps} />
+        <SliderPrimitive.Root {...rootProps}>
+          <SliderPrimitive.Track>
+            <SliderPrimitive.Range />
+          </SliderPrimitive.Track>
+          {value.map((_, i) => (
+            <SliderPrimitive.Thumb key={i} />
+          ))}
+        </SliderPrimitive.Root>
       </div>
     </ControlWrapper>
   );

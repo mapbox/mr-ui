@@ -1,6 +1,7 @@
 /* TODO!! This is a temporary file until https://github.com/mapbox/mbx-assembly/pull/62 is in mbx-assembly and deployed */
 
 :root {
+  --white: #FFF;
   --pink: #F141A8;
   --purple: #A45CE2;
   --red: #EB1414;
@@ -17,33 +18,49 @@
   --darken75: rgba(14, 33, 39, 0.75);
 }
 
+.range > [data-orientation='horizontal'],
+.range [role='slider'] {
+  border-color: transparent;
+  color: #757d82;
+}
 
 .switch[data-state='checked'] {
-    border-color: transparent;
-    background-color: #757d82;
+  border-color: transparent;
+  background-color: #757d82;
 }
 
 .switch[data-state='checked']::after {
-    left: 50%;
-    background-color: #fff;
+  left: 50%;
+  background-color: #fff;
 }
 
 .switch[data-disabled] {
-    border-color: transparent;
-    background-color: rgba(158,163,167,.25);
-    pointer-events: none;
-    color: rgba(26,34,36,.25);
+  border-color: transparent;
+  background-color: rgba(158,163,167,.25);
+  pointer-events: none;
+  color: rgba(26,34,36,.25);
 }
 
 .switch[data-disabled]::after {
-    background-color: rgba(26,34,36,.25);
+  background-color: rgba(26,34,36,.25);
 }
+
+.range--pink > [data-orientation='horizontal'],
+.range--pink [role='slider'] {
+  color: var(--pink);
+}
+
 .switch--pink[data-state='checked'] {
   background-color: var(--pink);
 }
 
 .switch--dot-pink[data-state='checked']::after {
   background-color: var(--pink);
+}
+
+.range--red > [data-orientation='horizontal'],
+.range--red [role='slider'] {
+  color: var(--red);
 }
 
 .switch--red[data-state='checked'] {
@@ -54,12 +71,22 @@
   background-color: var(--red);
 }
 
+.range--orange > [data-orientation='horizontal'],
+.range--orange [role='slider'] {
+  color: var(--orange);
+}
+
 .switch--orange[data-state='checked'] {
   background-color: var(--orange);
 }
 
 .switch--dot-orange[data-state='checked']::after {
   background-color: var(--orange);
+}
+
+.range--yellow > [data-orientation='horizontal'],
+.range--yellow [role='slider'] {
+  color: var(--yellow);
 }
 
 .switch--yellow[data-state='checked'] {
@@ -70,12 +97,22 @@
   background-color: var(--yellow);
 }
 
+.range--green > [data-orientation='horizontal'],
+.range--green [role='slider'] {
+  color: var(--green);
+}
+
 .switch--green[data-state='checked'] {
   background-color: var(--green);
 }
 
 .switch--dot-green[data-state='checked']::after {
   background-color: var(--green);
+}
+
+.range--blue > [data-orientation='horizontal'],
+.range--blue [role='slider'] {
+  color: var(--blue);
 }
 
 .switch--blue[data-state='checked'] {
@@ -86,12 +123,22 @@
   background-color: var(--blue);
 }
 
+.range--purple > [data-orientation='horizontal'],
+.range--purple [role='slider'] {
+  color: var(--purple);
+}
+
 .switch--purple[data-state='checked'] {
   background-color: var(--purple);
 }
 
 .switch--dot-purple[data-state='checked']::after {
   background-color: var(--purple);
+}
+
+.range--gray > [data-orientation='horizontal'],
+.range--gray [role='slider'] {
+  color: var(--gray);
 }
 
 .switch--gray[data-state='checked'] {
@@ -102,12 +149,22 @@
   background-color: var(--gray);
 }
 
+.range--disabled10 > [data-orientation='horizontal'],
+.range--disabled10 [role='slider'] {
+  color: var(--disabled10);
+}
+
 .switch--disabled10[data-state='checked'] {
   background-color: var(--disabled10);
 }
 
 .switch--dot-disabled10[data-state='checked']::after {
   background-color: var(--disabled10);
+}
+
+.range--disabled25 > [data-orientation='horizontal'],
+.range--disabled25 [role='slider'] {
+  color: var(--disabled25);
 }
 
 .switch--disabled25[data-state='checked'] {
@@ -118,12 +175,22 @@
   background-color: var(--disabled25);
 }
 
+.range--disabled75 > [data-orientation='horizontal'],
+.range--disabled75 [role='slider'] {
+  color: var(--disabled75);
+}
+
 .switch--disabled75[data-state='checked'] {
   background-color: var(--disabled75);
 }
 
 .switch--dot-disabled75[data-state='checked']::after {
   background-color: var(--disabled75);
+}
+
+.range--darken75 > [data-orientation='horizontal'],
+.range--darken75 [role='slider'] {
+  color: var(--darken75);
 }
 
 .switch--darken25[data-state='checked'] {
@@ -134,12 +201,22 @@
   background-color: var(--darken25);
 }
 
+.range--darken50 > [data-orientation='horizontal'],
+.range--darken50 [role='slider'] {
+  color: var(--darken50);
+}
+
 .switch--darken50[data-state='checked'] {
   background-color: var(--darken50);
 }
 
 .switch--dot-darken50[data-state='checked']::after {
   background-color: var(--darken50);
+}
+
+.range--darken75 > [data-orientation='horizontal'],
+.range--darken75 [role='slider'] {
+  color: var(--darken75);
 }
 
 .switch--darken75[data-state='checked'] {
@@ -154,3 +231,47 @@
   box-shadow: 0 0 0 3px rgb(137 199 216 / 65%);
 }
 
+.range > [data-orientation='horizontal'] {
+  height: 4px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 2px;
+  background: currentColor;
+  cursor: pointer;
+}
+
+.range [role='slider'] {
+  transition: background var(--transition);
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  background: var(--white);
+  cursor: grab;
+}
+
+.range [role='slider']:focus {
+  cursor: grabbing;
+}
+
+.range--s > [data-orientation='horizontal'] {
+  height: 2px;
+}
+
+.range--s [role='slider'] {
+  width: 12px;
+  height: 12px;
+  margin-top: -5px;
+}
+
+.range:disabled  > [data-orientation='horizontal'] {
+ background: var(--disabled25);
+}
+
+.range:disabled [role='slider'] {
+  border-color: var(--disabled25);
+  background: var(--gray-faint); 
+}
