@@ -207,7 +207,7 @@ const formConfig = {
   },
   area: {
     label: 'Choose size of area',
-    initialValue: '10',
+    initialValue: [10],
     min: 10,
     max: 100,
     step: 10

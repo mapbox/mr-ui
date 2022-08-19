@@ -15,8 +15,10 @@ const propNames = [
   'aside',
   'validationError',
   'themeControlRange',
+  'themeControlRangeActive',
   'themeControlWrapper',
   'themeLabel',
+  'tooltip',
   // Passed when used with the Form component
   'initialValue',
   'validator'
@@ -29,8 +31,10 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'>{
   label?: string;
   optional?: boolean;
   aside?: ReactNode;
+  tooltip?: boolean;
   validationError?: ReactNode;
   themeControlRange?: string;
+  themeControlRangeActive?: string;
   themeControlWrapper?: string;
   themeLabel?: string;
 }
@@ -42,8 +46,10 @@ export default function ControlRange({
   label,
   optional = false,
   aside,
+  tooltip,
   validationError,
   themeControlRange = 'range--s range--gray w-full h-full',
+  themeControlRangeActive,
   themeControlWrapper,
   themeLabel,
   ...props
@@ -65,6 +71,10 @@ export default function ControlRange({
     rootProps['aria-invalid'] = true;
   }
 
+  const renderThumb = (value: number, index: number) => {
+    return <SliderPrimitive.Thumb key={index} />
+  };
+
   return (
     <ControlWrapper
       themeControlWrapper={themeControlWrapper}
@@ -83,11 +93,9 @@ export default function ControlRange({
       <div className={`range ${themeControlRange}`}>
         <SliderPrimitive.Root {...rootProps}>
           <SliderPrimitive.Track>
-            <SliderPrimitive.Range />
+            <SliderPrimitive.Range className={`absolute h-full ${themeControlRangeActive}`}/>
           </SliderPrimitive.Track>
-          {value.map((_, i) => (
-            <SliderPrimitive.Thumb key={i} />
-          ))}
+          {value.map(renderThumb)}
         </SliderPrimitive.Root>
       </div>
     </ControlWrapper>
@@ -107,10 +115,14 @@ ControlRange.propTypes = {
   optional: PropTypes.bool,
   /** Additional content inserted alongside the label element. */
   aside: PropTypes.node,
+  /** Provide a tooltip for visual feedback on a range thumb value. */
+  tooltip: PropTypes.bool,
   /** If provided, the value of this propery displays as an error message. */
   validationError: PropTypes.node,
   /** Assembly classes to apply to the range element */
   themeControlRange: PropTypes.string,
+  /** Assembly classes to apply to the active part of the range track */
+  themeControlRangeActive: PropTypes.string,
   /** Assembly classes to apply to the control wrapper */
   themeControlWrapper: PropTypes.string,
   /** Assembly classes to apply to the label element */

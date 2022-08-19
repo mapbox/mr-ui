@@ -1,6 +1,7 @@
 /* TODO!! This is a temporary file until https://github.com/mapbox/mbx-assembly/pull/62 is in mbx-assembly and deployed */
 
 :root {
+  --gray-faint: #FFF;
   --white: #FFF;
   --pink: #F141A8;
   --purple: #A45CE2;
@@ -21,7 +22,7 @@
 .range > [data-orientation='horizontal'],
 .range [role='slider'] {
   border-color: transparent;
-  color: #757d82;
+  color: #000;
 }
 
 .switch[data-state='checked'] {
@@ -227,6 +228,7 @@
   background-color: var(--darken75);
 }
 
+.range [role='slider']:focus,
 [data-assembly-focus-within]:focus-within {
   box-shadow: 0 0 0 3px rgb(137 199 216 / 65%);
 }
@@ -239,10 +241,17 @@
   border-radius: 2px;
   background: currentColor;
   cursor: pointer;
+
+  position: relative;
+  display: flex;
+  alignItems: center;
+  userSelect: none;
+  touchAction: none;
 }
 
 .range [role='slider'] {
   transition: background var(--transition);
+  all: unset;
   display: block;
   width: 20px;
   height: 20px;
@@ -267,11 +276,11 @@
   margin-top: -5px;
 }
 
-.range:disabled  > [data-orientation='horizontal'] {
+.range > [data-orientation='horizontal'][data-disabled] {
  background: var(--disabled25);
 }
 
-.range:disabled [role='slider'] {
+.range > [data-disabled] [role='slider'] {
   border-color: var(--disabled25);
   background: var(--gray-faint); 
 }

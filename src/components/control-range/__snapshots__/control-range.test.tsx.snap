@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlRange all options renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative bg-red-light"
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold color-white"
+          id="radix-0"
+          role="label"
+        >
+          All options
+           
+          <span
+            class="txt-normal"
+          >
+            (optional)
+          </span>
+        </label>
+        <span
+          class="inline-block ml12"
+        >
+          <span>
+            Aside text
+          </span>
+        </span>
+      </div>
+      <div
+        class="range range--s range--red"
+      >
+        <span
+          aria-disabled="false"
+          aria-invalid="true"
+          aria-labelledby="radix-0"
+          aria-required="false"
+          data-orientation="horizontal"
+          data-test="testinput-input"
+          dir="ltr"
+          id="testinput"
+          style="--radix-slider-thumb-transform: translateX(-50%);"
+        >
+          <span
+            data-orientation="horizontal"
+          >
+            <span
+              class="absolute h-full bg-red-dark"
+              data-orientation="horizontal"
+              style="left: 11.11111111111111%; right: 44.44444444444445%;"
+            />
+          </span>
+          <span
+            style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(11.11111111111111% + 0px);"
+          >
+            <span
+              aria-label="Value 1 of 3"
+              aria-orientation="horizontal"
+              aria-valuemax="1000"
+              aria-valuemin="100"
+              aria-valuenow="200"
+              data-orientation="horizontal"
+              data-radix-collection-item=""
+              role="slider"
+              style=""
+              tabindex="0"
+            />
+          </span>
+          <span
+            style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(33.33333333333333% + 0px);"
+          >
+            <span
+              aria-label="Value 2 of 3"
+              aria-orientation="horizontal"
+              aria-valuemax="1000"
+              aria-valuemin="100"
+              aria-valuenow="400"
+              data-orientation="horizontal"
+              data-radix-collection-item=""
+              role="slider"
+              style=""
+              tabindex="0"
+            />
+          </span>
+          <span
+            style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(55.55555555555555% + 0px);"
+          >
+            <span
+              aria-label="Value 3 of 3"
+              aria-orientation="horizontal"
+              aria-valuemax="1000"
+              aria-valuemin="100"
+              aria-valuenow="600"
+              data-orientation="horizontal"
+              data-radix-collection-item=""
+              role="slider"
+              style=""
+              tabindex="0"
+            />
+          </span>
+        </span>
+      </div>
+      <div
+        role="alert"
+      >
+        <div
+          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          data-testid="testinput-error"
+          id="testinput-error"
+        >
+          oh no!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlRange basic renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        class="range range--s range--gray w-full h-full"
+      >
+        <span
+          aria-disabled="false"
+          aria-required="true"
+          data-orientation="horizontal"
+          data-test="testinput-input"
+          dir="ltr"
+          id="testinput"
+          style="--radix-slider-thumb-transform: translateX(-50%);"
+        >
+          <span
+            data-orientation="horizontal"
+          >
+            <span
+              class="absolute h-full undefined"
+              data-orientation="horizontal"
+              style="left: 0%;"
+            />
+          </span>
+        </span>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlRange disabled renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        class="range range--s range--gray w-full h-full"
+      >
+        <span
+          aria-disabled="true"
+          aria-required="true"
+          data-disabled=""
+          data-orientation="horizontal"
+          data-test="testinput-input"
+          dir="ltr"
+          id="testinput"
+          style="--radix-slider-thumb-transform: translateX(-50%);"
+        >
+          <span
+            data-disabled=""
+            data-orientation="horizontal"
+          >
+            <span
+              class="absolute h-full undefined"
+              data-disabled=""
+              data-orientation="horizontal"
+              style="left: 0%;"
+            />
+          </span>
+        </span>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;

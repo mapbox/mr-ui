@@ -1,5 +1,5 @@
 /*
-Basic.
+Basic
 */
 import React, { useState } from 'react';
 import ControlRange from '../control-range';
