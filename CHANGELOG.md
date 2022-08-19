@@ -3,6 +3,9 @@ Changelog
 
 ## HEAD
 - [fix] added new styling for ControlToggleGroup component that is consistent with actual usage.
+- [breaking] props changes to `src/components/control-range`
+  - `value` is now accepts an array of numbers
+- [feature] `src/components/control-range` now supports multi range with an additional `themeControlRangeActive` for providing classnames to the active member of the range track.
 - [fix] `gap` prop in `src/components/icon-text` which was not in use.
 - [breaking] Removed `isSupported` check in `src/components/copy-button`
 - [breaking] props changes to `src/components/copy-button`
@@ -14,7 +17,6 @@ Changelog
   - Renamed `initialDisplayValue` to `displayValue`
   - Dropped 'themeControlFileClear'
 - [breaking] Removed clear implementation in `src/components/control-file`. Just a button element that triggers <input type="file" /> is implemented.
->>>>>>> e0fe270 (Add to changelog)
 - [breaking] Deletes `src/components/tab-list`
   - tab-list component was not used anywhere according to our audit and radix does not have support for such mobile functionality (such as displaying a popover for the rest of the tabs that do not fit on mobile)
 - [breaking] Deletes `src/components/underline-tabs`
