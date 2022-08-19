@@ -1,10 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { testCases } from './control-range-test-cases';
+import ControlRange from './control-range';
 
 describe('ControlRange', () => {
-  let testCase;
-  let wrapper;
+
+});
+
+/*
+testCases.basic = {
+  description: 'basic',
+  component: ControlRange,
+  props: {
+    id: 'testinput',
+    label: 'Basic',
+    onChange: jest.fn()
+  }
+};
 
   describe(testCases.basic.description, () => {
     beforeEach(() => {
@@ -32,6 +42,17 @@ describe('ControlRange', () => {
     });
   });
 
+testCases.disabled = {
+  description: 'disabled',
+  component: ControlRange,
+  props: {
+    id: 'testinput',
+    label: 'Disabled',
+    onChange: jest.fn(),
+    disabled: true
+  }
+};
+
   describe(testCases.disabled.description, () => {
     beforeEach(() => {
       testCase = testCases.disabled;
@@ -45,6 +66,26 @@ describe('ControlRange', () => {
     });
   });
 
+testCases.allOptions = {
+  description: 'all options',
+  component: ControlRange,
+  props: {
+    id: 'testinput',
+    label: 'All options',
+    validationError: 'oh no!',
+    value: 200,
+    min: 100,
+    max: 1000,
+    step: 100,
+    optional: true,
+    autoFocus: true,
+    aside: <span>Aside text</span>,
+    themeControlRange: 'range--s range--red',
+    themeControlWrapper: 'bg-red-light',
+    themeLabel: 'txt-s txt-bold color-white',
+    onChange: jest.fn()
+  }
+};
   describe(testCases.allOptions.description, () => {
     beforeEach(() => {
       testCase = testCases.allOptions;
@@ -64,4 +105,4 @@ describe('ControlRange', () => {
       expect(props).toHaveProperty('step', 100);
     });
   });
-});
+*/
