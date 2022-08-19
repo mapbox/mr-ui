@@ -1,57 +1,40 @@
 /*
 More options
 */
-import React from 'react';
+import React, { useState } from 'react';
 import ControlCheckboxSet from '../control-checkbox-set';
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '', id: '' };
-  }
-
-  handleChange = (value, id) => {
-    this.setState({ value, id });
-  };
-
-  render() {
-    return (
-      <ControlCheckboxSet
-        id="more-options"
-        legend="Choose an animal"
-        onChange={this.handleChange}
-        value={['sea-otter', 'humpback-whale']}
-        validationError="oh no!"
-        themeControlWrapper="bg-gray px12 py12"
-        themeRadioContainer="w-full"
-        themeRadio="radio--white radio--active-red mr6"
-        themeLegend="color-white"
-        optional={true}
-        aside={
-          <span className="txt-bold inline-block color-white">
-            Aside content
-          </span>
+export default function Example() {
+  const [ value, setValue ] = useState(['sea-otter', 'humpback-whale']);
+  return (
+    <ControlCheckboxSet
+      id="more-options"
+      onChange={setValue}
+      value={[...value]}
+      validationError="oh no!"
+      themeControlWrapper="bg-gray px12 py12"
+      themeCheckboxContainer="w-full"
+      themeCheckbox="radio--white radio--active-red mr6"
+      optional={true}
+      options={[
+        {
+          label: 'Humpback whale',
+          value: 'humpback-whale'
+        },
+        {
+          label: 'Rufous Hummingbird',
+          value: 'rufous-hummingbird',
+          disabled: true
+        },
+        {
+          label: 'Sea Otter',
+          value: 'sea-otter'
+        },
+        {
+          label: 'Snowshoe Hare',
+          value: 'snowshoe-hare'
         }
-        options={[
-          {
-            label: 'Humpback whale',
-            value: 'humpback-whale'
-          },
-          {
-            label: 'Rufous Hummingbird',
-            value: 'rufous-hummingbird',
-            disabled: true
-          },
-          {
-            label: 'Sea Otter',
-            value: 'sea-otter'
-          },
-          {
-            label: 'Snowshoe Hare',
-            value: 'snowshoe-hare'
-          }
-        ]}
-      />
-    );
-  }
+      ]}
+    />
+  );
 }

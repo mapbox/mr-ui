@@ -150,7 +150,7 @@ exports[`Form all controls renders as expected 1`] = `
             <div
               aria-required="true"
               class="toggle-group round-full border border--2 border--gray-faint bg-gray-faint"
-              data-test="spiritAnimal-input"
+              data-testid="spiritAnimal-input"
               id="spiritAnimal"
               role="radiogroup"
             >
@@ -158,6 +158,7 @@ exports[`Form all controls renders as expected 1`] = `
                 class="toggle-container "
               >
                 <input
+                  data-testid="spiritAnimal-0-input"
                   name="spiritAnimal"
                   type="radio"
                   value="humpback-whale"
@@ -172,6 +173,7 @@ exports[`Form all controls renders as expected 1`] = `
                 class="toggle-container "
               >
                 <input
+                  data-testid="spiritAnimal-1-input"
                   name="spiritAnimal"
                   type="radio"
                   value="rufous hummingbird"
@@ -187,6 +189,7 @@ exports[`Form all controls renders as expected 1`] = `
               >
                 <input
                   checked=""
+                  data-testid="spiritAnimal-2-input"
                   name="spiritAnimal"
                   type="radio"
                   value="sea-otter"
@@ -201,6 +204,7 @@ exports[`Form all controls renders as expected 1`] = `
                 class="toggle-container "
               >
                 <input
+                  data-testid="spiritAnimal-3-input"
                   name="spiritAnimal"
                   type="radio"
                   value="snowshoe-hare"
@@ -441,7 +445,7 @@ exports[`Form all controls renders as expected 1`] = `
             >
               <div
                 aria-required="true"
-                data-test="difficulty-input"
+                data-testid="difficulty-input"
                 id="difficulty"
                 role="radiogroup"
               >
@@ -450,12 +454,13 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     checked=""
+                    data-testid="difficulty-0-input"
                     name="difficulty"
                     type="radio"
                     value="beginner"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block  radio"
+                    class="mr6 radio--blue radio--s-label inline-block radio"
                   />
                   Beginner
                 </label>
@@ -463,12 +468,13 @@ exports[`Form all controls renders as expected 1`] = `
                   class="radio-container txt-s block mb6 flex"
                 >
                   <input
+                    data-testid="difficulty-1-input"
                     name="difficulty"
                     type="radio"
                     value="intermediate"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block  radio"
+                    class="mr6 radio--blue radio--s-label inline-block radio"
                   />
                   Intermediate
                 </label>
@@ -476,12 +482,13 @@ exports[`Form all controls renders as expected 1`] = `
                   class="radio-container txt-s block mb6 flex"
                 >
                   <input
+                    data-testid="difficulty-2-input"
                     name="difficulty"
                     type="radio"
                     value="advanced"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block  radio"
+                    class="mr6 radio--blue radio--s-label inline-block radio"
                   />
                   Advanced
                 </label>
@@ -498,7 +505,7 @@ exports[`Form all controls renders as expected 1`] = `
               class="relative "
             >
               <div
-                data-test="tools-input"
+                data-testid="tools-input"
                 id="tools"
               >
                 <label
@@ -506,8 +513,8 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     aria-checked="false"
+                    data-testid="tools-0-input"
                     name="tools"
-                    role="checkbox"
                     type="checkbox"
                     value="axe"
                   />
@@ -539,8 +546,8 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     aria-checked="false"
+                    data-testid="tools-1-input"
                     name="tools"
-                    role="checkbox"
                     type="checkbox"
                     value="potion"
                   />
@@ -572,8 +579,8 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     aria-checked="false"
+                    data-testid="tools-2-input"
                     name="tools"
-                    role="checkbox"
                     type="checkbox"
                     value="cloak"
                   />
@@ -605,8 +612,8 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     aria-checked="false"
+                    data-testid="tools-3-input"
                     name="tools"
-                    role="checkbox"
                     type="checkbox"
                     value="telescope"
                   />
@@ -638,8 +645,8 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     aria-checked="false"
+                    data-testid="tools-4-input"
                     name="tools"
-                    role="checkbox"
                     type="checkbox"
                     value="map"
                   />
@@ -671,8 +678,8 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     aria-checked="false"
+                    data-testid="tools-5-input"
                     name="tools"
-                    role="checkbox"
                     type="checkbox"
                     value="sword"
                   />
@@ -704,8 +711,8 @@ exports[`Form all controls renders as expected 1`] = `
                 >
                   <input
                     aria-checked="false"
+                    data-testid="tools-6-input"
                     name="tools"
-                    role="checkbox"
                     type="checkbox"
                     value="armour"
                   />

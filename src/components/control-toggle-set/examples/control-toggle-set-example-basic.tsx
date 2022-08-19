@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import ControlToggleSet from '../control-toggle-set';
 
 export default function Example() {
-  const [ value, setValue ] = useState('');
+  const [ value, setValue ] = useState('humpback-whale');
   return (
     <ControlToggleSet
       id="animals"

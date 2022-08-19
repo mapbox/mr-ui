@@ -1,15 +1,15 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import Icon from '../icon';
 import ControlWrapper from '../control-wrapper';
+import { InputProps } from '../typings';
 
 interface Props {
   id: string;
   onChange: (value: Array<string>, id: string) => void;
-  options: Array<{
+  options: Array<InputProps & {
     label: ReactNode;
-    value: string;
   }>;
   value?: Array<string>;
   icon?: string;
@@ -50,16 +50,17 @@ export default function ControlCheckboxSet({
 
   const groupProps = {
     id,
-    'data-test': `${id}-input`
+    'data-testid': `${id}-input`
   };
 
   if (validationError) {
     groupProps['aria-invalid'] = true;
   }
 
-  const renderOptions = ({ label, ...d }) => {
+  const renderOptions = ({ label, ...d }, index: number) => {
     const isActive = value.indexOf(d.value) >= 0 ? true : false;
     const extraProps = omit(d, ['value', 'label']);
+
     return (
       <label
         key={d.value}
@@ -72,7 +73,7 @@ export default function ControlCheckboxSet({
           autoFocus={autoFocus && isActive}
           onChange={onCheckboxChange}
           name={id}
-          role="checkbox"
+          data-testid={`${id}-${index}-input`}
           type="checkbox"
           {...extraProps}
         />

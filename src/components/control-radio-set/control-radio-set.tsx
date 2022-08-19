@@ -1,14 +1,14 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlWrapper from '../control-wrapper';
+import { InputProps } from '../typings';
 
 interface Props {
   id: string;
   onChange: (value: string, id: string) => void;
-  options: Array<{
+  options: Array<InputProps & {
     label: ReactNode;
-    value: string;
   }>;
   value?: string;
   optional?: boolean;
@@ -43,7 +43,7 @@ export default function ControlRadioSet({
     groupProps['aria-invalid'] = true;
   }
 
-  const renderOptions = ({ label, ...d }) => {
+  const renderOptions = ({ label, ...d }, index: number) => {
     const extraProps = omit(d, ['value', 'label']);
     return (
       <label
@@ -56,6 +56,7 @@ export default function ControlRadioSet({
           autoFocus={autoFocus && d.value === value}
           onChange={(e) => onChange(e.target.value, id)}
           name={id}
+          data-testid={`${id}-${index}-input`}
           type="radio"
           {...extraProps}
         />

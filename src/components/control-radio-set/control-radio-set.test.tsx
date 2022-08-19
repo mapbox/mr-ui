@@ -1,110 +1,88 @@
 import React from 'react';
 import ControlRadioSet from './control-radio-set';
+import { screen, render, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('ControlRadioSet', () => {
-
-/*
-testCases.basic = {
-  description: 'basic',
-  component: ControlRadioSet,
-  props: {
-    id: 'testinput',
-    options: [
-      { label: 'Option 1', value: 'Option value 1' },
-      { label: 'Option 2', value: 'Option value 2' }
-    ],
-    onChange: jest.fn()
-  }
-};
-
-  describe(testCases.basic.description, () => {
-    beforeEach(() => {
-      testCase = testCases.basic;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('basic', () => {
+    const mockOnChange = jest.fn();
+    const props = {
+      id: 'testinput',
+      options: [
+        { label: 'Option 1', value: 'Option value 1' },
+        { label: 'Option 2', value: 'Option value 2' }
+      ],
+      onChange: mockOnChange
+    };
 
     test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+      const { baseElement } = render(<ControlRadioSet {...props} />)
+      expect(baseElement).toMatchSnapshot();
     });
 
-    test('onChange gets called with input id and value', () => {
-      const mockEvent = {
-        target: {
-          value: 'foo'
-        }
-      };
-      wrapper.find('input').first().props().onChange(mockEvent);
-      wrapper.update();
-      expect(wrapper).toMatchSnapshot();
-      expect(testCase.props.onChange).toHaveBeenCalledTimes(1);
-      expect(testCase.props.onChange).toHaveBeenCalledWith('foo', 'testinput');
+    test('onChange gets called with input id and value', async () => {
+      render(<ControlRadioSet {...props} />)
+      await userEvent.click(screen.getByLabelText('Option 1'));
+
+      await waitFor(() => {
+        expect(mockOnChange).toHaveBeenCalledTimes(1);
+      });
+
+      await waitFor(() => {
+        expect(mockOnChange).toHaveBeenCalledWith('Option value 1', 'testinput');
+      });
     });
   });
 
-testCases.disabled = {
-  description: 'disabled',
-  component: ControlRadioSet,
-  props: {
-    id: 'testinput',
-    options: [
-      { label: 'Option 1', value: 'Option value 1' },
-      { label: 'Option 2', value: 'Option value 2', disabled: true }
-    ],
-    onChange: jest.fn()
-  }
-};
-
-  describe(testCases.disabled.description, () => {
-    beforeEach(() => {
-      testCase = testCases.disabled;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('disabled', () => {
+    const mockOnChange = jest.fn();
+    const props = {
+      id: 'testinput',
+      options: [
+        { label: 'Option 1', value: 'Option value 1', disabled: true },
+        { label: 'Option 2', value: 'Option value 2' }
+      ],
+      onChange: mockOnChange
+    };
 
     test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+      const { baseElement } = render(<ControlRadioSet {...props} />)
+      expect(baseElement).toMatchSnapshot();
     });
 
-    test('extra props works', () => {
-      const props = wrapper.find('input').last().props();
-      expect(props).toHaveProperty('disabled', true);
+    test.only('onChange is *not* called with input id and value', async () => {
+      render(<ControlRadioSet {...props} />)
+
+      await userEvent.click(screen.getByTestId('testinput-0-input'));
+      expect(screen.getByTestId('testinput-0-input')).toBeDisabled();
+
+      await waitFor(() => {
+        expect(mockOnChange).toHaveBeenCalledTimes(0);
+      });
     });
   });
 
-testCases.allOptions = {
-  description: 'all options',
-  component: ControlRadioSet,
-  props: {
-    id: 'testinput',
-    options: [
-      { label: <span>Option 1</span>, value: 'Option value 1' },
-      { label: <span>Option 2</span>, value: 'Option value 2' },
-      { label: <span>Option 3</span>, value: 'Option value 3' }
-    ],
-    validationError: 'oh no!',
-    value: 'Option value 1',
-    autoFocus: true,
-    optional: true,
-    themeRadioContainer: 'w-full',
-    themeRadio: 'radio--white radio--active-red mr6',
-    themeControlWrapper: 'bg-red-light',
-    onChange: jest.fn()
-  }
-};
-  describe(testCases.allOptions.description, () => {
-    beforeEach(() => {
-      testCase = testCases.allOptions;
-      wrapper = shallow(
-        React.createElement(testCase.component, testCase.props)
-      );
-    });
+  describe('all options', () => {
+    const props = {
+      id: 'testinput',
+      options: [
+        { label: <span>Option 1</span>, value: 'Option value 1' },
+        { label: <span>Option 2</span>, value: 'Option value 2' },
+        { label: <span>Option 3</span>, value: 'Option value 3' }
+      ],
+      validationError: 'oh no!',
+      value: 'Option value 1',
+      autoFocus: true,
+      optional: true,
+      themeRadioContainer: 'w-full',
+      themeRadio: 'radio--white radio--active-red mr6',
+      themeControlWrapper: 'bg-red-light',
+      onChange: jest.fn()
+    };
 
     test('renders', () => {
-      expect(wrapper).toMatchSnapshot();
+      const { baseElement } = render(<ControlRadioSet {...props} />)
+      expect(baseElement).toMatchSnapshot();
     });
   });
-*/
 });

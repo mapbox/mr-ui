@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlToggleGroup basic renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        aria-required="true"
+        class="toggle-group round-full border border--2 border--blue bg-blue"
+        data-testid="testinput-input"
+        id="testinput"
+        role="radiogroup"
+      >
+        <label
+          class="toggle-container "
+        >
+          <input
+            name="testinput"
+            type="radio"
+            value="Toggle value 1"
+          />
+          <div
+            class="txt-s py3 toggle--white toggle--active-blue toggle"
+          >
+            Toggle 1
+          </div>
+        </label>
+        <label
+          class="toggle-container "
+        >
+          <input
+            name="testinput"
+            type="radio"
+            value="Toggle value 2"
+          />
+          <div
+            class="txt-s py3 toggle--white toggle--active-blue toggle"
+          >
+            Toggle 2
+          </div>
+        </label>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;

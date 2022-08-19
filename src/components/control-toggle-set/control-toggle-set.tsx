@@ -1,14 +1,14 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlWrapper from '../control-wrapper';
+import { InputProps } from '../typings';
 
 interface Props {
   id: string;
   onChange: (value: string, id: string) => void;
-  options: Array<{
+  options: Array<InputProps & {
     label: ReactNode;
-    value: string;
   }>;
   value?: string;
   optional?: boolean;
@@ -28,9 +28,9 @@ export default function ControlToggleSet({
   optional = false,
   validationError,
   autoFocus = false,
-  themeToggleGroup = 'border border--2 border--blue bg-blue',
+  themeToggleGroup = 'border border--gray-light py3 px3',
   themeToggleContainer = '',
-  themeToggle = 'txt-s py3 toggle--white toggle--active-blue',
+  themeToggle = 'txt-s py0 round-full toggle--s toggle--gray',
   themeControlWrapper
 }: Props): ReactElement {
 
@@ -46,11 +46,11 @@ export default function ControlToggleSet({
     groupProps['aria-invalid'] = true;
   }
 
-  const renderOptions = ({ label, ...d}) => {
+  const renderOptions = ({ label, ...d}, index: number) => {
     const extraProps = omit(d, ['value', 'label']);
     return (
       <label
-        key={value}
+        key={d.value}
         className={`toggle-container ${themeToggleContainer}`}
       >
         <input
@@ -60,6 +60,7 @@ export default function ControlToggleSet({
           onChange={(e) => onChange(e.target.value, id)}
           name={id}
           type="radio"
+          data-testid={`${id}-${index}-input`}
           {...extraProps}
         />
         <div className={`${themeToggle} toggle`}>{label}</div>

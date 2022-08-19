@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlRadioSet basic renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        aria-required="true"
+        data-testid="testinput-input"
+        id="testinput"
+        role="radiogroup"
+      >
+        <label
+          class="radio-container txt-s block mb6 flex"
+        >
+          <input
+            name="testinput"
+            type="radio"
+            value="Option value 1"
+          />
+          <div
+            class="mr6 radio--blue radio--s-label inline-block radio"
+          />
+          Option 1
+        </label>
+        <label
+          class="radio-container txt-s block mb6 flex"
+        >
+          <input
+            name="testinput"
+            type="radio"
+            value="Option value 2"
+          />
+          <div
+            class="mr6 radio--blue radio--s-label inline-block radio"
+          />
+          Option 2
+        </label>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
