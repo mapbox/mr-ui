@@ -2,6 +2,7 @@ import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import Icon from '../icon';
+import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
 import { InputProps } from '../typings';
 
@@ -13,7 +14,6 @@ interface Props {
   }>;
   value?: Array<string>;
   icon?: string;
-  optional?: boolean;
   autoFocus?: boolean;
   validationError?: ReactNode;
   themeCheckboxContainer?: string,
@@ -60,11 +60,14 @@ export default function ControlCheckboxSet({
   const renderOptions = ({ label, ...d }, index: number) => {
     const isActive = value.includes(value);
     const extraProps = omit(d, ['value', 'label']);
+    const checkboxLabelClasses = classnames(`checkbox-container ${themeCheckboxContainer}`, {
+      'cursor-pointer': !d.disabled
+    })
 
     return (
       <label
         key={d.value}
-        className={`checkbox-container ${themeCheckboxContainer}`}
+        className={checkboxLabelClasses}
       >
         <input
           value={d.value}

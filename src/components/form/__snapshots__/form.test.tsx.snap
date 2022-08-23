@@ -509,7 +509,7 @@ exports[`Form all controls renders as expected 1`] = `
                 id="tools"
               >
                 <label
-                  class="checkbox-container txt-s block mb6 flex"
+                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -542,7 +542,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Pick axe
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex"
+                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -575,7 +575,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Potion
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex"
+                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -608,7 +608,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Cloak
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex"
+                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -641,7 +641,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Telescope
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex"
+                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -674,7 +674,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Map
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex"
+                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -707,7 +707,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Sword
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex"
+                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"

@@ -12,10 +12,9 @@ export default function Example() {
       onChange={setValue}
       value={[...value]}
       validationError="oh no!"
-      themeControlWrapper="bg-gray px12 py12"
+      themeControlWrapper="bg-gray-lighter round px12 py12"
       themeCheckboxContainer="w-full"
       themeCheckbox="radio--white radio--active-red mr6"
-      optional={true}
       options={[
         {
           label: 'Humpback whale',
