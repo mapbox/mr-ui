@@ -58,7 +58,7 @@ export default function ControlCheckboxSet({
   }
 
   const renderOptions = ({ label, ...d }, index: number) => {
-    const isActive = value.indexOf(d.value) >= 0 ? true : false;
+    const isActive = value.includes(value);
     const extraProps = omit(d, ['value', 'label']);
 
     return (
