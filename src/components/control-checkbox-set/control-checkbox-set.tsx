@@ -58,7 +58,7 @@ export default function ControlCheckboxSet({
   }
 
   const renderOptions = ({ label, ...d }, index: number) => {
-    const isActive = value.includes(value);
+    const isActive = value.includes(d.value);
     const extraProps = omit(d, ['value', 'label']);
     const checkboxLabelClasses = classnames(`checkbox-container ${themeCheckboxContainer}`, {
       'cursor-pointer': !d.disabled
