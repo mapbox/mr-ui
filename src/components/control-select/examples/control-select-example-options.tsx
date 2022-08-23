@@ -1,7 +1,7 @@
 /*
 More options
 */
-import React from 'react';
+import React, { useState } from 'react';
 import ControlSelect from '../control-select';
 
 const groupedOptions = [
@@ -35,18 +35,17 @@ const groupedOptions = [
 ];
 
 export default function Example() {
+  const [value, setValue] = useState('baz');
   return (
     <ControlSelect
       id="group"
       label="Choose from a group"
       validationError="oh no!"
-      value="baz"
+      value={value}
       optional={true}
       aside={<span>Aside text</span>}
       themeControlSelect="select--white bg-blue px12"
-      onChange={(value, id) => {
-        console.log(value, id);
-      }}
+      onChange={setValue}
       options={groupedOptions}
     />
   );

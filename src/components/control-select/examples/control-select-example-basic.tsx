@@ -1,17 +1,17 @@
 /*
 Basic
 */
-import React from 'react';
+import React, { useState } from 'react';
 import ControlSelect from '../control-select';
 
 export default function Example() {
+  const [value, setValue] = useState('');
   return (
     <ControlSelect
       id="animals"
       label="Choose an animal"
-      onChange={(value, id) => {
-        console.log(value, id);
-      }}
+      value={value}
+      onChange={setValue}
       options={[
         {
           label: 'Humpback whale',

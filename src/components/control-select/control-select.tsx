@@ -23,11 +23,9 @@ const propNames = [
   'validator'
 ];
 
-type Value = number | string;
-
 type Option = {
   label: string;
-  value?: Value;
+  value?: string | number;
   disabled?: boolean;
   options?: Array<Option>
 }
@@ -35,8 +33,8 @@ type Option = {
 interface Props {
   id: string;
   options: Array<Option>;
-  onChange: (value: Value, id: string) => void;
-  value?: Value;
+  onChange: (value: string, id: string) => void;
+  value?: string | number;
   label?: string;
   optional?: boolean;
   aside?: ReactNode;
