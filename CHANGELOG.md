@@ -2,6 +2,7 @@ Changelog
 ---
 
 ## HEAD
+- [fix] added new styling for ControlToggleGroup component that is consistent with actual usage.
 - [fix] `gap` prop in `src/components/icon-text` which was not in use.
 - [breaking] Removed `isSupported` check in `src/components/copy-button`
 - [breaking] props changes to `src/components/copy-button`
