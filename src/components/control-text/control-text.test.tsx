@@ -45,7 +45,7 @@ describe('ControlText', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    test('onChange is called with input id and value', async () => {
+    test('onChange is *not* called with input id and value', async () => {
       render(<ControlText {...props} />)
       await userEvent.type(screen.getByTestId('testinput-input'), 'steve');
 
