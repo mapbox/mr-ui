@@ -8,6 +8,13 @@ exports[`Popover all options renders 1`] = `
     tabindex="0"
   />
   <div>
+    <span>
+      <button
+        data-testid="trigger"
+      >
+        trigger
+      </button>
+    </span>
     <div
       data-radix-popper-content-wrapper=""
       style="position: fixed; left: 0px; top: 0px; transform: translate3d(-6px, 0px, 0); min-width: max-content; --radix-popper-transform-origin: 0px 50%;"
@@ -35,13 +42,6 @@ exports[`Popover all options renders 1`] = `
         </span>
       </div>
     </div>
-    <span>
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </span>
   </div>
   <span
     data-radix-focus-guard=""
@@ -59,6 +59,13 @@ exports[`Popover basic renders 1`] = `
     tabindex="0"
   />
   <div>
+    <span>
+      <button
+        data-testid="trigger"
+      >
+        trigger
+      </button>
+    </span>
     <div
       data-radix-popper-content-wrapper=""
       style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-transform-origin: 0px 0px;"
@@ -92,13 +99,6 @@ exports[`Popover basic renders 1`] = `
         </span>
       </div>
     </div>
-    <span>
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </span>
   </div>
   <span
     data-radix-focus-guard=""
@@ -116,6 +116,13 @@ exports[`Popover dark renders 1`] = `
     tabindex="0"
   />
   <div>
+    <span>
+      <button
+        data-testid="trigger"
+      >
+        trigger
+      </button>
+    </span>
     <div
       data-radix-popper-content-wrapper=""
       style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-transform-origin: 0px 0px;"
@@ -149,13 +156,6 @@ exports[`Popover dark renders 1`] = `
         </span>
       </div>
     </div>
-    <span>
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </span>
   </div>
   <span
     data-radix-focus-guard=""
@@ -173,6 +173,13 @@ exports[`Popover no arrow renders 1`] = `
     tabindex="0"
   />
   <div>
+    <span>
+      <button
+        data-testid="trigger"
+      >
+        trigger
+      </button>
+    </span>
     <div
       data-radix-popper-content-wrapper=""
       style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-transform-origin: 0px 50%;"
@@ -192,13 +199,6 @@ exports[`Popover no arrow renders 1`] = `
         </div>
       </div>
     </div>
-    <span>
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </span>
   </div>
   <span
     data-radix-focus-guard=""
@@ -216,6 +216,13 @@ exports[`Popover warning renders 1`] = `
     tabindex="0"
   />
   <div>
+    <span>
+      <button
+        data-testid="trigger"
+      >
+        trigger
+      </button>
+    </span>
     <div
       data-radix-popper-content-wrapper=""
       style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-transform-origin: 0px 0px;"
@@ -251,13 +258,6 @@ exports[`Popover warning renders 1`] = `
         </span>
       </div>
     </div>
-    <span>
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </span>
   </div>
   <span
     data-radix-focus-guard=""

@@ -332,29 +332,31 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <button
-            class="btn btn--xs py3 px3 round"
-            data-state="closed"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="events-none icon"
-              data-testid="icon-clipboard"
-              focusable="false"
-              style="width: 18px; height: 18px;"
+          <span>
+            <button
+              class="btn btn--xs py3 px3 round"
+              data-state="closed"
+              type="button"
             >
-              <use
-                xlink:href="#icon-clipboard"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              />
-            </svg>
-            <span
-              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-            >
-              clipboard
-            </span>
-          </button>
+              <svg
+                aria-hidden="true"
+                class="events-none icon"
+                data-testid="icon-clipboard"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-clipboard"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                clipboard
+              </span>
+            </button>
+          </span>
         </div>
       </div>
       <div
@@ -373,29 +375,31 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <button
-            class="btn btn--xs py3 px3 round"
-            data-state="closed"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="events-none icon"
-              data-testid="icon-clipboard"
-              focusable="false"
-              style="width: 18px; height: 18px;"
+          <span>
+            <button
+              class="btn btn--xs py3 px3 round"
+              data-state="closed"
+              type="button"
             >
-              <use
-                xlink:href="#icon-clipboard"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              />
-            </svg>
-            <span
-              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-            >
-              clipboard
-            </span>
-          </button>
+              <svg
+                aria-hidden="true"
+                class="events-none icon"
+                data-testid="icon-clipboard"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-clipboard"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                clipboard
+              </span>
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -597,29 +601,31 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
           data-testid="copy-button"
           role="button"
         >
-          <button
-            class="btn btn--xs py3 px3 round"
-            data-state="closed"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="events-none icon"
-              data-testid="icon-clipboard"
-              focusable="false"
-              style="width: 18px; height: 18px;"
+          <span>
+            <button
+              class="btn btn--xs py3 px3 round"
+              data-state="closed"
+              type="button"
             >
-              <use
-                xlink:href="#icon-clipboard"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              />
-            </svg>
-            <span
-              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-            >
-              clipboard
-            </span>
-          </button>
+              <svg
+                aria-hidden="true"
+                class="events-none icon"
+                data-testid="icon-clipboard"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-clipboard"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                clipboard
+              </span>
+            </button>
+          </span>
         </div>
       </div>
     </div>

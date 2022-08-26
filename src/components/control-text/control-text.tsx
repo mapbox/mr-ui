@@ -99,21 +99,6 @@ export default function ControlText({
     );
   };
 
-  const renderPopover = () => {
-    const popoverProps = {
-      getAnchorElement: () => errorElement.current,
-      placement: 'top',
-      receiveFocus: false,
-      accessibleTitle: 'Validation error'
-    };
-
-    return (
-      <Popover {...{ ...popoverProps, ...props.popoverProps }}>
-        {validationError}
-      </Popover>
-    );
-  };
-
   const inputProps: {
     id: string,
     name: string,
@@ -157,8 +142,6 @@ export default function ControlText({
 
   const labelElement = label ? renderLabel() : null;
 
-  const popover = popoverOpen ? renderPopover() : null;
-
   let control = <input {...inputProps} {...extraProps} />;
 
   if (errorStyle === 'inline') {
@@ -177,20 +160,28 @@ export default function ControlText({
             {...inputProps}
             {...extraProps}
           />
-          <button
-            type="button"
-            onFocus={() => setPopoverOpen(true)}
-            onBlur={() => setPopoverOpen(false)}
-            ref={errorElement}
-            onClick={onErrorClick}
-            data-testid="validation-error"
-            role="alert"
-            className="bg-red color-white round-r px6"
+          <Popover
+            active={popoverOpen}
+            content={validationError}
+            placement="top"
+            aria-label="Validation error"
+            { ...props.popoverProps }
           >
-            <span className="flex flex--center-cross flex--center-main">
-              <Icon name="alert" passthroughProps={{ fill: 'white', className: "cursor-pointer" }} />
-            </span>
-          </button>
+            <button
+              type="button"
+              onFocus={() => setPopoverOpen(true)}
+              onBlur={() => setPopoverOpen(false)}
+              ref={errorElement}
+              onClick={onErrorClick}
+              data-testid="validation-error"
+              role="alert"
+              className="h-full bg-red color-white round-r px6"
+            >
+              <span className="flex flex--center-cross flex--center-main">
+                <Icon name="alert" passthroughProps={{ fill: 'white', className: "cursor-pointer" }} />
+              </span>
+            </button>
+          </Popover>
         </div>
       );
     }
@@ -199,7 +190,6 @@ export default function ControlText({
       <ControlWrapper themeControlWrapper={themeControlWrapper} id={id}>
         {labelElement}
         {control}
-        {popover}
       </ControlWrapper>
     );
   }

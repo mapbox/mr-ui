@@ -6,18 +6,20 @@ exports[`Copiable basic renders as expected 1`] = `
     <div
       class="relative clearfix bg-darken5 round"
     >
-      <div
-        class="py6 px12"
-        data-testid="copiable-text-el"
-        tabindex="-1"
-      >
+      <span>
         <div
-          class="my3 txt-mono txt-s mr24"
-          style="word-wrap: break-word; overflow-wrap: break-word;"
+          class="py6 px12"
+          data-testid="copiable-text-el"
+          tabindex="-1"
         >
-          thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
+          <div
+            class="my3 txt-mono txt-s mr24"
+            style="word-wrap: break-word; overflow-wrap: break-word;"
+          >
+            thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
+          </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </body>
@@ -29,17 +31,19 @@ exports[`Copiable truncated renders as expected 1`] = `
     <div
       class="relative clearfix bg-darken5 round"
     >
-      <div
-        class="py6 px12"
-        data-testid="copiable-text-el"
-        tabindex="-1"
-      >
+      <span>
         <div
-          class="my3 txt-mono txt-s mr24 txt-truncate"
+          class="py6 px12"
+          data-testid="copiable-text-el"
+          tabindex="-1"
         >
-          the text you copy the text you copy the text you copy the text you copy the text you copy 
+          <div
+            class="my3 txt-mono txt-s mr24 txt-truncate"
+          >
+            the text you copy the text you copy the text you copy the text you copy the text you copy 
+          </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </body>

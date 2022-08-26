@@ -1,6 +1,6 @@
 import React from 'react';
 import ControlText from './control-text';
-import { screen, render, waitFor, fireEvent } from '@testing-library/react';
+import { screen, render, waitFor, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('ControlText', () => {
@@ -88,7 +88,9 @@ describe('ControlText', () => {
     test('popover toggles on input focus/blur states', async () => {
       render(<ControlText {...props} />)
 
-      screen.getByTestId('testinput-input').focus();
+      act(() => {
+        screen.getByTestId('testinput-input').focus();
+      });
 
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();

@@ -40,7 +40,7 @@ export default function Popover({
   allowPlacementAxisChange = true,
   clickOutsideCloses = true,
   escapeCloses = true,
-  getInitialFocus,
+  getInitialFocus = (e) => e.preventDefault(),
   offsetFromAnchor,
   passthroughProps,
   onExit,
@@ -79,8 +79,10 @@ export default function Popover({
 
   const onDown = (e: Event) => {
 
-          e.preventDefault();
-          console.log('prevent it?', e);
+    // Don't call onExit if it wasn't provided.
+    if (!onExit) {
+      return;
+    }
 
     // If event target contains the trigger element, assume onExit is handled
     // on its own so don't re-fire it.
