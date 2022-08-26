@@ -313,18 +313,46 @@ exports[`Form all controls renders as expected 1`] = `
                   </label>
                 </div>
                 <div
-                  class="range "
+                  class="range range--s range--gray w-full h-full"
                 >
-                  <input
+                  <span
+                    aria-disabled="false"
                     aria-labelledby="radix-8"
                     aria-required="true"
+                    data-orientation="horizontal"
                     data-test="area-input"
+                    dir="ltr"
                     id="area"
-                    max="100"
-                    min="10"
+                    style="--radix-slider-thumb-transform: translateX(-50%);"
+                  >
+                    <span
+                      data-orientation="horizontal"
+                    >
+                      <span
+                        class="absolute h-full undefined"
+                        data-orientation="horizontal"
+                        style="left: 0%; right: 100%;"
+                      />
+                    </span>
+                    <span
+                      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+                    >
+                      <span
+                        aria-orientation="horizontal"
+                        aria-valuemax="100"
+                        aria-valuemin="10"
+                        aria-valuenow="10"
+                        data-orientation="horizontal"
+                        data-radix-collection-item=""
+                        role="slider"
+                        style=""
+                        tabindex="0"
+                      />
+                    </span>
+                  </span>
+                  <input
                     name="area"
-                    step="10"
-                    type="range"
+                    style="display: none;"
                     value="10"
                   />
                 </div>
