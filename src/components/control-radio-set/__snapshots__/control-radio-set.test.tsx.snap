@@ -1,5 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ControlRadioSet all options renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative bg-red-light"
+    >
+      <div
+        aria-invalid="true"
+        aria-required="false"
+        data-testid="testinput-input"
+        id="testinput"
+        role="radiogroup"
+      >
+        <label
+          class="radio-container w-full"
+        >
+          <input
+            checked=""
+            data-testid="testinput-0-input"
+            name="testinput"
+            type="radio"
+            value="Option value 1"
+          />
+          <div
+            class="radio--white radio--active-red mr6 radio"
+          />
+          <span>
+            Option 1
+          </span>
+        </label>
+        <label
+          class="radio-container w-full"
+        >
+          <input
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="radio"
+            value="Option value 2"
+          />
+          <div
+            class="radio--white radio--active-red mr6 radio"
+          />
+          <span>
+            Option 2
+          </span>
+        </label>
+        <label
+          class="radio-container w-full"
+        >
+          <input
+            data-testid="testinput-2-input"
+            name="testinput"
+            type="radio"
+            value="Option value 3"
+          />
+          <div
+            class="radio--white radio--active-red mr6 radio"
+          />
+          <span>
+            Option 3
+          </span>
+        </label>
+      </div>
+      <div
+        role="alert"
+      >
+        <div
+          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          data-testid="testinput-error"
+          id="testinput-error"
+        >
+          oh no!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`ControlRadioSet basic renders 1`] = `
 <body>
   <div>
@@ -16,6 +95,7 @@ exports[`ControlRadioSet basic renders 1`] = `
           class="radio-container txt-s block mb6 flex"
         >
           <input
+            data-testid="testinput-0-input"
             name="testinput"
             type="radio"
             value="Option value 1"
@@ -29,6 +109,57 @@ exports[`ControlRadioSet basic renders 1`] = `
           class="radio-container txt-s block mb6 flex"
         >
           <input
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="radio"
+            value="Option value 2"
+          />
+          <div
+            class="mr6 radio--blue radio--s-label inline-block radio"
+          />
+          Option 2
+        </label>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlRadioSet disabled renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        aria-required="true"
+        data-testid="testinput-input"
+        id="testinput"
+        role="radiogroup"
+      >
+        <label
+          class="radio-container txt-s block mb6 flex"
+        >
+          <input
+            data-testid="testinput-0-input"
+            disabled=""
+            name="testinput"
+            type="radio"
+            value="Option value 1"
+          />
+          <div
+            class="mr6 radio--blue radio--s-label inline-block radio"
+          />
+          Option 1
+        </label>
+        <label
+          class="radio-container txt-s block mb6 flex"
+        >
+          <input
+            data-testid="testinput-1-input"
             name="testinput"
             type="radio"
             value="Option value 2"

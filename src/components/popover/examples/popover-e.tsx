@@ -42,6 +42,7 @@ export default function Example(): ReactElement {
   return (
     <div className="flex flex--space-between-main">
       <button
+        data-popover-ignore-clicks={true}
         onClick={() => setOpen(!open)}
         className="btn"
       >

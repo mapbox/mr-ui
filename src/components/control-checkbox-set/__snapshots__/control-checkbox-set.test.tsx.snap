@@ -12,11 +12,12 @@ exports[`ControlCheckbox all options renders 1`] = `
         id="testinput"
       >
         <label
-          class="checkbox-container w-full"
+          class="checkbox-container w-full cursor-pointer"
         >
           <input
             aria-checked="true"
             checked=""
+            data-testid="testinput-0-input"
             name="testinput"
             type="checkbox"
             value="Option value 1"
@@ -47,11 +48,12 @@ exports[`ControlCheckbox all options renders 1`] = `
           </span>
         </label>
         <label
-          class="checkbox-container w-full"
+          class="checkbox-container w-full cursor-pointer"
         >
           <input
             aria-checked="true"
             checked=""
+            data-testid="testinput-1-input"
             name="testinput"
             type="checkbox"
             value="Option value 2"
@@ -82,10 +84,11 @@ exports[`ControlCheckbox all options renders 1`] = `
           </span>
         </label>
         <label
-          class="checkbox-container w-full"
+          class="checkbox-container w-full cursor-pointer"
         >
           <input
             aria-checked="false"
+            data-testid="testinput-2-input"
             name="testinput"
             type="checkbox"
             value="Option value 3"
@@ -143,10 +146,11 @@ exports[`ControlCheckbox basic renders 1`] = `
         id="testinput"
       >
         <label
-          class="checkbox-container txt-s block mb6 flex"
+          class="checkbox-container txt-s block mb6 flex cursor-pointer"
         >
           <input
             aria-checked="false"
+            data-testid="testinput-0-input"
             name="testinput"
             type="checkbox"
             value="Option value 1"
@@ -175,10 +179,11 @@ exports[`ControlCheckbox basic renders 1`] = `
           Option 1
         </label>
         <label
-          class="checkbox-container txt-s block mb6 flex"
+          class="checkbox-container txt-s block mb6 flex cursor-pointer"
         >
           <input
             aria-checked="false"
+            data-testid="testinput-1-input"
             name="testinput"
             type="checkbox"
             value="Option value 2"
@@ -230,6 +235,7 @@ exports[`ControlCheckbox disabled renders 1`] = `
         >
           <input
             aria-checked="false"
+            data-testid="testinput-0-input"
             disabled=""
             name="testinput"
             type="checkbox"
@@ -259,10 +265,11 @@ exports[`ControlCheckbox disabled renders 1`] = `
           Option 1
         </label>
         <label
-          class="checkbox-container txt-s block mb6 flex"
+          class="checkbox-container txt-s block mb6 flex cursor-pointer"
         >
           <input
             aria-checked="false"
+            data-testid="testinput-1-input"
             name="testinput"
             type="checkbox"
             value="Option value 2"

@@ -6,7 +6,9 @@ exports[`Copiable basic renders as expected 1`] = `
     <div
       class="relative clearfix bg-darken5 round"
     >
-      <span>
+      <div
+        class="inline-block"
+      >
         <div
           class="py6 px12"
           data-testid="copiable-text-el"
@@ -19,7 +21,7 @@ exports[`Copiable basic renders as expected 1`] = `
             thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
           </div>
         </div>
-      </span>
+      </div>
     </div>
   </div>
 </body>
@@ -31,7 +33,9 @@ exports[`Copiable truncated renders as expected 1`] = `
     <div
       class="relative clearfix bg-darken5 round"
     >
-      <span>
+      <div
+        class="inline-block"
+      >
         <div
           class="py6 px12"
           data-testid="copiable-text-el"
@@ -43,7 +47,7 @@ exports[`Copiable truncated renders as expected 1`] = `
             the text you copy the text you copy the text you copy the text you copy the text you copy 
           </div>
         </div>
-      </span>
+      </div>
     </div>
   </div>
 </body>

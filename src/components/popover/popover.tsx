@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, forwardRef, useRef } from 'react';
+import React, { ReactElement, ReactNode, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
@@ -59,16 +59,6 @@ export default function Popover({
     }
   );
 
-  const Anchor = forwardRef<HTMLElement>((props, ref) => {
-    return (
-      <PopoverPrimitive.Anchor asChild>
-        <span {...props} ref={ref}>
-          {children}
-        </span>
-      </PopoverPrimitive.Anchor>
-    );
-  });
-
   const getContent = () => {
     if (typeof content === 'function') {
       return content();
@@ -101,24 +91,28 @@ export default function Popover({
 
   return (
     <PopoverPrimitive.Root open={active}>
-      <Anchor ref={anchorRef} />
-      <PopoverPrimitive.Content
-        sideOffset={6} 
-        className={bodyClasses}
-        onEscapeKeyDown={escapeCloses && onExit}
-        onPointerDownOutside={clickOutsideCloses && onDown}
-        onOpenAutoFocus={getInitialFocus}
-        align={alignment}
-        alignOffset={offsetFromAnchor}
-        side={placement}
-        sticky={'always'}
-        hideWhenDetached={hideWhenAnchorIsOffscreen}
-        avoidCollisions={allowPlacementAxisChange}
-        {...passthroughProps}
-      >
-        {getContent()}
-        {hasPointer && <PopoverPrimitive.Arrow width={6} height={6} fill={fill} />}
-      </PopoverPrimitive.Content>
+      <PopoverPrimitive.Anchor className="inline-block" ref={anchorRef}>
+        {children}
+      </PopoverPrimitive.Anchor>
+      <PopoverPrimitive.Portal>
+        <PopoverPrimitive.Content
+          sideOffset={6} 
+          className={bodyClasses}
+          onEscapeKeyDown={escapeCloses && onExit}
+          onPointerDownOutside={clickOutsideCloses && onDown}
+          onOpenAutoFocus={getInitialFocus}
+          align={alignment}
+          alignOffset={offsetFromAnchor}
+          side={placement}
+          sticky={'always'}
+          hideWhenDetached={hideWhenAnchorIsOffscreen}
+          avoidCollisions={allowPlacementAxisChange}
+          {...passthroughProps}
+        >
+          {getContent()}
+          {hasPointer && <PopoverPrimitive.Arrow width={6} height={6} offset={6} fill={fill} />}
+        </PopoverPrimitive.Content>
+      </PopoverPrimitive.Portal>
     </PopoverPrimitive.Root>
   );
 }
