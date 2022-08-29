@@ -368,7 +368,7 @@ exports[`Form all controls renders as expected 1`] = `
                 class="flex flex--center-cross"
               >
                 <label
-                  class="switch-container "
+                  class="switch-container  cursor-pointer"
                   for="active"
                 >
                   <button
@@ -478,7 +478,7 @@ exports[`Form all controls renders as expected 1`] = `
                 role="radiogroup"
               >
                 <label
-                  class="radio-container txt-s block mb6 flex"
+                  class="radio-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     checked=""
@@ -493,7 +493,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Beginner
                 </label>
                 <label
-                  class="radio-container txt-s block mb6 flex"
+                  class="radio-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-1-input"
@@ -507,7 +507,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Intermediate
                 </label>
                 <label
-                  class="radio-container txt-s block mb6 flex"
+                  class="radio-container txt-s block mb6 flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-2-input"

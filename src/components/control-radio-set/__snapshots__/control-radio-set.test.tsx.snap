@@ -14,7 +14,7 @@ exports[`ControlRadioSet all options renders 1`] = `
         role="radiogroup"
       >
         <label
-          class="radio-container w-full"
+          class="radio-container w-full cursor-pointer"
         >
           <input
             checked=""
@@ -31,7 +31,7 @@ exports[`ControlRadioSet all options renders 1`] = `
           </span>
         </label>
         <label
-          class="radio-container w-full"
+          class="radio-container w-full cursor-pointer"
         >
           <input
             data-testid="testinput-1-input"
@@ -47,7 +47,7 @@ exports[`ControlRadioSet all options renders 1`] = `
           </span>
         </label>
         <label
-          class="radio-container w-full"
+          class="radio-container w-full cursor-pointer"
         >
           <input
             data-testid="testinput-2-input"
@@ -92,7 +92,7 @@ exports[`ControlRadioSet basic renders 1`] = `
         role="radiogroup"
       >
         <label
-          class="radio-container txt-s block mb6 flex"
+          class="radio-container txt-s block mb6 flex cursor-pointer"
         >
           <input
             data-testid="testinput-0-input"
@@ -106,7 +106,7 @@ exports[`ControlRadioSet basic renders 1`] = `
           Option 1
         </label>
         <label
-          class="radio-container txt-s block mb6 flex"
+          class="radio-container txt-s block mb6 flex cursor-pointer"
         >
           <input
             data-testid="testinput-1-input"
@@ -156,7 +156,7 @@ exports[`ControlRadioSet disabled renders 1`] = `
           Option 1
         </label>
         <label
-          class="radio-container txt-s block mb6 flex"
+          class="radio-container txt-s block mb6 flex cursor-pointer"
         >
           <input
             data-testid="testinput-1-input"

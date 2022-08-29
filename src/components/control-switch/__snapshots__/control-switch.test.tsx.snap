@@ -10,7 +10,7 @@ exports[`ControlSwitch basic renders 1`] = `
         class="flex flex--center-cross"
       >
         <label
-          class="switch-container "
+          class="switch-container  cursor-pointer"
           for="test"
         >
           <button

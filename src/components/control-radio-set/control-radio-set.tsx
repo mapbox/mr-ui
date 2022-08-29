@@ -1,6 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
+import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
 import { InputProps } from '../typings';
 
@@ -45,10 +46,14 @@ export default function ControlRadioSet({
 
   const renderOptions = ({ label, ...d }, index: number) => {
     const extraProps = omit(d, ['value', 'label']);
+    const radioLabelClasses = classnames(`radio-container ${themeRadioContainer}`, {
+      'cursor-pointer': !d.disabled
+    })
+    
     return (
       <label
         key={d.value}
-        className={`radio-container ${themeRadioContainer}`}
+        className={radioLabelClasses}
       >
         <input
           value={d.value}

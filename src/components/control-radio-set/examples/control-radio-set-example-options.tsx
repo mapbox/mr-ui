@@ -12,9 +12,9 @@ export default function Example() {
       onChange={setValue}
       value={value}
       validationError="oh no!"
-      themeControlWrapper="bg-gray px12 py12"
+      themeControlWrapper="bg-gray-lighter px12 py12 round"
       themeRadioContainer="w-full"
-      themeRadio="radio--white radio--active-red mr6"
+      themeRadio="radio--gray radio--active-red mr6"
       optional={true}
       options={[
         {
@@ -23,7 +23,8 @@ export default function Example() {
         },
         {
           label: 'Rufous Hummingbird',
-          value: 'rufous-hummingbird'
+          value: 'rufous-hummingbird',
+          disabled: true
         },
         {
           label: 'Sea Otter',

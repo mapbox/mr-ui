@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
 import * as Switch from '@radix-ui/react-switch';
 
@@ -38,6 +39,10 @@ export default function ControlSwitch(props: Props): ReactElement {
     'data-testid': `${id}-switch`
   };
 
+  const labelClasses = classnames(`switch-container ${themeControlSwitchContainer}`, {
+    'cursor-pointer': !disabled
+  })
+
   return (
     <ControlWrapper
       themeControlWrapper={themeControlWrapper}
@@ -45,7 +50,7 @@ export default function ControlSwitch(props: Props): ReactElement {
       validationError={validationError}
     >
       <fieldset className="flex flex--center-cross">
-        <label htmlFor={id} className={`switch-container ${themeControlSwitchContainer}`}>
+        <label htmlFor={id} className={labelClasses}>
           <Switch.Root {...switchProps} className={`switch ${themeControlSwitch}`}>
             <Switch.Thumb />
           </Switch.Root>
