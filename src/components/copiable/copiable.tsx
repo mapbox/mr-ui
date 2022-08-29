@@ -89,19 +89,6 @@ export default function Copiable({
     </span>
   );
 
-  const copyHintPopover = (
-    <Popover
-      getAnchorElement={() => textEl.current}
-      placement="top"
-      alignment="center"
-      hideWhenAnchorIsOffscreen={true}
-      accessibleTitle="Copy the selected text"
-      padding="small"
-    >
-      <div className="txt-s">{showCopyButton.current && renderCopyHintText}</div>
-    </Popover>
-  );
-
   const textClasses = classnames('my3 txt-mono txt-s mr24', {
     'txt-truncate': truncated
   });
@@ -114,19 +101,28 @@ export default function Copiable({
   return (
     <div className="relative clearfix bg-darken5 round">
       {showCopyButton.current && renderCopyButton}
-      <div
-        tabIndex={-1}
-        ref={textEl}
-        onFocus={handleTextFocus}
-        onBlur={handleTextBlur}
-        className="py6 px12"
-        data-testid="copiable-text-el"
+      <Popover
+        content={<div className="txt-s">{showCopyButton.current && renderCopyHintText}</div>}
+        active={copyTooltipActive}
+        placement="top"
+        alignment="center"
+        hideWhenAnchorIsOffscreen={true}
+        aria-label="Copy the selected text"
+        padding="small"
       >
-        <div className={textClasses} style={textStyle}>
-          {value}
+        <div
+          tabIndex={-1}
+          ref={textEl}
+          onFocus={handleTextFocus}
+          onBlur={handleTextBlur}
+          className="py6 px12"
+          data-testid="copiable-text-el"
+        >
+          <div className={textClasses} style={textStyle}>
+            {value}
+          </div>
         </div>
-      </div>
-      {copyTooltipActive && copyHintPopover}
+      </Popover>
     </div>
   );
 }

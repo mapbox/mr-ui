@@ -3,15 +3,6 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
-import './test-utils/raf';
-import './test-utils/resize-observer';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { createSerializer } from 'enzyme-to-json';
-
-expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
-
-Enzyme.configure({ adapter: new Adapter() });
 
 // https://stackoverflow.com/questions/71521976
 global.DOMRect = class DOMRect {
@@ -35,3 +26,15 @@ global.DOMRect = class DOMRect {
     return JSON.stringify(this);
   }
 }
+
+global.ResizeObserver = class ResizeObserver {
+  [x: string]: any;
+  constructor(cb: any) {
+    this.cb = cb;
+  }
+  observe() {
+    this.cb([{ borderBoxSize: { inlineSize: 0, blockSize: 0 } }]);
+  }
+  unobserve() {}
+  disconnect() {}
+};

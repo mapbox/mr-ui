@@ -50,7 +50,7 @@ describe('ControlCheckbox', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    test.only('onChange is *not* called with input id and value', async () => {
+    test('onChange is *not* called with input id and value', async () => {
       render(<ControlCheckboxSet {...props} />)
 
       await userEvent.click(screen.getByTestId('testinput-0-input'));

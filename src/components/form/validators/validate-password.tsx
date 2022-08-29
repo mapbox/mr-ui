@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import isEmptyControlValue from './is-empty-control-value';
 
-export default function validatePassword(value: any): ReactNode {
-  if (isEmptyControlValue(value)) return '';
+export default function validatePassword(value: any): ReactElement {
+  if (isEmptyControlValue(value)) return null;
 
   const validations = [];
 
@@ -28,9 +28,11 @@ export default function validatePassword(value: any): ReactNode {
     );
   }
 
-  return validations.length === 0 ? (
-    ''
-  ) : (
+  if (validations.length === 0) {
+    return null;
+  }
+
+  return (
     <ul className="list-group">
       {validations.map((listitem, i) => (
         <li key={i} className="list-group-item">{listitem}</li>

@@ -2,6 +2,7 @@ Changelog
 ---
 
 ## HEAD
+
 - [fix] added new styling for ControlToggleGroup component that is consistent with actual usage.
 - [breaking] props changes to `src/components/control-range`
   - `value` is now accepts an array of numbers
@@ -17,13 +18,24 @@ Changelog
   - Renamed `initialDisplayValue` to `displayValue`
   - Dropped 'themeControlFileClear'
 - [breaking] Removed clear implementation in `src/components/control-file`. Just a button element that triggers <input type="file" /> is implemented.
+- [breaking] Deletes `src/components/popover-trigger`
+- [breaking] Rewrites `src/components/popover` as a functional component. 🚨 **Prop changes**:
+  - Dropped `getAnchorElement`. Popover now behaves like Tooltip where the Popover is wrapped around the anchor, and a `content` prop provides the popover contents.
+  - Added `content`
+  - Dropped `receiveFocus`
+  - Dropped `trapFocus`
+  - Dropped `ignoreClickWithinElement`
+  - Dropped `getContainingElement`
+  - Dropped `onElement`
+  - Dropped `zindex`
+  - Dropped `observeSize`
+  - Dropped `containWithinViewport`
 - [breaking] Deletes `src/components/tab-list`
   - tab-list component was not used anywhere according to our audit and radix does not have support for such mobile functionality (such as displaying a popover for the rest of the tabs that do not fit on mobile)
 - [breaking] Deletes `src/components/underline-tabs`
   - underline-tabs can be replaced with tabs component, except the new tabs component cannot handle links. In order to take full advantage of Radix out of the box functionality related to key bindings we need to let radix generate the buttons for tabs.
   - new tabs component also supports adding the tab content which will be rendered automatically when the tab changes
 - [feature] Creates new component `src/components/tabs` and uses [`Tabs ` from Radix](https://www.radix-ui.com/docs/primitives/components/tabs).
-
 - [breaking] Removed the following components that have been underutilized/no longer worth maintaining: Badge, ControlCard, ControlLegend, GoLink, Heading, and NewTabLink.
 - [breaking] Rewrites `src/components/modal` as a functional component.and uses [`DialogPrimitive ` from Radix](https://www.radix-ui.com/docs/primitives/components/dialog#custom-apis). 🚨 **Prop changes**:
   - Dropped `alert`

@@ -48,9 +48,9 @@ export default function Tooltip({
   const getContent = () => {
     if (typeof content === 'function') {
       return content();
-    } else {
-      return content;
     }
+
+    return content;
   }
 
   if (disabled) {
@@ -108,7 +108,7 @@ export default function Tooltip({
           className={bodyClasses}
         >
             {getContent()}
-          <TooltipPrimitive.Arrow offset={6} fill={fill} />
+          <TooltipPrimitive.Arrow width={6} height={6} offset={6} fill={fill} />
         </TooltipPrimitive.Content>
     </TooltipPrimitive.Root>
   );

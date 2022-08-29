@@ -262,7 +262,6 @@
 
 .range [role='slider'] {
   transition: background var(--transition);
-  all: unset;
   display: block;
   width: 20px;
   height: 20px;

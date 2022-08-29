@@ -93,26 +93,6 @@ export default function CopyButton({
     reinitializeClipboard();
   };
 
-  const renderFeedbackPopover = () => {
-    if (!showingFeedback) {
-      return null;
-    }
-
-    return (
-      <Popover
-        // We don't need this one to be as accessible as a regular tooltip
-        getAnchorElement={() => clipboardElement}
-        placement="top"
-        alignment="center"
-        hideWhenAnchorIsOffscreen={true}
-        accessibleTitle={null}
-        padding="small"
-      >
-        <div className="txt-s">Copied!</div>
-      </Popover>
-    );
-  }
-
   const iconName = showingFeedback ? 'check' : 'clipboard';
   const buttonClasses = classnames(className, {
     block
@@ -129,19 +109,27 @@ export default function CopyButton({
       data-clipboard-text={text}
       onClick={handleCopyButtonClick}
     >
-      <Tooltip
-        disabled={showingFeedback}
-        content="Copy"
+      <Popover
+        content={<div className="txt-s">Copied!</div>}
+        active={showingFeedback}
+        placement="top"
+        alignment="center"
+        hideWhenAnchorIsOffscreen={true}
+        padding="small"
       >
-        <button 
-          type="button"
-          className={buttonClasses}
-          {...passthroughProps}
+        <Tooltip
+          disabled={showingFeedback}
+          content="Copy"
         >
-          <Icon name={iconName} />
-          {renderFeedbackPopover()}
-        </button>
-      </Tooltip>
+          <button 
+            type="button"
+            className={buttonClasses}
+            {...passthroughProps}
+          >
+            <Icon name={iconName} />
+          </button>
+        </Tooltip>
+      </Popover>
     </div>
   );
 }
