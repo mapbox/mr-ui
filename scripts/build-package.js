@@ -24,7 +24,7 @@ const srcDir = path.resolve(rootDir, 'src/components');
 // tests and examples.
 function compileComponents() {
   return execa.shell(
-    `babel "${rootDir}/src/components" --out-dir ${outputDir} --ignore "**/examples","**/*.test.(j|t)s" --config-file ${rootDir}/scripts/babel.config.js`,
+    `babel "${rootDir}/src/components" --out-dir ${outputDir} --ignore "**/examples","**/*.test.tsx" --config-file ${rootDir}/scripts/babel.config.js --extensions ".ts,.tsx,.js"`,
     {
       cwd: srcDir,
       stdio: 'inherit'
@@ -34,7 +34,7 @@ function compileComponents() {
 
 // Copy non-src files that we want in the package.
 function copyFiles() {
-  return cpy(['LICENSE_Mapbox', 'CHANGELOG.md', 'README.md'], outputDir, {
+  return cpy(['LICENSE', 'CHANGELOG.md', 'README.md'], outputDir, {
     cwd: rootDir
   });
 }
