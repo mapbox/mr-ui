@@ -98,7 +98,8 @@ export default function Tooltip({
   });
 
   return (
-    <TooltipPrimitive.Root delayDuration={150}>
+    <TooltipPrimitive.Provider>
+      <TooltipPrimitive.Root delayDuration={150}>
         <Trigger />
         <TooltipPrimitive.Content
           aria-label={ariaLabel}
@@ -110,7 +111,8 @@ export default function Tooltip({
             {getContent()}
           <TooltipPrimitive.Arrow width={6} height={6} offset={6} fill={fill} />
         </TooltipPrimitive.Content>
-    </TooltipPrimitive.Root>
+      </TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider>
   );
 }
 

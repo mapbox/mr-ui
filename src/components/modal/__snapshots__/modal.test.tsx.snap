@@ -308,40 +308,25 @@ exports[`Modal basic, auto renders 1`] = `
           close
         </span>
       </button>
-    </div>
-  </div>
-  <span
-    aria-hidden="true"
-    data-aria-hidden="true"
-    data-radix-focus-guard=""
-    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
-    tabindex="0"
-  />
-  <div
-    data-radix-portal=""
-    style="position: absolute; top: 0px; left: 0px; z-index: 2147483647;"
-  >
-    <div
-      data-radix-popper-content-wrapper=""
-      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, -6px, 0); min-width: max-content; will-change: transform; --radix-popper-transform-origin: center 0px;"
-    >
       <div
-        class="bg-white border--white color-text border shadow-darken25 round txt-s px12 py6 wmax240"
-        data-align="center"
-        data-side="top"
-        data-state="instant-open"
-        style="--radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin);"
+        data-radix-popper-content-wrapper=""
+        style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
       >
-        Close
-        <span
-          style="position: absolute; pointer-events: none; width: 0px; height: 0px; transform: rotate(0deg); will-change: transform; top: 100%; direction: ltr; left: 0px;"
+        <div
+          class="bg-white border--white color-text border shadow-darken25 round txt-s px12 py6 wmax240"
+          data-align="center"
+          data-side="top"
+          data-state="instant-open"
+          style="pointer-events: auto; --radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); animation: none;"
         >
+          Close
           <span
-            style="display: inline-block; vertical-align: top; pointer-events: auto;"
+            style="position: absolute; bottom: 0px; transform: translateY(100%); visibility: hidden;"
           >
             <svg
               fill="#fff"
               height="6"
+              offset="6"
               preserveAspectRatio="none"
               style="display: block;"
               viewBox="0 0 30 10"
@@ -352,37 +337,24 @@ exports[`Modal basic, auto renders 1`] = `
               />
             </svg>
           </span>
-        </span>
-        <span
-          id="radix-28"
-          role="tooltip"
-          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-        >
-          Close
           <span
-            style="position: absolute; pointer-events: none; width: 0px; height: 0px; transform: rotate(0deg); will-change: transform; top: 100%; direction: ltr; left: 0px;"
+            id="radix-28"
+            role="tooltip"
+            style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
           >
-            <span
-              style="display: inline-block; vertical-align: top; pointer-events: auto;"
-            >
-              <svg
-                fill="#fff"
-                height="6"
-                preserveAspectRatio="none"
-                style="display: block;"
-                viewBox="0 0 30 10"
-                width="6"
-              >
-                <polygon
-                  points="0,0 30,0 15,10"
-                />
-              </svg>
-            </span>
+            Close
           </span>
-        </span>
+        </div>
       </div>
     </div>
   </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
 </body>
 `;
 

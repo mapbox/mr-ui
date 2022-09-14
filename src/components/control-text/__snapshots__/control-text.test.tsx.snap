@@ -14,7 +14,7 @@ exports[`ControlText all options renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold"
-          id="radix-10"
+          id="radix-15"
           role="label"
         >
           All options
@@ -39,7 +39,7 @@ exports[`ControlText all options renders as expected 1`] = `
       >
         <input
           aria-invalid="true"
-          aria-labelledby="radix-10"
+          aria-labelledby="radix-15"
           aria-required="false"
           autocapitalize="none"
           autocorrect="off"
@@ -101,7 +101,7 @@ exports[`ControlText all options renders as expected 1`] = `
       data-align="center"
       data-side="top"
       data-state="open"
-      id="radix-5"
+      id="radix-16"
       role="dialog"
       style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); animation: none;"
       tabindex="-1"
