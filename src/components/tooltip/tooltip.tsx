@@ -64,12 +64,11 @@ export default function Tooltip({
   const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
     let child = Children.only(children);
 
-    if (isValidElement(child) && child.type === 'button') {
+    if (isValidElement(child)) {
 
       // Following the instructions provided by Radix on handling disabled
       // button elements: Since disabled buttons don't fire events, you need to:
       // - Render the Trigger as `span`.
-      // - Ensure the `button` has no `pointerEvents`.
       if (child.props.disabled) {
         child = (
           <span {...props} ref={ref} className='inline-block' tabIndex={0}>
@@ -84,9 +83,9 @@ export default function Tooltip({
       }
     } else {
       child = (
-        <button {...props} ref={ref}>
+        <span {...props} ref={ref}>
           {child}
-        </button>
+        </span>
       );
     }
 
