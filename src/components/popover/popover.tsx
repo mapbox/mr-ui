@@ -41,7 +41,7 @@ export default function Popover({
   clickOutsideCloses = true,
   escapeCloses = true,
   getInitialFocus = (e) => e.preventDefault(),
-  offsetFromAnchor,
+  offsetFromAnchor = 6,
   passthroughProps,
   onExit,
   children,
@@ -96,13 +96,12 @@ export default function Popover({
       </PopoverPrimitive.Anchor>
       <PopoverPrimitive.Portal>
         <PopoverPrimitive.Content
-          sideOffset={6} 
+          sideOffset={offsetFromAnchor} 
           className={bodyClasses}
           onEscapeKeyDown={escapeCloses && onExit}
           onPointerDownOutside={clickOutsideCloses && onDown}
           onOpenAutoFocus={getInitialFocus}
           align={alignment}
-          alignOffset={offsetFromAnchor}
           side={placement}
           sticky={'always'}
           hideWhenDetached={hideWhenAnchorIsOffscreen}
