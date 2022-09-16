@@ -8,15 +8,11 @@ exports[`Popover all options renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
-      class="inline-block"
+    <button
+      data-testid="trigger"
     >
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </div>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -61,15 +57,11 @@ exports[`Popover basic renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
-      class="inline-block"
+    <button
+      data-testid="trigger"
     >
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </div>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -121,15 +113,11 @@ exports[`Popover dark renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
-      class="inline-block"
+    <button
+      data-testid="trigger"
     >
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </div>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -181,15 +169,11 @@ exports[`Popover no arrow renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
-      class="inline-block"
+    <button
+      data-testid="trigger"
     >
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </div>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -226,15 +210,11 @@ exports[`Popover warning renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
-      class="inline-block"
+    <button
+      data-testid="trigger"
     >
-      <button
-        data-testid="trigger"
-      >
-        trigger
-      </button>
-    </div>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""

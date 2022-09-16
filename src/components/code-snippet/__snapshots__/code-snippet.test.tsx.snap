@@ -332,9 +332,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <div
-            class="inline-block"
-          >
+          <div>
             <button
               class="btn btn--xs py3 px3 round"
               data-state="closed"
@@ -377,9 +375,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <div
-            class="inline-block"
-          >
+          <div>
             <button
               class="btn btn--xs py3 px3 round"
               data-state="closed"
@@ -605,9 +601,7 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
           data-testid="copy-button"
           role="button"
         >
-          <div
-            class="inline-block"
-          >
+          <div>
             <button
               class="btn btn--xs py3 px3 round"
               data-state="closed"

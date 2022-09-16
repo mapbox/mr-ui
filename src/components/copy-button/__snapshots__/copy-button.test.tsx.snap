@@ -9,9 +9,7 @@ exports[`CopyButton all props renders as expected 1`] = `
       data-testid="copy-button"
       role="button"
     >
-      <div
-        class="inline-block"
-      >
+      <div>
         <button
           class="px6 py6 btn btn--purple btn--stroke block"
           data-state="closed"
@@ -51,9 +49,7 @@ exports[`CopyButton basic renders as expected 1`] = `
       data-testid="copy-button"
       role="button"
     >
-      <div
-        class="inline-block"
-      >
+      <div>
         <button
           class="btn btn--xs py3 px3 round"
           data-state="closed"

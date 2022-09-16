@@ -6,7 +6,7 @@ import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { getTheme } from '../utils/styles';
 
 interface Props {
-  children: ReactNode;
+  children: ReactElement;
   content: ReactNode;
   active: boolean;
   padding?: 'medium' | 'small' | 'none';
@@ -91,7 +91,7 @@ export default function Popover({
 
   return (
     <PopoverPrimitive.Root open={active}>
-      <PopoverPrimitive.Anchor className="inline-block" ref={anchorRef}>
+      <PopoverPrimitive.Anchor ref={anchorRef} asChild>
         {children}
       </PopoverPrimitive.Anchor>
       <PopoverPrimitive.Portal>

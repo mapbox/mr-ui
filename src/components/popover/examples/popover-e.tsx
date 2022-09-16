@@ -55,7 +55,7 @@ export default function Example(): ReactElement {
         placement="top"
         alignment="start"
       >
-        <>hi</>
+        <span>hi</span>
       </Popover>
     </div>
   );

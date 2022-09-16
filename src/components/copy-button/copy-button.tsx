@@ -117,18 +117,20 @@ export default function CopyButton({
         hideWhenAnchorIsOffscreen={true}
         padding="small"
       >
-        <Tooltip
-          disabled={showingFeedback}
-          content="Copy"
-        >
-          <button 
-            type="button"
-            className={buttonClasses}
-            {...passthroughProps}
+        <div> 
+          <Tooltip
+            disabled={showingFeedback}
+            content="Copy"
           >
-            <Icon name={iconName} />
-          </button>
-        </Tooltip>
+            <button 
+              type="button"
+              className={buttonClasses}
+              {...passthroughProps}
+            >
+              <Icon name={iconName} />
+            </button>
+          </Tooltip>
+        </div>
       </Popover>
     </div>
   );
