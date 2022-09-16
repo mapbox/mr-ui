@@ -71,7 +71,7 @@ export default function Modal({
     );
   }
 
-  let widthClass = '';
+  let widthClass = 'wmax-full';
   if (size === 'small') {
     widthClass = 'wmax360';
   } else if (size === 'large') {
@@ -107,7 +107,7 @@ export default function Modal({
     onOpenAutoFocus?: (e) => void
   } = {
     className: classnames(
-      `relative w-11/12 my12 my60-mm ${widthClass} bg-white round`,
+      `relative my12 my60-mm ${widthClass} bg-white round`,
       { 'px36 py36': padding === 'large' }
     )
   }

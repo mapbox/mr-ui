@@ -27,7 +27,7 @@ exports[`Modal all options renders 1`] = `
     <div
       aria-describedby="radix-35"
       aria-labelledby="radix-34"
-      class="relative w-11/12 my12 my60-mm wmax360 bg-white round"
+      class="relative my12 my60-mm wmax360 bg-white round"
       data-state="open"
       id="radix-33"
       role="dialog"
@@ -123,7 +123,7 @@ exports[`Modal basic renders 1`] = `
     <div
       aria-describedby="radix-2"
       aria-labelledby="radix-1"
-      class="relative w-11/12 my12 my60-mm wmax360 bg-white round px36 py36"
+      class="relative my12 my60-mm wmax360 bg-white round px36 py36"
       data-state="open"
       id="radix-0"
       role="dialog"
@@ -160,7 +160,7 @@ exports[`Modal basic renders 1`] = `
     <div
       aria-describedby="radix-5"
       aria-labelledby="radix-4"
-      class="relative w-11/12 my12 my60-mm wmax360 bg-white round px36 py36"
+      class="relative my12 my60-mm wmax360 bg-white round px36 py36"
       data-state="open"
       id="radix-3"
       role="dialog"
@@ -263,7 +263,7 @@ exports[`Modal basic, auto renders 1`] = `
     <div
       aria-describedby="radix-27"
       aria-labelledby="radix-26"
-      class="relative w-11/12 my12 my60-mm  bg-white round px36 py36"
+      class="relative my12 my60-mm wmax-full bg-white round px36 py36"
       data-state="open"
       id="radix-25"
       role="dialog"
@@ -385,7 +385,7 @@ exports[`Modal basic, large renders 1`] = `
     <div
       aria-describedby="radix-19"
       aria-labelledby="radix-18"
-      class="relative w-11/12 my12 my60-mm wmax600 bg-white round px36 py36"
+      class="relative my12 my60-mm wmax600 bg-white round px36 py36"
       data-state="open"
       id="radix-17"
       role="dialog"
