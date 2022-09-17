@@ -53,37 +53,15 @@ export default function Tooltip({
     return content;
   }
 
-  if (disabled) {
-    return (
-      <span>
-        {children}
-      </span>
-    )
-  }
-
-  const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
+  const Trigger = forwardRef<HTMLButtonElement>((props) => {
     let child = Children.only(children);
 
-    if (isValidElement(child)) {
-
-      // Following the instructions provided by Radix on handling disabled
-      // button elements: Since disabled buttons don't fire events, you need to:
-      // - Render the Trigger as `span`.
-      if (child.props.disabled) {
-        child = (
-          <span {...props} ref={ref} className='inline-block' tabIndex={0}>
-            {child}
-          </span>
-        );
-      } else {
-        // In order to attach the prop and ref instances of Trigger to the
-        // button child element, we clone it and pass `props` + `ref` as
-        // arguments.
-        child = React.cloneElement(child, { ...props, ref });
-      }
-    } else {
+    // Following the instructions provided by Radix on handling disabled
+    // button elements: Since disabled buttons don't fire events, you need to:
+    // - Render the Trigger as `span`.
+    if (isValidElement(child) && child.props.disabled) {
       child = (
-        <span {...props} ref={ref}>
+        <span {...props} className='inline-block' tabIndex={0}>
           {child}
         </span>
       );
@@ -99,7 +77,7 @@ export default function Tooltip({
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root delayDuration={150}>
-        <Trigger />
+        {disabled ? <>{children}</> : <Trigger />}
         <TooltipPrimitive.Content
           aria-label={ariaLabel}
           side={placement}
