@@ -53,7 +53,7 @@ export default function Tooltip({
     return content;
   }
 
-  const Trigger = forwardRef<HTMLButtonElement>((props) => {
+  const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
     let child = Children.only(children);
 
     // Following the instructions provided by Radix on handling disabled
@@ -61,7 +61,7 @@ export default function Tooltip({
     // - Render the Trigger as `span`.
     if (isValidElement(child) && child.props.disabled) {
       child = (
-        <span {...props} className='inline-block' tabIndex={0}>
+        <span {...props} ref={ref} className="inline-block" tabIndex={0}>
           {child}
         </span>
       );
@@ -78,16 +78,18 @@ export default function Tooltip({
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root delayDuration={150}>
         {disabled ? <>{children}</> : <Trigger />}
-        <TooltipPrimitive.Content
-          aria-label={ariaLabel}
-          side={placement}
-          align={alignment}
-          sideOffset={6}
-          className={bodyClasses}
-        >
-            {getContent()}
-          <TooltipPrimitive.Arrow width={6} height={6} offset={6} fill={fill} />
-        </TooltipPrimitive.Content>
+        <TooltipPrimitive.Portal>
+          <TooltipPrimitive.Content
+            aria-label={ariaLabel}
+            side={placement}
+            align={alignment}
+            sideOffset={6}
+            className={bodyClasses}
+          >
+              {getContent()}
+            <TooltipPrimitive.Arrow width={6} height={6} offset={6} fill={fill} />
+          </TooltipPrimitive.Content>
+        </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
   );

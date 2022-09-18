@@ -73,9 +73,9 @@ export default function Modal({
 
   let widthClass = 'wmax-full';
   if (size === 'small') {
-    widthClass = 'wmax360';
+    widthClass = 'wmax360 w-11/12';
   } else if (size === 'large') {
-    widthClass = 'wmax600';
+    widthClass = 'wmax600 w-11/12';
   }
 
   // const contentClasses = 'fixed top px12 py12 px60-mm py60-mm z1'
