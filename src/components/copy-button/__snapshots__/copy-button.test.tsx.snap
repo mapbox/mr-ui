@@ -9,7 +9,13 @@ exports[`CopyButton all props renders as expected 1`] = `
       data-testid="copy-button"
       role="button"
     >
-      <div>
+      <div
+        aria-controls="radix-4"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+        type="button"
+      >
         <button
           class="px6 py6 btn btn--purple btn--stroke block"
           data-state="closed"
@@ -49,7 +55,13 @@ exports[`CopyButton basic renders as expected 1`] = `
       data-testid="copy-button"
       role="button"
     >
-      <div>
+      <div
+        aria-controls="radix-0"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+        type="button"
+      >
         <button
           class="btn btn--xs py3 px3 round"
           data-state="closed"

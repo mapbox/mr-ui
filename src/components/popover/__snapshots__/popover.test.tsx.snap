@@ -9,7 +9,12 @@ exports[`Popover all options renders 1`] = `
   />
   <div>
     <button
+      aria-controls="radix-4"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
       data-testid="trigger"
+      type="button"
     >
       trigger
     </button>
@@ -58,7 +63,12 @@ exports[`Popover basic renders 1`] = `
   />
   <div>
     <button
+      aria-controls="radix-0"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
       data-testid="trigger"
+      type="button"
     >
       trigger
     </button>
@@ -88,7 +98,7 @@ exports[`Popover basic renders 1`] = `
           preserveAspectRatio="none"
           style="display: block;"
           viewBox="0 0 30 10"
-          width="6"
+          width="12"
         >
           <polygon
             points="0,0 30,0 15,10"
@@ -114,7 +124,12 @@ exports[`Popover dark renders 1`] = `
   />
   <div>
     <button
+      aria-controls="radix-1"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
       data-testid="trigger"
+      type="button"
     >
       trigger
     </button>
@@ -144,7 +159,7 @@ exports[`Popover dark renders 1`] = `
           preserveAspectRatio="none"
           style="display: block;"
           viewBox="0 0 30 10"
-          width="6"
+          width="12"
         >
           <polygon
             points="0,0 30,0 15,10"
@@ -170,7 +185,12 @@ exports[`Popover no arrow renders 1`] = `
   />
   <div>
     <button
+      aria-controls="radix-3"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
       data-testid="trigger"
+      type="button"
     >
       trigger
     </button>
@@ -211,7 +231,12 @@ exports[`Popover warning renders 1`] = `
   />
   <div>
     <button
+      aria-controls="radix-2"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
       data-testid="trigger"
+      type="button"
     >
       trigger
     </button>
@@ -221,7 +246,7 @@ exports[`Popover warning renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-transform-origin: 0px 0px;"
   >
     <div
-      class="bg-orange-faint border--orange color-orange-deep border shadow-darken25 round px12 py12 border border-1 border--border--orange"
+      class="bg-orange-faint border--orange-deep color-orange-deep border shadow-darken25 round px12 py12 border border-1 border--border--orange-deep"
       data-align="center"
       data-side="right"
       data-state="open"
@@ -243,7 +268,7 @@ exports[`Popover warning renders 1`] = `
           preserveAspectRatio="none"
           style="display: block;"
           viewBox="0 0 30 10"
-          width="6"
+          width="12"
         >
           <polygon
             points="0,0 30,0 15,10"

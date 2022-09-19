@@ -54,7 +54,11 @@ exports[`ControlText all options renders as expected 1`] = `
           value="foo@bar.baz"
         />
         <button
+          aria-controls="radix-16"
+          aria-expanded="true"
+          aria-haspopup="dialog"
           class="h-full bg-red color-white round-r px6"
+          data-state="open"
           data-testid="validation-error"
           role="alert"
           type="button"
@@ -113,7 +117,7 @@ exports[`ControlText all options renders as expected 1`] = `
           preserveAspectRatio="none"
           style="display: block;"
           viewBox="0 0 30 10"
-          width="6"
+          width="12"
         >
           <polygon
             points="0,0 30,0 15,10"
@@ -232,7 +236,11 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
           value=""
         />
         <button
+          aria-controls="radix-6"
+          aria-expanded="false"
+          aria-haspopup="dialog"
           class="h-full bg-red color-white round-r px6"
+          data-state="closed"
           data-testid="validation-error"
           role="alert"
           type="button"

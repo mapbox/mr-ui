@@ -339,7 +339,7 @@ exports[`Modal basic, auto renders 1`] = `
           preserveAspectRatio="none"
           style="display: block;"
           viewBox="0 0 30 10"
-          width="6"
+          width="12"
         >
           <polygon
             points="0,0 30,0 15,10"

@@ -332,7 +332,13 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <div>
+          <div
+            aria-controls="radix-4"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            type="button"
+          >
             <button
               class="btn btn--xs py3 px3 round"
               data-state="closed"
@@ -375,7 +381,13 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <div>
+          <div
+            aria-controls="radix-5"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            type="button"
+          >
             <button
               class="btn btn--xs py3 px3 round"
               data-state="closed"
@@ -601,7 +613,13 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
           data-testid="copy-button"
           role="button"
         >
-          <div>
+          <div
+            aria-controls="radix-0"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            type="button"
+          >
             <button
               class="btn btn--xs py3 px3 round"
               data-state="closed"

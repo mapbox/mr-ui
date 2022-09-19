@@ -7,9 +7,14 @@ exports[`Copiable basic renders as expected 1`] = `
       class="relative clearfix bg-darken5 round"
     >
       <div
+        aria-controls="radix-0"
+        aria-expanded="false"
+        aria-haspopup="dialog"
         class="py6 px12"
+        data-state="closed"
         data-testid="copiable-text-el"
         tabindex="-1"
+        type="button"
       >
         <div
           class="my3 txt-mono txt-s mr24"
@@ -30,9 +35,14 @@ exports[`Copiable truncated renders as expected 1`] = `
       class="relative clearfix bg-darken5 round"
     >
       <div
+        aria-controls="radix-7"
+        aria-expanded="false"
+        aria-haspopup="dialog"
         class="py6 px12"
+        data-state="closed"
         data-testid="copiable-text-el"
         tabindex="-1"
+        type="button"
       >
         <div
           class="my3 txt-mono txt-s mr24 txt-truncate"
