@@ -86,14 +86,14 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
     case 'warning':
       return {
         background: 'bg-orange-faint',
-        borderColor: 'border--orange',
+        borderColor: 'border--orange-deep',
         color: 'color-orange-deep',
         fill: variables['--orange-deep']
       };
     case 'error':
       return {
         background: 'bg-red-faint',
-        borderColor: 'border--red',
+        borderColor: 'border--red-deep',
         color: 'color-red-deep',
         fill: variables['--red-deep']
       };

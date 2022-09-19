@@ -76,7 +76,7 @@ export default function Popover({
 
     // If event target contains the trigger element, assume onExit is handled
     // on its own so don't re-fire it.
-    if (anchorRef.current.contains(e.target)) {
+    if (anchorRef.current && anchorRef.current.contains(e.target)) {
       return;
     }
 
@@ -91,9 +91,9 @@ export default function Popover({
 
   return (
     <PopoverPrimitive.Root open={active}>
-      <PopoverPrimitive.Anchor ref={anchorRef} asChild>
+      <PopoverPrimitive.Trigger ref={anchorRef} asChild>
         {children}
-      </PopoverPrimitive.Anchor>
+      </PopoverPrimitive.Trigger>
       <PopoverPrimitive.Portal>
         <PopoverPrimitive.Content
           sideOffset={offsetFromAnchor} 
@@ -109,7 +109,7 @@ export default function Popover({
           {...passthroughProps}
         >
           {getContent()}
-          {hasPointer && <PopoverPrimitive.Arrow width={6} height={6} offset={6} fill={fill} />}
+          {hasPointer && <PopoverPrimitive.Arrow width={12} height={6} offset={6} fill={fill} />}
         </PopoverPrimitive.Content>
       </PopoverPrimitive.Portal>
     </PopoverPrimitive.Root>
