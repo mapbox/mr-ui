@@ -53,39 +53,43 @@ exports[`ControlText all options renders as expected 1`] = `
           type="email"
           value="foo@bar.baz"
         />
-        <button
-          aria-controls="radix-16"
-          aria-expanded="true"
-          aria-haspopup="dialog"
-          class="h-full bg-red color-white round-r px6"
-          data-state="open"
-          data-testid="validation-error"
-          role="alert"
-          type="button"
+        <div
+          style="display: contents;"
         >
-          <span
-            class="flex flex--center-cross flex--center-main"
+          <button
+            aria-controls="radix-16"
+            aria-expanded="true"
+            aria-haspopup="dialog"
+            class="h-full bg-red color-white round-r px6"
+            data-state="open"
+            data-testid="validation-error"
+            role="alert"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="cursor-pointer"
-              data-testid="icon-alert"
-              fill="white"
-              focusable="false"
-              style="width: 18px; height: 18px;"
-            >
-              <use
-                xlink:href="#icon-alert"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              />
-            </svg>
             <span
-              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              class="flex flex--center-cross flex--center-main"
             >
-              alert
+              <svg
+                aria-hidden="true"
+                class="cursor-pointer"
+                data-testid="icon-alert"
+                fill="white"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-alert"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                alert
+              </span>
             </span>
-          </span>
-        </button>
+          </button>
+        </div>
       </div>
       <div
         role="alert"
@@ -235,39 +239,43 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
           type="text"
           value=""
         />
-        <button
-          aria-controls="radix-6"
-          aria-expanded="false"
-          aria-haspopup="dialog"
-          class="h-full bg-red color-white round-r px6"
-          data-state="closed"
-          data-testid="validation-error"
-          role="alert"
-          type="button"
+        <div
+          style="display: contents;"
         >
-          <span
-            class="flex flex--center-cross flex--center-main"
+          <button
+            aria-controls="radix-6"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="h-full bg-red color-white round-r px6"
+            data-state="closed"
+            data-testid="validation-error"
+            role="alert"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="cursor-pointer"
-              data-testid="icon-alert"
-              fill="white"
-              focusable="false"
-              style="width: 18px; height: 18px;"
-            >
-              <use
-                xlink:href="#icon-alert"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              />
-            </svg>
             <span
-              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              class="flex flex--center-cross flex--center-main"
             >
-              alert
+              <svg
+                aria-hidden="true"
+                class="cursor-pointer"
+                data-testid="icon-alert"
+                fill="white"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-alert"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                alert
+              </span>
             </span>
-          </span>
-        </button>
+          </button>
+        </div>
       </div>
       <div
         role="alert"

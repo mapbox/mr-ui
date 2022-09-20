@@ -8,16 +8,20 @@ exports[`Popover all options renders 1`] = `
     tabindex="0"
   />
   <div>
-    <button
-      aria-controls="radix-4"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-      data-state="open"
-      data-testid="trigger"
-      type="button"
+    <div
+      style="display: contents;"
     >
-      trigger
-    </button>
+      <button
+        aria-controls="radix-4"
+        aria-expanded="true"
+        aria-haspopup="dialog"
+        data-state="open"
+        data-testid="trigger"
+        type="button"
+      >
+        trigger
+      </button>
+    </div>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -62,16 +66,20 @@ exports[`Popover basic renders 1`] = `
     tabindex="0"
   />
   <div>
-    <button
-      aria-controls="radix-0"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-      data-state="open"
-      data-testid="trigger"
-      type="button"
+    <div
+      style="display: contents;"
     >
-      trigger
-    </button>
+      <button
+        aria-controls="radix-0"
+        aria-expanded="true"
+        aria-haspopup="dialog"
+        data-state="open"
+        data-testid="trigger"
+        type="button"
+      >
+        trigger
+      </button>
+    </div>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -123,16 +131,20 @@ exports[`Popover dark renders 1`] = `
     tabindex="0"
   />
   <div>
-    <button
-      aria-controls="radix-1"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-      data-state="open"
-      data-testid="trigger"
-      type="button"
+    <div
+      style="display: contents;"
     >
-      trigger
-    </button>
+      <button
+        aria-controls="radix-1"
+        aria-expanded="true"
+        aria-haspopup="dialog"
+        data-state="open"
+        data-testid="trigger"
+        type="button"
+      >
+        trigger
+      </button>
+    </div>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -184,16 +196,20 @@ exports[`Popover no arrow renders 1`] = `
     tabindex="0"
   />
   <div>
-    <button
-      aria-controls="radix-3"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-      data-state="open"
-      data-testid="trigger"
-      type="button"
+    <div
+      style="display: contents;"
     >
-      trigger
-    </button>
+      <button
+        aria-controls="radix-3"
+        aria-expanded="true"
+        aria-haspopup="dialog"
+        data-state="open"
+        data-testid="trigger"
+        type="button"
+      >
+        trigger
+      </button>
+    </div>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -230,16 +246,20 @@ exports[`Popover warning renders 1`] = `
     tabindex="0"
   />
   <div>
-    <button
-      aria-controls="radix-2"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-      data-state="open"
-      data-testid="trigger"
-      type="button"
+    <div
+      style="display: contents;"
     >
-      trigger
-    </button>
+      <button
+        aria-controls="radix-2"
+        aria-expanded="true"
+        aria-haspopup="dialog"
+        data-state="open"
+        data-testid="trigger"
+        type="button"
+      >
+        trigger
+      </button>
+    </div>
   </div>
   <div
     data-radix-popper-content-wrapper=""

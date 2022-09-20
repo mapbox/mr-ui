@@ -91,9 +91,11 @@ export default function Popover({
 
   return (
     <PopoverPrimitive.Root open={active}>
-      <PopoverPrimitive.Trigger ref={triggerRef} asChild>
-        {children}
-      </PopoverPrimitive.Trigger>
+      <div ref={triggerRef} style={{ display: 'contents' }}>
+        <PopoverPrimitive.Trigger asChild>
+          {children}
+        </PopoverPrimitive.Trigger>
+      </div>
       <PopoverPrimitive.Portal>
         <PopoverPrimitive.Content
           sideOffset={offsetFromAnchor} 

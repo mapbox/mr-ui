@@ -333,35 +333,39 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           role="button"
         >
           <div
-            aria-controls="radix-4"
-            aria-expanded="false"
-            aria-haspopup="dialog"
-            data-state="closed"
-            type="button"
+            style="display: contents;"
           >
-            <button
-              class="btn btn--xs py3 px3 round"
+            <div
+              aria-controls="radix-4"
+              aria-expanded="false"
+              aria-haspopup="dialog"
               data-state="closed"
               type="button"
             >
-              <svg
-                aria-hidden="true"
-                class="events-none icon"
-                data-testid="icon-clipboard"
-                focusable="false"
-                style="width: 18px; height: 18px;"
+              <button
+                class="btn btn--xs py3 px3 round"
+                data-state="closed"
+                type="button"
               >
-                <use
-                  xlink:href="#icon-clipboard"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                />
-              </svg>
-              <span
-                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-              >
-                clipboard
-              </span>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  class="events-none icon"
+                  data-testid="icon-clipboard"
+                  focusable="false"
+                  style="width: 18px; height: 18px;"
+                >
+                  <use
+                    xlink:href="#icon-clipboard"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  />
+                </svg>
+                <span
+                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                >
+                  clipboard
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -382,35 +386,39 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           role="button"
         >
           <div
-            aria-controls="radix-5"
-            aria-expanded="false"
-            aria-haspopup="dialog"
-            data-state="closed"
-            type="button"
+            style="display: contents;"
           >
-            <button
-              class="btn btn--xs py3 px3 round"
+            <div
+              aria-controls="radix-5"
+              aria-expanded="false"
+              aria-haspopup="dialog"
               data-state="closed"
               type="button"
             >
-              <svg
-                aria-hidden="true"
-                class="events-none icon"
-                data-testid="icon-clipboard"
-                focusable="false"
-                style="width: 18px; height: 18px;"
+              <button
+                class="btn btn--xs py3 px3 round"
+                data-state="closed"
+                type="button"
               >
-                <use
-                  xlink:href="#icon-clipboard"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                />
-              </svg>
-              <span
-                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-              >
-                clipboard
-              </span>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  class="events-none icon"
+                  data-testid="icon-clipboard"
+                  focusable="false"
+                  style="width: 18px; height: 18px;"
+                >
+                  <use
+                    xlink:href="#icon-clipboard"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  />
+                </svg>
+                <span
+                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                >
+                  clipboard
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -614,35 +622,39 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
           role="button"
         >
           <div
-            aria-controls="radix-0"
-            aria-expanded="false"
-            aria-haspopup="dialog"
-            data-state="closed"
-            type="button"
+            style="display: contents;"
           >
-            <button
-              class="btn btn--xs py3 px3 round"
+            <div
+              aria-controls="radix-0"
+              aria-expanded="false"
+              aria-haspopup="dialog"
               data-state="closed"
               type="button"
             >
-              <svg
-                aria-hidden="true"
-                class="events-none icon"
-                data-testid="icon-clipboard"
-                focusable="false"
-                style="width: 18px; height: 18px;"
+              <button
+                class="btn btn--xs py3 px3 round"
+                data-state="closed"
+                type="button"
               >
-                <use
-                  xlink:href="#icon-clipboard"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                />
-              </svg>
-              <span
-                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-              >
-                clipboard
-              </span>
-            </button>
+                <svg
+                  aria-hidden="true"
+                  class="events-none icon"
+                  data-testid="icon-clipboard"
+                  focusable="false"
+                  style="width: 18px; height: 18px;"
+                >
+                  <use
+                    xlink:href="#icon-clipboard"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  />
+                </svg>
+                <span
+                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                >
+                  clipboard
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
