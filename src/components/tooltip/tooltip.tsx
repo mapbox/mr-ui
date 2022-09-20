@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, forwardRef, isValidElement, Children } from 'react';
+import React, { ReactElement, ReactNode, forwardRef, isValidElement, Children, useRef } from 'react';
 
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -35,6 +35,7 @@ export default function Tooltip({
   ariaLabel
 }: Props): ReactElement {
   const { background, borderColor, color, fill } = getTheme(coloring);
+  const triggerRef = useRef(null);
 
   const bodyClasses = classnames(
     `${background} ${borderColor} ${color} border shadow-darken25 round`, {
@@ -68,7 +69,7 @@ export default function Tooltip({
     }
 
     return (
-      <TooltipPrimitive.Trigger asChild>
+      <TooltipPrimitive.Trigger ref={ref} asChild>
         {child}
       </TooltipPrimitive.Trigger>
     );
@@ -77,7 +78,7 @@ export default function Tooltip({
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root delayDuration={150}>
-        {disabled ? <>{children}</> : <Trigger />}
+        {disabled ? <>{children}</> : <Trigger ref={triggerRef} />}
         <TooltipPrimitive.Portal>
           <TooltipPrimitive.Content
             aria-label={ariaLabel}

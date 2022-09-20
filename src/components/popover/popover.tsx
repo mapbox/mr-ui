@@ -48,7 +48,7 @@ export default function Popover({
   content
 }: Props): ReactElement {
   const { background, borderColor, color, fill } = getTheme(coloring);
-  const anchorRef = useRef(null);
+  const triggerRef = useRef(null);
 
   const bodyClasses = classnames(
     `${background} ${borderColor} ${color} border shadow-darken25 round`,
@@ -76,7 +76,7 @@ export default function Popover({
 
     // If event target contains the trigger element, assume onExit is handled
     // on its own so don't re-fire it.
-    if (anchorRef.current && anchorRef.current.contains(e.target)) {
+    if (triggerRef.current && triggerRef.current.contains(e.target)) {
       return;
     }
 
@@ -91,7 +91,7 @@ export default function Popover({
 
   return (
     <PopoverPrimitive.Root open={active}>
-      <PopoverPrimitive.Trigger ref={anchorRef} asChild>
+      <PopoverPrimitive.Trigger ref={triggerRef} asChild>
         {children}
       </PopoverPrimitive.Trigger>
       <PopoverPrimitive.Portal>
