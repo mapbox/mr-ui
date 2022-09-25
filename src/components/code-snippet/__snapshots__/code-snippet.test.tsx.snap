@@ -332,7 +332,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <div
+          <span
             style="display: contents;"
           >
             <div
@@ -366,7 +366,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
                 </span>
               </button>
             </div>
-          </div>
+          </span>
         </div>
       </div>
       <div
@@ -385,7 +385,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
           data-testid="copy-button"
           role="button"
         >
-          <div
+          <span
             style="display: contents;"
           >
             <div
@@ -419,7 +419,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
                 </span>
               </button>
             </div>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -621,7 +621,7 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
           data-testid="copy-button"
           role="button"
         >
-          <div
+          <span
             style="display: contents;"
           >
             <div
@@ -655,7 +655,7 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
                 </span>
               </button>
             </div>
-          </div>
+          </span>
         </div>
       </div>
     </div>

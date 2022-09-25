@@ -15,7 +15,7 @@ exports[`Accordion all options renders 1`] = `
           class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="open"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-one"
           id="radix-25"
           type="button"
         >
@@ -53,7 +53,7 @@ exports[`Accordion all options renders 1`] = `
           class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-two"
           id="radix-27"
           type="button"
         >
@@ -81,7 +81,7 @@ exports[`Accordion all options renders 1`] = `
           class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-third"
           id="radix-29"
           type="button"
         >
@@ -117,7 +117,7 @@ exports[`Accordion basic renders 1`] = `
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-one"
           id="radix-1"
           type="button"
         >
@@ -144,7 +144,7 @@ exports[`Accordion basic renders 1`] = `
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-two"
           id="radix-3"
           type="button"
         >
@@ -171,7 +171,7 @@ exports[`Accordion basic renders 1`] = `
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-three"
           id="radix-5"
           type="button"
         >
@@ -207,7 +207,7 @@ exports[`Accordion disabled renders 1`] = `
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-one"
           id="radix-13"
           type="button"
         >
@@ -234,7 +234,7 @@ exports[`Accordion disabled renders 1`] = `
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-two"
           id="radix-15"
           type="button"
         >
@@ -261,7 +261,7 @@ exports[`Accordion disabled renders 1`] = `
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-default color-gray-light"
           data-radix-collection-item=""
           data-state="closed"
-          data-testid="accordion-trigger"
+          data-testid="accordion-trigger-three"
           disabled=""
           id="radix-17"
           type="button"

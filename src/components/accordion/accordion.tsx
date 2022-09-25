@@ -5,7 +5,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
 interface Item {
   id: string;
-  header: (active: boolean) => ReactElement;
+  header: (active?: boolean) => ReactElement;
   body: ReactNode;
   disabled?: boolean;
 }
@@ -44,7 +44,7 @@ export default function Accordion({
         key={id}
         value={id}
       >
-        <AccordionPrimitive.Trigger disabled={disabled} data-testid="accordion-trigger" className={themeHeader}>
+        <AccordionPrimitive.Trigger disabled={disabled} data-testid={`accordion-trigger-${id}`} className={themeHeader}>
           {header(active)}
         </AccordionPrimitive.Trigger>
         <AccordionPrimitive.Content>

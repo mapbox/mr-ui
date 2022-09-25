@@ -21,10 +21,10 @@ describe('Accordion', () => {
 
     test('onToggle is called', () => {
       render(<Accordion {...props} />);
-      const items = screen.queryAllByTestId('accordion-trigger');
-      fireEvent.click(items[2]);
+      const item = screen.getByTestId('accordion-trigger-three');
+      fireEvent.click(item);
       expect(mockedToggle).toHaveBeenCalledWith('three');
-      fireEvent.click(items[2]);
+      fireEvent.click(item);
       expect(mockedToggle).toHaveBeenCalledWith('');
       expect(mockedToggle).toHaveBeenCalledTimes(2);
     });
@@ -48,8 +48,8 @@ describe('Accordion', () => {
 
     test('onToggle is not called', () => {
       render(<Accordion {...props} />);
-      const items = screen.queryAllByTestId('accordion-trigger');
-      fireEvent.click(items[2]);
+      const item = screen.getByTestId('accordion-trigger-three');
+      fireEvent.click(item);
       expect(mockedToggle).not.toHaveBeenCalled();
     });
   });

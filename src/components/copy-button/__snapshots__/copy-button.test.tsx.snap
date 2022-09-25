@@ -9,7 +9,7 @@ exports[`CopyButton all props renders as expected 1`] = `
       data-testid="copy-button"
       role="button"
     >
-      <div
+      <span
         style="display: contents;"
       >
         <div
@@ -44,7 +44,7 @@ exports[`CopyButton all props renders as expected 1`] = `
             </span>
           </button>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </body>
@@ -59,7 +59,7 @@ exports[`CopyButton basic renders as expected 1`] = `
       data-testid="copy-button"
       role="button"
     >
-      <div
+      <span
         style="display: contents;"
       >
         <div
@@ -93,7 +93,7 @@ exports[`CopyButton basic renders as expected 1`] = `
             </span>
           </button>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </body>

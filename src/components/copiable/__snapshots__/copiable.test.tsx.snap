@@ -6,7 +6,7 @@ exports[`Copiable basic renders as expected 1`] = `
     <div
       class="relative clearfix bg-darken5 round"
     >
-      <div
+      <span
         style="display: contents;"
       >
         <div
@@ -26,7 +26,7 @@ exports[`Copiable basic renders as expected 1`] = `
             thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
           </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </body>
@@ -38,7 +38,7 @@ exports[`Copiable truncated renders as expected 1`] = `
     <div
       class="relative clearfix bg-darken5 round"
     >
-      <div
+      <span
         style="display: contents;"
       >
         <div
@@ -57,7 +57,7 @@ exports[`Copiable truncated renders as expected 1`] = `
             the text you copy the text you copy the text you copy the text you copy the text you copy 
           </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </body>

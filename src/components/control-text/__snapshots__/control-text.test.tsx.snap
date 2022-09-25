@@ -53,7 +53,7 @@ exports[`ControlText all options renders as expected 1`] = `
           type="email"
           value="foo@bar.baz"
         />
-        <div
+        <span
           style="display: contents;"
         >
           <button
@@ -89,7 +89,7 @@ exports[`ControlText all options renders as expected 1`] = `
               </span>
             </span>
           </button>
-        </div>
+        </span>
       </div>
       <div
         role="alert"
@@ -239,7 +239,7 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
           type="text"
           value=""
         />
-        <div
+        <span
           style="display: contents;"
         >
           <button
@@ -275,7 +275,7 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
               </span>
             </span>
           </button>
-        </div>
+        </span>
       </div>
       <div
         role="alert"

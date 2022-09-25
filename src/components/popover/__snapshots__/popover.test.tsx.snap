@@ -8,7 +8,7 @@ exports[`Popover all options renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
+    <span
       style="display: contents;"
     >
       <button
@@ -21,7 +21,7 @@ exports[`Popover all options renders 1`] = `
       >
         trigger
       </button>
-    </div>
+    </span>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -66,7 +66,7 @@ exports[`Popover basic renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
+    <span
       style="display: contents;"
     >
       <button
@@ -79,7 +79,7 @@ exports[`Popover basic renders 1`] = `
       >
         trigger
       </button>
-    </div>
+    </span>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -131,7 +131,7 @@ exports[`Popover dark renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
+    <span
       style="display: contents;"
     >
       <button
@@ -144,7 +144,7 @@ exports[`Popover dark renders 1`] = `
       >
         trigger
       </button>
-    </div>
+    </span>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -196,7 +196,7 @@ exports[`Popover no arrow renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
+    <span
       style="display: contents;"
     >
       <button
@@ -209,7 +209,7 @@ exports[`Popover no arrow renders 1`] = `
       >
         trigger
       </button>
-    </div>
+    </span>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -246,7 +246,7 @@ exports[`Popover warning renders 1`] = `
     tabindex="0"
   />
   <div>
-    <div
+    <span
       style="display: contents;"
     >
       <button
@@ -259,7 +259,7 @@ exports[`Popover warning renders 1`] = `
       >
         trigger
       </button>
-    </div>
+    </span>
   </div>
   <div
     data-radix-popper-content-wrapper=""
