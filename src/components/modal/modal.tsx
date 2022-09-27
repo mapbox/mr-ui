@@ -78,12 +78,11 @@ export default function Modal({
     widthClass = 'wmax600 w-11/12';
   }
 
-  // const contentClasses = 'fixed top px12 py12 px60-mm py60-mm z1'
   const overlayProps: {
     className: string,
     style: CSSProperties
   } = {
-    className: 'fixed top bottom left right bg-darken50',
+    className: 'fixed top bottom left right bg-darken50 z1',
     style: {
       display: 'grid',
       overflowY: 'auto',

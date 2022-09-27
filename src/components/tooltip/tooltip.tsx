@@ -62,7 +62,7 @@ export default function Tooltip({
     // - Render the Trigger as `span`.
     if (isValidElement(child) && child.props.disabled) {
       child = (
-        <span {...props} ref={ref} className="inline-block" tabIndex={0}>
+        <span {...props} ref={ref} role='button' className="inline-block" tabIndex={0}>
           {child}
         </span>
       );
