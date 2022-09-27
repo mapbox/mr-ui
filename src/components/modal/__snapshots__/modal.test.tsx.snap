@@ -20,7 +20,7 @@ exports[`Modal all options renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 z1"
     data-state="open"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
@@ -115,7 +115,7 @@ exports[`Modal basic renders 1`] = `
   </div>
   <div
     aria-hidden="true"
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 z1"
     data-aria-hidden="true"
     data-state="open"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
@@ -153,7 +153,7 @@ exports[`Modal basic renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 z1"
     data-state="open"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
@@ -256,7 +256,7 @@ exports[`Modal basic, auto renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 z1"
     data-state="open"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
@@ -378,7 +378,7 @@ exports[`Modal basic, large renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 z1"
     data-state="open"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
