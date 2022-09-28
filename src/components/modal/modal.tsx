@@ -82,7 +82,7 @@ export default function Modal({
     className: string,
     style: CSSProperties
   } = {
-    className: 'fixed top bottom left right bg-darken50 z1',
+    className: 'fixed top bottom left right bg-darken50',
     style: {
       display: 'grid',
       overflowY: 'auto',
