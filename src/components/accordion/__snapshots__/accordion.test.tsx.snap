@@ -6,7 +6,6 @@ exports[`Accordion all options renders 1`] = `
     <div>
       <div
         class="bg-red-faint border-b border--red-dark"
-        data-assembly-focus-within="true"
         data-state="open"
       >
         <button
@@ -44,7 +43,6 @@ exports[`Accordion all options renders 1`] = `
       </div>
       <div
         class="bg-red-faint border-b border--red-dark"
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button
@@ -72,7 +70,6 @@ exports[`Accordion all options renders 1`] = `
       </div>
       <div
         class="bg-red-faint border-b border--red-dark"
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button
@@ -108,7 +105,6 @@ exports[`Accordion basic renders 1`] = `
   <div>
     <div>
       <div
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button
@@ -135,7 +131,6 @@ exports[`Accordion basic renders 1`] = `
         />
       </div>
       <div
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button
@@ -162,7 +157,6 @@ exports[`Accordion basic renders 1`] = `
         />
       </div>
       <div
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button
@@ -198,7 +192,6 @@ exports[`Accordion disabled renders 1`] = `
   <div>
     <div>
       <div
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button
@@ -225,7 +218,6 @@ exports[`Accordion disabled renders 1`] = `
         />
       </div>
       <div
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button
@@ -252,7 +244,6 @@ exports[`Accordion disabled renders 1`] = `
         />
       </div>
       <div
-        data-assembly-focus-within="true"
         data-state="closed"
       >
         <button

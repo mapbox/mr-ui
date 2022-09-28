@@ -39,7 +39,6 @@ export default function Accordion({
 
     return (
       <AccordionPrimitive.Item
-        data-assembly-focus-within
         className={themeItem}
         key={id}
         value={id}
