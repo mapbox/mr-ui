@@ -3,6 +3,8 @@ Changelog
 
 ## HEAD
 
+## 2.0.0
+
 - [fix] added new styling for ControlToggleGroup component that is consistent with actual usage.
 - [breaking] props changes to `src/components/control-range`
   - `value` is now accepts an array of numbers
