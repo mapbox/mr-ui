@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlCheckbox all options renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative bg-red-light"
+    >
+      <div
+        aria-invalid="true"
+        data-testid="testinput-input"
+        id="testinput"
+      >
+        <label
+          class="checkbox-container w-full cursor-pointer"
+        >
+          <input
+            aria-checked="true"
+            checked=""
+            data-testid="testinput-0-input"
+            name="testinput"
+            type="checkbox"
+            value="Option value 1"
+          />
+          <div
+            class="checkbox--red mr6 checkbox"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-check"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-check"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              check
+            </span>
+          </div>
+          <span>
+            Option 1
+          </span>
+        </label>
+        <label
+          class="checkbox-container w-full cursor-pointer"
+        >
+          <input
+            aria-checked="true"
+            checked=""
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="checkbox"
+            value="Option value 2"
+          />
+          <div
+            class="checkbox--red mr6 checkbox"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-check"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-check"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              check
+            </span>
+          </div>
+          <span>
+            Option 2
+          </span>
+        </label>
+        <label
+          class="checkbox-container w-full cursor-pointer"
+        >
+          <input
+            aria-checked="false"
+            data-testid="testinput-2-input"
+            name="testinput"
+            type="checkbox"
+            value="Option value 3"
+          />
+          <div
+            class="checkbox--red mr6 checkbox"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-check"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-check"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              check
+            </span>
+          </div>
+          <span>
+            Option 3
+          </span>
+        </label>
+      </div>
+      <div
+        role="alert"
+      >
+        <div
+          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          data-testid="testinput-error"
+          id="testinput-error"
+        >
+          oh no!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlCheckbox basic renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        data-testid="testinput-input"
+        id="testinput"
+      >
+        <label
+          class="checkbox-container txt-s block mb6 flex cursor-pointer"
+        >
+          <input
+            aria-checked="false"
+            data-testid="testinput-0-input"
+            name="testinput"
+            type="checkbox"
+            value="Option value 1"
+          />
+          <div
+            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-check"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-check"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              check
+            </span>
+          </div>
+          Option 1
+        </label>
+        <label
+          class="checkbox-container txt-s block mb6 flex cursor-pointer"
+        >
+          <input
+            aria-checked="false"
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="checkbox"
+            value="Option value 2"
+          />
+          <div
+            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-check"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-check"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              check
+            </span>
+          </div>
+          Option 2
+        </label>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlCheckbox disabled renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        data-testid="testinput-input"
+        id="testinput"
+      >
+        <label
+          class="checkbox-container txt-s block mb6 flex"
+        >
+          <input
+            aria-checked="false"
+            data-testid="testinput-0-input"
+            disabled=""
+            name="testinput"
+            type="checkbox"
+            value="Option value 1"
+          />
+          <div
+            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-check"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-check"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              check
+            </span>
+          </div>
+          Option 1
+        </label>
+        <label
+          class="checkbox-container txt-s block mb6 flex cursor-pointer"
+        >
+          <input
+            aria-checked="false"
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="checkbox"
+            value="Option value 2"
+          />
+          <div
+            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+          >
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-check"
+              focusable="false"
+              style="width: 18px; height: 18px;"
+            >
+              <use
+                xlink:href="#icon-check"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              check
+            </span>
+          </div>
+          Option 2
+        </label>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;

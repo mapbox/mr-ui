@@ -1,4 +1,66 @@
-# Changelog
+Changelog
+---
+
+## HEAD
+
+- [fix] added new styling for ControlToggleGroup component that is consistent with actual usage.
+- [breaking] props changes to `src/components/control-range`
+  - `value` is now accepts an array of numbers
+- [feature] `src/components/control-range` now supports multi range with an additional `themeControlRangeActive` for providing classnames to the active member of the range track.
+- [fix] `gap` prop in `src/components/icon-text` which was not in use.
+- [breaking] Removed `isSupported` check in `src/components/copy-button`
+- [breaking] props changes to `src/components/copy-button`
+  - Dropped `textEl`
+- [breaking] props changes to `src/components/control-file`
+  - Dropped `label`
+  - Dropped `themeLabel`
+  - Dropped `aside`
+  - Renamed `initialDisplayValue` to `displayValue`
+  - Dropped 'themeControlFileClear'
+- [breaking] Removed clear implementation in `src/components/control-file`. Just a button element that triggers <input type="file" /> is implemented.
+- [breaking] Deletes `src/components/popover-trigger`
+- [breaking] Rewrites `src/components/popover` as a functional component. 🚨 **Prop changes**:
+  - Dropped `getAnchorElement`. Popover now behaves like Tooltip where the Popover is wrapped around the anchor, and a `content` prop provides the popover contents.
+  - Added `content`
+  - Dropped `receiveFocus`
+  - Dropped `trapFocus`
+  - Dropped `ignoreClickWithinElement`
+  - Dropped `getContainingElement`
+  - Dropped `onElement`
+  - Dropped `zindex`
+  - Dropped `observeSize`
+  - Dropped `containWithinViewport`
+- [breaking] Deletes `src/components/tab-list`
+  - tab-list component was not used anywhere according to our audit and radix does not have support for such mobile functionality (such as displaying a popover for the rest of the tabs that do not fit on mobile)
+- [breaking] Deletes `src/components/underline-tabs`
+  - underline-tabs can be replaced with tabs component, except the new tabs component cannot handle links. In order to take full advantage of Radix out of the box functionality related to key bindings we need to let radix generate the buttons for tabs.
+  - new tabs component also supports adding the tab content which will be rendered automatically when the tab changes
+- [feature] Creates new component `src/components/tabs` and uses [`Tabs ` from Radix](https://www.radix-ui.com/docs/primitives/components/tabs).
+- [breaking] Removed the following components that have been underutilized/no longer worth maintaining: Badge, ControlCard, ControlLegend, GoLink, Heading, and NewTabLink.
+- [breaking] Rewrites `src/components/modal` as a functional component.and uses [`DialogPrimitive ` from Radix](https://www.radix-ui.com/docs/primitives/components/dialog#custom-apis). 🚨 **Prop changes**:
+  - Dropped `alert`
+  - Dropped `focusTrapPaused` which isn't exposed as an option from Radix
+- [breaking] Rewrites `src/components/buttton` as a functional component. 🚨 **Prop changes**:
+  - Dropped `component` which accepted a component or a string equally a DOM value.
+  - Renamed `discouraging` to `tertiary`
+- [breaking] Rewrites `src/components/tooltip` as a functional component.and uses [`TooltipPrimitive ` from Radix](https://www.radix-ui.com/docs/primitives/components/tooltip#custom-apis). 🚨 **Prop changes**:
+  - Dropped `triggerprops`. This is no longer needed for Radix and will need to be considered when porting tooltips using the older version.
+  - Dropped `respondsToClick` which triggers a tooltip on Click. Radix doesn't support it as it believes a tooltip shouldn't have this native behavior and I think we can get away without it - encouraging consumers to use a popup instead.
+  - Dropped `alignment` has values `start` and `end` and **dropped** `top`, `bottom`, `left`, `right`.
+  - Dropped `block` I'm not seeing strong usage of this property and I believe its a tradeoff we can make
+  - Dropped `testId` Passing custom data attributes to the Radix tooltip isn't supported. There are other good ways to test the presence of tooltip contents like: `screen.getByRole('tooltip')` or by wrapping a child prop in a data test attribute.
+- [breaking] Rewrites `src/components/control-switch` as a functional component.and uses [`swtich` from Radix](https://radix-website-git-release.modulz-deploys.com/docs/primitives/components/switch). 🚨 **Prop changes**:
+    - Dropped `optional`: Additional text like "optional" should be applied by the consumer using the label prop.
+    - Dropped `initialValue` and `validator` which were previously provided by the form component.
+- [breaking] Rewrites `src/components/icon` as a functional component and uses [`accessible-icon` from Radix](https://www.radix-ui.com/docs/primitives/utilities/accessible-icon) as an internal primitive.
+- [breaking] Rewrites `src/components/control-wrapper` as a functional component.
+- [feature] Introduces TypeScript to the source code and converts:
+  - `src/docs/*`
+  - `src/components/utils/*`
+  - `src/components/icon/*`
+  - `src/components/control-wrapper/*`
+- [feature] Adds React Testing Library to newly ported components
+- [internal] Drop `src/test-cases-app` from the development workflow of this project.
 
 ## 2.0.0-beta.2
 

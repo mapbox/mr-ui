@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion all options renders 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="bg-red-faint border-b border--red-dark"
+        data-state="open"
+      >
+        <button
+          aria-controls="radix-24"
+          aria-expanded="true"
+          class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="open"
+          data-testid="accordion-trigger-one"
+          id="radix-25"
+          type="button"
+        >
+          <div>
+            one
+            <span
+              class="ml6 txt-normal"
+            >
+              I am active
+            </span>
+          </div>
+        </button>
+        <div
+          aria-labelledby="radix-25"
+          data-state="open"
+          id="radix-24"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width); transition-duration: 0s; animation-duration: 0s; animation-fill-mode: none;"
+        >
+          <div
+            class="py6 px6 txt-l bg-red-light"
+          >
+            First body
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-red-faint border-b border--red-dark"
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-26"
+          aria-expanded="false"
+          class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-two"
+          id="radix-27"
+          type="button"
+        >
+          <div>
+            two
+          </div>
+        </button>
+        <div
+          aria-labelledby="radix-27"
+          data-state="closed"
+          hidden=""
+          id="radix-26"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+      <div
+        class="bg-red-faint border-b border--red-dark"
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-28"
+          aria-expanded="false"
+          class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-third"
+          id="radix-29"
+          type="button"
+        >
+          <div>
+            third
+          </div>
+        </button>
+        <div
+          aria-labelledby="radix-29"
+          data-state="closed"
+          hidden=""
+          id="radix-28"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Accordion basic renders 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-0"
+          aria-expanded="false"
+          class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-one"
+          id="radix-1"
+          type="button"
+        >
+          <span>
+            one
+          </span>
+        </button>
+        <div
+          aria-labelledby="radix-1"
+          data-state="closed"
+          hidden=""
+          id="radix-0"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+      <div
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-2"
+          aria-expanded="false"
+          class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-two"
+          id="radix-3"
+          type="button"
+        >
+          <span>
+            two
+          </span>
+        </button>
+        <div
+          aria-labelledby="radix-3"
+          data-state="closed"
+          hidden=""
+          id="radix-2"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+      <div
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-4"
+          aria-expanded="false"
+          class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-three"
+          id="radix-5"
+          type="button"
+        >
+          <span>
+            three
+          </span>
+        </button>
+        <div
+          aria-labelledby="radix-5"
+          data-state="closed"
+          hidden=""
+          id="radix-4"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Accordion disabled renders 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-12"
+          aria-expanded="false"
+          class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-one"
+          id="radix-13"
+          type="button"
+        >
+          <span>
+            one
+          </span>
+        </button>
+        <div
+          aria-labelledby="radix-13"
+          data-state="closed"
+          hidden=""
+          id="radix-12"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+      <div
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-14"
+          aria-expanded="false"
+          class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-two"
+          id="radix-15"
+          type="button"
+        >
+          <span>
+            two
+          </span>
+        </button>
+        <div
+          aria-labelledby="radix-15"
+          data-state="closed"
+          hidden=""
+          id="radix-14"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+      <div
+        data-state="closed"
+      >
+        <button
+          aria-controls="radix-16"
+          aria-expanded="false"
+          class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-default color-gray-light"
+          data-radix-collection-item=""
+          data-state="closed"
+          data-testid="accordion-trigger-three"
+          disabled=""
+          id="radix-17"
+          type="button"
+        >
+          <span>
+            three
+          </span>
+        </button>
+        <div
+          aria-labelledby="radix-17"
+          data-state="closed"
+          hidden=""
+          id="radix-16"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;

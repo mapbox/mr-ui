@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copiable basic renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative clearfix bg-darken5 round"
+    >
+      <span
+        style="display: contents;"
+      >
+        <div
+          aria-controls="radix-0"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="py6 px12"
+          data-state="closed"
+          data-testid="copiable-text-el"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="my3 txt-mono txt-s mr24"
+            style="word-wrap: break-word; overflow-wrap: break-word;"
+          >
+            thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Copiable truncated renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative clearfix bg-darken5 round"
+    >
+      <span
+        style="display: contents;"
+      >
+        <div
+          aria-controls="radix-7"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="py6 px12"
+          data-state="closed"
+          data-testid="copiable-text-el"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="my3 txt-mono txt-s mr24 txt-truncate"
+          >
+            the text you copy the text you copy the text you copy the text you copy the text you copy 
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</body>
+`;

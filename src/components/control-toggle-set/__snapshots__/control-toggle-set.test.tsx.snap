@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlToggleGroup all options renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative bg-red-light px12 py12"
+    >
+      <div
+        aria-invalid="true"
+        aria-required="false"
+        class="toggle-group round-full bg-red border border--2 border--red"
+        data-testid="testinput-input"
+        id="testinput"
+        role="radiogroup"
+      >
+        <label
+          class="toggle-container w-full"
+        >
+          <input
+            checked=""
+            data-testid="testinput-0-input"
+            name="testinput"
+            type="radio"
+            value="Option value 1"
+          />
+          <div
+            class="toggle--white toggle--active-red toggle"
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </label>
+        <label
+          class="toggle-container w-full"
+        >
+          <input
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="radio"
+            value="Option value 2"
+          />
+          <div
+            class="toggle--white toggle--active-red toggle"
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </label>
+        <label
+          class="toggle-container w-full"
+        >
+          <input
+            data-testid="testinput-2-input"
+            name="testinput"
+            type="radio"
+            value="Option value 3"
+          />
+          <div
+            class="toggle--white toggle--active-red toggle"
+          >
+            <span>
+              Option 3
+            </span>
+          </div>
+        </label>
+      </div>
+      <div
+        role="alert"
+      >
+        <div
+          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          data-testid="testinput-error"
+          id="testinput-error"
+        >
+          oh no!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlToggleGroup basic renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        aria-required="true"
+        class="toggle-group round-full border border--gray-light py3 px3"
+        data-testid="testinput-input"
+        id="testinput"
+        role="radiogroup"
+      >
+        <label
+          class="toggle-container "
+        >
+          <input
+            data-testid="testinput-0-input"
+            name="testinput"
+            type="radio"
+            value="Toggle value 1"
+          />
+          <div
+            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+          >
+            Toggle 1
+          </div>
+        </label>
+        <label
+          class="toggle-container "
+        >
+          <input
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="radio"
+            value="Toggle value 2"
+          />
+          <div
+            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+          >
+            Toggle 2
+          </div>
+        </label>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlToggleGroup disabled renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        aria-required="true"
+        class="toggle-group round-full border border--gray-light py3 px3"
+        data-testid="testinput-input"
+        id="testinput"
+        role="radiogroup"
+      >
+        <label
+          class="toggle-container "
+        >
+          <input
+            data-testid="testinput-0-input"
+            disabled=""
+            name="testinput"
+            type="radio"
+            value="Option value 1"
+          />
+          <div
+            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+          >
+            Option 1
+          </div>
+        </label>
+        <label
+          class="toggle-container "
+        >
+          <input
+            data-testid="testinput-1-input"
+            name="testinput"
+            type="radio"
+            value="Option value 2"
+          />
+          <div
+            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+          >
+            Option 2
+          </div>
+        </label>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;

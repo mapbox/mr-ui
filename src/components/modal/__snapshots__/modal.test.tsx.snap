@@ -1,0 +1,484 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal all options renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    class="fixed top bottom left right bg-darken50"
+    data-state="open"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+  >
+    <div
+      aria-describedby="radix-35"
+      aria-labelledby="radix-34"
+      class="relative my12 my60-mm wmax360 w-11/12 bg-white round"
+      data-state="open"
+      id="radix-33"
+      role="dialog"
+      style="pointer-events: auto;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-34"
+        >
+          All options
+        </h2>
+      </span>
+      <div>
+        <div
+          class="mb12"
+        >
+          I am a message
+        </div>
+        <button
+          aria-label="press me"
+          class="btn"
+          id="foo"
+        >
+          press me
+        </button>
+      </div>
+      <button
+        aria-label="Close"
+        class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+        data-state="closed"
+        data-testid="modal-close"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="events-none icon"
+          data-testid="icon-close"
+          focusable="false"
+          style="width: 18px; height: 18px;"
+        >
+          <use
+            xlink:href="#icon-close"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          close
+        </span>
+      </button>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`Modal basic renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    class="fixed top bottom left right bg-darken50"
+    data-aria-hidden="true"
+    data-state="open"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+  >
+    <div
+      aria-describedby="radix-2"
+      aria-labelledby="radix-1"
+      class="relative my12 my60-mm wmax360 w-11/12 bg-white round px36 py36"
+      data-state="open"
+      id="radix-0"
+      role="dialog"
+      style="pointer-events: none;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-1"
+        >
+          No onExit passed as prop
+        </h2>
+      </span>
+      <div>
+        You can't close me
+      </div>
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    class="fixed top bottom left right bg-darken50"
+    data-state="open"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+  >
+    <div
+      aria-describedby="radix-5"
+      aria-labelledby="radix-4"
+      class="relative my12 my60-mm wmax360 w-11/12 bg-white round px36 py36"
+      data-state="open"
+      id="radix-3"
+      role="dialog"
+      style="pointer-events: auto;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-4"
+        >
+          Small modal title
+        </h2>
+      </span>
+      <div>
+        Content
+      </div>
+      <div
+        class="mt24"
+      >
+        <div
+          class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+        >
+          <div
+            class="flex-child-no-shrink"
+          >
+            <button
+              aria-label="Okay"
+              class="btn btn--blue round-full py6 px24 txt-s"
+              tabindex="0"
+              type="button"
+            >
+              Okay
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        aria-label="Close"
+        class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+        data-state="closed"
+        data-testid="modal-close"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="events-none icon"
+          data-testid="icon-close"
+          focusable="false"
+          style="width: 18px; height: 18px;"
+        >
+          <use
+            xlink:href="#icon-close"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          close
+        </span>
+      </button>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`Modal basic, auto renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    class="fixed top bottom left right bg-darken50"
+    data-state="open"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+  >
+    <div
+      aria-describedby="radix-27"
+      aria-labelledby="radix-26"
+      class="relative my12 my60-mm wmax-full bg-white round px36 py36"
+      data-state="open"
+      id="radix-25"
+      role="dialog"
+      style="pointer-events: auto;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-26"
+        >
+          Auto modal title
+        </h2>
+      </span>
+      <div>
+        No fixed width on the modal container. But very tall.
+      </div>
+      <button
+        aria-describedby="radix-28"
+        aria-label="Close"
+        class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+        data-state="instant-open"
+        data-testid="modal-close"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="events-none icon"
+          data-testid="icon-close"
+          focusable="false"
+          style="width: 18px; height: 18px;"
+        >
+          <use
+            xlink:href="#icon-close"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          close
+        </span>
+      </button>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    data-radix-popper-content-wrapper=""
+    style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
+  >
+    <div
+      class="bg-white border--white color-text border shadow-darken25 round txt-s px12 py6 wmax240"
+      data-align="center"
+      data-side="top"
+      data-state="instant-open"
+      style="pointer-events: auto; --radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); animation: none;"
+    >
+      Close
+      <span
+        style="position: absolute; bottom: 0px; transform: translateY(100%); visibility: hidden;"
+      >
+        <svg
+          fill="#fff"
+          height="6"
+          offset="6"
+          preserveAspectRatio="none"
+          style="display: block;"
+          viewBox="0 0 30 10"
+          width="12"
+        >
+          <polygon
+            points="0,0 30,0 15,10"
+          />
+        </svg>
+      </span>
+      <span
+        id="radix-28"
+        role="tooltip"
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        Close
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal basic, large renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    class="fixed top bottom left right bg-darken50"
+    data-state="open"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+  >
+    <div
+      aria-describedby="radix-19"
+      aria-labelledby="radix-18"
+      class="relative my12 my60-mm wmax600 w-11/12 bg-white round px36 py36"
+      data-state="open"
+      id="radix-17"
+      role="dialog"
+      style="pointer-events: auto;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-18"
+        >
+          Large modal title
+        </h2>
+      </span>
+      <div>
+        Large modal body
+      </div>
+      <div
+        class="mt24"
+      >
+        <div
+          class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+        >
+          <div
+            class="flex-child-no-shrink"
+          >
+            <button
+              aria-label="Okay"
+              class="btn btn--red round-full py6 px24 txt-s"
+              tabindex="0"
+              type="button"
+            >
+              Okay
+            </button>
+          </div>
+          <div
+            class="flex-child-no-shrink mr12"
+          >
+            <button
+              aria-label="Cancel"
+              class="btn btn--gray btn--stroke round-full py6 px24 txt-s"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="flex-child-no-shrink mr12"
+          >
+            <button
+              aria-label="tertiary"
+              class="btn btn--transparent link link--gray transition round-full py12 px24 txt-s"
+              type="button"
+            >
+              Give up
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        aria-label="Close"
+        class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+        data-state="closed"
+        data-testid="modal-close"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="events-none icon"
+          data-testid="icon-close"
+          focusable="false"
+          style="width: 18px; height: 18px;"
+        >
+          <use
+            xlink:href="#icon-close"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          close
+        </span>
+      </button>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;

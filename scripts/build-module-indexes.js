@@ -1,12 +1,11 @@
 #!/usr/bin/env node
-'use strict';
 
 require('hard-rejection/register');
 const fs = require('fs');
 const path = require('path');
 const pify = require('pify');
 
-const excludeDirs = new Set(['utils']);
+const excludeDirs = new Set(['utils', '.DS_Store', 'typings.ts']);
 const srcRoot = path.resolve(__dirname, '../src/components');
 
 function generateIndex(moduleName) {
@@ -14,7 +13,6 @@ function generateIndex(moduleName) {
 
 export default main;
 `;
-
   const filename = path.resolve(srcRoot, moduleName, 'index.js');
   return pify(fs.writeFile)(filename, content);
 }

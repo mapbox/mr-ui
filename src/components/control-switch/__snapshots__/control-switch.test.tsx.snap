@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlSwitch basic renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <fieldset
+        class="flex flex--center-cross"
+      >
+        <label
+          class="switch-container  cursor-pointer"
+          for="test"
+        >
+          <button
+            aria-checked="false"
+            class="switch switch--s-label"
+            data-state="unchecked"
+            data-testid="test-switch"
+            id="test"
+            role="switch"
+            type="button"
+            value="on"
+          >
+            <span
+              data-state="unchecked"
+            />
+          </button>
+          <span
+            class="txt-s ml6"
+          >
+            Basic
+          </span>
+        </label>
+      </fieldset>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;

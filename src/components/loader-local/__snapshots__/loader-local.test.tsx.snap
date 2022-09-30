@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoaderFull basic renders 1`] = `
+<body>
+  <div>
+    <div
+      class="loading absolute top left right bottom flex flex--center-cross flex--center-main bg-gray-faint"
+    />
+  </div>
+</body>
+`;
+
+exports[`LoaderFull themeLoader renders 1`] = `
+<body>
+  <div>
+    <div
+      class="loading absolute top left right bottom flex flex--center-cross flex--center-main bg-red"
+    />
+  </div>
+</body>
+`;

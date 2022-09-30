@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlText all options renders as expected 1`] = `
+<body>
+  <span
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div>
+    <div
+      class="relative bg-gray-faint"
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold"
+          id="radix-15"
+          role="label"
+        >
+          All options
+           
+          <span
+            class="txt-normal"
+          >
+            (optional)
+          </span>
+        </label>
+        <span
+          class="inline-block ml12"
+        >
+          <span>
+            Aside text
+          </span>
+        </span>
+      </div>
+      <div
+        class="flex"
+        data-testid="control-text-container"
+      >
+        <input
+          aria-invalid="true"
+          aria-labelledby="radix-15"
+          aria-required="false"
+          autocapitalize="none"
+          autocorrect="off"
+          class="txt-bold input round-l flex-child-grow"
+          data-testid="testinput-input"
+          id="testinput"
+          name="testinput"
+          placeholder="Enter an email address"
+          spellcheck="false"
+          style="box-shadow: inset 0 0 0 1px #f74e4e;"
+          type="email"
+          value="foo@bar.baz"
+        />
+        <span
+          style="display: contents;"
+        >
+          <button
+            aria-controls="radix-16"
+            aria-expanded="true"
+            aria-haspopup="dialog"
+            class="h-full bg-red color-white round-r px6"
+            data-state="open"
+            data-testid="validation-error"
+            role="alert"
+            type="button"
+          >
+            <span
+              class="flex flex--center-cross flex--center-main"
+            >
+              <svg
+                aria-hidden="true"
+                class="cursor-pointer"
+                data-testid="icon-alert"
+                fill="white"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-alert"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                alert
+              </span>
+            </span>
+          </button>
+        </span>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+  <div
+    data-radix-popper-content-wrapper=""
+    style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
+  >
+    <div
+      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py6 border border-1 border--border--gray-dark"
+      data-align="center"
+      data-side="top"
+      data-state="open"
+      id="radix-16"
+      role="dialog"
+      style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); animation: none;"
+      tabindex="-1"
+    >
+      oh no!
+      <span
+        style="position: absolute; bottom: 0px; transform: translateY(100%); visibility: hidden;"
+      >
+        <svg
+          fill="#0E2127"
+          height="6"
+          offset="6"
+          preserveAspectRatio="none"
+          style="display: block;"
+          viewBox="0 0 30 10"
+          width="12"
+        >
+          <polygon
+            points="0,0 30,0 15,10"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <span
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`ControlText basic renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold mb6"
+          id="radix-0"
+          role="label"
+        >
+          basic
+           
+        </label>
+      </div>
+      <input
+        aria-labelledby="radix-0"
+        aria-required="true"
+        class="input"
+        data-testid="testinput-input"
+        id="testinput"
+        name="testinput"
+        type="text"
+        value=""
+      />
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlText disabled renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold mb6"
+          id="radix-2"
+          role="label"
+        >
+          basic
+           
+        </label>
+      </div>
+      <input
+        aria-labelledby="radix-2"
+        aria-required="true"
+        class="input"
+        data-testid="testinput-input"
+        disabled=""
+        id="testinput"
+        name="testinput"
+        type="text"
+        value=""
+      />
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlText validation error (inline) renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold mb6"
+          id="radix-5"
+          role="label"
+        >
+          basic
+           
+        </label>
+      </div>
+      <div
+        class="flex"
+        data-testid="control-text-container"
+      >
+        <input
+          aria-invalid="true"
+          aria-labelledby="radix-5"
+          aria-required="true"
+          class="input round-l flex-child-grow"
+          data-testid="testinput-input"
+          id="testinput"
+          name="testinput"
+          style="box-shadow: inset 0 0 0 1px #f74e4e;"
+          type="text"
+          value=""
+        />
+        <span
+          style="display: contents;"
+        >
+          <button
+            aria-controls="radix-6"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="h-full bg-red color-white round-r px6"
+            data-state="closed"
+            data-testid="validation-error"
+            role="alert"
+            type="button"
+          >
+            <span
+              class="flex flex--center-cross flex--center-main"
+            >
+              <svg
+                aria-hidden="true"
+                class="cursor-pointer"
+                data-testid="icon-alert"
+                fill="white"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-alert"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                alert
+              </span>
+            </span>
+          </button>
+        </span>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlText validation error renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold mb6"
+          id="radix-4"
+          role="label"
+        >
+          basic
+           
+        </label>
+      </div>
+      <input
+        aria-invalid="true"
+        aria-labelledby="radix-4"
+        aria-required="true"
+        class="input"
+        data-testid="testinput-input"
+        id="testinput"
+        name="testinput"
+        type="text"
+        value=""
+      />
+      <div
+        role="alert"
+      >
+        <div
+          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          data-testid="testinput-error"
+          id="testinput-error"
+        >
+          oh no!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

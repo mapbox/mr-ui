@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlTextarea all options renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative bg-red px12 py12"
+    >
+      <div>
+        <label
+          class="inline-block txt-s"
+          id="radix-4"
+          role="label"
+        >
+          All options
+           
+          <span
+            class="txt-normal"
+          >
+            (optional)
+          </span>
+        </label>
+        <span
+          class="inline-block ml12"
+        >
+          <span>
+            Aside text
+          </span>
+        </span>
+      </div>
+      <textarea
+        aria-invalid="true"
+        aria-labelledby="radix-4"
+        aria-required="false"
+        autocapitalize="none"
+        autocorrect="off"
+        class="w-full border--pink round-bold px12 py12"
+        data-testid="testinput-textarea"
+        id="testinput"
+        name="testinput"
+        placeholder="Some cool placeholder text"
+        spellcheck="false"
+      >
+        Some cool default value
+      </textarea>
+      <div
+        role="alert"
+      >
+        <div
+          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          data-testid="testinput-error"
+          id="testinput-error"
+        >
+          oh no!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlTextarea basic renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold mb6"
+          id="radix-0"
+          role="label"
+        >
+          Basic
+           
+        </label>
+      </div>
+      <textarea
+        aria-labelledby="radix-0"
+        aria-required="true"
+        class="textarea hmin120"
+        data-testid="testinput-textarea"
+        id="testinput"
+        name="testinput"
+      />
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlTextarea disabled renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div>
+        <label
+          class="inline-block txt-s txt-bold mb6"
+          id="radix-2"
+          role="label"
+        >
+          basic
+           
+        </label>
+      </div>
+      <textarea
+        aria-labelledby="radix-2"
+        aria-required="true"
+        class="textarea hmin120"
+        data-testid="testinput-textarea"
+        disabled=""
+        id="testinput"
+        name="testinput"
+      />
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
