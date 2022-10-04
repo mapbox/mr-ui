@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import * as ToastPrimitive from '@radix-ui/react-toast';
 import Icon from '../icon';
@@ -13,7 +13,7 @@ interface Props {
   closeButton?: boolean;
   children: ReactNode;
   active: boolean;
-  onExit?: () => void;
+  onExit: () => void;
 }
 
 export default function Toast({
@@ -25,7 +25,6 @@ export default function Toast({
   active,
   onExit
 }: Props): ReactElement {
-  const [open, setOpen] = useState(false);
   const timerRef = React.useRef(0);
 
   let actionBtnClass = closeButton ? '' : 'pr12';
@@ -33,22 +32,19 @@ export default function Toast({
     <ToastPrimitive.Provider swipeDirection="down" duration={duration}>
       <span
         onClick={() => {
-          setOpen(false);
           window.clearTimeout(timerRef.current);
-          timerRef.current = window.setTimeout(() => {
-            setOpen(true);
-          }, 100);
+          timerRef.current = window.setTimeout(() => {}, 100);
         }}
       >
         {children}
       </span>
       <ToastPrimitive.Root
         type="foreground"
-        open={open}
-        onOpenChange={setOpen}
-        className="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12"
+        open={active}
+        onOpenChange={onExit}
+        className="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60"
       >
-        <ToastPrimitive.Description className="color-gray-lighter txt-truncate w-auto mr24">
+        <ToastPrimitive.Description className="color-gray-lighter txt-truncate w-auto mr12">
           {content}
         </ToastPrimitive.Description>
         <span
@@ -91,7 +87,7 @@ Toast.propTypes = {
    */
   content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   /**
-   * The duration the toast should appear for. Defaults to 5000 milliseconds.
+   * The duration the toast should appear for. Recommended toast duration is 5 seconds with 1 extra second for every additional 300 characters in the toast body.
    */
   duration: PropTypes.number,
   /**
@@ -109,5 +105,14 @@ Toast.propTypes = {
   action: PropTypes.shape({
     text: PropTypes.string.isRequired,
     callback: PropTypes.func.isRequired
-  })
+  }),
+  /**
+   * A function called when popover is dismissed. You need to use this callback
+   * to remove the Toast from the rendered page.
+   */
+  onExit: PropTypes.func.isRequired,
+  /**
+   * Triggers the active state of the toast. When true, the toast appears.
+   */
+  active: PropTypes.bool.isRequired
 };

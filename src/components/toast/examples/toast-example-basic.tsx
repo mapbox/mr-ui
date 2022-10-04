@@ -1,21 +1,22 @@
 /*
-A simple toast message with action and close buttons.
+A toast message with an action.
 */
 import React, { ReactElement, useState } from 'react';
 import Toast from '../toast';
 
 export default function Example() {
-  let [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const renderToast = (): ReactElement => {
     return (
       <Toast
         content="3 files have been moved to 'Your folder'"
-        duration={100000}
-        closeButton={true}
+        duration={3000}
+        closeButton={false}
         active={open}
         action={{ text: 'Open folder', callback: () => {} }}
+        onExit={() => setOpen(false)}
       >
-        <button className="btn" onClick={() => setOpen(!open)}>
+        <button className="btn" onClick={() => setOpen(true)}>
           Trigger toast from here
         </button>
       </Toast>
