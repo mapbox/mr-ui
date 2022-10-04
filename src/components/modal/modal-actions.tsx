@@ -7,14 +7,17 @@ interface Props {
     text: string;
     callback: () => void;
     destructive?: boolean;
+    disabled?: boolean;
   },
   secondaryAction?: {
     text: string;
     callback: () => void;
+    disabled?: boolean;
   },
   tertiaryAction?: {
     text: string;
     callback: () => void;
+    disabled?: boolean;
   }
 }
 
@@ -34,6 +37,7 @@ export default function ModalActions({
           variant="secondary"
           size="medium"
           onClick={secondaryAction.callback}
+          disabled={secondaryAction.disabled}
           data-test="secondary-modal-action"
           passthroughProps={{ 'aria-label': secondaryAction.text }}
         >
@@ -58,6 +62,7 @@ export default function ModalActions({
           aria-label={tertiaryAction.text}
           variant="tertiary"
           onClick={tertiaryAction.callback}
+          disabled={tertiaryAction.disabled}
           data-test="tertiary-modal-action"
         >
           {tertiaryAction.text}
@@ -77,6 +82,7 @@ export default function ModalActions({
           variant={primaryButtonVariant}
           size="medium"
           onClick={primaryAction.callback}
+          disabled={primaryAction.disabled}
           data-test="primary-modal-action"
           passthroughProps={{
             tabIndex: 0,
@@ -96,14 +102,17 @@ ModalActions.propTypes = {
   primaryAction: PropTypes.shape({
     text: PropTypes.string.isRequired,
     callback: PropTypes.func.isRequired,
-    destructive: PropTypes.bool
+    destructive: PropTypes.bool,
+    disabled: PropTypes.bool
   }).isRequired,
   secondaryAction: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    callback: PropTypes.func.isRequired
+    callback: PropTypes.func.isRequired,
+    disabled: PropTypes.bool
   }),
   tertiaryAction: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    callback: PropTypes.func.isRequired
+    callback: PropTypes.func.isRequired,
+    disabled: PropTypes.bool
   })
 };

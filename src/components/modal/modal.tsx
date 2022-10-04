@@ -20,14 +20,17 @@ interface Props {
     text: string;
     callback: () => void;
     destructive?: boolean;
+    disabled?: boolean;
   },
   secondaryAction?: {
     text: string;
     callback: () => void;
+    disabled?: boolean;
   },
   tertiaryAction?: {
     text: string;
     callback: () => void;
+    disabled?: boolean;
   }
 }
 
