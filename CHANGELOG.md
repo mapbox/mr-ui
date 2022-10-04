@@ -3,6 +3,9 @@ Changelog
 
 ## HEAD
 
+- Support `disabled` option in modal actions. [#199](https://github.com/mapbox/mr-ui/pull/199)
+
+
 ## 2.0.0
 
 - [fix] added new styling for ControlToggleGroup component that is consistent with actual usage.
