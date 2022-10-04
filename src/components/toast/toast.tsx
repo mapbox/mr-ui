@@ -54,18 +54,21 @@ export default function Toast({
         <span
           className={`flex flex-row flex--center-cross ${actionBtnClass} flex-child-no-shrink`}
         >
-          <ToastPrimitive.Action
-            altText="Open"
-            className="btn"
-            type="button"
-            onClick={action.callback}
-          >
-            {action.text}
-          </ToastPrimitive.Action>
+          {action && (
+            <ToastPrimitive.Action
+              altText="Open"
+              className="btn"
+              type="button"
+              onClick={action.callback}
+            >
+              {action.text}
+            </ToastPrimitive.Action>
+          )}
           {closeButton && (
             <ToastPrimitive.Close
               className="btn btn--transparent color-gray-light"
               type="button"
+              aria-label="Close"
             >
               <Icon name="close" />
             </ToastPrimitive.Close>
