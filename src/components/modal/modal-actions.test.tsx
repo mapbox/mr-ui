@@ -94,6 +94,30 @@ describe('ModalActions', () => {
       fireEvent.click(actions[2]);
       expect(mockedTertiaryCallback).toHaveBeenCalledTimes(1);
     });
+
+    test('disabled callbacks', () => {
+      const mockedPrimaryCallback = jest.fn();
+      const mockedSecondaryCallback = jest.fn();
+      const mockedTertiaryCallback = jest.fn();
+      render(
+        <ModalActions
+          primaryAction={{ text: 'Okay', disabled: true, callback: mockedPrimaryCallback }}
+          secondaryAction={{ text: 'Cancel', disabled: true, callback: mockedSecondaryCallback }}
+          tertiaryAction={{ text: 'Exit', disabled: true, callback: mockedTertiaryCallback }}
+        />
+      );
+
+      const actions = screen.queryAllByRole('button');
+
+      fireEvent.click(actions[0]);
+      expect(mockedPrimaryCallback).not.toHaveBeenCalled();
+
+      fireEvent.click(actions[1]);
+      expect(mockedSecondaryCallback).not.toHaveBeenCalled();
+
+      fireEvent.click(actions[2]);
+      expect(mockedTertiaryCallback).not.toHaveBeenCalled();
+    });
   });
 
   describe('primary and tertiary', () => {

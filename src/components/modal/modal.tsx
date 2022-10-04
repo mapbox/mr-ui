@@ -20,14 +20,17 @@ interface Props {
     text: string;
     callback: () => void;
     destructive?: boolean;
+    disabled?: boolean;
   },
   secondaryAction?: {
     text: string;
     callback: () => void;
+    disabled?: boolean;
   },
   tertiaryAction?: {
     text: string;
     callback: () => void;
+    disabled?: boolean;
   }
 }
 
@@ -181,9 +184,8 @@ Modal.propTypes = {
    */
   onExit: PropTypes.func,
   /**
-   * A function that should the primary application node, which should be
-   * `aria-hidden` when the modal is open. By default, returns
-   * `document.getElementById('app')`.
+   * Modal container size. Options are `small`, `large`, or `auto`. If `auto`
+   * is provided, a width is not specified.
    */
   size: PropTypes.oneOf(['small', 'large', 'auto']),
   /**
