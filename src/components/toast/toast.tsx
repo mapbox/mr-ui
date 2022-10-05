@@ -5,39 +5,30 @@ import Icon from '../icon';
 
 interface Props {
   content: string;
+  children: ReactNode;
+  active: boolean;
+  onExit: () => void;
   action?: {
     text: string;
     callback: () => void;
   };
   duration?: number;
   closeButton?: boolean;
-  children: ReactNode;
-  active: boolean;
-  onExit: () => void;
 }
 
 export default function Toast({
   content,
-  duration = 5000,
-  action,
-  closeButton = true,
   children,
   active,
-  onExit
+  onExit,
+  duration = 5000,
+  action,
+  closeButton = true
 }: Props): ReactElement {
-  const timerRef = React.useRef(0);
-
   let actionBtnClass = closeButton ? '' : 'pr12';
   return (
     <ToastPrimitive.Provider swipeDirection="down" duration={duration}>
-      <span
-        onClick={() => {
-          window.clearTimeout(timerRef.current);
-          timerRef.current = window.setTimeout(() => {}, 100);
-        }}
-      >
-        {children}
-      </span>
+      {children}
       <ToastPrimitive.Root
         type="foreground"
         open={active}
@@ -89,14 +80,14 @@ Toast.propTypes = {
    */
   content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   /**
-   * The duration the toast should appear for. Recommended toast duration is 5 seconds with 1 extra second for every additional 300 characters in the toast body.
+   * A function called when popover is dismissed. You need to use this callback
+   * to remove the Toast from the rendered page.
    */
-  duration: PropTypes.number,
+  onExit: PropTypes.func.isRequired,
   /**
-   * When `true` the toast will have a separate close button (in addition to the call-to-action button).
-   * When `false` toast will only have action button.
+   * Triggers the active state of the toast. When true, the toast appears.
    */
-  closeButton: PropTypes.bool,
+  active: PropTypes.bool.isRequired,
   /**
    * The primary action for the toast.
    *
@@ -109,12 +100,12 @@ Toast.propTypes = {
     callback: PropTypes.func.isRequired
   }),
   /**
-   * A function called when popover is dismissed. You need to use this callback
-   * to remove the Toast from the rendered page.
+   * The duration the toast should appear for. Recommended toast duration is 5 seconds with 1 extra second for every additional 300 characters in the toast body.
    */
-  onExit: PropTypes.func.isRequired,
+  duration: PropTypes.number,
   /**
-   * Triggers the active state of the toast. When true, the toast appears.
+   * When `true` the toast will have a separate close button (in addition to the call-to-action button).
+   * When `false` toast will only have action button.
    */
-  active: PropTypes.bool.isRequired
+  closeButton: PropTypes.bool
 };
