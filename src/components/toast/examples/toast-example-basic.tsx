@@ -17,7 +17,7 @@ export default function Example() {
         onExit={() => setOpen(false)}
       >
         <button className="btn" onClick={() => setOpen(true)}>
-          Trigger toast from here
+          Trigger toast
         </button>
       </Toast>
     );

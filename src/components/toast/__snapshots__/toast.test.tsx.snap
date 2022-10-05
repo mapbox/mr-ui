@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast render with options renders basic 1`] = `
+<body>
+  <div>
+    <span>
+      <button>
+        Trigger
+      </button>
+    </span>
+    <div
+      aria-label="Notifications (F8)"
+      role="region"
+      style=""
+      tabindex="-1"
+    >
+      <span
+        aria-hidden="true"
+        style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        tabindex="0"
+      />
+      <ol
+        class="fixed left bottom mb24 w-full flex flex--center-main"
+        tabindex="-1"
+      >
+        <li
+          class="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60"
+          data-radix-collection-item=""
+          data-state="open"
+          data-swipe-direction="down"
+          style="user-select: none;"
+          tabindex="0"
+        >
+          <div
+            class="color-gray-lighter txt-truncate w-auto mr12"
+          >
+            Toast message
+          </div>
+          <span
+            class="flex flex-row flex--center-cross  flex-child-no-shrink"
+          >
+            <button
+              class="btn"
+              data-testid="toast-action"
+              type="button"
+            >
+              Open folder
+            </button>
+            <button
+              aria-label="Close"
+              class="btn btn--transparent color-gray-light"
+              data-testid="toast-close"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="events-none icon"
+                data-testid="icon-close"
+                focusable="false"
+                style="width: 18px; height: 18px;"
+              >
+                <use
+                  xlink:href="#icon-close"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                />
+              </svg>
+              <span
+                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+              >
+                close
+              </span>
+            </button>
+          </span>
+        </li>
+      </ol>
+      <span
+        aria-hidden="true"
+        style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <span
+    aria-atomic="true"
+    aria-live="assertive"
+    role="status"
+    style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+  />
+</body>
+`;

@@ -56,6 +56,7 @@ export default function Toast({
               className="btn"
               type="button"
               onClick={action.callback}
+              data-testid="toast-action"
             >
               {action.text}
             </ToastPrimitive.Action>
@@ -65,6 +66,7 @@ export default function Toast({
               className="btn btn--transparent color-gray-light"
               type="button"
               aria-label="Close"
+              data-testid="toast-close"
             >
               <Icon name="close" />
             </ToastPrimitive.Close>
