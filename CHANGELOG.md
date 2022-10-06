@@ -1,10 +1,11 @@
-Changelog
----
+## Changelog
 
 ## HEAD
 
-- Support `disabled` option in modal actions. [#199](https://github.com/mapbox/mr-ui/pull/199)
+## 2.1.0
 
+- [feature] Add **Toast** component.
+- [fix] Support `disabled` option in modal actions. [#199](https://github.com/mapbox/mr-ui/pull/199)
 
 ## 2.0.0
 
@@ -55,8 +56,8 @@ Changelog
   - Dropped `block` I'm not seeing strong usage of this property and I believe its a tradeoff we can make
   - Dropped `testId` Passing custom data attributes to the Radix tooltip isn't supported. There are other good ways to test the presence of tooltip contents like: `screen.getByRole('tooltip')` or by wrapping a child prop in a data test attribute.
 - [breaking] Rewrites `src/components/control-switch` as a functional component.and uses [`swtich` from Radix](https://radix-website-git-release.modulz-deploys.com/docs/primitives/components/switch). 🚨 **Prop changes**:
-    - Dropped `optional`: Additional text like "optional" should be applied by the consumer using the label prop.
-    - Dropped `initialValue` and `validator` which were previously provided by the form component.
+  - Dropped `optional`: Additional text like "optional" should be applied by the consumer using the label prop.
+  - Dropped `initialValue` and `validator` which were previously provided by the form component.
 - [breaking] Rewrites `src/components/icon` as a functional component and uses [`accessible-icon` from Radix](https://www.radix-ui.com/docs/primitives/utilities/accessible-icon) as an internal primitive.
 - [breaking] Rewrites `src/components/control-wrapper` as a functional component.
 - [feature] Introduces TypeScript to the source code and converts:
