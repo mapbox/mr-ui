@@ -11,7 +11,6 @@ describe('Toast', () => {
         text: 'Open folder',
         callback: jest.fn()
       },
-      children: <button>Trigger</button>,
       onExit: mockedOnExit
     };
 
@@ -31,7 +30,6 @@ describe('Toast', () => {
           content="toast without action"
           active={true}
           onExit={mockedOnExit}
-          children={<div>trigger</div>}
         />
       );
       expect(screen.queryByTestId('toast-action')).toBeNull();
@@ -47,7 +45,6 @@ describe('Toast', () => {
         text: 'Open folder',
         callback: jest.fn()
       },
-      children: <button>Trigger</button>,
       onExit: mockedOnExit,
       duration: 1000
     } as const;
