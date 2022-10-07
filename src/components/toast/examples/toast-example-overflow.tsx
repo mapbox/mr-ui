@@ -18,7 +18,7 @@ export default function Example() {
           closeButton={true}
           active={open}
           onExit={() => setOpen(false)}
-        ></Toast>
+        />
       </>
     );
   };
