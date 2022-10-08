@@ -3,9 +3,6 @@
 exports[`Toast render with options renders basic 1`] = `
 <body>
   <div>
-    <button>
-      Trigger
-    </button>
     <div
       aria-label="Notifications (F8)"
       role="region"

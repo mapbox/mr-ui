@@ -1,11 +1,10 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import * as ToastPrimitive from '@radix-ui/react-toast';
 import Icon from '../icon';
 
 interface Props {
   content: string;
-  children: ReactNode;
   active: boolean;
   onExit: () => void;
   action?: {
@@ -18,7 +17,6 @@ interface Props {
 
 export default function Toast({
   content,
-  children,
   active,
   onExit,
   duration = 5000,
@@ -28,7 +26,6 @@ export default function Toast({
   let actionBtnClass = closeButton ? '' : 'pr12';
   return (
     <ToastPrimitive.Provider swipeDirection="down" duration={duration}>
-      {children}
       <ToastPrimitive.Root
         type="foreground"
         open={active}
@@ -70,10 +67,6 @@ export default function Toast({
 }
 
 Toast.propTypes = {
-  /**
-   * The trigger element.
-   */
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   /**
    * The toast content. This can either be a string, valid JSX, or a function
    * returning either. Content text will truncate.
