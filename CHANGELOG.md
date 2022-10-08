@@ -2,6 +2,8 @@
 
 ## HEAD
 
+## 2.1.1
+
 - [fix] Remove `children` prop from **Toast** component.
 
 ## 2.1.0
