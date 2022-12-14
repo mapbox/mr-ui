@@ -15,11 +15,11 @@ exports[`Toast render with options renders basic 1`] = `
         tabindex="0"
       />
       <ol
-        class="fixed left bottom mb24 w-full flex flex--center-main"
+        class="fixed left bottom mb24 w-full flex flex--center-main events-none"
         tabindex="-1"
       >
         <li
-          class="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60"
+          class="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all"
           data-radix-collection-item=""
           data-state="open"
           data-swipe-direction="down"

@@ -30,7 +30,7 @@ export default function Toast({
         type="foreground"
         open={active}
         onOpenChange={onExit}
-        className="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60"
+        className="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all"
       >
         <ToastPrimitive.Description className="color-gray-lighter txt-truncate w-auto mr12">
           {content}
@@ -61,7 +61,7 @@ export default function Toast({
           )}
         </span>
       </ToastPrimitive.Root>
-      <ToastPrimitive.Viewport className="fixed left bottom mb24 w-full flex flex--center-main" />
+      <ToastPrimitive.Viewport className="fixed left bottom mb24 w-full flex flex--center-main events-none" />
     </ToastPrimitive.Provider>
   );
 }
