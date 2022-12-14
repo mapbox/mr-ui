@@ -2,6 +2,10 @@
 
 ## HEAD
 
+## 2.1.2
+
+- [fix] Add `events-none` to outer container and `events-all` to inner container to resolve activities around the Toast component.
+
 ## 2.1.1
 
 - [fix] Remove `children` prop from **Toast** component.
