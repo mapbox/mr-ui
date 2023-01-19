@@ -2,6 +2,10 @@
 
 ## HEAD
 
+## 2.1.3
+
+- [fix] Fixes a crash when attempting server-side rendering with the `CopyButton` component. [#203](https://github.com/mapbox/mr-ui/pull/203)
+
 ## 2.1.2
 
 - [fix] Add `events-none` to outer container and `events-all` to inner container to resolve activities around the Toast component.
