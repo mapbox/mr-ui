@@ -173,5 +173,5 @@ CopyButton.propTypes = {
 };
 
 CopyButton.isCopySupported = () => {
-  return Clipboard.isSupported();
+  return typeof window === 'undefined' ? false : Clipboard.isSupported();
 };
