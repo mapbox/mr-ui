@@ -2,6 +2,10 @@
 
 ## HEAD
 
+## 2.1.4
+
+- [fix] Incorrect directory was published to npm as 2.1.3
+
 ## 2.1.3
 
 - [fix] Fixes a crash when attempting server-side rendering with the `CopyButton` component. [#203](https://github.com/mapbox/mr-ui/pull/203)
