@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from 'react';
+import React, { ReactElement, ReactNode, useRef } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlWrapper from '../control-wrapper';
@@ -12,7 +12,7 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'> {
   optional?: boolean;
   disabled?: boolean;
   validationError?: ReactElement | string;
-  displayValue?: string;
+  displayValue?: ReactNode;
   themeControlFile?: string;
   themeControlWrapper?: string;
 }
@@ -94,11 +94,9 @@ export default function ControlFile({
             className={`${themeControlFile} relative`}
             onClick={onButtonClick}
           >
-            <span className="txt-truncate">
-              <IconText iconBefore="harddrive">
-                {displayValue}
-              </IconText>
-            </span>
+            <IconText iconBefore="harddrive">
+              {displayValue}
+            </IconText>
           </button>
           <input {...inputProps} {...extraProps} />
         </div>

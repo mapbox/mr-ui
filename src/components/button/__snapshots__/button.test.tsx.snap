@@ -79,9 +79,7 @@ exports[`Link with outline and icon text, extra padding renders as expected 1`] 
             bug
           </span>
         </span>
-        <span>
-          Go do things
-        </span>
+        Go do things
       </span>
     </a>
   </div>
