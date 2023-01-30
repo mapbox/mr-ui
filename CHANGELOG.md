@@ -2,6 +2,8 @@
 
 ## HEAD
 
+- [bug] Modify `propType` for `displayValue` from `string` to `node`.
+
 ## 2.1.5
 
 - [feature] Support JSX from `displayLabel` prop in control-file component

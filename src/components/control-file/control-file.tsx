@@ -127,7 +127,7 @@ ControlFile.propTypes = {
   /** If provided, the value of this propery displays as an error message. */
   validationError: PropTypes.node,
   /** Overrides the "Select a file" label. */
-  displayValue: PropTypes.string,
+  displayValue: PropTypes.node,
   /** Assembly classes to apply to the button trigger element */
   themeControlFile: PropTypes.string,
   /** Assembly classes to apply to the control wrapper */
