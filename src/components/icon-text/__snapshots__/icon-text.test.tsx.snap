@@ -27,9 +27,7 @@ exports[`IconText both icons renders 1`] = `
           check
         </span>
       </span>
-      <span>
-        What
-      </span>
+      What
       <span
         class="ml6"
       >
@@ -62,9 +60,7 @@ exports[`IconText icon after renders 1`] = `
     <span
       class="flex flex--center-cross"
     >
-      <span>
-        Next
-      </span>
+      Next
       <span
         class="ml6"
       >
@@ -118,9 +114,7 @@ exports[`IconText icon before renders 1`] = `
           clipboard
         </span>
       </span>
-      <span>
-        Copy
-      </span>
+      Copy
     </span>
   </div>
 </body>
@@ -154,9 +148,7 @@ exports[`IconText inline flex parent renders 1`] = `
         </span>
       </span>
       <span>
-        <span>
-          Inline
-        </span>
+        Inline
       </span>
     </span>
   </div>

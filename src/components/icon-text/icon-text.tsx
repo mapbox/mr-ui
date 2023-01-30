@@ -39,7 +39,7 @@ export default function IconText({
   return (
     <span className={`${inline ? 'inline-flex' : 'flex'} flex--center-cross`}>
       {before}
-      <span>{children}</span>
+      {children}
       {after}
     </span>
   );

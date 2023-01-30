@@ -18,36 +18,30 @@ exports[`ControlFile all options renders as expected 1`] = `
             type="button"
           >
             <span
-              class="txt-truncate"
+              class="flex flex--center-cross"
             >
               <span
-                class="flex flex--center-cross"
+                class="mr6"
               >
-                <span
-                  class="mr6"
+                <svg
+                  aria-hidden="true"
+                  class="events-none icon"
+                  data-testid="icon-harddrive"
+                  focusable="false"
+                  style="width: 18px; height: 18px;"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="events-none icon"
-                    data-testid="icon-harddrive"
-                    focusable="false"
-                    style="width: 18px; height: 18px;"
-                  >
-                    <use
-                      xlink:href="#icon-harddrive"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                    />
-                  </svg>
-                  <span
-                    style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                  >
-                    harddrive
-                  </span>
-                </span>
-                <span>
-                  Select an image
+                  <use
+                    xlink:href="#icon-harddrive"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  />
+                </svg>
+                <span
+                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                >
+                  harddrive
                 </span>
               </span>
+              Select an image
             </span>
           </button>
           <input
@@ -99,36 +93,30 @@ exports[`ControlFile basic renders as expected 1`] = `
             type="button"
           >
             <span
-              class="txt-truncate"
+              class="flex flex--center-cross"
             >
               <span
-                class="flex flex--center-cross"
+                class="mr6"
               >
-                <span
-                  class="mr6"
+                <svg
+                  aria-hidden="true"
+                  class="events-none icon"
+                  data-testid="icon-harddrive"
+                  focusable="false"
+                  style="width: 18px; height: 18px;"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="events-none icon"
-                    data-testid="icon-harddrive"
-                    focusable="false"
-                    style="width: 18px; height: 18px;"
-                  >
-                    <use
-                      xlink:href="#icon-harddrive"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                    />
-                  </svg>
-                  <span
-                    style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                  >
-                    harddrive
-                  </span>
-                </span>
-                <span>
-                  Select a file
+                  <use
+                    xlink:href="#icon-harddrive"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  />
+                </svg>
+                <span
+                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                >
+                  harddrive
                 </span>
               </span>
+              Select a file
             </span>
           </button>
           <input
@@ -170,36 +158,30 @@ exports[`ControlFile disabled renders as expected 1`] = `
             type="button"
           >
             <span
-              class="txt-truncate"
+              class="flex flex--center-cross"
             >
               <span
-                class="flex flex--center-cross"
+                class="mr6"
               >
-                <span
-                  class="mr6"
+                <svg
+                  aria-hidden="true"
+                  class="events-none icon"
+                  data-testid="icon-harddrive"
+                  focusable="false"
+                  style="width: 18px; height: 18px;"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="events-none icon"
-                    data-testid="icon-harddrive"
-                    focusable="false"
-                    style="width: 18px; height: 18px;"
-                  >
-                    <use
-                      xlink:href="#icon-harddrive"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                    />
-                  </svg>
-                  <span
-                    style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                  >
-                    harddrive
-                  </span>
-                </span>
-                <span>
-                  Select a file
+                  <use
+                    xlink:href="#icon-harddrive"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  />
+                </svg>
+                <span
+                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                >
+                  harddrive
                 </span>
               </span>
+              Select a file
             </span>
           </button>
           <input
