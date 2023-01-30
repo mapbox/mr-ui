@@ -2,6 +2,10 @@
 
 ## HEAD
 
+## 2.1.5
+
+- [feature] Support JSX from `displayLabel` prop in control-file component
+
 ## 2.1.4
 
 - [fix] Incorrect directory was published to npm as 2.1.3
