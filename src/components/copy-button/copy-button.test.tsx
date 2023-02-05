@@ -38,6 +38,10 @@ describe('CopyButton', () => {
       className: 'px6 py6 btn btn--purple btn--stroke',
       focusTrapPaused: true,
       block: true,
+      tooltipTheme: 'dark',
+      children: (
+        <span>A custom child in place of the visual button</span>
+      ),
       passthroughProps: {
         'data-testid': 'foo'
       }

@@ -16,33 +16,15 @@ exports[`CopyButton all props renders as expected 1`] = `
           aria-controls="radix-4"
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="inline-block"
           data-state="closed"
           type="button"
         >
-          <button
-            class="px6 py6 btn btn--purple btn--stroke block"
+          <span
             data-state="closed"
-            data-testid="foo"
-            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="events-none icon"
-              data-testid="icon-clipboard"
-              focusable="false"
-              style="width: 18px; height: 18px;"
-            >
-              <use
-                xlink:href="#icon-clipboard"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              />
-            </svg>
-            <span
-              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-            >
-              clipboard
-            </span>
-          </button>
+            A custom child in place of the visual button
+          </span>
         </div>
       </span>
     </div>
@@ -66,6 +48,7 @@ exports[`CopyButton basic renders as expected 1`] = `
           aria-controls="radix-0"
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="inline-block"
           data-state="closed"
           type="button"
         >
