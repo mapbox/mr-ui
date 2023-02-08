@@ -130,7 +130,7 @@ export default function CopyButton({
         hideWhenAnchorIsOffscreen={true}
         padding="small"
       >
-        <div className="inline-block"> 
+        <div> 
           <Tooltip
             disabled={showingFeedback}
             coloring={themeTooltip}

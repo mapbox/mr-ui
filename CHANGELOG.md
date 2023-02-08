@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.3.1
+
+- [bug] Fix layout bug introduced in copy-button changes where wrapper was given `inline-block`
 
 ## 2.3.0
 

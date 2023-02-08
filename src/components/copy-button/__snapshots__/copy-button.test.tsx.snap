@@ -16,7 +16,6 @@ exports[`CopyButton all props renders as expected 1`] = `
           aria-controls="radix-4"
           aria-expanded="false"
           aria-haspopup="dialog"
-          class="inline-block"
           data-state="closed"
           type="button"
         >
@@ -48,7 +47,6 @@ exports[`CopyButton basic renders as expected 1`] = `
           aria-controls="radix-0"
           aria-expanded="false"
           aria-haspopup="dialog"
-          class="inline-block"
           data-state="closed"
           type="button"
         >
