@@ -1,10 +1,12 @@
 ## Changelog
 
-## HEAD
 
+## 2.3.0
+
+- [feature] add optional `children` and `themeTooltip` props to copy-button. [#205](https://github.com/mapbox/mr-ui/pull/205)
 - [bug] Modify `propType` for `displayValue` from `string` to `node`.
 
-## 2.1.5
+## 2.2.0
 
 - [feature] Support JSX from `displayLabel` prop in control-file component
 
