@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useCallback, HTMLAttributes} from 'react';
+import React, { ReactElement, useState, useEffect, useCallback, HTMLAttributes, ReactNode} from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Clipboard from 'clipboard/dist/clipboard.min.js';
@@ -14,6 +14,8 @@ interface Props {
   block?: boolean;
   focusTrapPaused?: boolean;
   className?: string;
+  themeTooltip?: 'light' | 'dark';
+  children?: ReactNode;
   passthroughProps?: HTMLAttributes<HTMLButtonElement>;
 }
 
@@ -31,6 +33,8 @@ export default function CopyButton({
   block = false,
   focusTrapPaused,
   className = 'btn btn--xs py3 px3 round',
+  children,
+  themeTooltip = 'light',
   passthroughProps
 }: Props): ReactElement {
   const [clipboard, setClipboard] = useState(null);
@@ -98,6 +102,14 @@ export default function CopyButton({
     block
   });
 
+  const body = children ? children : <button 
+    type="button"
+    className={buttonClasses}
+    {...passthroughProps}
+  >
+    <Icon name={iconName} />
+  </button>
+
   // data-clipboard-text and the container ref are used by clipboard.js
   // to copy text. Note that this wont have as nice a failure mode.
   return (
@@ -112,23 +124,19 @@ export default function CopyButton({
       <Popover
         content={<div className="txt-s">Copied!</div>}
         active={showingFeedback}
+        coloring={themeTooltip}
         placement="top"
         alignment="center"
         hideWhenAnchorIsOffscreen={true}
         padding="small"
       >
-        <div> 
+        <div className="inline-block"> 
           <Tooltip
             disabled={showingFeedback}
+            coloring={themeTooltip}
             content="Copy"
           >
-            <button 
-              type="button"
-              className={buttonClasses}
-              {...passthroughProps}
-            >
-              <Icon name={iconName} />
-            </button>
+            {body}
           </Tooltip>
         </div>
       </Popover>
@@ -169,7 +177,13 @@ CopyButton.propTypes = {
   /**
    * An object of props that you want to pass through to the `<button>`.
    */
-  passthroughProps: PropTypes.object
+  passthroughProps: PropTypes.object,
+  /**
+   * Either `'light'` or `'dark'`. This value is passed as the `coloring` prop found in Tooltip and Popover.
+   */
+  themeTooltip: PropTypes.oneOf(['light', 'dark']),
+  /** Optional content to represent the button. */
+  children: PropTypes.node
 };
 
 CopyButton.isCopySupported = () => {
