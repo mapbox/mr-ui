@@ -14,7 +14,8 @@ interface Props {
   block?: boolean;
   focusTrapPaused?: boolean;
   className?: string;
-  themeTooltip?: 'light' | 'dark';
+  tooltipColoring?: 'light' | 'dark';
+  tooltipTextSize?: 'xs' | 's' | 'none';
   children?: ReactNode;
   passthroughProps?: HTMLAttributes<HTMLButtonElement>;
 }
@@ -34,7 +35,8 @@ export default function CopyButton({
   focusTrapPaused,
   className = 'btn btn--xs py3 px3 round',
   children,
-  themeTooltip = 'light',
+  tooltipColoring = 'light',
+  tooltipTextSize = 's',
   passthroughProps
 }: Props): ReactElement {
   const [clipboard, setClipboard] = useState(null);
@@ -110,6 +112,13 @@ export default function CopyButton({
     <Icon name={iconName} />
   </button>
 
+  let popoverContent: ReactNode = 'Copied!';
+  if (tooltipTextSize !== 'none') {
+    popoverContent = (
+      <div className={`txt-${tooltipTextSize}`}>{popoverContent}</div>
+    );
+  }
+
   // data-clipboard-text and the container ref are used by clipboard.js
   // to copy text. Note that this wont have as nice a failure mode.
   return (
@@ -122,9 +131,9 @@ export default function CopyButton({
       onClick={handleCopyButtonClick}
     >
       <Popover
-        content={<div className="txt-s">Copied!</div>}
+        content={popoverContent}
         active={showingFeedback}
-        coloring={themeTooltip}
+        coloring={tooltipColoring}
         placement="top"
         alignment="center"
         hideWhenAnchorIsOffscreen={true}
@@ -133,7 +142,8 @@ export default function CopyButton({
         <div> 
           <Tooltip
             disabled={showingFeedback}
-            coloring={themeTooltip}
+            coloring={tooltipColoring}
+            textSize={tooltipTextSize}
             content="Copy"
           >
             {body}
@@ -181,7 +191,11 @@ CopyButton.propTypes = {
   /**
    * Either `'light'` or `'dark'`. This value is passed as the `coloring` prop found in Tooltip and Popover.
    */
-  themeTooltip: PropTypes.oneOf(['light', 'dark']),
+  tooltipColoring: PropTypes.oneOf(['light', 'dark']),
+  /**
+   * `'xs'` (extra small), `'s'` (small), or `'none'` (no size class).
+   */
+  tooltipTextSize: PropTypes.oneOf(['xs', 's', 'none']),
   /** Optional content to represent the button. */
   children: PropTypes.node
 };

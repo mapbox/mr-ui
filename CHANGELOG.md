@@ -1,5 +1,11 @@
 ## Changelog
 
+
+## 2.4.0
+
+- [feature] add `tooltipTextSize` option to copy-button.
+- [fix] rename `themeTooltip` option to `tooltipColoring` to match convention.
+
 ## 2.3.1
 
 - [bug] Fix layout bug introduced in copy-button changes where wrapper was given `inline-block`
