@@ -9,8 +9,7 @@ exports[`ControlTextarea all options renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s"
-          id="radix-4"
-          role="label"
+          for="testinput"
         >
           All options
            
@@ -30,7 +29,6 @@ exports[`ControlTextarea all options renders as expected 1`] = `
       </div>
       <textarea
         aria-invalid="true"
-        aria-labelledby="radix-4"
         aria-required="false"
         autocapitalize="none"
         autocorrect="off"
@@ -68,15 +66,13 @@ exports[`ControlTextarea basic renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-0"
-          role="label"
+          for="testinput"
         >
           Basic
            
         </label>
       </div>
       <textarea
-        aria-labelledby="radix-0"
         aria-required="true"
         class="textarea hmin120"
         data-testid="testinput-textarea"
@@ -100,15 +96,13 @@ exports[`ControlTextarea disabled renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-2"
-          role="label"
+          for="testinput"
         >
           basic
            
         </label>
       </div>
       <textarea
-        aria-labelledby="radix-2"
         aria-required="true"
         class="textarea hmin120"
         data-testid="testinput-textarea"

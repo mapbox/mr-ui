@@ -9,8 +9,7 @@ exports[`ControlSelect all options renders 1`] = `
       <div>
         <label
           class="inline-block color-white"
-          id="radix-6"
-          role="label"
+          for="allOptions"
         >
           All options
            
@@ -33,7 +32,6 @@ exports[`ControlSelect all options renders 1`] = `
       >
         <select
           aria-invalid="true"
-          aria-labelledby="radix-6"
           aria-required="false"
           class="select select--red"
           data-testid="allOptions-select"
@@ -85,8 +83,7 @@ exports[`ControlSelect basic renders 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-0"
-          role="label"
+          for="testinput"
         >
           Basic
            
@@ -96,7 +93,6 @@ exports[`ControlSelect basic renders 1`] = `
         class="select-container "
       >
         <select
-          aria-labelledby="radix-0"
           aria-required="true"
           class="select "
           data-testid="testinput-select"
@@ -134,8 +130,7 @@ exports[`ControlSelect disabled renders 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-2"
-          role="label"
+          for="testinput"
         >
           Basic
            
@@ -145,7 +140,6 @@ exports[`ControlSelect disabled renders 1`] = `
         class="select-container "
       >
         <select
-          aria-labelledby="radix-2"
           aria-required="true"
           class="select "
           data-testid="testinput-select"
@@ -184,8 +178,7 @@ exports[`ControlSelect grouped dropdown options renders 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-4"
-          role="label"
+          for="testinput"
         >
           Basic
            
@@ -195,7 +188,6 @@ exports[`ControlSelect grouped dropdown options renders 1`] = `
         class="select-container "
       >
         <select
-          aria-labelledby="radix-4"
           aria-required="true"
           class="select "
           data-testid="testinput-select"
@@ -252,8 +244,7 @@ exports[`ControlSelect supported values renders 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-5"
-          role="label"
+          for="value"
         >
           Basic
            
@@ -263,7 +254,6 @@ exports[`ControlSelect supported values renders 1`] = `
         class="select-container "
       >
         <select
-          aria-labelledby="radix-5"
           aria-required="true"
           class="select "
           data-testid="value-select"

@@ -6,8 +6,7 @@ exports[`ControlLabel basic renders 1`] = `
     <div>
       <label
         class="inline-block txt-s txt-bold mb6"
-        id="radix-0"
-        role="label"
+        for="label-id"
       >
         basic label
          
@@ -23,8 +22,7 @@ exports[`ControlLabel basic with aside renders 1`] = `
     <div>
       <label
         class="inline-block txt-s txt-bold mb6"
-        id="radix-1"
-        role="label"
+        for="label-id"
       >
         basic label
          
@@ -47,8 +45,7 @@ exports[`ControlLabel basic with optional renders 1`] = `
     <div>
       <label
         class="inline-block color-red"
-        id="radix-2"
-        role="label"
+        for="label-id"
       >
         basic label
          

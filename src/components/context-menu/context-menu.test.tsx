@@ -90,6 +90,7 @@ describe('ContextMenu', () => {
       const { baseElement } = render(<ContextMenu {...props} ><div data-testid="menu-trigger" /></ContextMenu>)
       await waitForPosition();
       fireEvent.contextMenu(screen.getByTestId('menu-trigger'));
+      await waitForPosition();
       expect(baseElement).toMatchSnapshot();
     });
   });

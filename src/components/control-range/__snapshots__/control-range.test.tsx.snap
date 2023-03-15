@@ -9,8 +9,7 @@ exports[`ControlRange all options renders 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold color-white"
-          id="radix-0"
-          role="label"
+          for="testinput"
         >
           All options
            
@@ -34,7 +33,6 @@ exports[`ControlRange all options renders 1`] = `
         <span
           aria-disabled="false"
           aria-invalid="true"
-          aria-labelledby="radix-0"
           aria-required="false"
           data-orientation="horizontal"
           data-test="testinput-input"

@@ -19,10 +19,13 @@ exports[`Toast render with options renders basic 1`] = `
         tabindex="-1"
       >
         <li
+          aria-atomic="true"
+          aria-live="off"
           class="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all"
           data-radix-collection-item=""
           data-state="open"
           data-swipe-direction="down"
+          role="status"
           style="user-select: none;"
           tabindex="0"
         >
@@ -36,6 +39,8 @@ exports[`Toast render with options renders basic 1`] = `
           >
             <button
               class="btn"
+              data-radix-toast-announce-alt="Open"
+              data-radix-toast-announce-exclude=""
               data-testid="toast-action"
               type="button"
             >
@@ -44,6 +49,7 @@ exports[`Toast render with options renders basic 1`] = `
             <button
               aria-label="Close"
               class="btn btn--transparent color-gray-light"
+              data-radix-toast-announce-exclude=""
               data-testid="toast-close"
               type="button"
             >
