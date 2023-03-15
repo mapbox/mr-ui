@@ -110,7 +110,7 @@ ContextMenu.propTypes = {
   children: PropTypes.node.isRequired,
   /**
    * An array of objects that represent each option group.
-   * Each object contain two fields:
+   * Each object contains two fields:
    * - `title` an optional property to name a group
    * - `options` an array of objects that represent an item:
    *   - `label` which can either be a string or valid JSX
