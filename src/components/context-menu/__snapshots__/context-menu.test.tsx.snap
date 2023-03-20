@@ -45,7 +45,7 @@ exports[`ContextMenu all options renders 1`] = `
       </div>
       <div
         aria-disabled="true"
-        class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover opacity25"
+        class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover events-none opacity25"
         data-disabled=""
         data-orientation="vertical"
         data-radix-collection-item=""

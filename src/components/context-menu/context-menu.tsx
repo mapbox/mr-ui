@@ -12,7 +12,7 @@ type Options = {
 type Option = {
   label: ReactNode;
   value: string;
-  keyCode?: string;
+  keyCode?: ReactNode;
   options?: Array<Options>;
   disabled?: boolean;
 };
@@ -39,7 +39,7 @@ export default function ContextMenu({
 
   const renderOption = ({ label, value, keyCode, disabled = false, options: subOptions }, index: number) => {
     const itemClass = classnames(`flex flex--space-between-main ${themeItem}`, {
-      'opacity25': disabled
+      'events-none opacity25': disabled
     });
 
     if (subOptions) {
@@ -58,6 +58,11 @@ export default function ContextMenu({
       );
     }
 
+    let key = keyCode;
+    if (typeof keyCode === 'string') {
+      key = <span className="txt-code">{keyCode}</span>
+    }
+
     return (
       <ContextMenuPrimitive.Item
         disabled={disabled}
@@ -66,9 +71,7 @@ export default function ContextMenu({
         className={itemClass}
       >
         <span className="w-3/4 txt-truncate">{label}</span>
-        {keyCode && <span className="w-1/4 align-r txt-truncate">
-          <span className="txt-code">{keyCode}</span>
-        </span>}
+        {keyCode && <span className="w-1/4 align-r txt-truncate">{key}</span>}
       </ContextMenuPrimitive.Item>
     );
   }
@@ -128,7 +131,7 @@ ContextMenu.propTypes = {
         PropTypes.shape({
           label: PropTypes.node.isRequired,
           value: PropTypes.string.isRequired,
-          keyCode: PropTypes.string
+          keyCode: PropTypes.node
         })
       ).isRequired
     })
