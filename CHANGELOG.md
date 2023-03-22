@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.5.0
+
+- [feature] Add **Context menu** component
+- [chore] Upgraded radix-ui packages
 
 ## 2.4.0
 
