@@ -326,7 +326,7 @@ exports[`Modal basic, auto renders 1`] = `
       data-align="center"
       data-side="top"
       data-state="instant-open"
-      style="pointer-events: auto; --radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); animation: none;"
+      style="pointer-events: auto; --radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); --radix-tooltip-content-available-width: var(--radix-popper-available-width); --radix-tooltip-content-available-height: var(--radix-popper-available-height); --radix-tooltip-trigger-width: var(--radix-popper-anchor-width); --radix-tooltip-trigger-height: var(--radix-popper-anchor-height); animation: none;"
     >
       Close
       <span

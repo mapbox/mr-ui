@@ -14,8 +14,7 @@ exports[`ControlText all options renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold"
-          id="radix-15"
-          role="label"
+          for="testinput"
         >
           All options
            
@@ -39,7 +38,6 @@ exports[`ControlText all options renders as expected 1`] = `
       >
         <input
           aria-invalid="true"
-          aria-labelledby="radix-15"
           aria-required="false"
           autocapitalize="none"
           autocorrect="off"
@@ -57,7 +55,7 @@ exports[`ControlText all options renders as expected 1`] = `
           style="display: contents;"
         >
           <button
-            aria-controls="radix-16"
+            aria-controls="radix-5"
             aria-expanded="true"
             aria-haspopup="dialog"
             class="h-full bg-red color-white round-r px6"
@@ -105,9 +103,9 @@ exports[`ControlText all options renders as expected 1`] = `
       data-align="center"
       data-side="top"
       data-state="open"
-      id="radix-16"
+      id="radix-5"
       role="dialog"
-      style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); animation: none;"
+      style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height); animation: none;"
       tabindex="-1"
     >
       oh no!
@@ -147,15 +145,13 @@ exports[`ControlText basic renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-0"
-          role="label"
+          for="testinput"
         >
           basic
            
         </label>
       </div>
       <input
-        aria-labelledby="radix-0"
         aria-required="true"
         class="input"
         data-testid="testinput-input"
@@ -181,15 +177,13 @@ exports[`ControlText disabled renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-2"
-          role="label"
+          for="testinput"
         >
           basic
            
         </label>
       </div>
       <input
-        aria-labelledby="radix-2"
         aria-required="true"
         class="input"
         data-testid="testinput-input"
@@ -216,8 +210,7 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-5"
-          role="label"
+          for="testinput"
         >
           basic
            
@@ -229,7 +222,6 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
       >
         <input
           aria-invalid="true"
-          aria-labelledby="radix-5"
           aria-required="true"
           class="input round-l flex-child-grow"
           data-testid="testinput-input"
@@ -243,7 +235,7 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
           style="display: contents;"
         >
           <button
-            aria-controls="radix-6"
+            aria-controls="radix-0"
             aria-expanded="false"
             aria-haspopup="dialog"
             class="h-full bg-red color-white round-r px6"
@@ -294,8 +286,7 @@ exports[`ControlText validation error renders as expected 1`] = `
       <div>
         <label
           class="inline-block txt-s txt-bold mb6"
-          id="radix-4"
-          role="label"
+          for="testinput"
         >
           basic
            
@@ -303,7 +294,6 @@ exports[`ControlText validation error renders as expected 1`] = `
       </div>
       <input
         aria-invalid="true"
-        aria-labelledby="radix-4"
         aria-required="true"
         class="input"
         data-testid="testinput-input"

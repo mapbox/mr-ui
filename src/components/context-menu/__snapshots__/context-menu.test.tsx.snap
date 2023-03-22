@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContextMenu all options renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-state="open"
+      data-testid="menu-trigger"
+    />
+  </div>
+  <div
+    data-radix-popper-content-wrapper=""
+    dir="ltr"
+    style="position: fixed; left: 0px; top: 0px; transform: translate3d(2px, 0px, 0); min-width: max-content; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-available-width: -2px; --radix-popper-available-height: 0px; --radix-popper-transform-origin: 0px 0%;"
+  >
+    <div
+      aria-orientation="vertical"
+      class="bg-gray-dark px6 py6 txt-s wmin240"
+      data-align="start"
+      data-orientation="vertical"
+      data-radix-menu-content=""
+      data-side="right"
+      data-state="open"
+      dir="ltr"
+      role="menu"
+      style="outline: none; --radix-context-menu-content-transform-origin: var(--radix-popper-transform-origin); --radix-context-menu-content-available-width: var(--radix-popper-available-width); --radix-context-menu-content-available-height: var(--radix-popper-available-height); --radix-context-menu-trigger-width: var(--radix-popper-anchor-width); --radix-context-menu-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
+      tabindex="-1"
+    >
+      <div
+        class="px6 py6 txt-bold"
+      >
+        Options
+      </div>
+      <div
+        aria-disabled="true"
+        class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover events-none opacity25"
+        data-disabled=""
+        data-orientation="vertical"
+        data-radix-collection-item=""
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span
+          class="w-3/4 txt-truncate"
+        >
+          <span>
+            Option 1
+          </span>
+        </span>
+        <span
+          class="w-1/4 align-r txt-truncate"
+        >
+          <span
+            class="txt-code"
+          >
+            1
+          </span>
+        </span>
+      </div>
+      <div
+        aria-controls="radix-9"
+        aria-expanded="false"
+        aria-haspopup="menu"
+        class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover"
+        data-orientation="vertical"
+        data-radix-collection-item=""
+        data-state="closed"
+        id="radix-10"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span
+          class="w-3/4 txt-truncate"
+        >
+          <span>
+            Option 2
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="events-none icon"
+          data-testid="icon-chevron-right"
+          focusable="false"
+          style="width: 18px; height: 18px;"
+        >
+          <use
+            xlink:href="#icon-chevron-right"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          chevron-right
+        </span>
+      </div>
+      <div
+        class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover"
+        data-orientation="vertical"
+        data-radix-collection-item=""
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span
+          class="w-3/4 txt-truncate"
+        >
+          <span>
+            Option 3
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`ContextMenu basic renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-state="open"
+      data-testid="menu-trigger"
+    />
+  </div>
+  <div
+    data-radix-popper-content-wrapper=""
+    dir="ltr"
+    style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
+  >
+    <div
+      aria-orientation="vertical"
+      class="bg-white round shadow-darken10 px6 py6 txt-s wmin240"
+      data-align="start"
+      data-orientation="vertical"
+      data-radix-menu-content=""
+      data-side="right"
+      data-state="open"
+      dir="ltr"
+      role="menu"
+      style="outline: none; --radix-context-menu-content-transform-origin: var(--radix-popper-transform-origin); --radix-context-menu-content-available-width: var(--radix-popper-available-width); --radix-context-menu-content-available-height: var(--radix-popper-available-height); --radix-context-menu-trigger-width: var(--radix-popper-anchor-width); --radix-context-menu-trigger-height: var(--radix-popper-anchor-height); animation: none; pointer-events: auto;"
+      tabindex="-1"
+    >
+      <div
+        class="px6 py6 txt-bold"
+      >
+        Options
+      </div>
+      <div
+        class="flex flex--space-between-main px6 py6 round color-blue-on-hover bg-gray-lighter-on-hover"
+        data-orientation="vertical"
+        data-radix-collection-item=""
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span
+          class="w-3/4 txt-truncate"
+        >
+          Option 1
+        </span>
+        <span
+          class="w-1/4 align-r txt-truncate"
+        >
+          <span
+            class="txt-code"
+          >
+            ⌘+1
+          </span>
+        </span>
+      </div>
+      <div
+        class="flex flex--space-between-main px6 py6 round color-blue-on-hover bg-gray-lighter-on-hover"
+        data-orientation="vertical"
+        data-radix-collection-item=""
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span
+          class="w-3/4 txt-truncate"
+        >
+          Option 2
+        </span>
+        <span
+          class="w-1/4 align-r txt-truncate"
+        >
+          <span
+            class="txt-code"
+          >
+            ⌘+2
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
