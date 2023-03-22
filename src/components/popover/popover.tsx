@@ -138,11 +138,7 @@ Popover.propTypes = {
    */
   placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
   /**
-   * Alignment of the popover relative to the side of the anchor on which
-   * it's placed. If `placement` is `left` or `right`, meaningful `alignment`
-   * values are `top`, `bottom`, and `center`. If `placement` is `top` or
-   * `bottom`, meaningful `alignment` values are `left`, `right`, and `center`.
-   * Adjusted according to available space.
+   * `'center'`, `'start'`, `'end'` Alignment of the popover edge in relation to the trigger element.
    */
   alignment: PropTypes.oneOf(['center', 'start', 'end']),
   /**
