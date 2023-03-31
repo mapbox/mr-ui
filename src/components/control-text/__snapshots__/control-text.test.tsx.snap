@@ -99,7 +99,7 @@ exports[`ControlText all options renders as expected 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
   >
     <div
-      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py6 border border-1 border--border--gray-dark"
+      class="bg-gray-dark border--gray-deep color-white border shadow-darken25 round px12 py6 border border-1 border--border--gray-deep"
       data-align="center"
       data-side="top"
       data-state="open"
@@ -113,7 +113,7 @@ exports[`ControlText all options renders as expected 1`] = `
         style="position: absolute; bottom: 0px; transform: translateY(100%); visibility: hidden;"
       >
         <svg
-          fill="#0E2127"
+          fill="#2E4E5D"
           height="6"
           offset="6"
           preserveAspectRatio="none"
