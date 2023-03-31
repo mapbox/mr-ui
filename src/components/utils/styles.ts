@@ -79,9 +79,9 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
     case 'dark':
       return {
         background: 'bg-gray-dark',
-        borderColor: 'border--gray-dark',
+        borderColor: 'border--gray-deep',
         color: 'color-white',
-        fill: variables['--gray-dark']
+        fill: variables['--gray-deep']
       };
     case 'warning':
       return {
@@ -105,7 +105,7 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
         color: 'color-text',
         fill: '#fff'
       };
-  };
+  }
 }
 
 export { mergeStyles, setStyles, getStyle, getTheme };
