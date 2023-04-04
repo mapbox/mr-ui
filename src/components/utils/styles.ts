@@ -81,21 +81,24 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
         background: 'bg-gray-dark',
         borderColor: 'border--gray-dark',
         color: 'color-white',
-        fill: variables['--gray-dark']
+        fill: variables['--gray-dark'],
+        shadowColor: variables['--lighten25']
       };
     case 'warning':
       return {
         background: 'bg-orange-faint',
         borderColor: 'border--orange-deep',
         color: 'color-orange-deep',
-        fill: variables['--orange-deep']
+        fill: variables['--orange-deep'],
+        shadowColor: variables['--darken25']
       };
     case 'error':
       return {
         background: 'bg-red-faint',
         borderColor: 'border--red-deep',
         color: 'color-red-deep',
-        fill: variables['--red-deep']
+        fill: variables['--red-deep'],
+        shadowColor: variables['--darken25']
       };
     case 'light':
     default:
@@ -103,9 +106,10 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
         background: 'bg-white',
         borderColor: 'border--white',
         color: 'color-text',
-        fill: '#fff'
+        fill: '#fff',
+        shadowColor: variables['--darken25']
       };
-  };
+  }
 }
 
 export { mergeStyles, setStyles, getStyle, getTheme };

@@ -16,15 +16,31 @@ export default function Example(): ReactElement {
   };
 
   return (
-    <Tooltip
-      content={renderTooltipContent}
-      placement="bottom"
-      coloring="dark"
-      maxWidth="small"
-    >
-      <span className="txt-h4 txt-fancy cursor-default">
-        custom trigger
-      </span>
-    </Tooltip>
+    <div className="flex flex-row">
+      <div className="bg-gray-dark h120 pt12 w240">
+        <Tooltip
+          content={renderTooltipContent}
+          placement="bottom"
+          coloring="dark"
+          maxWidth="small"
+        >
+          <span className="txt-h4 txt-fancy cursor-default color-white pl24">
+            custom trigger
+          </span>
+        </Tooltip>
+      </div>
+      <div className="bg-white h120 pt12 w240">
+        <Tooltip
+          content={renderTooltipContent}
+          placement="bottom"
+          coloring="dark"
+          maxWidth="small"
+        >
+          <span className="txt-h4 txt-fancy cursor-default color-gray-dark pl24">
+            custom trigger
+          </span>
+        </Tooltip>
+      </div>
+    </div>
   );
 }

@@ -1,9 +1,16 @@
-import React, { ReactElement, ReactNode, forwardRef, isValidElement, Children, useRef } from 'react';
+import React, {
+  ReactElement,
+  ReactNode,
+  forwardRef,
+  isValidElement,
+  Children,
+  useRef
+} from 'react';
 
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { getTheme } from '../utils/styles';
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 interface Props {
   children: ReactNode;
@@ -34,17 +41,20 @@ export default function Tooltip({
   children,
   ariaLabel
 }: Props): ReactElement {
-  const { background, borderColor, color, fill } = getTheme(coloring);
+  const { background, borderColor, color, fill, shadowColor } =
+    getTheme(coloring);
   const triggerRef = useRef(null);
 
   const bodyClasses = classnames(
-    `${background} ${borderColor} ${color} border shadow-darken25 round`, {
-    'txt-s': textSize === 's',
-    'txt-xs': textSize === 'xs',
-    'px12 py6': padding === 'small',
-    wmax120: maxWidth === 'small',
-    wmax240: maxWidth === 'medium'
-  });
+    `${background} ${borderColor} ${color} border round`,
+    {
+      'txt-s': textSize === 's',
+      'txt-xs': textSize === 'xs',
+      'px12 py6': padding === 'small',
+      wmax120: maxWidth === 'small',
+      wmax240: maxWidth === 'medium'
+    }
+  );
 
   const getContent = () => {
     if (typeof content === 'function') {
@@ -52,7 +62,7 @@ export default function Tooltip({
     }
 
     return content;
-  }
+  };
 
   const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
     let child = Children.only(children);
@@ -62,7 +72,13 @@ export default function Tooltip({
     // - Render the Trigger as `span`.
     if (isValidElement(child) && child.props.disabled) {
       child = (
-        <span {...props} ref={ref} role='button' className="inline-block" tabIndex={0}>
+        <span
+          {...props}
+          ref={ref}
+          role="button"
+          className="inline-block"
+          tabIndex={0}
+        >
           {child}
         </span>
       );
@@ -86,9 +102,17 @@ export default function Tooltip({
             align={alignment}
             sideOffset={6}
             className={bodyClasses}
+            style={{
+              filter: `drop-shadow(0 0 4px ${shadowColor})`
+            }}
           >
-              {getContent()}
-            <TooltipPrimitive.Arrow width={12} height={6} offset={6} fill={fill} />
+            {getContent()}
+            <TooltipPrimitive.Arrow
+              width={12}
+              height={6}
+              offset={6}
+              fill={fill}
+            />
           </TooltipPrimitive.Content>
         </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>
