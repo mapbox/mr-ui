@@ -322,11 +322,11 @@ exports[`Modal basic, auto renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
   >
     <div
-      class="bg-white border--white color-text border shadow-darken25 round txt-s px12 py6 wmax240"
+      class="bg-white border--white color-text border round txt-s px12 py6 wmax240"
       data-align="center"
       data-side="top"
       data-state="instant-open"
-      style="pointer-events: auto; --radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); --radix-tooltip-content-available-width: var(--radix-popper-available-width); --radix-tooltip-content-available-height: var(--radix-popper-available-height); --radix-tooltip-trigger-width: var(--radix-popper-anchor-width); --radix-tooltip-trigger-height: var(--radix-popper-anchor-height); animation: none;"
+      style="pointer-events: auto; filter: drop-shadow(0 0 4px rgba(14, 33, 39, 0.25)); --radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); --radix-tooltip-content-available-width: var(--radix-popper-available-width); --radix-tooltip-content-available-height: var(--radix-popper-available-height); --radix-tooltip-trigger-width: var(--radix-popper-anchor-width); --radix-tooltip-trigger-height: var(--radix-popper-anchor-height); animation: none;"
     >
       Close
       <span

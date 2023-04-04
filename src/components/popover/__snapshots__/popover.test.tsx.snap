@@ -151,7 +151,7 @@ exports[`Popover dark renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-transform-origin: 0px 0px;"
   >
     <div
-      class="bg-gray-dark border--gray-deep color-white border shadow-darken25 round px12 py12 border border-1 border--border--gray-deep"
+      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12 border border-1 border--border--gray-dark"
       data-align="center"
       data-side="right"
       data-state="open"
@@ -165,7 +165,7 @@ exports[`Popover dark renders 1`] = `
         style="position: absolute; left: 0px; transform-origin: 0 0; transform: translateY(50%) rotate(90deg) translateX(-50%); top: 0px;"
       >
         <svg
-          fill="#2E4E5D"
+          fill="#0E2127"
           height="6"
           offset="6"
           preserveAspectRatio="none"
