@@ -82,7 +82,7 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
         borderColor: 'border--gray-dark',
         color: 'color-white',
         fill: variables['--gray-dark'],
-        shadowColor: variables['--gray']
+        shadowColor: variables['--lighten25']
       };
     case 'warning':
       return {
