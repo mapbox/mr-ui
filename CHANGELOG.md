@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.5.1
+
+- [fix] Improve contrast of tooltips [#208](https://github.com/mapbox/mr-ui/pull/208)
+
 ## 2.5.0
 
 - [feature] Add **Context menu** component
