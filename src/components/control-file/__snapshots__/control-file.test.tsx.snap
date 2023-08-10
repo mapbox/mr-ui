@@ -139,6 +139,45 @@ exports[`ControlFile basic renders as expected 1`] = `
 </body>
 `;
 
+exports[`ControlFile child element renders as expected 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        class="flex flex--center-cross overflow-hidden"
+      >
+        <div
+          class="flex-child-grow"
+        >
+          <button
+            aria-hidden="true"
+            class="btn relative"
+            type="button"
+          >
+            Hello!
+          </button>
+          <input
+            aria-required="true"
+            class="absolute opacity0 top left"
+            data-testid="testinput-4-input"
+            id="testinput-4"
+            name="testinput-4"
+            style="height: 0px; width: 0px; z-index: -1;"
+            tabindex="-1"
+            type="file"
+          />
+        </div>
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
 exports[`ControlFile disabled renders as expected 1`] = `
 <body>
   <div>

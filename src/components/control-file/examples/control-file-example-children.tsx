@@ -1,17 +1,22 @@
 /*
-Custom label.
+Custom child element
 */
 import React from 'react';
+import IconText from '../../icon-text';
 import ControlFile from '../control-file';
 
 export default function Example() {
   return (
     <ControlFile
       id="name"
-      displayValue={<span className="w180 txt-truncate">A long truncated display value</span>}
+      themeControlFile="link link--gray txt-s txt-bold"
       onChange={(value, id) => {
         console.log(value, id);
       }}
-    />
+    >
+      <IconText iconBefore="plus">
+        Child element
+      </IconText>
+    </ControlFile>
   );
 }

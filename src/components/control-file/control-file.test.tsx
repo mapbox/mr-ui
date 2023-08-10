@@ -91,4 +91,16 @@ describe('ControlFile', () => {
       expect(screen.getByTestId('testinput-3-input')).toHaveProperty('multiple', true);
     });
   });
+
+  describe('child element', () => {
+    const props = {
+      id: 'testinput-4',
+      onChange: jest.fn()
+    } as const;
+
+    test('renders as expected', () => {
+      const { baseElement } = render(<ControlFile {...props}>Hello!</ControlFile>)
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
 });

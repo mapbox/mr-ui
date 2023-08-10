@@ -13,6 +13,7 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'> {
   disabled?: boolean;
   validationError?: ReactElement | string;
   displayValue?: ReactNode;
+  children?: ReactNode;
   themeControlFile?: string;
   themeControlWrapper?: string;
 }
@@ -39,6 +40,7 @@ export default function ControlFile({
   displayValue = 'Select a file',
   themeControlFile = 'btn',
   themeControlWrapper,
+  children,
   ...props
 }: Props): ReactElement {
   const extraProps = omit(props, propNames);
@@ -94,9 +96,11 @@ export default function ControlFile({
             className={`${themeControlFile} relative`}
             onClick={onButtonClick}
           >
-            <IconText iconBefore="harddrive">
-              {displayValue}
-            </IconText>
+            {children ? children : (
+              <IconText iconBefore="harddrive">
+                {displayValue}
+              </IconText>
+            )}
           </button>
           <input {...inputProps} {...extraProps} />
         </div>
@@ -128,6 +132,8 @@ ControlFile.propTypes = {
   validationError: PropTypes.node,
   /** Overrides the "Select a file" label. */
   displayValue: PropTypes.node,
+  /** Optional child element to trigger file selection. */
+  children: PropTypes.node,
   /** Assembly classes to apply to the button trigger element */
   themeControlFile: PropTypes.string,
   /** Assembly classes to apply to the control wrapper */
