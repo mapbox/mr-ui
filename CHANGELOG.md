@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.6.1
+
+- [fix] Incorrect directory was published to npm as 2.6.0
+
 ## 2.6.0
 
 - [feature] Add optional children prop to control-file [#212](https://github.com/mapbox/mr-ui/pull/212)
