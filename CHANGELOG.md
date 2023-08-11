@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.6.0
+
+- [feature] Add optional children prop to control-file [#212](https://github.com/mapbox/mr-ui/pull/212)
+
 ## 2.5.1
 
 - [fix] Improve contrast of tooltips [#208](https://github.com/mapbox/mr-ui/pull/208)
