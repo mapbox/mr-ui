@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.6.2
+
+- [bug] `MinimumDurationLoader` mounts the underlying components twice if `minDuration` is reached before `isLoaded` is set to `true`.
+
 ## 2.6.1
 
 - [fix] Incorrect directory was published to npm as 2.6.0
