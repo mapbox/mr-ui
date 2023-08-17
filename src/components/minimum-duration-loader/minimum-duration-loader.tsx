@@ -65,7 +65,7 @@ export default function MinimumDurationLoader({
     isLoaded
   ]);
 
-  const shouldRenderContent = isLoaded && (wasLoaded || delayedLoaded);
+  const shouldRenderContent = isLoaded && (wasLoaded || delayedLoaded || prevIsLoaded);
 
   if (shouldRenderContent) {
     return (
