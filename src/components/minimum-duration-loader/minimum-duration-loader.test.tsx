@@ -164,4 +164,102 @@ describe('MinimumDurationLoader', () => {
       expect(baseElement).toMatchSnapshot();
     });
   });
+
+  describe('always mounts the content exactly once', () => {
+    beforeEach(() => {
+      jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+      jest.useRealTimers();
+    });
+
+    let mountedCount = 0;
+
+    const Counter: React.FC = () => {
+      React.useEffect(() => {
+        mountedCount++
+      }, []);
+
+      return <span data-testid="mounted-count">{mountedCount}</span>;
+    }
+
+    afterEach(() => {
+      mountedCount = 0;
+    })
+
+    test('when isLoaded = true before minDuration has passed', () => {
+      const MIN_DURATION = 100;
+      const { rerender } = render(
+        <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={false}>
+          <Counter />
+        </MinimumDurationLoader>
+      )
+
+      expect(mountedCount).toBe(0)
+
+      act(() => jest.advanceTimersByTime(60));
+      rerender(
+        <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
+          <Counter />
+        </MinimumDurationLoader>
+      )
+
+      // Does not mount yet since minDuration has not been reached
+      expect(mountedCount).toBe(0)
+      rerender(
+        <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
+          <Counter />
+        </MinimumDurationLoader>
+      )
+
+      act(() => jest.advanceTimersByTime(60));
+
+      // Mounts since minDuration has passed and isLoaded = true
+      expect(mountedCount).toBe(1)
+      
+      rerender(
+        <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
+          <Counter />
+        </MinimumDurationLoader>
+      )
+
+      // Confirm that the component has not been mounted again if we move forward in time
+      act(() => jest.advanceTimersByTime(1));
+      expect(mountedCount).toBe(1)
+    });
+
+    test('when isLoaded = true after minDuration has passed', () => {
+      const MIN_DURATION = 100;
+      const { rerender } = render(
+        <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={false}>
+          <Counter />
+        </MinimumDurationLoader>
+      )
+
+      expect(mountedCount).toBe(0)
+
+      // Move forward in time more than minDuration before setting isLoaded = true
+      act(() => jest.advanceTimersByTime(110));      
+      rerender(
+        <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
+          <Counter />
+        </MinimumDurationLoader>
+      )
+
+      // Mounts since minDuration has passed and isLoaded = true
+      expect(mountedCount).toBe(1)
+
+      // Confirm that the component has not been mounted again if we move forward in time
+      act(() => jest.advanceTimersByTime(1));
+      rerender(
+        <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
+          <Counter />
+        </MinimumDurationLoader>
+      )
+
+
+      expect(mountedCount).toBe(1)
+    });
+  })
 });
