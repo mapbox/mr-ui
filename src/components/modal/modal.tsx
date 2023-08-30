@@ -13,6 +13,7 @@ interface Props {
   accessibleTitle: string;
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
+  margin?: 'large' | 'default';
   onExit?: () => void;
   allowEventBubbling?: boolean;
   initialFocus?: string;
@@ -50,6 +51,7 @@ export default function Modal({
   accessibleTitle,
   size = 'large',
   padding = 'large',
+  margin = 'default',
   allowEventBubbling = false,
   initialFocus,
   primaryAction,
@@ -81,6 +83,11 @@ export default function Modal({
     widthClass = 'wmax600 w-11/12';
   }
 
+  let marginClass = 'my12 my60-mm'
+  if (margin === 'large') {
+    marginClass = 'my120';
+  }
+
   const overlayProps: {
     className: string,
     style: CSSProperties
@@ -109,7 +116,7 @@ export default function Modal({
     onOpenAutoFocus?: (e) => void
   } = {
     className: classnames(
-      `relative my12 my60-mm ${widthClass} bg-white round`,
+      `relative ${marginClass} ${widthClass} bg-white round`,
       { 'px36 py36': padding === 'large' }
     )
   }
@@ -201,6 +208,10 @@ Modal.propTypes = {
    * `'large'` or `'none'`.
    */
   padding: PropTypes.oneOf(['large', 'none']),
+  /**
+   * `'large'` to compensate for a fixed top header or `'default'` to be closer to the top of the viewport.
+   */
+  margin: PropTypes.oneOf(['large', 'default']),
   /**
    * The modal's primary action. If this is provided, an encouraging
    * button will be rendered at the bottom of the modal.

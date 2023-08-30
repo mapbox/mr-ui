@@ -27,7 +27,7 @@ exports[`Modal all options renders 1`] = `
     <div
       aria-describedby="radix-35"
       aria-labelledby="radix-34"
-      class="relative my12 my60-mm wmax360 w-11/12 bg-white round"
+      class="relative my120 wmax360 w-11/12 bg-white round"
       data-state="open"
       id="radix-33"
       role="dialog"
