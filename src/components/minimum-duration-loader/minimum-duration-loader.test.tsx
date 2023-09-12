@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import MinimumDurationLoader from './minimum-duration-loader';
 
 const children = <span data-testid='test-content'>Content</span>;
@@ -37,7 +37,7 @@ describe('MinimumDurationLoader', () => {
       expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
       expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
 
-     act(() => jest.advanceTimersByTime(1000));
+      jest.advanceTimersByTime(1000);
 
       expect(screen.queryByTestId('minimum-duration-loader')).not.toBeInTheDocument();
       expect(screen.getByTestId('test-content')).toBeInTheDocument();
@@ -46,11 +46,13 @@ describe('MinimumDurationLoader', () => {
     test.skip('does not render the content if isLoaded becomes `false` after having been `true`', () => {
       const { rerender } = render(<MinimumDurationLoader {...{...props, isLoaded: true}} />)
       expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
-      act(() => jest.advanceTimersByTime(1000));
+
+      jest.advanceTimersByTime(1000);
       expect(screen.getByTestId('test-content')).toBeInTheDocument();
       rerender(<MinimumDurationLoader {...props } />)
       expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
-      act(() => jest.advanceTimersByTime(1000));
+
+      jest.advanceTimersByTime(1000);
       expect(screen.getByTestId('test-content')).toBeInTheDocument();
     });
   });
@@ -104,11 +106,11 @@ describe('MinimumDurationLoader', () => {
       // Loader should exist
       expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
       expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
-      act(() => jest.advanceTimersByTime(1000));
+      jest.advanceTimersByTime(1000);
       // Loader should still exist because we exceeded the minimum duration
       expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
       expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
-      act(() => jest.advanceTimersByTime(4000));
+      jest.advanceTimersByTime(4000);
       // We've exceeded the minimum duration, so the loader should not exist
       expect(screen.queryByTestId('minimum-duration-loader')).not.toBeInTheDocument();
       expect(screen.getByTestId('test-content')).toBeInTheDocument();
@@ -198,7 +200,7 @@ describe('MinimumDurationLoader', () => {
 
       expect(mountedCount).toBe(0)
 
-      act(() => jest.advanceTimersByTime(60));
+      jest.advanceTimersByTime(60);
       rerender(
         <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
           <Counter />
@@ -213,7 +215,7 @@ describe('MinimumDurationLoader', () => {
         </MinimumDurationLoader>
       )
 
-      act(() => jest.advanceTimersByTime(60));
+      jest.advanceTimersByTime(60);
 
       // Mounts since minDuration has passed and isLoaded = true
       expect(mountedCount).toBe(1)
@@ -225,7 +227,7 @@ describe('MinimumDurationLoader', () => {
       )
 
       // Confirm that the component has not been mounted again if we move forward in time
-      act(() => jest.advanceTimersByTime(1));
+      jest.advanceTimersByTime(1);
       expect(mountedCount).toBe(1)
     });
 
@@ -240,7 +242,7 @@ describe('MinimumDurationLoader', () => {
       expect(mountedCount).toBe(0)
 
       // Move forward in time more than minDuration before setting isLoaded = true
-      act(() => jest.advanceTimersByTime(110));      
+      jest.advanceTimersByTime(110);
       rerender(
         <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
           <Counter />
@@ -251,7 +253,7 @@ describe('MinimumDurationLoader', () => {
       expect(mountedCount).toBe(1)
 
       // Confirm that the component has not been mounted again if we move forward in time
-      act(() => jest.advanceTimersByTime(1));
+      jest.advanceTimersByTime(1);
       rerender(
         <MinimumDurationLoader minDuration={MIN_DURATION} isLoaded={true}>
           <Counter />
