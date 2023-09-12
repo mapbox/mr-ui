@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.7.0
+
+- [feature] add `margin` prop to `Modal` (compensates for new fixed header in Mapbox docs) [#214](https://github.com/mapbox/mr-ui/pull/214)
+
 ## 2.6.2
 
 - [bug] `MinimumDurationLoader` mounts the underlying components twice if `minDuration` is reached before `isLoaded` is set to `true`.
