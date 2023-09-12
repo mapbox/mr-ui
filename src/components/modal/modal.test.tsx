@@ -97,6 +97,7 @@ describe('Modal', () => {
     const props = {
       accessibleTitle: 'All options',
       padding: 'none',
+      margin: 'large',
       size: 'small',
       onExit: jest.fn(),
       initialFocus: '#foo',
