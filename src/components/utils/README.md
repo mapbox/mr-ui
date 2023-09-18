@@ -2,14 +2,6 @@
 
 All utils can be imported from `@mapbox/mr-ui/utils/{name}`.
 
-## getWindow
-
-```js
-import getWindow from '@mapbox/mr-ui/utils/get-window';
-```
-
-Wraps `window` to make it easy to mock aspects of the browser environment while testing.
-
 ## shallowEqualObjects
 
 ```js

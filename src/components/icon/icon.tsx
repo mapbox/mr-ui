@@ -1,6 +1,5 @@
 import React, { ReactElement, useRef, useEffect, SVGProps, DetailedHTMLProps } from 'react';
 import PropTypes from 'prop-types';
-import getWindow from '../utils/get-window';
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 
 interface Props {
@@ -28,8 +27,8 @@ export default function Icon({
   const el = useRef(null);
 
   useEffect(() => {
-    if (inline && el.current) {
-      const lineHeight = getWindow().getComputedStyle(el.current)[
+    if (inline && el.current && typeof window !== 'undefined') {
+      const lineHeight = window.getComputedStyle(el.current)[
         'line-height'
       ];
       el.current.style.height = lineHeight;
