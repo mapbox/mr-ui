@@ -1,12 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import getWindow from '../utils/get-window';
 import Icon from './icon';
-
-jest.mock('../utils/get-window');
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getWindowMock = getWindow as any;
 
 describe('basic', () => {
   test('renders', () => {
@@ -52,12 +46,11 @@ describe('basic', () => {
 
 describe('inline', () => {
   beforeEach(() => {
-    const mockWindow = {
-      getComputedStyle: jest.fn(() => ({
+    Object.defineProperty(window, 'getComputedStyle', {
+      value: () => ({
         'line-height': '14px'
-      }))
-    };
-    getWindowMock.mockReturnValue(mockWindow);
+      })
+    });
   });
 
   test('renders', () => {
