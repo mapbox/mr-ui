@@ -5,7 +5,6 @@ import CopyButton from '../copy-button';
 import Popover from '../popover';
 import OSKey from 'os-key';
 import select from 'select';
-import getWindow from '../utils/get-window';
 
 const DISABLE_CLICK_TO_SELECT_THRESHOLD = 640;
 const FEEDBACK_TIME = 2000;
@@ -59,7 +58,8 @@ export default function Copiable({
   }, [copyTooltipActive]);
 
   const handleTextFocus = () => {
-    if (getWindow().innerWidth < DISABLE_CLICK_TO_SELECT_THRESHOLD) return;
+    if (typeof window === 'undefined') return
+    if (window.innerWidth < DISABLE_CLICK_TO_SELECT_THRESHOLD) return;
     select(() => textEl.current);
     setCopyTooltipActive(true);
   };
@@ -80,14 +80,18 @@ export default function Copiable({
     </div>
   );
 
-  const renderCopyHintText = (
-    <span>
-      <span className="txt-kbd">
-        {getCopyKeys(getWindow().navigator.userAgent)}
-      </span>{' '}
-      to copy
-    </span>
-  );
+  const renderCopyHintText = () => {
+    if (typeof window === 'undefined') return
+
+    return (
+      <span>
+        <span className="txt-kbd">
+          {getCopyKeys(window.navigator.userAgent)}
+        </span>{' '}
+        to copy
+      </span>
+    )
+  }
 
   const textClasses = classnames('my3 txt-mono txt-s mr24', {
     'txt-truncate': truncated

@@ -5,7 +5,6 @@ import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
 import Popover from '../popover';
 import Icon from '../icon';
-import getWindow from '../utils/get-window';
 import {InputProps, PopoverProps} from '../typings';
 
 interface Props extends Omit<InputProps, 'onChange'> {
@@ -71,9 +70,11 @@ export default function ControlText({
   };
 
   const isActive = () => {
+    if (typeof window === 'undefined') return false
+
     return (
-      getWindow().document.activeElement === inputElement.current ||
-      getWindow().document.activeElement === errorElement.current
+      window.document.activeElement === inputElement.current ||
+      window.document.activeElement === errorElement.current
     );
   };
 
