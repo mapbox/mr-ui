@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.7.1
+
+- [fix] replace calls to getWindow with a simpler check [#216](https://github.com/mapbox/mr-ui/pull/216)
+
 ## 2.7.0
 
 - [feature] add `margin` prop to `Modal` (compensates for new fixed header in Mapbox docs) [#214](https://github.com/mapbox/mr-ui/pull/214)
