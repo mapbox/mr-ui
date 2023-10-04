@@ -35,6 +35,8 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'>{
   validationError?: ReactNode;
   themeControlRange?: string;
   themeControlRangeActive?: string;
+  themeControlTrack?: string;
+  themeControlThumb?: string;
   themeControlWrapper?: string;
   themeLabel?: string;
 }
@@ -50,6 +52,8 @@ export default function ControlRange({
   validationError,
   themeControlRange = 'range--s range--gray w-full h-full',
   themeControlRangeActive,
+  themeControlTrack,
+  themeControlThumb,
   themeControlWrapper,
   themeLabel,
   ...props
@@ -72,7 +76,7 @@ export default function ControlRange({
   }
 
   const renderThumb = (value: number, index: number) => {
-    return <SliderPrimitive.Thumb key={index} />
+    return <SliderPrimitive.Thumb key={index} className={`${themeControlThumb}`} />
   };
 
   return (
@@ -92,7 +96,7 @@ export default function ControlRange({
       )}
       <div className={`range ${themeControlRange}`}>
         <SliderPrimitive.Root {...rootProps}>
-          <SliderPrimitive.Track>
+          <SliderPrimitive.Track className={`${themeControlTrack}`}>
             <SliderPrimitive.Range className={`absolute h-full ${themeControlRangeActive}`}/>
           </SliderPrimitive.Track>
           {value.map(renderThumb)}
@@ -123,6 +127,10 @@ ControlRange.propTypes = {
   themeControlRange: PropTypes.string,
   /** Assembly classes to apply to the active part of the range track */
   themeControlRangeActive: PropTypes.string,
+  /** Assembly classes to apply to the track element */
+  themeControlTrack: PropTypes.string,
+  /** Assembly classes to apply to the thumb element */
+  themeControlThumb: PropTypes.string,
   /** Assembly classes to apply to the control wrapper */
   themeControlWrapper: PropTypes.string,
   /** Assembly classes to apply to the label element */
