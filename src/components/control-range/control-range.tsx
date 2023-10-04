@@ -52,8 +52,8 @@ export default function ControlRange({
   validationError,
   themeControlRange = 'range--s range--gray w-full h-full',
   themeControlRangeActive,
-  themeControlTrack,
-  themeControlThumb,
+  themeControlTrack = '',
+  themeControlThumb = '',
   themeControlWrapper,
   themeLabel,
   ...props
