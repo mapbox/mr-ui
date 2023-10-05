@@ -310,6 +310,7 @@ exports[`Form all controls renders as expected 1`] = `
                     style="--radix-slider-thumb-transform: translateX(-50%);"
                   >
                     <span
+                      class=""
                       data-orientation="horizontal"
                     >
                       <span
@@ -326,6 +327,7 @@ exports[`Form all controls renders as expected 1`] = `
                         aria-valuemax="100"
                         aria-valuemin="10"
                         aria-valuenow="10"
+                        class=""
                         data-orientation="horizontal"
                         data-radix-collection-item=""
                         role="slider"

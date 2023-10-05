@@ -41,6 +41,7 @@ exports[`ControlRange all options renders 1`] = `
           style="--radix-slider-thumb-transform: translateX(-50%);"
         >
           <span
+            class=""
             data-orientation="horizontal"
           >
             <span
@@ -58,6 +59,7 @@ exports[`ControlRange all options renders 1`] = `
               aria-valuemax="1000"
               aria-valuemin="100"
               aria-valuenow="200"
+              class=""
               data-orientation="horizontal"
               data-radix-collection-item=""
               role="slider"
@@ -74,6 +76,7 @@ exports[`ControlRange all options renders 1`] = `
               aria-valuemax="1000"
               aria-valuemin="100"
               aria-valuenow="400"
+              class=""
               data-orientation="horizontal"
               data-radix-collection-item=""
               role="slider"
@@ -90,6 +93,7 @@ exports[`ControlRange all options renders 1`] = `
               aria-valuemax="1000"
               aria-valuemin="100"
               aria-valuenow="600"
+              class=""
               data-orientation="horizontal"
               data-radix-collection-item=""
               role="slider"
@@ -134,6 +138,7 @@ exports[`ControlRange basic renders 1`] = `
           style="--radix-slider-thumb-transform: translateX(-50%);"
         >
           <span
+            class=""
             data-orientation="horizontal"
           >
             <span
@@ -172,6 +177,7 @@ exports[`ControlRange disabled renders 1`] = `
           style="--radix-slider-thumb-transform: translateX(-50%);"
         >
           <span
+            class=""
             data-disabled=""
             data-orientation="horizontal"
           >
