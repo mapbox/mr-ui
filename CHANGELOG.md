@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.8.0
+
+- [feature] add additional style props to control-range for tighter styling control [#217](https://github.com/mapbox/mr-ui/pull/217)
+
 ## 2.7.1
 
 - [fix] replace calls to getWindow with a simpler check [#216](https://github.com/mapbox/mr-ui/pull/216)
