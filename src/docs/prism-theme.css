@@ -1,3 +1,9 @@
+/* [data-disabled] */
+.select-item[data-highlighted] {
+    background-color: rgba(14,33,39,.05);
+    color: #4264fb!important;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
     color: #273d56;

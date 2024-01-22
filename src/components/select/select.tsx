@@ -21,6 +21,7 @@ type Option = {
   label: ReactNode;
   value?: string;
   disabled?: boolean;
+  active?: boolean;
   options?: Array<Option>
 }
 
@@ -46,13 +47,13 @@ export default function Select({
   themeSelectItem = 'transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
   ...props
 }: Props): ReactElement {
-  const { background, borderColor, color } = getTheme('light');
+  const { background, borderColor, color, fill } = getTheme('light');
   const extraProps = omit(props, propNames);
 
   const selectProps = {
     disabled,
     value,
-    onValueChange: (e) => onChange(e.target.value)
+    onValueChange: onChange
   };
 
   const contentClasses = classnames(
@@ -64,7 +65,12 @@ export default function Select({
     }
   );
 
-  const renderOptions = ({ label, value, disabled, options }: Option) => {
+  const renderOptions = ({ label, value, active, disabled, options }: Option) => {
+
+    const itemClasses = classnames(`select-item ${themeSelectItem}`, {
+      'is-active': active
+    })
+
     if (options) {
       return (
         <SelectPrimitive.Group>
@@ -73,7 +79,7 @@ export default function Select({
       );
     } else {
       return (
-        <SelectPrimitive.Item className={themeSelectItem} disabled={disabled} key={value} value={value}>
+        <SelectPrimitive.Item className={itemClasses} disabled={disabled} key={value} value={value}>
           {label}
         </SelectPrimitive.Item>
       );
@@ -89,8 +95,12 @@ export default function Select({
 
       <SelectPrimitive.Portal>
         <SelectPrimitive.Content className={contentClasses} position="popper" side="right">
+          <SelectPrimitive.Viewport>
           {options.map(renderOptions)}
+          </SelectPrimitive.Viewport>
+          <SelectPrimitive.Arrow width={12} height={6} offset={6} fill={fill} />
         </SelectPrimitive.Content>
+
       </SelectPrimitive.Portal>
 
     </SelectPrimitive.Root>
@@ -98,8 +108,6 @@ export default function Select({
 }
 
 Select.propTypes = {
-  /** Identifying value for input element. */
-  id: PropTypes.string.isRequired,
   /** An array of objects containing `label` `value` key value pairings to represent each option. An optional `disable` key can be provided to disable the selection of an indiviual `<option>`. If `value` is not present but an `options` array is provided containing the same `label` `value` key value pairings, options will be grouped within a `<optgroup>` element as defined by `label` child key. Note that each `label` value must be unique. */
   options: PropTypes.arrayOf(
     PropTypes.shape({
