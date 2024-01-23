@@ -96,7 +96,7 @@ exports[`ControlText all options renders as expected 1`] = `
   </div>
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content;"
   >
     <div
       class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py6 border border-1 border--border--gray-dark"

@@ -25,7 +25,7 @@ exports[`Popover all options renders 1`] = `
   </div>
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate3d(-6px, 0px, 0); min-width: max-content; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-transform-origin: 0px 50%;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 50%;"
   >
     <div
       class="bg-white border--white color-text border shadow-darken25 round border border-1 border--border--white"
@@ -83,7 +83,7 @@ exports[`Popover basic renders 1`] = `
   </div>
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-transform-origin: 0px 0px;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0px;"
   >
     <div
       class="bg-white border--white color-text border shadow-darken25 round px12 py12 border border-1 border--border--white"
@@ -148,7 +148,7 @@ exports[`Popover dark renders 1`] = `
   </div>
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-transform-origin: 0px 0px;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0px;"
   >
     <div
       class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12 border border-1 border--border--gray-dark"
@@ -213,7 +213,7 @@ exports[`Popover no arrow renders 1`] = `
   </div>
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-transform-origin: 0px 50%;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 50%;"
   >
     <div
       class="bg-white border--white color-text border shadow-darken25 round px12 py12 border border-1 border--border--white"
@@ -263,7 +263,7 @@ exports[`Popover warning renders 1`] = `
   </div>
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate3d(6px, 0px, 0); min-width: max-content; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-transform-origin: 0px 0px;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -6px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0px;"
   >
     <div
       class="bg-orange-faint border--orange-deep color-orange-deep border shadow-darken25 round px12 py12 border border-1 border--border--orange-deep"
