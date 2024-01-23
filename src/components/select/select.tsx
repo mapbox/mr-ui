@@ -1,60 +1,65 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, { ReactElement, ReactNode, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import omit from '../utils/omit';
+import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
 import { getTheme } from '../utils/styles';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
-const propNames = [
-  'options',
-  'value',
-  'onChange',
-  'optional',
-  'label',
-  'aside',
-  'disabled',
-  'validationError',
-  'themeSelectItem'
-];
-
 type Option = {
   label: ReactNode;
-  value?: string;
+  value: string;
   disabled?: boolean;
   active?: boolean;
   options?: Array<Option>
 }
 
 interface Props {
+  children: ReactNode;
   options: Array<Option>;
   onChange: (value: string) => void;
-  children: ReactNode;
-  value?: string;
-  disabled?: boolean;
-  coloring?: 'light' | 'dark';
+  onExit?: () => void;
+  header?: ReactNode;
+  footer?: ReactNode;
+  offsetFromAnchor?: number;
   padding?: 'medium' | 'small' | 'none';
+  coloring?: 'light' | 'dark';
+  placement?: 'top' | 'bottom' | 'left' | 'right';
+  alignment?: 'center' | 'start' | 'end';
+  clickOutsideCloses?: boolean;
+  escapeCloses?: boolean;
+  hasPointer?: boolean;
+  hideWhenAnchorIsOffscreen?: boolean;
+  allowPlacementAxisChange?: boolean;
+  themeSelectItemWrapper?: string;
   themeSelectItem?: string;
+  passthroughProps?: {
+    [key: string]: string | number | boolean;
+  };
 }
 
 export default function Select({
+  onExit,
   children,
+  header,
+  footer,
   onChange,
   options,
-  value = '',
+  hasPointer = true,
+  hideWhenAnchorIsOffscreen = false,
+  allowPlacementAxisChange = true,
+  clickOutsideCloses = true,
+  escapeCloses = true,
   coloring = 'light',
+  placement = 'right',
+  alignment = 'center',
   padding = 'medium',
-  disabled = false,
+  offsetFromAnchor = 6,
+  themeSelectItemWrapper = '',
   themeSelectItem = 'transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
-  ...props
+  passthroughProps
 }: Props): ReactElement {
-  const { background, borderColor, color, fill } = getTheme('light');
-  const extraProps = omit(props, propNames);
-
-  const selectProps = {
-    disabled,
-    value,
-    onValueChange: onChange
-  };
+  const { background, borderColor, color, fill } = getTheme(coloring);
+  const triggerRef = useRef(null);
 
   const contentClasses = classnames(
     `${background} ${borderColor} ${color} border shadow-darken25 round`,
@@ -64,6 +69,28 @@ export default function Select({
       [`border border-1 border--${borderColor}`]: borderColor
     }
   );
+
+  const onDown = (e: Event) => {
+
+    // Don't call onExit if it wasn't provided.
+    if (!onExit) {
+      return;
+    }
+
+    // If event target contains the trigger element, assume onExit is handled
+    // on its own so don't re-fire it.
+    if (triggerRef.current && triggerRef.current.contains(e.target)) {
+      return;
+    }
+
+    // Check if the event target contains the following data attribute. If it
+    // does, do not call onExit.
+    if (querySelectorContainsNode('[data-popover-ignore-clicks]', e.target)) {
+      return;
+    }
+
+    onExit();
+  }
 
   const renderOptions = ({ label, value, active, disabled, options }: Option) => {
 
@@ -87,20 +114,38 @@ export default function Select({
   };
 
   return (
-    <SelectPrimitive.Root {...selectProps} {...extraProps}>
+    <SelectPrimitive.Root onValueChange={onChange}>
 
-      <SelectPrimitive.Trigger>
-        {children}
-      </SelectPrimitive.Trigger>
+      <span ref={triggerRef} style={{ display: 'contents' }}>
+        <SelectPrimitive.Trigger asChild>
+          {children}
+        </SelectPrimitive.Trigger>
+      </span>
 
       <SelectPrimitive.Portal>
-        <SelectPrimitive.Content className={contentClasses} position="popper" side="right">
+        <SelectPrimitive.Content
+          sideOffset={offsetFromAnchor}
+          className={contentClasses}
+          position="popper"
+          side={placement}
+          align={alignment}
+          onEscapeKeyDown={escapeCloses && onExit}
+          onPointerDownOutside={clickOutsideCloses && onDown}
+          hideWhenDetached={hideWhenAnchorIsOffscreen}
+          avoidCollisions={allowPlacementAxisChange}
+          {...passthroughProps}
+        >
           <SelectPrimitive.Viewport>
-          {options.map(renderOptions)}
+            <>
+              {header && header}
+              <div className={themeSelectItemWrapper}>
+                {options.map(renderOptions)}
+              </div>
+              {footer && footer}
+            </>
           </SelectPrimitive.Viewport>
-          <SelectPrimitive.Arrow width={12} height={6} offset={6} fill={fill} />
+          {hasPointer && <SelectPrimitive.Arrow width={12} height={6} offset={6} fill={fill} />}
         </SelectPrimitive.Content>
-
       </SelectPrimitive.Portal>
 
     </SelectPrimitive.Root>
@@ -111,38 +156,15 @@ Select.propTypes = {
   /** An array of objects containing `label` `value` key value pairings to represent each option. An optional `disable` key can be provided to disable the selection of an indiviual `<option>`. If `value` is not present but an `options` array is provided containing the same `label` `value` key value pairings, options will be grouped within a `<optgroup>` element as defined by `label` child key. Note that each `label` value must be unique. */
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: (props, propName, componentName) => {
-        if (
-          !props.value &&
-          typeof props.value !== 'string' &&
-          props.options === undefined
-        ) {
-          return new Error(
-            `The prop "${propName}" is required in ${componentName} if a options array is not provided for select groups.`
-          );
-        } else if (
-          props.value &&
-          typeof props.value !== 'number' &&
-          typeof props.value !== 'string'
-        ) {
-          return new Error(
-            `${
-              props.value
-            } of type ${typeof props.value} supplied to ${componentName}, expected a number or string.`
-          );
-        } else if (props.value !== undefined && props.options !== undefined) {
-          return new Error(
-            `You've provided both an 'options' & 'value' key to one of your options object groups. Only 'options' will be used.`
-          );
-        }
-      },
+      label: PropTypes.node.isRequired,
+      value: PropTypes.string.isRequired,
       disabled: PropTypes.bool,
       options: PropTypes.arrayOf(
         PropTypes.shape({
-          label: PropTypes.string.isRequired,
-          value: PropTypes.string,
-          disabled: PropTypes.bool
+          label: PropTypes.node.isRequired,
+          value: PropTypes.string.isRequired,
+          disabled: PropTypes.bool,
+          active: PropTypes.bool
         })
       )
     })
@@ -155,20 +177,61 @@ Select.propTypes = {
    * `'medium'`, `'small'`, or `'none'`.
    */
   padding: PropTypes.oneOf(['medium', 'small', 'none']),
+  /**
+   * Whether or not the popover has a triangle pointer.
+   */
+  hasPointer: PropTypes.bool,
+  /**
+   * If `true`, the popover will hide when its anchor is scrolled offscreen.
+   * By default, the popover will follow its anchor wherever it goes.
+   *
+   * If your anchor is within an internally scrolling area, you may want to
+   * use `true`, so the popover doesn't existing in a disembodied state after
+   * its anchor is scrolled away.
+   */
+  hideWhenAnchorIsOffscreen: PropTypes.bool,
+  /**
+   * If `false`, the popover is *not* allowed to change axes on the anchor when
+   * modifying its position to fit available space. By default, popovers on the
+   * `left` and `right`, for example, might change to `bottom` is there is
+   * neither space on the left nor the right.
+   */
+  allowPlacementAxisChange: PropTypes.bool,
+  /**
+   * Preferred placement of the popover in relation to the anchor.
+   * Adjusted according to available space.
+   */
+  placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  /**
+   * `'center'`, `'start'`, `'end'` Alignment of the popover edge in relation to the trigger element.
+   */
+  alignment: PropTypes.oneOf(['center', 'start', 'end']),
   /** Called during changes to the input element. */
   onChange: PropTypes.func.isRequired,
-  /** Input value */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Value passed to the label element. */
-  label: PropTypes.string,
-  /** If provided the text, "(optional)" is appended to the value of the label element. */
-  optional: PropTypes.bool,
-  /** Additional content inserted alongside the label element. */
-  aside: PropTypes.node,
-  /** Pass disabled attribute */
-  disabled: PropTypes.bool,
-  /** If provided, the value of this propery displays as an error message. */
-  validationError: PropTypes.node,
+  /** Assembly classes to apply to the wrapper containing the select elements */
+  themeSelectItemWrapper: PropTypes.string,
   /** Assembly classes to apply to the select element */
   themeSelectItem: PropTypes.string,
+    /**
+   * If `false`, clicking outside the popover will not close it.
+   * By default, it does.
+   */
+  clickOutsideCloses: PropTypes.bool,
+  /**
+   * If `false`, hitting Escape will not close the popover. By default, it does.
+   */
+  escapeCloses: PropTypes.bool,
+  /**
+   * A function called when popover is dismissed. You need to use this callback
+   * to remove the Popover from the rendered page.
+   */
+  onExit: PropTypes.func,
+  /**
+   * Number of pixels by which the popover should be offset from its anchor.
+   */
+  offsetFromAnchor: PropTypes.number,
+  /**
+   * Props to pass directly to select content options from `@radix-ui/react-select`.
+   */
+  passthroughProps: PropTypes.object
 };

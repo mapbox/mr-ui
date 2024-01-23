@@ -5,41 +5,31 @@ import React, { useState } from 'react';
 import Select from '../select';
 
 export default function Example() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('humpback-whale');
 
-  const options = [
-    {
-      label: 'Humpback whale',
-      value: 'humpback-whale'
-    },
-    {
-      label: 'Rufous Hummingbird',
-      value: 'rufous-hummingbird'
-    },
-    {
-      label: 'Sea Otter',
-      value: 'sea-otter'
-    },
-    {
-      label: 'Snowshoe Hare',
-      value: 'snowshoe-hare'
-    }
-  ].map(option => {
+  const animals = {
+    'humpback-whale': 'Humpback whale',
+    'rufous-hummingbird': 'Rufous Hummingbird',
+    'sea-otter': 'Sea Otter',
+    'snowshoe-hare': 'Snowshoe Hare'
+  };
+
+  const options = Object.keys(animals).map(option => {
     return {
-      ...option,
-      active: value === option.value
+      label: animals[option],
+      value: option,
+      active: value === option
     }
   });
 
   return (
     <Select
-      value={value}
       onChange={setValue}
       options={options}
     >
       <span className="link">
-        {`Click to change the value to: `}
-        <span className="txt-bold">{value}</span>
+        {`Today's animal is: `}
+        <span className="txt-bold">{animals[value]}</span>
       </span>
     </Select>
   );
