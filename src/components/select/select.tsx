@@ -96,7 +96,7 @@ export default function Select({
 
   const renderOptions = ({ label, value, active, disabled, options }: Option) => {
 
-    const itemClasses = classnames(`select-item ${themeSelectItem}`, {
+    const itemClasses = classnames(themeSelectItem, {
       'is-active': active
     })
 
