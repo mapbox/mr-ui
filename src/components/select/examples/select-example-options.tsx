@@ -20,20 +20,23 @@ export default function Example() {
 
   const options = Object.keys(animals)
     .filter(option => filterBy ? option.includes(filterBy.value) : true)
-    .map(option => ({
-      label: animals[option],
+    .map((option, index) => ({
+      label: (
+        <div className="flex flex--space-between txt-s">
+          <div className="flex-child">{animals[option]}</div>
+          <div className="flex-child flex-child-grow color-gray align-r">{`Item ${index + 1}`}</div>
+        </div>
+      ),
       value: option,
       active: value === option
     }));
 
   const renderHeader = (
     <div className="px6 pt6">
-      <label className="txt-bold txt-s mb6 pt12">This is a header</label>
       <input
         className="input"
         type="text"
-        placeholder="Filter"
-        autoFocus={true}
+        placeholder="Filter by"
         value={filterBy.input}
         onChange={e => {
           setFilterBy({
@@ -46,7 +49,7 @@ export default function Example() {
   );
 
   const renderFooter = (
-    <div className="bg-gray-lighter px12 py6 txt-s round-b color-gray">This is a footer</div>
+    <div className="bg-gray-faint border-t border--gray-lighter px12 py12 txt-s round-b">Here is an area called the footer which could be used for a description to help with making a selection.</div>
   );
 
   return (
@@ -55,6 +58,7 @@ export default function Example() {
       options={options}
       header={renderHeader}
       footer={renderFooter}
+      themeSelectWrapper="w240"
       themeSelectItemWrapper="px6 py12"
       padding="none"
     >

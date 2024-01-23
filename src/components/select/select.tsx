@@ -30,6 +30,7 @@ interface Props {
   hasPointer?: boolean;
   hideWhenAnchorIsOffscreen?: boolean;
   allowPlacementAxisChange?: boolean;
+  themeSelectWrapper?: string;
   themeSelectItemWrapper?: string;
   themeSelectItem?: string;
   passthroughProps?: {
@@ -54,6 +55,7 @@ export default function Select({
   alignment = 'center',
   padding = 'medium',
   offsetFromAnchor = 6,
+  themeSelectWrapper = '',
   themeSelectItemWrapper = '',
   themeSelectItem = 'transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
   passthroughProps
@@ -136,13 +138,13 @@ export default function Select({
           {...passthroughProps}
         >
           <SelectPrimitive.Viewport>
-            <>
+            <div className={themeSelectWrapper}>
               {header && header}
               <div className={themeSelectItemWrapper}>
                 {options.map(renderOptions)}
               </div>
               {footer && footer}
-            </>
+            </div>
           </SelectPrimitive.Viewport>
           {hasPointer && <SelectPrimitive.Arrow width={12} height={6} offset={6} fill={fill} />}
         </SelectPrimitive.Content>
@@ -208,7 +210,9 @@ Select.propTypes = {
   alignment: PropTypes.oneOf(['center', 'start', 'end']),
   /** Called during changes to the input element. */
   onChange: PropTypes.func.isRequired,
-  /** Assembly classes to apply to the wrapper containing the select elements */
+  /** Assembly classes to apply to the select wrapper */
+  themeSelectWrapper: PropTypes.string,
+  /** Assembly classes to apply to the wrapper containing the select items */
   themeSelectItemWrapper: PropTypes.string,
   /** Assembly classes to apply to the select element */
   themeSelectItem: PropTypes.string,
