@@ -32,7 +32,7 @@ export default function ContextMenu({
   onChange,
   options,
   themeControlWrapper = 'bg-white round shadow-darken10 px6 py6 txt-s wmin240',
-  themeItem = 'px6 py6 round color-blue-on-hover bg-gray-lighter-on-hover',
+  themeItem = 'px6 py6 round color-blue-on-hover bg-darken5-on-hover',
   themeTitle = 'px6 py6 txt-bold',
   themeSeparator = 'border-t border--gray-light my6'
 }: Props): ReactElement {

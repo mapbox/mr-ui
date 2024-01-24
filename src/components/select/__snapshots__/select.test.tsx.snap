@@ -15,23 +15,19 @@ exports[`Select all options renders 1`] = `
     aria-hidden="true"
     data-aria-hidden="true"
   >
-    <span
-      style="display: contents;"
+    <button
+      aria-autocomplete="none"
+      aria-controls="radix-22"
+      aria-expanded="true"
+      data-placeholder=""
+      data-state="open"
+      data-testid="trigger"
+      dir="ltr"
+      role="combobox"
+      type="button"
     >
-      <button
-        aria-autocomplete="none"
-        aria-controls="radix-22"
-        aria-expanded="true"
-        data-placeholder=""
-        data-state="open"
-        data-testid="trigger"
-        dir="ltr"
-        role="combobox"
-        type="button"
-      >
-        trigger
-      </button>
-    </span>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -67,7 +63,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-27"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
               data-radix-collection-item=""
               data-state="unchecked"
@@ -79,7 +75,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-28"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -90,7 +86,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-29"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -101,7 +97,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-30"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -139,23 +135,19 @@ exports[`Select basic renders 1`] = `
     aria-hidden="true"
     data-aria-hidden="true"
   >
-    <span
-      style="display: contents;"
+    <button
+      aria-autocomplete="none"
+      aria-controls="radix-0"
+      aria-expanded="true"
+      data-placeholder=""
+      data-state="open"
+      data-testid="trigger"
+      dir="ltr"
+      role="combobox"
+      type="button"
     >
-      <button
-        aria-autocomplete="none"
-        aria-controls="radix-0"
-        aria-expanded="true"
-        data-placeholder=""
-        data-state="open"
-        data-testid="trigger"
-        dir="ltr"
-        role="combobox"
-        type="button"
-      >
-        trigger
-      </button>
-    </span>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -190,7 +182,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-5"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
               data-radix-collection-item=""
               data-state="unchecked"
@@ -202,7 +194,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-6"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -213,7 +205,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-7"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -224,7 +216,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-8"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -279,23 +271,19 @@ exports[`Select dark renders 1`] = `
     aria-hidden="true"
     data-aria-hidden="true"
   >
-    <span
-      style="display: contents;"
+    <button
+      aria-autocomplete="none"
+      aria-controls="radix-13"
+      aria-expanded="true"
+      data-placeholder=""
+      data-state="open"
+      data-testid="trigger"
+      dir="ltr"
+      role="combobox"
+      type="button"
     >
-      <button
-        aria-autocomplete="none"
-        aria-controls="radix-13"
-        aria-expanded="true"
-        data-placeholder=""
-        data-state="open"
-        data-testid="trigger"
-        dir="ltr"
-        role="combobox"
-        type="button"
-      >
-        trigger
-      </button>
-    </span>
+      trigger
+    </button>
   </div>
   <div
     data-radix-popper-content-wrapper=""
@@ -330,7 +318,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-18"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
               data-radix-collection-item=""
               data-state="unchecked"
@@ -342,7 +330,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-19"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -353,7 +341,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-20"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -364,7 +352,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-21"
               aria-selected="false"
-              class="transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"

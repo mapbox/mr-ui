@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useRef } from 'react';
+import React, { ReactElement, ReactNode, forwardRef, useRef, ForwardedRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
@@ -18,6 +18,7 @@ interface Props {
   options: Array<Option>;
   onChange: (value: string) => void;
   onExit?: () => void;
+  onOpenChange?: () => void;
   header?: ReactNode;
   footer?: ReactNode;
   offsetFromAnchor?: number;
@@ -38,8 +39,9 @@ interface Props {
   };
 }
 
-export default function Select({
+const Select = forwardRef(({
   onExit,
+  onOpenChange,
   children,
   header,
   footer,
@@ -57,9 +59,9 @@ export default function Select({
   offsetFromAnchor = 6,
   themeSelectWrapper = '',
   themeSelectItemWrapper = '',
-  themeSelectItem = 'transition color-gray-dark w-full block bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
+  themeSelectItem = 'transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
   passthroughProps
-}: Props): ReactElement {
+}: Props, forwardedRef: ForwardedRef<HTMLButtonElement>): ReactElement => {
   const { background, borderColor, color, fill } = getTheme(coloring);
   const triggerRef = useRef(null);
 
@@ -116,13 +118,14 @@ export default function Select({
   };
 
   return (
-    <SelectPrimitive.Root onValueChange={onChange}>
+    <SelectPrimitive.Root
+      onOpenChange={onOpenChange && onOpenChange}
+      onValueChange={onChange}
+    >
 
-      <span ref={triggerRef} style={{ display: 'contents' }}>
-        <SelectPrimitive.Trigger asChild>
-          {children}
-        </SelectPrimitive.Trigger>
-      </span>
+      <SelectPrimitive.Trigger ref={forwardedRef} asChild>
+        {children}
+      </SelectPrimitive.Trigger>
 
       <SelectPrimitive.Portal>
         <SelectPrimitive.Content
@@ -152,15 +155,17 @@ export default function Select({
 
     </SelectPrimitive.Root>
   );
-}
+});
 
 Select.propTypes = {
   /** An array of objects containing `label` `value` key value pairings to represent each option. An optional `disable` key can be provided to disable the selection of an indiviual `<option>`. If `value` is not present but an `options` array is provided containing the same `label` `value` key value pairings, options will be grouped within a `<optgroup>` element as defined by `label` child key. Note that each `label` value must be unique. */
+  // @ts-expect-error
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.node.isRequired,
       value: PropTypes.string.isRequired,
       disabled: PropTypes.bool,
+      active: PropTypes.bool,
       options: PropTypes.arrayOf(
         PropTypes.shape({
           label: PropTypes.node.isRequired,
@@ -180,32 +185,32 @@ Select.propTypes = {
    */
   padding: PropTypes.oneOf(['medium', 'small', 'none']),
   /**
-   * Whether or not the popover has a triangle pointer.
+   * Whether or not the select container has a triangle pointer.
    */
   hasPointer: PropTypes.bool,
   /**
-   * If `true`, the popover will hide when its anchor is scrolled offscreen.
-   * By default, the popover will follow its anchor wherever it goes.
+   * If `true`, the select container will hide when its anchor is scrolled offscreen.
+   * By default, the select container will follow its anchor wherever it goes.
    *
    * If your anchor is within an internally scrolling area, you may want to
-   * use `true`, so the popover doesn't existing in a disembodied state after
+   * use `true`, so the select container doesn't existing in a disembodied state after
    * its anchor is scrolled away.
    */
   hideWhenAnchorIsOffscreen: PropTypes.bool,
   /**
-   * If `false`, the popover is *not* allowed to change axes on the anchor when
-   * modifying its position to fit available space. By default, popovers on the
-   * `left` and `right`, for example, might change to `bottom` is there is
-   * neither space on the left nor the right.
+   * If `false`, the select container  is *not* allowed to change axes on the 
+   * anchor when modifying its position to fit available space. By default, 
+   * select containers on the `left` and `right`, for example, might change to `bottom` 
+   * is there is neither space on the left nor the right.
    */
   allowPlacementAxisChange: PropTypes.bool,
   /**
-   * Preferred placement of the popover in relation to the anchor.
+   * Preferred placement of the select container in relation to the anchor.
    * Adjusted according to available space.
    */
   placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
   /**
-   * `'center'`, `'start'`, `'end'` Alignment of the popover edge in relation to the trigger element.
+   * `'center'`, `'start'`, `'end'` Alignment of the select container edge in relation to the trigger element.
    */
   alignment: PropTypes.oneOf(['center', 'start', 'end']),
   /** Called during changes to the input element. */
@@ -217,25 +222,34 @@ Select.propTypes = {
   /** Assembly classes to apply to the select element */
   themeSelectItem: PropTypes.string,
     /**
-   * If `false`, clicking outside the popover will not close it.
+   * If `false`, clicking outside the select container will not close it.
    * By default, it does.
    */
   clickOutsideCloses: PropTypes.bool,
   /**
-   * If `false`, hitting Escape will not close the popover. By default, it does.
+   * If `false`, hitting Escape will not close the select container. By default, it does.
    */
   escapeCloses: PropTypes.bool,
   /**
-   * A function called when popover is dismissed. You need to use this callback
-   * to remove the Popover from the rendered page.
+   * A function called when select list open state changes.
+   */
+  onOpenChange: PropTypes.func,
+  /**
+   * A function called when select container is dismissed.
    */
   onExit: PropTypes.func,
   /**
-   * Number of pixels by which the popover should be offset from its anchor.
+   * Number of pixels by which the select container should be offset from its anchor.
    */
   offsetFromAnchor: PropTypes.number,
   /**
    * Props to pass directly to select content options from `@radix-ui/react-select`.
    */
-  passthroughProps: PropTypes.object
+  passthroughProps: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+    PropTypes.number
+  ]))
 };
+
+export default Select;

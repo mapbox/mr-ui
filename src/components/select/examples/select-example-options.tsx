@@ -1,10 +1,11 @@
 /*
 With options
 */
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Select from '../select';
 
 export default function Example() {
+  const inputEl = useRef<HTMLInputElement>();
   const [value, setValue] = useState('humpback-whale');
   const [filterBy, setFilterBy] = useState({
     input: '',
@@ -31,14 +32,21 @@ export default function Example() {
       active: value === option
     }));
 
+  const focusOnInput = () => {
+    // Hack for upstream issue https://github.com/radix-ui/primitives/issues/2193
+    setTimeout(() => inputEl.current && inputEl.current.focus(), 0);
+  };
+
   const renderHeader = (
     <div className="px6 pt6">
       <input
+        ref={inputEl}
         className="input"
         type="text"
         placeholder="Filter by"
         value={filterBy.input}
         onChange={e => {
+          focusOnInput();
           setFilterBy({
             input: e.target.value,
             value: e.target.value.toLowerCase().trim().split(/\s/g).join('-')
@@ -54,6 +62,7 @@ export default function Example() {
 
   return (
     <Select
+      onOpenChange={focusOnInput}
       onChange={setValue}
       options={options}
       header={renderHeader}
