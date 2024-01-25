@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.9.0
+
+- [feature] add customizable select UI component [#218](https://github.com/mapbox/mr-ui/pull/218)
+
 ## 2.8.0
 
 - [feature] add additional style props to control-range for tighter styling control [#217](https://github.com/mapbox/mr-ui/pull/217)
