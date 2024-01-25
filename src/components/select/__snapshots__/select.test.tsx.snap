@@ -1,0 +1,393 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select all options renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-autocomplete="none"
+      aria-controls="radix-22"
+      aria-expanded="true"
+      data-placeholder=""
+      data-state="open"
+      data-testid="trigger"
+      dir="ltr"
+      role="combobox"
+      type="button"
+    >
+      trigger
+    </button>
+  </div>
+  <div
+    data-radix-popper-content-wrapper=""
+    dir="ltr"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-available-width: -16px; --radix-popper-available-height: -40px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 50%;"
+  >
+    <div
+      class="bg-white border--white color-text border shadow-darken25 round border border-1 border--border--white"
+      data-align="center"
+      data-side="left"
+      data-state="open"
+      data-testid="foo"
+      dir="ltr"
+      id="radix-22"
+      role="listbox"
+      style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto; opacity: 0;"
+      tabindex="-1"
+    >
+      <style>
+        [data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}
+      </style>
+      <div
+        data-radix-select-viewport=""
+        role="presentation"
+        style="position: relative; flex: 1; overflow: auto;"
+      >
+        <div
+          class=""
+        >
+          <div
+            class=""
+          >
+            <div
+              aria-labelledby="radix-27"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-highlighted=""
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Humpback whale
+            </div>
+            <div
+              aria-labelledby="radix-28"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Rufous Hummingbird
+            </div>
+            <div
+              aria-labelledby="radix-29"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Sea Otter
+            </div>
+            <div
+              aria-labelledby="radix-30"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Snowshoe Hare
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`Select basic renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-autocomplete="none"
+      aria-controls="radix-0"
+      aria-expanded="true"
+      data-placeholder=""
+      data-state="open"
+      data-testid="trigger"
+      dir="ltr"
+      role="combobox"
+      type="button"
+    >
+      trigger
+    </button>
+  </div>
+  <div
+    data-radix-popper-content-wrapper=""
+    dir="ltr"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -16px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0px;"
+  >
+    <div
+      class="bg-white border--white color-text border shadow-darken25 round px12 py12 border border-1 border--border--white"
+      data-align="center"
+      data-side="right"
+      data-state="open"
+      dir="ltr"
+      id="radix-0"
+      role="listbox"
+      style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
+      tabindex="-1"
+    >
+      <style>
+        [data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}
+      </style>
+      <div
+        data-radix-select-viewport=""
+        role="presentation"
+        style="position: relative; flex: 1; overflow: auto;"
+      >
+        <div
+          class=""
+        >
+          <div
+            class=""
+          >
+            <div
+              aria-labelledby="radix-5"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-highlighted=""
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Humpback whale
+            </div>
+            <div
+              aria-labelledby="radix-6"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Rufous Hummingbird
+            </div>
+            <div
+              aria-labelledby="radix-7"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Sea Otter
+            </div>
+            <div
+              aria-labelledby="radix-8"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Snowshoe Hare
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        style="position: absolute; left: 0px; transform-origin: 0 0; transform: translateY(50%) rotate(90deg) translateX(-50%); top: 0px;"
+      >
+        <svg
+          fill="#fff"
+          height="6"
+          offset="6"
+          preserveAspectRatio="none"
+          style="display: block;"
+          viewBox="0 0 30 10"
+          width="12"
+        >
+          <polygon
+            points="0,0 30,0 15,10"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`Select dark renders 1`] = `
+<body
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-autocomplete="none"
+      aria-controls="radix-13"
+      aria-expanded="true"
+      data-placeholder=""
+      data-state="open"
+      data-testid="trigger"
+      dir="ltr"
+      role="combobox"
+      type="button"
+    >
+      trigger
+    </button>
+  </div>
+  <div
+    data-radix-popper-content-wrapper=""
+    dir="ltr"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -16px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0px;"
+  >
+    <div
+      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12 border border-1 border--border--gray-dark"
+      data-align="center"
+      data-side="right"
+      data-state="open"
+      dir="ltr"
+      id="radix-13"
+      role="listbox"
+      style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
+      tabindex="-1"
+    >
+      <style>
+        [data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}
+      </style>
+      <div
+        data-radix-select-viewport=""
+        role="presentation"
+        style="position: relative; flex: 1; overflow: auto;"
+      >
+        <div
+          class=""
+        >
+          <div
+            class=""
+          >
+            <div
+              aria-labelledby="radix-18"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-highlighted=""
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Humpback whale
+            </div>
+            <div
+              aria-labelledby="radix-19"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Rufous Hummingbird
+            </div>
+            <div
+              aria-labelledby="radix-20"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Sea Otter
+            </div>
+            <div
+              aria-labelledby="radix-21"
+              aria-selected="false"
+              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              data-radix-collection-item=""
+              data-state="unchecked"
+              role="option"
+              tabindex="-1"
+            >
+              Snowshoe Hare
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        style="position: absolute; left: 0px; transform-origin: 0 0; transform: translateY(50%) rotate(90deg) translateX(-50%); top: 0px;"
+      >
+        <svg
+          fill="#0E2127"
+          height="6"
+          offset="6"
+          preserveAspectRatio="none"
+          style="display: block;"
+          viewBox="0 0 30 10"
+          width="12"
+        >
+          <polygon
+            points="0,0 30,0 15,10"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;

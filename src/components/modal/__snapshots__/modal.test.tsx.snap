@@ -319,7 +319,7 @@ exports[`Modal basic, auto renders 1`] = `
   />
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate3d(0, -200%, 0); min-width: max-content;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content;"
   >
     <div
       class="bg-white border--white color-text border round txt-s px12 py6 wmax240"
