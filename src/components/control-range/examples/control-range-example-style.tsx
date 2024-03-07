@@ -19,6 +19,7 @@ export default function Example() {
       themeControlRangeActive='bg-blue round'
       themeControlTrack='bg-gray h3'
       themeControlThumb='bg-blue border--0 h12 w12 shadow-darken25'
+      themeTooltipColoring='dark'
     />
   );
 }
