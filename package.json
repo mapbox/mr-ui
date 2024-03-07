@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/mr-ui",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
   "homepage": "./",
