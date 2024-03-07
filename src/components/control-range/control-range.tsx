@@ -85,8 +85,8 @@ export default function ControlRange({
         getTheme(themeTooltipColoring);
       const tooltipClasses = `${background} ${borderColor} ${color} border round txt-s px12 py6 wmax240`;
       return (
-        <TooltipPrimitive.Provider>
-          <TooltipPrimitive.Root key={index} delayDuration={150}>
+        <TooltipPrimitive.Provider key={index} >
+          <TooltipPrimitive.Root delayDuration={150}>
             <TooltipPrimitive.Trigger asChild>
               <SliderPrimitive.Thumb className={`${themeControlThumb}`} />
             </TooltipPrimitive.Trigger>
