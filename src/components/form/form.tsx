@@ -1,7 +1,7 @@
 import React, { ReactElement, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import shallowEqualObjects from 'shallow-equal/objects';
-import Submittable from 'react-submittable';
+import Submittable from '@mapbox/react-submittable';
 import LoaderFull from '../loader-full';
 import LoaderLocal from '../loader-local';
 import usePrevious from '../utils/use_previous';

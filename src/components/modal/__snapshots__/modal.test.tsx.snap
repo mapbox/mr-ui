@@ -2,6 +2,7 @@
 
 exports[`Modal all options renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
@@ -25,11 +26,11 @@ exports[`Modal all options renders 1`] = `
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-35"
-      aria-labelledby="radix-34"
+      aria-describedby="radix-:r13:"
+      aria-labelledby="radix-:r12:"
       class="relative my120 wmax360 w-11/12 bg-white round"
       data-state="open"
-      id="radix-33"
+      id="radix-:r11:"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -38,7 +39,7 @@ exports[`Modal all options renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-34"
+          id="radix-:r12:"
         >
           All options
         </h2>
@@ -96,6 +97,7 @@ exports[`Modal all options renders 1`] = `
 
 exports[`Modal basic renders 1`] = `
 <body
+  data-scroll-locked="2"
   style="pointer-events: none;"
 >
   <span
@@ -121,11 +123,11 @@ exports[`Modal basic renders 1`] = `
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-2"
-      aria-labelledby="radix-1"
+      aria-describedby="radix-:r2:"
+      aria-labelledby="radix-:r1:"
       class="relative my12 my60-mm wmax360 w-11/12 bg-white round px36 py36"
       data-state="open"
-      id="radix-0"
+      id="radix-:r0:"
       role="dialog"
       style="pointer-events: none;"
       tabindex="-1"
@@ -134,7 +136,7 @@ exports[`Modal basic renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-1"
+          id="radix-:r1:"
         >
           No onExit passed as prop
         </h2>
@@ -158,11 +160,11 @@ exports[`Modal basic renders 1`] = `
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-5"
-      aria-labelledby="radix-4"
+      aria-describedby="radix-:r5:"
+      aria-labelledby="radix-:r4:"
       class="relative my12 my60-mm wmax360 w-11/12 bg-white round px36 py36"
       data-state="open"
-      id="radix-3"
+      id="radix-:r3:"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -171,7 +173,7 @@ exports[`Modal basic renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-4"
+          id="radix-:r4:"
         >
           Small modal title
         </h2>
@@ -238,6 +240,7 @@ exports[`Modal basic renders 1`] = `
 
 exports[`Modal basic, auto renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
@@ -261,11 +264,11 @@ exports[`Modal basic, auto renders 1`] = `
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-27"
-      aria-labelledby="radix-26"
+      aria-describedby="radix-:rr:"
+      aria-labelledby="radix-:rq:"
       class="relative my12 my60-mm wmax-full bg-white round px36 py36"
       data-state="open"
-      id="radix-25"
+      id="radix-:rp:"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -274,7 +277,7 @@ exports[`Modal basic, auto renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-26"
+          id="radix-:rq:"
         >
           Auto modal title
         </h2>
@@ -283,7 +286,7 @@ exports[`Modal basic, auto renders 1`] = `
         No fixed width on the modal container. But very tall.
       </div>
       <button
-        aria-describedby="radix-28"
+        aria-describedby="radix-:rs:"
         aria-label="Close"
         class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
         data-state="instant-open"
@@ -347,7 +350,7 @@ exports[`Modal basic, auto renders 1`] = `
         </svg>
       </span>
       <span
-        id="radix-28"
+        id="radix-:rs:"
         role="tooltip"
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
@@ -360,6 +363,7 @@ exports[`Modal basic, auto renders 1`] = `
 
 exports[`Modal basic, large renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
@@ -383,11 +387,11 @@ exports[`Modal basic, large renders 1`] = `
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-19"
-      aria-labelledby="radix-18"
+      aria-describedby="radix-:rj:"
+      aria-labelledby="radix-:ri:"
       class="relative my12 my60-mm wmax600 w-11/12 bg-white round px36 py36"
       data-state="open"
-      id="radix-17"
+      id="radix-:rh:"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -396,7 +400,7 @@ exports[`Modal basic, large renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-18"
+          id="radix-:ri:"
         >
           Large modal title
         </h2>

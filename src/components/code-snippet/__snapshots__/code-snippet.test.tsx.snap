@@ -336,7 +336,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
             style="display: contents;"
           >
             <div
-              aria-controls="radix-4"
+              aria-controls="radix-:r4:"
               aria-expanded="false"
               aria-haspopup="dialog"
               data-state="closed"
@@ -389,7 +389,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
             style="display: contents;"
           >
             <div
-              aria-controls="radix-5"
+              aria-controls="radix-:r6:"
               aria-expanded="false"
               aria-haspopup="dialog"
               data-state="closed"
@@ -625,7 +625,7 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
             style="display: contents;"
           >
             <div
-              aria-controls="radix-0"
+              aria-controls="radix-:r0:"
               aria-expanded="false"
               aria-haspopup="dialog"
               data-state="closed"

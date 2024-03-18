@@ -10,7 +10,7 @@ exports[`Copiable basic renders as expected 1`] = `
         style="display: contents;"
       >
         <div
-          aria-controls="radix-0"
+          aria-controls="radix-:r0:"
           aria-expanded="false"
           aria-haspopup="dialog"
           class="py6 px12"
@@ -42,7 +42,7 @@ exports[`Copiable truncated renders as expected 1`] = `
         style="display: contents;"
       >
         <div
-          aria-controls="radix-7"
+          aria-controls="radix-:r7:"
           aria-expanded="false"
           aria-haspopup="dialog"
           class="py6 px12"

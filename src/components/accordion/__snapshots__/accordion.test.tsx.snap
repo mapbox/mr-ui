@@ -12,14 +12,14 @@ exports[`Accordion all options renders 1`] = `
         data-state="open"
       >
         <button
-          aria-controls="radix-24"
+          aria-controls="radix-:rp:"
           aria-expanded="true"
           class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="open"
           data-testid="accordion-trigger-one"
-          id="radix-25"
+          id="radix-:ro:"
           type="button"
         >
           <div>
@@ -32,10 +32,10 @@ exports[`Accordion all options renders 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby="radix-25"
+          aria-labelledby="radix-:ro:"
           data-orientation="vertical"
           data-state="open"
-          id="radix-24"
+          id="radix-:rp:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width); transition-duration: 0s; animation-name: none;"
         >
@@ -52,14 +52,14 @@ exports[`Accordion all options renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-26"
+          aria-controls="radix-:rr:"
           aria-expanded="false"
           class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="closed"
           data-testid="accordion-trigger-two"
-          id="radix-27"
+          id="radix-:rq:"
           type="button"
         >
           <div>
@@ -67,11 +67,11 @@ exports[`Accordion all options renders 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby="radix-27"
+          aria-labelledby="radix-:rq:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-26"
+          id="radix-:rr:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -82,14 +82,14 @@ exports[`Accordion all options renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-28"
+          aria-controls="radix-:rt:"
           aria-expanded="false"
           class="w-full bg-red txt-l txt-bold link link--white bg-red-dark-on-hover px6 py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="closed"
           data-testid="accordion-trigger-third"
-          id="radix-29"
+          id="radix-:rs:"
           type="button"
         >
           <div>
@@ -97,11 +97,11 @@ exports[`Accordion all options renders 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby="radix-29"
+          aria-labelledby="radix-:rs:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-28"
+          id="radix-:rt:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -122,14 +122,14 @@ exports[`Accordion basic renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-0"
+          aria-controls="radix-:r1:"
           aria-expanded="false"
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="closed"
           data-testid="accordion-trigger-one"
-          id="radix-1"
+          id="radix-:r0:"
           type="button"
         >
           <span>
@@ -137,11 +137,11 @@ exports[`Accordion basic renders 1`] = `
           </span>
         </button>
         <div
-          aria-labelledby="radix-1"
+          aria-labelledby="radix-:r0:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-0"
+          id="radix-:r1:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -151,14 +151,14 @@ exports[`Accordion basic renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-2"
+          aria-controls="radix-:r3:"
           aria-expanded="false"
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="closed"
           data-testid="accordion-trigger-two"
-          id="radix-3"
+          id="radix-:r2:"
           type="button"
         >
           <span>
@@ -166,11 +166,11 @@ exports[`Accordion basic renders 1`] = `
           </span>
         </button>
         <div
-          aria-labelledby="radix-3"
+          aria-labelledby="radix-:r2:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-2"
+          id="radix-:r3:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -180,14 +180,14 @@ exports[`Accordion basic renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-4"
+          aria-controls="radix-:r5:"
           aria-expanded="false"
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="closed"
           data-testid="accordion-trigger-three"
-          id="radix-5"
+          id="radix-:r4:"
           type="button"
         >
           <span>
@@ -195,11 +195,11 @@ exports[`Accordion basic renders 1`] = `
           </span>
         </button>
         <div
-          aria-labelledby="radix-5"
+          aria-labelledby="radix-:r4:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-4"
+          id="radix-:r5:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -220,14 +220,14 @@ exports[`Accordion disabled renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-12"
+          aria-controls="radix-:rd:"
           aria-expanded="false"
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="closed"
           data-testid="accordion-trigger-one"
-          id="radix-13"
+          id="radix-:rc:"
           type="button"
         >
           <span>
@@ -235,11 +235,11 @@ exports[`Accordion disabled renders 1`] = `
           </span>
         </button>
         <div
-          aria-labelledby="radix-13"
+          aria-labelledby="radix-:rc:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-12"
+          id="radix-:rd:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -249,14 +249,14 @@ exports[`Accordion disabled renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-14"
+          aria-controls="radix-:rf:"
           aria-expanded="false"
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-pointer"
           data-orientation="vertical"
           data-radix-collection-item=""
           data-state="closed"
           data-testid="accordion-trigger-two"
-          id="radix-15"
+          id="radix-:re:"
           type="button"
         >
           <span>
@@ -264,11 +264,11 @@ exports[`Accordion disabled renders 1`] = `
           </span>
         </button>
         <div
-          aria-labelledby="radix-15"
+          aria-labelledby="radix-:re:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-14"
+          id="radix-:rf:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -278,7 +278,7 @@ exports[`Accordion disabled renders 1`] = `
         data-state="closed"
       >
         <button
-          aria-controls="radix-16"
+          aria-controls="radix-:rh:"
           aria-expanded="false"
           class="w-full txt-s txt-bold txt-truncate link link--gray py6 cursor-default color-gray-light"
           data-orientation="vertical"
@@ -286,7 +286,7 @@ exports[`Accordion disabled renders 1`] = `
           data-state="closed"
           data-testid="accordion-trigger-three"
           disabled=""
-          id="radix-17"
+          id="radix-:rg:"
           type="button"
         >
           <span>
@@ -294,11 +294,11 @@ exports[`Accordion disabled renders 1`] = `
           </span>
         </button>
         <div
-          aria-labelledby="radix-17"
+          aria-labelledby="radix-:rg:"
           data-orientation="vertical"
           data-state="closed"
           hidden=""
-          id="radix-16"
+          id="radix-:rh:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />

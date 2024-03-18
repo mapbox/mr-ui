@@ -2,6 +2,7 @@
 
 exports[`ContextMenu all options renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
@@ -70,14 +71,14 @@ exports[`ContextMenu all options renders 1`] = `
         </span>
       </div>
       <div
-        aria-controls="radix-9"
+        aria-controls="radix-:r7:"
         aria-expanded="false"
         aria-haspopup="menu"
         class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover"
         data-orientation="vertical"
         data-radix-collection-item=""
         data-state="closed"
-        id="radix-10"
+        id="radix-:r8:"
         role="menuitem"
         tabindex="-1"
       >
@@ -135,6 +136,7 @@ exports[`ContextMenu all options renders 1`] = `
 
 exports[`ContextMenu basic renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
