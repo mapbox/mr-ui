@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/mr-ui",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
   "homepage": "./",
@@ -30,8 +30,8 @@
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^16.14.0 || ^18.2.0",
+    "react-dom": "^16.14.0 || ^18.2.0"
   },
   "dependencies": {
     "@mapbox/mbx-assembly": "^1.5.0",

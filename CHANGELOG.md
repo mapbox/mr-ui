@@ -1,5 +1,8 @@
 ## Changelog
 
+## 3.0.0
+- [feature] upgrade to react 18 
+
 ## 2.9.0
 
 - [feature] add customizable select UI component [#218](https://github.com/mapbox/mr-ui/pull/218)
