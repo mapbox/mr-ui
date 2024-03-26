@@ -1,6 +1,6 @@
 ## Changelog
 
-## 3.0.0
+## 2.10.0
 - [feature] upgrade to react 18 
 
 ## 2.9.0
