@@ -12,7 +12,7 @@ exports[`Popover all options renders 1`] = `
       style="display: contents;"
     >
       <button
-        aria-controls="radix-4"
+        aria-controls="radix-:r4:"
         aria-expanded="true"
         aria-haspopup="dialog"
         data-state="open"
@@ -33,7 +33,7 @@ exports[`Popover all options renders 1`] = `
       data-side="left"
       data-state="open"
       data-testid="foo"
-      id="radix-4"
+      id="radix-:r4:"
       role="dialog"
       style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height); opacity: 0;"
       tabindex="-1"
@@ -70,7 +70,7 @@ exports[`Popover basic renders 1`] = `
       style="display: contents;"
     >
       <button
-        aria-controls="radix-0"
+        aria-controls="radix-:r0:"
         aria-expanded="true"
         aria-haspopup="dialog"
         data-state="open"
@@ -90,7 +90,7 @@ exports[`Popover basic renders 1`] = `
       data-align="center"
       data-side="right"
       data-state="open"
-      id="radix-0"
+      id="radix-:r0:"
       role="dialog"
       style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"
       tabindex="-1"
@@ -135,7 +135,7 @@ exports[`Popover dark renders 1`] = `
       style="display: contents;"
     >
       <button
-        aria-controls="radix-1"
+        aria-controls="radix-:r1:"
         aria-expanded="true"
         aria-haspopup="dialog"
         data-state="open"
@@ -155,7 +155,7 @@ exports[`Popover dark renders 1`] = `
       data-align="center"
       data-side="right"
       data-state="open"
-      id="radix-1"
+      id="radix-:r1:"
       role="dialog"
       style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"
       tabindex="-1"
@@ -200,7 +200,7 @@ exports[`Popover no arrow renders 1`] = `
       style="display: contents;"
     >
       <button
-        aria-controls="radix-3"
+        aria-controls="radix-:r3:"
         aria-expanded="true"
         aria-haspopup="dialog"
         data-state="open"
@@ -220,7 +220,7 @@ exports[`Popover no arrow renders 1`] = `
       data-align="center"
       data-side="right"
       data-state="open"
-      id="radix-3"
+      id="radix-:r3:"
       role="dialog"
       style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"
       tabindex="-1"
@@ -250,7 +250,7 @@ exports[`Popover warning renders 1`] = `
       style="display: contents;"
     >
       <button
-        aria-controls="radix-2"
+        aria-controls="radix-:r2:"
         aria-expanded="true"
         aria-haspopup="dialog"
         data-state="open"
@@ -270,7 +270,7 @@ exports[`Popover warning renders 1`] = `
       data-align="center"
       data-side="right"
       data-state="open"
-      id="radix-2"
+      id="radix-:r2:"
       role="dialog"
       style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"
       tabindex="-1"

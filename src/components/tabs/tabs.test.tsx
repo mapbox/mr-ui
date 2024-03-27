@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import TabsWithContent from './examples/tabs-example-a';
 import TabsWithDisabledAndColors from './examples/tabs-example-d';
 import TabsWithThemeTabsContainerAndSize from './examples/tabs-example-c';
@@ -21,14 +21,18 @@ describe('Tabs', () => {
         tab1.focus();
         tab1.click();
 
-        expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
+        })
         expect(within(tab1).getByTestId('tab-border')).toHaveClass('border-b--2');
 
         const tab3 = screen.getByTestId('button-tab-three');
         tab3.focus();
         tab3.click();
 
-        expect(within(tab1).queryByTestId('tab-border')).not.toBeInTheDocument();
+        await waitFor(() => {
+            expect(within(tab1).queryByTestId('tab-border')).not.toBeInTheDocument();
+        })
         expect(within(tab3).getByTestId('tab-border')).toHaveClass('border-b--2');
         expect(screen.getByText('Tab 3 content')).toBeInTheDocument();
         expect(screen.queryByText('Tab 1 content')).not.toBeInTheDocument();
@@ -41,20 +45,24 @@ describe('Tabs', () => {
         expect(screen.getByText('Animals')).toBeInTheDocument();
     });
 
-    test('pressing on disabled tab does not work', () => {
+    test('pressing on disabled tab does not work', async () => {
         render(<TabsWithDisabledAndColors />);
         const tab1 = screen.getByTestId('button-tab-Animals');
 
         tab1.focus();
         tab1.click()
 
-        expect(screen.queryByText('Animals content')).not.toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.queryByText('Animals content')).not.toBeInTheDocument()
+        })
 
         const tab2 = screen.getByTestId('button-tab-Robots');
         tab2.focus();
         tab2.click();
 
-        expect(screen.getByText('Robots content')).toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.getByText('Robots content')).toBeInTheDocument()
+        })
     });
 
     test('adds themeTabContainer class', () => {
