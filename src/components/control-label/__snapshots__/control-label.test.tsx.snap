@@ -64,3 +64,32 @@ exports[`ControlLabel basic with optional renders 1`] = `
   </div>
 </body>
 `;
+
+exports[`ControlLabel with ReactNode text renders 1`] = `
+<body>
+  <div>
+    <div>
+      <label
+        class="inline-block color-red"
+        for="label-id"
+      >
+        <div>
+          Something
+        </div>
+        Some text
+         
+        <span
+          class="txt-normal"
+        >
+          (optional)
+        </span>
+      </label>
+      <span
+        class="inline-block ml12"
+      >
+        This is an aside
+      </span>
+    </div>
+  </div>
+</body>
+`;

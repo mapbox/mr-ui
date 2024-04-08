@@ -9,7 +9,7 @@ interface Props extends Omit<InputProps, 'onChange'> {
   onChange: (value: string, id: string) => void;
   id?: string;
   value?: string;
-  label?: string;
+  label?: string | ReactNode;
   noAuto?: boolean;
   optional?: boolean;
   aside?: ReactNode;
@@ -52,21 +52,22 @@ export default function ControlTextarea({
 }: Props): ReactElement {
   const extraProps = omit(props, propNames);
   const textareaProps: {
-    id: string,
-    name: string,
-    onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void,
-    value: string,
-    className: string,
-    'aria-required': boolean,
-    'data-testid': string,
-    autoCapitalize?: string,
-    autoCorrect?: string,
-    spellCheck?: boolean,
-    'aria-invalid'?: boolean
+    id: string;
+    name: string;
+    onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+    value: string;
+    className: string;
+    'aria-required': boolean;
+    'data-testid': string;
+    autoCapitalize?: string;
+    autoCorrect?: string;
+    spellCheck?: boolean;
+    'aria-invalid'?: boolean;
   } = {
     id,
     name: id,
-    onChange: (e: ChangeEvent<HTMLTextAreaElement>) => onChange(e.target.value, id),
+    onChange: (e: ChangeEvent<HTMLTextAreaElement>) =>
+      onChange(e.target.value, id),
     value,
     className: themeControlTextarea,
     'aria-required': optional ? false : true,
@@ -114,7 +115,7 @@ ControlTextarea.propTypes = {
    */
   onChange: PropTypes.func.isRequired,
   /** Label for the control. */
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** If `true`, autocorrect and spelling suggestions will be disabled. */
   noAuto: PropTypes.bool,
   /** If `true`, the text `(optional)` is appended to the label element. */
@@ -130,4 +131,3 @@ ControlTextarea.propTypes = {
   /** Classes to apply to the label element. */
   themeLabel: PropTypes.string
 };
-

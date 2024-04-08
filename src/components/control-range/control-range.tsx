@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
@@ -24,11 +24,11 @@ const propNames = [
   'validator'
 ];
 
-interface Props extends Omit<InputProps, 'value' | 'onChange'>{
+interface Props extends Omit<InputProps, 'value' | 'onChange'> {
   id: string;
   onChange: (value: Array<number>, id: string) => void;
   value?: Array<number>;
-  label?: string;
+  label?: string | ReactNode;
   optional?: boolean;
   aside?: ReactNode;
   tooltip?: boolean;
@@ -58,7 +58,6 @@ export default function ControlRange({
   themeLabel,
   ...props
 }: Props): ReactElement {
-
   const extraProps = omit(props, propNames);
 
   const rootProps = {
@@ -76,7 +75,9 @@ export default function ControlRange({
   }
 
   const renderThumb = (value: number, index: number) => {
-    return <SliderPrimitive.Thumb key={index} className={`${themeControlThumb}`} />
+    return (
+      <SliderPrimitive.Thumb key={index} className={`${themeControlThumb}`} />
+    );
   };
 
   return (
@@ -97,7 +98,9 @@ export default function ControlRange({
       <div className={`range ${themeControlRange}`}>
         <SliderPrimitive.Root {...rootProps}>
           <SliderPrimitive.Track className={`${themeControlTrack}`}>
-            <SliderPrimitive.Range className={`absolute h-full ${themeControlRangeActive}`}/>
+            <SliderPrimitive.Range
+              className={`absolute h-full ${themeControlRangeActive}`}
+            />
           </SliderPrimitive.Track>
           {value.map(renderThumb)}
         </SliderPrimitive.Root>
@@ -114,7 +117,7 @@ ControlRange.propTypes = {
   /** Accepts an array of numbers, where each number matches a draggable thumb. */
   value: PropTypes.array,
   /** Value passed to the label element. */
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** If provided the text, "(optional)" is appended to the value of the label element. */
   optional: PropTypes.bool,
   /** Additional content inserted alongside the label element. */

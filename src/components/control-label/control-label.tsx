@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 interface Props {
   id: string;
-  text: string;
+  text: string | ReactNode;
   aside?: ReactNode;
   optional?: boolean;
   themeLabel?: string;
@@ -33,7 +33,7 @@ ControlLabel.propTypes = {
   /** Value should match the identifying id of the input element. */
   id: PropTypes.string.isRequired,
   /** Label text */
-  text: PropTypes.string.isRequired,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Additional content to provide aligned to the right of the label. */
   aside: PropTypes.node,
   /** If true, label text adds (optional) alongside it. */
