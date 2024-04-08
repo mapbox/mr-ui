@@ -116,7 +116,7 @@ ControlRange.propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Accepts an array of numbers, where each number matches a draggable thumb. */
   value: PropTypes.array,
-  /** Value passed to the label element. */
+  /** Value passed to the label element. Value can be string or ReactNode. */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** If provided the text, "(optional)" is appended to the value of the label element. */
   optional: PropTypes.bool,

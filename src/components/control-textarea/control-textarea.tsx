@@ -114,7 +114,7 @@ ControlTextarea.propTypes = {
    * Passed two arguments: the new value, and the `id` prop.
    */
   onChange: PropTypes.func.isRequired,
-  /** Label for the control. */
+  /** Label for the control. Label can be string or ReactNode. */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** If `true`, autocorrect and spelling suggestions will be disabled. */
   noAuto: PropTypes.bool,

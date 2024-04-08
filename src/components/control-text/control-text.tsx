@@ -237,7 +237,7 @@ ControlText.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Type attribute to override the existing default of 'text' */
   type: PropTypes.string,
-  /** Label for the control. */
+  /** Label for the control. Label can be string or ReactNode. */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Enable/Disable browser enabled autocorrect or spelling suggestions from the element. */
   noAuto: PropTypes.bool,
