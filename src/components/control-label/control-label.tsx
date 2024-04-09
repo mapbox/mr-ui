@@ -32,7 +32,7 @@ export default function ControlLabel({
 ControlLabel.propTypes = {
   /** Value should match the identifying id of the input element. */
   id: PropTypes.string.isRequired,
-  /** Label text. Value can be string or ReactNode. */
+  /** Label text. Label can be string or ReactNode. */
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Additional content to provide aligned to the right of the label. */
   aside: PropTypes.node,
