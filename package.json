@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/mr-ui",
-  "version": "2.10.1",
+  "version": "2.10.2",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
   "homepage": "./",
@@ -34,7 +34,7 @@
     "react-dom": "^16.14.0 || ^18.2.0"
   },
   "dependencies": {
-    "@mapbox/mbx-assembly": "^1.5.0",
+    "@mapbox/mbx-assembly": "^1.6.0",
     "@mapbox/query-selector-contains-node": "^1.0.0",
     "@mapbox/react-submittable": "^3.0.1",
     "@radix-ui/react-accessible-icon": "^1.0.3",

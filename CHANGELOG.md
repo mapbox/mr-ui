@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.10.2
+- [feature] upgrade @mapbox/mbx-assembly to 1.6.0
+
 ## 2.10.0
 - [feature] upgrade to react 18 
 
