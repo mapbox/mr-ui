@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.10.3
+- [feature] support onOpenChange handler for contextMenu
+
 ## 2.10.2
 - [feature] upgrade @mapbox/mbx-assembly to 1.6.0
 
