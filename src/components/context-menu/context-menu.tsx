@@ -20,6 +20,7 @@ type Option = {
 interface Props {
   children: ReactNode;
   onChange: (value: string) => void;
+  onOpenChange?: (open: boolean) => void;
   options: Array<Options>;
   themeControlWrapper?: string;
   themeItem?: string;
@@ -30,6 +31,7 @@ interface Props {
 export default function ContextMenu({
   children,
   onChange,
+  onOpenChange,
   options,
   themeControlWrapper = 'bg-white round shadow-darken10 px6 py6 txt-s wmin240',
   themeItem = 'px6 py6 round color-blue-on-hover bg-darken5-on-hover',
@@ -93,7 +95,7 @@ export default function ContextMenu({
   }
 
   return (
-    <ContextMenuPrimitive.Root>
+    <ContextMenuPrimitive.Root onOpenChange={onOpenChange}>
       <ContextMenuPrimitive.Trigger asChild>
         {children}
       </ContextMenuPrimitive.Trigger>
@@ -143,6 +145,8 @@ ContextMenu.propTypes = {
    * - The value. A string matching the `value` field of one of the `options`
    */
   onChange: PropTypes.func.isRequired,
+  /** Event handler called when the open state of the context menu changes. */
+  onOpenChange: PropTypes.func,
   /** Assembly classes to apply to the menu container */
   themeControlWrapper: PropTypes.string,
   /** Assembly classes to apply to menu items */
