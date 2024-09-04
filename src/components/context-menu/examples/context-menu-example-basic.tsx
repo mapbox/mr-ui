@@ -8,6 +8,7 @@ export default function Example() {
   return (
     <ContextMenu
       onChange={(value => console.log('value is: ', value))}
+      onOpenChange={open => console.log('context menu open state', open)}
       options={[
         {
           options: [
