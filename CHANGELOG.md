@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.12.0
+- [feature] add possibility to pass onCopy to Copiable component
+
 ## 2.11.0
 - [feature] support onOpenChange handler for contextMenu
 
