@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.13.0
+- [feature] add prop exitOnUnderlayClicked to Modal component
+
 ## 2.12.0
 - [feature] add possibility to pass onCopy to Copiable component
 
