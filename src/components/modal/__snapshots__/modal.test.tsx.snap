@@ -23,14 +23,15 @@ exports[`Modal all options renders 1`] = `
   <div
     class="fixed top bottom left right bg-darken50"
     data-state="open"
+    data-testid="modal-overlay"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-:r13:"
-      aria-labelledby="radix-:r12:"
+      aria-describedby="radix-:r17:"
+      aria-labelledby="radix-:r16:"
       class="relative my120 wmax360 w-11/12 bg-white round"
       data-state="open"
-      id="radix-:r11:"
+      id="radix-:r15:"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -39,7 +40,7 @@ exports[`Modal all options renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:r12:"
+          id="radix-:r16:"
         >
           All options
         </h2>
@@ -120,6 +121,7 @@ exports[`Modal basic renders 1`] = `
     class="fixed top bottom left right bg-darken50"
     data-aria-hidden="true"
     data-state="open"
+    data-testid="modal-overlay"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
@@ -157,6 +159,7 @@ exports[`Modal basic renders 1`] = `
   <div
     class="fixed top bottom left right bg-darken50"
     data-state="open"
+    data-testid="modal-overlay"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
@@ -261,14 +264,15 @@ exports[`Modal basic, auto renders 1`] = `
   <div
     class="fixed top bottom left right bg-darken50"
     data-state="open"
+    data-testid="modal-overlay"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-:rr:"
-      aria-labelledby="radix-:rq:"
+      aria-describedby="radix-:rv:"
+      aria-labelledby="radix-:ru:"
       class="relative my12 my60-mm wmax-full bg-white round px36 py36"
       data-state="open"
-      id="radix-:rp:"
+      id="radix-:rt:"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -277,7 +281,7 @@ exports[`Modal basic, auto renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:rq:"
+          id="radix-:ru:"
         >
           Auto modal title
         </h2>
@@ -286,7 +290,7 @@ exports[`Modal basic, auto renders 1`] = `
         No fixed width on the modal container. But very tall.
       </div>
       <button
-        aria-describedby="radix-:rs:"
+        aria-describedby="radix-:r10:"
         aria-label="Close"
         class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
         data-state="instant-open"
@@ -350,7 +354,7 @@ exports[`Modal basic, auto renders 1`] = `
         </svg>
       </span>
       <span
-        id="radix-:rs:"
+        id="radix-:r10:"
         role="tooltip"
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
@@ -384,14 +388,15 @@ exports[`Modal basic, large renders 1`] = `
   <div
     class="fixed top bottom left right bg-darken50"
     data-state="open"
+    data-testid="modal-overlay"
     style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
   >
     <div
-      aria-describedby="radix-:rj:"
-      aria-labelledby="radix-:ri:"
+      aria-describedby="radix-:rn:"
+      aria-labelledby="radix-:rm:"
       class="relative my12 my60-mm wmax600 w-11/12 bg-white round px36 py36"
       data-state="open"
-      id="radix-:rh:"
+      id="radix-:rl:"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -400,7 +405,7 @@ exports[`Modal basic, large renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:ri:"
+          id="radix-:rm:"
         >
           Large modal title
         </h2>

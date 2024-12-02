@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from './modal';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 
 describe('Modal', () => {
   describe('basic', () => {
@@ -16,6 +16,10 @@ describe('Modal', () => {
       }
     } as const;
 
+    afterEach(() => {
+      cleanup();
+    });
+
     test('renders', () => {
       const { baseElement } = render(<Modal {...props} />);
       expect(baseElement).toMatchSnapshot();
@@ -27,6 +31,12 @@ describe('Modal', () => {
       expect(mockedOnExit).toHaveBeenCalledTimes(1);
     });
 
+    test('does not fire onExit when underlay is clicked if exitOnUnderlayClicked is false', () => {
+      render(<Modal {...props} exitOnUnderlayClicked={false}/>);
+      fireEvent.click(screen.getByTestId('modal-overlay'));
+      expect(mockedOnExit).toHaveBeenCalledTimes(0);
+    });
+
     test('allowEventBubbling disables event trapping', () => {
       const props = {
         children: 'content',
@@ -34,7 +44,7 @@ describe('Modal', () => {
       };
       const { rerender } = render(<Modal {...props} />);
       expect(screen.getByTestId('event-trap')).toBeInTheDocument();
-      rerender(<Modal {...props } allowEventBubbling={true} />);
+      rerender(<Modal {...props} allowEventBubbling={true} />);
       expect(screen.queryByTestId('event-trap')).not.toBeInTheDocument();
     });
   });
