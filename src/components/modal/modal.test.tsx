@@ -35,6 +35,8 @@ describe('Modal', () => {
       render(<Modal {...props} exitOnUnderlayClicked={false}/>);
       fireEvent.click(screen.getByTestId('modal-overlay'));
       expect(mockedOnExit).toHaveBeenCalledTimes(0);
+      fireEvent.click(screen.getByTestId('modal-close'));
+      expect(mockedOnExit).toHaveBeenCalledTimes(1);
     });
 
     test('allowEventBubbling disables event trapping', () => {
