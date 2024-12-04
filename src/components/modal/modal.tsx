@@ -14,6 +14,7 @@ interface Props {
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
   margin?: 'large' | 'default';
+  zIndex?: number;
   onExit?: () => void;
   exitOnUnderlayClicked?: boolean;
   allowEventBubbling?: boolean;
@@ -53,6 +54,7 @@ export default function Modal({
   size = 'large',
   padding = 'large',
   margin = 'default',
+  zIndex = 0,
   allowEventBubbling = false,
   exitOnUnderlayClicked = true,
   initialFocus,
@@ -98,7 +100,8 @@ export default function Modal({
     style: {
       display: 'grid',
       overflowY: 'auto',
-      placeItems: 'start center'
+      placeItems: 'start center',
+      zIndex
     },
     'data-testid': 'modal-overlay'
   };
@@ -216,6 +219,10 @@ Modal.propTypes = {
    * `'large'` to compensate for a fixed top header or `'default'` to be closer to the top of the viewport.
    */
   margin: PropTypes.oneOf(['large', 'default']),
+  /**
+   * z-index of the modal
+   */
+  zIndex: PropTypes.number,
   /**
    * The modal's primary action. If this is provided, an encouraging
    * button will be rendered at the bottom of the modal.
