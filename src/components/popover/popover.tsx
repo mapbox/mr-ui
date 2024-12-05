@@ -13,6 +13,7 @@ interface Props {
   coloring?: 'light' | 'dark' | 'warning' | 'error';
   placement?: 'top' | 'bottom' | 'left' | 'right';
   alignment?: 'center' | 'start' | 'end';
+  zIndex?: number | string;
   hasPointer?: boolean;
   offsetFromAnchor?: number;
   passthroughProps?: {
@@ -24,7 +25,7 @@ interface Props {
   escapeCloses?: boolean;
   hideWhenAnchorIsOffscreen?: boolean;
   allowPlacementAxisChange?: boolean;
-};
+}
 
 /**
  * Display a popover. The popover is positioned relative to an anchor element
@@ -36,6 +37,7 @@ export default function Popover({
   padding = 'medium',
   active = false,
   hasPointer = true,
+  zIndex = 'auto',
   hideWhenAnchorIsOffscreen = false,
   allowPlacementAxisChange = true,
   clickOutsideCloses = true,
@@ -59,16 +61,19 @@ export default function Popover({
     }
   );
 
+  const bodyStyle = {
+    zIndex
+  };
+
   const getContent = () => {
     if (typeof content === 'function') {
       return content();
     }
 
     return content;
-  }
+  };
 
   const onDown = (e: Event) => {
-
     // Don't call onExit if it wasn't provided.
     if (!onExit) {
       return;
@@ -87,19 +92,18 @@ export default function Popover({
     }
 
     onExit();
-  }
+  };
 
   return (
     <PopoverPrimitive.Root open={active}>
       <span ref={triggerRef} style={{ display: 'contents' }}>
-        <PopoverPrimitive.Trigger asChild>
-          {children}
-        </PopoverPrimitive.Trigger>
+        <PopoverPrimitive.Trigger asChild>{children}</PopoverPrimitive.Trigger>
       </span>
       <PopoverPrimitive.Portal>
         <PopoverPrimitive.Content
-          sideOffset={offsetFromAnchor} 
+          sideOffset={offsetFromAnchor}
           className={bodyClasses}
+          style={bodyStyle}
           onEscapeKeyDown={escapeCloses && onExit}
           onPointerDownOutside={clickOutsideCloses && onDown}
           onOpenAutoFocus={getInitialFocus}
@@ -111,7 +115,14 @@ export default function Popover({
           {...passthroughProps}
         >
           {getContent()}
-          {hasPointer && <PopoverPrimitive.Arrow width={12} height={6} offset={6} fill={fill} />}
+          {hasPointer && (
+            <PopoverPrimitive.Arrow
+              width={12}
+              height={6}
+              offset={6}
+              fill={fill}
+            />
+          )}
         </PopoverPrimitive.Content>
       </PopoverPrimitive.Portal>
     </PopoverPrimitive.Root>
@@ -148,7 +159,11 @@ Popover.propTypes = {
   /**
    * `'medium'`, `'small'`, or `'none'`.
    */
-  padding: PropTypes.oneOf(['medium', 'small', 'none']),
+  padding: PropTypes.oneOf(['medium', 'small', 'none'])
+  /**
+   * z-index of the popover.
+   */,
+  zIndex: PropTypes.number || PropTypes.string,
   /**
    * Whether or not the popover has a triangle pointer.
    */
@@ -195,5 +210,5 @@ Popover.propTypes = {
   /**
    * Props to pass directly to popover content options from `@radix-ui/react-popover`.
    */
-  passthroughProps: PropTypes.object,
+  passthroughProps: PropTypes.object
 };
