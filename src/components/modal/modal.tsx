@@ -222,7 +222,7 @@ Modal.propTypes = {
   /**
    * z-index of the modal
    */
-  zIndex: PropTypes.number || PropTypes.string,
+  zIndex: PropTypes.number,
   /**
    * The modal's primary action. If this is provided, an encouraging
    * button will be rendered at the bottom of the modal.

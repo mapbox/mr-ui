@@ -159,11 +159,11 @@ Popover.propTypes = {
   /**
    * `'medium'`, `'small'`, or `'none'`.
    */
-  padding: PropTypes.oneOf(['medium', 'small', 'none'])
+  padding: PropTypes.oneOf(['medium', 'small', 'none']),
   /**
    * z-index of the popover.
-   */,
-  zIndex: PropTypes.number || PropTypes.string,
+   */
+  zIndex: PropTypes.number,
   /**
    * Whether or not the popover has a triangle pointer.
    */
