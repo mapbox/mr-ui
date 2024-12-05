@@ -1,19 +1,33 @@
 ## Changelog
 
+## 2.15.0
+
+- [feature] support configuring z-index for Popover component
+- [fix] change default z-index value of Modal component to auto
+
+## 2.14.0
+
+- [feature] support configuring z-index for Modal component
+
 ## 2.13.0
+
 - [feature] add prop exitOnUnderlayClicked to Modal component
 
 ## 2.12.0
+
 - [feature] add possibility to pass onCopy to Copiable component
 
 ## 2.11.0
+
 - [feature] support onOpenChange handler for contextMenu
 
 ## 2.10.2
+
 - [feature] upgrade @mapbox/mbx-assembly to 1.6.0
 
 ## 2.10.0
-- [feature] upgrade to react 18 
+
+- [feature] upgrade to react 18
 
 ## 2.9.0
 

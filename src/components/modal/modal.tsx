@@ -14,7 +14,7 @@ interface Props {
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
   margin?: 'large' | 'default';
-  zIndex?: number;
+  zIndex?: number | string;
   onExit?: () => void;
   exitOnUnderlayClicked?: boolean;
   allowEventBubbling?: boolean;
@@ -54,7 +54,7 @@ export default function Modal({
   size = 'large',
   padding = 'large',
   margin = 'default',
-  zIndex = 0,
+  zIndex = 'auto',
   allowEventBubbling = false,
   exitOnUnderlayClicked = true,
   initialFocus,
