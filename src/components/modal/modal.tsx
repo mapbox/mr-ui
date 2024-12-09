@@ -100,7 +100,7 @@ export default function Modal({
     style: CSSProperties;
     'data-testid': string;
   } = {
-    className: `${themeOverlay} fixed top bottom left right bg-darken50`,
+    className: `fixed top bottom left right bg-darken50 ${themeOverlay}`,
     style: {
       display: 'grid',
       overflowY: 'auto',
@@ -126,7 +126,7 @@ export default function Modal({
     onOpenAutoFocus?: (e) => void;
   } = {
     className: classnames(
-      `${themeContent} relative ${marginClass} ${widthClass} bg-white round`,
+      `relative ${marginClass} ${widthClass} bg-white round ${themeContent}`,
       { 'px36 py36': padding === 'large' }
     )
   };
