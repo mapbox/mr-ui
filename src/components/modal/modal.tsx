@@ -228,11 +228,13 @@ Modal.propTypes = {
    */
   zIndex: PropTypes.number,
   /**
-   * CSS classes to apply to the overlay. This is the dark background that covers the rest of the page.
+   * Additional CSS classes to apply to the overlay,
+   * along with existing classes `fixed top bottom left right bg-darken50`
    */
   themeOverlay: PropTypes.string,
   /**
-   * CSS classes to apply to the content. This is the white box that contains the modal content.
+   * Additional CSS classes to apply to the content,
+   * along with existing classes `relative bg-white round`
    */
   themeContent: PropTypes.string,
   /**
