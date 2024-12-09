@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.16.0
+
+- [feature] Support adding classes to Modal overlay and content
+
 ## 2.15.0
 
 - [feature] support configuring z-index for Popover component
