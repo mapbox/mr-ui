@@ -15,6 +15,8 @@ interface Props {
   padding?: 'large' | 'none';
   margin?: 'large' | 'default';
   zIndex?: number | string;
+  themeOverlay?: string;
+  themeContent?: string;
   onExit?: () => void;
   exitOnUnderlayClicked?: boolean;
   allowEventBubbling?: boolean;
@@ -61,6 +63,8 @@ export default function Modal({
   primaryAction,
   secondaryAction,
   tertiaryAction,
+  themeOverlay = '',
+  themeContent = '',
   onExit
 }: Props): ReactElement {
   const renderActions = (): ReactElement => {
@@ -96,7 +100,7 @@ export default function Modal({
     style: CSSProperties;
     'data-testid': string;
   } = {
-    className: 'fixed top bottom left right bg-darken50',
+    className: `${themeOverlay} fixed top bottom left right bg-darken50`,
     style: {
       display: 'grid',
       overflowY: 'auto',
@@ -122,7 +126,7 @@ export default function Modal({
     onOpenAutoFocus?: (e) => void;
   } = {
     className: classnames(
-      `relative ${marginClass} ${widthClass} bg-white round`,
+      `${themeContent} relative ${marginClass} ${widthClass} bg-white round`,
       { 'px36 py36': padding === 'large' }
     )
   };
@@ -223,6 +227,14 @@ Modal.propTypes = {
    * z-index of the modal
    */
   zIndex: PropTypes.number,
+  /**
+   * CSS classes to apply to the overlay. This is the dark background that covers the rest of the page.
+   */
+  themeOverlay: PropTypes.string,
+  /**
+   * CSS classes to apply to the content. This is the white box that contains the modal content.
+   */
+  themeContent: PropTypes.string,
   /**
    * The modal's primary action. If this is provided, an encouraging
    * button will be rendered at the bottom of the modal.
