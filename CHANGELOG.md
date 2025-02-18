@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.17.0
+
+- [feature] Add a new component `Drawer`
+
 ## 2.16.0
 
 - [feature] Support adding classes to Modal overlay and content
