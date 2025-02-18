@@ -2,6 +2,7 @@ import React, { ReactElement, CSSProperties } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import EventTrap from '../modal/event-trap';
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
   allowEventBubbling?: boolean;
   themeOverlay?: string;
   themeContent?: string;
+  accessibleTitle?: string;
   onExit?: () => void;
 }
 
@@ -29,6 +31,7 @@ export default function Drawer({
   allowEventBubbling = false,
   themeOverlay = '',
   themeContent = '',
+  accessibleTitle = 'drawer',
   onExit
 }: Props): ReactElement {
   const overlayProps: {
@@ -73,6 +76,9 @@ export default function Drawer({
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay {...overlayProps}>
           <DialogPrimitive.Content {...contentProps}>
+            <VisuallyHidden.Root>
+              <DialogPrimitive.Title>{accessibleTitle}</DialogPrimitive.Title>
+            </VisuallyHidden.Root>
             {children}
           </DialogPrimitive.Content>
         </DialogPrimitive.Overlay>

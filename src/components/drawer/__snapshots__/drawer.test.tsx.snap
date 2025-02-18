@@ -36,6 +36,15 @@ exports[`Drawer basic renders 1`] = `
       style="pointer-events: auto;"
       tabindex="-1"
     >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-:r1:"
+        >
+          drawer
+        </h2>
+      </span>
       <div>
         Drawer body
       </div>
@@ -87,6 +96,15 @@ exports[`Drawer basic, left renders 1`] = `
       style="pointer-events: auto;"
       tabindex="-1"
     >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-:r7:"
+        >
+          drawer
+        </h2>
+      </span>
       <div>
         Drawer body
       </div>
@@ -138,6 +156,15 @@ exports[`Drawer basic, right renders 1`] = `
       style="pointer-events: auto;"
       tabindex="-1"
     >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-:rd:"
+        >
+          drawer
+        </h2>
+      </span>
       <div>
         Drawer body
       </div>
