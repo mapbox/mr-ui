@@ -1,4 +1,4 @@
-import React, { ReactElement, CSSProperties } from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
@@ -7,7 +7,6 @@ import EventTrap from '../modal/event-trap';
 
 interface Props {
   children: ReactElement;
-  zIndex?: number | string;
   side?: 'left' | 'right';
   allowEventBubbling?: boolean;
   themeOverlay?: string;
@@ -26,7 +25,6 @@ interface Props {
 
 export default function Drawer({
   children,
-  zIndex = 'auto',
   side = 'left',
   allowEventBubbling = false,
   themeOverlay = '',
@@ -36,14 +34,12 @@ export default function Drawer({
 }: Props): ReactElement {
   const overlayProps: {
     className: string;
-    style: CSSProperties;
     'data-testid': string;
   } = {
-    className: `fixed top bottom left right bg-darken50 ${themeOverlay}`,
-    'data-testid': 'drawer-overlay',
-    style: {
-      zIndex
-    }
+    className: classnames(`fixed top bottom left right ${themeOverlay}`, {
+      'bg-darken50': !themeOverlay?.includes('bg-')
+    }),
+    'data-testid': 'drawer-overlay'
   };
 
   const rootProps: {
@@ -59,8 +55,8 @@ export default function Drawer({
     className: classnames(
       `overflow-auto scroll-styled fixed top bottom ${themeContent}`,
       {
-        'left round-tr round-br': side === 'left',
-        'right round-tl round-bl': side === 'right',
+        left: side === 'left',
+        right: side === 'right',
         // Default background color
         'bg-white': !themeContent?.includes('bg-')
       }
@@ -98,10 +94,6 @@ Drawer.propTypes = {
    * The content of the drawer
    */
   children: PropTypes.node.isRequired,
-  /**
-   * The z-index of the drawer
-   */
-  zIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /**
    * The side of the drawer. Could be `left` or `right`
    */

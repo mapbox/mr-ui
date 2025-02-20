@@ -21,15 +21,15 @@ exports[`Drawer basic renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right  bg-darken50"
     data-state="open"
     data-testid="drawer-overlay"
-    style="pointer-events: auto; z-index: auto;"
+    style="pointer-events: auto;"
   >
     <div
       aria-describedby="radix-:r2:"
       aria-labelledby="radix-:r1:"
-      class="overflow-auto scroll-styled fixed top bottom  left round-tr round-br bg-white"
+      class="overflow-auto scroll-styled fixed top bottom  left bg-white"
       data-state="open"
       id="radix-:r0:"
       role="dialog"
@@ -81,15 +81,15 @@ exports[`Drawer basic, left renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right  bg-darken50"
     data-state="open"
     data-testid="drawer-overlay"
-    style="pointer-events: auto; z-index: auto;"
+    style="pointer-events: auto;"
   >
     <div
       aria-describedby="radix-:r8:"
       aria-labelledby="radix-:r7:"
-      class="overflow-auto scroll-styled fixed top bottom  left round-tr round-br bg-white"
+      class="overflow-auto scroll-styled fixed top bottom  left bg-white"
       data-state="open"
       id="radix-:r6:"
       role="dialog"
@@ -141,15 +141,15 @@ exports[`Drawer basic, right renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right  bg-darken50"
     data-state="open"
     data-testid="drawer-overlay"
-    style="pointer-events: auto; z-index: auto;"
+    style="pointer-events: auto;"
   >
     <div
       aria-describedby="radix-:re:"
       aria-labelledby="radix-:rd:"
-      class="overflow-auto scroll-styled fixed top bottom  right round-tl round-bl bg-white"
+      class="overflow-auto scroll-styled fixed top bottom  right bg-white"
       data-state="open"
       id="radix-:rc:"
       role="dialog"
