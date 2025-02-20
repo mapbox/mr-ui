@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer basic renders 1`] = `
+<body
+  data-scroll-locked="1"
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    class="fixed top bottom left right  bg-darken50"
+    data-state="open"
+    data-testid="drawer-overlay"
+    style="pointer-events: auto;"
+  >
+    <div
+      aria-describedby="radix-:r2:"
+      aria-labelledby="radix-:r1:"
+      class="overflow-auto scroll-styled fixed top bottom  left bg-white"
+      data-state="open"
+      id="radix-:r0:"
+      role="dialog"
+      style="pointer-events: auto;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-:r1:"
+        >
+          drawer
+        </h2>
+      </span>
+      <div>
+        Drawer body
+      </div>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`Drawer basic, left renders 1`] = `
+<body
+  data-scroll-locked="1"
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    class="fixed top bottom left right  bg-darken50"
+    data-state="open"
+    data-testid="drawer-overlay"
+    style="pointer-events: auto;"
+  >
+    <div
+      aria-describedby="radix-:r8:"
+      aria-labelledby="radix-:r7:"
+      class="overflow-auto scroll-styled fixed top bottom  left bg-white"
+      data-state="open"
+      id="radix-:r6:"
+      role="dialog"
+      style="pointer-events: auto;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-:r7:"
+        >
+          drawer
+        </h2>
+      </span>
+      <div>
+        Drawer body
+      </div>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`Drawer basic, right renders 1`] = `
+<body
+  data-scroll-locked="1"
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      data-testid="event-trap"
+    />
+  </div>
+  <div
+    class="fixed top bottom left right  bg-darken50"
+    data-state="open"
+    data-testid="drawer-overlay"
+    style="pointer-events: auto;"
+  >
+    <div
+      aria-describedby="radix-:re:"
+      aria-labelledby="radix-:rd:"
+      class="overflow-auto scroll-styled fixed top bottom  right bg-white"
+      data-state="open"
+      id="radix-:rc:"
+      role="dialog"
+      style="pointer-events: auto;"
+      tabindex="-1"
+    >
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        <h2
+          id="radix-:rd:"
+        >
+          drawer
+        </h2>
+      </span>
+      <div>
+        Drawer body
+      </div>
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
