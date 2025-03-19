@@ -152,13 +152,13 @@ export default function Form({
     nextControlValues[controlName] = controlValue;
     if (formState.current !== formStates.preSubmission) {
       checkValidation(formStates.preSubmission).then(() => {
+        if (onChange) onChange(nextControlValues);
         setControlValues(nextControlValues);
       });
     } else {
+      if (onChange) onChange(nextControlValues);
       setControlValues(nextControlValues);
     }
-
-    if (onChange) onChange(nextControlValues);
   };
 
   const getControlProps = (controlName: string) => {
@@ -183,12 +183,15 @@ export default function Form({
   const submitForm = () => {
     // Promise.resolve because if handleFormData is a promise,
     // we want to handle loading and error states.
-    Promise.resolve(handleFormData(controlValues))
+    const nextControlValues = { ...controlValues };
+    Promise.resolve(handleFormData(nextControlValues))
       .then(() => {
         if (!mounted.current) return;
         if (formState.current === formStates.pendingSubmission) {
           formState.current = formStates.completeSubmission;
         }
+
+        setControlValues(nextControlValues);
       })
       .catch((err) => {
         if (!mounted.current) return;

@@ -218,37 +218,41 @@ const formConfig = {
   }
 };
 
+const basicFormConfig = {
+  firstName: {
+    label: 'First name',
+    placeholder: 'Enter your first name',
+    validator: validateRequired('first name')
+  },
+  lastName: {
+    label: 'Last name',
+    placeholder: 'Enter your last name'
+  }
+};
+
+const basicFormRender = (getControlProps, onSubmit) => {
+  return (
+    <>
+      <div>
+        <ControlText {...getControlProps('firstName')} />
+      </div>
+      <div>
+        <ControlText {...getControlProps('lastName')} />
+      </div>
+      <div className="mt6">
+        <FormSubmit onSubmit={onSubmit} />
+      </div>
+    </>
+  )
+};
+
 describe('Form', () => {
   describe('basic', () => {
     const formDataMock = jest.fn();
     const props = {
-      config: {
-        firstName: {
-          label: 'First name',
-          placeholder: 'Enter your first name',
-          validator: validateRequired('first name')
-        },
-        lastName: {
-          label: 'Last name',
-          placeholder: 'Enter your last name'
-        }
-      },
+      config: basicFormConfig,
       handleFormData: formDataMock,
-      renderForm(getControlProps, onSubmit) {
-        return (
-          <>
-            <div>
-              <ControlText {...getControlProps('firstName')} />
-            </div>
-            <div>
-              <ControlText {...getControlProps('lastName')} />
-            </div>
-            <div className="mt6">
-              <FormSubmit onSubmit={onSubmit} />
-            </div>
-          </>
-        );
-      }
+      renderForm: basicFormRender,
     };
 
     test('renders as expected', () => {
@@ -287,19 +291,51 @@ describe('Form', () => {
     });
   });
 
+  describe('handleFormData', () => {
+    test('on submit handleFormData is called and state changes are set', async () => {
+      const customProps = {
+        config: basicFormConfig,
+        renderForm: basicFormRender,
+        handleFormData: jest.fn().mockImplementation(values => {
+          values.firstName = values.firstName.toUpperCase();
+          return Promise.resolve();
+        }),
+      };
+
+      render(<Form {...customProps} />);
+
+      await userEvent.type(screen.getByTestId('firstName-input'), 'f');
+      await userEvent.type(screen.getByTestId('lastName-input'), 'l');
+
+      fireEvent.click(screen.getByTestId('form-submit-handler'));
+
+      await waitFor(() => expect(customProps.handleFormData).toHaveBeenCalledTimes(1));
+      expect(customProps.handleFormData).toHaveBeenCalledWith({
+        firstName: 'F', // This is upper case since the handleFormData function changes it and the object is passed by reference.
+        lastName: 'l',
+      });
+
+      expect(screen.getByTestId('firstName-input')).toHaveValue('F');
+    });
+  });
+
   describe('onChange', () => {
-    const mockOnChange = jest.fn();
-    
-    const props = {
-      config: {
-        description: {}
-      },
-      renderForm(getControlProps) {
-        return <ControlTextarea {...getControlProps('description')} />;
-      },
-      handleFormData: onSuccess,
-      onChange: mockOnChange
-    };
+    let mockOnChange;
+    let props;
+
+    beforeEach(() => {
+      mockOnChange = jest.fn();
+      props = {
+        config: {
+          description: {}
+        },
+        renderForm(getControlProps) {
+          return <ControlTextarea {...getControlProps('description')} />;
+        },
+        handleFormData: onSuccess,
+        onChange: mockOnChange
+      };
+    });
 
     test('onChange is called', async () => {
       render(<Form {...props} />)
@@ -313,6 +349,23 @@ describe('Form', () => {
         expect(mockOnChange).toHaveBeenCalledWith({
           description: 'f'
         });
+      });
+    });
+
+    test('when onChange updates values in the form the form is updated', async () => {
+      const customerProps = {
+        ...props,
+        onChange: (values) => {
+          values.description = values.description.toUpperCase();
+        }
+      };
+
+      render(<Form {...customerProps} />);
+
+      await userEvent.type(screen.getByTestId('description-textarea'), 'f');
+
+      await waitFor(() => {
+        expect(screen.getByTestId('description-textarea')).toHaveValue('F');
       });
     });
   });
@@ -355,5 +408,4 @@ describe('Form', () => {
       });
     });
   });
-
 });
