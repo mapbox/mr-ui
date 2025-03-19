@@ -147,18 +147,18 @@ export default function Form({
     formState.current = nextFormState;
   }
 
-  const onControlChange = (controlValue, controlName: string) => {
+  const onControlChange = async (controlValue, controlName: string) => {
     const nextControlValues = { ...controlValues };
     nextControlValues[controlName] = controlValue;
     if (formState.current !== formStates.preSubmission) {
-      checkValidation(formStates.preSubmission).then(() => {
-        if (onChange) onChange(nextControlValues);
-        setControlValues(nextControlValues);
-      });
-    } else {
-      if (onChange) onChange(nextControlValues);
-      setControlValues(nextControlValues);
+      await checkValidation(formStates.preSubmission);
     }
+
+    if (onChange) {
+      onChange(nextControlValues);
+    }
+
+    setControlValues(nextControlValues);
   };
 
   const getControlProps = (controlName: string) => {
