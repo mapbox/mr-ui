@@ -1,6 +1,6 @@
 ## Changelog
 
-## 3.0.0
+## 2.18.0
 - [feature] Allow form `onChange` and `handleFormData` functions to change the forms control values in-place.
 
 ## 2.17.0
