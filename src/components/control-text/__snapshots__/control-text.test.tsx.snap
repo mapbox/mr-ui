@@ -96,7 +96,7 @@ exports[`ControlText all options renders as expected 1`] = `
   </div>
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content; z-index: auto;"
   >
     <div
       class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py6 border border-1 border--border--gray-dark"
@@ -105,7 +105,7 @@ exports[`ControlText all options renders as expected 1`] = `
       data-state="open"
       id="radix-:r5:"
       role="dialog"
-      style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height); animation: none;"
+      style="z-index: auto; --radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height); animation: none;"
       tabindex="-1"
     >
       oh no!
