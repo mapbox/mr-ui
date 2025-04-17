@@ -1,7 +1,7 @@
 ## Changelog
 
 ## 2.18.0
-- [fix] fix clickOutsideCloses property in Popover component
+- [fix] Fixes clickOutsideCloses property in Popover component
 
 ## 2.17.0
 
