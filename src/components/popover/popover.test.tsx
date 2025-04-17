@@ -6,11 +6,13 @@ import userEvent from '@testing-library/user-event';
 const PopoverTest = (props) => {
   const [active, setActive] = useState(false);
   return (
-    <Popover active={active} {...props}>
-      <button data-testid="trigger" onClick={() => setActive(true)}>trigger</button>
+    <Popover onExit={() => setActive(false)} active={active} {...props}>
+      <button data-testid="trigger" onClick={() => setActive(!active)}>
+        trigger
+      </button>
     </Popover>
-  )
-}
+  );
+};
 
 describe('Popover', () => {
   const props = {
@@ -21,7 +23,7 @@ describe('Popover', () => {
     test('renders', async () => {
       const user = userEvent.setup();
       const { baseElement } = render(<PopoverTest {...props} />);
-      await user.click(screen.getByTestId("trigger"));
+      await user.click(screen.getByTestId('trigger'));
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
@@ -31,7 +33,7 @@ describe('Popover', () => {
 
   describe('dark', () => {
     function renderContent() {
-      return 'Content is rendered'
+      return 'Content is rendered';
     }
 
     const props = {
@@ -42,7 +44,7 @@ describe('Popover', () => {
     test('renders', async () => {
       const user = userEvent.setup();
       const { baseElement } = render(<PopoverTest {...props} />);
-      await user.click(screen.getByTestId("trigger"));
+      await user.click(screen.getByTestId('trigger'));
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
@@ -59,7 +61,7 @@ describe('Popover', () => {
     test('renders', async () => {
       const user = userEvent.setup();
       const { baseElement } = render(<PopoverTest {...props} />);
-      await user.click(screen.getByTestId("trigger"));
+      await user.click(screen.getByTestId('trigger'));
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
@@ -76,11 +78,59 @@ describe('Popover', () => {
     test('renders', async () => {
       const user = userEvent.setup();
       const { baseElement } = render(<PopoverTest {...props} />);
-      await user.click(screen.getByTestId("trigger"));
+      await user.click(screen.getByTestId('trigger'));
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
       expect(baseElement).toMatchSnapshot();
+    });
+  });
+
+  describe('clickOutsideCloses', () => {
+    test('does not close when clickOutsideCloses is false and user clicks somewhere else', async () => {
+      const props = {
+        clickOutsideCloses: false
+      };
+
+      const user = userEvent.setup();
+      render(
+        <div>
+          <button data-testid="other">Click me</button>
+          <PopoverTest {...props} />
+        </div>
+      );
+      await user.click(screen.getByTestId('trigger'));
+      await waitFor(() => {
+        expect(screen.getByRole('dialog')).toBeInTheDocument();
+      });
+
+      await user.click(screen.getByTestId('other'));
+      await waitFor(() => {
+        expect(screen.getByRole('dialog')).toBeInTheDocument();
+      });
+    });
+
+    test('closes when clickOutsideCloses is true and user clicks somewhere else', async () => {
+      const props = {
+        clickOutsideCloses: true
+      };
+
+      const user = userEvent.setup();
+      render(
+        <div>
+          <button data-testid="other">Click me</button>
+          <PopoverTest {...props} />
+        </div>
+      );
+      await user.click(screen.getByTestId('trigger'));
+      await waitFor(() => {
+        expect(screen.getByRole('dialog')).toBeInTheDocument();
+      });
+
+      await user.click(screen.getByTestId('other'));
+      await waitFor(() => {
+        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      });
     });
   });
 
@@ -109,7 +159,7 @@ describe('Popover', () => {
     test('renders', async () => {
       const user = userEvent.setup();
       const { baseElement } = render(<PopoverTest {...props} />);
-      await user.click(screen.getByTestId("trigger"));
+      await user.click(screen.getByTestId('trigger'));
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });

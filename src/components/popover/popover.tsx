@@ -74,6 +74,9 @@ export default function Popover({
   };
 
   const onDown = (e: Event) => {
+    if (!clickOutsideCloses) {
+      return;
+    }
     // Don't call onExit if it wasn't provided.
     if (!onExit) {
       return;
@@ -105,7 +108,7 @@ export default function Popover({
           className={bodyClasses}
           style={bodyStyle}
           onEscapeKeyDown={escapeCloses && onExit}
-          onPointerDownOutside={clickOutsideCloses && onDown}
+          onPointerDownOutside={onDown}
           onOpenAutoFocus={getInitialFocus}
           align={alignment}
           side={placement}

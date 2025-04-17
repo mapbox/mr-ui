@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.17.1
+- [fix] Fixes clickOutsideCloses property in Popover component
+
 ## 2.17.0
 
 - [feature] Add a new component `Drawer`
