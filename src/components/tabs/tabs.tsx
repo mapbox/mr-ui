@@ -20,6 +20,7 @@ interface Props {
   activeColor?: string;
   hoverColor?: string,
   bold?: boolean,
+  fitHeight?: boolean,
   themeTabsContainer?: string,
 }
 
@@ -33,16 +34,25 @@ export default function Tabs({
   items,
   active,
   onChange,
+  fitHeight = true,
   themeTabsContainer = ""
 }: Props): ReactElement {
   const small = size === SIZE_SMALL;
   const medium = size === SIZE_MEDIUM;
+
+  const rootContainerClasses = classnames({
+    'h-full flex flex--column': fitHeight,
+  })
 
   const containerClasses = classnames(`flex txt-nowrap unselectable ${themeTabsContainer}`, {
     'txt-bold': bold,
     'txt-s': medium,
     'txt-xs': small,
   });
+
+  const tabContentClasses = classnames({
+    'overflow-auto': fitHeight,
+  })
 
   const itemEls = items.map((item, index) => {
     const first = index === 0;
@@ -69,14 +79,14 @@ export default function Tabs({
 
   const tabContents = items.map((item) => {
     return (
-      <RadixTabs.TabsContent value={item.id} key={item.id}>
+      <RadixTabs.TabsContent value={item.id} key={item.id} className={tabContentClasses}>
         {item.content}
       </RadixTabs.TabsContent>
     );
   });
 
   return (
-    <RadixTabs.Root onValueChange={onChange} value={active}>
+    <RadixTabs.Root onValueChange={onChange} value={active} className={rootContainerClasses}>
       <div className={containerClasses} data-testid="tabs-wrapper">
         <RadixTabs.List>
           {itemEls}
@@ -134,6 +144,8 @@ Tabs.propTypes = {
   hoverColor: PropTypes.string,
   /** Whether or not the text is bold. */
   bold: PropTypes.bool,
+  /** If `true`, this element will fit the height of the parent and add a scroll bar to the tab content if it exceeds the height of the parent */
+  fitHeight: PropTypes.bool,
   /** Css classes for wrapping the tabs */
   themeTabsContainer: PropTypes.string
 };
