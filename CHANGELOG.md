@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.18.0
+- [feature] Add a `fitHeight` prop for Tab component
+
 ## 2.17.1
 - [fix] Fixes clickOutsideCloses property in Popover component
 

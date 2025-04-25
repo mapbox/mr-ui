@@ -24,6 +24,7 @@ const items = [
         <li>Stake</li>
         <li>Fries</li>
         <li>Tomatoes</li>
+        <li>Potatoes</li>
       </ul>
     )
   },
