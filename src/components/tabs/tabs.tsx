@@ -51,7 +51,7 @@ export default function Tabs({
   });
 
   const tabContentClasses = classnames({
-    'overflow-auto': fitHeight,
+    'overflow-auto flex-child-grow': fitHeight,
   })
 
   const itemEls = items.map((item, index) => {
