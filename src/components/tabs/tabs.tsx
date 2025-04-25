@@ -34,7 +34,7 @@ export default function Tabs({
   items,
   active,
   onChange,
-  fitHeight = true,
+  fitHeight = false,
   themeTabsContainer = ""
 }: Props): ReactElement {
   const small = size === SIZE_SMALL;
