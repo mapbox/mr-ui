@@ -31,7 +31,7 @@ export default function Example(): ReactElement {
         active={active}
         onChange={(id: string) => setActive(id)}
         size="small"
-        themeTabsContainer={'border--gray-light w300 flex flex--end-main'}
+        themeTabsContainer={'border-b border--gray-light w300 flex flex--end-main'}
       />
     </div>
   );

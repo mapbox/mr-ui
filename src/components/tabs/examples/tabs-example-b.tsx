@@ -37,7 +37,7 @@ const items = [
         <li>Chicken</li>
       </ul>
     )
-  },
+  }
 ];
 
 export default function Example(): ReactElement {
@@ -46,12 +46,12 @@ export default function Example(): ReactElement {
   return (
     <div>
       <Tabs
-      items={items}
-      active={active}
-      onChange={(id: string) => setActive(id)}
-      themeTabItem='color-gray color-gray-dark-on-active color-blue-on-hover txt-bold txt-s'
-      themeTabsContainer={"mb12 border-b border--gray-light"}
-    />
+        items={items}
+        active={active}
+        onChange={(id: string) => setActive(id)}
+        themeTabItem="color-gray color-gray-dark-on-active color-blue-on-hover txt-bold txt-s"
+        themeTabsContainer={'mb12 border-b border--gray-light'}
+      />
     </div>
   );
 }

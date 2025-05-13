@@ -33,10 +33,7 @@ export default function Tabs({
 }: Props): ReactElement {
   const small = size === SIZE_SMALL;
   const containerClasses = classnames(
-    `flex txt-nowrap unselectable ${themeTabsContainer}`,
-    {
-      'border-b': tabBorder
-    }
+    `flex txt-nowrap unselectable ${themeTabsContainer}`
   );
 
   const itemEls = items.map((item, index) => {
@@ -127,9 +124,9 @@ Tabs.propTypes = {
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
-   * If `true`, there will be a bottom border on the tabs and the active tab will
-   * have an extra bottom border. You can use themeTabsContainer
-   * to set a color for the border
+   * If `true`, there will be a bottom border on the active tab border. 
+   * The element will extend down one pixel so the underline beneath the active item overlaps the bottom border of a container.
+   * You must provide your own bottom border, by setting it on a container element or in the themeTabsContainer.
    */
   tabBorder: PropTypes.bool,
   /** Css classes for wrapping the tabs. */
