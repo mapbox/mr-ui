@@ -44,12 +44,14 @@ export default function Example(): ReactElement {
   const [active, setActive] = useState('bf');
 
   return (
-    <Tabs
+    <div>
+      <Tabs
       items={items}
       active={active}
       onChange={(id: string) => setActive(id)}
-      overlapBorder={true}
+      themeTabItem='color-gray color-gray-dark-on-active color-blue-on-hover txt-bold txt-s'
       themeTabsContainer={"mb12 border-b border--gray-light"}
     />
+    </div>
   );
 }

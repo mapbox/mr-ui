@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import TabItem from './tab-item';
-import { SIZE_SMALL, SIZE_MEDIUM } from './tabs-constants';
+import { SIZE_SMALL } from './tabs-constants';
 import * as RadixTabs from '@radix-ui/react-tabs';
 import { TabItemProps, SizeType } from './types';
 /**
@@ -15,55 +15,56 @@ interface Props {
   active: string;
   onChange?: (a: string) => void;
   size?: SizeType;
-  overlapBorder?: boolean;
-  inactiveColor?: string;
-  activeColor?: string;
-  hoverColor?: string,
-  bold?: boolean,
-  themeTabsContainer?: string,
+  tabBorder?: boolean;
+  themeTabsContainer?: string;
+  themeTabItem?: string;
+  id?: string;
 }
 
 export default function Tabs({
   size = 'medium',
-  inactiveColor = 'gray',
-  activeColor = 'gray-dark',
-  hoverColor = 'blue',
-  overlapBorder = false,
-  bold = true,
+  tabBorder = true,
   items,
   active,
   onChange,
-  themeTabsContainer = ""
+  themeTabItem = 'color-gray color-gray-dark-on-active color-blue-on-hover',
+  themeTabsContainer = '',
+  id
 }: Props): ReactElement {
   const small = size === SIZE_SMALL;
-  const medium = size === SIZE_MEDIUM;
-
-  const containerClasses = classnames(`flex txt-nowrap unselectable ${themeTabsContainer}`, {
-    'txt-bold': bold,
-    'txt-s': medium,
-    'txt-xs': small,
-  });
+  const containerClasses = classnames(
+    `flex txt-nowrap unselectable ${themeTabsContainer}`,
+    {
+      'border-b mb-neg1': tabBorder
+    }
+  );
 
   const itemEls = items.map((item, index) => {
     const first = index === 0;
     const layoutClasses = classnames({
-      ml12: !first && small,
-      'ml24 ml36-mxl': !first && !small,
+      ml12: !first && small && tabBorder,
+      'ml24 ml36-mxl': !first && !small && tabBorder,
       'inline-block': true
     });
     return (
-      <RadixTabs.Trigger aria-label={item.label} className={layoutClasses} data-testid={`button-tab-${item.id}`} value={item.id} key={item.id} disabled={item.disabled}>
+      <RadixTabs.Trigger
+        aria-label={typeof item.label === 'string' ? item.label : item.id}
+        className={layoutClasses}
+        data-testid={
+          id ? `button-tab-${id}-${item.id}` : `button-tab-${item.id}`
+        }
+        value={item.id}
+        key={item.id}
+        disabled={item.disabled}
+      >
         <TabItem
           active={active === item.id}
           size={size}
-          inactiveColor={inactiveColor}
-          activeColor={activeColor}
-          hoverColor={hoverColor}
-          overlapBorder={overlapBorder}
+          themeTabItem={themeTabItem}
+          tabBorder={tabBorder}
           {...item}
         />
       </RadixTabs.Trigger>
-
     );
   });
 
@@ -76,15 +77,21 @@ export default function Tabs({
   });
 
   return (
-    <RadixTabs.Root onValueChange={onChange} value={active}>
-      <div className={containerClasses} data-testid="tabs-wrapper">
-        <RadixTabs.List>
+    <RadixTabs.Root onValueChange={onChange} value={active} id={id}>
+      <div
+        className={containerClasses}
+        data-testid={id ? `tabs-wrapper-${id}` : 'tabs-wrapper'}
+      >
+        <RadixTabs.List
+          className={classnames({
+            'mb-neg1': tabBorder
+          })}
+        >
           {itemEls}
         </RadixTabs.List>
       </div>
       {tabContents}
     </RadixTabs.Root>
-
   );
 }
 
@@ -97,15 +104,15 @@ Tabs.propTypes = {
   /**
    * Each tab is an object with the following properties:
    * - `id` (required): A string ID.
-   * - `label`: Text. A button will be automatically created based on the label. if label is not provided the id will serve as a label
+   * - `label`: Text or React node. A button will be automatically created based on the label. if label is not provided the id will serve as a label
    * - `disabled`: Boolean.
-   * - `content`: React node for generating the tab content. 
+   * - `content`: React node for generating the tab content.
    *    If provided, the tab content will automatically be rendered when changing tabs. Tab content does not have any styling applied by by default
    */
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      label: PropTypes.string,
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       disabled: PropTypes.bool,
       content: PropTypes.node
     })
@@ -120,20 +127,15 @@ Tabs.propTypes = {
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
-   * If `true`, the element will extend down one pixel so the underline beneath
-   * the active item overlaps the bottom border of a container.
-   * **You must provide your own bottom border,** by setting it on a container
-   * element.
+   * If `true`, there will be a bottom border on the tabs and the active tab will
+   * have an extra bottom border. You can use themeTabsContainer
+   * to set a color for the border
    */
-  overlapBorder: PropTypes.bool,
-  /** The Assembly color of inactive items. */
-  inactiveColor: PropTypes.string,
-  /** The Assembly color of active items. */
-  activeColor: PropTypes.string,
-  /** The Assembly color of hovered inactive items. */
-  hoverColor: PropTypes.string,
-  /** Whether or not the text is bold. */
-  bold: PropTypes.bool,
-  /** Css classes for wrapping the tabs */
-  themeTabsContainer: PropTypes.string
+  tabBorder: PropTypes.bool,
+  /** Css classes for wrapping the tabs. */
+  themeTabsContainer: PropTypes.string,
+  /** Css classes for the tab item. Active tab has the is-active class, so you can use *-on-active to
+   * control the color of the active tab.
+   */
+  themeTabItem: PropTypes.string
 };

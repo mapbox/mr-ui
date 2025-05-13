@@ -25,15 +25,13 @@ export default function Example(): ReactElement {
   const [active, setActive] = useState('sizes');
 
   return (
-    <div className="px12 py12 bg-gray-faint">
+    <div className="px12 py12 bg-gray-faint txt-xs">
       <Tabs
         items={items}
         active={active}
         onChange={(id: string) => setActive(id)}
         size="small"
-        overlapBorder={true}
-        bold={false}
-        themeTabsContainer={"border-b border--gray-light w300 flex flex--end-main"}
+        themeTabsContainer={'border--gray-light w300 flex flex--end-main'}
       />
     </div>
   );
