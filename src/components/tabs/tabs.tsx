@@ -35,7 +35,7 @@ export default function Tabs({
   const containerClasses = classnames(
     `flex txt-nowrap unselectable ${themeTabsContainer}`,
     {
-      'border-b mb-neg1': tabBorder
+      'border-b': tabBorder
     }
   );
 
