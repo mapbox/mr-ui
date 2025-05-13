@@ -34,7 +34,8 @@ export default function TabItem({
     [colorClasses]: !disabled,
     'color-gray-light cursor-default': disabled,
     'cursor-default': active,
-    'is-active': active && !disabled
+    'is-active': active && !disabled,
+    'border-b border--transparent border--gray-dark-on-active': tabBorder
   });
 
   label = label || capitalize(id);
@@ -57,10 +58,7 @@ export default function TabItem({
     <span
       className={classnames(
         'block relative flex flex--center-cross',
-        itemClasses,
-        {
-          'border-b': tabBorder && active
-        }
+        itemClasses
       )}
       style={{
         height: getHeight()
