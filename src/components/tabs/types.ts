@@ -7,7 +7,7 @@ import {
 
 export interface TabItemProps {
   id: string,
-  label?: string,
+  label?: string | ReactNode,
   content?: ReactNode,
   disabled?: boolean,
 }
