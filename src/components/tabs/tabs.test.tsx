@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import TabsWithContent from './examples/tabs-example-a';
+import TabsWithBorder from './examples/tabs-example-b';
 import TabsWithDisabledAndColors from './examples/tabs-example-d';
 import TabsWithThemeTabsContainerAndSize from './examples/tabs-example-c';
 
@@ -21,15 +22,17 @@ describe('Tabs', () => {
         tab1.focus();
         tab1.click();
 
-        expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
-        expect(within(tab1).getByTestId('tab-border')).toHaveClass('border-b--2');
+        await waitFor(() => {
+            expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
+        })
 
         const tab3 = screen.getByTestId('button-tab-three');
         tab3.focus();
         tab3.click();
 
-        expect(within(tab1).queryByTestId('tab-border')).not.toBeInTheDocument();
-        expect(within(tab3).getByTestId('tab-border')).toHaveClass('border-b--2');
+        await waitFor(() => {
+            expect(within(tab1).queryByTestId('tab-border')).not.toBeInTheDocument();
+        })
         expect(screen.getByText('Tab 3 content')).toBeInTheDocument();
         expect(screen.queryByText('Tab 1 content')).not.toBeInTheDocument();
     });
@@ -41,20 +44,24 @@ describe('Tabs', () => {
         expect(screen.getByText('Animals')).toBeInTheDocument();
     });
 
-    test('pressing on disabled tab does not work', () => {
+    test('pressing on disabled tab does not work', async () => {
         render(<TabsWithDisabledAndColors />);
         const tab1 = screen.getByTestId('button-tab-Animals');
 
         tab1.focus();
         tab1.click()
 
-        expect(screen.queryByText('Animals content')).not.toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.queryByText('Animals content')).not.toBeInTheDocument()
+        })
 
         const tab2 = screen.getByTestId('button-tab-Robots');
         tab2.focus();
         tab2.click();
 
-        expect(screen.getByText('Robots content')).toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.getByText('Robots content')).toBeInTheDocument()
+        })
     });
 
     test('adds themeTabContainer class', () => {
@@ -64,17 +71,16 @@ describe('Tabs', () => {
 
     test('adds color classes', () => {
         render(<TabsWithDisabledAndColors />);
-        expect(within(screen.getByTestId('button-tab-Robots')).getByTestId('tab-text-wrapper')).toHaveClass('color-purple');
-        expect(within(screen.getByTestId('button-tab-Robots')).getByTestId('tab-text-wrapper')).toHaveClass('color-purple-dark-on-hover');
-        expect(within(screen.getByTestId('button-tab-Clouds')).getByTestId('tab-text-wrapper')).toHaveClass('color-pink');
-        expect(within(screen.getByTestId('button-tab-Animals')).getByTestId('tab-text-wrapper')).toHaveClass('color-gray-light');
+        expect(within(screen.getByTestId('button-tab-Robots')).getByText('Robots')).toHaveClass('color-purple color-purple-dark-on-hover');
+        expect(within(screen.getByTestId('button-tab-Clouds')).getByText('Clouds')).toHaveClass('color-pink-on-active is-active');
+        expect(within(screen.getByTestId('button-tab-Animals')).getByText('Animals')).toHaveClass('color-gray-light');
     });
 
-    test('adds bold text class', () => {
-        render(<TabsWithDisabledAndColors />);
-        expect(screen.getByTestId('tabs-wrapper')).toHaveClass('txt-bold');
-    });
-
+    test('render border', () => {
+        render(<TabsWithBorder />);
+        expect(screen.getByTestId('tabs-wrapper')).toHaveClass('border-b border--gray-light mb-neg1');
+        expect(screen.getByText('Breakfast')).toHaveClass('border-b is-active');
+    })
 });
 
 

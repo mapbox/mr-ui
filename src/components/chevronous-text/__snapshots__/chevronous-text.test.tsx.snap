@@ -93,7 +93,6 @@ exports[`ChevronousText chevron before one long unwrappable word text renders as
         Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon
       </span>
        
-      
     </span>
   </div>
 </body>
@@ -136,7 +135,6 @@ exports[`ChevronousText one long unwrappable word text renders as expected 1`] =
 <body>
   <div>
     <span>
-      
        
       <span
         class="txt-nowrap"
@@ -192,7 +190,6 @@ exports[`ChevronousText sized icon before text renders as expected 1`] = `
         Cheers!
       </span>
        
-      
     </span>
   </div>
 </body>
@@ -202,7 +199,6 @@ exports[`ChevronousText sized icon renders as expected 1`] = `
 <body>
   <div>
     <span>
-      
        
       <span
         class="txt-nowrap"

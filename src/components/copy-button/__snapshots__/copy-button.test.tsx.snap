@@ -13,7 +13,7 @@ exports[`CopyButton all props renders as expected 1`] = `
         style="display: contents;"
       >
         <div
-          aria-controls="radix-4"
+          aria-controls="radix-:r4:"
           aria-expanded="false"
           aria-haspopup="dialog"
           data-state="closed"
@@ -44,7 +44,7 @@ exports[`CopyButton basic renders as expected 1`] = `
         style="display: contents;"
       >
         <div
-          aria-controls="radix-0"
+          aria-controls="radix-:r0:"
           aria-expanded="false"
           aria-haspopup="dialog"
           data-state="closed"

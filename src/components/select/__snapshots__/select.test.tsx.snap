@@ -2,6 +2,7 @@
 
 exports[`Select all options renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
@@ -17,7 +18,7 @@ exports[`Select all options renders 1`] = `
   >
     <button
       aria-autocomplete="none"
-      aria-controls="radix-22"
+      aria-controls="radix-:rm:"
       aria-expanded="true"
       data-placeholder=""
       data-state="open"
@@ -41,7 +42,7 @@ exports[`Select all options renders 1`] = `
       data-state="open"
       data-testid="foo"
       dir="ltr"
-      id="radix-22"
+      id="radix-:rm:"
       role="listbox"
       style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto; opacity: 0;"
       tabindex="-1"
@@ -61,7 +62,7 @@ exports[`Select all options renders 1`] = `
             class=""
           >
             <div
-              aria-labelledby="radix-27"
+              aria-labelledby="radix-:rr:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
@@ -73,7 +74,7 @@ exports[`Select all options renders 1`] = `
               Humpback whale
             </div>
             <div
-              aria-labelledby="radix-28"
+              aria-labelledby="radix-:rs:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -84,7 +85,7 @@ exports[`Select all options renders 1`] = `
               Rufous Hummingbird
             </div>
             <div
-              aria-labelledby="radix-29"
+              aria-labelledby="radix-:rt:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -95,7 +96,7 @@ exports[`Select all options renders 1`] = `
               Sea Otter
             </div>
             <div
-              aria-labelledby="radix-30"
+              aria-labelledby="radix-:ru:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -122,6 +123,7 @@ exports[`Select all options renders 1`] = `
 
 exports[`Select basic renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
@@ -137,7 +139,7 @@ exports[`Select basic renders 1`] = `
   >
     <button
       aria-autocomplete="none"
-      aria-controls="radix-0"
+      aria-controls="radix-:r0:"
       aria-expanded="true"
       data-placeholder=""
       data-state="open"
@@ -160,7 +162,7 @@ exports[`Select basic renders 1`] = `
       data-side="right"
       data-state="open"
       dir="ltr"
-      id="radix-0"
+      id="radix-:r0:"
       role="listbox"
       style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
       tabindex="-1"
@@ -180,7 +182,7 @@ exports[`Select basic renders 1`] = `
             class=""
           >
             <div
-              aria-labelledby="radix-5"
+              aria-labelledby="radix-:r5:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
@@ -192,7 +194,7 @@ exports[`Select basic renders 1`] = `
               Humpback whale
             </div>
             <div
-              aria-labelledby="radix-6"
+              aria-labelledby="radix-:r6:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -203,7 +205,7 @@ exports[`Select basic renders 1`] = `
               Rufous Hummingbird
             </div>
             <div
-              aria-labelledby="radix-7"
+              aria-labelledby="radix-:r7:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -214,7 +216,7 @@ exports[`Select basic renders 1`] = `
               Sea Otter
             </div>
             <div
-              aria-labelledby="radix-8"
+              aria-labelledby="radix-:r8:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -258,6 +260,7 @@ exports[`Select basic renders 1`] = `
 
 exports[`Select dark renders 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span
@@ -273,7 +276,7 @@ exports[`Select dark renders 1`] = `
   >
     <button
       aria-autocomplete="none"
-      aria-controls="radix-13"
+      aria-controls="radix-:rd:"
       aria-expanded="true"
       data-placeholder=""
       data-state="open"
@@ -296,7 +299,7 @@ exports[`Select dark renders 1`] = `
       data-side="right"
       data-state="open"
       dir="ltr"
-      id="radix-13"
+      id="radix-:rd:"
       role="listbox"
       style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
       tabindex="-1"
@@ -316,7 +319,7 @@ exports[`Select dark renders 1`] = `
             class=""
           >
             <div
-              aria-labelledby="radix-18"
+              aria-labelledby="radix-:ri:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
@@ -328,7 +331,7 @@ exports[`Select dark renders 1`] = `
               Humpback whale
             </div>
             <div
-              aria-labelledby="radix-19"
+              aria-labelledby="radix-:rj:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -339,7 +342,7 @@ exports[`Select dark renders 1`] = `
               Rufous Hummingbird
             </div>
             <div
-              aria-labelledby="radix-20"
+              aria-labelledby="radix-:rk:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -350,7 +353,7 @@ exports[`Select dark renders 1`] = `
               Sea Otter
             </div>
             <div
-              aria-labelledby="radix-21"
+              aria-labelledby="radix-:rl:"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""

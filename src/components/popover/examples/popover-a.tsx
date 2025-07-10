@@ -7,11 +7,7 @@ import Popover from '../popover';
 export default function Example(): ReactElement {
   const [open, setOpen] = useState(false);
 
-  const renderPopover = (
-    <div>
-      This is a popover.
-    </div>
-  );
+  const renderPopover = <div>This is a popover.</div>;
 
   return (
     <Popover

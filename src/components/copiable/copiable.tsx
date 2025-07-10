@@ -1,4 +1,10 @@
-import React, { ReactElement, useState, useEffect, useRef, CSSProperties } from 'react';
+import React, {
+  ReactElement,
+  useState,
+  useEffect,
+  useRef,
+  CSSProperties
+} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CopyButton from '../copy-button';
@@ -25,6 +31,7 @@ interface Props {
   value: string;
   focusTrapPaused?: boolean;
   truncated?: boolean;
+  onCopy?: (text: string) => void;
 }
 
 /**
@@ -39,6 +46,7 @@ interface Props {
 export default function Copiable({
   value,
   focusTrapPaused,
+  onCopy,
   truncated = false
 }: Props): ReactElement {
   const textEl = useRef(null);
@@ -58,7 +66,7 @@ export default function Copiable({
   }, [copyTooltipActive]);
 
   const handleTextFocus = () => {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') return;
     if (window.innerWidth < DISABLE_CLICK_TO_SELECT_THRESHOLD) return;
     select(() => textEl.current);
     setCopyTooltipActive(true);
@@ -76,12 +84,13 @@ export default function Copiable({
         text={value}
         block={true}
         focusTrapPaused={focusTrapPaused}
+        onCopy={onCopy}
       />
     </div>
   );
 
   const renderCopyHintText = () => {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') return;
 
     return (
       <span>
@@ -90,8 +99,8 @@ export default function Copiable({
         </span>{' '}
         to copy
       </span>
-    )
-  }
+    );
+  };
 
   const textClasses = classnames('my3 txt-mono txt-s mr24', {
     'txt-truncate': truncated
@@ -106,7 +115,11 @@ export default function Copiable({
     <div className="relative clearfix bg-darken5 round">
       {showCopyButton.current && renderCopyButton}
       <Popover
-        content={<div className="txt-s">{showCopyButton.current && renderCopyHintText}</div>}
+        content={
+          <div className="txt-s">
+            {showCopyButton.current && renderCopyHintText}
+          </div>
+        }
         active={copyTooltipActive}
         placement="top"
         alignment="center"
@@ -158,5 +171,10 @@ Copiable.propTypes = {
    * Horizontal scrolling is not an option because of things end up getting
    * pretty gross across browsers.
    */
-  truncated: PropTypes.bool
+  truncated: PropTypes.bool,
+  /**
+   * Invoked when the button is clicked.
+   * Passed one argument: the `text` prop.
+   */
+  onCopy: PropTypes.func
 };

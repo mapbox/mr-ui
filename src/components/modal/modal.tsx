@@ -14,7 +14,11 @@ interface Props {
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
   margin?: 'large' | 'default';
+  zIndex?: number | string;
+  themeOverlay?: string;
+  themeContent?: string;
   onExit?: () => void;
+  exitOnUnderlayClicked?: boolean;
   allowEventBubbling?: boolean;
   initialFocus?: string;
   primaryAction?: {
@@ -22,17 +26,17 @@ interface Props {
     callback: () => void;
     destructive?: boolean;
     disabled?: boolean;
-  },
+  };
   secondaryAction?: {
     text: string;
     callback: () => void;
     disabled?: boolean;
-  },
+  };
   tertiaryAction?: {
     text: string;
     callback: () => void;
     disabled?: boolean;
-  }
+  };
 }
 
 /**
@@ -52,14 +56,17 @@ export default function Modal({
   size = 'large',
   padding = 'large',
   margin = 'default',
+  zIndex = 'auto',
   allowEventBubbling = false,
+  exitOnUnderlayClicked = true,
   initialFocus,
   primaryAction,
   secondaryAction,
   tertiaryAction,
+  themeOverlay = '',
+  themeContent = '',
   onExit
 }: Props): ReactElement {
-
   const renderActions = (): ReactElement => {
     if (!primaryAction) {
       return null;
@@ -74,7 +81,7 @@ export default function Modal({
         />
       </div>
     );
-  }
+  };
 
   let widthClass = 'wmax-full';
   if (size === 'small') {
@@ -83,77 +90,80 @@ export default function Modal({
     widthClass = 'wmax600 w-11/12';
   }
 
-  let marginClass = 'my12 my60-mm'
+  let marginClass = 'my12 my60-mm';
   if (margin === 'large') {
     marginClass = 'my120';
   }
 
   const overlayProps: {
-    className: string,
-    style: CSSProperties
+    className: string;
+    style: CSSProperties;
+    'data-testid': string;
   } = {
-    className: 'fixed top bottom left right bg-darken50',
+    className: `fixed top bottom left right bg-darken50 ${themeOverlay}`,
     style: {
       display: 'grid',
       overflowY: 'auto',
-      placeItems: 'start center'
-    }
+      placeItems: 'start center',
+      zIndex
+    },
+    'data-testid': 'modal-overlay'
   };
 
   const rootProps: {
-    defaultOpen: true,
-    onOpenChange?: () => void
+    defaultOpen: true;
+    onOpenChange?: () => void;
   } = {
     defaultOpen: true
   };
 
-  if (onExit) {
-    rootProps.onOpenChange = onExit
+  if (onExit && exitOnUnderlayClicked) {
+    rootProps.onOpenChange = onExit;
   }
 
   const contentProps: {
-    className: string,
-    onOpenAutoFocus?: (e) => void
+    className: string;
+    onOpenAutoFocus?: (e) => void;
   } = {
     className: classnames(
-      `relative ${marginClass} ${widthClass} bg-white round`,
+      `relative ${marginClass} ${widthClass} bg-white round ${themeContent}`,
       { 'px36 py36': padding === 'large' }
     )
-  }
+  };
 
   if (initialFocus) {
-    contentProps.onOpenAutoFocus = e => {
+    contentProps.onOpenAutoFocus = (e) => {
       const el: HTMLElement | null = document.querySelector(initialFocus);
       if (el !== null) {
         e.preventDefault();
         el.focus();
       }
-    }
+    };
   }
 
   const modal = (
-    <DialogPrimitive.Root {...rootProps}>
+    <DialogPrimitive.Root {...rootProps} open={true}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay { ...overlayProps}>
-          <DialogPrimitive.Content { ...contentProps}>
+        <DialogPrimitive.Overlay {...overlayProps}>
+          <DialogPrimitive.Content {...contentProps}>
             <VisuallyHidden.Root>
-              <DialogPrimitive.Title>
-                {accessibleTitle}
-              </DialogPrimitive.Title>
+              <DialogPrimitive.Title>{accessibleTitle}</DialogPrimitive.Title>
             </VisuallyHidden.Root>
             {children}
             {renderActions()}
-            {onExit && <Tooltip content="Close">
-              <button
-                onClick={onExit}
-                type="button"
-                data-testid="modal-close"
-                aria-label="Close"
-                className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+            {onExit && (
+              <Tooltip content="Close">
+                <button
+                  onClick={onExit}
+                  type="button"
+                  data-testid="modal-close"
+                  aria-label="Close"
+                  className="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
                 >
-                <Icon name="close" />
-              </button>
-            </Tooltip>}
+                  <Icon name="close" />
+                </button>
+              </Tooltip>
+            )}
           </DialogPrimitive.Content>
         </DialogPrimitive.Overlay>
       </DialogPrimitive.Portal>
@@ -161,11 +171,7 @@ export default function Modal({
   );
 
   if (!allowEventBubbling) {
-    return (
-      <EventTrap>
-        {modal}
-      </EventTrap>
-    );
+    return <EventTrap>{modal}</EventTrap>;
   }
 
   return modal;
@@ -191,6 +197,11 @@ Modal.propTypes = {
    */
   onExit: PropTypes.func,
   /**
+   * If `onExit` is provided but this prop is set as false, a click on the underlay will
+   * not close the modal. The only way of closing the modal is clicking on the close button.
+   */
+  exitOnUnderlayClicked: PropTypes.bool,
+  /**
    * Modal container size. Options are `small`, `large`, or `auto`. If `auto`
    * is provided, a width is not specified.
    */
@@ -212,6 +223,20 @@ Modal.propTypes = {
    * `'large'` to compensate for a fixed top header or `'default'` to be closer to the top of the viewport.
    */
   margin: PropTypes.oneOf(['large', 'default']),
+  /**
+   * z-index of the modal
+   */
+  zIndex: PropTypes.number,
+  /**
+   * Additional CSS classes to apply to the overlay,
+   * along with existing classes `fixed top bottom left right bg-darken50`
+   */
+  themeOverlay: PropTypes.string,
+  /**
+   * Additional CSS classes to apply to the content,
+   * along with existing classes `relative bg-white round`
+   */
+  themeContent: PropTypes.string,
   /**
    * The modal's primary action. If this is provided, an encouraging
    * button will be rendered at the bottom of the modal.

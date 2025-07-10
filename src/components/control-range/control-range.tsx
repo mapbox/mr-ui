@@ -31,7 +31,7 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'> {
   id: string;
   onChange: (value: Array<number>, id: string) => void;
   value?: Array<number>;
-  label?: string;
+  label?: string | ReactNode;
   optional?: boolean;
   aside?: ReactNode;
   tooltip?: boolean;
@@ -111,6 +111,7 @@ export default function ControlRange({
         </TooltipPrimitive.Provider>
       );
     }
+
     return (
       <SliderPrimitive.Thumb key={index} className={`${themeControlThumb}`} />
     );
@@ -152,8 +153,8 @@ ControlRange.propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Accepts an array of numbers, where each number matches a draggable thumb. */
   value: PropTypes.array,
-  /** Value passed to the label element. */
-  label: PropTypes.string,
+  /** Value passed to the label element. Value can be string or ReactNode. */
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** If provided the text, "(optional)" is appended to the value of the label element. */
   optional: PropTypes.bool,
   /** Additional content inserted alongside the label element. */

@@ -1,24 +1,32 @@
-import React, { ReactElement, ReactNode, useState, useRef, ChangeEvent, HTMLInputTypeAttribute, CSSProperties } from 'react';
+import React, {
+  ReactElement,
+  ReactNode,
+  useState,
+  useRef,
+  ChangeEvent,
+  HTMLInputTypeAttribute,
+  CSSProperties
+} from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
 import Popover from '../popover';
 import Icon from '../icon';
-import {InputProps, PopoverProps} from '../typings';
+import { InputProps, PopoverProps } from '../typings';
 
 interface Props extends Omit<InputProps, 'onChange'> {
   id: string;
   onChange: (value: string, id: string) => void;
   value?: string | number;
   type?: HTMLInputTypeAttribute;
-  label?: string;
+  label?: string | ReactNode;
   noAuto?: boolean;
   optional?: boolean;
   aside?: ReactNode;
   validationError?: ReactNode;
   errorStyle?: 'default' | 'inline';
-  popoverProps?: PopoverProps; 
+  popoverProps?: PopoverProps;
   themeControlInput?: string;
   themeControlWrapper?: string;
   themeLabel?: string;
@@ -70,7 +78,7 @@ export default function ControlText({
   };
 
   const isActive = () => {
-    if (typeof window === 'undefined') return false
+    if (typeof window === 'undefined') return false;
 
     return (
       window.document.activeElement === inputElement.current ||
@@ -101,22 +109,23 @@ export default function ControlText({
   };
 
   const inputProps: {
-    id: string,
-    name: string,
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void,
-    value: string | number,
-    type: HTMLInputTypeAttribute,
-    className: string,
-    'aria-required': boolean,
-    'data-testid': string,
-    autoCapitalize?: string,
-    autoCorrect?: string,
-    spellCheck?: boolean,
-    style?: CSSProperties
+    id: string;
+    name: string;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    value: string | number;
+    type: HTMLInputTypeAttribute;
+    className: string;
+    'aria-required': boolean;
+    'data-testid': string;
+    autoCapitalize?: string;
+    autoCorrect?: string;
+    spellCheck?: boolean;
+    style?: CSSProperties;
   } = {
     id,
     name: id,
-    onChange: (e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value, id),
+    onChange: (e: ChangeEvent<HTMLInputElement>) =>
+      onChange(e.target.value, id),
     value,
     type,
     className: themeControlInput,
@@ -166,7 +175,7 @@ export default function ControlText({
             content={validationError}
             placement="top"
             aria-label="Validation error"
-            { ...props.popoverProps }
+            {...props.popoverProps}
           >
             <button
               type="button"
@@ -179,7 +188,13 @@ export default function ControlText({
               className="h-full bg-red color-white round-r px6"
             >
               <span className="flex flex--center-cross flex--center-main">
-                <Icon name="alert" passthroughProps={{ fill: 'white', className: "cursor-pointer" }} />
+                <Icon
+                  name="alert"
+                  passthroughProps={{
+                    fill: 'white',
+                    className: 'cursor-pointer'
+                  }}
+                />
               </span>
             </button>
           </Popover>
@@ -222,8 +237,8 @@ ControlText.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Type attribute to override the existing default of 'text' */
   type: PropTypes.string,
-  /** Label for the control. */
-  label: PropTypes.string,
+  /** Label for the control. Label can be string or ReactNode. */
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Enable/Disable browser enabled autocorrect or spelling suggestions from the element. */
   noAuto: PropTypes.bool,
   /** If provided, "(optional)" is appended to the value of the legend element. */

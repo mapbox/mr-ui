@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import MinimumDurationLoader from './minimum-duration-loader';
 
 const children = <span data-testid='test-content'>Content</span>;
@@ -26,7 +26,7 @@ describe('MinimumDurationLoader', () => {
       expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
     });
 
-    test('renders the content 1s after `isLoaded` prop changes', () => {
+    test('renders the content 1s after `isLoaded` prop changes', async () => {
       const { rerender } = render(<MinimumDurationLoader {...props} />)
 
       expect(screen.getByTestId('minimum-duration-loader')).toBeInTheDocument();
@@ -39,7 +39,9 @@ describe('MinimumDurationLoader', () => {
 
       jest.advanceTimersByTime(1000);
 
-      expect(screen.queryByTestId('minimum-duration-loader')).not.toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.queryByTestId('minimum-duration-loader')).not.toBeInTheDocument();
+      })
       expect(screen.getByTestId('test-content')).toBeInTheDocument();
     });
 
@@ -99,7 +101,7 @@ describe('MinimumDurationLoader', () => {
       expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
     });
 
-    test('renders the content 5s after isLoaded prop changes', () => {
+    test('renders the content 5s after isLoaded prop changes', async () => {
       const { rerender } = render(<MinimumDurationLoader {...props} />)
 
       rerender(<MinimumDurationLoader {...{...props, isLoaded: true}} />)
@@ -112,7 +114,9 @@ describe('MinimumDurationLoader', () => {
       expect(screen.queryByTestId('test-content')).not.toBeInTheDocument();
       jest.advanceTimersByTime(4000);
       // We've exceeded the minimum duration, so the loader should not exist
-      expect(screen.queryByTestId('minimum-duration-loader')).not.toBeInTheDocument();
+      await waitFor(() => {
+       expect(screen.queryByTestId('minimum-duration-loader')).not.toBeInTheDocument()
+      });
       expect(screen.getByTestId('test-content')).toBeInTheDocument();
     });
   });
