@@ -1,6 +1,6 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode, useState } from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import * as TooltipPrimitive from '@radix-ui/react-tooltip';
+import * as PopoverPrimitive from '@radix-ui/react-popover';
 
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
@@ -64,6 +64,7 @@ export default function ControlRange({
   ...props
 }: Props): ReactElement {
   const extraProps = omit(props, propNames);
+  const [activeThumbIndex, setActiveThumbIndex] = useState<number | null>(null);
 
   const rootProps = {
     id,
@@ -84,31 +85,36 @@ export default function ControlRange({
       const { background, borderColor, color, fill, shadowColor } =
         getTheme(themeTooltipColoring);
       const tooltipClasses = `${background} ${borderColor} ${color} border round txt-s px12 py6 wmax240`;
+
       return (
-        <TooltipPrimitive.Provider key={index} >
-          <TooltipPrimitive.Root delayDuration={150}>
-            <TooltipPrimitive.Trigger asChild>
-              <SliderPrimitive.Thumb className={`${themeControlThumb}`} />
-            </TooltipPrimitive.Trigger>
-            <TooltipPrimitive.Content
-              side="top"
-              align="center"
-              sideOffset={6}
-              className={tooltipClasses}
-              style={{
-                filter: `drop-shadow(0 0 4px ${shadowColor})`
-              }}
-            >
-              {value}
-              <TooltipPrimitive.Arrow
-                width={12}
-                height={6}
-                offset={6}
-                fill={fill}
-              />
-            </TooltipPrimitive.Content>
-          </TooltipPrimitive.Root>
-        </TooltipPrimitive.Provider>
+        <PopoverPrimitive.Root open={activeThumbIndex === index}>
+          <PopoverPrimitive.Trigger asChild>
+            <SliderPrimitive.Thumb
+              key={index}
+              className={`${themeControlThumb}`}
+              onMouseOver={() => setActiveThumbIndex(index)}
+              onMouseOut={() => setActiveThumbIndex(null)}
+              onPointerCancel={() => setActiveThumbIndex(null)}
+            />
+          </PopoverPrimitive.Trigger>
+          <PopoverPrimitive.Content
+            side="top"
+            align="center"
+            sideOffset={6}
+            className={tooltipClasses}
+            style={{
+              filter: `drop-shadow(0 0 4px ${shadowColor})`
+            }}
+          >
+            {value}
+            <PopoverPrimitive.Arrow
+              width={12}
+              height={6}
+              offset={6}
+              fill={fill}
+            />
+          </PopoverPrimitive.Content>
+        </PopoverPrimitive.Root>
       );
     }
 
