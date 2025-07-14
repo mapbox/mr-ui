@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.19.0
+- [feature] Add `tooltip` option to range slider
+
 ## 2.18.0
 - [feature] Restyle Tab
 
