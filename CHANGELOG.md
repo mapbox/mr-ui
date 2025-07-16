@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.19.1
+- [bug] Bad published build of pkg
+
 ## 2.19.0
 - [feature] Add `tooltip` option to range slider
 
