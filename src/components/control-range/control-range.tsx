@@ -3,11 +3,8 @@ import React, {
   ReactNode,
   useState,
   useCallback,
-  useMemo,
-  useRef,
-  useEffect
+  useMemo
 } from 'react';
-import { createPortal } from 'react-dom';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 
 import PropTypes from 'prop-types';
@@ -73,9 +70,6 @@ export default function ControlRange({
 }: Props): ReactElement {
   const extraProps = omit(props, propNames);
   const [activeThumbIndex, setActiveThumbIndex] = useState<number | null>(null);
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const thumbRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   const tooltipTheme = useMemo(() => {
     if (!tooltip) return null;
@@ -88,23 +82,6 @@ export default function ControlRange({
     };
   }, [tooltip, themeTooltipColoring]);
 
-  const updateTooltipPosition = useCallback((thumbElement: HTMLElement) => {
-    const thumbRect = thumbElement.getBoundingClientRect();
-
-    setTooltipPosition({
-      x: thumbRect.left + thumbRect.width / 2,
-      y: thumbRect.top - 44
-    });
-  }, []);
-
-  useEffect(() => {
-    if (activeThumbIndex !== null && thumbRefs.current[activeThumbIndex]) {
-      const thumbElement = thumbRefs.current[activeThumbIndex];
-      if (thumbElement) {
-        updateTooltipPosition(thumbElement);
-      }
-    }
-  }, [activeThumbIndex, value, updateTooltipPosition]);
 
 
   const rootProps = {
@@ -126,17 +103,45 @@ export default function ControlRange({
       return (
         <SliderPrimitive.Thumb
           key={index}
-          ref={(el) => {
-            thumbRefs.current[index] = el;
-          }}
           className={`${themeControlThumb}`}
           onMouseOver={() => setActiveThumbIndex(index)}
           onMouseOut={() => setActiveThumbIndex(null)}
           onPointerCancel={() => setActiveThumbIndex(null)}
-        />
+          style={{ position: 'relative' }}
+        >
+          {tooltip && tooltipTheme && activeThumbIndex === index && (
+            <div
+              className={`absolute ${tooltipTheme.tooltipClasses}`}
+              style={{
+                bottom: '100%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                marginBottom: '6px',
+                filter: `drop-shadow(0 0 4px ${tooltipTheme.shadowColor})`,
+                pointerEvents: 'none',
+                zIndex: 9999
+              }}
+            >
+              {thumbValue}
+              <div
+                className="absolute"
+                style={{
+                  top: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: 0,
+                  height: 0,
+                  borderLeft: '6px solid transparent',
+                  borderRight: '6px solid transparent',
+                  borderTop: `6px solid ${tooltipTheme.fill}`
+                }}
+              />
+            </div>
+          )}
+        </SliderPrimitive.Thumb>
       );
     },
-    [themeControlThumb]
+    [tooltip, tooltipTheme, activeThumbIndex, themeControlThumb]
   );
 
   return (
@@ -154,7 +159,7 @@ export default function ControlRange({
           themeLabel={themeLabel}
         />
       )}
-      <div className={`range ${themeControlRange}`} ref={sliderRef}>
+      <div className={`range ${themeControlRange}`}>
         <SliderPrimitive.Root {...rootProps}>
           <SliderPrimitive.Track className={`${themeControlTrack}`}>
             <SliderPrimitive.Range
@@ -164,35 +169,6 @@ export default function ControlRange({
           {value.map(renderThumb)}
         </SliderPrimitive.Root>
       </div>
-      {tooltip && activeThumbIndex !== null && tooltipTheme && createPortal(
-        <div
-          className={`fixed ${tooltipTheme.tooltipClasses}`}
-          style={{
-            left: tooltipPosition.x,
-            top: tooltipPosition.y,
-            transform: 'translateX(-50%)',
-            filter: `drop-shadow(0 0 4px ${tooltipTheme.shadowColor})`,
-            pointerEvents: 'none',
-            zIndex: 9999
-          }}
-        >
-          {value[activeThumbIndex]}
-          <div
-            className="absolute"
-            style={{
-              bottom: '-6px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: 0,
-              height: 0,
-              borderLeft: '6px solid transparent',
-              borderRight: '6px solid transparent',
-              borderTop: `6px solid ${tooltipTheme.fill}`
-            }}
-          />
-        </div>,
-        document.body
-      )}
     </ControlWrapper>
   );
 }
