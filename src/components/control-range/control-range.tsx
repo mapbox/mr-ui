@@ -1,6 +1,12 @@
-import React, { ReactElement, ReactNode, useState } from 'react';
+import React, {
+  ReactElement,
+  ReactNode,
+  useState,
+  useCallback,
+  useMemo
+} from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import * as PopoverPrimitive from '@radix-ui/react-popover';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
@@ -66,6 +72,17 @@ export default function ControlRange({
   const extraProps = omit(props, propNames);
   const [activeThumbIndex, setActiveThumbIndex] = useState<number | null>(null);
 
+  const tooltipTheme = useMemo(() => {
+    if (!tooltip) return null;
+    const { background, borderColor, color, fill, shadowColor } =
+      getTheme(themeTooltipColoring);
+    return {
+      tooltipClasses: `${background} ${borderColor} ${color} border round txt-s px12 py6 wmax240`,
+      fill,
+      shadowColor
+    };
+  }, [tooltip, themeTooltipColoring]);
+
   const rootProps = {
     id,
     name: id,
@@ -80,48 +97,48 @@ export default function ControlRange({
     rootProps['aria-invalid'] = true;
   }
 
-  const renderThumb = (value: number, index: number) => {
-    if (tooltip) {
-      const { background, borderColor, color, fill, shadowColor } =
-        getTheme(themeTooltipColoring);
-      const tooltipClasses = `${background} ${borderColor} ${color} border round txt-s px12 py6 wmax240`;
+  const renderThumb = useCallback(
+    (thumbValue: number, index: number) => {
+      if (tooltip && tooltipTheme) {
+        const { tooltipClasses, fill, shadowColor } = tooltipTheme;
+
+        return (
+          <TooltipPrimitive.Root key={index} open={activeThumbIndex === index}>
+            <TooltipPrimitive.Trigger asChild>
+              <SliderPrimitive.Thumb
+                className={`${themeControlThumb}`}
+                onMouseOver={() => setActiveThumbIndex(index)}
+                onMouseOut={() => setActiveThumbIndex(null)}
+                onPointerCancel={() => setActiveThumbIndex(null)}
+              />
+            </TooltipPrimitive.Trigger>
+            <TooltipPrimitive.Content
+              side="top"
+              align="center"
+              sideOffset={6}
+              className={tooltipClasses}
+              style={{
+                filter: `drop-shadow(0 0 4px ${shadowColor})`
+              }}
+            >
+              {thumbValue}
+              <TooltipPrimitive.Arrow
+                width={12}
+                height={6}
+                offset={6}
+                fill={fill}
+              />
+            </TooltipPrimitive.Content>
+          </TooltipPrimitive.Root>
+        );
+      }
 
       return (
-        <PopoverPrimitive.Root open={activeThumbIndex === index}>
-          <PopoverPrimitive.Trigger asChild>
-            <SliderPrimitive.Thumb
-              key={index}
-              className={`${themeControlThumb}`}
-              onMouseOver={() => setActiveThumbIndex(index)}
-              onMouseOut={() => setActiveThumbIndex(null)}
-              onPointerCancel={() => setActiveThumbIndex(null)}
-            />
-          </PopoverPrimitive.Trigger>
-          <PopoverPrimitive.Content
-            side="top"
-            align="center"
-            sideOffset={6}
-            className={tooltipClasses}
-            style={{
-              filter: `drop-shadow(0 0 4px ${shadowColor})`
-            }}
-          >
-            {value}
-            <PopoverPrimitive.Arrow
-              width={12}
-              height={6}
-              offset={6}
-              fill={fill}
-            />
-          </PopoverPrimitive.Content>
-        </PopoverPrimitive.Root>
+        <SliderPrimitive.Thumb key={index} className={`${themeControlThumb}`} />
       );
-    }
-
-    return (
-      <SliderPrimitive.Thumb key={index} className={`${themeControlThumb}`} />
-    );
-  };
+    },
+    [tooltip, tooltipTheme, activeThumbIndex, themeControlThumb]
+  );
 
   return (
     <ControlWrapper
@@ -139,14 +156,16 @@ export default function ControlRange({
         />
       )}
       <div className={`range ${themeControlRange}`}>
-        <SliderPrimitive.Root {...rootProps}>
-          <SliderPrimitive.Track className={`${themeControlTrack}`}>
-            <SliderPrimitive.Range
-              className={`absolute h-full ${themeControlRangeActive}`}
-            />
-          </SliderPrimitive.Track>
-          {value.map(renderThumb)}
-        </SliderPrimitive.Root>
+        <TooltipPrimitive.Provider delayDuration={0}>
+          <SliderPrimitive.Root {...rootProps}>
+            <SliderPrimitive.Track className={`${themeControlTrack}`}>
+              <SliderPrimitive.Range
+                className={`absolute h-full ${themeControlRangeActive}`}
+              />
+            </SliderPrimitive.Track>
+            {value.map(renderThumb)}
+          </SliderPrimitive.Root>
+        </TooltipPrimitive.Provider>
       </div>
     </ControlWrapper>
   );

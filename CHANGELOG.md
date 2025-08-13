@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.19.2
+- [bug] Fixes tooltip hanging behind in ControlRange when dragging slider very fast
+
 ## 2.19.1
 - [bug] Bad published build of pkg
 
