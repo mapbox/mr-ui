@@ -90,7 +90,7 @@ describe('Format keyCodes', () => {
     expect(formatCodeForDisplay('backspace')).toEqual(['Del']);
     expect(formatCodeForDisplay('command+alt+up')).toEqual(['⌘', '⌥', '↑']);
     expect(formatCodeForDisplay('shift+left')).toEqual(['⇧', '←']);
-    expect(formatCodeForDisplay('Alt+Shift+E')).toEqual(['⇧', '⌥', 'e']);
+    expect(formatCodeForDisplay('Alt+Shift+ArrowDown')).toEqual(['⇧', '⌥', '↓']);
   });
 
   test('formatCodeForDisplay (non-Mac)', () => {

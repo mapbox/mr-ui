@@ -101,18 +101,22 @@ Object.assign(hotKeys, {
   '←': 37,
   left: 37,
   'arrow-left': 37,
+  'arrowleft': 37,
   // Up Arrow Key, or ↑
   '↑': 38,
   up: 38,
   'arrow-up': 38,
+  'arrowup': 38,
   // Right Arrow Key, or →
   '→': 39,
   right: 39,
   'arrow-right': 39,
+  'arrowright': 39,
   // Up Arrow Key, or ↓
   '↓': 40,
   down: 40,
   'arrow-down': 40,
+  'arrowdown': 40,
   // odities, printing characters that come out wrong:
   // Num-Multiply, or *
   '*': 106,
