@@ -13,17 +13,17 @@ jest.mock('./is-mac', () => ({
 
 describe('transformCode', () => {
   it('works on single items (mac)', () => {
-    (isMacModule.isMac).mockReturnValue(true);
+    (isMacModule.isMac as jest.Mock).mockReturnValue(true);
     expect(transformCode('mod+p')).toEqual('command+p');
   });
 
   it('works on single items (non-mac)', () => {
-    (isMacModule.isMac).mockReturnValue(false);
+    (isMacModule.isMac as jest.Mock).mockReturnValue(false);
     expect(transformCode('mod+p')).toEqual('ctrl+p');
   });
 
   it('works on arrays (mac)', () => {
-    (isMacModule.isMac).mockReturnValue(true);
+    (isMacModule.isMac as jest.Mock).mockReturnValue(true);
     expect(transformCode(['mod+p', 'mod+z'])).toEqual([
       'command+p',
       'command+z'
@@ -31,7 +31,7 @@ describe('transformCode', () => {
   });
 
   it('works on arrays (non-mac)', () => {
-    (isMacModule.isMac).mockReturnValue(false);
+    (isMacModule.isMac as jest.Mock).mockReturnValue(false);
     expect(transformCode(['mod+p', 'mod+z'])).toEqual(['ctrl+p', 'ctrl+z']);
   });
 });
@@ -84,16 +84,17 @@ describe('Format keyCodes', () => {
   });
 
   test('formatCodeForDisplay (Mac)', () => {
-    (isMacModule.isMac).mockReturnValue(true);
+    (isMacModule.isMac as jest.Mock).mockReturnValue(true);
     expect(formatCodeForDisplay('a')).toEqual(['a']);
     expect(formatCodeForDisplay('escape')).toEqual(['⎋']);
     expect(formatCodeForDisplay('backspace')).toEqual(['Del']);
     expect(formatCodeForDisplay('command+alt+up')).toEqual(['⌘', '⌥', '↑']);
     expect(formatCodeForDisplay('shift+left')).toEqual(['⇧', '←']);
+    expect(formatCodeForDisplay('Alt+Shift+E')).toEqual(['⇧', '⌥', 'e']);
   });
 
   test('formatCodeForDisplay (non-Mac)', () => {
-    (isMacModule.isMac).mockReturnValue(false);
+    (isMacModule.isMac as jest.Mock).mockReturnValue(false);
     expect(formatCodeForDisplay('a')).toEqual(['a']);
     expect(formatCodeForDisplay('escape')).toEqual(['⎋']);
     expect(formatCodeForDisplay('backspace')).toEqual(['Del']);
