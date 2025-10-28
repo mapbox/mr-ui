@@ -13,7 +13,7 @@ export default function KeyboardUtilities(): ReactElement {
   `);
 
     return (
-    <section className="py24 mb36" id="formatCodeForDisplay">
+    <section className="py24 mb36" id="formatcodefordisplay">
       <AssemblyIntro name="formatCodeForDisplay">
         <>
           <p>
