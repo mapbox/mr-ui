@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.20.0
+- [feature] Add keyboard format utilities
+
 ## 2.19.1
 - [bug] Bad published build of pkg
 
