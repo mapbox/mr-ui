@@ -4,6 +4,8 @@ import ComponentSection from './components/component-section';
 import Sidebar from './components/sidebar';
 import Colors from './components/colors';
 import Assets from './components/assets';
+import KeyboardUtilities from './components/keyboard-utilities';
+import MaybeAddPeriod from './components/maybe-add-period';
 import { Entry, Section } from './typings';
 
 function AppSection({ name, entries, intro }: Section): ReactElement {
@@ -51,7 +53,7 @@ export default function App() {
       ]
     },
     {
-      name: 'Mr UI Components',
+      name: 'Mr. UI Components',
       intro: (
         <div className="prose">
           <p>
@@ -61,6 +63,18 @@ export default function App() {
         </div>
       ),
       entries: componentEls
+    },
+    {
+      name: 'Mr. UI utilities',
+      intro: (
+        <p className="prose">
+          Mr. UI also comes with helper utilities for your UIs
+         </p>
+      ),
+      entries: [
+        { name: 'formatCodeForDisplay', content: <KeyboardUtilities /> },
+        { name: 'maybeAddPeriod', content: <MaybeAddPeriod /> }
+      ]
     }
   ];
 
