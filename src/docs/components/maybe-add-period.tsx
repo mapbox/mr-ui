@@ -16,7 +16,7 @@ maybeAddPeriod("Jump for joy");
   `);
 
     return (
-    <section className="py24 mb36" id="maybeAddPeriod">
+    <section className="py24 mb36" id="maybeaddperiod">
       <AssemblyIntro name="maybeAddPeriod">
         <>
           <p>
