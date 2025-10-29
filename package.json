@@ -3,6 +3,12 @@
   "version": "2.20.0",
   "description": "UI components for Mapbox projects",
   "main": "index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": "./index.js",
+    "./*": "./*",
+    "./package.json": "./package.json"
+  },
   "homepage": "./",
   "scripts": {
     "start": "scripts/build-module-indexes.js && scripts/build-docs-data.js && react-app-rewired start",
