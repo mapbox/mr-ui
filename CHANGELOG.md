@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.20.1
+- [fix] `package.json` instructions to fix Vite module resolution errors.
+
 ## 2.20.0
 - [feature] Add keyboard format utilities
 
