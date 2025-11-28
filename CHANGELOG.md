@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.21.0
+- [feature] Add theme props to `Toast`
+
 ## 2.20.1
 - [fix] `package.json` instructions to fix Vite module resolution errors.
 

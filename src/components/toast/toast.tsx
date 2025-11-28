@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import * as ToastPrimitive from '@radix-ui/react-toast';
 import Icon from '../icon';
 
 interface Props {
-  content: string;
+  content: ReactNode;
   active: boolean;
   onExit: () => void;
   action?: {
@@ -13,6 +13,9 @@ interface Props {
   };
   duration?: number;
   closeButton?: boolean;
+  themeControlWrapper?: string;
+  themeControl?: string;
+  themeItem?: string;
 }
 
 export default function Toast({
@@ -21,7 +24,10 @@ export default function Toast({
   onExit,
   duration = 5000,
   action,
-  closeButton = true
+  closeButton = true,
+  themeControlWrapper = 'fixed left bottom mb24 w-full flex flex--center-main events-none',
+  themeControl = 'bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all',
+  themeItem = 'color-gray-lighter txt-truncate w-auto mr12'
 }: Props): ReactElement {
   let actionBtnClass = closeButton ? '' : 'pr12';
   return (
@@ -30,9 +36,9 @@ export default function Toast({
         type="foreground"
         open={active}
         onOpenChange={onExit}
-        className="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all"
+        className={themeControl}
       >
-        <ToastPrimitive.Description className="color-gray-lighter txt-truncate w-auto mr12">
+        <ToastPrimitive.Description className={themeItem}>
           {content}
         </ToastPrimitive.Description>
         <span
@@ -61,7 +67,7 @@ export default function Toast({
           )}
         </span>
       </ToastPrimitive.Root>
-      <ToastPrimitive.Viewport className="fixed left bottom mb24 w-full flex flex--center-main events-none" />
+      <ToastPrimitive.Viewport className={themeControlWrapper} />
     </ToastPrimitive.Provider>
   );
 }
@@ -100,5 +106,11 @@ Toast.propTypes = {
    * When `true` the toast will have a separate close button (in addition to the call-to-action button).
    * When `false` toast will only have action button.
    */
-  closeButton: PropTypes.bool
+  closeButton: PropTypes.bool,
+  /** Assembly classes to apply to the outer container */
+  themeControlWrapper: PropTypes.string,
+  /** Assembly classes to apply to the container */
+  themeControl: PropTypes.string,
+  /** Assembly classes to apply to the content container */
+  themeItem: PropTypes.string
 };
