@@ -111,6 +111,6 @@ Toast.propTypes = {
   themeControlWrapper: PropTypes.string,
   /** Assembly classes to apply to the container */
   themeControl: PropTypes.string,
-  /** Assembly classes to apply to the content container */
+  /** Assembly classes to apply to the content */
   themeItem: PropTypes.string
 };
