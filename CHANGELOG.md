@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.21.1
+- [fix] Remove `exports` from `package.json` to fix the issue when importing this package
+
 ## 2.21.0
 - [feature] Add theme props to `Toast`
 
