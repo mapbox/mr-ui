@@ -1,7 +1,6 @@
 import React from 'react';
 import ControlRange from './control-range';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 describe('ControlRange', () => {
   describe('basic', () => {
@@ -79,7 +78,7 @@ describe('ControlRange', () => {
       onChange: mockOnChange
     };
     test('renders', async () => {
-      const { container } = render(<ControlRange {...props} />);
+      render(<ControlRange {...props} />);
       const thumb = screen.getByRole('slider');
       fireEvent.mouseOver(thumb);
 
