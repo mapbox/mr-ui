@@ -19,7 +19,7 @@ interface Props {
   size?: Size;
   width?: Width;
   ariaLabel?: string;
-  passthroughProps?: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>;
+  passthroughProps?: HTMLAttributes<HTMLElement> & { [key: `data-${string}`]: string };
 }
 
 function getSize(variant: Variant): Size {
