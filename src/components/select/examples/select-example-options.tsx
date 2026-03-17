@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 import Select from '../select';
 
 export default function Example() {
-  const inputEl = useRef<HTMLInputElement>();
+  const inputEl = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState('humpback-whale');
   const [filterBy, setFilterBy] = useState({
     input: '',

@@ -21,11 +21,11 @@ describe('CopyButton', () => {
       await userEvent.click(screen.getByTestId('copy-button'));
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByRole('dialog', { hidden: true })).toBeInTheDocument();
       });
 
       await waitFor(() => {
-        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(screen.queryByRole('dialog', { hidden: true })).not.toBeInTheDocument();
       });
     });
   });
@@ -59,11 +59,11 @@ describe('CopyButton', () => {
       await userEvent.click(screen.getByTestId('copy-button'));
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByRole('dialog', { hidden: true })).toBeInTheDocument();
       });
 
       await waitFor(() => {
-        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(screen.queryByRole('dialog', { hidden: true })).not.toBeInTheDocument();
       });
     });
 

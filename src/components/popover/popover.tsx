@@ -7,7 +7,7 @@ import { getTheme } from '../utils/styles';
 
 interface Props {
   children: ReactElement;
-  content: ReactNode;
+  content: ReactNode | (() => ReactNode);
   active: boolean;
   padding?: 'medium' | 'small' | 'none';
   coloring?: 'light' | 'dark' | 'warning' | 'error';

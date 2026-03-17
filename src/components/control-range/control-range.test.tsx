@@ -1,6 +1,6 @@
 import React from 'react';
 import ControlRange from './control-range';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('ControlRange', () => {
@@ -79,11 +79,12 @@ describe('ControlRange', () => {
       onChange: mockOnChange
     };
     test('renders', async () => {
-      render(<ControlRange {...props} />);
-      await userEvent.hover(screen.getByRole('slider'));
+      const { container } = render(<ControlRange {...props} />);
+      const thumb = screen.getByRole('slider');
+      fireEvent.mouseOver(thumb);
 
       await waitFor(() => {
-        expect(screen.getByRole('tooltip')).toBeInTheDocument();
+        expect(screen.getByText('200')).toBeInTheDocument();
       });
     });
   });

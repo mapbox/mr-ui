@@ -27,11 +27,11 @@ exports[`Drawer basic renders 1`] = `
     style="pointer-events: auto;"
   >
     <div
-      aria-describedby="radix-:r2:"
-      aria-labelledby="radix-:r1:"
+      aria-describedby="radix-_r_2_"
+      aria-labelledby="radix-_r_1_"
       class="overflow-auto scroll-styled fixed top bottom  left bg-white"
       data-state="open"
-      id="radix-:r0:"
+      id="radix-_r_0_"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -40,7 +40,7 @@ exports[`Drawer basic renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:r1:"
+          id="radix-_r_1_"
         >
           drawer
         </h2>
@@ -87,11 +87,11 @@ exports[`Drawer basic, left renders 1`] = `
     style="pointer-events: auto;"
   >
     <div
-      aria-describedby="radix-:r8:"
-      aria-labelledby="radix-:r7:"
+      aria-describedby="radix-_r_8_"
+      aria-labelledby="radix-_r_7_"
       class="overflow-auto scroll-styled fixed top bottom  left bg-white"
       data-state="open"
-      id="radix-:r6:"
+      id="radix-_r_6_"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -100,7 +100,7 @@ exports[`Drawer basic, left renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:r7:"
+          id="radix-_r_7_"
         >
           drawer
         </h2>
@@ -147,11 +147,11 @@ exports[`Drawer basic, right renders 1`] = `
     style="pointer-events: auto;"
   >
     <div
-      aria-describedby="radix-:re:"
-      aria-labelledby="radix-:rd:"
+      aria-describedby="radix-_r_e_"
+      aria-labelledby="radix-_r_d_"
       class="overflow-auto scroll-styled fixed top bottom  right bg-white"
       data-state="open"
-      id="radix-:rc:"
+      id="radix-_r_c_"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -160,7 +160,7 @@ exports[`Drawer basic, right renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:rd:"
+          id="radix-_r_d_"
         >
           drawer
         </h2>

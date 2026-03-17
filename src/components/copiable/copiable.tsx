@@ -117,7 +117,7 @@ export default function Copiable({
       <Popover
         content={
           <div className="txt-s">
-            {showCopyButton.current && renderCopyHintText}
+            {showCopyButton.current && renderCopyHintText()}
           </div>
         }
         active={copyTooltipActive}

@@ -70,6 +70,7 @@ export default function Tooltip({
     // Following the instructions provided by Radix on handling disabled
     // button elements: Since disabled buttons don't fire events, you need to:
     // - Render the Trigger as `span`.
+    // @ts-expect-error - child.props.disabled may exist on button elements
     if (isValidElement(child) && child.props.disabled) {
       child = (
         <span

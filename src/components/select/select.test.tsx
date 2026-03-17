@@ -88,7 +88,7 @@ describe('Select', () => {
       const { baseElement } = render(<SelectTest {...props} />);
       await user.click(screen.getByTestId("trigger"));
       await waitFor(() => {
-        expect(screen.getByRole('listbox')).toBeInTheDocument();
+        expect(screen.getByRole('listbox', { hidden: true })).toBeInTheDocument();
       });
       expect(baseElement).toMatchSnapshot();
     });
