@@ -1,7 +1,6 @@
-import React from 'react';
-import ControlRange from './control-range';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import ControlRange from './control-range';
 
 describe('ControlRange', () => {
   describe('basic', () => {
@@ -81,6 +80,10 @@ describe('ControlRange', () => {
     test('renders', async () => {
       render(<ControlRange {...props} />);
       await userEvent.hover(screen.getByRole('slider'));
+
+      await waitFor(() => {
+        expect(screen.getByRole('dialog')).toBeInTheDocument();
+      });
 
       await waitFor(() => {
         expect(screen.getByText('200')).toBeInTheDocument();
