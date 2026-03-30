@@ -331,7 +331,7 @@ exports[`Form all controls renders as expected 1`] = `
                         data-orientation="horizontal"
                         data-radix-collection-item=""
                         role="slider"
-                        style="position: relative;"
+                        style=""
                         tabindex="0"
                       />
                       <input

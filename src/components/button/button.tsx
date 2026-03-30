@@ -1,8 +1,14 @@
-import React, { HTMLAttributes, ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { HTMLAttributes, ReactElement, ReactNode } from 'react';
 
-type Variant = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'appPrimary' | 'appSecondary';
+type Variant =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'destructive'
+  | 'appPrimary'
+  | 'appSecondary';
 type Width = 'small' | 'medium' | 'large' | 'full';
 type Size = 'small' | 'medium' | 'large';
 
@@ -19,7 +25,7 @@ interface Props {
   size?: Size;
   width?: Width;
   ariaLabel?: string;
-  passthroughProps?: HTMLAttributes<HTMLElement> & { [key: `data-${string}`]: string };
+  passthroughProps?: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>;
 }
 
 function getSize(variant: Variant): Size {
@@ -67,7 +73,7 @@ function getColor(variant: Variant): string {
     case 'secondary':
     case 'appPrimary':
     case 'appSecondary':
-      return 'gray'
+      return 'gray';
     case 'tertiary':
       return 'transparent';
     case 'destructive':
@@ -101,7 +107,6 @@ export default function Button({
   href,
   children
 }: Props): ReactElement {
-
   const isSmall: boolean = size === 'small';
   const isMedium: boolean = size === 'medium';
   const isLarge: boolean = size === 'large';
@@ -151,9 +156,7 @@ export default function Button({
     disabled
   };
 
-  return (
-    <button type="button" {...buttonProps} />
-  );
+  return <button type="button" {...buttonProps} />;
 }
 
 Button.propTypes = {

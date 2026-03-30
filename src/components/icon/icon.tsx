@@ -5,7 +5,7 @@ import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 interface Props {
   name: string;
   inline?: boolean;
-  passthroughProps?: SVGProps<SVGSVGElement> & { [key: `data-${string}`]: string };
+  passthroughProps?: SVGProps<SVGSVGElement>;
   size?: number | string;
 }
 

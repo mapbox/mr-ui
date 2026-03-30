@@ -17,7 +17,7 @@ interface Props {
   tooltipColoring?: 'light' | 'dark';
   tooltipTextSize?: 'xs' | 's' | 'none';
   children?: ReactNode;
-  passthroughProps?: HTMLAttributes<HTMLButtonElement> & { [key: `data-${string}`]: string };
+  passthroughProps?: HTMLAttributes<HTMLButtonElement>;
 }
 
 /**

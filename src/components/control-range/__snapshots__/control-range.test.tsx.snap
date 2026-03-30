@@ -63,7 +63,7 @@ exports[`ControlRange all options renders 1`] = `
               data-orientation="horizontal"
               data-radix-collection-item=""
               role="slider"
-              style="position: relative;"
+              style=""
               tabindex="0"
             />
           </span>
@@ -80,7 +80,7 @@ exports[`ControlRange all options renders 1`] = `
               data-orientation="horizontal"
               data-radix-collection-item=""
               role="slider"
-              style="position: relative;"
+              style=""
               tabindex="0"
             />
           </span>
@@ -97,7 +97,7 @@ exports[`ControlRange all options renders 1`] = `
               data-orientation="horizontal"
               data-radix-collection-item=""
               role="slider"
-              style="position: relative;"
+              style=""
               tabindex="0"
             />
           </span>
