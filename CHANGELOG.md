@@ -1,27 +1,40 @@
 ## Changelog
 
+## 3.0.0
+
+- Add suppport for React 19
+- Upgrade radix packages
+
 ## 2.21.1
+
 - [fix] Remove `exports` from `package.json` to fix the issue when importing this package
 
 ## 2.21.0
+
 - [feature] Add theme props to `Toast`
 
 ## 2.20.1
+
 - [fix] `package.json` instructions to fix Vite module resolution errors.
 
 ## 2.20.0
+
 - [feature] Add keyboard format utilities
 
 ## 2.19.1
+
 - [bug] Bad published build of pkg
 
 ## 2.19.0
+
 - [feature] Add `tooltip` option to range slider
 
 ## 2.18.0
+
 - [feature] Restyle Tab
 
 ## 2.17.1
+
 - [fix] Fixes clickOutsideCloses property in Popover component
 
 ## 2.17.0
