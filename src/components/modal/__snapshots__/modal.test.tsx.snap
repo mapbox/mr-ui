@@ -21,17 +21,17 @@ exports[`Modal all options renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
   >
     <div
-      aria-describedby="radix-:r17:"
-      aria-labelledby="radix-:r16:"
-      class="relative my120 wmax360 w-11/12 bg-white round"
+      aria-describedby="radix-_r_17_"
+      aria-labelledby="radix-_r_16_"
+      class="relative my120 wmax360 w-11/12 bg-white round "
       data-state="open"
-      id="radix-:r15:"
+      id="radix-_r_15_"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -40,10 +40,15 @@ exports[`Modal all options renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:r16:"
+          id="radix-_r_16_"
         >
           All options
         </h2>
+        <p
+          id="radix-_r_17_"
+        >
+          All options description
+        </p>
       </span>
       <div>
         <div
@@ -118,18 +123,18 @@ exports[`Modal basic renders 1`] = `
   </div>
   <div
     aria-hidden="true"
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 "
     data-aria-hidden="true"
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
   >
     <div
-      aria-describedby="radix-:r2:"
-      aria-labelledby="radix-:r1:"
-      class="relative my12 my60-mm wmax360 w-11/12 bg-white round px36 py36"
+      aria-describedby="radix-_r_2_"
+      aria-labelledby="radix-_r_1_"
+      class="relative my12 my60-mm wmax360 w-11/12 bg-white round  px36 py36"
       data-state="open"
-      id="radix-:r0:"
+      id="radix-_r_0_"
       role="dialog"
       style="pointer-events: none;"
       tabindex="-1"
@@ -138,10 +143,15 @@ exports[`Modal basic renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:r1:"
+          id="radix-_r_1_"
         >
           No onExit passed as prop
         </h2>
+        <p
+          id="radix-_r_2_"
+        >
+          No onExit description
+        </p>
       </span>
       <div>
         You can't close me
@@ -157,17 +167,17 @@ exports[`Modal basic renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
   >
     <div
-      aria-describedby="radix-:r5:"
-      aria-labelledby="radix-:r4:"
-      class="relative my12 my60-mm wmax360 w-11/12 bg-white round px36 py36"
+      aria-describedby="radix-_r_5_"
+      aria-labelledby="radix-_r_4_"
+      class="relative my12 my60-mm wmax360 w-11/12 bg-white round  px36 py36"
       data-state="open"
-      id="radix-:r3:"
+      id="radix-_r_3_"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -176,10 +186,15 @@ exports[`Modal basic renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:r4:"
+          id="radix-_r_4_"
         >
           Small modal title
         </h2>
+        <p
+          id="radix-_r_5_"
+        >
+          Small modal description
+        </p>
       </span>
       <div>
         Content
@@ -262,17 +277,17 @@ exports[`Modal basic, auto renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
   >
     <div
-      aria-describedby="radix-:rv:"
-      aria-labelledby="radix-:ru:"
-      class="relative my12 my60-mm wmax-full bg-white round px36 py36"
+      aria-describedby="radix-_r_v_"
+      aria-labelledby="radix-_r_u_"
+      class="relative my12 my60-mm wmax-full bg-white round  px36 py36"
       data-state="open"
-      id="radix-:rt:"
+      id="radix-_r_t_"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -281,16 +296,21 @@ exports[`Modal basic, auto renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:ru:"
+          id="radix-_r_u_"
         >
           Auto modal title
         </h2>
+        <p
+          id="radix-_r_v_"
+        >
+          Auto modal description
+        </p>
       </span>
       <div>
         No fixed width on the modal container. But very tall.
       </div>
       <button
-        aria-describedby="radix-:r10:"
+        aria-describedby="radix-_r_10_"
         aria-label="Close"
         class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
         data-state="instant-open"
@@ -326,7 +346,7 @@ exports[`Modal basic, auto renders 1`] = `
   />
   <div
     data-radix-popper-content-wrapper=""
-    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content; --radix-popper-transform-origin:  ;"
   >
     <div
       class="bg-white border--white color-text border round txt-s px12 py6 wmax240"
@@ -354,7 +374,7 @@ exports[`Modal basic, auto renders 1`] = `
         </svg>
       </span>
       <span
-        id="radix-:r10:"
+        id="radix-_r_10_"
         role="tooltip"
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
@@ -386,17 +406,17 @@ exports[`Modal basic, large renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50"
+    class="fixed top bottom left right bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center;"
+    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
   >
     <div
-      aria-describedby="radix-:rn:"
-      aria-labelledby="radix-:rm:"
-      class="relative my12 my60-mm wmax600 w-11/12 bg-white round px36 py36"
+      aria-describedby="radix-_r_n_"
+      aria-labelledby="radix-_r_m_"
+      class="relative my12 my60-mm wmax600 w-11/12 bg-white round  px36 py36"
       data-state="open"
-      id="radix-:rl:"
+      id="radix-_r_l_"
       role="dialog"
       style="pointer-events: auto;"
       tabindex="-1"
@@ -405,10 +425,15 @@ exports[`Modal basic, large renders 1`] = `
         style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
       >
         <h2
-          id="radix-:rm:"
+          id="radix-_r_m_"
         >
           Large modal title
         </h2>
+        <p
+          id="radix-_r_n_"
+        >
+          Large modal description
+        </p>
       </span>
       <div>
         Large modal body

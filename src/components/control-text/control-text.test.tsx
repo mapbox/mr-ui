@@ -96,7 +96,9 @@ describe('ControlText', () => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
 
-      screen.getByTestId('testinput-input').blur();
+      act(() => {
+        screen.getByTestId('testinput-input').blur();
+      });
 
       await waitFor(() => {
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -106,13 +108,17 @@ describe('ControlText', () => {
     test('popover toggles on button focus/blur states', async () => {
       render(<ControlText {...props} />)
 
-      screen.getByTestId('validation-error').focus();
+      act(() => {
+        screen.getByTestId('validation-error').focus();
+      });
 
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
 
-      screen.getByTestId('validation-error').blur();
+      act(() => {
+        screen.getByTestId('validation-error').blur();
+      });
 
       await waitFor(() => {
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -138,7 +144,9 @@ describe('ControlText', () => {
     test('disabled onMouseOut behaviour when onFocus is set', async () => {
       render(<ControlText {...props} />)
 
-      screen.getByTestId('validation-error').focus();
+      act(() => {
+        screen.getByTestId('validation-error').focus();
+      });
 
       await waitFor(() => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();

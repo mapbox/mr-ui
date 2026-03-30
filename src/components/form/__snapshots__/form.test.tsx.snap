@@ -334,13 +334,13 @@ exports[`Form all controls renders as expected 1`] = `
                         style=""
                         tabindex="0"
                       />
+                      <input
+                        name="area"
+                        style="display: none;"
+                        value="10"
+                      />
                     </span>
                   </span>
-                  <input
-                    name="area"
-                    style="display: none;"
-                    value="10"
-                  />
                 </div>
                 <div
                   role="alert"

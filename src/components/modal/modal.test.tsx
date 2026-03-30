@@ -7,6 +7,7 @@ describe('Modal', () => {
     const mockedOnExit = jest.fn();
     const props = {
       accessibleTitle: 'Small modal title',
+      accessibleDescription: 'Small modal description',
       size: 'small',
       onExit: mockedOnExit,
       children: <div>Content</div>,
@@ -42,7 +43,8 @@ describe('Modal', () => {
     test('allowEventBubbling disables event trapping', () => {
       const props = {
         children: 'content',
-        accessibleTitle: 'Modal title'
+        accessibleTitle: 'Modal title',
+        accessibleDescription: 'Modal description'
       };
       const { rerender } = render(<Modal {...props} />);
       expect(screen.getByTestId('event-trap')).toBeInTheDocument();
@@ -55,6 +57,7 @@ describe('Modal', () => {
     const mockedOnExit = jest.fn();
     const props = {
       accessibleTitle: 'Large modal title',
+      accessibleDescription: 'Large modal description',
       onExit: mockedOnExit,
       children: <div>Large modal body</div>,
       primaryAction: {
@@ -88,6 +91,7 @@ describe('Modal', () => {
     const mockedOnExit = jest.fn();
     const props = {
       accessibleTitle: 'Auto modal title',
+      accessibleDescription: 'Auto modal description',
       onExit: mockedOnExit,
       size: 'auto',
       children: <div>No fixed width on the modal container. But very tall.</div>
@@ -108,6 +112,7 @@ describe('Modal', () => {
   describe('all options', () => {
     const props = {
       accessibleTitle: 'All options',
+      accessibleDescription: 'All options description',
       padding: 'none',
       margin: 'large',
       size: 'small',
@@ -133,6 +138,7 @@ describe('Modal', () => {
   describe('optional on exit', () => {
     const props = {
       accessibleTitle: 'No onExit passed as prop',
+      accessibleDescription: 'No onExit description',
       size: 'small',
       children: <div>You can't close me</div>
     } as const;

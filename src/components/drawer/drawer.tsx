@@ -12,6 +12,7 @@ interface Props {
   themeOverlay?: string;
   themeContent?: string;
   accessibleTitle?: string;
+  accessibleDescription?: string;
   onExit?: () => void;
 }
 
@@ -30,6 +31,7 @@ export default function Drawer({
   themeOverlay = '',
   themeContent = '',
   accessibleTitle = 'drawer',
+  accessibleDescription,
   onExit
 }: Props): ReactElement {
   const overlayProps: {
@@ -74,6 +76,7 @@ export default function Drawer({
           <DialogPrimitive.Content {...contentProps}>
             <VisuallyHidden.Root>
               <DialogPrimitive.Title>{accessibleTitle}</DialogPrimitive.Title>
+              <DialogPrimitive.Description>{accessibleDescription || accessibleTitle}</DialogPrimitive.Description>
             </VisuallyHidden.Root>
             {children}
           </DialogPrimitive.Content>

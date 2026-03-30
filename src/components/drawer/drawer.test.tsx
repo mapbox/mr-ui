@@ -9,7 +9,8 @@ describe('Drawer', () => {
     const mockedOnExit = jest.fn();
     const props = {
       onExit: mockedOnExit,
-      children: <div>Drawer body</div>
+      children: <div>Drawer body</div>,
+      accessibleDescription: 'Drawer description'
     } as const;
 
     test('renders', () => {
@@ -29,7 +30,8 @@ describe('Drawer', () => {
     const props = {
       onExit: mockedOnExit,
       children: <div>Drawer body</div>,
-      side: 'left'
+      side: 'left',
+      accessibleDescription: 'Left drawer description'
     } as const;
 
     test('renders', () => {
@@ -49,7 +51,8 @@ describe('Drawer', () => {
     const props = {
       onExit: mockedOnExit,
       children: <div>Drawer body</div>,
-      side: 'right'
+      side: 'right',
+      accessibleDescription: 'Right drawer description'
     } as const;
 
     test('renders', () => {

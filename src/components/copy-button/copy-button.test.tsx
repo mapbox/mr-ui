@@ -21,16 +21,16 @@ describe('CopyButton', () => {
       await userEvent.click(screen.getByTestId('copy-button'));
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByText('Copied!')).toBeInTheDocument();
       });
 
       await waitFor(() => {
-        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(screen.queryByText('Copied!')).not.toBeInTheDocument();
       });
     });
   });
 
-  describe('all props', () => {
+  describe('all props',() => {
     const mockOnCopy = jest.fn();
     const props = {
       text: 'more copiable text',
@@ -59,11 +59,11 @@ describe('CopyButton', () => {
       await userEvent.click(screen.getByTestId('copy-button'));
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByText('Copied!')).toBeInTheDocument();
       });
 
       await waitFor(() => {
-        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(screen.queryByText('Copied!')).not.toBeInTheDocument();
       });
     });
 

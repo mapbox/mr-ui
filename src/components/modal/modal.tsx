@@ -11,6 +11,7 @@ import EventTrap from './event-trap';
 interface Props {
   children: ReactNode;
   accessibleTitle: string;
+  accessibleDescription?: string;
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
   margin?: 'large' | 'default';
@@ -53,6 +54,7 @@ interface Props {
 export default function Modal({
   children,
   accessibleTitle,
+  accessibleDescription,
   size = 'large',
   padding = 'large',
   margin = 'default',
@@ -148,6 +150,7 @@ export default function Modal({
           <DialogPrimitive.Content {...contentProps}>
             <VisuallyHidden.Root>
               <DialogPrimitive.Title>{accessibleTitle}</DialogPrimitive.Title>
+              <DialogPrimitive.Description>{accessibleDescription || accessibleTitle}</DialogPrimitive.Description>
             </VisuallyHidden.Root>
             {children}
             {renderActions()}
