@@ -86,7 +86,7 @@ describe('Tabs', () => {
 
     test('render border', () => {
         render(<TabsWithBorder />);
-        expect(screen.getByTestId('tabs-wrapper')).toHaveClass('border-b border--gray-light');
+        expect(screen.getByTestId('tabs-wrapper')).toHaveClass('border-b border--gray-light mb-neg1');
         expect(screen.getByText('Breakfast')).toHaveClass('border-b is-active');
     })
 });
