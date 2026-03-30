@@ -18,4 +18,6 @@ jobs:
 
       - run: npm ci
 
-      - run: npx react-scripts test --watchAll=false
+      - run: npm run lint
+
+      - run: npm test -- --watchAll=false
