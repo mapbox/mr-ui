@@ -23,7 +23,7 @@ export default function MinimumDurationLoader({
 
   // If `isLoaded` is immediately true, load children right away.
   const [ wasLoaded ] = useState(isLoaded);
-  const prevIsLoaded = usePrevious(isLoaded);
+  const prevIsLoaded: boolean = usePrevious(isLoaded);
   const startTime = useRef(0);
   const delayedMountTimeoutRef = useRef(null);
   const [delayedLoaded, setDelayedLoaded] = useState(false);
