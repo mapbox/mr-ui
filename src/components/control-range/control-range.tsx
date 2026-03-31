@@ -87,10 +87,9 @@ export default function ControlRange({
       const tooltipClasses = `${background} ${borderColor} ${color} border round txt-s px12 py6 wmax240`;
 
       return (
-        <PopoverPrimitive.Root open={activeThumbIndex === index}>
+        <PopoverPrimitive.Root key={index} open={activeThumbIndex === index}>
           <PopoverPrimitive.Trigger asChild>
             <SliderPrimitive.Thumb
-              key={index}
               className={`${themeControlThumb}`}
               onMouseOver={() => setActiveThumbIndex(index)}
               onMouseOut={() => setActiveThumbIndex(null)}
