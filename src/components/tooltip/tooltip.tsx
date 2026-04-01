@@ -70,10 +70,8 @@ export default function Tooltip({
     // Following the instructions provided by Radix on handling disabled
     // button elements: Since disabled buttons don't fire events, you need to:
     // - Render the Trigger as `span`.
-    // React 19 types props as `unknown`. Using Object() to safely access
-    // props without TS generics or `as` casts, which Babel's parser can't handle.
-    const childProps = isValidElement(child) ? Object(child.props) : {};
-    if (isValidElement(child) && childProps.disabled) {
+    // @ts-ignore - React 19 types props as unknown
+    if (isValidElement(child) && child.props.disabled) {
       child = (
         <span
           {...props}

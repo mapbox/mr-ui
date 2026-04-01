@@ -1,9 +1,13 @@
 ## Changelog
 
-## 3.0.0
+## 2.22.0
 
-- Add suppport for React 19
-- Upgrade radix packages
+- [feature] Add support for React 19 as a peer dependency
+- [feature] Upgrade all Radix UI packages to latest versions. Components behave the same way in the browser, but unit tests might need to be updated:
+  - `role="tooltip"` changed to `role="dialog"`
+  - [known issue](https://github.com/radix-ui/primitives/discussions/1130) with @radix-ui/react-portal. Instead of relying on `role="dialog"`, just check for the content of the portal instead
+- [feature] Add optional `accessibleDescription` to `Drawer` and `Modal` props. Defaults to `accessibleTitle` if not provided.
+- [fix] Fix React key warning in `ControlRange` tooltip rendering
 
 ## 2.21.1
 

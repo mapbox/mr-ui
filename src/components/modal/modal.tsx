@@ -189,6 +189,13 @@ Modal.propTypes = {
    */
   accessibleTitle: PropTypes.string.isRequired,
   /**
+   * A screen-reader-friendly modal description.
+   *
+   * This **will not be displayed.** It's only for screen readers.
+   * Falls back to `accessibleTitle` if not provided.
+   */
+  accessibleDescription: PropTypes.string,
+  /**
    * Invoked when the modal should close. When this callback is provided,
    * a close button will be in the top right corner, and a click on the underlay
    * or the Escape key will close the modal.

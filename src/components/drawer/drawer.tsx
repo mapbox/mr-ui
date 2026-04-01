@@ -118,6 +118,14 @@ Drawer.propTypes = {
    */
   themeContent: PropTypes.string,
   /**
+   * An accessible title for the drawer, used by screen readers
+   */
+  accessibleTitle: PropTypes.string,
+  /**
+   * An accessible description for the drawer, used by screen readers
+   */
+  accessibleDescription: PropTypes.string,
+  /**
    * The callback function when the drawer is exited by clicking the overlay
    */
   onExit: PropTypes.func
