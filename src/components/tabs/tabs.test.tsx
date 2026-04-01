@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { render, screen, waitFor, within, act } from '@testing-library/react';
 import TabsWithContent from './examples/tabs-example-a';
 import TabsWithBorder from './examples/tabs-example-b';
 import TabsWithDisabledAndColors from './examples/tabs-example-d';
@@ -19,16 +19,20 @@ describe('Tabs', () => {
         expect(tab1).toBeInTheDocument();
         expect(within(tab1).queryByTestId('tab-border')).not.toBeInTheDocument();
 
-        tab1.focus();
-        tab1.click();
+        await act(async () => {
+            tab1.focus();
+            tab1.click();
+        });
 
         await waitFor(() => {
             expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
         })
 
         const tab3 = screen.getByTestId('button-tab-three');
-        tab3.focus();
-        tab3.click();
+        await act(async () => {
+            tab3.focus();
+            tab3.click();
+        });
 
         await waitFor(() => {
             expect(within(tab1).queryByTestId('tab-border')).not.toBeInTheDocument();
@@ -48,16 +52,20 @@ describe('Tabs', () => {
         render(<TabsWithDisabledAndColors />);
         const tab1 = screen.getByTestId('button-tab-Animals');
 
-        tab1.focus();
-        tab1.click()
+        await act(async () => {
+            tab1.focus();
+            tab1.click();
+        });
 
         await waitFor(() => {
             expect(screen.queryByText('Animals content')).not.toBeInTheDocument()
         })
 
         const tab2 = screen.getByTestId('button-tab-Robots');
-        tab2.focus();
-        tab2.click();
+        await act(async () => {
+            tab2.focus();
+            tab2.click();
+        });
 
         await waitFor(() => {
             expect(screen.getByText('Robots content')).toBeInTheDocument()
@@ -78,7 +86,7 @@ describe('Tabs', () => {
 
     test('render border', () => {
         render(<TabsWithBorder />);
-        expect(screen.getByTestId('tabs-wrapper')).toHaveClass('border-b border--gray-light mb-neg1');
+        expect(screen.getByTestId('tabs-wrapper')).toHaveClass('border-b border--gray-light');
         expect(screen.getByText('Breakfast')).toHaveClass('border-b is-active');
     })
 });

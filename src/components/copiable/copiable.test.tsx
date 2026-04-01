@@ -1,5 +1,4 @@
 import React from 'react';
-import delay from 'delay';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import CopyButton from '../copy-button';
 import Copiable from './copiable';
@@ -39,6 +38,7 @@ describe('Copiable', () => {
     });
 
     test('shows copy hint when focused', async () => {
+      jest.useFakeTimers();
       jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
       render(<Copiable {...props} />);
 
@@ -50,9 +50,15 @@ describe('Copiable', () => {
         expect(screen.getByRole('dialog')).toBeInTheDocument();
       });
 
-      await delay(FEEDBACK_TIME + 100).then(() => {
+      act(() => {
+        jest.advanceTimersByTime(FEEDBACK_TIME + 100);
+      });
+
+      await waitFor(() => {
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
+
+      jest.useRealTimers();
     });
   });
 

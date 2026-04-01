@@ -1,5 +1,5 @@
 import Toast from './toast';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, act } from '@testing-library/react';
 
 describe('Toast', () => {
   describe('render with options', () => {
@@ -60,7 +60,9 @@ describe('Toast', () => {
     test('fires onExit after duration', () => {
       render(<Toast {...props}></Toast>);
       expect(mockedOnExit).toHaveBeenCalledTimes(0);
-      jest.advanceTimersByTime(1001);
+      act(() => {
+        jest.advanceTimersByTime(1001);
+      });
       expect(mockedOnExit).toHaveBeenCalledTimes(1);
     });
     test('fires onExit when closing with close button', () => {

@@ -18,7 +18,7 @@ exports[`Select all options renders 1`] = `
   >
     <button
       aria-autocomplete="none"
-      aria-controls="radix-:rm:"
+      aria-controls="radix-_r_m_"
       aria-expanded="true"
       data-placeholder=""
       data-state="open"
@@ -33,7 +33,7 @@ exports[`Select all options renders 1`] = `
   <div
     data-radix-popper-content-wrapper=""
     dir="ltr"
-    style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-available-width: -16px; --radix-popper-available-height: -40px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 50%;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 50%; --radix-popper-available-width: -20px; --radix-popper-available-height: -40px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; visibility: hidden; pointer-events: none;"
   >
     <div
       class="bg-white border--white color-text border shadow-darken25 round border border-1 border--border--white"
@@ -42,9 +42,9 @@ exports[`Select all options renders 1`] = `
       data-state="open"
       data-testid="foo"
       dir="ltr"
-      id="radix-:rm:"
+      id="radix-_r_m_"
       role="listbox"
-      style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto; opacity: 0;"
+      style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
       tabindex="-1"
     >
       <style>
@@ -53,7 +53,7 @@ exports[`Select all options renders 1`] = `
       <div
         data-radix-select-viewport=""
         role="presentation"
-        style="position: relative; flex: 1; overflow: auto;"
+        style="position: relative; flex: 1; overflow: hidden auto;"
       >
         <div
           class=""
@@ -62,7 +62,7 @@ exports[`Select all options renders 1`] = `
             class=""
           >
             <div
-              aria-labelledby="radix-:rr:"
+              aria-labelledby="radix-_r_r_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
@@ -74,7 +74,7 @@ exports[`Select all options renders 1`] = `
               Humpback whale
             </div>
             <div
-              aria-labelledby="radix-:rs:"
+              aria-labelledby="radix-_r_s_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -85,7 +85,7 @@ exports[`Select all options renders 1`] = `
               Rufous Hummingbird
             </div>
             <div
-              aria-labelledby="radix-:rt:"
+              aria-labelledby="radix-_r_t_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -96,7 +96,7 @@ exports[`Select all options renders 1`] = `
               Sea Otter
             </div>
             <div
-              aria-labelledby="radix-:ru:"
+              aria-labelledby="radix-_r_u_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -139,7 +139,7 @@ exports[`Select basic renders 1`] = `
   >
     <button
       aria-autocomplete="none"
-      aria-controls="radix-:r0:"
+      aria-controls="radix-_r_0_"
       aria-expanded="true"
       data-placeholder=""
       data-state="open"
@@ -154,7 +154,7 @@ exports[`Select basic renders 1`] = `
   <div
     data-radix-popper-content-wrapper=""
     dir="ltr"
-    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -16px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0px;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; --radix-popper-available-width: -20px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
       class="bg-white border--white color-text border shadow-darken25 round px12 py12 border border-1 border--border--white"
@@ -162,7 +162,7 @@ exports[`Select basic renders 1`] = `
       data-side="right"
       data-state="open"
       dir="ltr"
-      id="radix-:r0:"
+      id="radix-_r_0_"
       role="listbox"
       style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
       tabindex="-1"
@@ -173,7 +173,7 @@ exports[`Select basic renders 1`] = `
       <div
         data-radix-select-viewport=""
         role="presentation"
-        style="position: relative; flex: 1; overflow: auto;"
+        style="position: relative; flex: 1; overflow: hidden auto;"
       >
         <div
           class=""
@@ -182,7 +182,7 @@ exports[`Select basic renders 1`] = `
             class=""
           >
             <div
-              aria-labelledby="radix-:r5:"
+              aria-labelledby="radix-_r_5_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
@@ -194,7 +194,7 @@ exports[`Select basic renders 1`] = `
               Humpback whale
             </div>
             <div
-              aria-labelledby="radix-:r6:"
+              aria-labelledby="radix-_r_6_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -205,7 +205,7 @@ exports[`Select basic renders 1`] = `
               Rufous Hummingbird
             </div>
             <div
-              aria-labelledby="radix-:r7:"
+              aria-labelledby="radix-_r_7_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -216,7 +216,7 @@ exports[`Select basic renders 1`] = `
               Sea Otter
             </div>
             <div
-              aria-labelledby="radix-:r8:"
+              aria-labelledby="radix-_r_8_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -276,7 +276,7 @@ exports[`Select dark renders 1`] = `
   >
     <button
       aria-autocomplete="none"
-      aria-controls="radix-:rd:"
+      aria-controls="radix-_r_d_"
       aria-expanded="true"
       data-placeholder=""
       data-state="open"
@@ -291,7 +291,7 @@ exports[`Select dark renders 1`] = `
   <div
     data-radix-popper-content-wrapper=""
     dir="ltr"
-    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-available-width: -16px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0px;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; --radix-popper-available-width: -20px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
       class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12 border border-1 border--border--gray-dark"
@@ -299,7 +299,7 @@ exports[`Select dark renders 1`] = `
       data-side="right"
       data-state="open"
       dir="ltr"
-      id="radix-:rd:"
+      id="radix-_r_d_"
       role="listbox"
       style="box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"
       tabindex="-1"
@@ -310,7 +310,7 @@ exports[`Select dark renders 1`] = `
       <div
         data-radix-select-viewport=""
         role="presentation"
-        style="position: relative; flex: 1; overflow: auto;"
+        style="position: relative; flex: 1; overflow: hidden auto;"
       >
         <div
           class=""
@@ -319,7 +319,7 @@ exports[`Select dark renders 1`] = `
             class=""
           >
             <div
-              aria-labelledby="radix-:ri:"
+              aria-labelledby="radix-_r_i_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-highlighted=""
@@ -331,7 +331,7 @@ exports[`Select dark renders 1`] = `
               Humpback whale
             </div>
             <div
-              aria-labelledby="radix-:rj:"
+              aria-labelledby="radix-_r_j_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -342,7 +342,7 @@ exports[`Select dark renders 1`] = `
               Rufous Hummingbird
             </div>
             <div
-              aria-labelledby="radix-:rk:"
+              aria-labelledby="radix-_r_k_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""
@@ -353,7 +353,7 @@ exports[`Select dark renders 1`] = `
               Sea Otter
             </div>
             <div
-              aria-labelledby="radix-:rl:"
+              aria-labelledby="radix-_r_l_"
               aria-selected="false"
               class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
               data-radix-collection-item=""

@@ -24,7 +24,7 @@ exports[`ContextMenu all options renders 1`] = `
   <div
     data-radix-popper-content-wrapper=""
     dir="ltr"
-    style="position: fixed; left: 0px; top: 0px; transform: translate(2px, 0px); min-width: max-content; --radix-popper-available-width: -2px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; --radix-popper-transform-origin: 0px 0%;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(2px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0%; --radix-popper-available-width: -2px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
       aria-orientation="vertical"
@@ -71,14 +71,14 @@ exports[`ContextMenu all options renders 1`] = `
         </span>
       </div>
       <div
-        aria-controls="radix-:r7:"
+        aria-controls="radix-_r_7_"
         aria-expanded="false"
         aria-haspopup="menu"
         class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover"
         data-orientation="vertical"
         data-radix-collection-item=""
         data-state="closed"
-        id="radix-:r8:"
+        id="radix-_r_8_"
         role="menuitem"
         tabindex="-1"
       >
@@ -158,7 +158,7 @@ exports[`ContextMenu basic renders 1`] = `
   <div
     data-radix-popper-content-wrapper=""
     dir="ltr"
-    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content; --radix-popper-transform-origin:  ;"
   >
     <div
       aria-orientation="vertical"

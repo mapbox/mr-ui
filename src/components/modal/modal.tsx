@@ -11,6 +11,7 @@ import EventTrap from './event-trap';
 interface Props {
   children: ReactNode;
   accessibleTitle: string;
+  accessibleDescription?: string;
   size?: 'small' | 'large' | 'auto';
   padding?: 'large' | 'none';
   margin?: 'large' | 'default';
@@ -53,6 +54,7 @@ interface Props {
 export default function Modal({
   children,
   accessibleTitle,
+  accessibleDescription,
   size = 'large',
   padding = 'large',
   margin = 'default',
@@ -148,6 +150,7 @@ export default function Modal({
           <DialogPrimitive.Content {...contentProps}>
             <VisuallyHidden.Root>
               <DialogPrimitive.Title>{accessibleTitle}</DialogPrimitive.Title>
+              <DialogPrimitive.Description>{accessibleDescription || accessibleTitle}</DialogPrimitive.Description>
             </VisuallyHidden.Root>
             {children}
             {renderActions()}
@@ -185,6 +188,13 @@ Modal.propTypes = {
    * You can visually display your own header text however you'd like.
    */
   accessibleTitle: PropTypes.string.isRequired,
+  /**
+   * A screen-reader-friendly modal description.
+   *
+   * This **will not be displayed.** It's only for screen readers.
+   * Falls back to `accessibleTitle` if not provided.
+   */
+  accessibleDescription: PropTypes.string,
   /**
    * Invoked when the modal should close. When this callback is provided,
    * a close button will be in the top right corner, and a click on the underlay

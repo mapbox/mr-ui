@@ -10,7 +10,6 @@ exports[`Toast render with options renders basic 1`] = `
       tabindex="-1"
     >
       <span
-        aria-hidden="true"
         style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
         tabindex="0"
       />
@@ -19,13 +18,10 @@ exports[`Toast render with options renders basic 1`] = `
         tabindex="-1"
       >
         <li
-          aria-atomic="true"
-          aria-live="off"
           class="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all"
           data-radix-collection-item=""
           data-state="open"
           data-swipe-direction="down"
-          role="status"
           style="user-select: none;"
           tabindex="0"
         >
@@ -75,14 +71,12 @@ exports[`Toast render with options renders basic 1`] = `
         </li>
       </ol>
       <span
-        aria-hidden="true"
         style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
         tabindex="0"
       />
     </div>
   </div>
   <span
-    aria-atomic="true"
     aria-live="assertive"
     role="status"
     style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"

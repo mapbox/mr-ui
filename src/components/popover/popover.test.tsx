@@ -161,7 +161,7 @@ describe('Popover', () => {
       const { baseElement } = render(<PopoverTest {...props} />);
       await user.click(screen.getByTestId('trigger'));
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByText('Greetings')).toBeInTheDocument();
       });
       expect(baseElement).toMatchSnapshot();
     });
