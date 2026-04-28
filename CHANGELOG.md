@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.23.0
+
+- [feature] Add `tooltipContent` prop to `CopyButton` for customizing the tooltip text and `aria-label`. Defaults to `'Copy'`.
+
 ## 2.22.0
 
 - [feature] Add support for React 19 as a peer dependency

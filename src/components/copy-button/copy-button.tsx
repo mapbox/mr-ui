@@ -16,6 +16,7 @@ interface Props {
   className?: string;
   tooltipColoring?: 'light' | 'dark';
   tooltipTextSize?: 'xs' | 's' | 'none';
+  tooltipContent?: string;
   children?: ReactNode;
   passthroughProps?: HTMLAttributes<HTMLButtonElement>;
 }
@@ -37,6 +38,7 @@ export default function CopyButton({
   children,
   tooltipColoring = 'light',
   tooltipTextSize = 's',
+  tooltipContent = 'Copy',
   passthroughProps
 }: Props): ReactElement {
   const [clipboard, setClipboard] = useState(null);
@@ -124,7 +126,7 @@ export default function CopyButton({
   return (
     <div
       role="button"
-      aria-label="Copy"
+      aria-label={tooltipContent}
       data-testid="copy-button"
       ref={ref => setClipboardElement(ref)}
       data-clipboard-text={text}
@@ -144,7 +146,7 @@ export default function CopyButton({
             disabled={showingFeedback}
             coloring={tooltipColoring}
             textSize={tooltipTextSize}
-            content="Copy"
+            content={tooltipContent}
           >
             {body}
           </Tooltip>
@@ -196,6 +198,11 @@ CopyButton.propTypes = {
    * `'xs'` (extra small), `'s'` (small), or `'none'` (no size class).
    */
   tooltipTextSize: PropTypes.oneOf(['xs', 's', 'none']),
+  /**
+   * The text shown in the tooltip and used as the button's `aria-label`.
+   * Defaults to `'Copy'`.
+   */
+  tooltipContent: PropTypes.string,
   /** Optional content to represent the button. */
   children: PropTypes.node
 };
