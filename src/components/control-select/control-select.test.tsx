@@ -126,6 +126,56 @@ describe('ControlSelect', () => {
     });
   });
 
+  describe('with children', () => {
+    const mockOnChange = jest.fn();
+    const props = {
+      id: 'testinput',
+      options: [
+        { label: 'Option 1', value: 'opt1' },
+        { label: 'Option 2', value: 'opt2' }
+      ],
+      value: 'opt1',
+      onChange: mockOnChange,
+      children: <span data-testid="custom-display">Custom display</span>
+    };
+
+    test('renders', () => {
+      const { baseElement } = render(<ControlSelect {...props} />);
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    test('renders children content', () => {
+      render(<ControlSelect {...props} />);
+      expect(screen.getByTestId('custom-display')).toBeInTheDocument();
+    });
+
+    test('does not render the select arrow', () => {
+      const { container } = render(<ControlSelect {...props} />);
+      expect(container.querySelector('.select-arrow')).toBeNull();
+    });
+
+    test('select is invisible and positioned absolutely', () => {
+      render(<ControlSelect {...props} />);
+      const select = screen.getByTestId('testinput-select');
+      expect(select.className).toContain('absolute');
+      expect(select.className).toContain('opacity0');
+    });
+
+    test('onChange is called when an option is selected', async () => {
+      render(<ControlSelect {...props} />);
+      await userEvent.selectOptions(screen.getByTestId('testinput-select'), 'opt1');
+      await waitFor(() => {
+        expect(mockOnChange).toHaveBeenCalledWith('opt1', 'testinput');
+      });
+    });
+
+    test('disabled select uses cursor-default', () => {
+      render(<ControlSelect {...props} disabled={true} />);
+      const select = screen.getByTestId('testinput-select');
+      expect(select.className).toContain('cursor-default');
+    });
+  });
+
   describe('all options', () => {
     const props = {
       id: 'allOptions',

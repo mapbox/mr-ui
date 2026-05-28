@@ -90,7 +90,7 @@ exports[`ControlSelect basic renders 1`] = `
         </label>
       </div>
       <div
-        class="select-container "
+        class="select-container"
       >
         <select
           aria-required="true"
@@ -137,7 +137,7 @@ exports[`ControlSelect disabled renders 1`] = `
         </label>
       </div>
       <div
-        class="select-container "
+        class="select-container"
       >
         <select
           aria-required="true"
@@ -185,7 +185,7 @@ exports[`ControlSelect grouped dropdown options renders 1`] = `
         </label>
       </div>
       <div
-        class="select-container "
+        class="select-container"
       >
         <select
           aria-required="true"
@@ -251,7 +251,7 @@ exports[`ControlSelect supported values renders 1`] = `
         </label>
       </div>
       <div
-        class="select-container "
+        class="select-container"
       >
         <select
           aria-required="true"
@@ -278,6 +278,50 @@ exports[`ControlSelect supported values renders 1`] = `
         <div
           class="select-arrow"
         />
+      </div>
+      <div
+        role="alert"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ControlSelect with children renders 1`] = `
+<body>
+  <div>
+    <div
+      class="relative "
+    >
+      <div
+        class="select-container relative"
+      >
+        <select
+          aria-required="true"
+          class="select absolute top left right bottom opacity0 w-full h-full cursor-pointer "
+          data-testid="testinput-select"
+          id="testinput"
+        >
+          <option
+            value="opt1"
+          >
+            Option 1
+          </option>
+          <option
+            value="opt2"
+          >
+            Option 2
+          </option>
+        </select>
+        <div
+          class="events-none"
+        >
+          <span
+            data-testid="custom-display"
+          >
+            Custom display
+          </span>
+        </div>
       </div>
       <div
         role="alert"

@@ -18,6 +18,7 @@ const propNames = [
   'themeControlSelectContainer',
   'themeControlWrapper',
   'themeLabel',
+  'children',
   // Passed when used with the Form component
   'initialValue',
   'validator'
@@ -44,6 +45,7 @@ interface Props {
   themeControlSelect?: string;
   themeControlWrapper?: string;
   themeLabel?: string;
+  children?: ReactNode;
 }
 
 export default function ControlSelect({
@@ -60,15 +62,20 @@ export default function ControlSelect({
   themeControlSelect = '',
   themeControlWrapper,
   themeLabel,
+  children,
   ...props
 }: Props): ReactElement {
   const extraProps = omit(props, propNames);
+
+  const selectClassName = children
+    ? `select absolute top left right bottom opacity0 w-full h-full ${disabled ? 'cursor-default' : 'cursor-pointer'} ${themeControlSelect}`
+    : `select ${themeControlSelect}`;
 
   const selectProps = {
     id,
     disabled,
     value,
-    className: `select ${themeControlSelect}`,
+    className: selectClassName,
     onChange: (e) => onChange(e.target.value, id),
     'aria-required': optional ? false : true,
     'data-testid': `${id}-select`
@@ -109,11 +116,15 @@ export default function ControlSelect({
           themeLabel={themeLabel}
         />
       )}
-      <div className={`select-container ${themeControlSelectContainer}`}>
+      <div className={`select-container ${children ? 'relative ' : ''}${themeControlSelectContainer}`.trim()}>
         <select {...selectProps} {...extraProps}>
           {options.map(renderOptions)}
         </select>
-        <div className="select-arrow" />
+        {children ? (
+          <div className="events-none">{children}</div>
+        ) : (
+          <div className="select-arrow" />
+        )}
       </div>
     </ControlWrapper>
   );
@@ -182,5 +193,7 @@ ControlSelect.propTypes = {
   /** Assembly classes to apply to the control wrapper */
   themeControlWrapper: PropTypes.string,
   /** Assembly classes to apply to the label element */
-  themeLabel: PropTypes.string
+  themeLabel: PropTypes.string,
+  /** Custom display content. When provided, the native select is hidden and positioned absolutely over this content, which is rendered with pointer-events disabled. */
+  children: PropTypes.node
 };

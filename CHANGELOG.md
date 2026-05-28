@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.24.0
+
+- [feature] Add optional `children` prop to `ControlSelect`. When provided, the native select is hidden and positioned absolutely over the children, which are rendered as a custom display with pointer-events disabled.
+
 ## 2.23.0
 
 - [feature] Add `tooltipContent` prop to `CopyButton` for customizing the tooltip text and `aria-label`. Defaults to `'Copy'`.
