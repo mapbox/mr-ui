@@ -150,8 +150,8 @@ describe('ControlSelect', () => {
     });
 
     test('does not render the select arrow', () => {
-      const { container } = render(<ControlSelect {...props} />);
-      expect(container.querySelector('.select-arrow')).toBeNull();
+      render(<ControlSelect {...props} />);
+      expect(screen.queryByTestId('select-arrow')).toBeNull();
     });
 
     test('select is invisible and positioned absolutely', () => {

@@ -56,6 +56,7 @@ exports[`ControlSelect all options renders 1`] = `
         </select>
         <div
           class="select-arrow"
+          data-testid="select-arrow"
         />
       </div>
       <div
@@ -111,6 +112,7 @@ exports[`ControlSelect basic renders 1`] = `
         </select>
         <div
           class="select-arrow"
+          data-testid="select-arrow"
         />
       </div>
       <div
@@ -159,6 +161,7 @@ exports[`ControlSelect disabled renders 1`] = `
         </select>
         <div
           class="select-arrow"
+          data-testid="select-arrow"
         />
       </div>
       <div
@@ -225,6 +228,7 @@ exports[`ControlSelect grouped dropdown options renders 1`] = `
         </select>
         <div
           class="select-arrow"
+          data-testid="select-arrow"
         />
       </div>
       <div
@@ -277,6 +281,7 @@ exports[`ControlSelect supported values renders 1`] = `
         </select>
         <div
           class="select-arrow"
+          data-testid="select-arrow"
         />
       </div>
       <div

@@ -123,7 +123,7 @@ export default function ControlSelect({
         {children ? (
           <div className="events-none">{children}</div>
         ) : (
-          <div className="select-arrow" />
+          <div className="select-arrow" data-testid="select-arrow" />
         )}
       </div>
     </ControlWrapper>
