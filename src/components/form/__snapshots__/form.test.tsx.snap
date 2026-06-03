@@ -409,7 +409,7 @@ exports[`Form all controls renders as expected 1`] = `
                   </label>
                 </div>
                 <div
-                  class="select-container "
+                  class="select-container"
                 >
                   <select
                     aria-required="true"
@@ -445,6 +445,7 @@ exports[`Form all controls renders as expected 1`] = `
                   </select>
                   <div
                     class="select-arrow"
+                    data-testid="select-arrow"
                   />
                 </div>
                 <div
