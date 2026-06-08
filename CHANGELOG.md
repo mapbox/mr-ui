@@ -1,5 +1,9 @@
 ## Changelog
 
+## HEAD
+
+- [fix] Update warning text from `color-orange-deep` to `color-orange-dark` to match conventions in Studio.
+
 ## 2.24.0
 
 - [feature] Add optional `children` prop to `ControlSelect`. When provided, the native select is hidden and positioned absolutely over the children, which are rendered as a custom display with pointer-events disabled.
