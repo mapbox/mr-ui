@@ -88,7 +88,7 @@ function getTheme(theme?: 'dark' | 'warning' | 'error' | 'light') {
       return {
         background: 'bg-orange-faint',
         borderColor: 'border--orange-deep',
-        color: 'color-orange-deep',
+        color: 'color-orange-dark',
         fill: variables['--orange-deep'],
         shadowColor: variables['--darken25']
       };
