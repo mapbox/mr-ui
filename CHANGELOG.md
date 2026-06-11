@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.24.1
+- [feature] Update mbx-assembly to 1.7.0
+
 ## 2.24.0
 
 - [feature] Add optional `children` prop to `ControlSelect`. When provided, the native select is hidden and positioned absolutely over the children, which are rendered as a custom display with pointer-events disabled.
