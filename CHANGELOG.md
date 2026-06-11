@@ -1,7 +1,7 @@
 ## Changelog
 
-## 2.25.0
-- [feature] Update mbx-assembly to 1.7.0 - adds `sunset` and `sunrise` icons to assembly
+## 2.24.1
+- [feature] Update mbx-assembly to 1.7.0
 
 ## 2.24.0
 
