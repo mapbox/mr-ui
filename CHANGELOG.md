@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.24.2
+- [feature] Update mbx-assembly to 1.7.1
+
 ## 2.24.1
 - [feature] Update mbx-assembly to 1.7.0
 
