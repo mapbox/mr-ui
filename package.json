@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/mr-ui",
-  "version": "2.24.2",
+  "version": "2.24.3",
   "description": "UI components for Mapbox projects",
   "sideEffects": false,
   "homepage": "./",
@@ -124,5 +124,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
