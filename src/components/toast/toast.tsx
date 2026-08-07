@@ -29,7 +29,7 @@ export default function Toast({
   themeControl = 'bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all',
   themeItem = 'color-gray-lighter txt-truncate w-auto mr12'
 }: Props): ReactElement {
-  let actionBtnClass = closeButton ? '' : 'pr12';
+  const actionBtnClass = !closeButton && !action ? 'pr12' : '';
   return (
     <ToastPrimitive.Provider swipeDirection="down" duration={duration}>
       <ToastPrimitive.Root

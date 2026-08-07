@@ -1,5 +1,8 @@
 ## Changelog
 
+## 2.24.3
+- [fix] `Toast` no longer applies right padding to the button group when `closeButton` is `false` but an `action` button is present. The padding was intended to compensate for the missing close button's spacing, and now only applies when neither a close button nor an action button is rendered.
+
 ## 2.24.2
 - [feature] Update mbx-assembly to 1.7.1
 
