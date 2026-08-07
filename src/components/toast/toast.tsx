@@ -43,6 +43,7 @@ export default function Toast({
         </ToastPrimitive.Description>
         <span
           className={`flex flex-row flex--center-cross ${actionBtnClass} flex-child-no-shrink`}
+          data-testid="toast-controls"
         >
           {action && (
             <ToastPrimitive.Action

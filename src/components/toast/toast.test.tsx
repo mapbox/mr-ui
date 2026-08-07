@@ -37,13 +37,11 @@ describe('Toast', () => {
 
     test('does not pad the button group when an action button is present but close is hidden', () => {
       render(<Toast {...props} closeButton={false} />);
-      expect(screen.getByTestId('toast-action').parentElement).not.toHaveClass(
-        'pr12'
-      );
+      expect(screen.getByTestId('toast-controls')).not.toHaveClass('pr12');
     });
 
     test('pads the button group only when nothing sits on the right edge', () => {
-      const { baseElement } = render(
+      render(
         <Toast
           content="bare toast"
           active={true}
@@ -51,7 +49,7 @@ describe('Toast', () => {
           closeButton={false}
         />
       );
-      expect(baseElement.querySelector('.pr12')).not.toBeNull();
+      expect(screen.getByTestId('toast-controls')).toHaveClass('pr12');
     });
   });
 
