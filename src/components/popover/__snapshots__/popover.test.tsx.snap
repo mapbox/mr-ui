@@ -266,7 +266,7 @@ exports[`Popover warning renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; z-index: auto; --radix-popper-available-width: -16px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
-      class="bg-orange-faint border--orange-deep color-orange-deep border shadow-darken25 round px12 py12 border border-1 border--border--orange-deep"
+      class="bg-orange-faint border--orange-deep color-orange-dark border shadow-darken25 round px12 py12 border border-1 border--border--orange-deep"
       data-align="center"
       data-side="left"
       data-state="open"

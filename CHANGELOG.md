@@ -1,5 +1,8 @@
 ## Changelog
 
+## HEAD
+- [fix] Update warning text from `color-orange-deep` to `color-orange-dark` to match conventions in Studio.
+
 ## 2.24.3
 - [fix] `Toast` no longer applies right padding to the button group when `closeButton` is `false` but an `action` button is present. The padding was intended to compensate for the missing close button's spacing, and now only applies when neither a close button nor an action button is rendered.
 
