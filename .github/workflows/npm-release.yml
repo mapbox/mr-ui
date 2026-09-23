@@ -48,11 +48,11 @@ jobs:
         run: npm run build
 
       - name: Release production
-        if: ${{ !contains(github.ref_name, '.dev') && !contains(github.ref_name, '-dev') }}
+        if: ${{ !contains(github.ref_name, '-') }}
         working-directory: pkg
         run: npm publish
 
       - name: Release development
-        if: ${{ contains(github.ref_name, '.dev') || contains(github.ref_name, '-dev') }}
+        if: ${{ contains(github.ref_name, '-') }}
         working-directory: pkg
         run: npm publish --tag dev
