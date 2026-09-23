@@ -5,34 +5,54 @@ on:
     tags:
       - '*'
 
+env:
+  CI: true
+
 jobs:
-  verify-tag:
+  publish:
+    name: "Publish ${{ github.ref_name }}"
     runs-on: ubuntu-latest
+    environment: npm-release
     permissions:
+      id-token: write
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Verify tag matches package.json version
+
+      - name: Extract package version from package.json
         run: |
           packageVersion=$(jq -r .version package.json)
-          expectedTag="v$packageVersion"
-          if [ "${{ github.ref_name }}" != "$expectedTag" ]; then
-            echo "Tag ${{ github.ref_name }} does not match package.json version ($expectedTag expected)."
-            exit 1
-          fi
+          echo "versionTag=v$packageVersion" >> "$GITHUB_ENV"
 
-  npm-release:
-    needs: verify-tag
-    uses: mapbox/gha-public/.github/workflows/workflow-npm-oidc-publish.yml@main
-    permissions:
-      id-token: write
-      contents: write
-    with:
-      # Tags containing ".dev" (e.g. v2.25.0.dev.0) publish under the "dev" npm dist-tag
-      # instead of "latest", same convention as core-styles.
-      npm-tag: ${{ contains(github.ref_name, '.dev') && 'dev' || 'latest' }}
-      environment: npm-release
-      run-tests: false
-      # The tag already exists (it's what triggered this workflow), so the
-      # reusable workflow's own tag-creation step would fail - skip it.
-      create-github-release: false
+      - name: Verify tag matches package.json version
+        if: ${{ github.ref_name != env.versionTag }}
+        run: |
+          echo "Tag ${{ github.ref_name }} does not match package.json version (expected ${{ env.versionTag }})."
+          exit 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Upgrade npm for OIDC trusted publishing support
+        run: npm install -g npm@^11.5.1
+
+      - name: Install npm dependencies
+        run: npm ci --no-fund --no-audit --prefer-offline
+
+      - name: Build publishable package
+        # Publishes from pkg/, not the repo root - see scripts/build-package.js.
+        # This compiles src/components into pkg/, with a package.json that has
+        # `private`/`scripts`/`devDependencies` stripped out.
+        run: npm run build
+
+      - name: Release production
+        if: ${{ !contains(github.ref_name, '.dev') }}
+        working-directory: pkg
+        run: npm publish
+
+      - name: Release development
+        if: ${{ contains(github.ref_name, '.dev') }}
+        working-directory: pkg
+        run: npm publish --tag dev
