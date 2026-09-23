@@ -32,6 +32,7 @@ exports[`Toast render with options renders basic 1`] = `
           </div>
           <span
             class="flex flex-row flex--center-cross  flex-child-no-shrink"
+            data-testid="toast-controls"
           >
             <button
               class="btn"

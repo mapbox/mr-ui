@@ -34,6 +34,23 @@ describe('Toast', () => {
       );
       expect(screen.queryByTestId('toast-action')).toBeNull();
     });
+
+    test('does not pad the button group when an action button is present but close is hidden', () => {
+      render(<Toast {...props} closeButton={false} />);
+      expect(screen.getByTestId('toast-controls')).not.toHaveClass('pr12');
+    });
+
+    test('pads the button group only when nothing sits on the right edge', () => {
+      render(
+        <Toast
+          content="bare toast"
+          active={true}
+          onExit={mockedOnExit}
+          closeButton={false}
+        />
+      );
+      expect(screen.getByTestId('toast-controls')).toHaveClass('pr12');
+    });
   });
 
   describe('toast dismissed', () => {
