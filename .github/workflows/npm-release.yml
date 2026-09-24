@@ -61,7 +61,24 @@ jobs:
         run: npm run build-docs
 
       - name: Deploy docs
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+        # Publishes build/ to the gh-pages branch directly - avoids depending
+        # on a third-party action (peaceiris/actions-gh-pages isn't in this
+        # org's allowed-actions list, which caused a startup_failure).
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          worktree=$(mktemp -d)
+          git fetch origin gh-pages --depth=1
+          git worktree add "$worktree" gh-pages
+
+          rsync -a --delete --exclude=.git build/ "$worktree/"
+
+          cd "$worktree"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy."
+          else
+            git commit -m "Deploy docs for ${{ github.ref_name }}"
+            git push origin gh-pages
+          fi
