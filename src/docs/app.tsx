@@ -68,7 +68,7 @@ export default function App() {
       name: 'Mr. UI utilities',
       intro: (
         <p className="prose">
-          Mr. UI also comes with helper utilities for your UIs
+          Mr. UI also comes with helper utilities for your UIs test
          </p>
       ),
       entries: [
