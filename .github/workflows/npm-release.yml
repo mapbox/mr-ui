@@ -15,7 +15,7 @@ jobs:
     environment: npm-release
     permissions:
       id-token: write
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -56,3 +56,15 @@ jobs:
         if: ${{ contains(github.ref_name, '-') }}
         working-directory: pkg
         run: npm publish --tag dev
+
+      - name: Configure git identity for gh-pages
+        if: ${{ !contains(github.ref_name, '-') }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy docs
+        # Only for production releases - dev tags shouldn't overwrite the
+        # live docs site at https://mapbox.github.io/mr-ui/.
+        if: ${{ !contains(github.ref_name, '-') }}
+        run: npm run deploy-docs
