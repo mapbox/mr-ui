@@ -52,9 +52,12 @@ npm test
 
 ### Publishing
 
-The `build` command creates a `pkg/` directory that contains the code we want to publish, organized the way we want it. So `pkg/` is the directory that we publish. `pkg/package.json` is a clone of `package.json` but with `private: true` removed.
+The `build` command creates a `pkg/` directory that contains the code we want to publish, organized the way we want it. So `pkg/` is the directory that we publish. `pkg/package.json` is a clone of `package.json` but with `private`/`scripts`/`devDependencies` removed.
 
-- Increment version numbers in `package.json` and `package.lock.json`, and ensure the changelog has an entry for the latest version. Then, create a new Git tag.
-- Build the `pkg/` directory: `npm run build`.
-- `cd` into the `pkg/` directory and `mbx npm publish` from there.
-- `cd` back to root and run `npm run deploy-docs` to update the docs at https://mapbox.github.io/mr-ui/
+Publishing is automated via the `NPM release` GitHub Actions workflow, triggered by pushing a version tag:
+
+- Increment version numbers in `package.json` and `package-lock.json`, and ensure the changelog has an entry for the latest version. Commit this.
+- Create a Git tag matching the version, prefixed with `v`: `git tag v2.25.0`.
+- Push the tag: `git push origin v2.25.0`.
+- This triggers the workflow, which builds `pkg/` and publishes it via [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC) — no npm token needed. It also builds and deploys the docs to https://mapbox.github.io/mr-ui/.
+- Any prerelease tag (a version containing `-`, e.g. `v2.25.0-dev.0`) publishes under the npm `dev` dist-tag instead of `latest`, for testing a release without affecting `latest` consumers - dev releases don't touch the live docs site.

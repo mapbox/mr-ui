@@ -2,13 +2,15 @@
   "name": "@mapbox/mr-ui",
   "version": "2.24.3",
   "description": "UI components for Mapbox projects",
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": false,
   "homepage": "./",
   "scripts": {
     "start": "scripts/build-module-indexes.js && scripts/build-docs-data.js && react-app-rewired start",
     "build-docs": "scripts/build-module-indexes.js && scripts/build-docs-data.js && react-app-rewired build",
     "build": "scripts/build-module-indexes.js && scripts/build-package.js",
-    "deploy-docs": "npm run build-docs && gh-pages -d build",
     "test": "react-app-rewired test",
     "format": "prettier --write '**/*.(j|t)s'",
     "lint": "eslint .",
@@ -71,7 +73,6 @@
     "del": "^3.0.0",
     "delay": "^3.0.0",
     "execa": "^0.10.0",
-    "gh-pages": "^1.2.0",
     "globby": "^10.0.0",
     "hard-rejection": "^1.0.0",
     "highlight.js": "^11.6.0",
