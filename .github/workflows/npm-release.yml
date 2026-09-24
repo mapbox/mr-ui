@@ -57,14 +57,15 @@ jobs:
         working-directory: pkg
         run: npm publish --tag dev
 
-      - name: Configure git identity for gh-pages
+      - name: Build docs
         if: ${{ !contains(github.ref_name, '-') }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+        run: npm run build-docs
 
       - name: Deploy docs
         # Only for production releases - dev tags shouldn't overwrite the
         # live docs site at https://mapbox.github.io/mr-ui/.
         if: ${{ !contains(github.ref_name, '-') }}
-        run: npm run deploy-docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build

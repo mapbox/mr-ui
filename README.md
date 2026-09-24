@@ -59,5 +59,5 @@ Publishing is automated via the `NPM release` GitHub Actions workflow, triggered
 - Increment version numbers in `package.json` and `package-lock.json`, and ensure the changelog has an entry for the latest version. Commit this.
 - Create a Git tag matching the version, prefixed with `v`: `git tag v2.25.0`.
 - Push the tag: `git push origin v2.25.0`.
-- This triggers the workflow, which builds `pkg/` and publishes it via [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC) — no npm token needed. It also runs `npm run deploy-docs` to update the docs at https://mapbox.github.io/mr-ui/.
+- This triggers the workflow, which builds `pkg/` and publishes it via [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC) — no npm token needed. It also builds and deploys the docs to https://mapbox.github.io/mr-ui/.
 - Any prerelease tag (a version containing `-`, e.g. `v2.25.0-dev.0`) publishes under the npm `dev` dist-tag instead of `latest`, for testing a release without affecting `latest` consumers - dev releases don't touch the live docs site.
