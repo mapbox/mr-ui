@@ -58,9 +58,11 @@ jobs:
         run: npm publish --tag dev
 
       - name: Build docs
+        if: ${{ !contains(github.ref_name, '-') }}
         run: npm run build-docs
 
       - name: Deploy docs
+        if: ${{ !contains(github.ref_name, '-') }}
         # Publishes build/ to the gh-pages branch directly - avoids depending
         # on a third-party action (peaceiris/actions-gh-pages isn't in this
         # org's allowed-actions list, which caused a startup_failure).

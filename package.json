@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/mr-ui",
-  "version": "2.24.4-dev.4",
+  "version": "2.24.2",
   "description": "UI components for Mapbox projects",
   "publishConfig": {
     "access": "public"
