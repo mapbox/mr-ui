@@ -58,13 +58,9 @@ jobs:
         run: npm publish --tag dev
 
       - name: Build docs
-        if: ${{ !contains(github.ref_name, '-') }}
         run: npm run build-docs
 
       - name: Deploy docs
-        # Only for production releases - dev tags shouldn't overwrite the
-        # live docs site at https://mapbox.github.io/mr-ui/.
-        if: ${{ !contains(github.ref_name, '-') }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
