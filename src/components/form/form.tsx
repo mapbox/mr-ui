@@ -1,35 +1,50 @@
-import React, { ReactElement, useState, useRef, useEffect } from 'react';
+import React, {
+  ReactElement,
+  HTMLInputTypeAttribute,
+  useState,
+  useRef,
+  useEffect
+} from 'react';
 import PropTypes from 'prop-types';
 import shallowEqualObjects from 'shallow-equal/objects';
 import Submittable from '@mapbox/react-submittable';
 import LoaderFull from '../loader-full';
 import LoaderLocal from '../loader-local';
 import usePrevious from '../utils/use_previous';
-import { InputType } from 'zlib';
 
-type GetControlProps = (id: string) => void;
 type Values = { [id: string]: string };
 type Validator = (value: any) => string;
 
-type Config = {
-  [key: string]: {
-    label?: string,
-    type?: InputType,
-    placeholder?: string,
-    multiple?: boolean,
-    optional?: boolean,
-    min?: number,
-    max?: number,
-    step?: number,
-    options?: Array<{ label: string, value: string }>,
-    initialValue?: any,
-    validator?: Array<Validator> | Validator
-  }
+type ControlConfig = {
+  label?: string,
+  type?: HTMLInputTypeAttribute,
+  placeholder?: string,
+  multiple?: boolean,
+  optional?: boolean,
+  min?: number,
+  max?: number,
+  step?: number,
+  options?: Array<{ label: string, value: string }>,
+  initialValue?: any,
+  validator?: Array<Validator> | Validator
 }
 
-interface Props {
+type Config = { [key: string]: ControlConfig }
+
+type ControlProps = ControlConfig & {
+  id: string;
+  onChange: (value: any, id: string) => void;
+  validationError: string;
+  value: any;
+};
+type GetControlProps = (id: string) => ControlProps;
+
+export interface FormProps {
   config: Config;
-  renderForm: (getControlProps: GetControlProps, onSubmit) => ReactElement;
+  renderForm: (
+    getControlProps: GetControlProps,
+    onSubmit: () => void
+  ) => ReactElement;
   handleFormData: (controlValues: Values) => void;
   onChange?: (data: Values) => void;
   onCancel?: () => void;
@@ -88,7 +103,7 @@ export default function Form({
   handleFormData,
   onChange,
   onCancel
-}: Props): ReactElement {
+}: FormProps): ReactElement {
   const formState = useRef(formStates.preSubmission);
   const mounted = useRef(false);
   const { 
@@ -161,7 +176,7 @@ export default function Form({
     if (onChange) onChange(nextControlValues);
   };
 
-  const getControlProps = (controlName: string) => {
+  const getControlProps: GetControlProps = (controlName) => {
     const control = config[controlName];
 
     return {

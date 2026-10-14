@@ -2,7 +2,7 @@ import React, { ReactElement, useRef, useEffect, SVGProps, DetailedHTMLProps } f
 import PropTypes from 'prop-types';
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 
-interface Props {
+export interface IconProps {
   name: string;
   inline?: boolean;
   passthroughProps?: DetailedHTMLProps<SVGProps<SVGSVGElement>, SVGElement>;
@@ -23,7 +23,7 @@ export default function Icon({
   inline = false,
   passthroughProps = {},
   size = 18
-}: Props): ReactElement {
+}: IconProps): ReactElement {
   const el = useRef(null);
 
   useEffect(() => {

@@ -5,7 +5,7 @@ import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { getTheme } from '../utils/styles';
 
-interface Props {
+export interface PopoverProps {
   children: ReactElement;
   content: ReactNode | (() => ReactNode);
   active: boolean;
@@ -48,7 +48,7 @@ export default function Popover({
   onExit,
   children,
   content
-}: Props): ReactElement {
+}: PopoverProps): ReactElement {
   const { background, borderColor, color, fill } = getTheme(coloring);
   const triggerRef = useRef(null);
 

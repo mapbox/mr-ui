@@ -27,7 +27,7 @@ const propNames = [
   'validator'
 ];
 
-interface Props extends Omit<InputProps, 'value' | 'onChange'> {
+export interface ControlRangeProps extends Omit<InputProps, 'value' | 'onChange'> {
   id: string;
   onChange: (value: Array<number>, id: string) => void;
   value?: Array<number>;
@@ -62,7 +62,7 @@ export default function ControlRange({
   themeLabel,
   themeTooltipColoring = 'light',
   ...props
-}: Props): ReactElement {
+}: ControlRangeProps): ReactElement {
   const extraProps = omit(props, propNames);
   const [activeThumbIndex, setActiveThumbIndex] = useState<number | null>(null);
 

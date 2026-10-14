@@ -13,7 +13,7 @@ type Option = {
   options?: Array<Option>
 }
 
-interface Props {
+export interface SelectProps {
   children: ReactNode;
   options: Array<Option>;
   onChange: (value: string) => void;
@@ -61,7 +61,7 @@ const Select = forwardRef(({
   themeSelectItemWrapper = '',
   themeSelectItem = 'transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
   passthroughProps
-}: Props, forwardedRef: ForwardedRef<HTMLButtonElement>): ReactElement => {
+}: SelectProps, forwardedRef: ForwardedRef<HTMLButtonElement>): ReactElement => {
   const { background, borderColor, color, fill } = getTheme(coloring);
   const triggerRef = useRef(null);
 

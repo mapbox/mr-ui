@@ -5,7 +5,7 @@ import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
 import { InputProps } from '../typings';
 
-interface Props extends Omit<InputProps, 'onChange'> {
+export interface ControlTextareaProps extends Omit<InputProps, 'onChange'> {
   onChange: (value: string, id: string) => void;
   id?: string;
   value?: string;
@@ -49,7 +49,7 @@ export default function ControlTextarea({
   themeControlWrapper,
   themeLabel,
   ...props
-}: Props): ReactElement {
+}: ControlTextareaProps): ReactElement {
   const extraProps = omit(props, propNames);
   const textareaProps: {
     id: string;

@@ -1,6 +1,7 @@
 import React, {
   ReactElement,
   ReactNode,
+  ForwardedRef,
   forwardRef,
   isValidElement,
   Children,
@@ -12,7 +13,7 @@ import PropTypes from 'prop-types';
 import { getTheme } from '../utils/styles';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
-interface Props {
+export interface TooltipProps {
   children: ReactNode;
   content: ReactElement | string | (() => ReactElement | string);
   placement?: 'top' | 'bottom' | 'left' | 'right';
@@ -24,6 +25,47 @@ interface Props {
   disabled?: boolean;
   ariaLabel?: string;
 }
+
+interface TooltipTriggerProps {
+  children: ReactNode;
+}
+
+/**
+ * Radix tooltip trigger for the `Tooltip` children. Disabled elements don't
+ * fire pointer events, so following Radix's guidance a disabled child is
+ * wrapped in a focusable `span` that acts as the trigger instead.
+ */
+const TooltipTrigger = forwardRef(
+  (
+    { children, ...props }: TooltipTriggerProps,
+    ref: ForwardedRef<HTMLButtonElement>
+  ) => {
+    let child = Children.only(children);
+
+    // @ts-ignore - React 19 types props as unknown
+    if (isValidElement(child) && child.props.disabled) {
+      child = (
+        <span
+          {...props}
+          ref={ref}
+          role="button"
+          className="inline-block"
+          tabIndex={0}
+        >
+          {child}
+        </span>
+      );
+    }
+
+    return (
+      <TooltipPrimitive.Trigger ref={ref} asChild>
+        {child}
+      </TooltipPrimitive.Trigger>
+    );
+  }
+);
+
+TooltipTrigger.displayName = 'TooltipTrigger';
 
 /**
  * Wrap a trigger element so that when it is hovered or focused a tooltip
@@ -40,7 +82,7 @@ export default function Tooltip({
   content,
   children,
   ariaLabel
-}: Props): ReactElement {
+}: TooltipProps): ReactElement {
   const { background, borderColor, color, fill, shadowColor } =
     getTheme(coloring);
   const triggerRef = useRef(null);
@@ -64,38 +106,14 @@ export default function Tooltip({
     return content;
   };
 
-  const Trigger = forwardRef<HTMLButtonElement>((props, ref) => {
-    let child = Children.only(children);
-
-    // Following the instructions provided by Radix on handling disabled
-    // button elements: Since disabled buttons don't fire events, you need to:
-    // - Render the Trigger as `span`.
-    // @ts-ignore - React 19 types props as unknown
-    if (isValidElement(child) && child.props.disabled) {
-      child = (
-        <span
-          {...props}
-          ref={ref}
-          role="button"
-          className="inline-block"
-          tabIndex={0}
-        >
-          {child}
-        </span>
-      );
-    }
-
-    return (
-      <TooltipPrimitive.Trigger ref={ref} asChild>
-        {child}
-      </TooltipPrimitive.Trigger>
-    );
-  });
-
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root delayDuration={150}>
-        {disabled ? <>{children}</> : <Trigger ref={triggerRef} />}
+        {disabled ? (
+          <>{children}</>
+        ) : (
+          <TooltipTrigger ref={triggerRef}>{children}</TooltipTrigger>
+        )}
         <TooltipPrimitive.Portal>
           <TooltipPrimitive.Content
             aria-label={ariaLabel}

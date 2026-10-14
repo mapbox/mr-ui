@@ -6,7 +6,7 @@ import omit from '../utils/omit';
 
 type ElementProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-interface Props extends ElementProps {
+export interface LoaderFullProps extends ElementProps {
   opaque?: boolean;
 }
 
@@ -15,7 +15,7 @@ const propNames = [
   'style'
 ];
 
-export default function LoaderFull({ opaque, style, ...props }: Props): ReactElement {
+export default function LoaderFull({ opaque, style, ...props }: LoaderFullProps): ReactElement {
   const loaderClasses = classnames('loading', {
     'loading--dark': !opaque
   });
@@ -25,7 +25,7 @@ export default function LoaderFull({ opaque, style, ...props }: Props): ReactEle
     'bg-darken50': !opaque
   });
 
-  const passedProps: Props = omit(props, propNames);
+  const passedProps: LoaderFullProps = omit(props, propNames);
   
   return (
     <Portal.Root>

@@ -8,7 +8,7 @@ import Icon from '../icon';
 import ModalActions from './modal-actions';
 import EventTrap from './event-trap';
 
-interface Props {
+export interface ModalProps {
   children: ReactNode;
   accessibleTitle: string;
   accessibleDescription?: string;
@@ -68,7 +68,7 @@ export default function Modal({
   themeOverlay = '',
   themeContent = '',
   onExit
-}: Props): ReactElement {
+}: ModalProps): ReactElement {
   const renderActions = (): ReactElement => {
     if (!primaryAction) {
       return null;

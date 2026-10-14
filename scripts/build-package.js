@@ -31,6 +31,15 @@ function compileComponents() {
   );
 }
 
+// Emit TypeScript declarations alongside the compiled files, mirroring
+// babel's layout so each `<component>/index.js` gets an `index.d.ts`.
+function emitDeclarations() {
+  return execa.shell(`tsc -p "${rootDir}/tsconfig.build.json"`, {
+    cwd: rootDir,
+    stdio: 'inherit'
+  });
+}
+
 function copyFiles() {
   const filesToCopy = ['LICENSE', 'CHANGELOG.md', 'README.md'];
 
@@ -62,5 +71,10 @@ function createPackageJson() {
 del(outputDir)
   .then(() => makeDir(outputDir))
   .then(() =>
-    Promise.all([compileComponents(), copyFiles(), createPackageJson()])
+    Promise.all([
+      compileComponents(),
+      emitDeclarations(),
+      copyFiles(),
+      createPackageJson()
+    ])
   );

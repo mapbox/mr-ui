@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import capitalize from '../utils/capitalize';
 import { TabItemProps, SizeType } from './types';
@@ -20,7 +20,7 @@ export default function TabItem({
   tabBorder,
   label,
   id
-}: Props) {
+}: Props): ReactElement {
   const itemClassesArray = themeTabItem.split(' ');
   // disabled tab should alway be gray, so we remove all color classes for it
   const noneColorClasses = itemClassesArray.filter(

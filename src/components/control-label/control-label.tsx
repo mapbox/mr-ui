@@ -2,7 +2,7 @@ import React, { ReactNode, ReactElement } from 'react';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import PropTypes from 'prop-types';
 
-interface Props {
+export interface ControlLabelProps {
   id: string;
   text: string | ReactNode;
   aside?: ReactNode;
@@ -16,7 +16,7 @@ export default function ControlLabel({
   aside,
   optional,
   themeLabel = 'txt-s txt-bold mb6'
-}: Props): ReactElement {
+}: ControlLabelProps): ReactElement {
   return (
     <div>
       <LabelPrimitive.Root htmlFor={id} asChild>

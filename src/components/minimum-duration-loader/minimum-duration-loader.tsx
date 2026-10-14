@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode, useEffect, useRef, useState } from 'rea
 import PropTypes from 'prop-types';
 import usePrevious from '../utils/use_previous';
 
-interface Props {
+export interface MinimumDurationLoaderProps {
   children: ReactNode;
   isLoaded: boolean;
   loader?: ReactNode;
@@ -19,7 +19,7 @@ export default function MinimumDurationLoader({
   isLoaded,
   loader = <div className="loading" data-testid="minimum-duration-loader" />,
   minDuration = 1000
-}: Props): ReactElement {
+}: MinimumDurationLoaderProps): ReactElement {
 
   // If `isLoaded` is immediately true, load children right away.
   const [ wasLoaded ] = useState(isLoaded);

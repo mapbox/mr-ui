@@ -75,7 +75,7 @@ const defaultTheme = `
 // Theme cache, used to prevent the creation of multiple <style> elements with the same content.
 const injectedThemes = [];
 
-interface Props {
+export interface CodeSnippetProps {
   code: string;
   highlightedCode?: string;
   copyRanges?: number[][];
@@ -93,7 +93,7 @@ export default function CodeSnippet({
   onCopy,
   highlightThemeCss = defaultTheme,
   characterWidth = 7.225 // Will need to change this if we change font size
-}: Props): ReactElement {
+}: CodeSnippetProps): ReactElement {
   const showCopyButton = useRef(CopyButton.isCopySupported());
   const containerElement = useRef(null);
 

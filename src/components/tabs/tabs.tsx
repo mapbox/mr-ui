@@ -5,12 +5,14 @@ import TabItem from './tab-item';
 import { SIZE_SMALL } from './tabs-constants';
 import * as RadixTabs from '@radix-ui/react-tabs';
 import { TabItemProps, SizeType } from './types';
+
+export type { TabItemProps, SizeType };
 /**
  * For navigation between sections. Tabs will be always buttons
  *
  */
 
-interface Props {
+export interface TabsProps {
   items: Array<TabItemProps>;
   active: string;
   onChange?: (a: string) => void;
@@ -30,7 +32,7 @@ export default function Tabs({
   themeTabItem = 'color-gray color-gray-dark-on-active color-blue-on-hover',
   themeTabsContainer = '',
   id
-}: Props): ReactElement {
+}: TabsProps): ReactElement {
   const small = size === SIZE_SMALL;
   const containerClasses = classnames(
     `flex txt-nowrap unselectable ${themeTabsContainer}`

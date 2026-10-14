@@ -27,7 +27,7 @@ function getCopyKeys(ua: string): string {
   }
 }
 
-interface Props {
+export interface CopiableProps {
   value: string;
   focusTrapPaused?: boolean;
   truncated?: boolean;
@@ -48,7 +48,7 @@ export default function Copiable({
   focusTrapPaused,
   onCopy,
   truncated = false
-}: Props): ReactElement {
+}: CopiableProps): ReactElement {
   const textEl = useRef(null);
   const showCopyButton = useRef(CopyButton.isCopySupported());
   const [copyTooltipActive, setCopyTooltipActive] = useState(false);

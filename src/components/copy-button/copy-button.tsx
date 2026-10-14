@@ -8,7 +8,7 @@ import Tooltip from '../tooltip';
 
 const FEEDBACK_TIME = 800;
 
-interface Props {
+export interface CopyButtonProps {
   text: string;
   onCopy?: (text: string) => void;
   block?: boolean;
@@ -40,7 +40,7 @@ export default function CopyButton({
   tooltipTextSize = 's',
   tooltipContent = 'Copy',
   passthroughProps
-}: Props): ReactElement {
+}: CopyButtonProps): ReactElement {
   const [clipboard, setClipboard] = useState(null);
   const [clipboardElement, setClipboardElement] = useState(null);
   const [showingFeedback, setShowingFeedback] = useState(false);

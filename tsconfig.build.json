@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "rootDir": "src/components",
+    "outDir": "pkg"
+  },
+  "include": ["src/components"],
+  "exclude": [
+    "src/components/**/examples",
+    "src/components/**/*.test.ts",
+    "src/components/**/*.test.tsx",
+    "src/docs"
+  ]
+}

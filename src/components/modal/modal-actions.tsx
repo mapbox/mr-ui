@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../button';
 
-interface Props {
+export interface ModalActionsProps {
   primaryAction?: {
     text: string;
     callback: () => void;
@@ -25,7 +25,7 @@ export default function ModalActions({
   primaryAction,
   secondaryAction,
   tertiaryAction
-}: Props): ReactElement {
+}: ModalActionsProps): ReactElement {
   const renderSecondary = (): ReactElement => {
     if (!primaryAction || !secondaryAction) {
       return null;

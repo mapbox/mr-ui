@@ -11,6 +11,7 @@ const srcRoot = path.resolve(__dirname, '../src/components');
 function generateIndex(moduleName) {
   const content = `import main from './${moduleName}';
 
+export * from './${moduleName}';
 export default main;
 `;
   const filename = path.resolve(srcRoot, moduleName, 'index.js');

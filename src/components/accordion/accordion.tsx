@@ -10,7 +10,7 @@ interface Item {
   disabled?: boolean;
 }
 
-interface Props {
+export interface AccordionProps {
   items: Array<Item>;
   onToggle: (id: string) => void;
   activeItem?: string;
@@ -28,7 +28,7 @@ export default function Accordion({
   themeItemBody,
   themeItemHeader = 'txt-s txt-bold txt-truncate link link--gray py6',
   themeItemHeaderDisabled = 'color-gray-light'
-}: Props): ReactElement {
+}: AccordionProps): ReactElement {
   const renderItems = (item: Item) => {
     const { id, header, body, disabled } = item;
     const active = id === activeItem;

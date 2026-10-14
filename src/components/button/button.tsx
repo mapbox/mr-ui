@@ -6,7 +6,7 @@ type Variant = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'appPrimar
 type Width = 'small' | 'medium' | 'large' | 'full';
 type Size = 'small' | 'medium' | 'large';
 
-interface Props {
+export interface ButtonProps {
   children: ReactNode;
   variant?: Variant;
   color?: string;
@@ -100,7 +100,7 @@ export default function Button({
   passthroughProps,
   href,
   children
-}: Props): ReactElement {
+}: ButtonProps): ReactElement {
 
   const isSmall: boolean = size === 'small';
   const isMedium: boolean = size === 'medium';

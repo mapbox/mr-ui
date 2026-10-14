@@ -1,6 +1,8 @@
 ## Changelog
 
 ## HEAD
+- [feature] Ship TypeScript declarations and export component Props types.
+- [fix] Tooltip no longer remounts its trigger on every render.
 - [fix] Update warning text from `color-orange-deep` to `color-orange-dark` to match conventions in Studio.
 
 ## 2.24.3
