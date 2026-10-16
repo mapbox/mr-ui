@@ -54,10 +54,17 @@ npm test
 
 The `build` command creates a `pkg/` directory that contains the code we want to publish, organized the way we want it. So `pkg/` is the directory that we publish. `pkg/package.json` is a clone of `package.json` but with `private`/`scripts`/`devDependencies` removed.
 
-Publishing is automated via the `NPM release` GitHub Actions workflow, triggered by pushing a version tag:
+Pull Requests merged to `main` with conventional commit prefixes are automatically published to npm by the `NPM release` GitHub Actions workflow, as new major/minor/patch versions (`feat!:`/`feat:`/`fix:` respectively). When using "Squash and merge", ensure your PR title includes the conventional commit prefix; a `BREAKING CHANGE:` footer only counts if it ends up in the squash commit's body. Other prefixes (`chore:`, `docs:`, etc.) or no prefix don't trigger a release.
 
-- Increment version numbers in `package.json` and `package-lock.json`, and ensure the changelog has an entry for the latest version. Commit this.
-- Create a Git tag matching the version, prefixed with `v`: `git tag v2.25.0`.
-- Push the tag: `git push origin v2.25.0`.
-- This triggers the workflow, which builds `pkg/` and publishes it via [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC) — no npm token needed. It also builds and deploys the docs to https://mapbox.github.io/mr-ui/.
-- Any prerelease tag (a version containing `-`, e.g. `v2.25.0-dev.0`) publishes under the npm `dev` dist-tag instead of `latest`, for testing a release without affecting `latest` consumers - dev releases don't touch the live docs site.
+Examples:
+- `fix: resolved issue with dropdowns` -> patch
+- `feat: added dropdowns` -> minor
+- `feat!: Overhauled dropdowns` (requires manual migration work) -> major
+
+The workflow builds `pkg/` and publishes it via [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC) — no npm token needed. It then creates a GitHub Release with generated notes, comments the released version on the merged PRs, and builds and deploys the docs to https://mapbox.github.io/mr-ui/.
+
+`package.json`'s `version` may be incremented manually if needed (for example, to skip a minor version), but you shouldn't normally need to touch it; the published npm version, not `package.json`, is the source of truth for what gets released next.
+
+#### Pre-release versions on other branches
+
+For testing in downstream projects, you can manually trigger the "NPM release" workflow on a branch to publish a pre-release tagged with the short commit sha (e.g. `2.24.3-aa79c6a`) under the npm `prerelease` dist-tag, without affecting `latest` or the live docs site. Check the workflow results for the published version.

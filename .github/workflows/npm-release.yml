@@ -2,33 +2,28 @@ name: NPM release
 
 on:
   push:
-    tags:
-      - '*'
+    branches: ["main"]
+  workflow_dispatch: {}
 
 env:
   CI: true
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
 
 jobs:
   publish:
     name: "Publish ${{ github.ref_name }}"
     runs-on: ubuntu-latest
+    # npm's Trusted Publisher config for @mapbox/mr-ui is bound to this workflow file and environment.
     environment: npm-release
-    permissions:
-      id-token: write
-      contents: write
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Extract package version from package.json
-        run: |
-          packageVersion=$(jq -r .version package.json)
-          echo "versionTag=v$packageVersion" >> "$GITHUB_ENV"
-
-      - name: Verify tag matches package.json version
-        if: ${{ github.ref_name != env.versionTag }}
-        run: |
-          echo "Tag ${{ github.ref_name }} does not match package.json version (expected ${{ env.versionTag }})."
-          exit 1
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
@@ -41,35 +36,70 @@ jobs:
       - name: Install npm dependencies
         run: npm ci --no-fund --no-audit --prefer-offline
 
+      # pretest runs lint and tsc
+      - name: Lint, typecheck, and test
+        run: npm test
+
+      # Reads the current version from public npmjs and git history
+      - id: version
+        uses: mapbox/gha@action-conventional-commit-version-v0
+        with:
+          before-sha: ${{ github.event.before }}
+          after-sha: ${{ github.event.after }}
+
+      # Versioned before building because scripts/build-package.js copies package.json into pkg/
       - name: Build publishable package
-        # Publishes from pkg/, not the repo root - see scripts/build-package.js.
-        # This compiles src/components into pkg/, with a package.json that has
-        # `private`/`scripts`/`devDependencies` stripped out.
-        run: npm run build
+        if: steps.version.outputs.skip != 'true'
+        run: |
+          npm version ${{ steps.version.outputs.version }} --no-git-tag-version
+          npm run build
 
-      - name: Release production
-        if: ${{ !contains(github.ref_name, '-') }}
+      - name: Publish
+        if: steps.version.outputs.skip != 'true'
         working-directory: pkg
-        run: npm publish
+        run: npm publish --tag ${{ steps.version.outputs.npm_publish_tag }}
 
-      - name: Release development
-        if: ${{ contains(github.ref_name, '-') }}
-        working-directory: pkg
-        run: npm publish --tag dev
+      - id: release
+        name: Create GitHub Release
+        continue-on-error: true
+        if: steps.version.outputs.skip != 'true' && steps.version.outputs.npm_publish_tag == 'latest'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: gh release create "v$VERSION" --target "$GITHUB_SHA" --title "v$VERSION" --generate-notes
+
+      - name: Comment released version on PRs
+        continue-on-error: true
+        if: steps.release.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -o pipefail
+          package_name="$(node -p 'require("./package.json").name')"
+          for sha in $(git rev-list "$BEFORE_SHA..$GITHUB_SHA"); do
+            gh api "repos/$GITHUB_REPOSITORY/commits/$sha/pulls" --jq '.[].number'
+          done | sort -u | while read -r pr; do
+            gh pr comment "$pr" --body "Released in \`$package_name@$VERSION\` (release [\`v$VERSION\`](https://github.com/$GITHUB_REPOSITORY/releases/tag/v$VERSION))."
+          done
 
       - name: Build docs
-        if: ${{ !contains(github.ref_name, '-') }}
+        if: steps.version.outputs.skip != 'true' && steps.version.outputs.npm_publish_tag == 'latest'
         run: npm run build-docs
 
       - name: Deploy docs
-        if: ${{ !contains(github.ref_name, '-') }}
+        if: steps.version.outputs.skip != 'true' && steps.version.outputs.npm_publish_tag == 'latest'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           worktree=$(mktemp -d)
           git fetch origin gh-pages --depth=1
-          git worktree add "$worktree" gh-pages
+          git worktree add "$worktree" FETCH_HEAD
 
           rsync -a --delete --exclude=.git build/ "$worktree/"
 
@@ -78,6 +108,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to deploy."
           else
-            git commit -m "Deploy docs for ${{ github.ref_name }}"
-            git push origin gh-pages
+            git commit -m "Deploy docs for v$VERSION"
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:gh-pages
           fi
