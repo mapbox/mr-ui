@@ -23,7 +23,7 @@ const srcDir = path.resolve(rootDir, 'src/components');
 // tests and examples.
 function compileComponents() {
   return execa.shell(
-    `babel "${rootDir}/src/components" --out-dir ${outputDir} --ignore "**/examples","**/*.test.tsx" --config-file ${rootDir}/scripts/babel.config.js --extensions ".ts,.tsx,.js"`,
+    `babel "${rootDir}/src/components" --out-dir ${outputDir} --ignore "**/examples","**/*.test.ts","**/*.test.tsx" --config-file ${rootDir}/scripts/babel.config.js --extensions ".ts,.tsx,.js"`,
     {
       cwd: srcDir,
       stdio: 'inherit'
@@ -61,6 +61,8 @@ function createPackageJson() {
   delete publishable.private;
   delete publishable.scripts;
   delete publishable.devDependencies;
+  delete publishable.overrides;
+  delete publishable.jest;
   delete publishable['lint-staged'];
   fs.writeFileSync(
     path.resolve(outputDir, 'package.json'),

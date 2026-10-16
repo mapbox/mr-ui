@@ -1,7 +1,6 @@
 import React, { ReactElement, ReactNode, forwardRef, useRef, ForwardedRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
 import { getTheme } from '../utils/styles';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
@@ -87,9 +86,11 @@ const Select = forwardRef(({
       return;
     }
 
-    // Check if the event target contains the following data attribute. If it
-    // does, do not call onExit.
-    if (querySelectorContainsNode('[data-popover-ignore-clicks]', e.target)) {
+    // Ignore clicks on or inside elements marked with this data attribute.
+    if (
+      e.target instanceof Element &&
+      e.target.closest('[data-popover-ignore-clicks]')
+    ) {
       return;
     }
 

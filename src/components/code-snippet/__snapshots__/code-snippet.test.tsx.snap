@@ -50,12 +50,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
-                <span
-                  class="hljs-keyword"
-                >
-                  class
-                </span>
-                 ViewController: UIViewController {
+                class ViewController: UIViewController {
               </div>
             </div>
             <div
@@ -65,11 +60,16 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
-                override func view
+                override func viewDidLoad
                 <span
-                  class="hljs-constructor"
+                  class="hljs-punctuation"
                 >
-                  DidLoad()
+                  (
+                </span>
+                <span
+                  class="hljs-punctuation"
+                >
+                  )
                 </span>
                  {
               </div>
@@ -81,11 +81,16 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
-                super.view
+                super.viewDidLoad
                 <span
-                  class="hljs-constructor"
+                  class="hljs-punctuation"
                 >
-                  DidLoad()
+                  (
+                </span>
+                <span
+                  class="hljs-punctuation"
+                >
+                  )
                 </span>
               </div>
             </div>
@@ -111,27 +116,21 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
+                let url = URL
                 <span
-                  class="hljs-keyword"
+                  class="hljs-punctuation"
                 >
-                  let
+                  (
                 </span>
-                 url = 
+                string: 
                 <span
-                  class="hljs-constructor"
+                  class="hljs-string"
                 >
-                  URL(
-                  <span
-                    class="hljs-params"
-                  >
-                    string
-                  </span>
-                  : 
-                  <span
-                    class="hljs-string"
-                  >
-                    "mapbox://styles/mapbox/streets-v9"
-                  </span>
+                  "mapbox://styles/mapbox/streets-v9"
+                </span>
+                <span
+                  class="hljs-punctuation"
+                >
                   )
                 </span>
               </div>
@@ -143,45 +142,16 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
+                let mapView = MGLMapView
                 <span
-                  class="hljs-keyword"
+                  class="hljs-punctuation"
                 >
-                  let
+                  (
                 </span>
-                 mapView = 
+                frame: view.bounds, styleURL: url
                 <span
-                  class="hljs-constructor"
+                  class="hljs-punctuation"
                 >
-                  MGLMapView(
-                  <span
-                    class="hljs-params"
-                  >
-                    frame
-                  </span>
-                  : 
-                  <span
-                    class="hljs-params"
-                  >
-                    view
-                  </span>
-                  .
-                  <span
-                    class="hljs-params"
-                  >
-                    bounds
-                  </span>
-                  , 
-                  <span
-                    class="hljs-params"
-                  >
-                    styleURL
-                  </span>
-                  : 
-                  <span
-                    class="hljs-params"
-                  >
-                    url
-                  </span>
                   )
                 </span>
               </div>
@@ -193,24 +163,7 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
-                mapView.autoresizingMask = 
-                <span
-                  class="hljs-literal"
-                >
-                  [.
-                  <span
-                    class="hljs-identifier"
-                  >
-                    flexibleWidth
-                  </span>
-                  , .
-                  <span
-                    class="hljs-identifier"
-                  >
-                    flexibleHeight
-                  </span>
-                  ]
-                </span>
+                mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
               </div>
             </div>
             <div
@@ -220,23 +173,46 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
-                mapView.set
+                mapView.setCenter
                 <span
-                  class="hljs-constructor"
+                  class="hljs-punctuation"
                 >
-                  Center(CLLocationCoordinate2D(
-                  <span
-                    class="hljs-params"
-                  >
-                    latitude
-                  </span>
-                  : 59.31, 
-                  <span
-                    class="hljs-params"
-                  >
-                    longitude
-                  </span>
-                  : 18.06)
+                  (
+                </span>
+                CLLocationCoordinate2D
+                <span
+                  class="hljs-punctuation"
+                >
+                  (
+                </span>
+                latitude: 
+                <span
+                  class="hljs-number"
+                >
+                  59
+                </span>
+                .
+                <span
+                  class="hljs-number"
+                >
+                  31
+                </span>
+                , longitude: 
+                <span
+                  class="hljs-number"
+                >
+                  18
+                </span>
+                .
+                <span
+                  class="hljs-number"
+                >
+                  06
+                </span>
+                <span
+                  class="hljs-punctuation"
+                >
+                  )
                 </span>
                 , zoomLevel: 
                 <span
@@ -244,13 +220,12 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
                 >
                   9
                 </span>
-                , animated: 
+                , animated: false
                 <span
-                  class="hljs-literal"
+                  class="hljs-punctuation"
                 >
-                  false
+                  )
                 </span>
-                )
               </div>
             </div>
             <div
@@ -260,16 +235,16 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
               <div
                 style="text-indent: -14.45px; margin-left: 14.45px;"
               >
-                view.add
+                view.addSubview
                 <span
-                  class="hljs-constructor"
+                  class="hljs-punctuation"
                 >
-                  Subview(
-                  <span
-                    class="hljs-params"
-                  >
-                    mapView
-                  </span>
+                  (
+                </span>
+                mapView
+                <span
+                  class="hljs-punctuation"
+                >
                   )
                 </span>
               </div>
@@ -327,8 +302,6 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
       >
         <div
           aria-label="Copy"
-          data-clipboard-text="import Mapbox
-"
           data-testid="copy-button"
           role="button"
         >
@@ -336,7 +309,6 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
             style="display: contents;"
           >
             <div
-              aria-controls="radix-_r_4_"
               aria-expanded="false"
               aria-haspopup="dialog"
               data-state="closed"
@@ -376,12 +348,6 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
       >
         <div
           aria-label="Copy"
-          data-clipboard-text="    let url = URL(string: \\"mapbox://styles/mapbox/streets-v9\\")
-    let mapView = MGLMapView(frame: view.bounds, styleURL: url)
-    mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
-    view.addSubview(mapView)
-"
           data-testid="copy-button"
           role="button"
         >
@@ -389,7 +355,6 @@ exports[`CodeSnippet copy ranges renders as expected 1`] = `
             style="display: contents;"
           >
             <div
-              aria-controls="radix-_r_6_"
               aria-expanded="false"
               aria-haspopup="dialog"
               data-state="closed"
@@ -613,11 +578,6 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
       >
         <div
           aria-label="Copy"
-          data-clipboard-text="dependencies {
-  compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar') {
-    transitive=true
-  }
-}"
           data-testid="copy-button"
           role="button"
         >
@@ -625,7 +585,6 @@ exports[`CodeSnippet highlighted, no ranges, with onCopy callback renders as exp
             style="display: contents;"
           >
             <div
-              aria-controls="radix-_r_0_"
               aria-expanded="false"
               aria-haspopup="dialog"
               data-state="closed"

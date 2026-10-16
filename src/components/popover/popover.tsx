@@ -1,7 +1,6 @@
 import React, { ReactElement, ReactNode, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { getTheme } from '../utils/styles';
 
@@ -88,9 +87,11 @@ export default function Popover({
       return;
     }
 
-    // Check if the event target contains the following data attribute. If it
-    // does, do not call onExit.
-    if (querySelectorContainsNode('[data-popover-ignore-clicks]', e.target)) {
+    // Ignore clicks on or inside elements marked with this data attribute.
+    if (
+      e.target instanceof Element &&
+      e.target.closest('[data-popover-ignore-clicks]')
+    ) {
       return;
     }
 

@@ -55,10 +55,12 @@ exports[`ControlText all options renders as expected 1`] = `
           style="display: contents;"
         >
           <button
-            aria-controls="radix-_r_5_"
+            aria-controls="radix-_r_f_"
             aria-expanded="true"
             aria-haspopup="dialog"
             class="h-full bg-red color-white round-r px6"
+            data-radix-popper-align="center"
+            data-radix-popper-side="top"
             data-state="open"
             data-testid="validation-error"
             role="alert"
@@ -103,7 +105,7 @@ exports[`ControlText all options renders as expected 1`] = `
       data-align="center"
       data-side="top"
       data-state="open"
-      id="radix-_r_5_"
+      id="radix-_r_f_"
       role="dialog"
       style="z-index: auto; --radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height); animation: none;"
       tabindex="-1"
@@ -235,7 +237,6 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
           style="display: contents;"
         >
           <button
-            aria-controls="radix-_r_0_"
             aria-expanded="false"
             aria-haspopup="dialog"
             class="h-full bg-red color-white round-r px6"

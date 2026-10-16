@@ -1,11 +1,12 @@
 import React, { ReactElement, useRef, useEffect, SVGProps, DetailedHTMLProps } from 'react';
 import PropTypes from 'prop-types';
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
+import { DataAttributes } from '../utils/data-attributes';
 
 export interface IconProps {
   name: string;
   inline?: boolean;
-  passthroughProps?: DetailedHTMLProps<SVGProps<SVGSVGElement>, SVGElement>;
+  passthroughProps?: DetailedHTMLProps<SVGProps<SVGSVGElement>, SVGElement> & DataAttributes;
   size?: number | string;
 }
 

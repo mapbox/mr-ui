@@ -21,6 +21,8 @@ exports[`Select all options renders 1`] = `
       aria-controls="radix-_r_m_"
       aria-expanded="true"
       data-placeholder=""
+      data-radix-popper-align="center"
+      data-radix-popper-side="left"
       data-state="open"
       data-testid="trigger"
       dir="ltr"
@@ -33,7 +35,7 @@ exports[`Select all options renders 1`] = `
   <div
     data-radix-popper-content-wrapper=""
     dir="ltr"
-    style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 50%; --radix-popper-available-width: -20px; --radix-popper-available-height: -40px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; visibility: hidden; pointer-events: none;"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 50%; --radix-popper-available-width: -20px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; visibility: hidden; pointer-events: none;"
   >
     <div
       class="bg-white border--white color-text border shadow-darken25 round border border-1 border--border--white"
@@ -142,6 +144,8 @@ exports[`Select basic renders 1`] = `
       aria-controls="radix-_r_0_"
       aria-expanded="true"
       data-placeholder=""
+      data-radix-popper-align="center"
+      data-radix-popper-side="right"
       data-state="open"
       data-testid="trigger"
       dir="ltr"
@@ -279,6 +283,8 @@ exports[`Select dark renders 1`] = `
       aria-controls="radix-_r_d_"
       aria-expanded="true"
       data-placeholder=""
+      data-radix-popper-align="center"
+      data-radix-popper-side="right"
       data-state="open"
       data-testid="trigger"
       dir="ltr"

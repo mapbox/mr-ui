@@ -6,11 +6,54 @@ exports[`Copiable basic renders as expected 1`] = `
     <div
       class="relative clearfix bg-darken5 round"
     >
+      <div
+        class="absolute top right px6 py6"
+      >
+        <div
+          aria-label="Copy"
+          data-testid="copy-button"
+          role="button"
+        >
+          <span
+            style="display: contents;"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              type="button"
+            >
+              <button
+                class="btn btn--xs py3 px3 round block"
+                data-state="closed"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="events-none icon"
+                  data-testid="icon-clipboard"
+                  focusable="false"
+                  style="width: 18px; height: 18px;"
+                >
+                  <use
+                    xlink:href="#icon-clipboard"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  />
+                </svg>
+                <span
+                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                >
+                  clipboard
+                </span>
+              </button>
+            </div>
+          </span>
+        </div>
+      </div>
       <span
         style="display: contents;"
       >
         <div
-          aria-controls="radix-_r_0_"
           aria-expanded="false"
           aria-haspopup="dialog"
           class="py6 px12"
@@ -42,7 +85,6 @@ exports[`Copiable truncated renders as expected 1`] = `
         style="display: contents;"
       >
         <div
-          aria-controls="radix-_r_7_"
           aria-expanded="false"
           aria-haspopup="dialog"
           class="py6 px12"

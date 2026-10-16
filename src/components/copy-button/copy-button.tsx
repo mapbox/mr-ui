@@ -1,10 +1,10 @@
-import React, { ReactElement, useState, useEffect, useCallback, HTMLAttributes, ReactNode} from 'react';
+import React, { ReactElement, useState, useEffect, HTMLAttributes, ReactNode} from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Clipboard from 'clipboard/dist/clipboard.min.js';
 import Icon from '../icon';
 import Popover from '../popover';
 import Tooltip from '../tooltip';
+import { DataAttributes } from '../utils/data-attributes';
 
 const FEEDBACK_TIME = 800;
 
@@ -12,13 +12,14 @@ export interface CopyButtonProps {
   text: string;
   onCopy?: (text: string) => void;
   block?: boolean;
+  /** @deprecated No longer has any effect; copying works inside focus traps. */
   focusTrapPaused?: boolean;
   className?: string;
   tooltipColoring?: 'light' | 'dark';
   tooltipTextSize?: 'xs' | 's' | 'none';
   tooltipContent?: string;
   children?: ReactNode;
-  passthroughProps?: HTMLAttributes<HTMLButtonElement>;
+  passthroughProps?: HTMLAttributes<HTMLButtonElement> & DataAttributes;
 }
 
 /**
@@ -33,7 +34,6 @@ export default function CopyButton({
   text,
   onCopy,
   block = false,
-  focusTrapPaused,
   className = 'btn btn--xs py3 px3 round',
   children,
   tooltipColoring = 'light',
@@ -41,42 +41,7 @@ export default function CopyButton({
   tooltipContent = 'Copy',
   passthroughProps
 }: CopyButtonProps): ReactElement {
-  const [clipboard, setClipboard] = useState(null);
-  const [clipboardElement, setClipboardElement] = useState(null);
   const [showingFeedback, setShowingFeedback] = useState(false);
-
-  const makeClipboard = useCallback(() => {
-    if (clipboardElement) {
-      setClipboard(new Clipboard(clipboardElement, {
-        // Setting the container is necessary for Clipboard to function within
-        // focus traps, like in a Modal.
-        ...(!focusTrapPaused && { container: clipboardElement })
-      }));
-    }
-  }, [focusTrapPaused, clipboardElement]);
-
-  const reinitializeClipboard = () => {
-    if (clipboard) {
-      clipboard.destroy();
-      makeClipboard();
-    }
-  };
-
-  useEffect(() => {
-    return () => {
-      if (clipboard) {
-        clipboard.destroy();
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    // initialize clipboard once ref is set
-    if (clipboardElement && !clipboard) {
-      makeClipboard();
-    }
-  }, [clipboardElement, clipboard, makeClipboard]);
 
   useEffect(() => {
     let timer;
@@ -91,14 +56,15 @@ export default function CopyButton({
   }, [showingFeedback]);
 
   const handleCopyButtonClick = () => {
-    // Clipboard.js attaches its own click handlers for copying
-    if (onCopy) {
-      onCopy(text);
-    }
-
-    // Show feedback
-    setShowingFeedback(true);
-    reinitializeClipboard();
+    navigator.clipboard.writeText(text).then(
+      () => {
+        if (onCopy) {
+          onCopy(text);
+        }
+        setShowingFeedback(true);
+      },
+      () => {}
+    );
   };
 
   const iconName = showingFeedback ? 'check' : 'clipboard';
@@ -121,15 +87,11 @@ export default function CopyButton({
     );
   }
 
-  // data-clipboard-text and the container ref are used by clipboard.js
-  // to copy text. Note that this wont have as nice a failure mode.
   return (
     <div
       role="button"
       aria-label={tooltipContent}
       data-testid="copy-button"
-      ref={ref => setClipboardElement(ref)}
-      data-clipboard-text={text}
       onClick={handleCopyButtonClick}
     >
       <Popover
@@ -176,10 +138,8 @@ CopyButton.propTypes = {
    */
   block: PropTypes.bool,
   /**
-   * If `true`, this will allow interaction with elements outside of the
-   * modal container. You normally don't want to set this, but it can be
-   * useful for nesting different components that are displaced to other
-   * parts of the DOM.
+   * Deprecated. No longer has any effect, since copying works inside focus
+   * traps like `Modal` without any extra configuration.
    */
   focusTrapPaused: PropTypes.bool,
   /**
@@ -208,5 +168,5 @@ CopyButton.propTypes = {
 };
 
 CopyButton.isCopySupported = () => {
-  return typeof window === 'undefined' ? false : Clipboard.isSupported();
+  return typeof navigator !== 'undefined' && !!navigator.clipboard?.writeText;
 };

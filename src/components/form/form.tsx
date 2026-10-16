@@ -1,13 +1,12 @@
 import React, {
   ReactElement,
   HTMLInputTypeAttribute,
+  KeyboardEvent,
   useState,
   useRef,
   useEffect
 } from 'react';
 import PropTypes from 'prop-types';
-import shallowEqualObjects from 'shallow-equal/objects';
-import Submittable from '@mapbox/react-submittable';
 import LoaderFull from '../loader-full';
 import LoaderLocal from '../loader-local';
 import usePrevious from '../utils/use_previous';
@@ -56,6 +55,22 @@ const formStates = {
   pendingSubmission: 'PENDING',
   completeSubmission: 'COMPLETE'
 };
+
+/**
+ * Whether two configs hold the same control config objects, compared by
+ * reference.
+ */
+function isSameConfig(a?: Config, b?: Config): boolean {
+  if (a === b) return true;
+  if (!a || !b) return false;
+  const aKeys = Object.keys(a);
+  return (
+    aKeys.length === Object.keys(b).length &&
+    aKeys.every(
+      (key) => Object.prototype.hasOwnProperty.call(b, key) && a[key] === b[key]
+    )
+  );
+}
 
 function setControlProperties(config: Config, values?: Values) {
   const controlValues = {};
@@ -125,7 +140,7 @@ export default function Form({
   }, []);
 
   useEffect(() => {
-    if (!shallowEqualObjects(config, prevConfig)) {
+    if (!isSameConfig(config, prevConfig)) {
       const {
         controlValues: updatedControlValues,
         controlValidationErrors: updatedControlValidationErrors
@@ -214,22 +229,29 @@ export default function Form({
       });
   };
 
-  const formProps: {
-    onEnter: () => void,
-    noValidate: boolean,
-    onCancel?: () => void
-  } = {
-    onEnter: onSubmit,
-    noValidate: true
+  /**
+   * Submits on Enter and cancels on Escape from any input, in place of the
+   * browser's implicit form submission. Enter is ignored while an IME
+   * composition is in progress, since it confirms the composed text.
+   */
+  const onKeyDown = (event: KeyboardEvent<HTMLFormElement>) => {
+    if ((event.target as HTMLElement).tagName !== 'INPUT') return;
+    if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
+      onSubmit();
+    } else if (event.key === 'Escape' && onCancel) {
+      onCancel();
+    }
   };
-
-  if (onCancel) formProps.onCancel = onCancel;
 
   return (
     <div className="relative">
-      <Submittable {...formProps}>
+      <form
+        noValidate
+        onKeyDown={onKeyDown}
+        onSubmit={(event) => event.preventDefault()}
+      >
         {renderForm(getControlProps, onSubmit)}
-      </Submittable>
+      </form>
       {formState.current === formStates.pendingSubmission && (
         <LoaderFull />
       )}

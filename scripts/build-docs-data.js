@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 require('hard-rejection/register');
-const _ = require('lodash');
 const path = require('path');
 const globby = require('globby');
 const makeDir = require('make-dir');
@@ -116,7 +115,7 @@ function generateDocsData() {
     .then((componentDirs) => {
       return Promise.all(componentDirs.sort().map(processComponent));
     })
-    .then(_.compact)
+    .then((componentObjectStrings) => componentObjectStrings.filter(Boolean))
     .then((componentObjectStrings) => `[${componentObjectStrings.join(',')}]`)
     .then((componentArrayString) => {
       const code = `

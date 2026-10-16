@@ -9,26 +9,25 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CopyButton from '../copy-button';
 import Popover from '../popover';
-import OSKey from 'os-key';
-import select from 'select';
+import { isMac } from '../utils/is-mac';
 
 const DISABLE_CLICK_TO_SELECT_THRESHOLD = 640;
 const FEEDBACK_TIME = 2000;
 
-function getCopyKeys(ua: string): string {
-  const keys = OSKey(ua);
-  if (!keys) return;
-  if (keys.primaryMeta) {
-    // ⌘+C
-    return `${keys.meta.symbol}+C`;
-  } else {
-    // Ctrl+C
-    return `${keys.ctrl.abbreviation}+C`;
-  }
+/**
+ * Select all text inside an element, so it can be copied with the keyboard.
+ */
+function selectContents(element: Node): void {
+  const range = document.createRange();
+  range.selectNodeContents(element);
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
 }
 
 export interface CopiableProps {
   value: string;
+  /** @deprecated No longer has any effect; copying works inside focus traps. */
   focusTrapPaused?: boolean;
   truncated?: boolean;
   onCopy?: (text: string) => void;
@@ -45,7 +44,6 @@ export interface CopiableProps {
  */
 export default function Copiable({
   value,
-  focusTrapPaused,
   onCopy,
   truncated = false
 }: CopiableProps): ReactElement {
@@ -68,7 +66,7 @@ export default function Copiable({
   const handleTextFocus = () => {
     if (typeof window === 'undefined') return;
     if (window.innerWidth < DISABLE_CLICK_TO_SELECT_THRESHOLD) return;
-    select(() => textEl.current);
+    selectContents(textEl.current);
     setCopyTooltipActive(true);
   };
 
@@ -83,7 +81,6 @@ export default function Copiable({
       <CopyButton
         text={value}
         block={true}
-        focusTrapPaused={focusTrapPaused}
         onCopy={onCopy}
       />
     </div>
@@ -94,10 +91,7 @@ export default function Copiable({
 
     return (
       <span>
-        <span className="txt-kbd">
-          {getCopyKeys(window.navigator.userAgent)}
-        </span>{' '}
-        to copy
+        <span className="txt-kbd">{isMac() ? '⌘+C' : 'Ctrl+C'}</span> to copy
       </span>
     );
   };
@@ -150,10 +144,8 @@ Copiable.propTypes = {
    */
   value: PropTypes.string.isRequired,
   /**
-   * If `true`, this will allow interaction with elements outside of the
-   * modal container. You normally don't want to set this, but it can be
-   * useful for nesting different components that are displaced to other
-   * parts of the DOM.
+   * Deprecated. No longer has any effect, since copying works inside focus
+   * traps like `Modal` without any extra configuration.
    */
   focusTrapPaused: PropTypes.bool,
   /**

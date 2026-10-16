@@ -2,11 +2,15 @@
 
 ## HEAD
 
-
 ## 2.25.0
 - [feature] Ship TypeScript declarations and export component Props types.
+- [deprecation] `focusTrapPaused` on `CopyButton` and `Copiable` no longer has any effect.
 - [fix] Tooltip no longer remounts its trigger on every render.
+- [fix] `Copiable` selects its text and shows the copy hint on focus again.
+- [fix] `Form` submits on numpad Enter, and no longer submits when Enter confirms an IME composition.
 - [fix] Update warning text from `color-orange-deep` to `color-orange-dark` to match conventions in Studio.
+- [chore] Develop on Node 24, upgrade to TypeScript 5.6, and update dev dependencies.
+- [chore] Replace the `clipboard`, `debounce`, `os-key`, `select`, `shallow-equal`, `@mapbox/query-selector-contains-node`, and `@mapbox/react-submittable` dependencies with vanilla JS.
 
 ## 2.24.3
 - [fix] `Toast` no longer applies right padding to the button group when `closeButton` is `false` but an `action` button is present. The padding was intended to compensate for the missing close button's spacing, and now only applies when neither a close button nor an action button is rendered.

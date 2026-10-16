@@ -1,6 +1,7 @@
 import React, { HTMLAttributes, ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { DataAttributes } from '../utils/data-attributes';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'appPrimary' | 'appSecondary';
 type Width = 'small' | 'medium' | 'large' | 'full';
@@ -19,7 +20,7 @@ export interface ButtonProps {
   size?: Size;
   width?: Width;
   ariaLabel?: string;
-  passthroughProps?: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>;
+  passthroughProps?: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> & DataAttributes;
 }
 
 function getSize(variant: Variant): Size {

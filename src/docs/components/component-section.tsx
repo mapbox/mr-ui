@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import assign from 'lodash/assign';
 import ComponentExample from './component-example';
 import { Data, Example, PropData } from '../typings';
 
@@ -10,7 +9,7 @@ interface Props {
 function sortedProps(propsData: { [key: string]: PropData }): Array<PropData> {
   return Object.keys(propsData)
     .reduce((memo, key) => {
-      memo.push(assign({ name: key }, propsData[key]));
+      memo.push({ name: key, ...propsData[key] });
       return memo;
     }, [])
     .sort((a, b) => {

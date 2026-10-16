@@ -15,11 +15,12 @@ describe('CopyButton', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    test('changes state on click', async () => {
+    test('copies text and changes state on click', async () => {
       render(<CopyButton {...props} />)
 
       await userEvent.click(screen.getByTestId('copy-button'));
 
+      expect(await navigator.clipboard.readText()).toBe(props.text);
       await waitFor(() => {
         expect(screen.getByText('Copied!')).toBeInTheDocument();
       });
@@ -72,8 +73,24 @@ describe('CopyButton', () => {
 
       await userEvent.click(screen.getByTestId('copy-button'));
 
-      expect(mockOnCopy).toHaveBeenCalledTimes(1);
+      await waitFor(() => {
+        expect(mockOnCopy).toHaveBeenCalledTimes(1);
+      });
       expect(mockOnCopy).toHaveBeenCalledWith('more copiable text');
+    });
+
+    test('does not call onCopy or show feedback when copying fails', async () => {
+      const writeText = jest
+        .spyOn(navigator.clipboard, 'writeText')
+        .mockRejectedValue(new Error('denied'));
+      render(<CopyButton {...props} />)
+
+      await userEvent.click(screen.getByTestId('copy-button'));
+
+      expect(writeText).toHaveBeenCalledWith('more copiable text');
+      expect(mockOnCopy).not.toHaveBeenCalled();
+      expect(screen.queryByText('Copied!')).not.toBeInTheDocument();
+      writeText.mockRestore();
     });
   });
 });
