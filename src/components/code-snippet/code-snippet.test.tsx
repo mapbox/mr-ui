@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
 import React from 'react';
 import hljs from 'highlight.js';
-import { screen, render, fireEvent } from '@testing-library/react';
+import { screen, render, fireEvent, waitFor } from '@testing-library/react';
 import CodeSnippet from './code-snippet';
 import CopyButton from '../copy-button';
 
@@ -68,10 +68,10 @@ describe('CodeSnippet', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    test('onCopy works', () => {
+    test('onCopy works', async () => {
       render(<CodeSnippet {...props} />)
       fireEvent.click(screen.getByTestId('copy-button'));
-      expect(onCopyMock).toHaveBeenCalledTimes(1);
+      await waitFor(() => expect(onCopyMock).toHaveBeenCalledTimes(1));
       expect(onCopyMock).toHaveBeenCalledWith(snippetA);
     });
   });
@@ -112,20 +112,22 @@ describe('CodeSnippet', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    test('onCopy callback first range works', () => {
+    test('onCopy callback first range works', async () => {
       render(<CodeSnippet {...props} />)
       const copyButtons = screen.queryAllByTestId('copy-button');
 
       fireEvent.click(copyButtons[0]);
+      await waitFor(() => expect(onCopyMock).toHaveBeenCalled());
       expect(onCopyMock).toHaveBeenCalledWith(`import Mapbox
 `, 0);
     });
 
-    test('onCopy callbacks second range works', () => {
+    test('onCopy callbacks second range works', async () => {
       render(<CodeSnippet {...props} />)
       const copyButtons = screen.queryAllByTestId('copy-button');
 
       fireEvent.click(copyButtons[1]);
+      await waitFor(() => expect(onCopyMock).toHaveBeenCalled());
       expect(onCopyMock).toHaveBeenCalledWith(`    let url = URL(string: \"mapbox://styles/mapbox/streets-v9\")
     let mapView = MGLMapView(frame: view.bounds, styleURL: url)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

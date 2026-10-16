@@ -31,7 +31,7 @@ type Option = {
   options?: Array<Option>
 }
 
-interface Props {
+export interface ControlSelectProps {
   id: string;
   options: Array<Option>;
   onChange: (value: string, id: string) => void;
@@ -64,7 +64,7 @@ export default function ControlSelect({
   themeLabel,
   children,
   ...props
-}: Props): ReactElement {
+}: ControlSelectProps): ReactElement {
   const extraProps = omit(props, propNames);
 
   const selectClassName = children

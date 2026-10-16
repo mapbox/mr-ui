@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icon';
 
-interface Props {
+export interface ChevronousTextProps {
   text: string;
   iconBefore?: boolean;
   iconSize?: number | string;
@@ -12,7 +12,7 @@ export default function ChevronousText({
   text,
   iconBefore = false,
   iconSize = '1.5em'
-}: Props): ReactElement {
+}: ChevronousTextProps): ReactElement {
 
   const splitText = text.split(' ');
   const iconWord = iconBefore ? splitText.shift() : splitText.pop();

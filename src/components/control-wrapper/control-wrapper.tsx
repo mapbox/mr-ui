@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import maybeAddPeriod from '../utils/maybe-add-period';
 
-interface Props {
+export interface ControlWrapperProps {
   id: string;
   children: ReactNode;
   themeControlWrapper?: string;
@@ -14,7 +14,7 @@ export default function ControlWrapper({
   themeControlWrapper = '',
   validationError,
   children
-}: Props): ReactElement {
+}: ControlWrapperProps): ReactElement {
   let errorEl = null;
   if (validationError) {
     const validationErrorId = `${id}-error`;

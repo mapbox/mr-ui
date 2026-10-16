@@ -5,7 +5,6 @@ exports[`CopyButton all props renders as expected 1`] = `
   <div>
     <div
       aria-label="Copy"
-      data-clipboard-text="more copiable text"
       data-testid="copy-button"
       role="button"
     >
@@ -13,7 +12,6 @@ exports[`CopyButton all props renders as expected 1`] = `
         style="display: contents;"
       >
         <div
-          aria-controls="radix-_r_4_"
           aria-expanded="false"
           aria-haspopup="dialog"
           data-state="closed"
@@ -36,7 +34,6 @@ exports[`CopyButton basic renders as expected 1`] = `
   <div>
     <div
       aria-label="Copy"
-      data-clipboard-text="Copied by the default test case"
       data-testid="copy-button"
       role="button"
     >
@@ -44,7 +41,6 @@ exports[`CopyButton basic renders as expected 1`] = `
         style="display: contents;"
       >
         <div
-          aria-controls="radix-_r_0_"
           aria-expanded="false"
           aria-haspopup="dialog"
           data-state="closed"

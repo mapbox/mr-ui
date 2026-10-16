@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Icon from '../icon';
 import Tooltip from '../tooltip';
 
-interface Props {
+export interface ControlAlertProps {
   theme: 'error' | 'locked' | 'success' | 'warning';
   children: ReactNode;
   autoFocus?: boolean;
@@ -16,7 +16,7 @@ export default function ControlAlert({
   children,
   autoFocus = false,
   onButtonClick
-}: Props): ReactElement {
+}: ControlAlertProps): ReactElement {
   const container = useRef(null);
 
   useEffect(() => {

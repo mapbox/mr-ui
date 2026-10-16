@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 require('hard-rejection/register');
-const _ = require('lodash');
 const path = require('path');
 const globby = require('globby');
 const makeDir = require('make-dir');
@@ -89,12 +88,18 @@ function processComponent(hyphenName) {
   return Promise.all([
     globby(path.join(componentDir, `${hyphenName}.(js|tsx)`)).then(
       ([srcFilename]) => {
-        return pify(fs.readFile)(srcFilename, 'utf8');
+        return pify(fs.readFile)(srcFilename, 'utf8').then((code) => ({
+          code,
+          srcFilename
+        }));
       }
     ),
     getExamples(componentDir)
-  ]).then(([code, examples]) => {
-    const parsedData = reactDocgen.parse(code);
+  ]).then(([{ code, srcFilename }, examples]) => {
+    // The filename lets react-docgen parse .tsx files as TypeScript, not Flow.
+    const parsedData = reactDocgen.parse(code, null, null, {
+      filename: srcFilename
+    });
     return `{
       name: '${parsedData.displayName}',
       description: ${
@@ -116,7 +121,7 @@ function generateDocsData() {
     .then((componentDirs) => {
       return Promise.all(componentDirs.sort().map(processComponent));
     })
-    .then(_.compact)
+    .then((componentObjectStrings) => componentObjectStrings.filter(Boolean))
     .then((componentObjectStrings) => `[${componentObjectStrings.join(',')}]`)
     .then((componentArrayString) => {
       const code = `

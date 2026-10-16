@@ -1,12 +1,13 @@
 import React, { HTMLAttributes, ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { DataAttributes } from '../utils/data-attributes';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'appPrimary' | 'appSecondary';
 type Width = 'small' | 'medium' | 'large' | 'full';
 type Size = 'small' | 'medium' | 'large';
 
-interface Props {
+export interface ButtonProps {
   children: ReactNode;
   variant?: Variant;
   color?: string;
@@ -19,7 +20,7 @@ interface Props {
   size?: Size;
   width?: Width;
   ariaLabel?: string;
-  passthroughProps?: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>;
+  passthroughProps?: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> & DataAttributes;
 }
 
 function getSize(variant: Variant): Size {
@@ -100,7 +101,7 @@ export default function Button({
   passthroughProps,
   href,
   children
-}: Props): ReactElement {
+}: ButtonProps): ReactElement {
 
   const isSmall: boolean = size === 'small';
   const isMedium: boolean = size === 'medium';

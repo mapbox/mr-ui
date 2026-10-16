@@ -4,7 +4,7 @@ import omit from '../utils/omit';
 
 type ElementProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-interface Props extends ElementProps {
+export interface LoaderLocalProps extends ElementProps {
   themeLoader?: string;
 }
 
@@ -15,8 +15,8 @@ const propNames = [
 export default function LoaderLocal({
   themeLoader = 'bg-gray-faint',
   ...props
-}: Props): ReactElement {
-  const passedProps: Props = omit(props, propNames);
+}: LoaderLocalProps): ReactElement {
+  const passedProps: LoaderLocalProps = omit(props, propNames);
   return <div
     className={`loading absolute top left right bottom flex flex--center-cross flex--center-main ${themeLoader}`}
     {...passedProps}

@@ -334,12 +334,12 @@ exports[`Form all controls renders as expected 1`] = `
                         style=""
                         tabindex="0"
                       />
-                      <input
-                        name="area"
-                        style="display: none;"
-                        value="10"
-                      />
                     </span>
+                    <input
+                      name="area"
+                      style="display: none;"
+                      value="10"
+                    />
                   </span>
                 </div>
                 <div
@@ -373,7 +373,7 @@ exports[`Form all controls renders as expected 1`] = `
                   </button>
                   <input
                     aria-hidden="true"
-                    style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px; width: 0px; height: 0px;"
+                    style="position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 0px; height: 0px;"
                     tabindex="-1"
                     type="checkbox"
                     value="on"

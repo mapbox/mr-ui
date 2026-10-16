@@ -38,3 +38,15 @@ global.ResizeObserver = class ResizeObserver {
   unobserve() {}
   disconnect() {}
 };
+
+// jsdom has no Async Clipboard API.
+let clipboardText = '';
+Object.defineProperty(navigator, 'clipboard', {
+  configurable: true,
+  value: {
+    writeText: async (text: string) => {
+      clipboardText = text;
+    },
+    readText: async () => clipboardText
+  }
+});

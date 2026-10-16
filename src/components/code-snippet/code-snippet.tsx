@@ -1,6 +1,5 @@
-import React, { ReactElement, useRef, useEffect } from 'react';
+import React, { ReactElement, useRef, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'debounce';
 import CopyButton from '../copy-button';
 
 const defaultTheme = `
@@ -75,7 +74,45 @@ const defaultTheme = `
 // Theme cache, used to prevent the creation of multiple <style> elements with the same content.
 const injectedThemes = [];
 
-interface Props {
+/**
+ * Positions each chunk's overlay and copy button over its code.
+ */
+function positionChunks(container: HTMLElement | null): void {
+  if (!container) return;
+
+  const chunkOverlays = container.querySelectorAll<HTMLElement>(
+    '[data-chunk-overlay]'
+  );
+  for (let i = 0, l = chunkOverlays.length; i < l; i++) {
+    const overlayElement = chunkOverlays[i];
+    const chunkId = overlayElement.getAttribute('data-chunk-overlay');
+    const codeElement = container.querySelector<HTMLElement>(
+      `[data-chunk-code="${chunkId}"]`
+    );
+    if (!codeElement)
+      throw new Error(
+        `No code element found with [data-chunk-code="${chunkId}"]`
+      );
+    const copyElement = container.querySelector<HTMLElement>(
+      `[data-chunk-copy="${chunkId}"]`
+    );
+    if (!copyElement)
+      throw new Error(
+        `No copy element found with [data-chunk-copy="${chunkId}"]`
+      );
+
+    overlayElement.style.top = `${codeElement.offsetTop}px`;
+    copyElement.style.top = `${codeElement.offsetTop + 2}px`;
+    overlayElement.style.height = `${codeElement.clientHeight}px`;
+
+    // Since these elements move into position a split-second after the component
+    // mounts and renders, we'll fade them in after they're positioned
+    overlayElement.style.opacity = '1';
+    copyElement.style.opacity = '1';
+  }
+}
+
+export interface CodeSnippetProps {
   code: string;
   highlightedCode?: string;
   copyRanges?: number[][];
@@ -93,44 +130,22 @@ export default function CodeSnippet({
   onCopy,
   highlightThemeCss = defaultTheme,
   characterWidth = 7.225 // Will need to change this if we change font size
-}: Props): ReactElement {
+}: CodeSnippetProps): ReactElement {
   const showCopyButton = useRef(CopyButton.isCopySupported());
   const containerElement = useRef(null);
+  const adjustPositionsTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  const adjustPositions = debounce(() => {
-    if (!containerElement.current) return;
-
-    const chunkOverlays = containerElement.current.querySelectorAll(
-      '[data-chunk-overlay]'
+  /**
+   * Debounced {@link positionChunks}, so bursts of resizes and renders only
+   * measure once.
+   */
+  const adjustPositions = useCallback(() => {
+    clearTimeout(adjustPositionsTimeout.current);
+    adjustPositionsTimeout.current = setTimeout(
+      () => positionChunks(containerElement.current),
+      300
     );
-    for (let i = 0, l = chunkOverlays.length; i < l; i++) {
-      const overlayElement = chunkOverlays[i];
-      const chunkId = overlayElement.getAttribute('data-chunk-overlay');
-      const codeElement = containerElement.current.querySelector(
-        `[data-chunk-code="${chunkId}"]`
-      );
-      if (!codeElement)
-        throw new Error(
-          `No code element found with [data-chunk-code="${chunkId}"]`
-        );
-      const copyElement = containerElement.current.querySelector(
-        `[data-chunk-copy="${chunkId}"]`
-      );
-      if (!copyElement)
-        throw new Error(
-          `No copy element found with [data-chunk-copy="${chunkId}"]`
-        );
-
-      overlayElement.style.top = `${codeElement.offsetTop}px`;
-      copyElement.style.top = `${codeElement.offsetTop + 2}px`;
-      overlayElement.style.height = `${codeElement.clientHeight}px`;
-
-      // Since these elements move into position a split-second after the component
-      // mounts and renders, we'll fade them in after they're positioned
-      overlayElement.style.opacity = '1';
-      copyElement.style.opacity = '1';
-    }
-  }, 300);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', adjustPositions);
@@ -145,6 +160,7 @@ export default function CodeSnippet({
 
     return () => {
       window.removeEventListener('resize', adjustPositions);
+      clearTimeout(adjustPositionsTimeout.current);
     }
   }, [adjustPositions, highlightThemeCss]);
 

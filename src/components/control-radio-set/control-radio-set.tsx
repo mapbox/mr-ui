@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
 import { InputProps } from '../typings';
 
-interface Props {
+export interface ControlRadioSetProps {
   id: string;
   onChange: (value: string, id: string) => void;
   options: Array<InputProps & {
@@ -31,7 +31,7 @@ export default function ControlRadioSet({
   themeRadioContainer = 'txt-s block mb6 flex',
   themeRadio = 'mr6 radio--blue radio--s-label inline-block',
   themeControlWrapper
-}: Props): ReactElement {
+}: ControlRadioSetProps): ReactElement {
 
   const groupProps = {
     id,

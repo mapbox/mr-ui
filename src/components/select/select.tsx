@@ -1,7 +1,6 @@
 import React, { ReactElement, ReactNode, forwardRef, useRef, ForwardedRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import querySelectorContainsNode from '@mapbox/query-selector-contains-node';
 import { getTheme } from '../utils/styles';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
@@ -13,7 +12,7 @@ type Option = {
   options?: Array<Option>
 }
 
-interface Props {
+export interface SelectProps {
   children: ReactNode;
   options: Array<Option>;
   onChange: (value: string) => void;
@@ -61,7 +60,7 @@ const Select = forwardRef(({
   themeSelectItemWrapper = '',
   themeSelectItem = 'transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
   passthroughProps
-}: Props, forwardedRef: ForwardedRef<HTMLButtonElement>): ReactElement => {
+}: SelectProps, forwardedRef: ForwardedRef<HTMLButtonElement>): ReactElement => {
   const { background, borderColor, color, fill } = getTheme(coloring);
   const triggerRef = useRef(null);
 
@@ -87,9 +86,11 @@ const Select = forwardRef(({
       return;
     }
 
-    // Check if the event target contains the following data attribute. If it
-    // does, do not call onExit.
-    if (querySelectorContainsNode('[data-popover-ignore-clicks]', e.target)) {
+    // Ignore clicks on or inside elements marked with this data attribute.
+    if (
+      e.target instanceof Element &&
+      e.target.closest('[data-popover-ignore-clicks]')
+    ) {
       return;
     }
 

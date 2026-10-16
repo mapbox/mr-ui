@@ -2,15 +2,9 @@ import React from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import CopyButton from '../copy-button';
 import Copiable from './copiable';
-import select from 'select';
 import userEvent from '@testing-library/user-event';
 
 const FEEDBACK_TIME = 2000;
-
-jest.mock('select', () => jest.fn());
-jest.mock('os-key', () =>
-  jest.fn(() => ({ primaryMeta: true, meta: { symbol: 'eh' } }))
-);
 
 describe('Copiable', () => {
   describe('basic', () => {
@@ -24,7 +18,7 @@ describe('Copiable', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    test('calls select library with element holding text to copy', async () => {
+    test('selects the text to copy on focus', async () => {
       jest.spyOn(CopyButton, 'isCopySupported').mockImplementation(() => true);
       render(<Copiable {...props} />);
 
@@ -33,7 +27,7 @@ describe('Copiable', () => {
       });
 
       await waitFor(() => {
-        expect(select).toHaveBeenCalled();
+        expect(window.getSelection().toString()).toBe(props.value);
       });
     });
 
@@ -91,7 +85,9 @@ describe('Copiable', () => {
 
       await userEvent.click(screen.getByTestId('copy-button'));
 
-      expect(mockOnCopy).toHaveBeenCalledTimes(1);
+      await waitFor(() => {
+        expect(mockOnCopy).toHaveBeenCalledTimes(1);
+      });
       expect(mockOnCopy).toHaveBeenCalledWith(text);
     });
 
@@ -102,7 +98,9 @@ describe('Copiable', () => {
 
       await userEvent.click(screen.getByTestId('copy-button'));
 
-      expect(mockOnCopy).toHaveBeenCalledTimes(1);
+      await waitFor(() => {
+        expect(mockOnCopy).toHaveBeenCalledTimes(1);
+      });
       expect(mockOnCopy).toHaveBeenCalledWith(text);
     });
   });

@@ -4,7 +4,7 @@ import omit from '../utils/omit';
 import ControlWrapper from '../control-wrapper';
 import { InputProps } from '../typings';
 
-interface Props {
+export interface ControlToggleSetProps {
   id: string;
   onChange: (value: string, id: string) => void;
   options: Array<InputProps & {
@@ -32,7 +32,7 @@ export default function ControlToggleSet({
   themeToggleContainer = '',
   themeToggle = 'txt-s py0 round-full toggle--s toggle--gray',
   themeControlWrapper
-}: Props): ReactElement {
+}: ControlToggleSetProps): ReactElement {
 
   const groupProps = {
     id,

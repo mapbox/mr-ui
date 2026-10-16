@@ -5,7 +5,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import EventTrap from '../modal/event-trap';
 
-interface Props {
+export interface DrawerProps {
   children: ReactElement;
   side?: 'left' | 'right';
   allowEventBubbling?: boolean;
@@ -33,7 +33,7 @@ export default function Drawer({
   accessibleTitle = 'drawer',
   accessibleDescription,
   onExit
-}: Props): ReactElement {
+}: DrawerProps): ReactElement {
   const overlayProps: {
     className: string;
     'data-testid': string;

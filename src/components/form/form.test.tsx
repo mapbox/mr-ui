@@ -356,4 +356,68 @@ describe('Form', () => {
     });
   });
 
+  describe('keyboard submission', () => {
+    const mockHandleFormData = jest.fn();
+
+    const props = {
+      config: {
+        name: {
+          label: 'Name',
+          placeholder: 'Enter name'
+        },
+        description: {
+          label: 'Description',
+          type: 'textarea'
+        }
+      },
+      handleFormData: mockHandleFormData,
+      renderForm(getControlProps) {
+        return (
+          <div>
+            <ControlText {...getControlProps('name')} />
+            <ControlTextarea {...getControlProps('description')} />
+          </div>
+        );
+      }
+    };
+
+    test('Enter in an input submits the form', async () => {
+      render(<Form {...props} />)
+      fireEvent.keyDown(screen.getByTestId('name-input'), { key: 'Enter' });
+
+      await waitFor(() => {
+        expect(mockHandleFormData).toHaveBeenCalledTimes(1);
+      });
+    });
+
+    test('Enter during IME composition does not submit the form', async () => {
+      render(<Form {...props} />)
+      fireEvent.keyDown(screen.getByTestId('name-input'), {
+        key: 'Enter',
+        isComposing: true
+      });
+
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      expect(mockHandleFormData).not.toHaveBeenCalled();
+    });
+
+    test('Enter in a textarea does not submit the form', async () => {
+      render(<Form {...props} />)
+      fireEvent.keyDown(screen.getByTestId('description-textarea'), {
+        key: 'Enter'
+      });
+
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      expect(mockHandleFormData).not.toHaveBeenCalled();
+    });
+
+    test('Escape without onCancel does nothing', async () => {
+      render(<Form {...props} />)
+      fireEvent.keyDown(screen.getByTestId('name-input'), { key: 'Escape' });
+
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      expect(mockHandleFormData).not.toHaveBeenCalled();
+    });
+  });
+
 });

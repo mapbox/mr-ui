@@ -15,7 +15,7 @@ import Popover from '../popover';
 import Icon from '../icon';
 import { InputProps, PopoverProps } from '../typings';
 
-interface Props extends Omit<InputProps, 'onChange'> {
+export interface ControlTextProps extends Omit<InputProps, 'onChange'> {
   id: string;
   onChange: (value: string, id: string) => void;
   value?: string | number;
@@ -67,7 +67,7 @@ export default function ControlText({
   themeControlInput = 'input',
   themeControlWrapper,
   ...props
-}: Props): ReactElement {
+}: ControlTextProps): ReactElement {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const extraProps = omit(props, propNames);
   const inputElement = useRef(null);

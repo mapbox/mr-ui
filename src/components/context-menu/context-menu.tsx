@@ -17,7 +17,7 @@ type Option = {
   disabled?: boolean;
 };
 
-interface Props {
+export interface ContextMenuProps {
   children: ReactNode;
   onChange: (value: string) => void;
   onOpenChange?: (open: boolean) => void;
@@ -37,7 +37,7 @@ export default function ContextMenu({
   themeItem = 'px6 py6 round color-blue-on-hover bg-darken5-on-hover',
   themeTitle = 'px6 py6 txt-bold',
   themeSeparator = 'border-t border--gray-light my6'
-}: Props): ReactElement {
+}: ContextMenuProps): ReactElement {
 
   const renderOption = ({ label, value, keyCode, disabled = false, options: subOptions }, index: number) => {
     const itemClass = classnames(`flex flex--space-between-main ${themeItem}`, {

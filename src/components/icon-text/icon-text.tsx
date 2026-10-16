@@ -2,7 +2,7 @@ import React, {ReactElement, ReactNode} from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icon';
 
-interface Props {
+export interface IconTextProps {
   children: ReactNode;
   iconBefore?: ReactNode;
   iconAfter?: ReactNode;
@@ -19,7 +19,7 @@ export default function IconText({
   iconBefore,
   iconAfter,
   inline = false
-}: Props): ReactElement {
+}: IconTextProps): ReactElement {
 
   const renderIcon = (icon: ReactNode) => {
     if (typeof icon === 'string') {

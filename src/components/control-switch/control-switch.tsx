@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
 import * as Switch from '@radix-ui/react-switch';
 
-interface Props {
+export interface ControlSwitchProps {
   id: string,
   onChange: (checked: boolean, id: string) => void;
   disabled?: boolean;
@@ -17,7 +17,7 @@ interface Props {
   themeLabel?: string;
 }
 
-export default function ControlSwitch(props: Props): ReactElement {
+export default function ControlSwitch(props: ControlSwitchProps): ReactElement {
   const {
     id,
     onChange,

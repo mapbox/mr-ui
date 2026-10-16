@@ -71,7 +71,6 @@ exports[`ContextMenu all options renders 1`] = `
         </span>
       </div>
       <div
-        aria-controls="radix-_r_7_"
         aria-expanded="false"
         aria-haspopup="menu"
         class="flex flex--space-between-main px6 py6 round color-red-on-hover bg-red-lighter-on-hover"

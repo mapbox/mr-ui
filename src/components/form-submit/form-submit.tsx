@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 
-interface Props {
+export interface FormSubmitProps {
   onSubmit: (e: any) => void;
   label?: string;
   disabled?: boolean;
@@ -15,7 +15,7 @@ export default function FormSubmit({
   disabled = false,
   themeButton = 'btn',
   onSubmit,
-}: Props): ReactElement {
+}: FormSubmitProps): ReactElement {
 
   const inputProps = {
     onClick: onSubmit,

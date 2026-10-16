@@ -313,6 +313,8 @@ exports[`Modal basic, auto renders 1`] = `
         aria-describedby="radix-_r_10_"
         aria-label="Close"
         class="btn btn--transparent unround-t unround-br color-gray py12 px12 absolute top right"
+        data-radix-popper-align="center"
+        data-radix-popper-side="top"
         data-state="instant-open"
         data-testid="modal-close"
         type="button"
@@ -353,6 +355,8 @@ exports[`Modal basic, auto renders 1`] = `
       data-align="center"
       data-side="top"
       data-state="instant-open"
+      id="radix-_r_10_"
+      role="tooltip"
       style="pointer-events: auto; filter: drop-shadow(0 0 4px rgba(14, 33, 39, 0.25)); --radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); --radix-tooltip-content-available-width: var(--radix-popper-available-width); --radix-tooltip-content-available-height: var(--radix-popper-available-height); --radix-tooltip-trigger-width: var(--radix-popper-anchor-width); --radix-tooltip-trigger-height: var(--radix-popper-anchor-height); animation: none;"
     >
       Close
@@ -372,13 +376,6 @@ exports[`Modal basic, auto renders 1`] = `
             points="0,0 30,0 15,10"
           />
         </svg>
-      </span>
-      <span
-        id="radix-_r_10_"
-        role="tooltip"
-        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-      >
-        Close
       </span>
     </div>
   </div>

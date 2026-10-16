@@ -5,7 +5,7 @@ import ControlWrapper from '../control-wrapper';
 import IconText from '../icon-text';
 import { InputProps } from '../typings';
 
-interface Props extends Omit<InputProps, 'value' | 'onChange'> {
+export interface ControlFileProps extends Omit<InputProps, 'value' | 'onChange'> {
   id: string;
   onChange: (files: '' | Array<string>, id: string) => void;
   value?: '' | [{ name: string }];
@@ -42,7 +42,7 @@ export default function ControlFile({
   themeControlWrapper,
   children,
   ...props
-}: Props): ReactElement {
+}: ControlFileProps): ReactElement {
   const extraProps = omit(props, propNames);
   const file = useRef(null);
 

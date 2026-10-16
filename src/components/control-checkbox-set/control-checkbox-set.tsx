@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
 import { InputProps } from '../typings';
 
-interface Props {
+export interface ControlCheckboxSetProps {
   id: string;
   onChange: (value: Array<string>, id: string) => void;
   options: Array<InputProps & {
@@ -32,7 +32,7 @@ export default function ControlCheckboxSet({
   themeCheckboxContainer = 'txt-s block mb6 flex',
   themeCheckbox = 'mr6 inline-block checkbox--blue checkbox--s-label',
   themeControlWrapper
-}: Props): ReactElement {
+}: ControlCheckboxSetProps): ReactElement {
 
   const onCheckboxChange = (e) => {
     const current = e.target.value;
