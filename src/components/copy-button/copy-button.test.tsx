@@ -92,5 +92,23 @@ describe('CopyButton', () => {
       expect(screen.queryByText('Copied!')).not.toBeInTheDocument();
       writeText.mockRestore();
     });
+
+    test('does nothing when the Clipboard API is unavailable', async () => {
+      const clipboard = Object.getOwnPropertyDescriptor(navigator, 'clipboard');
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: undefined
+      });
+      const consoleError = jest.spyOn(console, 'error');
+      render(<CopyButton {...props} />)
+
+      await userEvent.click(screen.getByTestId('copy-button'));
+
+      expect(consoleError).not.toHaveBeenCalled();
+      expect(mockOnCopy).not.toHaveBeenCalled();
+      expect(screen.queryByText('Copied!')).not.toBeInTheDocument();
+      consoleError.mockRestore();
+      Object.defineProperty(navigator, 'clipboard', clipboard);
+    });
   });
 });

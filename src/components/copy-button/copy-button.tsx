@@ -56,6 +56,8 @@ export default function CopyButton({
   }, [showingFeedback]);
 
   const handleCopyButtonClick = () => {
+    if (!CopyButton.isCopySupported()) return;
+
     navigator.clipboard.writeText(text).then(
       () => {
         if (onCopy) {

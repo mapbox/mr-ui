@@ -4,6 +4,7 @@
 
 ## 2.25.0
 - [feature] Ship TypeScript declarations and export component Props types.
+- [feature] `CopyButton` copies with the Clipboard API, which requires HTTPS for most browsers.
 - [deprecation] `focusTrapPaused` on `CopyButton` and `Copiable` no longer has any effect.
 - [fix] Tooltip no longer remounts its trigger on every render.
 - [fix] `Copiable` selects its text and shows the copy hint on focus again.
