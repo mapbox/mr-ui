@@ -67,4 +67,4 @@ The workflow builds `pkg/` and publishes it via [npm Trusted Publishing](https:/
 
 #### Pre-release versions on other branches
 
-For testing in downstream projects, you can manually trigger the "NPM release" workflow on a branch to publish a pre-release tagged with the short commit sha (e.g. `2.24.3-aa79c6a`) under the npm `prerelease` dist-tag, without affecting `latest` or the live docs site. Check the workflow results for the published version.
+For testing in downstream projects, you can manually trigger the "NPM release" workflow on a branch to publish a pre-release tagged with the short commit sha (e.g. `2.25.0-3ce8575`) under the npm `prerelease` dist-tag, without affecting `latest` or the live docs site. Check the workflow results for the published version.
