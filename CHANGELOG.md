@@ -1,5 +1,7 @@
 ## Changelog
 
+Starting after 2.25.0, release notes are published as [GitHub Releases](https://github.com/mapbox/mr-ui/releases).
+
 ## HEAD
 
 ## 2.25.0
