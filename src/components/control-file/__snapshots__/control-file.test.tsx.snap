@@ -7,63 +7,54 @@ exports[`ControlFile all options renders as expected 1`] = `
       class="relative bg-red-light"
     >
       <div
-        class="flex flex--center-cross overflow-hidden"
+        class="flex flex--center-cross"
       >
-        <div
-          class="flex-child-grow"
+        <button
+          aria-hidden="true"
+          class="bg-red-faint py6 px12 round-full link--red txt-s relative"
+          type="button"
         >
-          <button
-            aria-hidden="true"
-            class="bg-red-faint py6 px12 round-full link--red txt-s relative"
-            type="button"
+          <span
+            class="flex flex--center-cross gap6"
           >
-            <span
-              class="flex flex--center-cross"
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-harddrive"
+              focusable="false"
+              style="width: 18px; height: 18px;"
             >
-              <span
-                class="mr6"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="events-none icon"
-                  data-testid="icon-harddrive"
-                  focusable="false"
-                  style="width: 18px; height: 18px;"
-                >
-                  <use
-                    xlink:href="#icon-harddrive"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  />
-                </svg>
-                <span
-                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                >
-                  harddrive
-                </span>
-              </span>
-              Select an image
+              <use
+                xlink:href="#icon-harddrive"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              harddrive
             </span>
-          </button>
-          <input
-            accept=".jpg, .jpeg, .png"
-            aria-invalid="true"
-            aria-required="false"
-            class="absolute opacity0 top left"
-            data-testid="testinput-3-input"
-            id="testinput-3"
-            multiple=""
-            name="testinput-3"
-            style="height: 0px; width: 0px; z-index: -1;"
-            tabindex="-1"
-            type="file"
-          />
-        </div>
+            Select an image
+          </span>
+        </button>
+        <input
+          accept=".jpg, .jpeg, .png"
+          aria-invalid="true"
+          aria-required="false"
+          class="hide-visually"
+          data-testid="testinput-3-input"
+          id="testinput-3"
+          multiple=""
+          name="testinput-3"
+          tabindex="-1"
+          type="file"
+        />
       </div>
       <div
         role="alert"
       >
         <div
-          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
           data-testid="testinput-3-error"
           id="testinput-3-error"
         >
@@ -82,54 +73,45 @@ exports[`ControlFile basic renders as expected 1`] = `
       class="relative "
     >
       <div
-        class="flex flex--center-cross overflow-hidden"
+        class="flex flex--center-cross"
       >
-        <div
-          class="flex-child-grow"
+        <button
+          aria-hidden="true"
+          class="btn relative"
+          type="button"
         >
-          <button
-            aria-hidden="true"
-            class="btn relative"
-            type="button"
+          <span
+            class="flex flex--center-cross gap6"
           >
-            <span
-              class="flex flex--center-cross"
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-harddrive"
+              focusable="false"
+              style="width: 18px; height: 18px;"
             >
-              <span
-                class="mr6"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="events-none icon"
-                  data-testid="icon-harddrive"
-                  focusable="false"
-                  style="width: 18px; height: 18px;"
-                >
-                  <use
-                    xlink:href="#icon-harddrive"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  />
-                </svg>
-                <span
-                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                >
-                  harddrive
-                </span>
-              </span>
-              Select a file
+              <use
+                xlink:href="#icon-harddrive"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              harddrive
             </span>
-          </button>
-          <input
-            aria-required="true"
-            class="absolute opacity0 top left"
-            data-testid="testinput-1-input"
-            id="testinput-1"
-            name="testinput-1"
-            style="height: 0px; width: 0px; z-index: -1;"
-            tabindex="-1"
-            type="file"
-          />
-        </div>
+            Select a file
+          </span>
+        </button>
+        <input
+          aria-required="true"
+          class="hide-visually"
+          data-testid="testinput-1-input"
+          id="testinput-1"
+          name="testinput-1"
+          tabindex="-1"
+          type="file"
+        />
       </div>
       <div
         role="alert"
@@ -146,29 +128,24 @@ exports[`ControlFile child element renders as expected 1`] = `
       class="relative "
     >
       <div
-        class="flex flex--center-cross overflow-hidden"
+        class="flex flex--center-cross"
       >
-        <div
-          class="flex-child-grow"
+        <button
+          aria-hidden="true"
+          class="btn relative"
+          type="button"
         >
-          <button
-            aria-hidden="true"
-            class="btn relative"
-            type="button"
-          >
-            Hello!
-          </button>
-          <input
-            aria-required="true"
-            class="absolute opacity0 top left"
-            data-testid="testinput-4-input"
-            id="testinput-4"
-            name="testinput-4"
-            style="height: 0px; width: 0px; z-index: -1;"
-            tabindex="-1"
-            type="file"
-          />
-        </div>
+          Hello!
+        </button>
+        <input
+          aria-required="true"
+          class="hide-visually"
+          data-testid="testinput-4-input"
+          id="testinput-4"
+          name="testinput-4"
+          tabindex="-1"
+          type="file"
+        />
       </div>
       <div
         role="alert"
@@ -185,56 +162,47 @@ exports[`ControlFile disabled renders as expected 1`] = `
       class="relative "
     >
       <div
-        class="flex flex--center-cross overflow-hidden"
+        class="flex flex--center-cross"
       >
-        <div
-          class="flex-child-grow"
+        <button
+          aria-hidden="true"
+          class="btn relative"
+          disabled=""
+          type="button"
         >
-          <button
-            aria-hidden="true"
-            class="btn relative"
-            disabled=""
-            type="button"
+          <span
+            class="flex flex--center-cross gap6"
           >
-            <span
-              class="flex flex--center-cross"
+            <svg
+              aria-hidden="true"
+              class="events-none icon"
+              data-testid="icon-harddrive"
+              focusable="false"
+              style="width: 18px; height: 18px;"
             >
-              <span
-                class="mr6"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="events-none icon"
-                  data-testid="icon-harddrive"
-                  focusable="false"
-                  style="width: 18px; height: 18px;"
-                >
-                  <use
-                    xlink:href="#icon-harddrive"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  />
-                </svg>
-                <span
-                  style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                >
-                  harddrive
-                </span>
-              </span>
-              Select a file
+              <use
+                xlink:href="#icon-harddrive"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              harddrive
             </span>
-          </button>
-          <input
-            aria-required="true"
-            class="absolute opacity0 top left"
-            data-testid="testinput-1-input"
-            disabled=""
-            id="testinput-1"
-            name="testinput-1"
-            style="height: 0px; width: 0px; z-index: -1;"
-            tabindex="-1"
-            type="file"
-          />
-        </div>
+            Select a file
+          </span>
+        </button>
+        <input
+          aria-required="true"
+          class="hide-visually"
+          data-testid="testinput-1-input"
+          disabled=""
+          id="testinput-1"
+          name="testinput-1"
+          tabindex="-1"
+          type="file"
+        />
       </div>
       <div
         role="alert"

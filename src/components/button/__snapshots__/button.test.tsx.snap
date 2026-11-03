@@ -56,28 +56,24 @@ exports[`Link with outline and icon text, extra padding renders as expected 1`] 
       role="button"
     >
       <span
-        class="flex flex--center-cross"
+        class="flex flex--center-cross gap6"
       >
-        <span
-          class="mr6"
+        <svg
+          aria-hidden="true"
+          class="events-none icon"
+          data-testid="icon-bug"
+          focusable="false"
+          style="width: 18px; height: 18px;"
         >
-          <svg
-            aria-hidden="true"
-            class="events-none icon"
-            data-testid="icon-bug"
-            focusable="false"
-            style="width: 18px; height: 18px;"
-          >
-            <use
-              xlink:href="#icon-bug"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            />
-          </svg>
-          <span
-            style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-          >
-            bug
-          </span>
+          <use
+            xlink:href="#icon-bug"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          bug
         </span>
         Go do things
       </span>

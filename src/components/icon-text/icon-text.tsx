@@ -29,15 +29,15 @@ export default function IconText({
   }
 
   const before = !iconBefore ? null : (
-    <span className="mr6">{renderIcon(iconBefore)}</span>
+    renderIcon(iconBefore)
   );
 
   const after = !iconAfter ? null : (
-    <span className="ml6">{renderIcon(iconAfter)}</span>
+    renderIcon(iconAfter)
   );
 
   return (
-    <span className={`${inline ? 'inline-flex' : 'flex'} flex--center-cross`}>
+    <span className={`${inline ? 'inline-flex' : 'flex'} flex--center-cross gap6`}>
       {before}
       {children}
       {after}

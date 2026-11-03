@@ -47,7 +47,7 @@ exports[`CopyButton basic renders as expected 1`] = `
           type="button"
         >
           <button
-            class="btn btn--xs py3 px3 round"
+            class="btn py3 px3 round"
             data-state="closed"
             type="button"
           >

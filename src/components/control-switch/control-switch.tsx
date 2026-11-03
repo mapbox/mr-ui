@@ -44,23 +44,19 @@ export default function ControlSwitch(props: ControlSwitchProps): ReactElement {
       id={id}
       validationError={validationError}
     >
-      <fieldset className="flex flex--center-cross">
-        <label htmlFor={id} className={labelClasses}>
-          <input
-            type="checkbox"
-            role="switch"
-            id={id}
-            checked={value}
-            disabled={disabled}
-            onChange={handleChange}
-            data-testid={`${id}-switch`}
-          />
-          <div className={`switch ${themeControlSwitch}`} />
-          <span className={themeLabel}>
-            {label}
-          </span>
-        </label>
-      </fieldset>
+      <label htmlFor={id} className={labelClasses}>
+        <input
+          type="checkbox"
+          role="switch"
+          id={id}
+          checked={value}
+          disabled={disabled}
+          onChange={handleChange}
+          data-testid={`${id}-switch`}
+        />
+        <div className={`switch ${themeControlSwitch}`} />
+        {label && <span className={themeLabel}>{label}</span>}
+      </label>
     </ControlWrapper>
   );
 }

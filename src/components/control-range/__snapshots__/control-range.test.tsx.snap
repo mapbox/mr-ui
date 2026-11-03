@@ -107,7 +107,7 @@ exports[`ControlRange all options renders 1`] = `
         role="alert"
       >
         <div
-          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
           data-testid="testinput-error"
           id="testinput-error"
         >
@@ -126,7 +126,7 @@ exports[`ControlRange basic renders 1`] = `
       class="relative "
     >
       <div
-        class="range range--s range--gray w-full h-full"
+        class="range range--s range--gray w-full"
       >
         <span
           aria-disabled="false"
@@ -164,7 +164,7 @@ exports[`ControlRange disabled renders 1`] = `
       class="relative "
     >
       <div
-        class="range range--s range--gray w-full h-full"
+        class="range range--s range--gray w-full"
       >
         <span
           aria-disabled="true"

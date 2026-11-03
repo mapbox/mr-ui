@@ -28,8 +28,8 @@ export default function ControlRadioSet({
   optional = false,
   autoFocus = false,
   validationError,
-  themeRadioContainer = 'txt-s block mb6 flex',
-  themeRadio = 'mr6 radio--blue radio--s-label inline-block',
+  themeRadioContainer = 'txt-s mb6 flex',
+  themeRadio = 'mr6 radio--blue radio--s-label',
   themeControlWrapper
 }: ControlRadioSetProps): ReactElement {
 

@@ -32,7 +32,7 @@ export default function ModalActions({
     }
 
     return (
-      <div className="flex-child-no-shrink mr12">
+      <div className="flex-child-no-shrink">
         <Button
           variant="secondary"
           size="medium"
@@ -57,7 +57,7 @@ export default function ModalActions({
     }
 
     return (
-      <div className="flex-child-no-shrink mr12">
+      <div className="flex-child-no-shrink">
         <Button
           aria-label={tertiaryAction.text}
           variant="tertiary"
@@ -76,7 +76,7 @@ export default function ModalActions({
     : 'primary';
 
   return (
-    <div className="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap">
+    <div className="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap gapx12">
       <div className="flex-child-no-shrink">
         <Button
           variant={primaryButtonVariant}

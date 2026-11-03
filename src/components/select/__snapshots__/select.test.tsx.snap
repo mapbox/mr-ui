@@ -38,7 +38,7 @@ exports[`Select all options renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 50%; --radix-popper-available-width: -20px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; visibility: hidden; pointer-events: none;"
   >
     <div
-      class="bg-white border--white color-text border shadow-darken25 round border border-1 border--border--white"
+      class="bg-white border--white color-text border shadow-darken25 round"
       data-align="center"
       data-side="left"
       data-state="open"
@@ -66,7 +66,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-_r_r_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-highlighted=""
               data-radix-collection-item=""
               data-state="unchecked"
@@ -78,7 +78,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-_r_s_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -89,7 +89,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-_r_t_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -100,7 +100,7 @@ exports[`Select all options renders 1`] = `
             <div
               aria-labelledby="radix-_r_u_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -161,7 +161,7 @@ exports[`Select basic renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; --radix-popper-available-width: -20px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
-      class="bg-white border--white color-text border shadow-darken25 round px12 py12 border border-1 border--border--white"
+      class="bg-white border--white color-text border shadow-darken25 round px12 py12"
       data-align="center"
       data-side="right"
       data-state="open"
@@ -188,7 +188,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-_r_5_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-highlighted=""
               data-radix-collection-item=""
               data-state="unchecked"
@@ -200,7 +200,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-_r_6_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -211,7 +211,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-_r_7_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -222,7 +222,7 @@ exports[`Select basic renders 1`] = `
             <div
               aria-labelledby="radix-_r_8_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -300,7 +300,7 @@ exports[`Select dark renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; --radix-popper-available-width: -20px; --radix-popper-available-height: -20px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
-      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12 border border-1 border--border--gray-dark"
+      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12"
       data-align="center"
       data-side="right"
       data-state="open"
@@ -327,7 +327,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-_r_i_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-highlighted=""
               data-radix-collection-item=""
               data-state="unchecked"
@@ -339,7 +339,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-_r_j_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -350,7 +350,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-_r_k_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"
@@ -361,7 +361,7 @@ exports[`Select dark renders 1`] = `
             <div
               aria-labelledby="radix-_r_l_"
               aria-selected="false"
-              class="transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6"
+              class="transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6"
               data-radix-collection-item=""
               data-state="unchecked"
               role="option"

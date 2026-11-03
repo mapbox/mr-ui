@@ -29,8 +29,8 @@ export default function ControlCheckboxSet({
   autoFocus = false,
   icon = 'check',
   validationError,
-  themeCheckboxContainer = 'txt-s block mb6 flex',
-  themeCheckbox = 'mr6 inline-block checkbox--blue checkbox--s-label',
+  themeCheckboxContainer = 'txt-s mb6 flex',
+  themeCheckbox = 'mr6 checkbox--blue checkbox--s-label',
   themeControlWrapper
 }: ControlCheckboxSetProps): ReactElement {
 

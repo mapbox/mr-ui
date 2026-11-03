@@ -26,8 +26,8 @@ export default function Toast({
   action,
   closeButton = true,
   themeControlWrapper = 'fixed left bottom mb24 w-full flex flex--center-main events-none',
-  themeControl = 'bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all',
-  themeItem = 'color-gray-lighter txt-truncate w-auto mr12'
+  themeControl = 'bg-gray-dark round wmax600 w-11/12 flex flex--center-cross flex--space-between-main gap12 py12 pl12 hmin60 events-all',
+  themeItem = 'color-gray-lighter txt-truncate w-auto'
 }: ToastProps): ReactElement {
   const actionBtnClass = !closeButton && !action ? 'pr12' : '';
   return (
@@ -42,7 +42,7 @@ export default function Toast({
           {content}
         </ToastPrimitive.Description>
         <span
-          className={`flex flex-row flex--center-cross ${actionBtnClass} flex-child-no-shrink`}
+          className={`flex flex--center-cross ${actionBtnClass} flex-child-no-shrink`}
           data-testid="toast-controls"
         >
           {action && (

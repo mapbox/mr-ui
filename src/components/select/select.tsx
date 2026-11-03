@@ -58,7 +58,7 @@ const Select = forwardRef(({
   offsetFromAnchor = 6,
   themeSelectWrapper = '',
   themeSelectItemWrapper = '',
-  themeSelectItem = 'transition bg-gray-light-on-active block py6 txt-break-word-soft bg-darken5-on-hover color-blue-on-hover cursor-pointer round px6',
+  themeSelectItem = 'transition bg-gray-light-on-active block py6 txt-break-word cursor-pointer round px6',
   passthroughProps
 }: SelectProps, forwardedRef: ForwardedRef<HTMLButtonElement>): ReactElement => {
   const { background, borderColor, color, fill } = getTheme(coloring);
@@ -68,8 +68,7 @@ const Select = forwardRef(({
     `${background} ${borderColor} ${color} border shadow-darken25 round`,
     {
       'px12 py12': padding === 'medium',
-      'px12 py6': padding === 'small',
-      [`border border-1 border--${borderColor}`]: borderColor
+      'px12 py6': padding === 'small'
     }
   );
 

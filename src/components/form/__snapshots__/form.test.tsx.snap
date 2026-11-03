@@ -223,56 +223,47 @@ exports[`Form all controls renders as expected 1`] = `
               class="relative "
             >
               <div
-                class="flex flex--center-cross overflow-hidden"
+                class="flex flex--center-cross"
               >
-                <div
-                  class="flex-child-grow"
+                <button
+                  aria-hidden="true"
+                  class="btn relative"
+                  type="button"
                 >
-                  <button
-                    aria-hidden="true"
-                    class="btn relative"
-                    type="button"
+                  <span
+                    class="flex flex--center-cross gap6"
                   >
-                    <span
-                      class="flex flex--center-cross"
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-harddrive"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
                     >
-                      <span
-                        class="mr6"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="events-none icon"
-                          data-testid="icon-harddrive"
-                          focusable="false"
-                          style="width: 18px; height: 18px;"
-                        >
-                          <use
-                            xlink:href="#icon-harddrive"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                          />
-                        </svg>
-                        <span
-                          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                        >
-                          harddrive
-                        </span>
-                      </span>
-                      Select a file
+                      <use
+                        xlink:href="#icon-harddrive"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      harddrive
                     </span>
-                  </button>
-                  <input
-                    aria-required="false"
-                    class="absolute opacity0 top left"
-                    data-testid="upload-input"
-                    id="upload"
-                    label="Upload a picture"
-                    multiple=""
-                    name="upload"
-                    style="height: 0px; width: 0px; z-index: -1;"
-                    tabindex="-1"
-                    type="file"
-                  />
-                </div>
+                    Select a file
+                  </span>
+                </button>
+                <input
+                  aria-required="false"
+                  class="hide-visually"
+                  data-testid="upload-input"
+                  id="upload"
+                  label="Upload a picture"
+                  multiple=""
+                  name="upload"
+                  tabindex="-1"
+                  type="file"
+                />
               </div>
               <div
                 role="alert"
@@ -298,7 +289,7 @@ exports[`Form all controls renders as expected 1`] = `
                   </label>
                 </div>
                 <div
-                  class="range range--s range--gray w-full h-full"
+                  class="range range--s range--gray w-full"
                 >
                   <span
                     aria-disabled="false"
@@ -350,29 +341,25 @@ exports[`Form all controls renders as expected 1`] = `
             <div
               class="relative "
             >
-              <fieldset
-                class="flex flex--center-cross"
+              <label
+                class="switch-container  cursor-pointer"
+                for="active"
               >
-                <label
-                  class="switch-container  cursor-pointer"
-                  for="active"
+                <input
+                  data-testid="active-switch"
+                  id="active"
+                  role="switch"
+                  type="checkbox"
+                />
+                <div
+                  class="switch "
+                />
+                <span
+                  class="txt-s ml6"
                 >
-                  <input
-                    data-testid="active-switch"
-                    id="active"
-                    role="switch"
-                    type="checkbox"
-                  />
-                  <div
-                    class="switch "
-                  />
-                  <span
-                    class="txt-s ml6"
-                  >
-                    Animal active?
-                  </span>
-                </label>
-              </fieldset>
+                  Animal active?
+                </span>
+              </label>
               <div
                 role="alert"
               />
@@ -451,7 +438,7 @@ exports[`Form all controls renders as expected 1`] = `
                 role="radiogroup"
               >
                 <label
-                  class="radio-container txt-s block mb6 flex cursor-pointer"
+                  class="radio-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     checked=""
@@ -461,12 +448,12 @@ exports[`Form all controls renders as expected 1`] = `
                     value="beginner"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block radio"
+                    class="mr6 radio--blue radio--s-label radio"
                   />
                   Beginner
                 </label>
                 <label
-                  class="radio-container txt-s block mb6 flex cursor-pointer"
+                  class="radio-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-1-input"
@@ -475,12 +462,12 @@ exports[`Form all controls renders as expected 1`] = `
                     value="intermediate"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block radio"
+                    class="mr6 radio--blue radio--s-label radio"
                   />
                   Intermediate
                 </label>
                 <label
-                  class="radio-container txt-s block mb6 flex cursor-pointer"
+                  class="radio-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-2-input"
@@ -489,7 +476,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="advanced"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block radio"
+                    class="mr6 radio--blue radio--s-label radio"
                   />
                   Advanced
                 </label>
@@ -510,7 +497,7 @@ exports[`Form all controls renders as expected 1`] = `
                 id="tools"
               >
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -520,7 +507,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="axe"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -543,7 +530,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Pick axe
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -553,7 +540,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="potion"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -576,7 +563,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Potion
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -586,7 +573,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="cloak"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -609,7 +596,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Cloak
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -619,7 +606,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="telescope"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -642,7 +629,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Telescope
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -652,7 +639,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="map"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -675,7 +662,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Map
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -685,7 +672,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="sword"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -708,7 +695,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Sword
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s mb6 flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -718,7 +705,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="armour"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"

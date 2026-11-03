@@ -96,7 +96,7 @@ exports[`ControlText all options renders as expected 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(0, -200%); min-width: max-content; --radix-popper-transform-origin:  ; z-index: auto;"
   >
     <div
-      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py6 border border-1 border--border--gray-dark"
+      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py6"
       data-align="center"
       data-side="top"
       data-state="open"
@@ -297,7 +297,7 @@ exports[`ControlText validation error renders as expected 1`] = `
         role="alert"
       >
         <div
-          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
           data-testid="testinput-error"
           id="testinput-error"
         >

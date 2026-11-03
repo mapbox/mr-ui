@@ -4,7 +4,7 @@ exports[`ModalActions primary and secondary renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap gapx12"
     >
       <div
         class="flex-child-no-shrink"
@@ -19,7 +19,7 @@ exports[`ModalActions primary and secondary renders as expected 1`] = `
         </button>
       </div>
       <div
-        class="flex-child-no-shrink mr12"
+        class="flex-child-no-shrink"
       >
         <button
           aria-label="Cancel"
@@ -38,7 +38,7 @@ exports[`ModalActions primary and tertiary renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap gapx12"
     >
       <div
         class="flex-child-no-shrink"
@@ -61,7 +61,7 @@ exports[`ModalActions primary only renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap gapx12"
     >
       <div
         class="flex-child-no-shrink"
@@ -84,7 +84,7 @@ exports[`ModalActions primary, secondary and tertiary renders as expected 1`] = 
 <body>
   <div>
     <div
-      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+      class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap gapx12"
     >
       <div
         class="flex-child-no-shrink"
@@ -99,7 +99,7 @@ exports[`ModalActions primary, secondary and tertiary renders as expected 1`] = 
         </button>
       </div>
       <div
-        class="flex-child-no-shrink mr12"
+        class="flex-child-no-shrink"
       >
         <button
           aria-label="Cancel"
@@ -110,7 +110,7 @@ exports[`ModalActions primary, secondary and tertiary renders as expected 1`] = 
         </button>
       </div>
       <div
-        class="flex-child-no-shrink mr12"
+        class="flex-child-no-shrink"
       >
         <button
           aria-label="tertiary"

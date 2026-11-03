@@ -23,8 +23,8 @@ export default function Example() {
       value={value}
       onChange={setValue}
     >
-      <div className="flex-parent flex-parent--center-cross btn btn--stroke btn--gray round">
-        <span className="flex-child">{selected?.label}</span>
+      <div className="flex flex--center-cross btn btn--stroke btn--gray round">
+        <span>{selected?.label}</span>
         <span>
           <Icon name="caret-down" inline={true} />
         </span>

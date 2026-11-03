@@ -24,7 +24,7 @@ export default function ControlWrapper({
         : validationError;
     errorEl = (
       <div
-        className="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+        className="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
         id={validationErrorId}
         data-testid={validationErrorId}
       >

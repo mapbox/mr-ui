@@ -54,7 +54,7 @@ export default function ControlRange({
   aside,
   tooltip,
   validationError,
-  themeControlRange = 'range--s range--gray w-full h-full',
+  themeControlRange = 'range--s range--gray w-full',
   themeControlRangeActive,
   themeControlTrack = '',
   themeControlThumb = '',

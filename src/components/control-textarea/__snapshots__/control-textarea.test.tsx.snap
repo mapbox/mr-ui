@@ -45,7 +45,7 @@ exports[`ControlTextarea all options renders as expected 1`] = `
         role="alert"
       >
         <div
-          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
           data-testid="testinput-error"
           id="testinput-error"
         >

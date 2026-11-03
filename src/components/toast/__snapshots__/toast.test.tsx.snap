@@ -18,7 +18,7 @@ exports[`Toast render with options renders basic 1`] = `
         tabindex="-1"
       >
         <li
-          class="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross row flex--space-between-main py12 pl12 hmin60 events-all"
+          class="bg-gray-dark round wmax600 w-11/12 flex flex--center-cross flex--space-between-main gap12 py12 pl12 hmin60 events-all"
           data-radix-collection-item=""
           data-state="open"
           data-swipe-direction="down"
@@ -26,12 +26,12 @@ exports[`Toast render with options renders basic 1`] = `
           tabindex="0"
         >
           <div
-            class="color-gray-lighter txt-truncate w-auto mr12"
+            class="color-gray-lighter txt-truncate w-auto"
           >
             Toast message
           </div>
           <span
-            class="flex flex-row flex--center-cross  flex-child-no-shrink"
+            class="flex flex--center-cross  flex-child-no-shrink"
             data-testid="toast-controls"
           >
             <button
