@@ -38,7 +38,7 @@ export default function ControlAlert({
     </Tooltip>
   );
 
-  const containerClasses = classnames('round px24 py24 flex', {
+  const containerClasses = classnames('round px24 py24 flex gap6', {
     'bg-green-faint': theme === 'success',
     'bg-red-faint': theme === 'error',
     'bg-yellow-faint': theme === 'warning' || theme === 'locked'

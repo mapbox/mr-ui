@@ -119,6 +119,7 @@ export default function ControlText({
     autoCapitalize?: string;
     autoCorrect?: string;
     spellCheck?: boolean;
+    'aria-describedby'?: string;
   } = {
     id,
     name: id,
@@ -139,6 +140,8 @@ export default function ControlText({
 
   if (validationError) {
     inputProps['aria-invalid'] = true;
+    inputProps['aria-describedby'] = `${id}-error`;
+    inputProps.className = `${themeControlInput} input--border-red`;
   }
 
   if (validationError && errorStyle === 'inline') {
@@ -179,18 +182,15 @@ export default function ControlText({
               ref={errorElement}
               onClick={onErrorClick}
               data-testid="validation-error"
-              role="alert"
+              aria-label="Show validation error"
               className="flex flex--center-cross bg-red color-white round-r px6"
             >
-              <Icon
-                name="alert"
-                passthroughProps={{
-                  fill: 'white',
-                  className: 'cursor-pointer'
-                }}
-              />
+              <Icon name="alert" />
             </button>
           </Popover>
+          <span id={`${id}-error`} role="alert" className="hide-visually">
+            {validationError}
+          </span>
         </div>
       );
     }

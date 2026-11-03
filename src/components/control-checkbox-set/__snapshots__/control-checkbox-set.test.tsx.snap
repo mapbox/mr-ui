@@ -7,9 +7,12 @@ exports[`ControlCheckbox all options renders 1`] = `
       class="relative bg-red-light"
     >
       <div
+        aria-describedby="testinput-error"
         aria-invalid="true"
+        class="flex flex--column gap6"
         data-testid="testinput-input"
         id="testinput"
+        role="group"
       >
         <label
           class="checkbox-container w-full cursor-pointer"
@@ -123,7 +126,7 @@ exports[`ControlCheckbox all options renders 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-error"
           id="testinput-error"
         >
@@ -142,11 +145,13 @@ exports[`ControlCheckbox basic renders 1`] = `
       class="relative "
     >
       <div
+        class="flex flex--column gap6"
         data-testid="testinput-input"
         id="testinput"
+        role="group"
       >
         <label
-          class="checkbox-container txt-s mb6 flex cursor-pointer"
+          class="checkbox-container txt-s flex cursor-pointer"
         >
           <input
             aria-checked="false"
@@ -179,7 +184,7 @@ exports[`ControlCheckbox basic renders 1`] = `
           Option 1
         </label>
         <label
-          class="checkbox-container txt-s mb6 flex cursor-pointer"
+          class="checkbox-container txt-s flex cursor-pointer"
         >
           <input
             aria-checked="false"
@@ -227,11 +232,13 @@ exports[`ControlCheckbox disabled renders 1`] = `
       class="relative "
     >
       <div
+        class="flex flex--column gap6"
         data-testid="testinput-input"
         id="testinput"
+        role="group"
       >
         <label
-          class="checkbox-container txt-s mb6 flex"
+          class="checkbox-container txt-s flex"
         >
           <input
             aria-checked="false"
@@ -265,7 +272,7 @@ exports[`ControlCheckbox disabled renders 1`] = `
           Option 1
         </label>
         <label
-          class="checkbox-container txt-s mb6 flex cursor-pointer"
+          class="checkbox-container txt-s flex cursor-pointer"
         >
           <input
             aria-checked="false"

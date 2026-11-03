@@ -54,7 +54,7 @@ exports[`ControlFile all options renders as expected 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-3-error"
           id="testinput-3-error"
         >

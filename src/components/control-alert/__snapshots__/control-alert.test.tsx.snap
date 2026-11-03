@@ -4,7 +4,7 @@ exports[`ControlAlert basic error renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="round px24 py24 flex bg-red-faint"
+      class="round px24 py24 flex gap6 bg-red-faint"
     >
       <div
         class="flex-child-no-shrink"
@@ -30,9 +30,7 @@ exports[`ControlAlert basic error renders as expected 1`] = `
       <div
         class="flex-child-grow"
       >
-        <span
-          class="ml6"
-        >
+        <span>
           Drats.
         </span>
       </div>
@@ -45,7 +43,7 @@ exports[`ControlAlert basic locked renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="round px24 py24 flex bg-yellow-faint"
+      class="round px24 py24 flex gap6 bg-yellow-faint"
     >
       <div
         class="flex-child-no-shrink"
@@ -71,9 +69,7 @@ exports[`ControlAlert basic locked renders as expected 1`] = `
       <div
         class="flex-child-grow"
       >
-        <span
-          class="ml6"
-        >
+        <span>
           Nope.
         </span>
       </div>
@@ -86,7 +82,7 @@ exports[`ControlAlert basic success renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="round px24 py24 flex bg-green-faint"
+      class="round px24 py24 flex gap6 bg-green-faint"
     >
       <div
         class="flex-child-no-shrink"
@@ -112,9 +108,7 @@ exports[`ControlAlert basic success renders as expected 1`] = `
       <div
         class="flex-child-grow"
       >
-        <span
-          class="ml6"
-        >
+        <span>
           Woohoo!
         </span>
       </div>

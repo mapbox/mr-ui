@@ -433,12 +433,13 @@ exports[`Form all controls renders as expected 1`] = `
             >
               <div
                 aria-required="true"
+                class="flex flex--column gap6"
                 data-testid="difficulty-input"
                 id="difficulty"
                 role="radiogroup"
               >
                 <label
-                  class="radio-container txt-s mb6 flex cursor-pointer"
+                  class="radio-container txt-s flex cursor-pointer"
                 >
                   <input
                     checked=""
@@ -453,7 +454,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Beginner
                 </label>
                 <label
-                  class="radio-container txt-s mb6 flex cursor-pointer"
+                  class="radio-container txt-s flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-1-input"
@@ -467,7 +468,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Intermediate
                 </label>
                 <label
-                  class="radio-container txt-s mb6 flex cursor-pointer"
+                  class="radio-container txt-s flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-2-input"
@@ -493,11 +494,13 @@ exports[`Form all controls renders as expected 1`] = `
               class="relative "
             >
               <div
+                class="flex flex--column gap6"
                 data-testid="tools-input"
                 id="tools"
+                role="group"
               >
                 <label
-                  class="checkbox-container txt-s mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -530,7 +533,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Pick axe
                 </label>
                 <label
-                  class="checkbox-container txt-s mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -563,7 +566,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Potion
                 </label>
                 <label
-                  class="checkbox-container txt-s mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -596,7 +599,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Cloak
                 </label>
                 <label
-                  class="checkbox-container txt-s mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -629,7 +632,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Telescope
                 </label>
                 <label
-                  class="checkbox-container txt-s mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -662,7 +665,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Map
                 </label>
                 <label
-                  class="checkbox-container txt-s mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"
@@ -695,7 +698,7 @@ exports[`Form all controls renders as expected 1`] = `
                   Sword
                 </label>
                 <label
-                  class="checkbox-container txt-s mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
                     aria-checked="false"

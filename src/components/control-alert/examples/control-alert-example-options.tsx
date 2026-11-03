@@ -29,7 +29,7 @@ export default function Example() {
     return (
       <div className="animation-fade-in animation--speed-1 txt-s">
         <ControlAlert onButtonClick={() => setShowAlert(false)} theme="warning">
-          <p className="mx6">The yellow power ranger is the best.</p>
+          <p>The yellow power ranger is the best.</p>
         </ControlAlert>
       </div>
     );
