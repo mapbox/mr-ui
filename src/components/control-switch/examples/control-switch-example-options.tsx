@@ -22,7 +22,7 @@ export default function Example(): ReactElement {
       value={true}
       themeControlWrapper="border border--purple px6 py6"
       themeControlSwitchContainer="bg-pink-faint px12 py6 round"
-      themeControlSwitch="switch--purple switch--s-label"
+      themeControlSwitch="switch--purple"
       onChange={() => setError("Can't deactivate a fancy animal!")}
     />
   );

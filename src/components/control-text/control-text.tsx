@@ -4,8 +4,7 @@ import React, {
   useState,
   useRef,
   ChangeEvent,
-  HTMLInputTypeAttribute,
-  CSSProperties
+  HTMLInputTypeAttribute
 } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
@@ -120,7 +119,6 @@ export default function ControlText({
     autoCapitalize?: string;
     autoCorrect?: string;
     spellCheck?: boolean;
-    style?: CSSProperties;
   } = {
     id,
     name: id,
@@ -144,10 +142,7 @@ export default function ControlText({
   }
 
   if (validationError && errorStyle === 'inline') {
-    inputProps.className = `${themeControlInput} round-l flex-child-grow`;
-    inputProps.style = {
-      boxShadow: 'inset 0 0 0 1px #f74e4e'
-    };
+    inputProps.className = `${themeControlInput} input--border-red round-l flex-child-grow`;
   }
 
   const labelElement = label ? renderLabel() : null;
@@ -185,17 +180,15 @@ export default function ControlText({
               onClick={onErrorClick}
               data-testid="validation-error"
               role="alert"
-              className="h-full bg-red color-white round-r px6"
+              className="flex flex--center-cross bg-red color-white round-r px6"
             >
-              <span className="flex flex--center-cross flex--center-main">
-                <Icon
-                  name="alert"
-                  passthroughProps={{
-                    fill: 'white',
-                    className: 'cursor-pointer'
-                  }}
-                />
-              </span>
+              <Icon
+                name="alert"
+                passthroughProps={{
+                  fill: 'white',
+                  className: 'cursor-pointer'
+                }}
+              />
             </button>
           </Popover>
         </div>

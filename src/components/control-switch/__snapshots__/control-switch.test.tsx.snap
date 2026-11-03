@@ -13,20 +13,15 @@ exports[`ControlSwitch basic renders 1`] = `
           class="switch-container  cursor-pointer"
           for="test"
         >
-          <button
-            aria-checked="false"
-            class="switch switch--s-label"
-            data-state="unchecked"
+          <input
             data-testid="test-switch"
             id="test"
             role="switch"
-            type="button"
-            value="on"
-          >
-            <span
-              data-state="unchecked"
-            />
-          </button>
+            type="checkbox"
+          />
+          <div
+            class="switch "
+          />
           <span
             class="txt-s ml6"
           >

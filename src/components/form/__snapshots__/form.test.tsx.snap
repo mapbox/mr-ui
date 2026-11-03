@@ -141,7 +141,7 @@ exports[`Form all controls renders as expected 1`] = `
           >
             <div
               aria-required="true"
-              class="toggle-group round-full border border--2 border--gray-faint bg-gray-faint"
+              class="toggle-group border border--2 border--gray-faint bg-gray-faint"
               data-testid="spiritAnimal-input"
               id="spiritAnimal"
               role="radiogroup"
@@ -156,7 +156,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="humpback-whale"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Humpback whale
                 </div>
@@ -171,7 +171,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="rufous hummingbird"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Rufous Hummingbird
                 </div>
@@ -187,7 +187,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="sea-otter"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Sea Otter
                 </div>
@@ -202,7 +202,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="snowshoe-hare"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Snowshoe Hare
                 </div>
@@ -357,26 +357,14 @@ exports[`Form all controls renders as expected 1`] = `
                   class="switch-container  cursor-pointer"
                   for="active"
                 >
-                  <button
-                    aria-checked="false"
-                    class="switch switch--s-label"
-                    data-state="unchecked"
+                  <input
                     data-testid="active-switch"
                     id="active"
                     role="switch"
-                    type="button"
-                    value="on"
-                  >
-                    <span
-                      data-state="unchecked"
-                    />
-                  </button>
-                  <input
-                    aria-hidden="true"
-                    style="position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 0px; height: 0px;"
-                    tabindex="-1"
                     type="checkbox"
-                    value="on"
+                  />
+                  <div
+                    class="switch "
                   />
                   <span
                     class="txt-s ml6"

@@ -41,13 +41,12 @@ exports[`ControlText all options renders as expected 1`] = `
           aria-required="false"
           autocapitalize="none"
           autocorrect="off"
-          class="txt-bold input round-l flex-child-grow"
+          class="txt-bold input input--border-red round-l flex-child-grow"
           data-testid="testinput-input"
           id="testinput"
           name="testinput"
           placeholder="Enter an email address"
           spellcheck="false"
-          style="box-shadow: inset 0 0 0 1px #f74e4e;"
           type="email"
           value="foo@bar.baz"
         />
@@ -58,7 +57,7 @@ exports[`ControlText all options renders as expected 1`] = `
             aria-controls="radix-_r_f_"
             aria-expanded="true"
             aria-haspopup="dialog"
-            class="h-full bg-red color-white round-r px6"
+            class="flex flex--center-cross bg-red color-white round-r px6"
             data-radix-popper-align="center"
             data-radix-popper-side="top"
             data-state="open"
@@ -66,27 +65,23 @@ exports[`ControlText all options renders as expected 1`] = `
             role="alert"
             type="button"
           >
-            <span
-              class="flex flex--center-cross flex--center-main"
+            <svg
+              aria-hidden="true"
+              class="cursor-pointer"
+              data-testid="icon-alert"
+              fill="white"
+              focusable="false"
+              style="width: 18px; height: 18px;"
             >
-              <svg
-                aria-hidden="true"
-                class="cursor-pointer"
-                data-testid="icon-alert"
-                fill="white"
-                focusable="false"
-                style="width: 18px; height: 18px;"
-              >
-                <use
-                  xlink:href="#icon-alert"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                />
-              </svg>
-              <span
-                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-              >
-                alert
-              </span>
+              <use
+                xlink:href="#icon-alert"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              alert
             </span>
           </button>
         </span>
@@ -225,11 +220,10 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
         <input
           aria-invalid="true"
           aria-required="true"
-          class="input round-l flex-child-grow"
+          class="input input--border-red round-l flex-child-grow"
           data-testid="testinput-input"
           id="testinput"
           name="testinput"
-          style="box-shadow: inset 0 0 0 1px #f74e4e;"
           type="text"
           value=""
         />
@@ -239,33 +233,29 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
           <button
             aria-expanded="false"
             aria-haspopup="dialog"
-            class="h-full bg-red color-white round-r px6"
+            class="flex flex--center-cross bg-red color-white round-r px6"
             data-state="closed"
             data-testid="validation-error"
             role="alert"
             type="button"
           >
-            <span
-              class="flex flex--center-cross flex--center-main"
+            <svg
+              aria-hidden="true"
+              class="cursor-pointer"
+              data-testid="icon-alert"
+              fill="white"
+              focusable="false"
+              style="width: 18px; height: 18px;"
             >
-              <svg
-                aria-hidden="true"
-                class="cursor-pointer"
-                data-testid="icon-alert"
-                fill="white"
-                focusable="false"
-                style="width: 18px; height: 18px;"
-              >
-                <use
-                  xlink:href="#icon-alert"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                />
-              </svg>
-              <span
-                style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-              >
-                alert
-              </span>
+              <use
+                xlink:href="#icon-alert"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+            >
+              alert
             </span>
           </button>
         </span>
