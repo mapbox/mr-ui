@@ -132,7 +132,7 @@ export default function Button({
 
   const universalProps = {
     className: classes,
-    'aria-label': ariaLabel ? ariaLabel : variant,
+    'aria-label': ariaLabel,
     onClick,
     ...passthroughProps
   };

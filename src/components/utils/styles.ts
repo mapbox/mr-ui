@@ -20,7 +20,7 @@ const styles: Constants = {
   gridSmall: 'grid grid--gut12 grid--gut18-mm grid--gut24-mxl',
   gridXSmall: 'grid grid--gut6',
   sectionLarge: 'py36 py60-mm py120-mxl',
-  sectionSmall: 'py24 py36-mm py60',
+  sectionSmall: 'py24 py36-mm py60-mxl',
   loaderInline: 'loading loading--s',
   loaderLocal: 'loading absolute top left right bottom bg-gray-faint'
 };

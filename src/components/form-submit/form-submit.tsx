@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React, { MouseEvent, ReactElement } from 'react';
 import PropTypes from 'prop-types';
 
 export interface FormSubmitProps {
-  onSubmit: (e: any) => void;
+  onSubmit: (e: MouseEvent<HTMLButtonElement>) => void;
   label?: string;
   disabled?: boolean;
   testId?: string;
@@ -25,7 +25,6 @@ export default function FormSubmit({
 
   return (
     <button
-      aria-label={label}
       type="button"
       className={themeButton}
       {...inputProps}

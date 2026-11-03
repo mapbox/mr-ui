@@ -4,7 +4,9 @@ exports[`LoaderFull basic renders 1`] = `
 <body>
   <div>
     <div
+      aria-label="Loading"
       class="loading absolute top left right bottom flex flex--center-cross flex--center-main bg-gray-faint"
+      role="status"
     />
   </div>
 </body>
@@ -14,7 +16,9 @@ exports[`LoaderFull themeLoader renders 1`] = `
 <body>
   <div>
     <div
+      aria-label="Loading"
       class="loading absolute top left right bottom flex flex--center-cross flex--center-main bg-red"
+      role="status"
     />
   </div>
 </body>

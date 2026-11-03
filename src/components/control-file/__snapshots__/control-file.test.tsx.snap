@@ -10,7 +10,6 @@ exports[`ControlFile all options renders as expected 1`] = `
         class="flex flex--center-cross"
       >
         <button
-          aria-hidden="true"
           class="bg-red-faint py6 px12 round-full link--red txt-s relative"
           type="button"
         >
@@ -76,7 +75,6 @@ exports[`ControlFile basic renders as expected 1`] = `
         class="flex flex--center-cross"
       >
         <button
-          aria-hidden="true"
           class="btn relative"
           type="button"
         >
@@ -131,7 +129,6 @@ exports[`ControlFile child element renders as expected 1`] = `
         class="flex flex--center-cross"
       >
         <button
-          aria-hidden="true"
           class="btn relative"
           type="button"
         >
@@ -165,7 +162,6 @@ exports[`ControlFile disabled renders as expected 1`] = `
         class="flex flex--center-cross"
       >
         <button
-          aria-hidden="true"
           class="btn relative"
           disabled=""
           type="button"

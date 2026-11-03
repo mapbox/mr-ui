@@ -96,7 +96,7 @@ const Select = forwardRef(({
     onExit();
   }
 
-  const renderOptions = ({ label, value, active, disabled, options }: Option) => {
+  const renderOptions = ({ label, value, active, disabled, options }: Option, index: number) => {
 
     const itemClasses = classnames(themeSelectItem, {
       'is-active': active
@@ -104,7 +104,7 @@ const Select = forwardRef(({
 
     if (options) {
       return (
-        <SelectPrimitive.Group>
+        <SelectPrimitive.Group key={`group-${index}`}>
           {options.map(renderOptions)}
         </SelectPrimitive.Group>
       );

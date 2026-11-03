@@ -15,7 +15,6 @@ exports[`ControlCheckbox all options renders 1`] = `
           class="checkbox-container w-full cursor-pointer"
         >
           <input
-            aria-checked="true"
             checked=""
             data-testid="testinput-0-input"
             name="testinput"
@@ -51,7 +50,6 @@ exports[`ControlCheckbox all options renders 1`] = `
           class="checkbox-container w-full cursor-pointer"
         >
           <input
-            aria-checked="true"
             checked=""
             data-testid="testinput-1-input"
             name="testinput"
@@ -87,7 +85,6 @@ exports[`ControlCheckbox all options renders 1`] = `
           class="checkbox-container w-full cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-2-input"
             name="testinput"
             type="checkbox"
@@ -149,7 +146,6 @@ exports[`ControlCheckbox basic renders 1`] = `
           class="checkbox-container txt-s mb6 flex cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-0-input"
             name="testinput"
             type="checkbox"
@@ -182,7 +178,6 @@ exports[`ControlCheckbox basic renders 1`] = `
           class="checkbox-container txt-s mb6 flex cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-1-input"
             name="testinput"
             type="checkbox"
@@ -234,7 +229,6 @@ exports[`ControlCheckbox disabled renders 1`] = `
           class="checkbox-container txt-s mb6 flex"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-0-input"
             disabled=""
             name="testinput"
@@ -268,7 +262,6 @@ exports[`ControlCheckbox disabled renders 1`] = `
           class="checkbox-container txt-s mb6 flex cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-1-input"
             name="testinput"
             type="checkbox"

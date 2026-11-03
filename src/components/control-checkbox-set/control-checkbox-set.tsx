@@ -37,7 +37,7 @@ export default function ControlCheckboxSet({
   const onCheckboxChange = (e) => {
     const current = e.target.value;
     const index = value.indexOf(current);
-    const newValue = value;
+    const newValue = [...value];
 
     if (index === -1) {
       newValue.push(current);
@@ -72,7 +72,6 @@ export default function ControlCheckboxSet({
         <input
           value={d.value}
           checked={isActive}
-          aria-checked={isActive}
           autoFocus={autoFocus && isActive}
           onChange={onCheckboxChange}
           name={id}

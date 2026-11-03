@@ -28,11 +28,11 @@ const getColorSwatch = (c: string, j: number) => (
     <div className={`bg-${c} h60`} />
     <div
       className={`txt-xs txt-mono px12 py6 ${
-        j !== 3 ? 'border-r border--' + c : ''
+        j !== 5 ? 'border-r border--' + c : ''
       }`}
     >
       {c}
-      <div className="color-gray">{variables[c]}</div>
+      <div className="color-gray">{variables[`--${c}`]}</div>
     </div>
   </div>
 );
