@@ -44,6 +44,7 @@ export default function ControlToggleSet({
 
   if (validationError) {
     groupProps['aria-invalid'] = true;
+    groupProps['aria-describedby'] = `${id}-error`;
   }
 
   const renderOptions = ({ label, ...d}, index: number) => {

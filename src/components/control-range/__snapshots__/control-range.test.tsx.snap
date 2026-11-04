@@ -31,6 +31,7 @@ exports[`ControlRange all options renders 1`] = `
         class="range range--s range--red"
       >
         <span
+          aria-describedby="testinput-error"
           aria-disabled="false"
           aria-invalid="true"
           aria-required="false"
@@ -107,7 +108,7 @@ exports[`ControlRange all options renders 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-error"
           id="testinput-error"
         >

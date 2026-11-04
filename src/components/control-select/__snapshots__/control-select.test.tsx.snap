@@ -31,9 +31,10 @@ exports[`ControlSelect all options renders 1`] = `
         class="select-container color-white"
       >
         <select
+          aria-describedby="allOptions-error"
           aria-invalid="true"
           aria-required="false"
-          class="select select--red"
+          class="select w-full select--stroke select--red"
           data-testid="allOptions-select"
           id="allOptions"
         >
@@ -63,7 +64,7 @@ exports[`ControlSelect all options renders 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="allOptions-error"
           id="allOptions-error"
         >

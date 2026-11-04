@@ -191,7 +191,7 @@ describe('ControlSelect', () => {
       label: 'All options',
       aside: <span>Aside text</span>,
       themeControlSelectContainer: 'color-white',
-      themeControlSelect: 'select--red',
+      themeControlSelect: 'w-full',
       themeControlWrapper: 'bg-red-light',
       themeLabel: 'color-white',
       onChange: jest.fn()

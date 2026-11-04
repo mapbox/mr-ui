@@ -7,7 +7,7 @@ import ControlAlert from '../control-alert';
 export default function Example() {
   return (
     <ControlAlert theme="success">
-      <p className="mx6">
+      <p>
         <a className="link" href="http://www.mapbox.com">
           You're the best!
         </a>{' '}

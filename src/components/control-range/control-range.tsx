@@ -78,6 +78,7 @@ export default function ControlRange({
 
   if (validationError) {
     rootProps['aria-invalid'] = true;
+    rootProps['aria-describedby'] = `${id}-error`;
   }
 
   const renderThumb = (value: number, index: number) => {

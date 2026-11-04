@@ -52,6 +52,8 @@ export default function ControlSwitch(props: ControlSwitchProps): ReactElement {
           checked={value}
           disabled={disabled}
           onChange={handleChange}
+          aria-invalid={validationError ? true : undefined}
+          aria-describedby={validationError ? `${id}-error` : undefined}
           data-testid={`${id}-switch`}
         />
         <div className={`switch ${themeControlSwitch}`} />

@@ -7,6 +7,7 @@ exports[`ControlToggleGroup all options renders 1`] = `
       class="relative bg-red-light px12 py12"
     >
       <div
+        aria-describedby="testinput-error"
         aria-invalid="true"
         aria-required="false"
         class="toggle-group bg-red border border--2 border--red"
@@ -71,7 +72,7 @@ exports[`ControlToggleGroup all options renders 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-error"
           id="testinput-error"
         >

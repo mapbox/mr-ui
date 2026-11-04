@@ -5,7 +5,7 @@ import { screen, render, fireEvent } from '@testing-library/react';
 describe('ControlAlert', () => {
   describe('basic error', () => {
     const props = {
-      children: <span className="ml6">Drats.</span>,
+      children: <span>Drats.</span>,
       theme: 'error'
     } as const;
 
@@ -17,7 +17,7 @@ describe('ControlAlert', () => {
 
   describe('basic locked', () => {
     const props = {
-      children: <span className="ml6">Nope.</span>,
+      children: <span>Nope.</span>,
       theme: 'locked'
     } as const;
 
@@ -29,7 +29,7 @@ describe('ControlAlert', () => {
 
   describe('basic success', () => {
     const props = {
-      children: <span className="ml6">Woohoo!</span>,
+      children: <span>Woohoo!</span>,
       theme: 'success'
     } as const;
 
@@ -43,7 +43,7 @@ describe('ControlAlert', () => {
     const mockOnClick = jest.fn();
 
     const props = {
-      children: <span className="mx6">Uh oh...</span>,
+      children: <span>Uh oh...</span>,
       onButtonClick: mockOnClick,
       theme: 'warning'
     } as const;
@@ -60,7 +60,7 @@ describe('ControlAlert', () => {
 
     const props = {
       children: (
-        <p className="mx6">
+        <p>
           This is the song that never ends.{' '}
           <a className="link" href="http://www.mapbox.com">
             Yes, it just goes on and on my friends.

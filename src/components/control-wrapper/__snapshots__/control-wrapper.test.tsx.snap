@@ -30,7 +30,7 @@ exports[`ControlWrapper basic with error renders 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="control-wrapper-error"
           id="control-wrapper-error"
         >
@@ -55,7 +55,7 @@ exports[`ControlWrapper jsx error renders 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="control-wrapper-error"
           id="control-wrapper-error"
         >

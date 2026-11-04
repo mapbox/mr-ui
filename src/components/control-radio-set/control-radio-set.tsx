@@ -15,6 +15,7 @@ export interface ControlRadioSetProps {
   optional?: boolean;
   autoFocus?: boolean;
   validationError?: ReactNode;
+  themeRadioGroup?: string,
   themeRadioContainer?: string,
   themeRadio?: string,
   themeControlWrapper?: string
@@ -28,7 +29,8 @@ export default function ControlRadioSet({
   optional = false,
   autoFocus = false,
   validationError,
-  themeRadioContainer = 'txt-s mb6 flex',
+  themeRadioGroup = 'flex flex--column gap6',
+  themeRadioContainer = 'txt-s flex',
   themeRadio = 'mr6 radio--blue radio--s-label',
   themeControlWrapper
 }: ControlRadioSetProps): ReactElement {
@@ -36,12 +38,14 @@ export default function ControlRadioSet({
   const groupProps = {
     id,
     role: 'radiogroup',
+    className: themeRadioGroup,
     'aria-required': optional ? false : true,
     'data-testid': `${id}-input`
   };
 
   if (validationError) {
     groupProps['aria-invalid'] = true;
+    groupProps['aria-describedby'] = `${id}-error`;
   }
 
   const renderOptions = ({ label, ...d }, index: number) => {
@@ -118,6 +122,8 @@ ControlRadioSet.propTypes = {
   autoFocus: PropTypes.bool,
   /** A validation error to display beneath the control. */
   validationError: PropTypes.node,
+  /** Classes to apply to the element wrapping all radios. Use `flex gap12` for a horizontal layout. */
+  themeRadioGroup: PropTypes.string,
   /** Classes to apply to the radio container */
   themeRadioContainer: PropTypes.string,
   /** Classes to apply to the radio element */

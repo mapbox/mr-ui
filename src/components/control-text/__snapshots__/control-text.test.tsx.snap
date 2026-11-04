@@ -37,6 +37,7 @@ exports[`ControlText all options renders as expected 1`] = `
         data-testid="control-text-container"
       >
         <input
+          aria-describedby="testinput-error"
           aria-invalid="true"
           aria-required="false"
           autocapitalize="none"
@@ -57,19 +58,18 @@ exports[`ControlText all options renders as expected 1`] = `
             aria-controls="radix-_r_f_"
             aria-expanded="true"
             aria-haspopup="dialog"
-            class="flex flex--center-cross bg-red color-white round-r px6"
+            aria-label="Show validation error"
+            class="flex flex--center-cross bg-red color-white round-r px6 cursor-pointer"
             data-radix-popper-align="center"
             data-radix-popper-side="top"
             data-state="open"
             data-testid="validation-error"
-            role="alert"
             type="button"
           >
             <svg
               aria-hidden="true"
-              class="cursor-pointer"
+              class="events-none icon"
               data-testid="icon-alert"
-              fill="white"
               focusable="false"
               style="width: 18px; height: 18px;"
             >
@@ -84,6 +84,13 @@ exports[`ControlText all options renders as expected 1`] = `
               alert
             </span>
           </button>
+        </span>
+        <span
+          class="hide-visually"
+          id="testinput-error"
+          role="alert"
+        >
+          oh no!
         </span>
       </div>
       <div
@@ -218,6 +225,7 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
         data-testid="control-text-container"
       >
         <input
+          aria-describedby="testinput-error"
           aria-invalid="true"
           aria-required="true"
           class="input input--border-red round-l flex-child-grow"
@@ -233,17 +241,16 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
           <button
             aria-expanded="false"
             aria-haspopup="dialog"
-            class="flex flex--center-cross bg-red color-white round-r px6"
+            aria-label="Show validation error"
+            class="flex flex--center-cross bg-red color-white round-r px6 cursor-pointer"
             data-state="closed"
             data-testid="validation-error"
-            role="alert"
             type="button"
           >
             <svg
               aria-hidden="true"
-              class="cursor-pointer"
+              class="events-none icon"
               data-testid="icon-alert"
-              fill="white"
               focusable="false"
               style="width: 18px; height: 18px;"
             >
@@ -258,6 +265,13 @@ exports[`ControlText validation error (inline) renders as expected 1`] = `
               alert
             </span>
           </button>
+        </span>
+        <span
+          class="hide-visually"
+          id="testinput-error"
+          role="alert"
+        >
+          oh no!
         </span>
       </div>
       <div
@@ -284,9 +298,10 @@ exports[`ControlText validation error renders as expected 1`] = `
         </label>
       </div>
       <input
+        aria-describedby="testinput-error"
         aria-invalid="true"
         aria-required="true"
-        class="input"
+        class="input input--border-red"
         data-testid="testinput-input"
         id="testinput"
         name="testinput"
@@ -297,7 +312,7 @@ exports[`ControlText validation error renders as expected 1`] = `
         role="alert"
       >
         <div
-          class="txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-error"
           id="testinput-error"
         >
