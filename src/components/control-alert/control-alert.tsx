@@ -28,6 +28,7 @@ export default function ControlAlert({
   const renderDismissButton = () => (
     <Tooltip content="Dismiss">
       <button
+        type="button"
         aria-label="Dismiss"
         className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
         data-testid="alert-dismiss"

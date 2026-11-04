@@ -468,7 +468,6 @@ exports[`Modal basic, large renders 1`] = `
             class="flex-child-no-shrink"
           >
             <button
-              aria-label="tertiary"
               class="btn btn--transparent link link--gray transition round-full py12 px24 txt-s"
               type="button"
             >

@@ -72,7 +72,7 @@ export default function ControlRange({
     onValueChange: (value: Array<number>) => onChange(value, id),
     value,
     'aria-required': optional ? false : true,
-    'data-test': `${id}-input`,
+    'data-testid': `${id}-input`,
     ...extraProps
   };
 
@@ -93,6 +93,8 @@ export default function ControlRange({
               className={`${themeControlThumb}`}
               onMouseOver={() => setActiveThumbIndex(index)}
               onMouseOut={() => setActiveThumbIndex(null)}
+              onFocus={() => setActiveThumbIndex(index)}
+              onBlur={() => setActiveThumbIndex(null)}
               onPointerCancel={() => setActiveThumbIndex(null)}
             />
           </PopoverPrimitive.Trigger>

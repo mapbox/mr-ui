@@ -89,7 +89,6 @@ export default function ControlFile({
       <div className="flex flex--center-cross">
         <button
           type="button"
-          aria-hidden={true}
           disabled={disabled}
           className={`${themeControlFile} relative`}
           onClick={onButtonClick}
