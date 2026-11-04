@@ -39,6 +39,7 @@ exports[`ControlFile all options renders as expected 1`] = `
         </button>
         <input
           accept=".jpg, .jpeg, .png"
+          aria-describedby="testinput-3-error"
           aria-invalid="true"
           aria-required="false"
           class="hide-visually"

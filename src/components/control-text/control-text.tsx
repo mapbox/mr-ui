@@ -7,6 +7,7 @@ import React, {
   HTMLInputTypeAttribute
 } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import omit from '../utils/omit';
 import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
@@ -141,11 +142,9 @@ export default function ControlText({
   if (validationError) {
     inputProps['aria-invalid'] = true;
     inputProps['aria-describedby'] = `${id}-error`;
-    inputProps.className = `${themeControlInput} input--border-red`;
-  }
-
-  if (validationError && errorStyle === 'inline') {
-    inputProps.className = `${themeControlInput} input--border-red round-l flex-child-grow`;
+    inputProps.className = classnames(themeControlInput, 'input--border-red', {
+      'round-l flex-child-grow': errorStyle === 'inline'
+    });
   }
 
   const labelElement = label ? renderLabel() : null;
@@ -183,7 +182,7 @@ export default function ControlText({
               onClick={onErrorClick}
               data-testid="validation-error"
               aria-label="Show validation error"
-              className="flex flex--center-cross bg-red color-white round-r px6"
+              className="flex flex--center-cross bg-red color-white round-r px6 cursor-pointer"
             >
               <Icon name="alert" />
             </button>

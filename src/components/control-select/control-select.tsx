@@ -67,10 +67,9 @@ export default function ControlSelect({
 }: ControlSelectProps): ReactElement {
   const extraProps = omit(props, propNames);
 
-  const errorClasses = validationError && !children ? ' select--stroke select--red' : '';
   const selectClassName = children
     ? `select absolute top left right bottom opacity0 w-full h-full ${disabled ? 'cursor-default' : 'cursor-pointer'} ${themeControlSelect}`
-    : `select ${themeControlSelect}${errorClasses}`;
+    : `select ${themeControlSelect}${validationError ? ' select--stroke select--red' : ''}`;
 
   const selectProps = {
     id,

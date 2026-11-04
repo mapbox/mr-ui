@@ -34,7 +34,7 @@ exports[`ControlSelect all options renders 1`] = `
           aria-describedby="allOptions-error"
           aria-invalid="true"
           aria-required="false"
-          class="select select--red select--stroke select--red"
+          class="select w-full select--stroke select--red"
           data-testid="allOptions-select"
           id="allOptions"
         >

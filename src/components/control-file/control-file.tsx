@@ -78,6 +78,7 @@ export default function ControlFile({
 
   if (validationError) {
     inputProps['aria-invalid'] = true;
+    inputProps['aria-describedby'] = `${id}-error`;
   }
 
   return (
