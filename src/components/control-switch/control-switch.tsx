@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement } from 'react';
+import React, { ChangeEvent, ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
@@ -8,8 +8,8 @@ export interface ControlSwitchProps {
   onChange: (checked: boolean, id: string) => void;
   disabled?: boolean;
   value?: boolean;
-  label?: ReactElement | string;
-  validationError?: ReactElement | string;
+  label?: ReactNode;
+  validationError?: ReactNode;
   themeControlSwitchContainer?: string;
   themeControlSwitch?: string;
   themeControlWrapper?: string;

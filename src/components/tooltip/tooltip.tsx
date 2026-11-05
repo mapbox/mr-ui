@@ -15,7 +15,7 @@ import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 export interface TooltipProps {
   children: ReactNode;
-  content: ReactElement | string | (() => ReactElement | string);
+  content: ReactNode | (() => ReactNode);
   placement?: 'top' | 'bottom' | 'left' | 'right';
   alignment?: 'center' | 'start' | 'end';
   coloring?: 'light' | 'dark' | 'warning' | 'error';
