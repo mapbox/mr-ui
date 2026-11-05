@@ -2,8 +2,7 @@ import React, {
   ReactElement,
   useState,
   useEffect,
-  useRef,
-  CSSProperties
+  useRef
 } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -97,16 +96,12 @@ export default function Copiable({
   };
 
   const textClasses = classnames('my3 txt-mono txt-s mr24', {
-    'txt-truncate': truncated
+    'txt-truncate': truncated,
+    'txt-break-word': !truncated
   });
-  const textStyle: CSSProperties = {};
-  if (!truncated) {
-    textStyle.wordWrap = 'break-word';
-    textStyle.overflowWrap = 'break-word';
-  }
 
   return (
-    <div className="relative clearfix bg-darken5 round">
+    <div className="relative bg-darken5 round">
       {showCopyButton.current && renderCopyButton}
       <Popover
         content={
@@ -129,7 +124,7 @@ export default function Copiable({
           className="py6 px12"
           data-testid="copiable-text-el"
         >
-          <div className={textClasses} style={textStyle}>
+          <div className={textClasses}>
             {value}
           </div>
         </div>

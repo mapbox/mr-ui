@@ -28,11 +28,12 @@ exports[`ControlTextarea all options renders as expected 1`] = `
         </span>
       </div>
       <textarea
+        aria-describedby="testinput-error"
         aria-invalid="true"
         aria-required="false"
         autocapitalize="none"
         autocorrect="off"
-        class="w-full border--pink round-bold px12 py12"
+        class="w-full border--pink round-bold px12 py12 textarea--border-red"
         data-testid="testinput-textarea"
         id="testinput"
         name="testinput"
@@ -45,7 +46,7 @@ exports[`ControlTextarea all options renders as expected 1`] = `
         role="alert"
       >
         <div
-          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-error"
           id="testinput-error"
         >

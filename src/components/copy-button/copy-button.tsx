@@ -34,7 +34,7 @@ export default function CopyButton({
   text,
   onCopy,
   block = false,
-  className = 'btn btn--xs py3 px3 round',
+  className = 'btn py3 px3 round',
   children,
   tooltipColoring = 'light',
   tooltipTextSize = 's',

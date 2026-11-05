@@ -21,10 +21,10 @@ exports[`Modal all options renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right flex flex--center-main flex--start-cross overflow-auto bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
+    style="pointer-events: auto; z-index: auto;"
   >
     <div
       aria-describedby="radix-_r_17_"
@@ -123,11 +123,11 @@ exports[`Modal basic renders 1`] = `
   </div>
   <div
     aria-hidden="true"
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right flex flex--center-main flex--start-cross overflow-auto bg-darken50 "
     data-aria-hidden="true"
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
+    style="pointer-events: auto; z-index: auto;"
   >
     <div
       aria-describedby="radix-_r_2_"
@@ -167,10 +167,10 @@ exports[`Modal basic renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right flex flex--center-main flex--start-cross overflow-auto bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
+    style="pointer-events: auto; z-index: auto;"
   >
     <div
       aria-describedby="radix-_r_5_"
@@ -203,7 +203,7 @@ exports[`Modal basic renders 1`] = `
         class="mt24"
       >
         <div
-          class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+          class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap gapx12"
         >
           <div
             class="flex-child-no-shrink"
@@ -277,10 +277,10 @@ exports[`Modal basic, auto renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right flex flex--center-main flex--start-cross overflow-auto bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
+    style="pointer-events: auto; z-index: auto;"
   >
     <div
       aria-describedby="radix-_r_v_"
@@ -403,10 +403,10 @@ exports[`Modal basic, large renders 1`] = `
     />
   </div>
   <div
-    class="fixed top bottom left right bg-darken50 "
+    class="fixed top bottom left right flex flex--center-main flex--start-cross overflow-auto bg-darken50 "
     data-state="open"
     data-testid="modal-overlay"
-    style="pointer-events: auto; display: grid; overflow-y: auto; place-items: start center; z-index: auto;"
+    style="pointer-events: auto; z-index: auto;"
   >
     <div
       aria-describedby="radix-_r_n_"
@@ -439,7 +439,7 @@ exports[`Modal basic, large renders 1`] = `
         class="mt24"
       >
         <div
-          class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap"
+          class="flex flex--center-main flex--center-cross flex--row-reverse flex--wrap gapx12"
         >
           <div
             class="flex-child-no-shrink"
@@ -454,7 +454,7 @@ exports[`Modal basic, large renders 1`] = `
             </button>
           </div>
           <div
-            class="flex-child-no-shrink mr12"
+            class="flex-child-no-shrink"
           >
             <button
               aria-label="Cancel"
@@ -465,10 +465,9 @@ exports[`Modal basic, large renders 1`] = `
             </button>
           </div>
           <div
-            class="flex-child-no-shrink mr12"
+            class="flex-child-no-shrink"
           >
             <button
-              aria-label="tertiary"
               class="btn btn--transparent link link--gray transition round-full py12 px24 txt-s"
               type="button"
             >

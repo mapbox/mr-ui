@@ -5,7 +5,6 @@ exports[`Disabled renders as expected 1`] = `
   <div>
     <button
       aria-hidden="true"
-      aria-label="primary"
       class="btn btn--blue round-full py12 px24 txt-s"
       disabled=""
       type="button"
@@ -50,34 +49,29 @@ exports[`Link with outline and icon text, extra padding renders as expected 1`] 
 <body>
   <div>
     <a
-      aria-label="primary"
       class="btn btn--blue btn--stroke round-full py12 px36 txt-s"
       href="#"
       role="button"
     >
       <span
-        class="flex flex--center-cross"
+        class="flex flex--center-cross gap6"
       >
-        <span
-          class="mr6"
+        <svg
+          aria-hidden="true"
+          class="events-none icon"
+          data-testid="icon-bug"
+          focusable="false"
+          style="width: 18px; height: 18px;"
         >
-          <svg
-            aria-hidden="true"
-            class="events-none icon"
-            data-testid="icon-bug"
-            focusable="false"
-            style="width: 18px; height: 18px;"
-          >
-            <use
-              xlink:href="#icon-bug"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            />
-          </svg>
-          <span
-            style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-          >
-            bug
-          </span>
+          <use
+            xlink:href="#icon-bug"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          />
+        </svg>
+        <span
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        >
+          bug
         </span>
         Go do things
       </span>
@@ -90,7 +84,6 @@ exports[`appPrimary renders as expected 1`] = `
 <body>
   <div>
     <button
-      aria-label="appPrimary"
       class="btn btn--gray round h24 px6 py3 txt-xs"
       type="button"
     >
@@ -104,7 +97,6 @@ exports[`appSecondary renders as expected 1`] = `
 <body>
   <div>
     <button
-      aria-label="appSecondary"
       class="btn btn--gray btn--stroke round h24 px6 py3 txt-xs"
       type="button"
     >
@@ -118,7 +110,6 @@ exports[`destructive renders as expected 1`] = `
 <body>
   <div>
     <button
-      aria-label="destructive"
       class="btn btn--red round-full py12 px24 txt-s"
       type="button"
     >
@@ -132,7 +123,6 @@ exports[`primary renders as expected 1`] = `
 <body>
   <div>
     <button
-      aria-label="primary"
       class="btn btn--blue round-full py12 px24 txt-s"
       role="button"
       type="button"
@@ -147,7 +137,6 @@ exports[`secondary renders as expected 1`] = `
 <body>
   <div>
     <button
-      aria-label="secondary"
       class="btn btn--gray btn--stroke round-full py12 px24 txt-s"
       type="button"
     >
@@ -161,7 +150,6 @@ exports[`tertiary renders as expected 1`] = `
 <body>
   <div>
     <button
-      aria-label="tertiary"
       class="btn btn--transparent link link--gray transition round-full py12 px24 txt-s"
       type="button"
     >

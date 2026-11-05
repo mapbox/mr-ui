@@ -5,8 +5,10 @@ exports[`LoaderFull basic renders 1`] = `
   <div />
   <div>
     <div
+      aria-label="Loading"
       class="fixed top left right bottom flex flex--center-main flex--center-cross bg-darken50"
       data-testid="loader"
+      role="status"
       style="z-index: 9999;"
     >
       <div
@@ -22,8 +24,10 @@ exports[`LoaderFull opaque renders 1`] = `
   <div />
   <div>
     <div
+      aria-label="Loading"
       class="fixed top left right bottom flex flex--center-main flex--center-cross bg-white"
       data-testid="loader"
+      role="status"
       style="z-index: 9999;"
     >
       <div

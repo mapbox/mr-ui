@@ -49,7 +49,7 @@ const TooltipTrigger = forwardRef(
           {...props}
           ref={ref}
           role="button"
-          className="inline-block"
+          className="inline-block round-full"
           tabIndex={0}
         >
           {child}

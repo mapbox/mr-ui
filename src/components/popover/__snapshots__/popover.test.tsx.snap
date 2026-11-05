@@ -30,7 +30,7 @@ exports[`Popover all options renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 50%; z-index: auto; --radix-popper-available-width: -16px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px; visibility: hidden; pointer-events: none;"
   >
     <div
-      class="bg-white border--white color-text border shadow-darken25 round border border-1 border--border--white"
+      class="bg-white border--white color-text border shadow-darken25 round"
       data-align="center"
       data-side="left"
       data-state="open"
@@ -90,7 +90,7 @@ exports[`Popover basic renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; z-index: auto; --radix-popper-available-width: -16px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
-      class="bg-white border--white color-text border shadow-darken25 round px12 py12 border border-1 border--border--white"
+      class="bg-white border--white color-text border shadow-darken25 round px12 py12"
       data-align="center"
       data-side="left"
       data-state="open"
@@ -157,7 +157,7 @@ exports[`Popover dark renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; z-index: auto; --radix-popper-available-width: -16px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
-      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12 border border-1 border--border--gray-dark"
+      class="bg-gray-dark border--gray-dark color-white border shadow-darken25 round px12 py12"
       data-align="center"
       data-side="left"
       data-state="open"
@@ -224,7 +224,7 @@ exports[`Popover no arrow renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 50%; z-index: auto; --radix-popper-available-width: -16px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
-      class="bg-white border--white color-text border shadow-darken25 round px12 py12 border border-1 border--border--white"
+      class="bg-white border--white color-text border shadow-darken25 round px12 py12"
       data-align="center"
       data-side="left"
       data-state="open"
@@ -276,7 +276,7 @@ exports[`Popover warning renders 1`] = `
     style="position: fixed; left: 0px; top: 0px; transform: translate(-6px, 0px); min-width: max-content; --radix-popper-transform-origin: 0px 0px; z-index: auto; --radix-popper-available-width: -16px; --radix-popper-available-height: 0px; --radix-popper-anchor-width: 0px; --radix-popper-anchor-height: 0px;"
   >
     <div
-      class="bg-orange-faint border--orange-deep color-orange-dark border shadow-darken25 round px12 py12 border border-1 border--border--orange-deep"
+      class="bg-orange-faint border--orange-deep color-orange-dark border shadow-darken25 round px12 py12"
       data-align="center"
       data-side="left"
       data-state="open"

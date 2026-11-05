@@ -16,6 +16,7 @@ export interface ControlCheckboxSetProps {
   icon?: string;
   autoFocus?: boolean;
   validationError?: ReactNode;
+  themeCheckboxGroup?: string,
   themeCheckboxContainer?: string,
   themeCheckbox?: string,
   themeControlWrapper?: string
@@ -29,15 +30,16 @@ export default function ControlCheckboxSet({
   autoFocus = false,
   icon = 'check',
   validationError,
-  themeCheckboxContainer = 'txt-s block mb6 flex',
-  themeCheckbox = 'mr6 inline-block checkbox--blue checkbox--s-label',
+  themeCheckboxGroup = 'flex flex--column gap6',
+  themeCheckboxContainer = 'txt-s flex',
+  themeCheckbox = 'mr6 checkbox--blue checkbox--s-label',
   themeControlWrapper
 }: ControlCheckboxSetProps): ReactElement {
 
   const onCheckboxChange = (e) => {
     const current = e.target.value;
     const index = value.indexOf(current);
-    const newValue = value;
+    const newValue = [...value];
 
     if (index === -1) {
       newValue.push(current);
@@ -50,11 +52,14 @@ export default function ControlCheckboxSet({
 
   const groupProps = {
     id,
+    role: 'group',
+    className: themeCheckboxGroup,
     'data-testid': `${id}-input`
   };
 
   if (validationError) {
     groupProps['aria-invalid'] = true;
+    groupProps['aria-describedby'] = `${id}-error`;
   }
 
   const renderOptions = ({ label, ...d }, index: number) => {
@@ -72,7 +77,6 @@ export default function ControlCheckboxSet({
         <input
           value={d.value}
           checked={isActive}
-          aria-checked={isActive}
           autoFocus={autoFocus && isActive}
           onChange={onCheckboxChange}
           name={id}
@@ -135,6 +139,8 @@ ControlCheckboxSet.propTypes = {
   autoFocus: PropTypes.bool,
   /** A validation error to display beneath the control. */
   validationError: PropTypes.node,
+  /** Classes to apply to the element wrapping all checkboxes. Use `flex gap12` for a horizontal layout. */
+  themeCheckboxGroup: PropTypes.string,
   /** Classes to apply to the checkbox container. */
   themeCheckboxContainer: PropTypes.string,
   /** Classes to apply to the checkbox element. */

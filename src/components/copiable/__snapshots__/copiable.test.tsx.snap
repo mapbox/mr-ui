@@ -4,7 +4,7 @@ exports[`Copiable basic renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="relative clearfix bg-darken5 round"
+      class="relative bg-darken5 round"
     >
       <div
         class="absolute top right px6 py6"
@@ -24,7 +24,7 @@ exports[`Copiable basic renders as expected 1`] = `
               type="button"
             >
               <button
-                class="btn btn--xs py3 px3 round block"
+                class="btn py3 px3 round block"
                 data-state="closed"
                 type="button"
               >
@@ -63,8 +63,7 @@ exports[`Copiable basic renders as expected 1`] = `
           type="button"
         >
           <div
-            class="my3 txt-mono txt-s mr24"
-            style="word-wrap: break-word; overflow-wrap: break-word;"
+            class="my3 txt-mono txt-s mr24 txt-break-word"
           >
             thetextyoucopythetextyoucopythetextyoucopythetext you copy the text you copy 
           </div>
@@ -79,7 +78,7 @@ exports[`Copiable truncated renders as expected 1`] = `
 <body>
   <div>
     <div
-      class="relative clearfix bg-darken5 round"
+      class="relative bg-darken5 round"
     >
       <span
         style="display: contents;"

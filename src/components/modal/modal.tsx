@@ -102,11 +102,8 @@ export default function Modal({
     style: CSSProperties;
     'data-testid': string;
   } = {
-    className: `fixed top bottom left right bg-darken50 ${themeOverlay}`,
+    className: `fixed top bottom left right flex flex--center-main flex--start-cross overflow-auto bg-darken50 ${themeOverlay}`,
     style: {
-      display: 'grid',
-      overflowY: 'auto',
-      placeItems: 'start center',
       zIndex
     },
     'data-testid': 'modal-overlay'
@@ -239,7 +236,8 @@ Modal.propTypes = {
   zIndex: PropTypes.number,
   /**
    * Additional CSS classes to apply to the overlay,
-   * along with existing classes `fixed top bottom left right bg-darken50`
+   * along with existing classes
+   * `fixed top bottom left right flex flex--center-main flex--start-cross overflow-auto bg-darken50`
    */
   themeOverlay: PropTypes.string,
   /**

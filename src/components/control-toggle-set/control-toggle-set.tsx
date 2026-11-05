@@ -28,15 +28,15 @@ export default function ControlToggleSet({
   optional = false,
   validationError,
   autoFocus = false,
-  themeToggleGroup = 'border border--gray-light py3 px3',
+  themeToggleGroup = '',
   themeToggleContainer = '',
-  themeToggle = 'txt-s py0 round-full toggle--s toggle--gray',
+  themeToggle = '',
   themeControlWrapper
 }: ControlToggleSetProps): ReactElement {
 
   const groupProps = {
     id,
-    className: `toggle-group round-full ${themeToggleGroup}`,
+    className: `toggle-group ${themeToggleGroup}`,
     role: 'radiogroup',
     'aria-required': optional ? false : true,
     'data-testid': `${id}-input`
@@ -44,6 +44,7 @@ export default function ControlToggleSet({
 
   if (validationError) {
     groupProps['aria-invalid'] = true;
+    groupProps['aria-describedby'] = `${id}-error`;
   }
 
   const renderOptions = ({ label, ...d}, index: number) => {
@@ -63,7 +64,7 @@ export default function ControlToggleSet({
           data-testid={`${id}-${index}-input`}
           {...extraProps}
         />
-        <div className={`${themeToggle} toggle`}>{label}</div>
+        <div className={`toggle ${themeToggle}`}>{label}</div>
       </label>
     );
   };

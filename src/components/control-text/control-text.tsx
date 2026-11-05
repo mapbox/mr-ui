@@ -4,10 +4,10 @@ import React, {
   useState,
   useRef,
   ChangeEvent,
-  HTMLInputTypeAttribute,
-  CSSProperties
+  HTMLInputTypeAttribute
 } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import omit from '../utils/omit';
 import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
@@ -120,7 +120,7 @@ export default function ControlText({
     autoCapitalize?: string;
     autoCorrect?: string;
     spellCheck?: boolean;
-    style?: CSSProperties;
+    'aria-describedby'?: string;
   } = {
     id,
     name: id,
@@ -141,13 +141,10 @@ export default function ControlText({
 
   if (validationError) {
     inputProps['aria-invalid'] = true;
-  }
-
-  if (validationError && errorStyle === 'inline') {
-    inputProps.className = `${themeControlInput} round-l flex-child-grow`;
-    inputProps.style = {
-      boxShadow: 'inset 0 0 0 1px #f74e4e'
-    };
+    inputProps['aria-describedby'] = `${id}-error`;
+    inputProps.className = classnames(themeControlInput, 'input--border-red', {
+      'round-l flex-child-grow': errorStyle === 'inline'
+    });
   }
 
   const labelElement = label ? renderLabel() : null;
@@ -184,20 +181,15 @@ export default function ControlText({
               ref={errorElement}
               onClick={onErrorClick}
               data-testid="validation-error"
-              role="alert"
-              className="h-full bg-red color-white round-r px6"
+              aria-label="Show validation error"
+              className="flex flex--center-cross bg-red color-white round-r px6 cursor-pointer"
             >
-              <span className="flex flex--center-cross flex--center-main">
-                <Icon
-                  name="alert"
-                  passthroughProps={{
-                    fill: 'white',
-                    className: 'cursor-pointer'
-                  }}
-                />
-              </span>
+              <Icon name="alert" />
             </button>
           </Popover>
+          <span id={`${id}-error`} role="alert" className="hide-visually">
+            {validationError}
+          </span>
         </div>
       );
     }

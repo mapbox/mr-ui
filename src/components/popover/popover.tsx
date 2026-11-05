@@ -55,8 +55,7 @@ export default function Popover({
     `${background} ${borderColor} ${color} border shadow-darken25 round`,
     {
       'px12 py12': padding === 'medium',
-      'px12 py6': padding === 'small',
-      [`border border-1 border--${borderColor}`]: borderColor
+      'px12 py6': padding === 'small'
     }
   );
 

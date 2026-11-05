@@ -1,8 +1,7 @@
-import React, { ReactElement } from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ControlWrapper from '../control-wrapper';
-import * as Switch from '@radix-ui/react-switch';
 
 export interface ControlSwitchProps {
   id: string,
@@ -27,16 +26,12 @@ export default function ControlSwitch(props: ControlSwitchProps): ReactElement {
     value = false,
     themeControlWrapper = '',
     themeControlSwitchContainer = '',
-    themeControlSwitch = 'switch--s-label',
+    themeControlSwitch = '',
     themeLabel = 'txt-s ml6'
   } = props;
 
-  const switchProps = {
-    id,
-    checked: value,
-    disabled,
-    onCheckedChange: (v: boolean) => onChange(v, id),
-    'data-testid': `${id}-switch`
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.checked, id);
   };
 
   const labelClasses = classnames(`switch-container ${themeControlSwitchContainer}`, {
@@ -49,16 +44,21 @@ export default function ControlSwitch(props: ControlSwitchProps): ReactElement {
       id={id}
       validationError={validationError}
     >
-      <fieldset className="flex flex--center-cross">
-        <label htmlFor={id} className={labelClasses}>
-          <Switch.Root {...switchProps} className={`switch ${themeControlSwitch}`}>
-            <Switch.Thumb />
-          </Switch.Root>
-          <span className={themeLabel}>
-            {label}
-          </span>
-        </label>
-      </fieldset>
+      <label htmlFor={id} className={labelClasses}>
+        <input
+          type="checkbox"
+          role="switch"
+          id={id}
+          checked={value}
+          disabled={disabled}
+          onChange={handleChange}
+          aria-invalid={validationError ? true : undefined}
+          aria-describedby={validationError ? `${id}-error` : undefined}
+          data-testid={`${id}-switch`}
+        />
+        <div className={`switch ${themeControlSwitch}`} />
+        {label && <span className={themeLabel}>{label}</span>}
+      </label>
     </ControlWrapper>
   );
 }

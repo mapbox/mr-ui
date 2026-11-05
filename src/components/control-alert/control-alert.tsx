@@ -28,6 +28,7 @@ export default function ControlAlert({
   const renderDismissButton = () => (
     <Tooltip content="Dismiss">
       <button
+        type="button"
         aria-label="Dismiss"
         className="bg-transparent color-gray-dark color-blue-on-hover px0 py0"
         data-testid="alert-dismiss"
@@ -38,7 +39,7 @@ export default function ControlAlert({
     </Tooltip>
   );
 
-  const containerClasses = classnames('round px24 py24 flex', {
+  const containerClasses = classnames('round px24 py24 flex gap6', {
     'bg-green-faint': theme === 'success',
     'bg-red-faint': theme === 'error',
     'bg-yellow-faint': theme === 'warning' || theme === 'locked'

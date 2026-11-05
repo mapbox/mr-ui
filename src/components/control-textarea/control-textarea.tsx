@@ -63,6 +63,7 @@ export default function ControlTextarea({
     autoCorrect?: string;
     spellCheck?: boolean;
     'aria-invalid'?: boolean;
+    'aria-describedby'?: string;
   } = {
     id,
     name: id,
@@ -82,6 +83,8 @@ export default function ControlTextarea({
 
   if (validationError) {
     textareaProps['aria-invalid'] = true;
+    textareaProps['aria-describedby'] = `${id}-error`;
+    textareaProps.className = `${themeControlTextarea} textarea--border-red`;
   }
 
   return (

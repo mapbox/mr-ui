@@ -18,6 +18,8 @@ export default function LoaderLocal({
 }: LoaderLocalProps): ReactElement {
   const passedProps: LoaderLocalProps = omit(props, propNames);
   return <div
+    role="status"
+    aria-label="Loading"
     className={`loading absolute top left right bottom flex flex--center-cross flex--center-main ${themeLoader}`}
     {...passedProps}
   />;

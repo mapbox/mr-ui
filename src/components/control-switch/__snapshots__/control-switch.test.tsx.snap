@@ -6,34 +6,25 @@ exports[`ControlSwitch basic renders 1`] = `
     <div
       class="relative "
     >
-      <fieldset
-        class="flex flex--center-cross"
+      <label
+        class="switch-container  cursor-pointer"
+        for="test"
       >
-        <label
-          class="switch-container  cursor-pointer"
-          for="test"
+        <input
+          data-testid="test-switch"
+          id="test"
+          role="switch"
+          type="checkbox"
+        />
+        <div
+          class="switch "
+        />
+        <span
+          class="txt-s ml6"
         >
-          <button
-            aria-checked="false"
-            class="switch switch--s-label"
-            data-state="unchecked"
-            data-testid="test-switch"
-            id="test"
-            role="switch"
-            type="button"
-            value="on"
-          >
-            <span
-              data-state="unchecked"
-            />
-          </button>
-          <span
-            class="txt-s ml6"
-          >
-            Basic
-          </span>
-        </label>
-      </fieldset>
+          Basic
+        </span>
+      </label>
       <div
         role="alert"
       />

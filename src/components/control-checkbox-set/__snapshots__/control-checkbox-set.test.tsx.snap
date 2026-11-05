@@ -7,15 +7,17 @@ exports[`ControlCheckbox all options renders 1`] = `
       class="relative bg-red-light"
     >
       <div
+        aria-describedby="testinput-error"
         aria-invalid="true"
+        class="flex flex--column gap6"
         data-testid="testinput-input"
         id="testinput"
+        role="group"
       >
         <label
           class="checkbox-container w-full cursor-pointer"
         >
           <input
-            aria-checked="true"
             checked=""
             data-testid="testinput-0-input"
             name="testinput"
@@ -51,7 +53,6 @@ exports[`ControlCheckbox all options renders 1`] = `
           class="checkbox-container w-full cursor-pointer"
         >
           <input
-            aria-checked="true"
             checked=""
             data-testid="testinput-1-input"
             name="testinput"
@@ -87,7 +88,6 @@ exports[`ControlCheckbox all options renders 1`] = `
           class="checkbox-container w-full cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-2-input"
             name="testinput"
             type="checkbox"
@@ -123,7 +123,7 @@ exports[`ControlCheckbox all options renders 1`] = `
         role="alert"
       >
         <div
-          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-error"
           id="testinput-error"
         >
@@ -142,21 +142,22 @@ exports[`ControlCheckbox basic renders 1`] = `
       class="relative "
     >
       <div
+        class="flex flex--column gap6"
         data-testid="testinput-input"
         id="testinput"
+        role="group"
       >
         <label
-          class="checkbox-container txt-s block mb6 flex cursor-pointer"
+          class="checkbox-container txt-s flex cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-0-input"
             name="testinput"
             type="checkbox"
             value="Option value 1"
           />
           <div
-            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+            class="mr6 checkbox--blue checkbox--s-label checkbox"
           >
             <svg
               aria-hidden="true"
@@ -179,17 +180,16 @@ exports[`ControlCheckbox basic renders 1`] = `
           Option 1
         </label>
         <label
-          class="checkbox-container txt-s block mb6 flex cursor-pointer"
+          class="checkbox-container txt-s flex cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-1-input"
             name="testinput"
             type="checkbox"
             value="Option value 2"
           />
           <div
-            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+            class="mr6 checkbox--blue checkbox--s-label checkbox"
           >
             <svg
               aria-hidden="true"
@@ -227,14 +227,15 @@ exports[`ControlCheckbox disabled renders 1`] = `
       class="relative "
     >
       <div
+        class="flex flex--column gap6"
         data-testid="testinput-input"
         id="testinput"
+        role="group"
       >
         <label
-          class="checkbox-container txt-s block mb6 flex"
+          class="checkbox-container txt-s flex"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-0-input"
             disabled=""
             name="testinput"
@@ -242,7 +243,7 @@ exports[`ControlCheckbox disabled renders 1`] = `
             value="Option value 1"
           />
           <div
-            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+            class="mr6 checkbox--blue checkbox--s-label checkbox"
           >
             <svg
               aria-hidden="true"
@@ -265,17 +266,16 @@ exports[`ControlCheckbox disabled renders 1`] = `
           Option 1
         </label>
         <label
-          class="checkbox-container txt-s block mb6 flex cursor-pointer"
+          class="checkbox-container txt-s flex cursor-pointer"
         >
           <input
-            aria-checked="false"
             data-testid="testinput-1-input"
             name="testinput"
             type="checkbox"
             value="Option value 2"
           />
           <div
-            class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+            class="mr6 checkbox--blue checkbox--s-label checkbox"
           >
             <svg
               aria-hidden="true"

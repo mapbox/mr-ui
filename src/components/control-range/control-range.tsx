@@ -54,7 +54,7 @@ export default function ControlRange({
   aside,
   tooltip,
   validationError,
-  themeControlRange = 'range--s range--gray w-full h-full',
+  themeControlRange = 'range--s range--gray w-full',
   themeControlRangeActive,
   themeControlTrack = '',
   themeControlThumb = '',
@@ -72,12 +72,13 @@ export default function ControlRange({
     onValueChange: (value: Array<number>) => onChange(value, id),
     value,
     'aria-required': optional ? false : true,
-    'data-test': `${id}-input`,
+    'data-testid': `${id}-input`,
     ...extraProps
   };
 
   if (validationError) {
     rootProps['aria-invalid'] = true;
+    rootProps['aria-describedby'] = `${id}-error`;
   }
 
   const renderThumb = (value: number, index: number) => {
@@ -93,6 +94,8 @@ export default function ControlRange({
               className={`${themeControlThumb}`}
               onMouseOver={() => setActiveThumbIndex(index)}
               onMouseOut={() => setActiveThumbIndex(null)}
+              onFocus={() => setActiveThumbIndex(index)}
+              onBlur={() => setActiveThumbIndex(null)}
               onPointerCancel={() => setActiveThumbIndex(null)}
             />
           </PopoverPrimitive.Trigger>

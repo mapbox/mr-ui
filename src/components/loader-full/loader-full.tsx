@@ -30,6 +30,8 @@ export default function LoaderFull({ opaque, style, ...props }: LoaderFullProps)
   return (
     <Portal.Root>
       <div
+        role="status"
+        aria-label="Loading"
         className={bgClasses}
         data-testid="loader"
         style={{ ...style, zIndex: 9999 }}

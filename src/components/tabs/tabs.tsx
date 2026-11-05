@@ -38,17 +38,11 @@ export default function Tabs({
     `flex txt-nowrap unselectable ${themeTabsContainer}`
   );
 
-  const itemEls = items.map((item, index) => {
-    const first = index === 0;
-    const layoutClasses = classnames({
-      ml12: !first && small && tabBorder,
-      'ml24 ml36-mxl': !first && !small && tabBorder,
-      'inline-block': true
-    });
+  const itemEls = items.map((item) => {
     return (
       <RadixTabs.Trigger
         aria-label={typeof item.label === 'string' ? item.label : item.id}
-        className={layoutClasses}
+        className="inline-block"
         data-testid={
           id ? `button-tab-${id}-${item.id}` : `button-tab-${item.id}`
         }
@@ -82,8 +76,10 @@ export default function Tabs({
         data-testid={id ? `tabs-wrapper-${id}` : 'tabs-wrapper'}
       >
         <RadixTabs.List
-          className={classnames({
-            'mb-neg1': tabBorder
+          className={classnames('flex', {
+            'mb-neg1': tabBorder,
+            gapx12: small && tabBorder,
+            'gapx24 gapx36-mxl': !small && tabBorder
           })}
         >
           {itemEls}

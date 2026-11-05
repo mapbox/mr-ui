@@ -7,9 +7,10 @@ exports[`ControlToggleGroup all options renders 1`] = `
       class="relative bg-red-light px12 py12"
     >
       <div
+        aria-describedby="testinput-error"
         aria-invalid="true"
         aria-required="false"
-        class="toggle-group round-full bg-red border border--2 border--red"
+        class="toggle-group bg-red border border--2 border--red"
         data-testid="testinput-input"
         id="testinput"
         role="radiogroup"
@@ -25,7 +26,7 @@ exports[`ControlToggleGroup all options renders 1`] = `
             value="Option value 1"
           />
           <div
-            class="toggle--white toggle--active-red toggle"
+            class="toggle toggle--white toggle--active-red"
           >
             <span>
               Option 1
@@ -42,7 +43,7 @@ exports[`ControlToggleGroup all options renders 1`] = `
             value="Option value 2"
           />
           <div
-            class="toggle--white toggle--active-red toggle"
+            class="toggle toggle--white toggle--active-red"
           >
             <span>
               Option 2
@@ -59,7 +60,7 @@ exports[`ControlToggleGroup all options renders 1`] = `
             value="Option value 3"
           />
           <div
-            class="toggle--white toggle--active-red toggle"
+            class="toggle toggle--white toggle--active-red"
           >
             <span>
               Option 3
@@ -71,7 +72,7 @@ exports[`ControlToggleGroup all options renders 1`] = `
         role="alert"
       >
         <div
-          class="bg txt-s mt3 py6 px12 bg-red-faint round border border--red color-red"
+          class="txt-s mt3 py6 px12 bg-red-faint round border border--red-deep color-red-deep"
           data-testid="testinput-error"
           id="testinput-error"
         >
@@ -91,7 +92,7 @@ exports[`ControlToggleGroup basic renders 1`] = `
     >
       <div
         aria-required="true"
-        class="toggle-group round-full border border--gray-light py3 px3"
+        class="toggle-group "
         data-testid="testinput-input"
         id="testinput"
         role="radiogroup"
@@ -106,7 +107,7 @@ exports[`ControlToggleGroup basic renders 1`] = `
             value="Toggle value 1"
           />
           <div
-            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+            class="toggle "
           >
             Toggle 1
           </div>
@@ -121,7 +122,7 @@ exports[`ControlToggleGroup basic renders 1`] = `
             value="Toggle value 2"
           />
           <div
-            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+            class="toggle "
           >
             Toggle 2
           </div>
@@ -143,7 +144,7 @@ exports[`ControlToggleGroup disabled renders 1`] = `
     >
       <div
         aria-required="true"
-        class="toggle-group round-full border border--gray-light py3 px3"
+        class="toggle-group "
         data-testid="testinput-input"
         id="testinput"
         role="radiogroup"
@@ -159,7 +160,7 @@ exports[`ControlToggleGroup disabled renders 1`] = `
             value="Option value 1"
           />
           <div
-            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+            class="toggle "
           >
             Option 1
           </div>
@@ -174,7 +175,7 @@ exports[`ControlToggleGroup disabled renders 1`] = `
             value="Option value 2"
           />
           <div
-            class="txt-s py0 round-full toggle--s toggle--gray toggle"
+            class="toggle "
           >
             Option 2
           </div>

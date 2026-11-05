@@ -71,14 +71,14 @@ export default function ControlFile({
     disabled,
     tabIndex: -1,
     ref: file,
-    className: 'absolute opacity0 top left',
-    style: { height: '0', width: '0', zIndex: -1 },
+    className: 'hide-visually',
     'aria-required': optional ? false : true,
     'data-testid': `${id}-input`
   };
 
   if (validationError) {
     inputProps['aria-invalid'] = true;
+    inputProps['aria-describedby'] = `${id}-error`;
   }
 
   return (
@@ -87,23 +87,20 @@ export default function ControlFile({
       themeControlWrapper={themeControlWrapper}
       validationError={validationError}
     >
-      <div className="flex flex--center-cross overflow-hidden">
-        <div className="flex-child-grow">
-          <button
-            type="button"
-            aria-hidden={true}
-            disabled={disabled}
-            className={`${themeControlFile} relative`}
-            onClick={onButtonClick}
-          >
-            {children ? children : (
-              <IconText iconBefore="harddrive">
-                {displayValue}
-              </IconText>
-            )}
-          </button>
-          <input {...inputProps} {...extraProps} />
-        </div>
+      <div className="flex flex--center-cross">
+        <button
+          type="button"
+          disabled={disabled}
+          className={`${themeControlFile} relative`}
+          onClick={onButtonClick}
+        >
+          {children ? children : (
+            <IconText iconBefore="harddrive">
+              {displayValue}
+            </IconText>
+          )}
+        </button>
+        <input {...inputProps} {...extraProps} />
       </div>
     </ControlWrapper>
   );

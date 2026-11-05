@@ -39,7 +39,7 @@ export default function MinimumDurationLoader({
 
     if (startTime.current) {
       // This means the minDuration has changed after we started the timer.
-      duration = Math.min(0, minDuration - (Date.now() - startTime.current));
+      duration = Math.max(0, minDuration - (Date.now() - startTime.current));
     } else {
       // This is our first time.
       startTime.current = Date.now();

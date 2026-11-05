@@ -141,7 +141,7 @@ exports[`Form all controls renders as expected 1`] = `
           >
             <div
               aria-required="true"
-              class="toggle-group round-full border border--2 border--gray-faint bg-gray-faint"
+              class="toggle-group border border--2 border--gray-faint bg-gray-faint"
               data-testid="spiritAnimal-input"
               id="spiritAnimal"
               role="radiogroup"
@@ -156,7 +156,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="humpback-whale"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Humpback whale
                 </div>
@@ -171,7 +171,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="rufous hummingbird"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Rufous Hummingbird
                 </div>
@@ -187,7 +187,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="sea-otter"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Sea Otter
                 </div>
@@ -202,7 +202,7 @@ exports[`Form all controls renders as expected 1`] = `
                   value="snowshoe-hare"
                 />
                 <div
-                  class="txt-s py3 toggle--gray toggle--active-white toggle"
+                  class="toggle txt-s py3 toggle--gray toggle--active-white"
                 >
                   Snowshoe Hare
                 </div>
@@ -223,56 +223,46 @@ exports[`Form all controls renders as expected 1`] = `
               class="relative "
             >
               <div
-                class="flex flex--center-cross overflow-hidden"
+                class="flex flex--center-cross"
               >
-                <div
-                  class="flex-child-grow"
+                <button
+                  class="btn relative"
+                  type="button"
                 >
-                  <button
-                    aria-hidden="true"
-                    class="btn relative"
-                    type="button"
+                  <span
+                    class="flex flex--center-cross gap6"
                   >
-                    <span
-                      class="flex flex--center-cross"
+                    <svg
+                      aria-hidden="true"
+                      class="events-none icon"
+                      data-testid="icon-harddrive"
+                      focusable="false"
+                      style="width: 18px; height: 18px;"
                     >
-                      <span
-                        class="mr6"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="events-none icon"
-                          data-testid="icon-harddrive"
-                          focusable="false"
-                          style="width: 18px; height: 18px;"
-                        >
-                          <use
-                            xlink:href="#icon-harddrive"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                          />
-                        </svg>
-                        <span
-                          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-                        >
-                          harddrive
-                        </span>
-                      </span>
-                      Select a file
+                      <use
+                        xlink:href="#icon-harddrive"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      />
+                    </svg>
+                    <span
+                      style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+                    >
+                      harddrive
                     </span>
-                  </button>
-                  <input
-                    aria-required="false"
-                    class="absolute opacity0 top left"
-                    data-testid="upload-input"
-                    id="upload"
-                    label="Upload a picture"
-                    multiple=""
-                    name="upload"
-                    style="height: 0px; width: 0px; z-index: -1;"
-                    tabindex="-1"
-                    type="file"
-                  />
-                </div>
+                    Select a file
+                  </span>
+                </button>
+                <input
+                  aria-required="false"
+                  class="hide-visually"
+                  data-testid="upload-input"
+                  id="upload"
+                  label="Upload a picture"
+                  multiple=""
+                  name="upload"
+                  tabindex="-1"
+                  type="file"
+                />
               </div>
               <div
                 role="alert"
@@ -298,13 +288,13 @@ exports[`Form all controls renders as expected 1`] = `
                   </label>
                 </div>
                 <div
-                  class="range range--s range--gray w-full h-full"
+                  class="range range--s range--gray w-full"
                 >
                   <span
                     aria-disabled="false"
                     aria-required="true"
                     data-orientation="horizontal"
-                    data-test="area-input"
+                    data-testid="area-input"
                     dir="ltr"
                     id="area"
                     style="--radix-slider-thumb-transform: translateX(-50%);"
@@ -350,41 +340,25 @@ exports[`Form all controls renders as expected 1`] = `
             <div
               class="relative "
             >
-              <fieldset
-                class="flex flex--center-cross"
+              <label
+                class="switch-container  cursor-pointer"
+                for="active"
               >
-                <label
-                  class="switch-container  cursor-pointer"
-                  for="active"
+                <input
+                  data-testid="active-switch"
+                  id="active"
+                  role="switch"
+                  type="checkbox"
+                />
+                <div
+                  class="switch "
+                />
+                <span
+                  class="txt-s ml6"
                 >
-                  <button
-                    aria-checked="false"
-                    class="switch switch--s-label"
-                    data-state="unchecked"
-                    data-testid="active-switch"
-                    id="active"
-                    role="switch"
-                    type="button"
-                    value="on"
-                  >
-                    <span
-                      data-state="unchecked"
-                    />
-                  </button>
-                  <input
-                    aria-hidden="true"
-                    style="position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 0px; height: 0px;"
-                    tabindex="-1"
-                    type="checkbox"
-                    value="on"
-                  />
-                  <span
-                    class="txt-s ml6"
-                  >
-                    Animal active?
-                  </span>
-                </label>
-              </fieldset>
+                  Animal active?
+                </span>
+              </label>
               <div
                 role="alert"
               />
@@ -458,12 +432,13 @@ exports[`Form all controls renders as expected 1`] = `
             >
               <div
                 aria-required="true"
+                class="flex flex--column gap6"
                 data-testid="difficulty-input"
                 id="difficulty"
                 role="radiogroup"
               >
                 <label
-                  class="radio-container txt-s block mb6 flex cursor-pointer"
+                  class="radio-container txt-s flex cursor-pointer"
                 >
                   <input
                     checked=""
@@ -473,12 +448,12 @@ exports[`Form all controls renders as expected 1`] = `
                     value="beginner"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block radio"
+                    class="mr6 radio--blue radio--s-label radio"
                   />
                   Beginner
                 </label>
                 <label
-                  class="radio-container txt-s block mb6 flex cursor-pointer"
+                  class="radio-container txt-s flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-1-input"
@@ -487,12 +462,12 @@ exports[`Form all controls renders as expected 1`] = `
                     value="intermediate"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block radio"
+                    class="mr6 radio--blue radio--s-label radio"
                   />
                   Intermediate
                 </label>
                 <label
-                  class="radio-container txt-s block mb6 flex cursor-pointer"
+                  class="radio-container txt-s flex cursor-pointer"
                 >
                   <input
                     data-testid="difficulty-2-input"
@@ -501,7 +476,7 @@ exports[`Form all controls renders as expected 1`] = `
                     value="advanced"
                   />
                   <div
-                    class="mr6 radio--blue radio--s-label inline-block radio"
+                    class="mr6 radio--blue radio--s-label radio"
                   />
                   Advanced
                 </label>
@@ -518,21 +493,22 @@ exports[`Form all controls renders as expected 1`] = `
               class="relative "
             >
               <div
+                class="flex flex--column gap6"
                 data-testid="tools-input"
                 id="tools"
+                role="group"
               >
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
-                    aria-checked="false"
                     data-testid="tools-0-input"
                     name="tools"
                     type="checkbox"
                     value="axe"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -555,17 +531,16 @@ exports[`Form all controls renders as expected 1`] = `
                   Pick axe
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
-                    aria-checked="false"
                     data-testid="tools-1-input"
                     name="tools"
                     type="checkbox"
                     value="potion"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -588,17 +563,16 @@ exports[`Form all controls renders as expected 1`] = `
                   Potion
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
-                    aria-checked="false"
                     data-testid="tools-2-input"
                     name="tools"
                     type="checkbox"
                     value="cloak"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -621,17 +595,16 @@ exports[`Form all controls renders as expected 1`] = `
                   Cloak
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
-                    aria-checked="false"
                     data-testid="tools-3-input"
                     name="tools"
                     type="checkbox"
                     value="telescope"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -654,17 +627,16 @@ exports[`Form all controls renders as expected 1`] = `
                   Telescope
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
-                    aria-checked="false"
                     data-testid="tools-4-input"
                     name="tools"
                     type="checkbox"
                     value="map"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -687,17 +659,16 @@ exports[`Form all controls renders as expected 1`] = `
                   Map
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
-                    aria-checked="false"
                     data-testid="tools-5-input"
                     name="tools"
                     type="checkbox"
                     value="sword"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -720,17 +691,16 @@ exports[`Form all controls renders as expected 1`] = `
                   Sword
                 </label>
                 <label
-                  class="checkbox-container txt-s block mb6 flex cursor-pointer"
+                  class="checkbox-container txt-s flex cursor-pointer"
                 >
                   <input
-                    aria-checked="false"
                     data-testid="tools-6-input"
                     name="tools"
                     type="checkbox"
                     value="armour"
                   />
                   <div
-                    class="mr6 inline-block checkbox--blue checkbox--s-label checkbox"
+                    class="mr6 checkbox--blue checkbox--s-label checkbox"
                   >
                     <svg
                       aria-hidden="true"
@@ -791,7 +761,6 @@ exports[`Form all controls renders as expected 1`] = `
           class="mt6"
         >
           <button
-            aria-label="Submit"
             class="btn"
             data-testid="form-submit-handler"
             type="button"
@@ -874,7 +843,6 @@ exports[`Form basic renders as expected 1`] = `
           class="mt6"
         >
           <button
-            aria-label="Submit"
             class="btn"
             data-testid="form-submit-handler"
             type="button"

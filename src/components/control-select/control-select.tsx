@@ -69,7 +69,7 @@ export default function ControlSelect({
 
   const selectClassName = children
     ? `select absolute top left right bottom opacity0 w-full h-full ${disabled ? 'cursor-default' : 'cursor-pointer'} ${themeControlSelect}`
-    : `select ${themeControlSelect}`;
+    : `select ${themeControlSelect}${validationError ? ' select--stroke select--red' : ''}`;
 
   const selectProps = {
     id,
@@ -83,6 +83,7 @@ export default function ControlSelect({
 
   if (validationError) {
     selectProps['aria-invalid'] = true;
+    selectProps['aria-describedby'] = `${id}-error`;
   }
 
   const renderOptions = ({ label, value, disabled, options }: Option) => {

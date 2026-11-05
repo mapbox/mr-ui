@@ -1,5 +1,4 @@
 import React, { ReactNode, ReactElement } from 'react';
-import * as LabelPrimitive from '@radix-ui/react-label';
 import PropTypes from 'prop-types';
 
 export interface ControlLabelProps {
@@ -19,11 +18,9 @@ export default function ControlLabel({
 }: ControlLabelProps): ReactElement {
   return (
     <div>
-      <LabelPrimitive.Root htmlFor={id} asChild>
-        <label className={`inline-block ${themeLabel}`}>
-          {text} {optional && <span className="txt-normal">(optional)</span>}
-        </label>
-      </LabelPrimitive.Root>
+      <label htmlFor={id} className={`inline-block ${themeLabel}`}>
+        {text} {optional && <span className="txt-normal">(optional)</span>}
+      </label>
       {aside && <span className="inline-block ml12">{aside}</span>}
     </div>
   );

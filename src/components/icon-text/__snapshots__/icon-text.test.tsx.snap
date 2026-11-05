@@ -4,50 +4,42 @@ exports[`IconText both icons renders 1`] = `
 <body>
   <div>
     <span
-      class="flex flex--center-cross"
+      class="flex flex--center-cross gap6"
     >
-      <span
-        class="mr6"
+      <svg
+        aria-hidden="true"
+        class="events-none icon"
+        data-testid="icon-check"
+        focusable="false"
+        style="width: 18px; height: 18px;"
       >
-        <svg
-          aria-hidden="true"
-          class="events-none icon"
-          data-testid="icon-check"
-          focusable="false"
-          style="width: 18px; height: 18px;"
-        >
-          <use
-            xlink:href="#icon-check"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          />
-        </svg>
-        <span
-          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-        >
-          check
-        </span>
+        <use
+          xlink:href="#icon-check"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        check
       </span>
       What
-      <span
-        class="ml6"
+      <svg
+        aria-hidden="true"
+        class="events-none icon"
+        data-testid="icon-github"
+        focusable="false"
+        style="width: 18px; height: 18px;"
       >
-        <svg
-          aria-hidden="true"
-          class="events-none icon"
-          data-testid="icon-github"
-          focusable="false"
-          style="width: 18px; height: 18px;"
-        >
-          <use
-            xlink:href="#icon-github"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          />
-        </svg>
-        <span
-          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-        >
-          github
-        </span>
+        <use
+          xlink:href="#icon-github"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        github
       </span>
     </span>
   </div>
@@ -58,29 +50,25 @@ exports[`IconText icon after renders 1`] = `
 <body>
   <div>
     <span
-      class="flex flex--center-cross"
+      class="flex flex--center-cross gap6"
     >
       Next
-      <span
-        class="ml6"
+      <svg
+        aria-hidden="true"
+        class="events-none icon"
+        data-testid="icon-chevron-right"
+        focusable="false"
+        style="width: 18px; height: 18px;"
       >
-        <svg
-          aria-hidden="true"
-          class="events-none icon"
-          data-testid="icon-chevron-right"
-          focusable="false"
-          style="width: 18px; height: 18px;"
-        >
-          <use
-            xlink:href="#icon-chevron-right"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          />
-        </svg>
-        <span
-          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-        >
-          chevron-right
-        </span>
+        <use
+          xlink:href="#icon-chevron-right"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        chevron-right
       </span>
     </span>
   </div>
@@ -91,28 +79,24 @@ exports[`IconText icon before renders 1`] = `
 <body>
   <div>
     <span
-      class="flex flex--center-cross"
+      class="flex flex--center-cross gap6"
     >
-      <span
-        class="mr6"
+      <svg
+        aria-hidden="true"
+        class="events-none icon"
+        data-testid="icon-clipboard"
+        focusable="false"
+        style="width: 18px; height: 18px;"
       >
-        <svg
-          aria-hidden="true"
-          class="events-none icon"
-          data-testid="icon-clipboard"
-          focusable="false"
-          style="width: 18px; height: 18px;"
-        >
-          <use
-            xlink:href="#icon-clipboard"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          />
-        </svg>
-        <span
-          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-        >
-          clipboard
-        </span>
+        <use
+          xlink:href="#icon-clipboard"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        clipboard
       </span>
       Copy
     </span>
@@ -124,28 +108,24 @@ exports[`IconText inline flex parent renders 1`] = `
 <body>
   <div>
     <span
-      class="inline-flex flex--center-cross"
+      class="inline-flex flex--center-cross gap6"
     >
-      <span
-        class="mr6"
+      <svg
+        aria-hidden="true"
+        class="events-none icon"
+        data-testid="icon-polyline"
+        focusable="false"
+        style="width: 18px; height: 18px;"
       >
-        <svg
-          aria-hidden="true"
-          class="events-none icon"
-          data-testid="icon-polyline"
-          focusable="false"
-          style="width: 18px; height: 18px;"
-        >
-          <use
-            xlink:href="#icon-polyline"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          />
-        </svg>
-        <span
-          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
-        >
-          polyline
-        </span>
+        <use
+          xlink:href="#icon-polyline"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <span
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+      >
+        polyline
       </span>
       <span>
         Inline
