@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ControlRange from './control-range';
 
@@ -77,17 +77,32 @@ describe('ControlRange', () => {
       tooltip: true,
       onChange: mockOnChange
     };
-    test('renders', async () => {
+    test('shows the value on hover', async () => {
       render(<ControlRange {...props} />);
       await userEvent.hover(screen.getByRole('slider'));
+      expect(await screen.findByRole('tooltip')).toHaveTextContent('200');
+    });
 
-      await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
-      });
+    test('keyboard focus stays on the thumb until Tab moves it on', async () => {
+      const user = userEvent.setup();
+      render(
+        <>
+          <ControlRange {...props} autoFocus={false} />
+          <button type="button">After</button>
+        </>
+      );
+      const thumb = screen.getByRole('slider');
 
-      await waitFor(() => {
-        expect(screen.getByText('200')).toBeInTheDocument();
-      });
+      await user.tab();
+      expect(await screen.findByRole('tooltip')).toHaveTextContent('200');
+      expect(thumb).toHaveFocus();
+
+      await user.keyboard('{ArrowRight}');
+      expect(mockOnChange).toHaveBeenCalledWith([300], 'testinput');
+      expect(thumb).toHaveFocus();
+
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'After' })).toHaveFocus();
     });
   });
 });

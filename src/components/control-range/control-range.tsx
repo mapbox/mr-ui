@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, useState } from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import * as PopoverPrimitive from '@radix-ui/react-popover';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
@@ -88,8 +88,8 @@ export default function ControlRange({
       const tooltipClasses = `${background} ${borderColor} ${color} border round txt-s px12 py6 wmax240`;
 
       return (
-        <PopoverPrimitive.Root key={index} open={activeThumbIndex === index}>
-          <PopoverPrimitive.Trigger asChild>
+        <TooltipPrimitive.Root key={index} open={activeThumbIndex === index}>
+          <TooltipPrimitive.Trigger asChild>
             <SliderPrimitive.Thumb
               className={`${themeControlThumb}`}
               onMouseOver={() => setActiveThumbIndex(index)}
@@ -98,8 +98,8 @@ export default function ControlRange({
               onBlur={() => setActiveThumbIndex(null)}
               onPointerCancel={() => setActiveThumbIndex(null)}
             />
-          </PopoverPrimitive.Trigger>
-          <PopoverPrimitive.Content
+          </TooltipPrimitive.Trigger>
+          <TooltipPrimitive.Content
             side="top"
             align="center"
             sideOffset={6}
@@ -109,14 +109,14 @@ export default function ControlRange({
             }}
           >
             {value}
-            <PopoverPrimitive.Arrow
+            <TooltipPrimitive.Arrow
               width={12}
               height={6}
               offset={6}
               fill={fill}
             />
-          </PopoverPrimitive.Content>
-        </PopoverPrimitive.Root>
+          </TooltipPrimitive.Content>
+        </TooltipPrimitive.Root>
       );
     }
 
@@ -147,7 +147,9 @@ export default function ControlRange({
               className={`absolute h-full ${themeControlRangeActive}`}
             />
           </SliderPrimitive.Track>
-          {value.map(renderThumb)}
+          <TooltipPrimitive.Provider>
+            {value.map(renderThumb)}
+          </TooltipPrimitive.Provider>
         </SliderPrimitive.Root>
       </div>
     </ControlWrapper>

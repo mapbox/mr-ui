@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useRef } from 'react';
+import React, { ChangeEvent, ReactElement, ReactNode, useRef } from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlWrapper from '../control-wrapper';
@@ -7,11 +7,11 @@ import { InputProps } from '../typings';
 
 export interface ControlFileProps extends Omit<InputProps, 'value' | 'onChange'> {
   id: string;
-  onChange: (files: '' | Array<string>, id: string) => void;
-  value?: '' | [{ name: string }];
+  onChange: (files: Array<File>, id: string) => void;
+  value?: '' | Array<{ name: string }>;
   optional?: boolean;
   disabled?: boolean;
-  validationError?: ReactElement | string;
+  validationError?: ReactNode;
   displayValue?: ReactNode;
   children?: ReactNode;
   themeControlFile?: string;
@@ -46,15 +46,11 @@ export default function ControlFile({
   const extraProps = omit(props, propNames);
   const file = useRef(null);
 
-  const onChange = e => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const fileList = e.target.files;
 
     if (!fileList.length) return;
-    const filesArray = [];
-    for (let i = 0, l = fileList.length; i < l; i++) {
-      filesArray.push(fileList[i]);
-    }
-    return props.onChange(filesArray, id);
+    props.onChange(Array.from(fileList), id);
   };
 
   const onButtonClick = () => {

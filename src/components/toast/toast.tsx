@@ -8,7 +8,7 @@ export interface ToastProps {
   active: boolean;
   onExit: () => void;
   action?: {
-    text: string;
+    text: ReactNode;
     callback: () => void;
   };
   duration?: number;
@@ -96,7 +96,7 @@ Toast.propTypes = {
    * - `callback`: **(required)** Invoked when the button is clicked.
    */
   action: PropTypes.shape({
-    text: PropTypes.string.isRequired,
+    text: PropTypes.node.isRequired,
     callback: PropTypes.func.isRequired
   }),
   /**
