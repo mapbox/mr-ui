@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
-import { InputProps } from '../typings';
 import { getTheme } from '../utils/styles';
 
 const propNames = [
@@ -27,7 +26,11 @@ const propNames = [
   'validator'
 ];
 
-export interface ControlRangeProps extends Omit<InputProps, 'value' | 'onChange'> {
+export interface ControlRangeProps
+  extends Omit<
+    SliderPrimitive.SliderProps,
+    'value' | 'defaultValue' | 'onChange' | 'onValueChange'
+  > {
   id: string;
   onChange: (value: Array<number>, id: string) => void;
   value?: Array<number>;

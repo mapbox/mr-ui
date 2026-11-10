@@ -1,11 +1,21 @@
-import React, { ChangeEvent, ReactElement, ReactNode } from 'react';
+import React, {
+  ChangeEvent,
+  DetailedHTMLProps,
+  ReactElement,
+  ReactNode,
+  TextareaHTMLAttributes
+} from 'react';
 import PropTypes from 'prop-types';
 import omit from '../utils/omit';
 import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
-import { InputProps } from '../typings';
 
-export interface ControlTextareaProps extends Omit<InputProps, 'onChange'> {
+type TextareaProps = DetailedHTMLProps<
+  TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+>;
+
+export interface ControlTextareaProps extends Omit<TextareaProps, 'onChange'> {
   onChange: (value: string, id: string) => void;
   id?: string;
   value?: string;

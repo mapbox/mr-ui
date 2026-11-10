@@ -15,9 +15,7 @@ export interface PopoverProps {
   zIndex?: number | string;
   hasPointer?: boolean;
   offsetFromAnchor?: number;
-  passthroughProps?: {
-    [key: string]: string | number | boolean;
-  };
+  passthroughProps?: PopoverPrimitive.PopoverContentProps;
   onExit?: () => void;
   getInitialFocus?: (e: Event) => void;
   clickOutsideCloses?: boolean;
