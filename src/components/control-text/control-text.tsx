@@ -13,7 +13,8 @@ import ControlLabel from '../control-label';
 import ControlWrapper from '../control-wrapper';
 import Popover from '../popover';
 import Icon from '../icon';
-import { InputProps, PopoverProps } from '../typings';
+import { PopoverProps } from '../popover/popover';
+import { InputProps } from '../typings';
 
 export interface ControlTextProps extends Omit<InputProps, 'onChange'> {
   id: string;
@@ -26,7 +27,7 @@ export interface ControlTextProps extends Omit<InputProps, 'onChange'> {
   aside?: ReactNode;
   validationError?: ReactNode;
   errorStyle?: 'default' | 'inline';
-  popoverProps?: PopoverProps;
+  popoverProps?: Partial<PopoverProps>;
   themeControlInput?: string;
   themeControlWrapper?: string;
   themeLabel?: string;

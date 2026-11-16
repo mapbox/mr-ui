@@ -25,7 +25,9 @@ type ControlConfig = {
   step?: number,
   options?: Array<{ label: string, value: string }>,
   initialValue?: any,
-  validator?: Array<Validator> | Validator
+  validator?: Array<Validator> | Validator,
+  // Extra keys are spread onto the control by getControlProps.
+  [prop: string]: unknown
 }
 
 type Config = { [key: string]: ControlConfig }
